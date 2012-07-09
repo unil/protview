@@ -12,9 +12,8 @@
 	font-family: Verdana;
 	font-size : 10px;
 }
-
-.aa text.seq-num {
-	font-size : 6px;
+.aa text.seq_num {
+	font-size: 6px;
 }
 
 #aa-1 circle {

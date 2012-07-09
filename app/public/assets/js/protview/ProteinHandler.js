@@ -31,10 +31,11 @@ function drawAminoAcid(svg, x, y, size, label, pos) {
 		id: 'aa-1-cercle'
 	});
 	
-	svg.text(g, -2, -2, label, {
+	svg.text(g, -4, 0, label, {
 		id : 'aa-1-text'
 	});
-	svg.text(g, -2, 6, pos, {
+	svg.text(g, 0, 6, pos, {
+		id : 'aa-1-seq_num',
 		class_: 'seq_num'
 	});
 }
@@ -61,13 +62,24 @@ function addDragSupport(svgElement) {
 	}
 }
 
+function save(svg) {
+	svg.toSVG();
+}
+
 
 
 function draw(svg) {
-	for (var i = 0; i < prot.length; i++) {
-		x = prot[i]['x'];
-		y = prot[i]['y'];
-		drawAminoAcid(svg, x, y, aaSize, 'L', '' + (i+1));
+	graph = prot['graph']['coords']['aa'];
+	struct = prot['struct'];
+	for (var i = 0; i < graph.length; i++) {
+		x = graph[i]['x'];
+		y = graph[i]['y'];
+		ref = graph[i]['ref'];
+		subunit = ref['subunit'];
+		peptide = ref['peptide'];
+		seq = ref['seq'];
+		label = struct['peptide'][peptide-1]['seq'].charAt(seq);
+		drawAminoAcid(svg, x, y, aaSize, label, '' + seq);
 	}
 	
 	addDragSupport($('.aa'));
@@ -84,7 +96,8 @@ function send(method) {
 			"example" : "adsf"
 		},
 		success : function(msg) {
-			prot = msg['graph']['coords']['aa'];
+			prot = msg;
+			//prot = msg['graph']['coords']['aa'];
 			$('#protein').svg({
 				//loadURL: 'protein.svg',
 				onLoad: draw

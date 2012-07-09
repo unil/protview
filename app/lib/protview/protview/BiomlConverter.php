@@ -145,7 +145,7 @@ class BiomlConverter {
 						$protview['domain'][] = $domain;
 					}
 					$peptide["seq"] = $rawSeq;
-					$protview['peptides'][] = $peptide;
+					$protview['peptide'][] = $peptide;
 				}
 
 				$protview['subunit'][] = $subunit;
