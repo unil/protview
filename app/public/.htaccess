@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteBase /protview
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule .* index.php [L] 

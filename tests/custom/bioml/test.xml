@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!DOCTYPE bioml SYSTEM "dtd/bioml.dtd" [
+	<!ATTLIST domain pos (intra| extra | membrane) #IMPLIED>
+
+]>
+<bioml>
+<note>
+	The following is a valid BIOML file describing sodium/potassium-transporting ATPase subunit alpha-1 isoform a [Homo sapiens]
+</note>
+<organism>
+<species>Homo sapiens</species>
+<protein comp="6xS[1]">
+	<name>ATPase</name>
+	<subunit id="1" comp="1xP[1]D[3]+1xP[1]D[7]" label="alpha-1 isoform a">
+		<peptide id="1" start="1" end="1023">
+			<db_entry entry="NCBI " format="FASTA"/>
+			<domain id="1" type="mature" pos="intra" start="1" end="88" />
+				<name>Chain A</name>
+				<aa type="G" at="10">
+					<amod type="G" at="10" occ="phosphorylation" />
+				</aa>
+			<domain id="2" type="helix" start="33" end="46"/>
+			<domain id="3" type="mature" start="25" end="54">
+				<name>Chain B</name>
+				<aa type="C" at="31" to="96"/>
+				<aa type="H" at="34">
+					<avariant at="34" type="D"/></aa>
+				<aa type="C" at="43" to="109"/>
+				<aa type="F" at="48">
+					<avariant type="S" at="48"/></aa>
+				<aa type="F" at="49">
+					<avariant at="49" type="L"/></aa>
+			</domain>
+			<domain id="4" type="propeptide" start="55" end="89">
+				<name>Chain C</name>
+				<aa type="R" at="89">
+					<avariant at="89" type="H"/>
+					<avariant at="89" type="L"/></aa>
+				</domain>
+			<domain id="5" type="helix" start="91" end="95"/>
+			<domain id="6" type="helix" start="102" end="108"/>
+			<domain id="7" type="mature" start="90" end="110">
+				<name>Chain A</name>
+				<aa type="V" at="92">
+					<avariant type="L"/></aa>
+				<aa type="C" at="95" to="100"/>
+				<aa type="C" at="96" to="31"/>
+				<aa type="C" at="100" to="95"/>
+				<aa type="C" at="109" to="43"/>
+			</domain>
+			MGKGVGRDKY EPAAVSEQG DKKGKKGKK DRDMDELKKEVSMDDHKLSLDELHRKYGTDLSRGLTSARAAE
+ILARDGPNALTPPPTTPEWIKFCRQLFGGFSMLLWIGAILCFLAYSIQAATEEEPQNDNLYLGVVLSAVV
+IITGCFSYYQEAKSSKIMESFKNMVPQQALVIRNGEKMSINAEEVVVGDLVEVKGGDRIPADLRIISANG
+CKVDNSSLTGESEPQTRSPDFTNENPLETRNIAFFSTNCVEGTARGIVVYTGDRTVMGRIATLASGLEGG
+QTPIAAEIEHFIHIITGVAVFLGVSFFILSLILEYTWLEAVIFLIGIIVANVPEGLLATVTVCLTLTAKR
+MARKNCLVKNLEAVETLGSTSTICSDKTGTLTQNRMTVAHMWFDNQIHEADTTENQSGVSFDKTSATWLA
+LSRIAGLCNRAVFQANQENLPILKRAVAGDASESALLKCIELCCGSVKEMRERYAKIVEIPFNSTNKYQL
+SIHKNPNTSEPQHLLVMKGAPERILDRCSSILLHGKEQPLDEELKDAFQNAYLELGGLGERVLGFCHLFL
+PDEQFPEGFQFDTDDVNFPIDNLCFVGLISMIDPPRAAVPDAVGKCRSAGIKVIMVTGDHPITAKAIAKG
+VGIISEGNETVEDIAARLNIPVSQVNPRDAKACVVHGSDLKDMTSEQLDDILKYHTEIVFARTSPQQKLI
+IVEGCQRQGAIVAVTGDGVNDSPALKKADIGVAMGIAGSDVSKQAADMILLDDNFASIVTGVEEGRLIFD
+NLKKSIAYTLTSNIPEITPFLIFIIANIPLPLGTVTILCIDLGTDMVPAISLAYEQAESDIMKRQPRNPK
+TDKLVNERLISMAYGQIGMIQALGGFFTYFVILAENGFLPIHLLGLRVDWDDRWINDVEDSYGQQWTYEQ
+RKIVEFTCHTAFFVSIVVVQWADLVICKTRRNSVFQQGMKNKILIFGLFEETALAAFLSYCPGMGVALRM
+YPLKPTWWFCAFPYSLLIFVYDEVRKLIIRRRPGGWVEKETYY
+		</peptide>
+	</subunit>
+</protein>
+</organism>
+</bioml>

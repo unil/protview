@@ -1,0 +1,74 @@
+php protein class :
+	mutual class navigation in order to check if an object contains an other (for example: 
+		AminoAcid class
+		---------------
+		setDomain(domain)
+			if not existing
+				addAminoAcid(this);
+		domain class
+		-----------
+		addAminoAcids(aminoAcid)
+			if not existing
+				setDomain(this)
+	
+bioml converter
+	input : fasta, swissprot, php
+	output: bioml, php
+
+svg converter
+	input: php
+	output: svg (with bioml reference)
+	
+pvFront :
+	returns amino acid coordinates
+	protview protocol in JSON based on BIOML and containing graphical information
+	
+	{
+	    "struct": {
+	        "ref": "https: //protview/bioml-asdf.bioml",
+	        "protein": "name",
+	        "link": "//covalentmodification",
+	        "subunit": [
+	        	{"id": 1,"comp": [1,2,3]},
+	            {"id": 2,"comp": [2,1,5]}
+	        ],
+	        "peptide": [
+	        	{"id": 1,"comp": [1,2],"seq": ["A","B","C"],"mod": {"ubiquity": [1,2,3], "sugar": [4,5,6]}}
+	        ],
+	        "domain": [
+	        	{"id": 1,"type": "intra","start": 1,"end": 128},
+	        	{"id": 2,"type": "extra","start": "129","end": 135}
+	        ]
+	    },
+	    "graph": {
+	        "coords": {
+	            "aa": [
+	                {"x": 12.1,"y": 13.3,"ref": {"subunit": 1,"peptide": 4,"seq": 45}}
+	            ]
+	        },
+	        "template": "unil-dpt"
+	    }
+	}
+	meta //crud
+		author : username
+		time : modification time
+		save_state : temporare, full
+		modif : {
+				create : { container : struct, detail : protein
+				update :
+				delete :
+				}
+		
+	informations are stored in 
+		bioml (structure)
+		xml (representation)
+			coordinates
+			template-name
+	
+javaScript
+	ask server for protview JSON
+	draws aa
+	draws membrane (relative to amout of aa in membrane domaine)
+	sends protview JSON
+	all structural modifications are send back by JSON to server in
+	order to validate (add of sub protein)
