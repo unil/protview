@@ -87,24 +87,13 @@ ProtView.Graphic = {
 		
 	
 	},
-	send : function (method) {
-		$.ajax({
-			type : method,
-			url : "api/protview/",
-			dataType: "json",
-			data : {
-				"id" : "12",
-				"example" : "adsf"
-			},
-			success : function(msg) {
-				ProtView.Global.prot = msg;
-				// prot = msg['graph']['coords']['aa'];
-				$('#protein').svg({
-					// loadURL: 'protein.svg',
-					onLoad: ProtView.Graphic.draw
-				});
 	
-			}
+	init : function (msg) {
+		ProtView.Global.prot = msg;
+		// prot = msg['graph']['coords']['aa'];
+		$('#protein').svg({
+			// loadURL: 'protein.svg',
+			onLoad: ProtView.Graphic.draw
 		});
 	}
 };

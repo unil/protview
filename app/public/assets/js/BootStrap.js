@@ -9,6 +9,7 @@
 	var jsFiles = [
 	               	"ProtView/ProtView.js",
 	                "ProtView/Global.js",
+	                "ProtView/Network.js",
 	                "ProtView/Graphic.js",
 	                ];
 
