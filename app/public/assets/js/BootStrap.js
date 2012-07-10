@@ -1,4 +1,9 @@
-
+/**
+ * @author Stefan Meier
+ * @version 2012.07.10
+ * 
+ * inspired by https://github.com/openlayers/
+ */
 (function() {
 	var scriptName = "BootStrap.js";
 	var jsFiles = [
@@ -8,18 +13,11 @@
 	                ];
 
 	
-	/**
-     * Namespace: OpenLayers
-     * The OpenLayers object provides a namespace for all things OpenLayers
-     */
     var scriptLocation  = 
         /**
-         * Method: _getScriptLocation
-         * Return the path to this script. This is also implemented in
-         * OpenLayers/SingleFile.js
+         * Returns the path to this script. 
          *
-         * Returns:
-         * {String} Path to this script
+         * @return string
          */
          function() {
             var r = new RegExp("(^|(.*?\\/))(" + scriptName + ")(\\?|$)"),
