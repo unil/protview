@@ -1,0 +1,11 @@
+refactoring php
+	bioml converter (convert to json)
+
+refactoring javascript
+	separation mvc (event handling, presentation)
+
+test
+	preformance javascript/php in ordter to determine which part should be on server/client side
+	
+implementation
+	protein drawing

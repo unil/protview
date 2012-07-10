@@ -5,8 +5,8 @@ class SVGGraphics {
 	public function drawAminoAcid($x, $y, $size, $label, $pos) {
 		return "<g id=\"aa-{$pos}\" class=\"aa\" transform=\"translate({$x},{$y})\">
 		<circle r=\"". ($size/2) . "\"/>
-		<text x=\"-2\" y=\"-2\">{$label}</text>
-		<text class=\"seq-num\" x=\"-2\" y=\"6\">{$pos}</text>
+		<text x=\"-4\" y=\"0\">{$label}</text>
+		<text class=\"seq_num\" x=\"0\" y=\"6\">{$pos}</text>
 		</g>";
 	}
 	

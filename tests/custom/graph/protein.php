@@ -84,7 +84,7 @@ $proteinCalc = new ProteinCalc($protein, $startCoord, $size);
 
 $coords = $proteinCalc->getCoordinates();
 
-xContext::$log->log("test", "asdf");
+xContext::$log->log('asdfn', 'protein');
 
 //drawing
 foreach ($coords as $k => $v) {

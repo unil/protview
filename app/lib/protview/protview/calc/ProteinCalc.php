@@ -29,6 +29,8 @@ class ProteinCalc {
 		$length = count($aminoAcids);
 		
 		$height = (int)($length/3);
+		$height = 3;
+		$middle = $length - 2*$height;
 		
 		
 		//left
@@ -37,15 +39,17 @@ class ProteinCalc {
 		$this->coordinatesCalculator->setStartCoord($endCoord);
 		$coord = $this->coordinatesCalculator->calculateLine($pos);
 		$coords = array_merge($coords, $coord);
-			
-		//middle
-		$this->coordinatesCalculator->setSequenceLength($length - 2*$height);
-		$endCoord = $this->coordinatesCalculator->getEndCoord();
-			
-		$endCoord['y'] -= $this->aaSize * $pos;
-		$this->coordinatesCalculator->setStartCoord($endCoord);
-		$coord = $this->coordinatesCalculator->calculateArc($pos);
-		$coords = array_merge($coords, $coord);
+
+		for ($m = 0; $m < $middle; $m+=6) {
+			//middle
+			$this->coordinatesCalculator->setSequenceLength($middle/6);
+			$endCoord = $this->coordinatesCalculator->getEndCoord();
+				
+			$endCoord['y'] -= $this->aaSize * $pos;
+			$this->coordinatesCalculator->setStartCoord($endCoord);
+			$coord = $this->coordinatesCalculator->calculateArc($pos);
+			$coords = array_merge($coords, $coord);
+		}
 		
 		//right
 		$this->coordinatesCalculator->setSequenceLength($height);
@@ -82,19 +86,19 @@ class ProteinCalc {
 		$coord = $this->coordinatesCalculator->calculateLine(1, $angle);
 		$coords = array_merge($coords, $coord);
 		
-		$endCoord['x'] += $this->aaSize * $pos;
+		//$endCoord['x'] += $this->aaSize * $pos;
 		$endCoord['y'] -= $this->aaSize * $pos;;
 		$this->coordinatesCalculator->setStartCoord($endCoord);
 		$coord = $this->coordinatesCalculator->calculateLine(1, $angle);
 		$coords = array_merge($coords, $coord);
 		
-		$endCoord['x'] -= $this->aaSize * $pos;
+		//$endCoord['x'] -= $this->aaSize * $pos;
 		$endCoord['y'] -= $this->aaSize * $pos;
 		$this->coordinatesCalculator->setStartCoord($endCoord);
 		$coord = $this->coordinatesCalculator->calculateLine(1, $angle);
 		$coords = array_merge($coords, $coord);
 		
-		$endCoord['x'] += $this->aaSize * $pos;
+		//$endCoord['x'] += $this->aaSize * $pos;
 		$endCoord['y'] -= $this->aaSize * $pos;
 		$this->coordinatesCalculator->setStartCoord($endCoord);
 		$coord = $this->coordinatesCalculator->calculateLine(1, $angle);
