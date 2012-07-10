@@ -23,7 +23,11 @@ type="image/x-icon" />
 <script type="text/javascript" src="<?php echo $js ?>"></script>
 <?php endforeach ?>
 <!-- Le fav and touch icons -->
-
+<script type="text/javascript">
+	$(document).ready(function() {
+		ProtView.Graphic.send('get');
+	});
+</script>
 </head>
 <body>
 	<!-- BEGIN PAGE -->

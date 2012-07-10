@@ -12,7 +12,9 @@ class LayoutLayoutView extends xView {
             	xUtil::url('a/js/jquery/jquery-ui-1.8.21.custom.min.js'),
             	xUtil::url('a/js/jquery/jquery.svg.min.js'),
             	xUtil::url('a/js/jquery/jquery.svgdom.min.js'),
-            	xUtil::url('a/js/protview/ProteinHandler.js')
+            	xUtil::url('a/js/BootStrap.js'),
+            	/*xUtil::url('a/js/protview/Global.js'),
+            	xUtil::url('a/js/protview/Graphic.js')*/
             ),
             'css' => array(
                 // Custom CSS
