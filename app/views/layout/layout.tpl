@@ -25,7 +25,7 @@ type="image/x-icon" />
 <!-- Le fav and touch icons -->
 <script type="text/javascript">
 	$(document).ready(function() {
-		ProtView.Network.send('get', ProtView.Graphic.init);
+		ProtView.init();
 	});
 </script>
 </head>

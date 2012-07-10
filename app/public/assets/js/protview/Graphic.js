@@ -3,6 +3,7 @@
  */
 
 ProtView.Graphic = {
+	svg : null,
 
 	/**
 	 * Draws an amino acid element <group> <circle> <text>Label</text>
@@ -28,14 +29,14 @@ ProtView.Graphic = {
 		});
 		
 		svg.circle(g, 0, 0, size, {
-			id: 'aa-1-cercle'
+			id: 'aa-' + pos + '-cercle'
 		});
 		
 		svg.text(g, -4, 0, label, {
-			id : 'aa-1-text'
+			id : 'aa-' + pos + '-text'
 		});
 		svg.text(g, 0, 6, pos, {
-			id : 'aa-1-seq_num',
+			id : 'aa-' + pos + '-seq_num',
 			class_: 'seq_num'
 		});
 	},

@@ -1,9 +1,9 @@
 
 ProtView.Network = {
-	send : function (method, callback) {
+	send : function (method, url, callback) {
 		$.ajax({
 			type : method,
-			url : "api/protview/",
+			url : url,
 			dataType: "json",
 			data : {
 				"id" : "12",
