@@ -9,3 +9,6 @@ test
 	
 implementation
 	protein drawing
+		adjust space beetween aa in membrane
+		calculate membrane height and position relative to aa in membrane
+		calculate height of protein

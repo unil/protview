@@ -34,17 +34,22 @@ class CoordinatesCalculator {
 	}
 
 	/**
-	 * Draws an arc in the specifiad rotation direction
+	 * Calcultes the coordinates of each point on the cercle's
+	 * perimeter 
+	 * 
+	 * Rotation sens and degrees can be specified
+	 * Points can be a scatter point and the distance beetween each point
+	 * is equal to the scatter's diameter
 	 * 
 	 * Thanks to http://php.net/manual/ro/function.atan2.php 
 	 * (comment Monte Shaffer 08-Jun-2007 11:35)
 	 * 
 	 * @param int $rotationSense (1 = bottom->up; -1 = top->down)
-	 * @param int $degree (360° = cercle)
+	 * @param int $degree (360° = cercle; default 180 = arc)
 	 * 
 	 * @return array (coordinates of each point on the perimeter)
 	 */
-	public function calculateArc($rotationSens = 1, $degree = 180) {
+	public function calculateCercle($rotationSens = 1, $degree = 180) {
 		$coord = array();
 
 		/* calculates the cercle's radius
@@ -77,7 +82,11 @@ class CoordinatesCalculator {
 	}
 	
 	/**
-	 * Calculates Line coordinates in fonction of indicated rotation angle
+	 * Calculates the coordinates of each point on a line 
+	 * 
+	 * A rotation angle can be specified for the line
+	 * Points can be scatter points and the distance between each point
+	 * is equal to the scatter's diameter 
 	 * 
 	 * @param int $rotationSense (1 = bottom->up; -1 = top->down)
 	 * @param int $angle (rotation angle, default 90° = vertical)

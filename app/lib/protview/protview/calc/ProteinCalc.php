@@ -4,6 +4,11 @@ require_once('CoordinatesCalculator.php');
 
 class ProteinCalc {
 	
+	private $params = array(
+			"maxHeigh" => 1000, //max graphic height in px
+			"maxWidth" => 1000, //max graphic width in px
+			"minDmainSpace" => 20 //min space beetwen ext/int domain in px
+			);
 	private $protein;
 	private $startCoord;
 	private $aaSize;
@@ -28,16 +33,19 @@ class ProteinCalc {
 		
 		$length = count($aminoAcids);
 		
-		$height = (int)($length/3);
-		$height = 3;
 		$even = false;
 		
+		$params = array(
+				"maxHeigh" => 1000, //max graphic height in px
+				"maxWidth" => 1000, //max graphic width in px
+				"minDomainSpace" => 150 //min space beetwen ext/int domain in px
+		);
 		
-		$middleMax = 7;
+
 		$middle = 0;
 		
 		if ($length % 2 == 0)
-			$even;
+			$even = true;
 		
 		if ($length <= 20) {
 			if ($even)
@@ -53,35 +61,33 @@ class ProteinCalc {
 			
 		}
 		
+		//min space between domain, needs to be implemented and should not be hardcoded
+		$middle = ceil($params['minDomainSpace']/$this->aaSize);
 		
-		$height = ($length - $middle)/2;
-		
+		$height = ($length - $middle)/2;		
 		
 		//left
 		$this->coordinatesCalculator->setSequenceLength($height);
-		$endCoord = $this->coordinatesCalculator->getEndCoord();
+		$endCoord = $this->coordinatesCalculator->getEndCoord();	
 		$this->coordinatesCalculator->setStartCoord($endCoord);
 		$coord = $this->coordinatesCalculator->calculateLine($pos);
 		$coords = array_merge($coords, $coord);
 
-
-			//middle
-			$this->coordinatesCalculator->setSequenceLength($middle);
-			$endCoord = $this->coordinatesCalculator->getEndCoord();
-				
-			$endCoord['y'] -= $this->aaSize * $pos;
-			$this->coordinatesCalculator->setStartCoord($endCoord);
-			$coord = $this->coordinatesCalculator->calculateArc($pos);
-			$coords = array_merge($coords, $coord);
-
-		
+		//middle
+		$this->coordinatesCalculator->setSequenceLength($middle);
+		$endCoord = $this->coordinatesCalculator->getEndCoord();			
+		$endCoord['y'] -= $this->aaSize * $pos;	
+		$this->coordinatesCalculator->setStartCoord($endCoord);
+		$coord = $this->coordinatesCalculator->calculateArc($pos);
+		$coords = array_merge($coords, $coord);
+	
 		//right
 		$this->coordinatesCalculator->setSequenceLength($height);
-		$endCoord = $this->coordinatesCalculator->getEndCoord();
+		$endCoord = $this->coordinatesCalculator->getEndCoord();	
 		$this->coordinatesCalculator->setStartCoord($endCoord);
 		$coord = $this->coordinatesCalculator->calculateLine(-1 * $pos);
 		$coords = array_merge($coords, $coord);
-			
+		
 		return $coords;
 	}
 	
@@ -91,7 +97,8 @@ class ProteinCalc {
 		$aminoAcids = $domain->getAminoAcids();
 		
 		$length = count($aminoAcids);
-		$maxLengthPerIteration = 4;
+
+		$maxLengthPerIteration = 5;
 		
 		$angle = 165;
 		
@@ -100,46 +107,26 @@ class ProteinCalc {
 		}
 		
 		$endCoord = $this->coordinatesCalculator->getEndCoord();
-		//initial x coordiante
+		//initial x,y coordiante
+		$endCoord['x'] += $this->aaSize * $pos;
+		$endCoord['y'] += $this->aaSize * $pos;
 		$x = $endCoord['x'];
+		
+		$this->coordinatesCalculator->setStartCoord($endCoord);
 		
 		
 		for ($i = 0; $i < $length; $i += $maxLengthPerIteration) {
 			$this->coordinatesCalculator->setSequenceLength($maxLengthPerIteration);
+
+			$coord = $this->coordinatesCalculator->calculateLine(1, $angle);
+			$coords = array_merge($coords, $coord);
+
 			$endCoord = $this->coordinatesCalculator->getEndCoord();
 			//always start at inital x coordinate
 			$endCoord['x'] = $x;
 			$this->coordinatesCalculator->setStartCoord($endCoord);
-			$coord = $this->coordinatesCalculator->calculateLine(1, $angle);
-			$coords = array_merge($coords, $coord);
 			
 		}
-		
-		//membrane
-
-		/*
-		$endCoord['y'] -= $this->aaSize * $pos;
-		$this->coordinatesCalculator->setStartCoord($endCoord);
-		$coord = $this->coordinatesCalculator->calculateLine(1, $angle);
-		$coords = array_merge($coords, $coord);
-		
-		//$endCoord['x'] += $this->aaSize * $pos;
-		$endCoord['y'] -= $this->aaSize * $pos;;
-		$this->coordinatesCalculator->setStartCoord($endCoord);
-		$coord = $this->coordinatesCalculator->calculateLine(1, $angle);
-		$coords = array_merge($coords, $coord);
-		
-		//$endCoord['x'] -= $this->aaSize * $pos;
-		$endCoord['y'] -= $this->aaSize * $pos;
-		$this->coordinatesCalculator->setStartCoord($endCoord);
-		$coord = $this->coordinatesCalculator->calculateLine(1, $angle);
-		$coords = array_merge($coords, $coord);
-		
-		//$endCoord['x'] += $this->aaSize * $pos;
-		$endCoord['y'] -= $this->aaSize * $pos;
-		$this->coordinatesCalculator->setStartCoord($endCoord);
-		$coord = $this->coordinatesCalculator->calculateLine(1, $angle);
-		$coords = array_merge($coords, $coord);*/
 		
 		return $coords;
 	}
@@ -155,10 +142,7 @@ class ProteinCalc {
 					if ($type == 'intra')
 						$pos = -1;
 					else if ($type == 'extra')
-						$pos = 1;
-					
-					xContext::$log->log("Type: {$type} Position: {$pos}", 'protein');
-					
+						$pos = 1;					
 					if ($type == 'trans')
 						$coords = array_merge($coords, $this->getMembranePart($domain, $pos));
 					else {

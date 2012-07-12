@@ -74,11 +74,11 @@ for ($d = 0; $d < count($domains); $d++) {
 	
 	for ($s = $start; $s <= $end; $s++) {
 		$domain->addAminoAcid(new AminoAcid($s, $elements[$s]));
+		$count++;
 	}
 	$peptide->addDomain($domain);
 
 }
-
 
 $subunit->addPeptide($peptide);
 $protein->addSubunit($subunit);
@@ -86,7 +86,6 @@ $protein->addSubunit($subunit);
 $proteinCalc = new ProteinCalc($protein, $startCoord, $size);
 
 $coords = $proteinCalc->getCoordinates();
-
 
 
 //drawing
