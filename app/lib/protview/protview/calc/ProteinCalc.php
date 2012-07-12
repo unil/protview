@@ -78,7 +78,7 @@ class ProteinCalc {
 		$endCoord = $this->coordinatesCalculator->getEndCoord();			
 		$endCoord['y'] -= $this->aaSize * $pos;	
 		$this->coordinatesCalculator->setStartCoord($endCoord);
-		$coord = $this->coordinatesCalculator->calculateArc($pos);
+		$coord = $this->coordinatesCalculator->calculateCercle($pos);
 		$coords = array_merge($coords, $coord);
 	
 		//right
@@ -87,7 +87,6 @@ class ProteinCalc {
 		$this->coordinatesCalculator->setStartCoord($endCoord);
 		$coord = $this->coordinatesCalculator->calculateLine(-1 * $pos);
 		$coords = array_merge($coords, $coord);
-		
 		return $coords;
 	}
 	
@@ -127,7 +126,6 @@ class ProteinCalc {
 			$this->coordinatesCalculator->setStartCoord($endCoord);
 			
 		}
-		
 		return $coords;
 	}
 	
