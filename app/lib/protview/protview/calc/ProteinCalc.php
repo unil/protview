@@ -14,11 +14,39 @@ class ProteinCalc {
 	private $aaSize;
 	private $coordinatesCalculator;
 	
+	private $aaCoords = array();
+	private $membraneCoords = array("startX" => 0, "startY" => 0, "height" => 0, "width" => 0);
+	
 	public function __construct($protein, $startCoord, $aaSize) {
 		$this->protein = $protein;
 		$this->startCoord = $startCoord;
 		$this->aaSize = $aaSize;
 		$this->coordinatesCalculator = new CoordinatesCalculator($aaSize, $this->startCoord);
+		$this->calculateCoordinates();
+	}
+	
+	private function calculateCoordinates() {
+		$coords = array();
+		$pos = 1;
+		foreach ($this->protein->getSubunits() as $subunit) {
+			foreach ($subunit->getPeptides() as $peptide) {
+				foreach ($peptide->getDomains() as $domain) {
+					$type = $domain->getType();
+						
+					if ($type == 'intra')
+						$pos = -1;
+					else if ($type == 'extra')
+						$pos = 1;
+					if ($type == 'trans')
+						$coords = array_merge($coords, $this->getMembranePart($domain, $pos));
+					else {
+						$coords = array_merge($coords, $this->getExternalPart($domain, $pos));
+					}
+				}
+			}
+		}
+	
+		$this->AAcoords = $coords;
 	}
 	
 	/**
@@ -110,9 +138,9 @@ class ProteinCalc {
 		
 		$endCoord = $this->coordinatesCalculator->getEndCoord();
 		//initial x,y coordiante
-		//$endCoord['x'] += $this->aaSize * $pos;
 		$endCoord['y'] += $this->aaSize * $pos;
-		$x = $endCoord['x'];
+		$startX = $endCoord['x'];
+		$startY = $endCoord['y'];
 		
 		$this->coordinatesCalculator->setStartCoord($endCoord);
 		
@@ -125,35 +153,34 @@ class ProteinCalc {
 
 			$endCoord = $this->coordinatesCalculator->getEndCoord();
 			//always start at inital x coordinate
-			$endCoord['x'] = $x;
+			$endCoord['x'] = $startX;
 			$this->coordinatesCalculator->setStartCoord($endCoord);
 			
 		}
+		
+		$endCoord = $this->coordinatesCalculator->getEndCoord();
+		
+		if ($startX < $this->membraneCoords['startX'])
+			$this->membraneCoords['startX'] = $startX;
+		
+		if ($startY > $this->membraneCoords['startY'])
+			$this->membraneCoords['startY'] = $startY;
+		
+		if ($endCoord['x'] - $startX > $this->membraneCoords['width'])
+			$this->membraneCoords['width'] = $endCoord['x'] - $startX;
+		
+		if ($endCoord['y'] - $startY > $this->membraneCoords['height'])
+			$this->membraneCoords['height'] = $endCoord['y'] - $startY;
+		
 		return $coords;
 	}
 	
-	public function getCoordinates() {	
-		$coords = array();
-		$pos = 1;
-		foreach ($this->protein->getSubunits() as $subunit) {
-			foreach ($subunit->getPeptides() as $peptide) {
-				foreach ($peptide->getDomains() as $domain) {
-					$type = $domain->getType();
-					
-					if ($type == 'intra')
-						$pos = -1;
-					else if ($type == 'extra')
-						$pos = 1;					
-					if ($type == 'trans')
-						$coords = array_merge($coords, $this->getMembranePart($domain, $pos));
-					else {
-						$coords = array_merge($coords, $this->getExternalPart($domain, $pos));
-					}
-				}
-			}
-		}
-		
-		return $coords;
+	public function getAACoordinates() {
+		return $this->AAcoords;
+	}
+	
+	public function getMembraneCoordinates() {
+		return $this->membraneCoords;
 	}
 }
 

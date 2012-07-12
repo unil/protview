@@ -20,6 +20,9 @@ $membraneY = 300;
 $membraneWidth = 1200;
 $membraneHeight = 100;
 
+$offsetX = 80;
+$offsetY = 350;
+
 //number of aa
 $length = 24;
 $size = 18;
@@ -27,9 +30,6 @@ $size = 18;
 $startCoord = array("x" => 0, "y" => 0);
 
 $svgGraphics = new SVGGraphics();
-
-
-echo $svgGraphics->drawMembrane($membraneX, $membraneY, $membraneWidth, $membraneHeight);
 
 
 /*Create protein test*/
@@ -85,14 +85,18 @@ $protein->addSubunit($subunit);
 
 $proteinCalc = new ProteinCalc($protein, $startCoord, $size);
 
-$coords = $proteinCalc->getCoordinates();
+$coords = $proteinCalc->getAACoordinates();
+$membraneCoords = $proteinCalc->getMembraneCoordinates();
+
+echo $svgGraphics->drawMembrane($membraneCoords['startX'] + $offsetX, $membraneCoords['startY'] + $offsetY, $membraneCoords['width'], $membraneCoords['height']);
 
 
 //drawing
 foreach ($coords as $k => $v) {
-	$x = $v["x"] + 80;
-	$y = $v["y"] + 358;
+	$x = $v["x"] + $offsetX;
+	$y = $v["y"] + $offsetY;
 	echo $svgGraphics->drawAminoAcid($x, $y, $size, $elements[$k], $k+1);
 }
+
 echo '</svg>';
 ?>
