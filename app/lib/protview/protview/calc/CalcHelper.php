@@ -19,7 +19,6 @@ class CalcHelper {
 	 */
 	public static function getX($offset, $angle) {
 		$x = number_format($offset * cos(deg2rad($angle)),0);
-		
 		return $x;
 	}
 }

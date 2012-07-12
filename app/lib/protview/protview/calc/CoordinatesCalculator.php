@@ -101,13 +101,12 @@ class CoordinatesCalculator {
 		$r = $this->scatterSize;
 		
 		for ($nb = 1; $nb <= $this->sequenceLength; $nb++) {
-				$nx = CalcHelper::getX($r, $rotationSens*$angle);
-				$ny = CalcHelper::getY($r, $rotationSens*$angle);
-				
-				$x -= $nx;
-				$y -= $ny;
-
 			$coord[] = array("x" => $x, "y" => $y);
+			$nx = CalcHelper::getX($r, $rotationSens*$angle);
+			$ny = CalcHelper::getY($r, $rotationSens*$angle);
+				
+			$x -= $nx;
+			$y -= $ny;			
 		}
 
 		$this->endCoord = end($coord);

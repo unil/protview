@@ -67,8 +67,10 @@ class ProteinCalc {
 		$height = ($length - $middle)/2;		
 		
 		//left
+		
 		$this->coordinatesCalculator->setSequenceLength($height);
 		$endCoord = $this->coordinatesCalculator->getEndCoord();	
+		$endCoord['y'] -= $this->aaSize * $pos;
 		$this->coordinatesCalculator->setStartCoord($endCoord);
 		$coord = $this->coordinatesCalculator->calculateLine($pos);
 		$coords = array_merge($coords, $coord);
@@ -84,6 +86,7 @@ class ProteinCalc {
 		//right
 		$this->coordinatesCalculator->setSequenceLength($height);
 		$endCoord = $this->coordinatesCalculator->getEndCoord();	
+		$endCoord['y'] += $this->aaSize * $pos;
 		$this->coordinatesCalculator->setStartCoord($endCoord);
 		$coord = $this->coordinatesCalculator->calculateLine(-1 * $pos);
 		$coords = array_merge($coords, $coord);
@@ -107,7 +110,7 @@ class ProteinCalc {
 		
 		$endCoord = $this->coordinatesCalculator->getEndCoord();
 		//initial x,y coordiante
-		$endCoord['x'] += $this->aaSize * $pos;
+		//$endCoord['x'] += $this->aaSize * $pos;
 		$endCoord['y'] += $this->aaSize * $pos;
 		$x = $endCoord['x'];
 		
