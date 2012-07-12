@@ -67,7 +67,7 @@ class ProtView {
 		
 		$proteinCalc = new ProteinCalc($protein, $startCoord, $size);
 		
-		$coords = $proteinCalc->getCoordinates();
+		$coords = $proteinCalc->getAACoordinates();
 		return $coords;
 	}
 	/*

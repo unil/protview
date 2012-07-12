@@ -15,11 +15,6 @@ width="100%" height="100%" xml:lang="fr">';
 
 
 
-$membraneX = 0;
-$membraneY = 300;
-$membraneWidth = 1200;
-$membraneHeight = 100;
-
 $offsetX = 80;
 $offsetY = 350;
 
@@ -41,7 +36,8 @@ $domains = array(
 			array('start' => 25, 'end' => 46, 'type' => 'trans'),
 			array('start' => 47, 'end' => 60, 'type' => 'intra'),
 			array('start' => 61, 'end' => 80, 'type' => 'trans'),
-			array('start' => 81, 'end' => 120, 'type' => 'extra')
+			array('start' => 81, 'end' => 120, 'type' => 'extra'),
+			array('start' => 121, 'end' => 165, 'type' => 'trans')
 		);
 
 //Create protein

@@ -163,7 +163,7 @@ class ProteinCalc {
 		if ($startX < $this->membraneCoords['startX'])
 			$this->membraneCoords['startX'] = $startX;
 		
-		if ($startY > $this->membraneCoords['startY'])
+		if ($startY < $this->membraneCoords['startY'])
 			$this->membraneCoords['startY'] = $startY;
 		
 		if ($endCoord['x'] - $startX > $this->membraneCoords['width'])
@@ -180,6 +180,9 @@ class ProteinCalc {
 	}
 	
 	public function getMembraneCoordinates() {
+		$this->membraneCoords['startX'] -= $this->aaSize/2;
+		
+		
 		return $this->membraneCoords;
 	}
 }
