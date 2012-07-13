@@ -54,6 +54,10 @@ class Domain {
 	{
 	    return $this->name;
 	}
+	
+	public function countAminoAcids() {
+		return count($this->aminoAcids);
+	}
 
 	public function getPeptide()
 	{

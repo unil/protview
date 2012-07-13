@@ -30,6 +30,8 @@ class ProteinCalc {
 		$pos = 1;
 		foreach ($this->protein->getSubunits() as $subunit) {
 			foreach ($subunit->getPeptides() as $peptide) {
+				
+				$countAminoAcids = $peptide->countAminoAcids();				
 				foreach ($peptide->getDomains() as $domain) {
 					$type = $domain->getType();
 						
@@ -38,7 +40,7 @@ class ProteinCalc {
 					else if ($type == 'extra')
 						$pos = 1;
 					if ($type == 'trans')
-						$coords = array_merge($coords, $this->getMembranePart($domain, $pos));
+						$coords = array_merge($coords, $this->getMembranePart($domain, $countAminoAcids, $pos));
 					else {
 						$coords = array_merge($coords, $this->getExternalPart($domain, $pos));
 					}
@@ -121,7 +123,7 @@ class ProteinCalc {
 		return $coords;
 	}
 	
-	private function getMembranePart($domain, $pos) {
+	private function getMembranePart($domain, $countAminoAcids, $pos) {
 		$coords = array ();
 		
 		$aminoAcids = $domain->getAminoAcids();
@@ -146,7 +148,13 @@ class ProteinCalc {
 		
 		
 		for ($i = 0; $i < $length; $i += $maxLengthPerIteration) {
-			$this->coordinatesCalculator->setSequenceLength($maxLengthPerIteration);
+			$currentLength = $maxLengthPerIteration;
+			
+			/*if ($i += $maxLengthPerIteration >$length) {
+				$currentLength = $length - $i;
+			}*/
+			
+			$this->coordinatesCalculator->setSequenceLength($currentLength);
 
 			$coord = $this->coordinatesCalculator->calculateLine(1, $angle);
 			$coords = array_merge($coords, $coord);

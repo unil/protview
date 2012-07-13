@@ -7,6 +7,7 @@ class Peptide {
 	private $end;
 	private $domains = array();
 	private $subunit;
+	private $countAminoAcid = 0;
 	
 	public function __construct($id, $start, $end) {
 		$this->id = $id;
@@ -44,6 +45,16 @@ class Peptide {
 	public function getSubunit()
 	{
 	    return $this->subunit;
+	}
+
+	
+	public function countAminoAcids() {
+		$count = 0;
+		
+		foreach ($this->domains as $d) {
+			$count += $d->countAminoAcids();
+		}
+		return $count;
 	}
 
 	public function setSubunit($subunit)
