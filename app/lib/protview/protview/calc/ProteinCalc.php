@@ -30,7 +30,8 @@ class ProteinCalc {
 		$pos = 1;
 		foreach ($this->protein->getSubunits() as $subunit) {
 			foreach ($subunit->getPeptides() as $peptide) {
-				
+				xContext::$log->log(array('total aa: ', $peptide->countAminoAcids()), 'protein');
+				xContext::$log->log(array('trans aa: ', $peptide->countAminoAcids('trans')), 'protein');
 				$countAminoAcids = $peptide->countAminoAcids();				
 				foreach ($peptide->getDomains() as $domain) {
 					$type = $domain->getType();

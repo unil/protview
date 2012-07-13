@@ -47,12 +47,21 @@ class Peptide {
 	    return $this->subunit;
 	}
 
+	//find domain with highest amount of aa, not in all domains
 	
-	public function countAminoAcids() {
+	public function countAminoAcids($filter = null) {
 		$count = 0;
 		
+
+		
 		foreach ($this->domains as $d) {
-			$count += $d->countAminoAcids();
+			if ($filter == 'trans')
+				if ($d->getType() == 'trans') {
+					$count += $d->countAminoAcids();
+					xContext::$log->log("count: {$count}", 'protein');
+			}
+			else 
+				$count += $d->countAminoAcids();
 		}
 		return $count;
 	}
