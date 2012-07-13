@@ -150,9 +150,9 @@ class ProteinCalc {
 		for ($i = 0; $i < $length; $i += $maxLengthPerIteration) {
 			$currentLength = $maxLengthPerIteration;
 			
-			/*if ($i += $maxLengthPerIteration >$length) {
+			if ($i + $maxLengthPerIteration >= $length) {
 				$currentLength = $length - $i;
-			}*/
+			}
 			
 			$this->coordinatesCalculator->setSequenceLength($currentLength);
 
