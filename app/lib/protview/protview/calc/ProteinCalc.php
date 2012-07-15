@@ -30,8 +30,7 @@ class ProteinCalc {
 		$pos = 1;
 		foreach ($this->protein->getSubunits() as $subunit) {
 			foreach ($subunit->getPeptides() as $peptide) {
-				xContext::$log->log(array('total aa: ', $peptide->countAminoAcids()), 'protein');
-				xContext::$log->log(array('trans aa: ', $peptide->countAminoAcids('trans')), 'protein');
+				
 				$countAminoAcids = $peptide->countAminoAcids();				
 				foreach ($peptide->getDomains() as $domain) {
 					$type = $domain->getType();
@@ -100,25 +99,25 @@ class ProteinCalc {
 		//left
 		
 		$this->coordinatesCalculator->setSequenceLength($height);
-		$endCoord = $this->coordinatesCalculator->getEndCoord();	
-		$endCoord['y'] -= $this->aaSize * $pos;
-		$this->coordinatesCalculator->setStartCoord($endCoord);
+		$lastCoord = $this->coordinatesCalculator->getLastCoord();	
+		$lastCoord['y'] -= $this->aaSize * $pos;
+		$this->coordinatesCalculator->setStartCoord($lastCoord);
 		$coord = $this->coordinatesCalculator->calculateLine($pos);
 		$coords = array_merge($coords, $coord);
 
 		//middle
 		$this->coordinatesCalculator->setSequenceLength($middle);
-		$endCoord = $this->coordinatesCalculator->getEndCoord();			
-		$endCoord['y'] -= $this->aaSize * $pos;	
-		$this->coordinatesCalculator->setStartCoord($endCoord);
+		$lastCoord = $this->coordinatesCalculator->getLastCoord();			
+		$lastCoord['y'] -= $this->aaSize * $pos;	
+		$this->coordinatesCalculator->setStartCoord($lastCoord);
 		$coord = $this->coordinatesCalculator->calculateCercle($pos);
 		$coords = array_merge($coords, $coord);
 	
 		//right
 		$this->coordinatesCalculator->setSequenceLength($height);
-		$endCoord = $this->coordinatesCalculator->getEndCoord();	
-		$endCoord['y'] += $this->aaSize * $pos;
-		$this->coordinatesCalculator->setStartCoord($endCoord);
+		$lastCoord = $this->coordinatesCalculator->getLastCoord();	
+		$lastCoord['y'] += $this->aaSize * $pos;
+		$this->coordinatesCalculator->setStartCoord($lastCoord);
 		$coord = $this->coordinatesCalculator->calculateLine(-1 * $pos);
 		$coords = array_merge($coords, $coord);
 		return $coords;
@@ -139,13 +138,13 @@ class ProteinCalc {
 			$angle = 345;
 		}
 		
-		$endCoord = $this->coordinatesCalculator->getEndCoord();
+		$lastCoord = $this->coordinatesCalculator->getLastCoord();
 		//initial x,y coordiante
-		$endCoord['y'] += $this->aaSize * $pos;
-		$startX = $endCoord['x'];
-		$startY = $endCoord['y'];
+		$lastCoord['y'] += $this->aaSize * $pos;
+		$startX = $lastCoord['x'];
+		$startY = $lastCoord['y'];
 		
-		$this->coordinatesCalculator->setStartCoord($endCoord);
+		$this->coordinatesCalculator->setStartCoord($lastCoord);
 		
 		
 		for ($i = 0; $i < $length; $i += $maxLengthPerIteration) {
@@ -158,16 +157,20 @@ class ProteinCalc {
 			$this->coordinatesCalculator->setSequenceLength($currentLength);
 
 			$coord = $this->coordinatesCalculator->calculateLine(1, $angle);
+			
+			
 			$coords = array_merge($coords, $coord);
 
-			$endCoord = $this->coordinatesCalculator->getEndCoord();
+			$lastCoord = $this->coordinatesCalculator->getLastCoord();
 			//always start at inital x coordinate
-			$endCoord['x'] = $startX;
-			$this->coordinatesCalculator->setStartCoord($endCoord);
+			//$lastCoord['x'] = $startX
+			$lastCoord['x'] = $coord[1]['x'];
+			$lastCoord['y'] = $coord[1]['y'] + $this->aaSize * $pos;
+			$this->coordinatesCalculator->setStartCoord($lastCoord);
 			
 		}
 		
-		$endCoord = $this->coordinatesCalculator->getEndCoord();
+		$lastCoord = $this->coordinatesCalculator->getLastCoord();
 		
 		if ($startX < $this->membraneCoords['startX'])
 			$this->membraneCoords['startX'] = $startX;
@@ -175,11 +178,11 @@ class ProteinCalc {
 		if ($startY < $this->membraneCoords['startY'])
 			$this->membraneCoords['startY'] = $startY;
 		
-		if ($endCoord['x'] - $startX > $this->membraneCoords['width'])
-			$this->membraneCoords['width'] = $endCoord['x'] - $startX;
+		if ($lastCoord['x'] - $startX > $this->membraneCoords['width'])
+			$this->membraneCoords['width'] = $lastCoord['x'] - $startX;
 		
-		if ($endCoord['y'] - $startY > $this->membraneCoords['height'])
-			$this->membraneCoords['height'] = $endCoord['y'] - $startY;
+		if ($lastCoord['y'] - $startY > $this->membraneCoords['height'])
+			$this->membraneCoords['height'] = $lastCoord['y'] - $startY;
 		
 		return $coords;
 	}

@@ -6,7 +6,7 @@ class CoordinatesCalculator {
 	private $scatterSize;
 	private $sequenceLength;
 	private $startCoord;
-	private $endCoord;
+	private $lastCoord;
 
 	public function __construct($scatterSize, $startCoord = null) {
 		$this->scatterSize = $scatterSize;
@@ -29,8 +29,8 @@ class CoordinatesCalculator {
 		$this->startCoord = $startCoord;
 	}
 
-	public function getEndCoord() {
-		return $this->endCoord;
+	public function getLastCoord() {
+		return $this->lastCoord;
 	}
 
 	/**
@@ -76,7 +76,7 @@ class CoordinatesCalculator {
 
 			$coord[] = array("x" => $x, "y" => $y);
 		}
-		$this->endCoord = end($coord);
+		$this->lastCoord = end($coord);
 
 		return $coord;
 	}
@@ -109,7 +109,7 @@ class CoordinatesCalculator {
 			$y -= $ny;			
 		}
 
-		$this->endCoord = end($coord);
+		$this->lastCoord = end($coord);
 		return $coord;
 	}
 }

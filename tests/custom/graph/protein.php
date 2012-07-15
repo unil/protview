@@ -37,7 +37,7 @@ $domains = array(
 			array('start' => 47, 'end' => 60, 'type' => 'intra'),
 			array('start' => 61, 'end' => 80, 'type' => 'trans'),
 			array('start' => 81, 'end' => 120, 'type' => 'extra'),
-			array('start' => 121, 'end' => 165, 'type' => 'trans')
+			array('start' => 121, 'end' => 150, 'type' => 'trans')
 		);
 
 //Create protein

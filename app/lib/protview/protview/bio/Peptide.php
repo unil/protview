@@ -46,23 +46,44 @@ class Peptide {
 	{
 	    return $this->subunit;
 	}
+	
+	
 
 	//find domain with highest amount of aa, not in all domains
 	
 	public function countAminoAcids($filter = null) {
+		$count = array('no_filter' => 0);
+	
+		foreach ($this->domains as $d) {
+			if ($filter != null) {
+				if ($d->getType() == $filter) {
+					@$count[$filter] += $d->countAminoAcids();
+				}
+			}
+			else {
+				$count['no_filter'] += $d->countAminoAcids();
+			}
+		}
+		
+		if ($filter != null)
+			return @$count[$filter];
+		else {
+
+			return $count['no_filter'];
+
+		}
+	}
+	
+	public function countBiggestMembrane() {
 		$count = 0;
 		
-
-		
 		foreach ($this->domains as $d) {
-			if ($filter == 'trans')
-				if ($d->getType() == 'trans') {
-					$count += $d->countAminoAcids();
-					xContext::$log->log("count: {$count}", 'protein');
+			if ($d->getType() == 'trans') {
+				if ($count < $d->countAminoAcids())
+					$count = $d->countAminoAcids();
 			}
-			else 
-				$count += $d->countAminoAcids();
 		}
+		
 		return $count;
 	}
 
