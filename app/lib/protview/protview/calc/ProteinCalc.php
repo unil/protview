@@ -96,8 +96,10 @@ class ProteinCalc {
 		
 		$height = ($length - $middle)/2;		
 		
+		/*
+		 * Calculating positions
+		 */
 		//left
-		
 		$this->coordinatesCalculator->setSequenceLength($height);
 		$lastCoord = $this->coordinatesCalculator->getLastCoord();	
 		$lastCoord['y'] -= $this->aaSize * $pos;
