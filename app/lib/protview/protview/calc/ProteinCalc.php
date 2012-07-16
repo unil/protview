@@ -31,7 +31,7 @@ class ProteinCalc {
 		foreach ($this->protein->getSubunits() as $subunit) {
 			foreach ($subunit->getPeptides() as $peptide) {
 				
-				$countAminoAcids = $peptide->countAminoAcids();				
+				$countAminoAcids = $peptide->countBiggestMembrane();			
 				foreach ($peptide->getDomains() as $domain) {
 					$type = $domain->getType();
 						
@@ -130,13 +130,34 @@ class ProteinCalc {
 		
 		$length = count($aminoAcids);
 
-		$maxLengthPerIteration = 5;
-		
+		//Rotation angle
 		$angle = 165;
 		
 		if ($pos == 1) {
 			$angle = 345;
 		}
+		
+		//distributes all elements in steady way to all lines
+		$maxLines = 6; //number * amino acid size
+		
+		//distributes elements 
+		$values = array();
+		$nb = round($length / $maxLines);
+		for ($count = 1; $count < $maxLines; $count++) {
+			
+			$nb_values += $nb;
+			$values[] = $nb;
+		}
+		
+		//exchanges the value in the middle and the last one
+		$middleIndex = (int)($maxLines/2);
+		
+		$tmp = $values[$middleIndex];
+		
+		$values[] = $tmp;
+		
+		$values[$middleIndex] = $length-$nb_values;;
+		
 		
 		$lastCoord = $this->coordinatesCalculator->getLastCoord();
 		//initial x,y coordiante
@@ -147,12 +168,8 @@ class ProteinCalc {
 		$this->coordinatesCalculator->setStartCoord($lastCoord);
 		
 		
-		for ($i = 0; $i < $length; $i += $maxLengthPerIteration) {
-			$currentLength = $maxLengthPerIteration;
-			
-			if ($i + $maxLengthPerIteration >= $length) {
-				$currentLength = $length - $i;
-			}
+		for ($i = 0; $i < $maxLines; $i++) {
+			$currentLength = $values[$i];
 			
 			$this->coordinatesCalculator->setSequenceLength($currentLength);
 
@@ -162,14 +179,20 @@ class ProteinCalc {
 			$coords = array_merge($coords, $coord);
 
 			$lastCoord = $this->coordinatesCalculator->getLastCoord();
-			//always start at inital x coordinate
-			//$lastCoord['x'] = $startX
-			$lastCoord['x'] = $coord[1]['x'];
-			$lastCoord['y'] = $coord[1]['y'] + $this->aaSize * $pos;
+			
+			if ($i % 2 == 0) {
+				$lastCoord['x'] = $coord[1]['x'];
+				$lastCoord['y'] = $coord[1]['y'] + $this->aaSize * $pos;
+			}
+			else {
+				$lastCoord['x'] = $startX;
+				$lastCoord['y'] = $startY + $this->aaSize * ($i+1) * $pos;
+			}
 			$this->coordinatesCalculator->setStartCoord($lastCoord);
 			
 		}
 		
+		//calculates the membranes position and height
 		$lastCoord = $this->coordinatesCalculator->getLastCoord();
 		
 		if ($startX < $this->membraneCoords['startX'])
@@ -193,6 +216,7 @@ class ProteinCalc {
 	
 	public function getMembraneCoordinates() {
 		$this->membraneCoords['startX'] -= $this->aaSize/2;
+		$this->membraneCoords['startY'] += $this->aaSize/2;
 		
 		
 		return $this->membraneCoords;

@@ -30,6 +30,8 @@ $svgGraphics = new SVGGraphics();
 /*Create protein test*/
 $sequence = "MNTSAPPAVSPNITVLAPGKGPWQVAFIGHITGSLSLATVTGALLVLISFKVNTELKTVNNYFLLSKKSLSKEIGTTSMNNYTTYLLMGHWALGTLACD";
 $sequence .= "MNTSAPPAVSPNITVLAPGKGPWQVAFIGHITGSLSLATVTGALLVLISFKVNTELKTVNNYFLLSKKSLSKEIGTTSMNNYTTYLLMGHWALGTLACD";
+$sequence .= "MNTSAPPAVSPNITVLAPGKGPWQVAFIGHITGSLSLATVTGALLVLISFKVNTELKTVNNYFLLSKKSLSKEIGTTSMNNYTTYLLMGHWALGTLACD";
+$sequence .= "MNTSAPPAVSPNITVLAPGKGPWQVAFIGHITGSLSLATVTGALLVLISFKVNTELKTVNNYFLLSKKSLSKEIGTTSMNNYTTYLLMGHWALGTLACD";
 
 $domains = array(
 			array('start' => 1, 'end' => 24, 'type' => 'extra'),
@@ -37,7 +39,9 @@ $domains = array(
 			array('start' => 47, 'end' => 60, 'type' => 'intra'),
 			array('start' => 61, 'end' => 80, 'type' => 'trans'),
 			array('start' => 81, 'end' => 120, 'type' => 'extra'),
-			array('start' => 121, 'end' => 150, 'type' => 'trans')
+			array('start' => 121, 'end' => 150, 'type' => 'trans'),
+			array('start' => 151, 'end' => 300, 'type' => 'intra'),
+			array('start' => 301, 'end' => 318, 'type' => 'trans')
 		);
 
 //Create protein
@@ -83,6 +87,8 @@ $proteinCalc = new ProteinCalc($protein, $startCoord, $size);
 
 $coords = $proteinCalc->getAACoordinates();
 $membraneCoords = $proteinCalc->getMembraneCoordinates();
+
+$membraneCoords['width'] = 500;
 
 echo $svgGraphics->drawMembrane($membraneCoords['startX'] + $offsetX, $membraneCoords['startY'] + $offsetY, $membraneCoords['width'], $membraneCoords['height']);
 
