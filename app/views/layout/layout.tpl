@@ -7,9 +7,9 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <link rel="icon" href="https://wwwfbm.unil.ch/favicon.ico"
-type="image/x-icon" />
+	type="image/x-icon" />
 <link rel="shortcut icon" href="https://wwwfbm.unil.ch/favicon.ico"
-type="image/x-icon" />
+	type="image/x-icon" />
 <!-- Le styles -->
 <?php foreach ($m['css'] as $css): ?>
 <link href="<?php echo $css ?>" rel="stylesheet">
@@ -26,6 +26,8 @@ type="image/x-icon" />
 <script type="text/javascript">
 	$(document).ready(function() {
 		ProtView.init();
+		 // Create jqxNavigationBar
+		$("#toolbar").jqxExpander({ width: '350px', theme: 'summer' });
 	});
 </script>
 </head>
@@ -33,55 +35,67 @@ type="image/x-icon" />
 	<!-- BEGIN PAGE -->
 	<div id="page">
 		<!-- BEBIN HEADER -->
-		<div id="header">
-			<img id="login" src="https://wwwfbm.unil.ch/html/img/login.gif"
-				alt="login" />
-			<div id="language">English | Français</div>
-			<div id="bar">FBM - Protein visualizator</div>
-		</div>
+		<div id="header"></div>
 		<!-- END HEADER -->
-		<!-- BEGIN CONTENT -->
-		<div id="content">
-			<!-- BEGIN MAIN -->
-			<div id="main">
-				<!-- BEGIN CONTENT -->
+		<!-- BEGIN MAIN -->
+		<div id="main">
+			<!-- BEGIN CONTENT -->
+			<div id="content">
 				<?php if (is_array($d['messages'])) foreach ($d['messages'] as $type => $message): ?>
-            <div class="alert <?php echo $type ?>">
-                <button class="close" data-dismiss="alert">×</button>
-                <?php echo $message ?>
-            </div>
-<?php endforeach ?>
-            <?php echo $d['html']['content'] ?>
-				<div id="toolbar"></div>
-				<div id="protein" style=" min-height:800px; height:auto !important; height:800px;" ></div>
-				<!-- END CONTEN -->
-			</div>
-			<!-- END MAIN -->
-			<!-- BEGIN SIDEBAR -->
-			<div id="sidebar">
-				<!-- BEGIN ROOM-VIEW -->
-				<div id="room">
-					<!-- BEGIN INFORMATION -->
-					<div class="box">
-						<h1>Information</h1>
-						<div>adfs</div>
-					</div>
-					<!-- END INFORMATION -->
-					<!-- BEGIN CONTACT -->
-					<div class="box">
-						<h1>Contact</h1>
-						<div>adsf</div>
-					</div>
-					<!-- END CONTACT -->
+				<div class="alert <?php echo $type ?>">
+					<button class="close" data-dismiss="alert">×</button>
+					<?php echo $message ?>
 				</div>
-				<!-- END ROOM-VIEW -->
-				<!-- BEGIN CONTROL-VIEW -->
-				<div id="control"></div>
-				<!-- END CONTROL-VIEW -->
+				<?php endforeach ?>
+				<?php echo $d['html']['content'] ?>
+				<!--  style="min-height: 800px; height: auto !important; height: 800px;"></div>-->
+				<!-- END CONTENT -->
+				<div id="protein" style="display: inline;"></div>
+				<!-- BEGIN SIDEBAR -->
+				<div id="sidebar">
+					<div id='toolbar'>
+						<div>Settings</div>
+						<div>
+							<form id="eventform" name="eventform" action="" method="post">
+									<div class="input text">
+										<label for="name" id="name-label">Name :</label> <input
+											type="text" name="name" id="name" class="required" value="" />
+									</div>
+
+									<div class="input textarea">
+										<label for="sequence" id="sequence-label">Sequence :</label>
+										<textarea name="sequence" id="sequence" cols="20" rows="20"></textarea>
+									</div>
+
+									<div class="input text">
+										<label for="n-terminal" id="n-terminal-label">N-Terminal</label>
+										<select name="n-terminal" id="n-terminal">
+											<option value="inside" selected>Inside</option>
+											<option value="outside">Outside</option>
+										</select>
+									</div>
+									<div class="input text">
+										<label for="c-terminal" id="c-terminal-label">C-Terminal</label>
+										<select name="c-terminal" id="c-terminal">
+											<option value="inside" selected>Inside</option>
+											<option value="outside">Outside</option>
+										</select>
+									</div>
+									<div class="input text">
+										<label for="whole_day" id="event-whole-day">Domain :</label> 
+										<input type="checkbox" name="whole_day" id="whole_day" >
+									
+									</div>
+
+							</form>
+						</div>
+					</div>
+				</div>
+				<!-- END SIDEBAR -->
 			</div>
-			<!-- END SIDEBAR -->
+
 		</div>
-		<!-- END CONTENT -->
+		<!-- END MAIN -->
 		<!-- BEGIN FOOTER -->
 		<div id="footer">&copy; 2012 - Université de Lausanne - All right
 			reserved</div>

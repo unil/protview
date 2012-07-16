@@ -20,6 +20,7 @@ $b = new Bootstrap();
 <link href="/protview/a/css/template.css" rel="stylesheet">
 <link href="/protview/a/css/jquery.svg.css" rel="stylesheet">
 <link href="/protview/a/css/protein.css" rel="stylesheet">
+<link href="/protview/a/js/jqwidgets/styles/jqx.summer.css" rel="stylesheet">
 
 <!-- JavaScript -->
 <script type="text/javascript"
@@ -36,9 +37,8 @@ $b = new Bootstrap();
 <script type="text/javascript" src="/protview/a/js/jqwidgets/jqxnavigationbar.js"></script>
 <script type="text/javascript">
         $(document).ready(function () {
-            var theme = getTheme();
             // Create jqxNavigationBar
-            $("#jqxNavigationBar").jqxNavigationBar({ width: 400, height: 420, sizeMode: 'fitAvailableHeight', theme: theme });
+            $("#jqxNavigationBar").jqxNavigationBar({ width: 400, height: 420, sizeMode: 'fitAvailableHeight', theme: 'summer' });
         });
     </script>
 
@@ -62,7 +62,6 @@ $b = new Bootstrap();
 			<!-- BEGIN SIDEBAR -->
 			<div id="sidebar">
 
-				<div id='jqxWidget' style="float: left;">
 					<div style='overflow: hidden;' id='jqxNavigationBar'>
 						<!--Header-->
 						<div>Early History of the Internet</div>
@@ -110,33 +109,7 @@ $b = new Bootstrap();
 								<li>1990 ARPANET decommissioned</li>
 							</ul>
 						</div>
-						<!--Header-->
-						<div>Popular Internet services</div>
-						<!--Content-->
-						<div>
-							<ul>
-								<li>1990 IMDb Internet movie database</li>
-								<li>1995 Amazon.com online retailer</li>
-								<li>1995 eBay online auction and shopping</li>
-								<li>1995 Craigslist classified advertisements</li>
-								<li>1996 Hotmail free web-based e-mail</li>
-								<li>1997 Babel Fish automatic translation</li>
-								<li>1998 Google Search</li>
-								<li>1999 Napster peer-to-peer file sharing</li>
-								<li>2001 Wikipedia, the free encyclopedia</li>
-								<li>2003 LinkedIn business networking</li>
-								<li>2003 Myspace social networking site</li>
-								<li>2003 Skype Internet voice calls</li>
-								<li>2003 iTunes Store</li>
-								<li>2004 Facebook social networking site</li>
-								<li>2004 Podcast media file series</li>
-								<li>2004 Flickr image hosting</li>
-								<li>2005 YouTube video sharing</li>
-								<li>2005 Google Earth virtual globe</li>
-							</ul>
-						</div>
 					</div>
-				</div>
 
 			</div>
 			<!-- END SIDEBAR -->

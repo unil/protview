@@ -22,7 +22,14 @@ class ProtView {
 				array('start' => 81, 'end' => 120, 'type' => 'extra'),
 				array('start' => 121, 'end' => 150, 'type' => 'trans'),
 				array('start' => 151, 'end' => 300, 'type' => 'intra'),
-				array('start' => 301, 'end' => 318, 'type' => 'trans')
+				array('start' => 301, 'end' => 318, 'type' => 'trans'),
+				array('start' => 319, 'end' => 340, 'type' => 'extra'),
+				array('start' => 341, 'end' => 360, 'type' => 'trans'),
+				array('start' => 361, 'end' => 380, 'type' => 'intra'),
+				array('start' => 381, 'end' => 410, 'type' => 'trans'),
+				array('start' => 411, 'end' => 431, 'type' => 'extra'),
+				array('start' => 432, 'end' => 450, 'type' => 'trans'),
+				array('start' => 451, 'end' => 480, 'type' => 'intra'),
 		);
 
 		//Create protein
