@@ -13,7 +13,8 @@ class LayoutLayoutView extends xView {
             	xUtil::url('a/js/jquery/jquery.svg.min.js'),
             	xUtil::url('a/js/jquery/jquery.svgdom.min.js'),
             	xUtil::url('a/js/jqwidgets/jqxcore.js'),
-            	xUtil::url('a/js/jqwidgets/jqxexpander.js'),
+            	xUtil::url('a/js/jqwidgets/jqxexpander.js'),	
+            	xUtil::url('a/js/jqwidgets/jqxmenu.js'),            		
             	xUtil::url('a/js/BootStrap.js'),
             ),
             'css' => array(

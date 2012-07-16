@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title></title>
+<title>FBM Toolbox - ProtView</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="">
@@ -26,8 +26,12 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 		ProtView.init();
+		var theme = 'summer';
 		 // Create jqxNavigationBar
-		$("#toolbar").jqxExpander({ width: '350px', theme: 'summer' });
+		$("#toolbar").jqxExpander({ width: '350px', theme: theme });
+
+		$("#jqxMenu").jqxMenu({ width: '100%', height: '30px', theme: theme });
+        $("#jqxMenu").css('visibility', 'visible');
 	});
 </script>
 </head>
@@ -35,7 +39,36 @@
 	<!-- BEGIN PAGE -->
 	<div id="page">
 		<!-- BEBIN HEADER -->
-		<div id="header"></div>
+		<div id="header">
+			<div id='jqxMenu' style='visibility: hidden;'>
+				<ul>
+					<li><a href="#Home">Home</a></li>
+					<li>Solutions
+						<ul style='width: 250px;'>
+							<li><a target="_parent" href="#Education">Education</a></li>
+							<li id="fin"><a href="#Financial">Financial services</a></li>
+							<li><a href="#Government">Government</a></li>
+							<li><a href="#Manufacturing">Manufacturing</a></li>
+							<li type='separator'></li>
+							<li>Software Solutions
+								<ul style='width: 220px;'>
+									<li><a href="#ConsumerPhoto">Consumer photo and video</a></li>
+									<li><a href="#Mobile">Mobile</a></li>
+									<li><a href="#RIA">Rich Internet applications</a></li>
+									<li><a href="#TechnicalCommunication">Technical communication</a>
+									</li>
+									<li><a href="#Training">Training and eLearning</a></li>
+									<li><a href="#WebConferencing">Web conferencing</a></li>
+								</ul>
+							</li>
+							<li><a href="#">All industries and solutions</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+
+		</div>
 		<!-- END HEADER -->
 		<!-- BEGIN MAIN -->
 		<div id="main">
@@ -57,35 +90,35 @@
 						<div>Settings</div>
 						<div>
 							<form id="eventform" name="eventform" action="" method="post">
-									<div class="input text">
-										<label for="name" id="name-label">Name :</label> <input
-											type="text" name="name" id="name" class="required" value="" />
-									</div>
+								<div class="input text">
+									<label for="name" id="name-label">Name :</label> <input
+										type="text" name="name" id="name" class="required" value="" />
+								</div>
 
-									<div class="input textarea">
-										<label for="sequence" id="sequence-label">Sequence :</label>
-										<textarea name="sequence" id="sequence" cols="20" rows="20"></textarea>
-									</div>
+								<div class="input textarea">
+									<label for="sequence" id="sequence-label">Sequence :</label>
+									<textarea name="sequence" id="sequence" cols="20" rows="20"></textarea>
+								</div>
 
-									<div class="input text">
-										<label for="n-terminal" id="n-terminal-label">N-Terminal</label>
-										<select name="n-terminal" id="n-terminal">
-											<option value="inside" selected>Inside</option>
-											<option value="outside">Outside</option>
-										</select>
-									</div>
-									<div class="input text">
-										<label for="c-terminal" id="c-terminal-label">C-Terminal</label>
-										<select name="c-terminal" id="c-terminal">
-											<option value="inside" selected>Inside</option>
-											<option value="outside">Outside</option>
-										</select>
-									</div>
-									<div class="input text">
-										<label for="whole_day" id="event-whole-day">Domain :</label> 
-										<input type="checkbox" name="whole_day" id="whole_day" >
-									
-									</div>
+								<div class="input text">
+									<label for="n-terminal" id="n-terminal-label">N-Terminal</label>
+									<select name="n-terminal" id="n-terminal">
+										<option value="inside" selected>Inside</option>
+										<option value="outside">Outside</option>
+									</select>
+								</div>
+								<div class="input text">
+									<label for="c-terminal" id="c-terminal-label">C-Terminal</label>
+									<select name="c-terminal" id="c-terminal">
+										<option value="inside" selected>Inside</option>
+										<option value="outside">Outside</option>
+									</select>
+								</div>
+								<div class="input text">
+									<label for="whole_day" id="event-whole-day">Domain :</label> <input
+										type="checkbox" name="whole_day" id="whole_day">
+
+								</div>
 
 							</form>
 						</div>
