@@ -44,7 +44,7 @@
 		<!-- BEBIN HEADER -->
 		<div id="header">
 			<div id='menubar' style='visibility: hidden;'>
-			<?php echo xView::load('layout/menubar')->render() ?>
+				<?php echo xView::load('layout/menubar')->render() ?>
 			</div>
 		</div>
 		<!-- END HEADER -->
@@ -60,9 +60,8 @@
 				<?php endforeach ?>
 				<?php echo $d['html']['content'] ?>
 				<!--  style="min-height: 800px; height: auto !important; height: 800px;"></div>-->
+				<div id="protein" style="display: inline;"></div>
 				<!-- END CONTENT -->
-				<div id="protein" style="display: inline;">
-				</div>
 				<!-- BEGIN SIDEBAR -->
 				<div id="sidebar">
 					<?php echo xView::load('layout/sidebar')->render() ?>
