@@ -8,13 +8,33 @@ class LayoutLayoutView extends xView {
                 'template' => 'layout.tpl',
             ),
             'js' => array(
+            	/*
+            	 * JQuery Core / template
+            	 *  
+            	 */
                 xUtil::url('a/js/jquery/jquery-1.7.2.min.js'),
             	xUtil::url('a/js/jquery/jquery-ui-1.8.21.custom.min.js'),
+             	/*
+             	 * JQuery SVG
+             	 */
             	xUtil::url('a/js/jquery/jquery.svg.min.js'),
             	xUtil::url('a/js/jquery/jquery.svgdom.min.js'),
+            	/*
+            	 * JQuery Widgets
+            	 * 
+            	 *  Dependency:
+            	 *  	- core (all plugin)
+            	 *  	- window (tabs, docking)
+            	 *  	- docking (docking)
+            	 */
             	xUtil::url('a/js/jqwidgets/jqxcore.js'),
-            	xUtil::url('a/js/jqwidgets/jqxexpander.js'),	
-            	xUtil::url('a/js/jqwidgets/jqxmenu.js'),            		
+            	xUtil::url('a/js/jqwidgets/jqxwindow.js'),
+            	xUtil::url('a/js/jqwidgets/jqxtabs.js'),
+            	xUtil::url('a/js/jqwidgets/jqxmenu.js'),
+            	xUtil::url('a/js/jqwidgets/jqxdocking.js'),
+            	/*
+            	 * ProtView BootStrap js
+            	 */
             	xUtil::url('a/js/BootStrap.js'),
             ),
             'css' => array(

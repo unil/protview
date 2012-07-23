@@ -28,7 +28,9 @@
 		ProtView.init();
 		var theme = 'summer';
 		 // Create jqxNavigationBar
-		$("#toolbar").jqxExpander({ width: '350px', theme: theme });
+		//$("#toolbar").jqxExpander({ width: '350px', theme: theme });
+		$('#sidebar').jqxDocking({ theme: theme, orientation: 'horizontal', width: 350, mode: 'docked' });
+		$('#settingsTabs').jqxTabs({ theme: theme, width: 310, height: 181, selectedItem: 1 });
 
 		$("#jqxMenu").jqxMenu({ width: '100%', height: '30px', theme: theme });
         $("#jqxMenu").css('visibility', 'visible');
@@ -86,41 +88,27 @@
 				<div id="protein" style="display: inline;"></div>
 				<!-- BEGIN SIDEBAR -->
 				<div id="sidebar">
-					<div id='toolbar'>
+					<div>
+                	<div id="settingsWindow" style="height: 220px;">
 						<div>Settings</div>
-						<div>
-							<form id="eventform" name="eventform" action="" method="post">
-								<div class="input text">
-									<label for="name" id="name-label">Name :</label> <input
-										type="text" name="name" id="name" class="required" value="" />
-								</div>
-
-								<div class="input textarea">
-									<label for="sequence" id="sequence-label">Sequence :</label>
-									<textarea name="sequence" id="sequence" cols="20" rows="20"></textarea>
-								</div>
-
-								<div class="input text">
-									<label for="n-terminal" id="n-terminal-label">N-Terminal</label>
-									<select name="n-terminal" id="n-terminal">
-										<option value="inside" selected>Inside</option>
-										<option value="outside">Outside</option>
-									</select>
-								</div>
-								<div class="input text">
-									<label for="c-terminal" id="c-terminal-label">C-Terminal</label>
-									<select name="c-terminal" id="c-terminal">
-										<option value="inside" selected>Inside</option>
-										<option value="outside">Outside</option>
-									</select>
-								</div>
-								<div class="input text">
-									<label for="whole_day" id="event-whole-day">Domain :</label> <input
-										type="checkbox" name="whole_day" id="whole_day">
-
-								</div>
-
-							</form>
+						<div style="overflow: hidden;">
+							<div id="settingsTabs">
+                            <ul style="margin-left: 30px">
+                                <li>General</li>
+                                <li>Transmembrane specific</li>
+                                <li>Modification</li>
+                            </ul>
+                            <div>
+                                General settings
+                            </div>
+                            <div>
+                                Transmembrane specific
+                            </div>
+                            <div>
+                                Modification
+                            </div>
+                        </div>
+						</div>
 						</div>
 					</div>
 				</div>
