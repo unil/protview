@@ -27,13 +27,14 @@
 	$(document).ready(function() {
 		ProtView.init();
 		var theme = 'summer';
-		 // Create jqxNavigationBar
-		//$("#toolbar").jqxExpander({ width: '350px', theme: theme });
-		$('#sidebar').jqxDocking({ theme: theme, orientation: 'horizontal', width: 350, mode: 'docked' });
-		$('#settingsTabs').jqxTabs({ theme: theme, width: 310, height: 181, selectedItem: 1 });
 
-		$("#jqxMenu").jqxMenu({ width: '100%', height: '30px', theme: theme });
-        $("#jqxMenu").css('visibility', 'visible');
+		$("#menubar").jqxMenu({ width: '100%', height: '30px', theme: theme });
+        $("#menubar").css('visibility', 'visible');
+
+		$('#sidebar').jqxDocking({ theme: theme, orientation: 'horizontal', width: 400, mode: 'docked' });
+		$('#sidebar').jqxDocking('showAllCollapseButtons');
+		$('#settingsTabs').jqxTabs({ theme: theme, width: '100%', height: '100%', selectedItem: 1 });
+
 	});
 </script>
 </head>
@@ -42,34 +43,9 @@
 	<div id="page">
 		<!-- BEBIN HEADER -->
 		<div id="header">
-			<div id='jqxMenu' style='visibility: hidden;'>
-				<ul>
-					<li><a href="#Home">Home</a></li>
-					<li>Solutions
-						<ul style='width: 250px;'>
-							<li><a target="_parent" href="#Education">Education</a></li>
-							<li id="fin"><a href="#Financial">Financial services</a></li>
-							<li><a href="#Government">Government</a></li>
-							<li><a href="#Manufacturing">Manufacturing</a></li>
-							<li type='separator'></li>
-							<li>Software Solutions
-								<ul style='width: 220px;'>
-									<li><a href="#ConsumerPhoto">Consumer photo and video</a></li>
-									<li><a href="#Mobile">Mobile</a></li>
-									<li><a href="#RIA">Rich Internet applications</a></li>
-									<li><a href="#TechnicalCommunication">Technical communication</a>
-									</li>
-									<li><a href="#Training">Training and eLearning</a></li>
-									<li><a href="#WebConferencing">Web conferencing</a></li>
-								</ul>
-							</li>
-							<li><a href="#">All industries and solutions</a></li>
-						</ul>
-					</li>
-				</ul>
+			<div id='menubar' style='visibility: hidden;'>
+			<?php echo xView::load('layout/menubar')->render() ?>
 			</div>
-
-
 		</div>
 		<!-- END HEADER -->
 		<!-- BEGIN MAIN -->
@@ -85,36 +61,14 @@
 				<?php echo $d['html']['content'] ?>
 				<!--  style="min-height: 800px; height: auto !important; height: 800px;"></div>-->
 				<!-- END CONTENT -->
-				<div id="protein" style="display: inline;"></div>
+				<div id="protein" style="display: inline;">
+				</div>
 				<!-- BEGIN SIDEBAR -->
 				<div id="sidebar">
-					<div>
-                	<div id="settingsWindow" style="height: 220px;">
-						<div>Settings</div>
-						<div style="overflow: hidden;">
-							<div id="settingsTabs">
-                            <ul style="margin-left: 30px">
-                                <li>General</li>
-                                <li>Transmembrane specific</li>
-                                <li>Modification</li>
-                            </ul>
-                            <div>
-                                General settings
-                            </div>
-                            <div>
-                                Transmembrane specific
-                            </div>
-                            <div>
-                                Modification
-                            </div>
-                        </div>
-						</div>
-						</div>
-					</div>
+					<?php echo xView::load('layout/sidebar')->render() ?>
 				</div>
 				<!-- END SIDEBAR -->
 			</div>
-
 		</div>
 		<!-- END MAIN -->
 		<!-- BEGIN FOOTER -->

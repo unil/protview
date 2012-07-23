@@ -33,7 +33,7 @@ class LayoutLayoutView extends xView {
             	xUtil::url('a/js/jqwidgets/jqxmenu.js'),
             	xUtil::url('a/js/jqwidgets/jqxdocking.js'),
             	/*
-            	 * ProtView BootStrap js
+            	 * ProtView BootStrap
             	 */
             	xUtil::url('a/js/BootStrap.js'),
             ),
