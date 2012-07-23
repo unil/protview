@@ -11,7 +11,8 @@
 					<li>Modification</li>
 				</ul>
 				<div>
-				<form id="generalSettingsForm" name="eventform" action="" method="post">
+					<form id="generalSettingsForm" name="eventform" action=""
+						method="post">
 						<div>
 							<label for="name" id="name-label">Name :</label> <input
 								type="text" name="name" id="name" class="required" value="" />
@@ -20,11 +21,15 @@
 							<label for="sequence" id="sequence-label">Sequence :</label>
 							<textarea name="sequence" id="sequence" cols="20" rows="20"></textarea>
 						</div>
+						<div>
+							<input type="submit" value="Submit" />
+						</div>
 					</form>
 				</div>
 				<!-- TRANSMEMBRANE SETTINGS BEGIN -->
 				<div>
-					<form id="transmembraneSettingsForm" name="eventform" action="" method="post">
+					<form id="transmembraneSettingsForm" name="eventform" action=""
+						method="post">
 						<div>
 							<label for="n-terminal" id="n-terminal-label">N-Terminal</label>
 							<select name="n-terminal" id="n-terminal">
@@ -55,7 +60,8 @@
 				<!-- TRANSMEMBRANE SETTINGS END -->
 				<!-- MODIFICATION SETTINGS BEGIN -->
 				<div>
-					<img src="<?php echo xUtil::url('a/js/jqwidgets/resources/loader.gif')?>" />
+					<img
+						src="<?php echo xUtil::url('a/js/jqwidgets/resources/loader.gif')?>" />
 				</div>
 				<!-- MODIFICATION SETTINGS END -->
 			</div>

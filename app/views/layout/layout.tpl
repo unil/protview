@@ -25,7 +25,7 @@
 <!-- Le fav and touch icons -->
 <script type="text/javascript">
 	$(document).ready(function() {
-		ProtView.init();
+		
 		var theme = 'summer';
 
 		$("#menubar").jqxMenu({ width: '100%', height: '30px', theme: theme });
@@ -34,6 +34,9 @@
 		$('#sidebar').jqxDocking({ theme: theme, orientation: 'horizontal', width: 400, mode: 'docked' });
 		$('#sidebar').jqxDocking('showAllCollapseButtons');
 		$('#settingsTabs').jqxTabs({ theme: theme, width: '100%', height: '100%', selectedItem: 0 });
+		
+		ProtView.init();
+		$('#content-loading').remove();
 
 	});
 </script>
@@ -52,6 +55,7 @@
 		<div id="main">
 			<!-- BEGIN CONTENT -->
 			<div id="content">
+				<img id="content-loading" src="<?php echo xUtil::url('a/js/jqwidgets/resources/loader.gif')?>" />
 				<?php if (is_array($d['messages'])) foreach ($d['messages'] as $type => $message): ?>
 				<div class="alert <?php echo $type ?>">
 					<button class="close" data-dismiss="alert">×</button>
