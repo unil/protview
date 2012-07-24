@@ -39,9 +39,10 @@ class LayoutLayoutView extends xView {
             ),
             'css' => array(
                 // Custom CSS
-                xUtil::url('a/css/template.css'),
+                xUtil::url('a/css/main.css'),
             	xUtil::url('a/css/jquery.svg.css'),
             	xUtil::url('a/css/protein.css'),
+            	xUtil::url('a/css/bootstrap.css'),
             	xUtil::url('a/js/jqwidgets/styles/jqx.base.css'),
             	xUtil::url('a/js/jqwidgets/styles/jqx.summer.css')
             )
