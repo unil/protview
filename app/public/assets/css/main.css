@@ -1,0 +1,69 @@
+/**
+	@author		Stefan Meier
+	@version	20120718
+	
+	UNIL-FBM template
+*/
+* {
+	margin: 0;
+	padding: 0
+}
+
+html,body,h1 {
+	vertical-align: top;
+	margin: 0px;
+	font-family: verdana, arial, helvetica;
+	font-size: 11px;
+}
+
+#page {
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	/*border: 1px solid #000000;*/
+	width: 100%;
+}
+
+#header {
+	height: 44px;
+	margin: 10px;
+}
+
+#footer {
+	color: #FFFFFF;
+	font-weight: bold;
+	padding: 6px;
+	height: 20px;;
+	border-top: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+}
+
+#footer {
+	font-weight: normal;
+	text-align: right;
+	clear: both;
+	height: 40px;
+	border-bottom: none;
+}
+
+#content {
+	min-width: 100%;
+	width: 100%;
+	display: inline;
+	padding: 6px;
+}
+
+#main {
+	clear: both;
+	float: right;
+	width: 100%;
+	margin-left: 6px;
+	vertical-align: top;
+	margin-bottom: 6px;
+}
+
+#sidebar {
+	position: absolute;
+	right: 10px;
+	z-index: 1000;
+}
