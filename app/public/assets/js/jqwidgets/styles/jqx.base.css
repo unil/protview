@@ -2772,7 +2772,7 @@ of the horizontal scrollbar.*/
 .jqx-input{background-color: inherit; border-color: #c7c7c7;}
 
 /*applied to all widgets*/
-.jqx-widget{direction: ltr; -webkit-tap-highlight-color: rgba(0,0,0,0); font-family: Verdana,Arial,sans-serif; font-style: normal; font-size: 11px;}
+.jqx-widget{direction: ltr; -webkit-tap-highlight-color: rgba(0,0,0,0); font-family: Verdana,Arial,sans-serif; font-style: normal; font-size: 13px;}
 
 .jqx-item{ color: inherit; border: 1px solid transparent; background: transparent; }
 
