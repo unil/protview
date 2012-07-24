@@ -68,30 +68,25 @@
 						<div class="control-group">
 							<label for="domain" id="domain-label" class="control-label">Membrane
 								domains</label>
-							<div class="controls" style="margin-bottom: 9px;">
-								From : <input type="text" class="input-xmini inline"
+							<div class="controls">
+							<ol>
+								<li style="margin-left: 20px; margin-bottom: 9px;">From : <input type="text" class="input-xmini inline"
 									name="from-1" id="from-1"> To : <input type="text"
-									class="input-xmini inline" name="to-1" id="to-1">
-							</div>
-							<div class="controls" style="margin-bottom: 9px;">
-								From : <input type="text" class="input-xmini inline"
+									class="input-xmini inline" name="to-1" id="to-1"></li>
+								<li style="margin-left: 20px; margin-bottom: 9px;">From : <input type="text" class="input-xmini inline"
 									name="from-2" id="from-2"> To : <input type="text"
-									class="input-xmini inline" name="to-2" id="to-2">
-							</div>
-							<div class="controls" style="margin-bottom: 9px;">
-								From : <input type="text" class="input-xmini inline"
+									class="input-xmini inline" name="to-2" id="to-2"></li>
+								<li style="margin-left: 20px; margin-bottom: 9px;">From : <input type="text" class="input-xmini inline"
 									name="from-3" id="from-3"> To : <input type="text"
-									class="input-xmini inline" name="to-3" id="to-3">
-							</div>
-							<div class="controls" style="margin-bottom: 9px;">
-								From : <input type="text" class="input-xmini inline"
+									class="input-xmini inline" name="to-3" id="to-3"></li>
+								<li style="margin-left: 20px; margin-bottom: 9px;">From : <input type="text" class="input-xmini inline"
 									name="from-4" id="from-4"> To : <input type="text"
-									class="input-xmini inline" name="to-4" id="to-4">
-							</div>
-							<div class="controls" style="margin-bottom: 9px;">
-								From : <input type="text" class="input-xmini inline"
+									class="input-xmini inline" name="to-4" id="to-4"></li>
+								<li style="margin-left: 20px; margin-bottom: 9px;">From : <input type="text" class="input-xmini inline"
 									name="from-5" id="from-5"> To : <input type="text"
-									class="input-xmini inline" name="to-5" id="to-5">
+									class="input-xmini inline" name="to-5" id="to-5"></li>
+									
+							</ol>
 							</div>
 						</div>
 						<div class="form-actions">
