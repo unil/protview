@@ -27,21 +27,32 @@ $startCoord = array("x" => 0, "y" => 0);
 $svgGraphics = new SVGGraphics();
 
 
-/*Create protein test*/
-$sequence = "MNTSAPPAVSPNITVLAPGKGPWQVAFIGHITGSLSLATVTGALLVLISFKVNTELKTVNNYFLLSKKSLSKEIGTTSMNNYTTYLLMGHWALGTLACD";
-$sequence .= "MNTSAPPAVSPNITVLAPGKGPWQVAFIGHITGSLSLATVTGALLVLISFKVNTELKTVNNYFLLSKKSLSKEIGTTSMNNYTTYLLMGHWALGTLACD";
-$sequence .= "MNTSAPPAVSPNITVLAPGKGPWQVAFIGHITGSLSLATVTGALLVLISFKVNTELKTVNNYFLLSKKSLSKEIGTTSMNNYTTYLLMGHWALGTLACD";
-$sequence .= "MNTSAPPAVSPNITVLAPGKGPWQVAFIGHITGSLSLATVTGALLVLISFKVNTELKTVNNYFLLSKKSLSKEIGTTSMNNYTTYLLMGHWALGTLACD";
+		/*Create protein test*/
+		$sequence = "MNTSAPPAVSPNITVLAPGKGPWQVAFIGHITGSLSLATVTGALLVLISFKVNTELKTVNNYFLLSKKSLSKEIGTTSMNNYTTYLLMGHWALGTLACD";
+		$sequence .= "MNTSAPPAVSPNITVLAPGKGPWQVAFIGHITGSLSLATVTGALLVLISFKVNTELKTVNNYFLLSKKSLSKEIGTTSMNNYTTYLLMGHWALGTLACD";
+		$sequence .= "MNTSAPPAVSPNITVLAPGKGPWQVAFIGHITGSLSLATVTGALLVLISFKVNTELKTVNNYFLLSKKSLSKEIGTTSMNNYTTYLLMGHWALGTLACD";
+		$sequence .= "MNTSAPPAVSPNITVLAPGKGPWQVAFIGHITGSLSLATVTGALLVLISFKVNTELKTVNNYFLLSKKSLSKEIGTTSMNNYTTYLLMGHWALGTLACD";
+		$sequence .= "MNTSAPPAVSPNITVLAPGKGPWQVAFIGHITGSLSLATVTGALLVLISFKVNTELKTVNNYFLLSKKSLSKEIGTTSMNNYTTYLLMGHWALGTLACD";
+		$sequence .= "MNTSAPPAVSPNITVLAPGKGPWQVAFIGHITGSLSLATVTGALLVLISFKVNTELKTVNNYFLLSKKSLSKEIGTTSMNNYTTYLLMGHWALGTLACD";
+		$sequence .= "MNTSAPPAVSPNITVLAPGKGPWQVAFIGHITGSLSLATVTGALLVLISFKVNTELKTVNNYFLLSKKSLSKEIGTTSMNNYTTYLLMGHWALGTLACD";
+		$sequence .= "MNTSAPPAVSPNITVLAPGKGPWQVAFIGHITGSLSLATVTGALLVLISFKVNTELKTVNNYFLLSKKSLSKEIGTTSMNNYTTYLLMGHWALGTLACD";
 
-$domains = array(
-			array('start' => 1, 'end' => 24, 'type' => 'extra'),
-			array('start' => 25, 'end' => 46, 'type' => 'trans'),
-			array('start' => 47, 'end' => 60, 'type' => 'intra'),
-			array('start' => 61, 'end' => 80, 'type' => 'trans'),
-			array('start' => 81, 'end' => 120, 'type' => 'extra'),
-			array('start' => 121, 'end' => 150, 'type' => 'trans'),
-			array('start' => 151, 'end' => 300, 'type' => 'intra'),
-			array('start' => 301, 'end' => 318, 'type' => 'trans')
+		$domains = array(
+				array('start' => 1, 'end' => 24, 'type' => 'extra'),
+				array('start' => 25, 'end' => 46, 'type' => 'trans'),
+				array('start' => 47, 'end' => 60, 'type' => 'intra'),
+				array('start' => 61, 'end' => 80, 'type' => 'trans'),
+				array('start' => 81, 'end' => 120, 'type' => 'extra'),
+				array('start' => 121, 'end' => 150, 'type' => 'trans'),
+				array('start' => 151, 'end' => 300, 'type' => 'intra'),
+				array('start' => 301, 'end' => 318, 'type' => 'trans'),
+				array('start' => 319, 'end' => 340, 'type' => 'extra'),
+				array('start' => 341, 'end' => 360, 'type' => 'trans'),
+				array('start' => 361, 'end' => 380, 'type' => 'intra'),
+				array('start' => 381, 'end' => 410, 'type' => 'trans'),
+				array('start' => 411, 'end' => 431, 'type' => 'extra'),
+				array('start' => 432, 'end' => 450, 'type' => 'trans'),
+				array('start' => 451, 'end' => 480, 'type' => 'intra')
 		);
 
 //Create protein
@@ -88,7 +99,7 @@ $proteinCalc = new ProteinCalc($protein, $startCoord, $size);
 $coords = $proteinCalc->getAACoordinates();
 $membraneCoords = $proteinCalc->getMembraneCoordinates();
 
-$membraneCoords['width'] = 500;
+$membraneCoords['width'] = 1000;
 
 echo $svgGraphics->drawMembrane($membraneCoords['startX'] + $offsetX, $membraneCoords['startY'] + $offsetY, $membraneCoords['width'], $membraneCoords['height']);
 

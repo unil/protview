@@ -96,7 +96,7 @@ ProtView.Graphic = {
 			// loadURL: 'protein.svg',
 			onLoad: ProtView.Graphic.draw, 
 			settings: {
-				width : "800px",
+				width : "100%",
 				height : "800px", 
 				xmlns : "http://www.w3.org/2000/svg",
 				style : "display:inline; float: left; z-index: 1;"

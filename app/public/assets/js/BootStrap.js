@@ -7,10 +7,10 @@
 (function() {
 	var scriptName = "BootStrap.js";
 	var jsFiles = [
-	               	"ProtView/ProtView.js",
-	                "ProtView/Global.js",
-	                "ProtView/Network.js",
-	                "ProtView/Graphic.js",
+	               	"protview/ProtView.js",
+	                "protview/Global.js",
+	                "protview/Network.js",
+	                "protview/Graphic.js",
 	                ];
 
 	
