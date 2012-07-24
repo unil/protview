@@ -18,7 +18,7 @@
 <!-- DOCKING BEGIN -->
 <div>
 	<!-- SETTINGS WINDOW BEGIN -->
-	<div id="settingsWindow" style="height: 450px">
+	<div id="settingsWindow" style="height: 460px">
 		<div>Settings</div>
 		<div style="overflow: hidden;">
 			<div id="settingsTabs">
