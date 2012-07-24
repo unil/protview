@@ -234,6 +234,9 @@ input[type="checkbox"]:focus {
 .checkbox.inline + .checkbox.inline {
   margin-left: 10px;
 }
+.input-xmini {
+  width: 30px;
+}
 .input-mini {
   width: 60px;
 }

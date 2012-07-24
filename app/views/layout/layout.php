@@ -9,6 +9,11 @@ class LayoutLayoutView extends xView {
             ),
             'js' => array(
             	/*
+            	 * Knockout.js core
+            	*
+            	*/
+            	xUtil::url('a/js/knockout/knockout-2.1.0.js'),
+            	/*
             	 * JQuery Core / template
             	 *  
             	 */

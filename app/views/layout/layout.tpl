@@ -14,32 +14,10 @@
 <?php foreach ($m['css'] as $css): ?>
 <link href="<?php echo $css ?>" rel="stylesheet">
 <?php endforeach ?>
-<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]>
             <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-<!-- Le scripts | TODO: move to body bottom -->
-<?php foreach ($m['js'] as $js): ?>
-<script type="text/javascript" src="<?php echo $js ?>"></script>
-<?php endforeach ?>
-<!-- Le fav and touch icons -->
-<script type="text/javascript">
-	$(document).ready(function() {
-		
-		var theme = 'summer';
-
-		$("#menubar").jqxMenu({ width: '100%', height: '30px', theme: theme });
-        $("#menubar").css('visibility', 'visible');
-
-		$('#sidebar').jqxDocking({ theme: theme, orientation: 'horizontal', width: 400, mode: 'docked' });
-		$('#sidebar').jqxDocking('showAllCollapseButtons');
-		$('#settingsTabs').jqxTabs({ theme: theme, width: '100%', height: '100%', selectedItem: 1 });
-		
-		ProtView.init();
-		$('#content-loading').remove();
-
-	});
-</script>
+<![endif]-->
 </head>
 <body>
 	<!-- BEGIN PAGE -->
@@ -55,7 +33,8 @@
 		<div id="main">
 			<!-- BEGIN CONTENT -->
 			<div id="content">
-				<img id="content-loading" src="<?php echo xUtil::url('a/js/jqwidgets/resources/loader.gif')?>" />
+				<img id="content-loading"
+					src="<?php echo xUtil::url('a/js/jqwidgets/resources/loader.gif')?>" />
 				<?php if (is_array($d['messages'])) foreach ($d['messages'] as $type => $message): ?>
 				<div class="alert <?php echo $type ?>">
 					<button class="close" data-dismiss="alert">×</button>
@@ -80,5 +59,27 @@
 		<!-- END FOOTER -->
 	</div>
 	<!-- END PAGE -->
+	<!-- JavaScript - for better performance, on the bottom -->
+	<?php foreach ($m['js'] as $js): ?>
+	<script type="text/javascript" src="<?php echo $js ?>"></script>
+	<?php endforeach ?>
+	<!-- Le fav and touch icons -->
+	<script type="text/javascript">
+	$(document).ready(function() {
+		
+		var theme = 'summer';
+
+		$("#menubar").jqxMenu({ width: '100%', height: '30px', theme: theme });
+        $("#menubar").css('visibility', 'visible');
+
+		$('#sidebar').jqxDocking({ theme: theme, orientation: 'horizontal', width: 400, mode: 'docked' });
+		$('#sidebar').jqxDocking('showAllCollapseButtons');
+		$('#settingsTabs').jqxTabs({ theme: theme, width: '100%', height: '100%', selectedItem: 1 });
+		
+		ProtView.init();
+		$('#content-loading').remove();
+
+	});
+</script>
 </body>
 </html>
