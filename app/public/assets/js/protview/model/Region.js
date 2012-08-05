@@ -1,7 +1,7 @@
 ProtView.Model.Region = Backbone.Model.extend({
 	defaults : {
 		id: null,
-		label: '',
+		label: null,
 		type: null,
 		start: null,
 		end : null,

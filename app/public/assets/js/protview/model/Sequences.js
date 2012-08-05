@@ -1,3 +1,3 @@
-ProtView.Sequences = Backbone.Collection.extend({
-	model : ProtView.Data.Bioml.Sequence
+ProtView.Model.Sequences = Backbone.Collection.extend({
+	model : ProtView.Model.Sequence
 });
