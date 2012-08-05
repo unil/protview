@@ -67,7 +67,7 @@
 						</div>
 						<div class="control-group">
 							<label for="domain" id="domain-label" class="control-label">Membrane
-								domains</label>
+								regions</label>
 							<div class="controls">
 							<ol>
 								<li style="margin-left: 20px; margin-bottom: 9px;">From : <input type="text" class="input-xmini inline"
