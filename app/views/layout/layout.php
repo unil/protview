@@ -20,6 +20,20 @@ class LayoutLayoutView extends xView {
             	xUtil::url('a/js/lib/underscore-1.3.3.min.js'),
             	xUtil::url('a/js/lib/backbone-0.9.2.min.js'),
             	/*
+            	 * Templating
+            	* JQuery Widgets
+            	*
+            	*  Dependency:
+            	*  	- core (all plugin)
+            	*  	- window (tabs, docking)
+            	*  	- docking (docking)
+            	*/
+            	xUtil::url('a/js/jqwidgets/jqxcore.js'),
+            	xUtil::url('a/js/jqwidgets/jqxwindow.js'),
+            	xUtil::url('a/js/jqwidgets/jqxtabs.js'),
+            	xUtil::url('a/js/jqwidgets/jqxmenu.js'),
+            	xUtil::url('a/js/jqwidgets/jqxdocking.js'),
+            	/*
             	 * ProtView
             	 */	
             	xUtil::url('a/js/protview/ProtView.js'),

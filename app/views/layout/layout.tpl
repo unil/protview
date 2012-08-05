@@ -24,13 +24,17 @@
 	<div id="page">
 		<!-- BEBIN HEADER -->
 		<div id="header">
-			Header
+			<div id='menubar' style='visibility: hidden;'>
+				<?php echo xView::load('layout/menubar')->render() ?>
+			</div>
 		</div>
 		<!-- END HEADER -->
 		<!-- BEGIN MAIN -->
 		<div id="main">
 			<!-- BEGIN CONTENT -->
 			<div id="content">
+				<img id="content-loading"
+					src="<?php echo xUtil::url('a/js/jqwidgets/resources/loader.gif')?>" />
 				<?php if (is_array($d['messages'])) foreach ($d['messages'] as $type => $message): ?>
 				<div class="alert <?php echo $type ?>">
 					<button class="close" data-dismiss="alert">×</button>
@@ -43,7 +47,7 @@
 				<!-- END CONTENT -->
 				<!-- BEGIN SIDEBAR -->
 				<div id="sidebar">
-					Sidebar
+					<?php echo xView::load('layout/sidebar')->render() ?>
 				</div>
 				<!-- END SIDEBAR -->
 			</div>
@@ -62,8 +66,18 @@
 	<!-- Le fav and touch icons -->
 	<script type="text/javascript">
 	$(document).ready(function() {
-		
 
+		var theme = 'summer';
+
+		$("#menubar").jqxMenu({ width: '100%', height: '30px', autoOpen: false, autoCloseInterval: 0, theme: theme });
+        $("#menubar").css('visibility', 'visible');
+
+		$('#sidebar').jqxDocking({ theme: theme, orientation: 'horizontal', width: 400, mode: 'docked' });
+		$('#sidebar').jqxDocking('showAllCollapseButtons');
+		$('#settingsTabs').jqxTabs({ theme: theme, width: '100%', height: '100%', selectedItem: 1 });
+		
+		ProtView.init();
+		$('#content-loading').remove();
 
 	});
 </script>
