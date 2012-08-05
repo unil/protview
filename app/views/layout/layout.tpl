@@ -30,11 +30,11 @@
 		</div>
 		<!-- END HEADER -->
 		<!-- BEGIN MAIN -->
-		<div id="main">
+		<div id="main" style="height: 540px">
 			<!-- BEGIN CONTENT -->
-			<div id="content">
+			<div id="content" style="height: 540px">
 				<img id="content-loading"
-					src="<?php echo xUtil::url('a/js/jqwidgets/resources/loader.gif')?>" />
+					src="<?php echo xUtil::url('a/js/lib/jqwidgets/resources/loader.gif')?>" />
 				<?php if (is_array($d['messages'])) foreach ($d['messages'] as $type => $message): ?>
 				<div class="alert <?php echo $type ?>">
 					<button class="close" data-dismiss="alert">×</button>
@@ -43,7 +43,7 @@
 				<?php endforeach ?>
 				<?php echo $d['html']['content'] ?>
 				<!--  style="min-height: 800px; height: auto !important; height: 800px;"></div>-->
-				<div id="protein" style="display: inline;"></div>
+				<div id="drawBoard" style="display: inline;"></div>
 				<!-- END CONTENT -->
 				<!-- BEGIN SIDEBAR -->
 				<div id="sidebar">
@@ -76,7 +76,7 @@
 		$('#sidebar').jqxDocking('showAllCollapseButtons');
 		$('#settingsTabs').jqxTabs({ theme: theme, width: '100%', height: '100%', selectedItem: 1 });
 		
-		ProtView.init();
+		//ProtView.init();
 		$('#content-loading').remove();
 
 	});

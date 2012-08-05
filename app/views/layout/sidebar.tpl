@@ -100,7 +100,7 @@
 				<!-- MODIFICATION SETTINGS BEGIN -->
 				<div>
 					<img
-						src="<?php echo xUtil::url('a/js/jqwidgets/resources/loader.gif')?>" />
+						src="<?php echo xUtil::url('a/js/lib/jqwidgets/resources/loader.gif')?>" />
 				</div>
 				<!-- MODIFICATION SETTINGS END -->
 			</div>

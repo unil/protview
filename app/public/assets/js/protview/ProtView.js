@@ -4,9 +4,12 @@
  */
 (function($, exports) {
 	//Namespaces
-	window.ProtView = {
-		version : "2012-08-03",
-		author : "Stefan Meier"
-	};
+	window.ProtView = {};
+
+	ProtView.Core = {};
+	
+	ProtView.Model = {};
+	ProtView.View = {};
+	ProtView.Controller = {};
 
 })(this.JQuery, this);

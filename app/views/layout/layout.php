@@ -28,11 +28,11 @@ class LayoutLayoutView extends xView {
             	*  	- window (tabs, docking)
             	*  	- docking (docking)
             	*/
-            	xUtil::url('a/js/jqwidgets/jqxcore.js'),
-            	xUtil::url('a/js/jqwidgets/jqxwindow.js'),
-            	xUtil::url('a/js/jqwidgets/jqxtabs.js'),
-            	xUtil::url('a/js/jqwidgets/jqxmenu.js'),
-            	xUtil::url('a/js/jqwidgets/jqxdocking.js'),
+            	xUtil::url('a/js/lib/jqwidgets/jqxcore.js'),
+            	xUtil::url('a/js/lib/jqwidgets/jqxwindow.js'),
+            	xUtil::url('a/js/lib/jqwidgets/jqxtabs.js'),
+            	xUtil::url('a/js/lib/jqwidgets/jqxmenu.js'),
+            	xUtil::url('a/js/lib/jqwidgets/jqxdocking.js'),
             	/*
             	 * ProtView
             	 */	
@@ -44,6 +44,8 @@ class LayoutLayoutView extends xView {
             	xUtil::url('a/css/jquery.svg.css'),
             	xUtil::url('a/css/protein.css'),
             	xUtil::url('a/css/bootstrap.css'),
+            	xUtil::url('a/js/lib/jqwidgets/styles/jqx.base.css'),
+            	xUtil::url('a/js/lib/jqwidgets/styles/jqx.summer.css')
             )
         ));
     }
