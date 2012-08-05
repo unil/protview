@@ -9,6 +9,6 @@ ProtView.Model.Representation = Backbone.Model.extend({
 		this.trigger('regionChanged');
 	},
 	url : function() {
-		return this.id ? 'api/representation/' + this.id : 'api/representation';
+		return this.id ? 'api/representations/' + this.id : 'api/representation';
 	},
 });

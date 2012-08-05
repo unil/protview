@@ -4,7 +4,7 @@ ProtView.Model.Sequence = Backbone.Model.extend({
 		aa: null,
 		mod: null,
 		link: null,
-		geometrie: {
+		geomRef: {
 			geometrie_id: null,
 			pos: null
 		}
