@@ -6,9 +6,17 @@ ProtView.Model.Region = Backbone.Model.extend({
 		start: null,
 		end : null,
 		sequence: new ProtView.Model.Sequences(),
-		geometries: new ProtView.Model.Geometries()
+		geometry: new ProtView.Model.Geometries()
 	},
 	initialize : function Region() {
+	},
+	addSequence : function(sequence) {
+		this.get('sequence').add(sequence);
+		this.trigger('sequenceChanged');
+	},
+	addGeometry: function(geometry) {
+		this.get('geometry').add(geometry);
+		this.trigger('geometryChanged');
 	},
 	url : function() {
 		return this.id ? 'api/region/' + this.id : 'api/region';

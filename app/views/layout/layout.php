@@ -37,6 +37,13 @@ class LayoutLayoutView extends xView {
             	 * ProtView
             	 */	
             	xUtil::url('a/js/protview/ProtView.js'),
+            	xUtil::url('a/js/protview/Model/Geometry.js'),
+            	xUtil::url('a/js/protview/Model/Geometries.js'),
+            	xUtil::url('a/js/protview/Model/Sequence.js'),
+            	xUtil::url('a/js/protview/Model/Sequences.js'),
+            	xUtil::url('a/js/protview/Model/Region.js'),
+            	xUtil::url('a/js/protview/Model/Regions.js'),
+            	xUtil::url('a/js/protview/Model/Representation.js'),
             ),
             'css' => array(
                 // Custom CSS
