@@ -21,5 +21,5 @@ ALTER TABLE `structural_coordinates`
   ADD CONSTRAINT `structural_coordinates_structural_geometry_fk` FOREIGN KEY (`structural_geometry_id`) REFERENCES `structural_geometries` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `structural_coordinates_amino_acid_fk` FOREIGN KEY (`amino_acid_id`) REFERENCES `amino_acids` (`id`) ON DELETE CASCADE;
   
-ALTER TABLE `geometries`
-  ADD CONSTRAINT `geometries_representation_fk` FOREIGN KEY (`representation_id`) REFERENCES `representations` (`id`) ON DELETE CASCADE;
+ALTER TABLE `other_geometries`
+  ADD CONSTRAINT `other_geometries_representation_fk` FOREIGN KEY (`representation_id`) REFERENCES `representations` (`id`) ON DELETE CASCADE;

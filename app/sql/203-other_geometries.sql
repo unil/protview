@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS geometries;
-CREATE TABLE geometries (
+DROP TABLE IF EXISTS other_geometries;
+CREATE TABLE other_geometries (
     id INT NOT NULL AUTO_INCREMENT,
     type VARCHAR(255) COLLATE utf8_unicode_ci NOT NULL,
     params TEXT COLLATE utf8_unicode_ci,
