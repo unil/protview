@@ -17,12 +17,12 @@ class StructuralCoordinateModel extends xModelMysql {
     );
     
     public $joins = array(
-    		'structural_geometry' => 'LEFT JOIN structural_geometries ON (structural_geometries.id = structural_coordinates.structural_geometry_id)',
-    		'amino_acid' => 'LEFT JOIN amino_acids ON (amino_acids.id = structural_coordinates.amino_acid_id)'
+    		'structural-geometry' => 'LEFT JOIN structural_geometries ON (structural_geometries.id = structural_coordinates.structural_geometry_id)',
+    		'amino-acid' => 'LEFT JOIN amino_acids ON (amino_acids.id = structural_coordinates.amino_acid_id)'
     );
     
     public $join = array(
-    		'structural_geometry',
-    		'amino_acid'
+    		'structural-geometry',
+    		'amino-acid'
     );
 }
