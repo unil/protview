@@ -4,5 +4,6 @@ CREATE TABLE representations (
     peptide_id INT NOT NULL,
     title TEXT COLLATE utf8_unicode_ci,
     description TEXT COLLATE utf8_unicode_ci,
+    params TEXT COLLATE utf8_unicode_ci,
     PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
