@@ -6,9 +6,9 @@
 	//Namespaces
 	window.ProtView = {};
 
-	ProtView.Core = {};
+	ProtView.Drawing = {};
 	
-	ProtView.Model = {};
+	ProtView.Structure = {};
 	ProtView.View = {};
 	ProtView.Controller = {};
 
