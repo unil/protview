@@ -18,7 +18,7 @@ class RepresentationModel extends xModelMysql {
     );
     
     public $joins = array(
-    		'peptide' => 'LEFT JOIN peptides ON (pepdides.id = representations.peptide_id)'
+    		'peptide' => 'LEFT JOIN peptides ON (peptides.id = representations.peptide_id)'
     );
     
     public $join = array('peptide');

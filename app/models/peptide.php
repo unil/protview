@@ -17,7 +17,7 @@ class PeptideModel extends xModelMysql {
     );
     
     public $joins = array(
-    		'subunit' => 'LEFT JOIN subunits ON (subunits.id = peptides.subunits_id)'
+    		'subunit' => 'LEFT JOIN subunits ON (subunits.id = peptides.subunit_id)'
     );
     
     public $join = array('subunit');

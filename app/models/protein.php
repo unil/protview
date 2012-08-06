@@ -5,10 +5,10 @@ class ProteinModel extends xModelMysql {
     public $table = 'proteins';
 
     public $mapping = array(
-        'protein_id' => 'id',
-		'protein_name' => 'name',
-    	'protein_species' => 'species',
-    	'protein_note' => 'note'
+        'id' => 'id',
+		'name' => 'name',
+    	'species' => 'species',
+    	'note' => 'note'
     );
 
     public $validation = array(

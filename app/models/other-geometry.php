@@ -8,7 +8,7 @@ class OtherGeometryModel extends xModelMysql {
         'id' => 'id',
     	'representation_id' => 'representation_id',
 		'params' => 'params',
-    	'coordinates' => 'coordinates'
+    	'coordinate' => 'coordinate'
     );
 
     public $validation = array(
