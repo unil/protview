@@ -5,7 +5,7 @@ CREATE TABLE peptides (
     name TEXT COLLATE utf8_unicode_ci NOT NULL,
     start INT NOT NULL,
     end INT NOT NULL,
-    order INT NOT NULL,
+    pos INT NOT NULL,
     subunit_id INT NOT NULL,
     PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
