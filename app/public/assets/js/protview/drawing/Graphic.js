@@ -71,17 +71,33 @@ ProtView.Core.Graphic = {
 
 
 	draw : function (svg) {
-		graph = ProtView.Global.prot['graph']['coords']['aa'];
-		struct = ProtView.Global.prot['struct'];
-		for (var i = 0; i < graph.length; i++) {
-			x = graph[i]['x'];
-			y = graph[i]['y'];
-			ref = graph[i]['ref'];
-			peptide = ref['peptide'];
-			seq = ref['seq'];
-			label = struct['peptide'][peptide-1]['seq'].charAt(seq);
-			ProtView.Graphic.drawAminoAcid(svg, x, y, ProtView.Global.aaSize, label, '' + seq);
-		}
+		var collection = new ProtView.Model.StructuralGeometryCollection();
+		collection.fetch({success: function(){
+		    console.log(collection);
+		    for (var i = 0, len = collection.length; i < len; i++) {
+		        var geometry = collection.at(i);
+
+		        var coordinates = geometry.get('coordinates');
+				var labels = geometry.get('labels');
+				
+
+				for (var j = 0, lenC = coordinates.length; j < lenC; j++) {
+					var coordinate = coordinates[j];
+					var label = labels[j].split("-");
+					var x = coordinate.x;
+					var y = coordinate.y;
+					
+					var type = label[0];
+					var pos = label[1];
+						
+					console.log('x: ' + x);
+					console.log('y: ' + y);
+					console.log('type: ' + type);
+					console.log('pos: ' + pos);
+				}
+			}
+		}});
+
 
 		ProtView.Graphic.addDragSupport($('.aa'));
 
@@ -90,7 +106,7 @@ ProtView.Core.Graphic = {
 
 	init : function (msg) {
 		ProtView.Global.prot = msg;
-		$('#protein').svg({
+		$('#drawBoard').svg({
 			onLoad: ProtView.Graphic.draw, 
 			settings: {
 				width : "100%",

@@ -19,6 +19,7 @@ class LayoutLayoutView extends xView {
             	xUtil::url('a/js/lib/jquery.svgdom.min.js'),
             	xUtil::url('a/js/lib/underscore-1.3.3.min.js'),
             	xUtil::url('a/js/lib/backbone-0.9.2.min.js'),
+            	xUtil::url('a/js/lib/backbone-relational-0.6.0.js'),
             	/*
             	 * Templating
             	* JQuery Widgets
@@ -37,13 +38,8 @@ class LayoutLayoutView extends xView {
             	 * ProtView
             	 */	
             	xUtil::url('a/js/protview/ProtView.js'),
-            	xUtil::url('a/js/protview/Model/Geometry.js'),
-            	xUtil::url('a/js/protview/Model/Geometries.js'),
-            	xUtil::url('a/js/protview/Model/Sequence.js'),
-            	xUtil::url('a/js/protview/Model/Sequences.js'),
-            	xUtil::url('a/js/protview/Model/Region.js'),
-            	xUtil::url('a/js/protview/Model/Regions.js'),
-            	xUtil::url('a/js/protview/Model/Representation.js'),
+            	xUtil::url('a/js/protview/Model/StructuralGeometry.js'),
+            	xUtil::url('a/js/protview/Model/StructuralGeometryCollection.js'),
             ),
             'css' => array(
                 // Custom CSS
