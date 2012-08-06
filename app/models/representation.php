@@ -6,11 +6,20 @@ class RepresentationModel extends xModelMysql {
 
     public $mapping = array(
         'id' => 'id',
-		'name' => 'name'
+    	'peptide_id' => 'peptide_id',
+		'title' => 'title',
+    	'description' => 'description',
+    	'params' => 'params'
     );
 
     public $validation = array(
         'id' => 'mandatory',
         'name' => 'mandatory'
     );
+    
+    public $joins = array(
+    		'peptide' => 'LEFT JOIN peptides ON (pepdides.id = representations.peptide_id)'
+    );
+    
+    public $join = array('peptide');
 }

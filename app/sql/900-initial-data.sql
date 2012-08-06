@@ -34,6 +34,6 @@ INSERT INTO `representations`(id, peptide_id,title, description) VALUES
 	(1, 1, 'My first representation', 'description 1');
 INSERT INTO `structural_geometries`(id, representation_id, region_id,type, params, pos) VALUES 
 	(1, 1, 1, 'circle', 'none',1);
-INSERT INTO `structural_coordinates`(id, structural_geometry_id, amino_acid_id, x, y) VALUES 
-	(1, 1, 1, 1.23, 2435.2345);
+INSERT INTO `structural_coordinates`(id, structural_geometry_id, amino_acid_id, coordinate) VALUES 
+	(1, 1, 1, '1.23/2435.2345');
 <?php }?>

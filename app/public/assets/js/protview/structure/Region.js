@@ -1,22 +1,42 @@
-ProtView.Model.Region = Backbone.Model.extend({
+ProtView.Model.Region = Backbone.RelationalModel.extend({
+	relations: [
+	    {
+        type: Backbone.HasMany,
+        key: 'geometries',
+        relatedModel: 'ProtView.Model.Geometry',
+        collectionType: 'ProtView.Model.GeometryCollection',
+        reverseRelation: {
+            key: 'livesIn',
+            includeInJSON: 'id'
+        	}
+        },
+        {
+            type: Backbone.HasMany,
+            key: 'sequences',
+            relatedModel: 'ProtView.Model.Sequence',
+            collectionType: 'ProtView.Model.SequenceCollection',
+            reverseRelation: {
+                key: 'livesIn',
+                includeInJSON: 'id'
+            }
+        }
+        ],
 	defaults : {
 		id: null,
 		label: null,
 		type: null,
 		start: null,
 		end : null,
-		sequence: new ProtView.Model.Sequences(),
-		geometry: new ProtView.Model.Geometries()
 	},
 	initialize : function Region() {
 	},
 	addSequence : function(sequence) {
-		this.get('sequence').add(sequence);
-		this.trigger('sequenceChanged');
+		this.get('sequences').add(sequence);
+		this.trigger('sequencesChanged');
 	},
 	addGeometry: function(geometry) {
-		this.get('geometry').add(geometry);
-		this.trigger('geometryChanged');
+		this.get('geometries').add(geometry);
+		this.trigger('geometriesChanged');
 	},
 	url : function() {
 		return this.id ? 'api/region/' + this.id : 'api/region';

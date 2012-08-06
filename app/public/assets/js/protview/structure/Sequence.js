@@ -1,4 +1,4 @@
-ProtView.Model.Sequence = Backbone.Model.extend({
+ProtView.Model.Sequence = Backbone.RelationalModel.extend({
 	defaults : {
 		id: null,
 		aa: null,
