@@ -67,12 +67,6 @@ ProtView.Core.Graphic = {
 		}
 	},
 
-	save : function (svg) {
-		svg.toSVG();
-	},
-
-
-
 	draw : function (svg) {
 		var collection = new ProtView.Model.StructuralGeometryCollection();
 		collection.fetch({success: function(){

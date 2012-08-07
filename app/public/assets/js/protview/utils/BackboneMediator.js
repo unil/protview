@@ -3,9 +3,10 @@ ProtView.Utils.BackboneMediator = Class.extend( {
 		this.collection = collection;
 	},
 	fetch : function(callback) {
+		var ret = this.collection;
 		this.collection.fetch({
 				success: function(){
-					callback(this.collection);
+					callback(ret);
 				},
 				error: function () {
 					console.log('error');
