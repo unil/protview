@@ -2,7 +2,6 @@ ProtView.Utils.Drawing = Class.extend( {
 	svg : null,
 	init: function(svg) {
 		this.svg = svg;
-		console.log(svg);
 	},
 	draw : function(collection) {
 	    for (var i = 0, len = collection.length; i < len; i++) {
