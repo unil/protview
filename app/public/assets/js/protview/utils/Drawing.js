@@ -1,5 +1,7 @@
 ProtView.Utils.Drawing = Class.extend( {
 	svg : null,
+	//fixme, this attribute should not at this place
+	aaSize : 12,
 	init: function(svg) {
 		this.svg = svg;
 	},
@@ -21,7 +23,7 @@ ProtView.Utils.Drawing = Class.extend( {
 				var type = label[0];
 				var pos = label[1];
 					
-				self.drawAminoAcid(x, y, 18, type, pos);
+				self.drawAminoAcid(x, y, self.aaSize, type, pos);
 			}
 		}
 	    self.addDragSupport($('.aa'));
@@ -69,13 +71,14 @@ ProtView.Utils.Drawing = Class.extend( {
 	 * @param svgElement
 	 */
 	addDragSupport : function (svgElement) {
+		var self = this;
 		if (svgElement != null) {
 			svgElement
 			  	.draggable({
 				  // sets cursor position relative to elements size
 				  cursorAt: { 
-					  top: 18, 
-					  left: 18 
+					  top: self.aaSize, 
+					  left: self.aaSize 
 					  }
 			  	})
 			  	.bind('drag', function(event, ui){
