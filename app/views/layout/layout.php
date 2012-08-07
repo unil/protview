@@ -40,6 +40,8 @@ class LayoutLayoutView extends xView {
             	xUtil::url('a/js/protview/ProtView.js'),
             	xUtil::url('a/js/protview/Model/StructuralGeometry.js'),
             	xUtil::url('a/js/protview/Model/StructuralGeometryCollection.js'),
+            	xUtil::url('a/js/protview/View/DrawBoard.js'),
+            	xUtil::url('a/js/protview/Bootstrap.js'),
             ),
             'css' => array(
                 // Custom CSS

@@ -4,10 +4,10 @@
  */
 (function($, exports) {
 	//Namespaces
-	window.ProtView = {};
+	window.ProtView = {
+	};
 
 	ProtView.Model = {};
 	ProtView.View = {};
 	ProtView.Controller = {};
-
 })(this.JQuery, this);

@@ -1,7 +1,7 @@
 <?php
 
-class  RESTController extends xWebController {
-	var $model = null;
+class RESTController extends xWebController {
+	protected $model = null;
 	
 	/**
 	 * Allowed CRUD operations.
@@ -12,7 +12,7 @@ class  RESTController extends xWebController {
 	 * @see delete()
 	 * @var array
 	 */
-	var $allow = array('get', 'post', 'put', 'delete');
+	protected $allow = array('get', 'post', 'put', 'delete');
 	
     /**
      * Manages action redirection

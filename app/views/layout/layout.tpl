@@ -23,7 +23,7 @@
 	<!-- BEGIN PAGE -->
 	<div id="page">
 		<!-- BEBIN HEADER -->
-		<div id="header">
+		<div id="header" style="height: 30px">
 			<div id='menubar' style='visibility: hidden;'>
 				<?php echo xView::load('layout/menubar')->render() ?>
 			</div>

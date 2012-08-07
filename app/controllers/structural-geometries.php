@@ -1,6 +1,8 @@
 <?php
 
-class StructuralGeometriesController extends xWebController {
+class StructuralGeometriesController extends RESTController {
+	
+	
 
     /*function defaultAction() {
         return xView::load('home/home', $data)->render();

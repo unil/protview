@@ -4,6 +4,9 @@
 
 ProtView.Core.Graphic = {
 	svg : null,
+	setSVG : function(svg) {
+		this.svg = svg;
+	},
 
 	/**
 	 * Draws an amino acid element <group> <circle> <text>Label</text>
@@ -103,7 +106,6 @@ ProtView.Core.Graphic = {
 
 
 	},
-
 	init : function (msg) {
 		ProtView.Global.prot = msg;
 		$('#drawBoard').svg({
