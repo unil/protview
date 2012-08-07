@@ -1,41 +1,6 @@
 <?php
 
 class StructuralGeometriesController extends RESTController {
-	
-	
-
-    /*function defaultAction() {
-        return xView::load('home/home', $data)->render();
-    }*/
-    /*
-     *
-
-	structuralGeometries : [
-		{
-			id : 1,
-			region_id : 1,
-			representation_id : 1,
-			type: 'circle',
-			pos: 1,
-			labels : {
-				1: 'A-101',
-				2: 'B-2'3'
-			}
-			params : {
-				rotation : 180,
-				sens : 1
-			},
-			coordinates : [
-				{
-					id: 1,
-					x: 12.23,
-					y: 124.34,
-					amino_acid_id : 123
-				}
-			]
-		}
-	],
-     */
     function get() {
     	$ret = 
     	array (
