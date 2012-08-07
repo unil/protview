@@ -1,19 +1,23 @@
 ProtView.View.DrawBoard = Backbone.View.extend({
 	el : '#drawBoard',
 	initialize : function(args) {
-		console.log('init');		
+		this.self = this;
 	},
 	events: { 
 	},
-	setController: function(controller) {
+	setController : function(controller) {
 		this.controller = controller;
 	},
-	update : function(object, arguments) {
-		this.output = 'update ' + arguments;
-		this.render();
+	setModel : function(model) {
+		this.model = model;
+		this.model.on('change', this.render, this);	
+		this.model.on('reset', this.render, this);	
+
 	},
 	render : function() {
-		this.$el.html(this.output);
+		var json = this.model.toJSON();
+		var jsonString = JSON.stringify(json);
+		this.$el.html(jsonString);
 		return this;
 	},
 });
