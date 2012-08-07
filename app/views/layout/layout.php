@@ -20,6 +20,8 @@ class LayoutLayoutView extends xView {
             	xUtil::url('a/js/lib/underscore-1.3.3.min.js'),
             	xUtil::url('a/js/lib/backbone-0.9.2.min.js'),
             	xUtil::url('a/js/lib/backbone-relational-0.6.0.js'),
+            	xUtil::url('a/js/lib/jquery.ba-tinypubsub.min.js'),
+            	xUtil::url('a/js/lib/Class.js'),
             	/*
             	 * Templating
             	* JQuery Widgets
@@ -38,8 +40,10 @@ class LayoutLayoutView extends xView {
             	 * ProtView
             	 */	
             	xUtil::url('a/js/protview/ProtView.js'),
+            	xUtil::url('a/js/protview/utils/BackboneMediator.js'),
             	xUtil::url('a/js/protview/Model/StructuralGeometry.js'),
             	xUtil::url('a/js/protview/Model/StructuralGeometryCollection.js'),
+            	xUtil::url('a/js/protview/Controller/DrawBoardController.js'),
             	xUtil::url('a/js/protview/View/DrawBoard.js'),
             	xUtil::url('a/js/protview/Bootstrap.js'),
             ),

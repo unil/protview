@@ -7,6 +7,7 @@
 	window.ProtView = {
 	};
 
+	ProtView.Utils = {};
 	ProtView.Model = {};
 	ProtView.View = {};
 	ProtView.Controller = {};

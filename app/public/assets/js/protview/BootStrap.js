@@ -1,6 +1,3 @@
 
-ProtView.Bootstrap = {
-	init : function () {
-		console.log('init');
-	}()	
-};
+//var structuralGeometryCollection = 	new ProtView.Model.StructuralGeometryCollection();
+

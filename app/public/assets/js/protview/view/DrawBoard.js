@@ -1,21 +1,19 @@
 ProtView.View.DrawBoard = Backbone.View.extend({
 	el : '#drawBoard',
 	initialize : function(args) {
-		//this.collection = new ProtView.Model.StructuralGeometryCollection();
-		
+		console.log('init');		
 	},
-
 	events: { 
 	},
-	
-	/*fetchStructuralGeometries : function () {
-		collection.fetch({success: function(){
-
-		}});
-	},*/
-
+	setController: function(controller) {
+		this.controller = controller;
+	},
+	update : function(object, arguments) {
+		this.output = 'update ' + arguments;
+		this.render();
+	},
 	render : function() {
-		console.log('render');
+		this.$el.html(this.output);
 		return this;
 	},
 });
