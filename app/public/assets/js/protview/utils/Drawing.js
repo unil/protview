@@ -3,7 +3,8 @@ ProtView.Utils.Drawing = Class.extend( {
 	init: function(svg) {
 		this.svg = svg;
 	},
-	draw : function(collection) {
+	paint : function(collection) {
+		var self = this;
 	    for (var i = 0, len = collection.length; i < len; i++) {
 	        var geometry = collection.at(i);
 
@@ -20,11 +21,68 @@ ProtView.Utils.Drawing = Class.extend( {
 				var type = label[0];
 				var pos = label[1];
 					
-				console.log('x: ' + x);
-				console.log('y: ' + y);
-				console.log('type: ' + type);
-				console.log('pos: ' + pos);
+				self.drawAminoAcid(x, y, 18, type, pos);
 			}
 		}
-	}
+	    self.addDragSupport($('.aa'));
+	},
+	/**
+	 * Draws an amino acid element <group> <circle> <text>Label</text>
+	 * <text>Position</text> <group>
+	 * 
+	 * @param svg
+	 * @param x
+	 * @param y
+	 * @param size
+	 * @param label
+	 * @param pos
+	 */
+	drawAminoAcid : function (x, y, size, label, pos) {
+		var svg = this.svg;
+		g = svg.group({
+			id : 'aa-' + pos,
+			class_: 'aa',
+			/*
+			 * bug fix for translation start position bug as draggable is based on
+			 * html dom
+			 */
+			style : 'position: relative; left: ' + x + 'px; top:' + y + 'px;',
+			transform: 'translate(' + x + ',' + y + ')'
+		});
+
+		svg.circle(g, 0, 0, size, {
+			id: 'aa-' + pos + '-cercle'
+		});
+
+		svg.text(g, -4, 0, label, {
+			id : 'aa-' + pos + '-text'
+		});
+		svg.text(g, 0, 6, pos, {
+			id : 'aa-' + pos + '-seq_num',
+			class_: 'seq_num'
+		});
+	},
+
+	/**
+	 * Adds drag and drop support to an SVG Element
+	 * 
+	 * @param svgElement
+	 */
+	addDragSupport : function (svgElement) {
+		if (svgElement != null) {
+			svgElement
+			  	.draggable({
+				  // sets cursor position relative to elements size
+				  cursorAt: { 
+					  top: 18, 
+					  left: 18 
+					  }
+			  	})
+			  	.bind('drag', function(event, ui){
+			  		// update coordinates manually, since top/left style props don't
+					// work on SVG
+			  		event.target.setAttribute('transform', 'translate(' + ui.position.left + ',' + ui.position.top + ')');
+			  	});
+		}
+	},
 });

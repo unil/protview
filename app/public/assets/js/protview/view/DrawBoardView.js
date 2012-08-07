@@ -1,13 +1,12 @@
 ProtView.View.DrawBoard = Backbone.View.extend({
 	el : '#drawBoard',
 	initialize : function(args) {
-		var setSVG = this.setSVG;
 		var self = this;
-		this.$el.svg({
+		self.$el.svg({
 			onLoad : function(svg) {
-				//hack to overcome the this problem in callback as
+				//hack to overcome the 'this problem' in callback as
 				//context cannot be specified for onLoad
-				setSVG(svg, self);
+				self.drawing = new ProtView.Utils.Drawing(svg);
 			},
 			settings: {
 				width : "100%",
@@ -17,24 +16,21 @@ ProtView.View.DrawBoard = Backbone.View.extend({
 			}
 		});
 	},
-	setSVG : function(svg, obj) {
-		obj.drawing = new ProtView.Utils.Drawing(svg);
-	},
 	events: { 
 	},
 	setController : function(controller) {
 		this.controller = controller;
 	},
 	setModel : function(model) {
+		model.on('change', this.render, this);	
+		model.on('reset', this.render, this);	
 		this.model = model;
-		this.model.on('change', this.render, this);	
-		this.model.on('reset', this.render, this);	
 	},
 	render : function() {
-		this.drawing.draw(this.model);
-		var json = this.model.toJSON();
+		this.drawing.paint(this.model);
+		/*var json = this.model.toJSON();
 		var jsonString = JSON.stringify(json);
-		this.$el.html(jsonString);
+		this.$el.html(jsonString);*/
 		return this;
 	},
 });

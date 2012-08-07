@@ -69,6 +69,7 @@ ProtView.Core.Graphic = {
 
 	draw : function (svg) {
 		var collection = new ProtView.Model.StructuralGeometryCollection();
+		var self = this;
 		collection.fetch({success: function(){
 		    console.log(collection);
 		    for (var i = 0, len = collection.length; i < len; i++) {
@@ -87,10 +88,7 @@ ProtView.Core.Graphic = {
 					var type = label[0];
 					var pos = label[1];
 						
-					console.log('x: ' + x);
-					console.log('y: ' + y);
-					console.log('type: ' + type);
-					console.log('pos: ' + pos);
+					self.drawAminoAcid(x, y, 18, type, pos);
 				}
 			}
 		}});
