@@ -76,15 +76,15 @@ class StructuralGeometryModelTest extends protviewPHPUnit_Framework_TestCase {
 									'id',
 									'amino_acid_id',
 									'coordinate',
-									'amino_acids.type',
-									'amino_acids.pos'
+									'amino-acid_type',
+									'amino-acid_pos'
 							)	
 						)
 					)->get();
 			$labels = array();
 			$coordinates = array();
 			foreach ($coords as $coord) {
-				$labels[] = $coord['amino-acid_type'] . "-" . $coord['amino-acid_pos'];
+				$labels[] = strtoupper($coord['amino-acid_type']) . "-" . strtoupper($coord['amino-acid_pos']);
 				$xy = explode('/', $coord['coordinate']);
 				$coordinate = array (
 						'id' => $coord['id'],

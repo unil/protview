@@ -37,9 +37,9 @@ INSERT INTO `structural_geometries`(id, representation_id, region_id,type, param
 	(2, 1, 1, 'circle', null,2),
 	(3, 1, 1, 'line', null,3);
 INSERT INTO `structural_coordinates`(id, structural_geometry_id, amino_acid_id, coordinate) VALUES 
-	(1, 1, 1, '1.23/2435.2345'),
-	(2, 1, 2, '1.23/2435.2345'),
-	(3, 1, 3, '1.23/2435.2345');
+	(1, 1, 1, '80.3/20.2345'),
+	(2, 1, 2, '90.3/20.2345'),
+	(3, 1, 3, '100.234/20.2345');
 INSERT INTO `other_geometries`(id, representation_id, type, params, coordinate, pos) VALUES 
 	(1, 1, 'circle', null, '1.23/2435.2345',1);
 <?php }?>

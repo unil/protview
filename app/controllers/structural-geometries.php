@@ -1,56 +1,61 @@
 <?php
 
 class StructuralGeometriesController extends RESTController {
-    function get() {
-    	$ret = 
-    	array (
-	    	array(
-	    			'id' => 1,
-	    			'region_id' => 1,
-	    			'representation_id' => 1,
-	    			'type' => 'cercle',
-	    			'pos' => 2,
-	    			'labels' => array(
-	    					'A-101',
-	    					'B-203'
-	    					),
-	    			'params' => array(
-	    					'rotation' => 180,
-	    					'sens' => 1
-	    					),
-	    			'coordinates' => array(
-	    						array(
-	    							'id' =>　1,
-	    							'x' => 12.23,
-	    							'y' => 123.34,
-	    							'amino_acid_id' => 123
-	    						)
-	    			)
-	    	),
-    		array(
-    				'id' => 2,
-    				'region_id' => 1,
-    				'representation_id' => 1,
-    				'type' => 'cercle',
-    				'pos' => 1,
-    				'labels' => array(
-    						'A-101',
-    						'B-203'
-    				),
-    				'params' => array(
-    						'rotation' => 180,
-    						'sens' => 1
-    				),
-    				'coordinates' => array(
-    						array(
-    								'id' =>　1,
-    								'x' => 12.23,
-    								'y' => 123.34,
-    								'amino_acid_id' => 123
-    						)
-    				)
-    		)
-    	);
-    	return $ret;
-    }
+	function get() {
+		$ret = array();
+		$geometries = xModel::load(
+				'structural-geometry',
+				array(
+						'xjoin' => 'region',
+						'representation_id' => 1, //where
+						'xreturn' => array(
+								'id',
+								'region_id',
+								'representation_id',
+								'pos',
+								'params',
+								'structural_geometries.type'
+						)
+				)
+		)->get();
+		foreach($geometries as $geometry) {
+			$r = $geometry;
+			$r['id'] = (int)$r['id'];
+			$r['region_id'] = (int)$r['region_id'];
+			$r['representation_id'] = (int)$r['representation_id'];
+			$r['pos'] = (int)$r['pos'];
+			
+			$coords = xModel::load(
+					'structural-coordinate',
+					array(
+							'xjoin' => 'amino-acid',
+							'structural_geometry_id' => $geometry['id'],
+							'xreturn' => array (
+									'id',
+									'amino_acid_id',
+									'coordinate',
+									'amino-acid_type',
+									'amino-acid_pos'
+							)
+					)
+			)->get();
+			$labels = array();
+			$coordinates = array();
+			foreach ($coords as $coord) {
+				$labels[] = strtoupper($coord['amino-acid_type']) . "-" . strtoupper($coord['amino-acid_pos']);
+				$xy = explode('/', $coord['coordinate']);
+				$coordinate = array (
+						'id' => (int)$coord['id'],
+						'x' => (double)$xy[0],
+						'y' => (double)$xy[1],
+						'amino_acid_id' => (int)$coord['amino_acid_id']
+				);
+				$coordinates[] = $coordinate;
+			}
+			$r['labels'] = $labels;
+			$r['coordinates'] = $coordinates;
+			$ret[] = $r;
+		}
+		return $ret;
+	}
 }
