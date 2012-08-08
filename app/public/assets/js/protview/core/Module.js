@@ -20,7 +20,7 @@ Patern.prototype.Module = (function() {
 	};
 	
 	//public
-	return { 
+	return {
 		start : function() {
 			load();
 		},
