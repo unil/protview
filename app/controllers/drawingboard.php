@@ -1,6 +1,10 @@
 <?php
 
-class StructuralGeometriesController extends RESTController {
+class DrawingBoardController extends RESTController {
+	function defaultAction() {
+		$data = array();
+		return xView::load('drawingboard/start', $data, $this->meta)->render();
+	}
 	function get() {
 		$ret = array();
 		$geometries = xModel::load(

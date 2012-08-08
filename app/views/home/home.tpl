@@ -1,0 +1,1 @@
+<a href="<?php echo xUtil::url('drawingboard/do/')?>">Show drawing board</a>

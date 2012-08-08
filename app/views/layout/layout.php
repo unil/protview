@@ -15,8 +15,6 @@ class LayoutLayoutView extends xView {
             	 */
                 xUtil::url('a/js/lib/jquery-1.7.2.min.js'),
             	xUtil::url('a/js/lib/jquery-ui-1.8.21.custom.min.js'),
-            	xUtil::url('a/js/lib/jquery.svg.min.js'),
-            	xUtil::url('a/js/lib/jquery.svgdom.min.js'),
             	xUtil::url('a/js/lib/underscore-1.3.3.min.js'),
             	xUtil::url('a/js/lib/backbone-0.9.2.min.js'),
             	xUtil::url('a/js/lib/backbone-relational-0.6.0.js'),
@@ -36,23 +34,10 @@ class LayoutLayoutView extends xView {
             	xUtil::url('a/js/lib/jqwidgets/jqxtabs.js'),
             	xUtil::url('a/js/lib/jqwidgets/jqxmenu.js'),
             	xUtil::url('a/js/lib/jqwidgets/jqxdocking.js'),
-            	/*
-            	 * ProtView
-            	 */	
-            	xUtil::url('a/js/protview/ProtView.js'),
-            	xUtil::url('a/js/protview/utils/BackboneMediator.js'),
-            	xUtil::url('a/js/protview/utils/Drawing.js'),
-            	xUtil::url('a/js/protview/model/StructuralGeometry.js'),
-            	xUtil::url('a/js/protview/model/StructuralGeometryCollection.js'),
-            	xUtil::url('a/js/protview/controller/DrawBoardController.js'),
-            	xUtil::url('a/js/protview/view/DrawBoardView.js'),
-            	xUtil::url('a/js/protview/Bootstrap.js'),
             ),
             'css' => array(
                 // Custom CSS
                 xUtil::url('a/css/main.css'),
-            	xUtil::url('a/css/jquery.svg.css'),
-            	xUtil::url('a/css/protein.css'),
             	xUtil::url('a/css/bootstrap.css'),
             	xUtil::url('a/js/lib/jqwidgets/styles/jqx.base.css'),
             	xUtil::url('a/js/lib/jqwidgets/styles/jqx.summer.css')

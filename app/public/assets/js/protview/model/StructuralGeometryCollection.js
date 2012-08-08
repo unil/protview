@@ -4,6 +4,7 @@ ProtView.Model.StructuralGeometryCollection = Backbone.Collection.extend({
 		  return model.get('pos');
 	},
 	url : function() {
-		return this.id ? 'api/structural-geometries/' + this.id : 'api/structural-geometries';
+		var root = Application.ROOTPATH;
+		return this.id ? root + 'api/drawingboard/' + this.id : root + 'api/drawingboard';
 	},
 });

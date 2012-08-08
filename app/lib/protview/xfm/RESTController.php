@@ -14,18 +14,6 @@ class RESTController extends xWebController {
 	 */
 	protected $allow = array('get', 'post', 'put', 'delete');
 	
-    /**
-     * Manages action redirection
-     * according the received params and the available controller actions.
-     */
-    function defaultAction() {
-    	if (!isset($this->params['id'])) {
-    		if (method_exists($this, 'indexAction')) return $this->indexAction();
-    	} else {
-    		if (method_exists($this, 'detailAction')) return $this->detailAction();
-    	}
-    	throw new xException('Not found', 404);
-    }
     
     /**
      * API Method.

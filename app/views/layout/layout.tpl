@@ -18,6 +18,15 @@
 <!--[if lt IE 9]>
             <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
+	<!-- JavaScript -->
+	<script type="text/javascript">
+		var Application = {};
+		Application.ROOTPATH = '<?php echo xUtil::url()?>';
+	</script>
+	<?php foreach ($m['js'] as $js): ?>
+	<script type="text/javascript" src="<?php echo $js ?>"></script>
+	<?php endforeach ?>
+	<!-- Le fav and touch icons -->
 </head>
 <body>
 	<!-- BEGIN PAGE -->
@@ -42,15 +51,13 @@
 				</div>
 				<?php endforeach ?>
 				<?php echo $d['html']['content'] ?>
-				<!--  style="min-height: 800px; height: auto !important; height: 800px;"></div>-->
-				<div id="drawBoard" style="display: inline;"></div>
-				<!-- END CONTENT -->
 				<!-- BEGIN SIDEBAR -->
 				<div id="sidebar">
 					<?php echo xView::load('layout/sidebar')->render() ?>
 				</div>
 				<!-- END SIDEBAR -->
 			</div>
+			<!-- END CONTENT -->
 		</div>
 		<!-- END MAIN -->
 		<!-- BEGIN FOOTER -->
@@ -59,11 +66,6 @@
 		<!-- END FOOTER -->
 	</div>
 	<!-- END PAGE -->
-	<!-- JavaScript - for better performance, on the bottom -->
-	<?php foreach ($m['js'] as $js): ?>
-	<script type="text/javascript" src="<?php echo $js ?>"></script>
-	<?php endforeach ?>
-	<!-- Le fav and touch icons -->
 	<script type="text/javascript">
 	$(document).ready(function() {
 
@@ -80,6 +82,6 @@
 		$('#content-loading').remove();
 
 	});
-</script>
+	</script>
 </body>
 </html>
