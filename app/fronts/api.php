@@ -37,12 +37,4 @@ class ApiFront extends xApiFront {
         $result = $this->call_method();
         print $this->encode($result);
     }
-    
-    function encode_xml($data) { 
-    	require_once(xContext::$basepath.'/lib/protview/protview/XMLConverter.php');
-    	$xml = new XMLConverter();
-    	print $xml->write($data);
-    }
-
-
 }

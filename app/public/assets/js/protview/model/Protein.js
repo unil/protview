@@ -5,9 +5,6 @@ ProtView.Model.Protein = Backbone.RelationalModel.extend({
 		species: null,
 		note: null,
 	},
-	initialize : function Region() {
-	},
-	url : function() {
-		return this.id ? 'api/protein/' + this.id : 'api/protein';
-	},
+	initialize : function Protein() {
+	}
 });

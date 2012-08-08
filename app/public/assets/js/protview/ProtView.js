@@ -8,6 +8,7 @@
 	};
 
 	ProtView.Utils = {};
+	ProtView.Form = {};
 	ProtView.Model = {};
 	ProtView.View = {};
 	ProtView.Controller = {};

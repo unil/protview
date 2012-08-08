@@ -1,7 +1,6 @@
 <?php
 
 class DrawingboardStartView extends xView {
-
     function init() {
         $this->meta = xUtil::array_merge($this->meta, array(
             'js' => array(
@@ -15,12 +14,15 @@ class DrawingboardStartView extends xView {
             	 */	
             	xUtil::url('a/js/protview/ProtView.js'),
             	xUtil::url('a/js/protview/utils/BackboneMediator.js'),
-            	xUtil::url('a/js/protview/utils/BackboneParser.js'),
+            	xUtil::url('a/js/protview/utils/BackboneExtension.js'),
             	xUtil::url('a/js/protview/utils/Drawing.js'),
+            	xUtil::url('a/js/protview/model/Protein.js'),
+            	xUtil::url('a/js/protview/model/ProteinCollection.js'),
             	xUtil::url('a/js/protview/model/StructuralGeometry.js'),
             	xUtil::url('a/js/protview/model/StructuralGeometryCollection.js'),
             	xUtil::url('a/js/protview/controller/DrawBoardController.js'),
             	xUtil::url('a/js/protview/view/DrawBoardView.js'),
+            	xUtil::url('a/js/protview/form/ProteinSettingsForm.js'),
             	xUtil::url('a/js/protview/Bootstrap.js'),
             ),
             'css' => array(

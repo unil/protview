@@ -11,12 +11,13 @@
 					<li>Post modification</li>
 				</ul>
 				<div>
-					<form id="generalSettingsForm" class="form-horizontal">
+					<form id="proteinGeneralSettings" class="form-horizontal">
+					<script type="text/template" id="proteinGeneralSettingsTemplate">        
 						<div class="control-group">
 							<label class="control-label" for="name" id="name-label">Name</label>
 							<div class="controls">
 								<input type="text" name="name" id="name"
-									class="input-large required" value="" />
+									class="input-large required" value="<%= name %>" />
 							</div>
 						</div>
 						<div class="control-group">
@@ -37,6 +38,7 @@
 							<button class="btn btn-primary" type="submit">Save changes</button>
 							<button class="btn">Cancel</button>
 						</div>
+					</script>
 					</form>
 				</div>
 				<!-- STRUCTURE SETTINGS BEGIN -->
