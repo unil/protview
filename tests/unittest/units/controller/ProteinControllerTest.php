@@ -7,21 +7,42 @@
 class ProteinControllerTest extends protviewPHPUnit_Framework_TestCase {
 
 	function test_proteinController_get_allFieldsAreReturned() {
-		$ret = xController::load('protein', array())->get();		
+		$ret = xController::load('proteins', array())->get();		
 		print_r($ret);
 	}
 	
-	function test_proteinController_put_allFieldsAreReturned() {
+	function test_proteinController_put_noErrorExpected() {
 		$ret = xController::load(
 				'proteins', array(
-					'id' => 0,
 					'items' => array (
 							'id' => 0,
-							'name' => 'protein 3',
+							'name' => 'protein 4',
 							'species' => 'homo sapiens',
 							'note' => null
 							)
 				))->put();
+		print_r($ret);
+	}
+	
+	function test_proteinController_delete_oneFieldDeletedWithNoError() {
+		$ret = xController::load(
+				'proteins', array(
+					'id' => 2		
+				))->delete();
+		print_r($ret);
+	}
+	
+	function test_proteinController_post_noErrorExpected() {
+		$ret = xController::load(
+				'proteins', array(
+						'id' => 1,
+						'items' => array (
+								'id' => 1,
+								'name' => 'protein 4',
+								'species' => 'homo sapiens',
+								'note' => null
+						)
+				))->post();
 		print_r($ret);
 	}
 }

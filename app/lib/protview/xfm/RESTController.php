@@ -19,7 +19,7 @@ class RESTController extends xWebController {
      * API Method.
      * Generic get method for API calls.
      * @param mixed Any model fields for filtering, or a query parameter for search
-     * @return array An ExtJS compatible resultset structure.
+     * @return array An JSON compatible resultset structure.
      */
     function get() {
     if (!in_array('get', $this->allow)) throw new xException("Method not allowed", 403);
@@ -50,7 +50,7 @@ class RESTController extends xWebController {
      * API Method.
      * Generic post method for API calls.
      * @param array items: contains an array of model fields and values.
-     * @return array An ExtJS compatible resultset structure.
+     * @return array An JSON compatible resultset structure.
      */
     function post() {
         // Checks if method is allowed
@@ -64,15 +64,13 @@ class RESTController extends xWebController {
         // Database action
         $r = xModel::load($this->model, $this->params['items'])->post();
         // Result
-        $i = xController::load($this->get_name(), array('id'=>$this->params['items']['id']))->get();
-        $r['items'] = array_shift($i['items']);
         return $r;
     }
     /**
      * API Method.
      * Generic put method for API calls.
      * @param array items: contains an array of model fields and values.
-     * @return array An ExtJS compatible resultset structure.
+     * @return array An JSON compatible resultset structure.
      */
     function put() {
         // Checks if method is allowed
@@ -88,8 +86,6 @@ class RESTController extends xWebController {
         // Database action
         $r = xModel::load($this->model, $this->params['items'])->put();
         // Result
-        $i = xController::load($this->get_name(), array('id'=>$r['xinsertid']))->get();
-        $r['items'] = array_shift($i['items']);
         return $r;
     }
 	 /**
@@ -98,7 +94,7 @@ class RESTController extends xWebController {
      * @note This method is to be used as default. For nn relationship tables,
      *       one should refine the method in specific controller classes.
      * @param integer id: the id parameter of the record to delete
-     * @return array An ExtJS compatible resultset structure.
+     * @return array An JSON compatible resultset structure.
      */
     function delete() {
         // Checks if method is allowed
