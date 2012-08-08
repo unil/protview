@@ -3,13 +3,6 @@
  * backbonejs 0.9.2 jQuery SVG 1.4.5 jQuery SVG Dom (same version as jQuery SVG)
  */
 (function($, exports) {
-	//Namespaces
 	window.ProtView = {
 	};
-
-	ProtView.Utils = {};
-	ProtView.Form = {};
-	ProtView.Model = {};
-	ProtView.View = {};
-	ProtView.Controller = {};
 })(this.JQuery, this);
