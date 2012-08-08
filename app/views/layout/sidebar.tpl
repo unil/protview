@@ -2,13 +2,13 @@
 <div>
 	<!-- SETTINGS WINDOW BEGIN -->
 	<div id="settingsWindow" style="height: 540px">
-		<div>Settings</div>
+		<div>Protein definition</div>
 		<div style="overflow: hidden;">
 			<div id="settingsTabs">
 				<ul style="margin-left: 3px">
 					<li>General</li>
 					<li>Structure</li>
-					<li>Modification</li>
+					<li>Post modification</li>
 				</ul>
 				<div>
 					<form id="generalSettingsForm" class="form-horizontal">
@@ -19,8 +19,23 @@
 									class="input-large required" value="" />
 							</div>
 						</div>
-						<div>
-							<input type="submit" value="Save" />
+						<div class="control-group">
+							<label class="control-label" for="name" id="name-label">Species</label>
+							<div class="controls">
+								<input type="text" name="name" id="name"
+									class="input-large required" value="" />
+							</div>
+						</div>
+						<div class="control-group">	
+							<label class="control-label" for="name" id="name-label">Note</label>
+							<div class="controls">
+								<textarea name="sequence" id="sequence"
+									class="input-large required" rows="5"></textarea>
+							</div>
+						</div>
+						<div class="form-actions">
+							<button class="btn btn-primary" type="submit">Save changes</button>
+							<button class="btn">Cancel</button>
 						</div>
 					</form>
 				</div>

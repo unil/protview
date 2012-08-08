@@ -40,7 +40,7 @@ class RESTController extends xWebController {
             $resource = xModel::load($this->model)->name;
             throw new xException("The requested {$resource} does not exist", 404);
         }
-        // Creates extjs compatible result
+        // Creates backebonejs compatible result
         return array(
             'xcount' => $count,
             'items' => $items

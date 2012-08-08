@@ -6,11 +6,8 @@ class DrawingboardStartView extends xView {
         $this->meta = xUtil::array_merge($this->meta, array(
             'js' => array(
             	/*
-            	 * Libraries
-            	 * 
-            	 * Basic
+            	 * JQuery SVG
             	 */
-
             	xUtil::url('a/js/lib/jquery.svg.min.js'),
             	xUtil::url('a/js/lib/jquery.svgdom.min.js'),
             	/*
@@ -18,6 +15,7 @@ class DrawingboardStartView extends xView {
             	 */	
             	xUtil::url('a/js/protview/ProtView.js'),
             	xUtil::url('a/js/protview/utils/BackboneMediator.js'),
+            	xUtil::url('a/js/protview/utils/BackboneParser.js'),
             	xUtil::url('a/js/protview/utils/Drawing.js'),
             	xUtil::url('a/js/protview/model/StructuralGeometry.js'),
             	xUtil::url('a/js/protview/model/StructuralGeometryCollection.js'),
@@ -26,7 +24,7 @@ class DrawingboardStartView extends xView {
             	xUtil::url('a/js/protview/Bootstrap.js'),
             ),
             'css' => array(
-                // Custom CSS
+                // SVG template
             	xUtil::url('a/css/jquery.svg.css'),
             	xUtil::url('a/css/protein.css'),
             )

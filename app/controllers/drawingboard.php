@@ -7,6 +7,7 @@ class DrawingBoardController extends RESTController {
 	}
 	function get() {
 		$ret = array();
+		$items = array();
 		$geometries = xModel::load(
 				'structural-geometry',
 				array(
@@ -58,8 +59,9 @@ class DrawingBoardController extends RESTController {
 			}
 			$r['labels'] = $labels;
 			$r['coordinates'] = $coordinates;
-			$ret[] = $r;
+			$items[] = $r;
 		}
+		$ret['items'] = $items;
 		return $ret;
 	}
 }
