@@ -1,6 +1,6 @@
 <?php
 
-class WebFront extends xWebFront {
+class RawFront extends xWebFront {
     function get() {
        $controller_name = @$this->params['xcontroller'];
         if (@$this->params['xmodule']) $controller_name = "{$this->params['xmodule']}/$controller_name";
