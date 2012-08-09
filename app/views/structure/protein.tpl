@@ -21,11 +21,12 @@
 				rows="5"><%= note %></textarea>
 		</div>
 	</div>
-	<div class="form-actions">
-		<button class="btn btn-primary" type="submit">Save changes</button>
+ 	<div class="form-actions">
+		<button class="btn btn-primary" id="protein-form-submit">Save changes</button>
 		<button class="btn">Cancel</button>
 	</div>
 </script>
+
 </form>
 <!-- JavaScript - for better performance, on the bottom -->
 <?php foreach ($m['js'] as $js): ?>
