@@ -1,22 +1,22 @@
 <form id="proteinForm" class="form-horizontal">
 	<div class="control-group">
-		<label class="control-label" for="name" id="name-label">Name</label>
+		<label class="control-label" for="protein.name" id="protein-name-label">Name</label>
 		<div class="controls">
-			<input type="text" name="name" id="name" class="input-large required"
+			<input type="text" name="protein-name" id="protein-name" class="input-large required"
 				value="" />
 		</div>
 	</div>
 	<div class="control-group">
-		<label class="control-label" for="name" id="name-label">Species</label>
+		<label class="control-label" for="protein-species" id="protein-species-label">Species</label>
 		<div class="controls">
-			<input type="text" name="name" id="name" class="input-large required"
+			<input type="text" name="protein-species" id="protein-species" class="input-large required"
 				value="" />
 		</div>
 	</div>
 	<div class="control-group">
-		<label class="control-label" for="name" id="name-label">Note</label>
+		<label class="control-label" for="protein-note" id="protein-note-label">Note</label>
 		<div class="controls">
-			<textarea name="sequence" id="sequence" class="input-large required"
+			<textarea name="protein-note" id="protein-note" class="input-large required"
 				rows="5"></textarea>
 		</div>
 	</div>

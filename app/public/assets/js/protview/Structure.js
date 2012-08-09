@@ -18,12 +18,24 @@ ProtView.Structure.Module = (function() {
 		stack.model = model;
 		stack.view = view;
 		stack.controller = controller;
+	},
+	show = function(resource, id) {
+		switch(resource) {
+			case 'protein': 
+				
+				break;
+				
+		}
+	},
+	unload = function() {
+		for (var el in stack) {
+			   /*var obj = stack[el];
+			   obj.unload();*/
+			   stack[el] = null;
+			   delete stack[el];
+		}
 	};
-	/*unload = function() {
-		mediator.unload();
-		mediator = null;
-	};
-	publish = function(channel, argument) {
+	/*publish = function(channel, argument) {
 		mediator.publish(publisher, argument);
 	};
 	subscribe = function(subscriber, callback) {
@@ -40,6 +52,9 @@ ProtView.Structure.Module = (function() {
 		},
 		stop : function () {
 			unload();
+		},
+		show : function(resource, id) {
+			show(resource, id);
 		},
 		publish : function(publisher, argument) {
 			publish(publisher, argument);

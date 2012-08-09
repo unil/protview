@@ -1,5 +1,5 @@
 ProtView.DrawBoard.View.DrawBoardView = Backbone.View.extend({
-	el : '#drawBoard',
+	//el : '#drawBoard',
 	initialize : function(args) {
 		var self = this;
 		self.$el.svg({

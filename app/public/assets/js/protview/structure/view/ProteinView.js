@@ -1,7 +1,7 @@
 ProtView.Structure.ProteinView = Backbone.View.extend({
-	el : '#proteinGeneralSettings',
+	el : '#proteinForm',
 	initialize : function(args) {
-		this.template = _.template($('#proteinGeneralSettingsTemplate').html());
+		this.template = _.template($('#proteinFormTemplate').html());
 	},
 	events: { 
 	},
@@ -14,8 +14,9 @@ ProtView.Structure.ProteinView = Backbone.View.extend({
 		this.model = model;
 	},
 	render : function() {
-		var renderedContent = this.template(this.model.toJSON());
-        $(this.el).html(renderedContent);
+		/*var renderedContent = this.template(this.model.toJSON());
+        $(this.el).html(renderedContent);*/
+		
 		return this;
 	},
 });

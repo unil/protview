@@ -1,4 +1,3 @@
-
 <div>
 	<!-- SETTINGS WINDOW BEGIN -->
 	<div id="settingsWindow" style="height: 540px">

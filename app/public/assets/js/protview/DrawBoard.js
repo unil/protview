@@ -9,7 +9,7 @@ ProtView.DrawBoard.Module = (function() {
 	var stack = {},
 	load = function() {
 		var model = new ProtView.DrawBoard.Model.StructuralGeometryCollection();
-		var view = new ProtView.DrawBoard.View.DrawBoardView();
+		var view = new ProtView.DrawBoard.View.DrawBoardView({ el: $('#drawBoard').get(0) });
 		var controller = new ProtView.DrawBoard.Controller.DrawBoardController();
 		controller.setModel(model);
 		view.setModel(model);

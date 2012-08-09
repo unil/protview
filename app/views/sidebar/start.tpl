@@ -8,7 +8,7 @@
 		$('#settingsTabs').jqxTabs({ theme: theme, width: '100%', height: '100%', selectedItem: 0 });
 		
 		var loadPage = function (tabIndex) {
-			var url = Application.ROOTPATH + 'raw/protein/do';
+			var url = Application.ROOTPATH + 'raw/proteins/do';
 			var tabId = '#proteinSettings';
 			switch(tabIndex) {
 				case 2: 
