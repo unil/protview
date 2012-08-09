@@ -1,6 +1,5 @@
 ProtView.Core.BackboneHelper = Class.extend( {
 	init: function(collection) {
-		console.log(collection);
 		this.collection = collection;
 	},
 	fetch : function(callback) {
@@ -10,7 +9,7 @@ ProtView.Core.BackboneHelper = Class.extend( {
 					callback(ret);
 				},
 				error: function () {
-					console.log('error');
+					console.log('ProtView.Core.BackBoneHelper: error');
 				}
 			}
 		);
