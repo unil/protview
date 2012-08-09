@@ -1,4 +1,4 @@
-<form id="proteinGeneralSettings" class="form-horizontal">
+<form id="proteinForm" class="form-horizontal">
 	<div class="control-group">
 		<label class="control-label" for="name" id="name-label">Name</label>
 		<div class="controls">

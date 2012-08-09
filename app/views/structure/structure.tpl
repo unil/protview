@@ -1,4 +1,4 @@
-<form id="transmembraneSettingsForm" class="form-horizontal">
+<form id="structureForm" class="form-horizontal">
 	<div class="control-group">
 		<label class="control-label" for="sequence" id="sequence-label">Sequence</label>
 		<div class="controls">
