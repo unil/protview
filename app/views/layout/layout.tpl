@@ -51,11 +51,6 @@
 				</div>
 				<?php endforeach ?>
 				<?php echo $d['html']['content'] ?>
-				<!-- BEGIN SIDEBAR -->
-				<div id="sidebar">
-					<?php echo xView::load('layout/sidebar')->render() ?>
-				</div>
-				<!-- END SIDEBAR -->
 			</div>
 			<!-- END CONTENT -->
 		</div>
@@ -74,11 +69,10 @@
 		$("#menubar").jqxMenu({ width: '100%', height: '30px', autoOpen: false, autoCloseInterval: 0, theme: theme });
         $("#menubar").css('visibility', 'visible');
 
-		$('#sidebar').jqxDocking({ theme: theme, orientation: 'horizontal', width: 400, mode: 'docked' });
-		$('#sidebar').jqxDocking('showAllCollapseButtons');
-		$('#settingsTabs').jqxTabs({ theme: theme, width: '100%', height: '100%', selectedItem: 0 });
+		//$('#sidebar').jqxDocking({ theme: theme, orientation: 'horizontal', width: 400, mode: 'docked' });
+		//$('#sidebar').jqxDocking('showAllCollapseButtons');
+		//$('#settingsTabs').jqxTabs({ theme: theme, width: '100%', height: '100%', selectedItem: 0 });
 		
-		//ProtView.init();
 		$('#content-loading').remove();
 
 	});

@@ -1,9 +1,20 @@
 <a href="#" id="showDrawingBoard">Show drawing board</a>
-<div id="test" style="display: inline;"></div>
+<a href="#" id="showSidebar">Show sidebar</a>
+<div id="drawingBoard" style="display: inline;"></div>
+<!-- BEGIN SIDEBAR -->
+<!-- DOCKING BEGIN -->
+<div id="sidebar"></div>
+<!-- DOCKING END -->
+<!-- END SIDEBAR -->
 <script type='text/javascript'>
 $(document).ready(function() {
 	$('#showDrawingBoard').click(function() {
 		var url = Application.ROOTPATH + 'raw/drawingboard/do/';
+		var method = 'get';
+		fetch(url, method);
+	});
+	$('#showSidebar').click(function() {
+		var url = Application.ROOTPATH + 'raw/sidebar/do/';
 		var method = 'get';
 		fetch(url, method);
 	});
@@ -19,8 +30,9 @@ function fetch(url, method) {
 			
 		},
 		success : function(msg) {
-			$('#test').html(msg);
-			ProtView.DrawBoard.Module.start();
+			/*$('#drawingBoard').html(msg);
+			ProtView.DrawBoard.Module.start();*/
+			$('#sidebar').html(msg);
 		}
 });
 }
