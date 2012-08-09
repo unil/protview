@@ -1,31 +1,40 @@
 ProtView.Structure.Controller = {};
 ProtView.Structure.Model = {};
 ProtView.Structure.View = {};
-ProtView.Structure.Utils = {};
 
 ProtView.Structure.Module = (function() {
 	//local
 	//var mediator = null,
 	var stack = {},
+	resource = null,
 	load = function() {
-		var model = new ProtView.DrawBoard.Model.StructuralGeometryCollection();
-		var view = new ProtView.DrawBoard.View.DrawBoardView();
-		var controller = new ProtView.DrawBoard.Controller.DrawBoardController();
-		controller.setModel(model);
-		view.setModel(model);
-		view.setController(controller);
-		controller.update();
+		var model = null,
+		controller = null,
+		view = null;
+		if (resource == null || resource == 'undefined') {
+			resource = 'protein';
+		}
+		switch(resource) {
+			case 'protein': 
+				model = new ProtView.Structure.Model.ProteinCollection();
+				view = new ProtView.Structure.View.ProteinView();
+				controller = new ProtView.Structure.Controller.ProteinController();
+				controller.setModel(model);
+				view.setModel(model);
+				view.setController(controller);
+				controller.update(1);
+				resource = 'protein';
+				break;		
+		}
 		stack.model = model;
 		stack.view = view;
 		stack.controller = controller;
 	},
 	show = function(resource, id) {
-		switch(resource) {
-			case 'protein': 
-				
-				break;
-				
-		}
+		//if (resource != this.resource) 
+		
+		
+		
 	},
 	unload = function() {
 		for (var el in stack) {

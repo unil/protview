@@ -1,4 +1,4 @@
-ProtView.Model.Protein = Backbone.RelationalModel.extend({
+ProtView.Structure.Model.Protein = Backbone.RelationalModel.extend({
 	defaults : {
 		id: null,
 		name: null,
