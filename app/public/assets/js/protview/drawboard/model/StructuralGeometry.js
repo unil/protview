@@ -1,4 +1,4 @@
-ProtView.Model.StructuralGeometry = Backbone.RelationalModel.extend({
+ProtView.DrawBoard.Model.StructuralGeometry = Backbone.RelationalModel.extend({
 	defaults : {
 		id: null,
 		representation_id: null,

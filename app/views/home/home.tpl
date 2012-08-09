@@ -3,24 +3,25 @@
 <script type='text/javascript'>
 $(document).ready(function() {
 	$('#showDrawingBoard').click(function() {
-		send("get");
+		var url = Application.ROOTPATH + 'raw/drawingboard/do/';
+		var method = 'get';
+		fetch(url, method);
 	});
 
 });
 
-function send(method) {
+function fetch(url, method) {
 	$.ajax({
 		type : method,
-		url : "<?php echo xUtil::url('raw/drawingboard/do/')?>",
-		dataType: "html",
+		url : url,
+		dataType: 'html',
 		data : {
 			
 		},
 		success : function(msg) {
-			
 			$('#test').html(msg);
-
+			ProtView.DrawBoard.Module.start();
 		}
-	});
+});
 }
 </script>

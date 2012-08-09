@@ -12,18 +12,11 @@ class DrawingboardStartView extends xView {
             	/*
             	 * ProtView
             	 */	
-            	xUtil::url('a/js/protview/ProtView.js'),
-            	xUtil::url('a/js/protview/utils/BackboneMediator.js'),
-            	xUtil::url('a/js/protview/utils/BackboneExtension.js'),
-            	xUtil::url('a/js/protview/utils/Drawing.js'),
-            	xUtil::url('a/js/protview/model/Protein.js'),
-            	xUtil::url('a/js/protview/model/ProteinCollection.js'),
-            	xUtil::url('a/js/protview/model/StructuralGeometry.js'),
-            	xUtil::url('a/js/protview/model/StructuralGeometryCollection.js'),
-            	xUtil::url('a/js/protview/controller/DrawBoardController.js'),
-            	xUtil::url('a/js/protview/view/DrawBoardView.js'),
-            	xUtil::url('a/js/protview/form/ProteinSettingsForm.js'),
-            	xUtil::url('a/js/protview/Bootstrap.js'),
+            	xUtil::url('a/js/protview/drawboard/utils/Drawing.js'),
+            	xUtil::url('a/js/protview/drawboard/model/StructuralGeometry.js'),
+            	xUtil::url('a/js/protview/drawboard/model/StructuralGeometryCollection.js'),
+            	xUtil::url('a/js/protview/drawboard/controller/DrawBoardController.js'),
+            	xUtil::url('a/js/protview/drawboard/view/DrawBoardView.js'),
             ),
             'css' => array(
                 // SVG template

@@ -5,4 +5,8 @@
 (function($, exports) {
 	window.ProtView = {
 	};
+	
+	ProtView.DrawBoard = {};
+	ProtView.Core = {};
+	ProtView.Structure = {};
 })(this.JQuery, this);

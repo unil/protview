@@ -1,5 +1,5 @@
-ProtView.Model.StructuralGeometryCollection = Backbone.Collection.extend({
-	model : ProtView.Model.StructuralGeometry,
+ProtView.DrawBoard.Model.StructuralGeometryCollection = Backbone.Collection.extend({
+	model : ProtView.DrawBoard.Model.StructuralGeometry,
 	comparator : function(model) {
 		  return model.get('pos');
 	},

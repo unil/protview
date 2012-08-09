@@ -1,4 +1,4 @@
-ProtView.Utils.Drawing = Class.extend( {
+ProtView.DrawBoard.Utils.Drawing = Class.extend( {
 	svg : null,
 	//fixme, this attribute should not at this place
 	aaSize : 12,

@@ -1,5 +1,6 @@
-ProtView.Utils.BackboneMediator = Class.extend( {
+ProtView.Core.BackboneHelper = Class.extend( {
 	init: function(collection) {
+		console.log(collection);
 		this.collection = collection;
 	},
 	fetch : function(callback) {

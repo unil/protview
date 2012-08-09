@@ -1,15 +1,21 @@
-ProtView.Controller.Router = Backbone.Router.extend({
+ProtView.Core.Router = Backbone.Router.extend({
 	  routes: {
-	    "help":                 "help",    // #help
-	    "search/:query":        "search",  // #search/kiwis
-	    "search/:query/p:page": "search"   // #search/kiwis/p7
+	    "drawboard":   "drawboard",    
 	  },
 
-	  help: function() {
-
-	  },
-
-	  search: function(query, page) {
-
+	  drawboard: function() {
+		  var url = Application.ROOTPATH + 'raw/drawingboard/do/';
+		  var method = 'get';
+		  $.ajax({
+				type : method,
+				url : url,
+				dataType: 'html',
+				data : {
+					
+				},
+				success : function(msg) {
+					ProtView.DrawBoard.load();
+				}
+		  });
 	  }
 });

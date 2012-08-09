@@ -1,4 +1,4 @@
-ProtView.View.DrawBoard = Backbone.View.extend({
+ProtView.DrawBoard.View.DrawBoardView = Backbone.View.extend({
 	el : '#drawBoard',
 	initialize : function(args) {
 		var self = this;
@@ -6,7 +6,7 @@ ProtView.View.DrawBoard = Backbone.View.extend({
 			onLoad : function(svg) {
 				//hack to overcome the 'this problem' in callback as
 				//context cannot be specified for onLoad
-				self.drawing = new ProtView.Utils.Drawing(svg);
+				self.drawing = new ProtView.DrawBoard.Utils.Drawing(svg);
 			},
 			settings: {
 				width : "100%",
@@ -32,5 +32,5 @@ ProtView.View.DrawBoard = Backbone.View.extend({
 		var jsonString = JSON.stringify(json);
 		this.$el.html(jsonString);*/
 		return this;
-	},
+	}
 });
