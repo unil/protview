@@ -1,4 +1,8 @@
-<?php echo xView::load('sidebar/proteinsettings')->render() ?>
+<?php echo xView::load('sidebar/proteinsettings')->render(); ?>
+<?php 
+ //in order to load js files necessary for this widget
+echo xView::load('structure/start')->render() ;
+?>
 <script type="text/javascript">
 	$(document).ready(function() {
 		var theme = 'summer';

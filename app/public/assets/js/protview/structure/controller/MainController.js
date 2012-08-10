@@ -24,7 +24,7 @@ ProtView.Structure.Controller.MainController = Class.extend( {
 
 		if (resource != currentResource) {
 			//unload current resource to free memory space
-			this.unloadResource(currentResource);
+			this.unload(currentResource);
 			switch(resource) {
 				case 'structure' :
 					console.log('structure');
@@ -36,7 +36,6 @@ ProtView.Structure.Controller.MainController = Class.extend( {
 					controller.setModel(model);
 					view.setModel(model);
 					view.setController(controller);
-					controller.update(1);
 					currentResource = 'protein';
 					break;	
 				default :
@@ -53,7 +52,7 @@ ProtView.Structure.Controller.MainController = Class.extend( {
 			this.currentResource = resource;
 		}
 	},
-	undload: function (resource) {
+	unload: function (resource) {
 	},
 	unloadAll : function() {
 		var stack = this.stack;

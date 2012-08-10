@@ -6,42 +6,19 @@ ProtView.Structure.Module = (function() {
 	//local
 	//var mediator = null,
 	var stack = {},
-	resource = null,
+	controller = null,
 	load = function() {
 		//init mediator, main controller
-	},
-	show = function(res, id) {
-		var model = null,
-		controller = null,
-		view = null;
-
-		if (resource == null || resource == 'undefined') {
-			resource = 'protein';
-		}
-		switch(resource) {
-			case 'structure' :
-				console.log('structure');
-			break;
-			case 'protein' :
-				model = new ProtView.Structure.Model.ProteinCollection();
-				view = new ProtView.Structure.View.ProteinView();
-				controller = new ProtView.Structure.Controller.ProteinController();
-				controller.setModel(model);
-				view.setModel(model);
-				view.setController(controller);
-				controller.update(1);
-				resource = 'protein';
-				break;	
-			default :
-				console.log('error no resource give or not known');
-				break;
-		}
-		stack.model = model;
-		stack.view = view;
+		controller = new ProtView.Structure.Controller.MainController();
 		stack.controller = controller;
-		
-		
-		
+	},
+	show = function(resource, id) {
+		controller.load(resource);
+		c = controller.getController();
+		if (c != null)
+			c.update(id);
+		else 
+			console.log("ProtView.Structure.Module:show controller is null")
 	},
 	unload = function() {
 		for (var el in stack) {
