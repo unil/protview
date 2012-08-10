@@ -67,6 +67,6 @@
 <?php endforeach ?>
 <script type="text/javascript">
 	$(document).ready(function() {
-		//ProtView.Structure.Module.show('structure',1);
+		ProtView.Structure.Module.show('structure',1);
 	});
 </script>
