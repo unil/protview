@@ -33,3 +33,8 @@
 <script
 	type="text/javascript" src="<?php echo $js ?>"></script>
 <?php endforeach ?>
+<script type="text/javascript">
+	$(document).ready(function() {
+		ProtView.Structure.Module.show('protein',1);
+	});
+</script>

@@ -1,18 +1,19 @@
-<form id="structureForm" class="form-horizontal">
+<form id="structure-form" class="form-horizontal">
+<script type="text/template" id="structure-form-template">
 	<div class="control-group">
-		<label class="control-label" for="sequence" id="sequence-label">Sequence</label>
+		<label class="control-label" for="structure-sequence" id="structure-sequence-label">Sequence</label>
 		<div class="controls">
-			<textarea name="sequence" id="sequence" class="input-large required"
+			<textarea name="sequence" id="structure-sequence" class="input-large required"
 				rows="5"></textarea>
 		</div>
 	</div>
 	<div class="control-group">
-		<label for="domain" id="domain-label" class="control-label">Terminus</label>
+		<label for="structure-terminus-n" id="structure-terminus-n-label" class="control-label">Terminus</label>
 		<div class="controls">
-			N : <select name="n-terminal" id="n-terminal" class="input-small">
+			N : <select name="structure-terminus-n" id="structure-terminus-n" class="input-small">
 				<option value="inside" selected>Inside</option>
 				<option value="outside">Outside</option>
-			</select> C : <select name="n-terminal" id="n-terminal"
+			</select> C : <select name="structure-terminus-c" id="structure-terminus-c"
 				class="input-small">
 				<option value="inside" selected>Inside</option>
 				<option value="outside">Outside</option>
@@ -20,13 +21,13 @@
 		</div>
 	</div>
 	<div class="control-group">
-		<label for="domain" id="domain-label" class="control-label">Membrane
+		<label for="structure-region-1" id="structure-region-label" class="control-label">Membrane
 			regions</label>
 		<div class="controls">
 			<ol>
 				<li style="margin-left: 20px; margin-bottom: 9px;">From : <input
-					type="text" class="input-xmini inline" name="from-1" id="from-1">
-					To : <input type="text" class="input-xmini inline" name="to-1"
+					type="text" class="input-xmini inline" name="structure-region-from-1" id="from-1">
+					To : <input type="text" class="input-xmini inline" name="structure-region-form-1"
 					id="to-1">
 				</li>
 				<li style="margin-left: 20px; margin-bottom: 9px;">From : <input
@@ -54,7 +55,18 @@
 		</div>
 	</div>
 	<div class="form-actions">
-		<button class="btn btn-primary" type="submit">Save changes</button>
+		<button class="btn btn-primary" type="submit" id="protein-form-submit">Save changes</button>
 		<button class="btn">Cancel</button>
 	</div>
+</script>
 </form>
+<!-- JavaScript - for better performance, on the bottom -->
+<?php foreach ($m['js'] as $js): ?>
+<script
+	type="text/javascript" src="<?php echo $js ?>"></script>
+<?php endforeach ?>
+<script type="text/javascript">
+	$(document).ready(function() {
+		//ProtView.Structure.Module.show('structure',1);
+	});
+</script>
