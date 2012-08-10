@@ -4,7 +4,7 @@ ProtView.Structure.Model.Structure = Backbone.RelationalModel.extend({
 		sequence: null,
 		terminusN: null,
 		terminusC: null,
-		regions : null
+		membraneRegion : {}
 	},
 	initialize : function Structure() {
 	}
