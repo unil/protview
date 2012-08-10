@@ -17,7 +17,7 @@ ProtView.Structure.View.ProteinView = Backbone.View.extend({
 	submitForm : function(e) {
 		console.log(e);
         e.preventDefault();
-        console.log('form submit');
+        console.log(this.$('#protein-name').val());
         /*this.collection.add({
             id : this.$('.id').val(),
             title : this.$('.title').val(),

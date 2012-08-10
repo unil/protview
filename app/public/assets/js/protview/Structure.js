@@ -8,14 +8,21 @@ ProtView.Structure.Module = (function() {
 	var stack = {},
 	resource = null,
 	load = function() {
+		//init mediator, main controller
+	},
+	show = function(res, id) {
 		var model = null,
 		controller = null,
 		view = null;
+
 		if (resource == null || resource == 'undefined') {
 			resource = 'protein';
 		}
 		switch(resource) {
-			case 'protein': 
+			case 'structure' :
+				console.log('structure');
+			break;
+			case 'protein' :
 				model = new ProtView.Structure.Model.ProteinCollection();
 				view = new ProtView.Structure.View.ProteinView();
 				controller = new ProtView.Structure.Controller.ProteinController();
@@ -24,14 +31,14 @@ ProtView.Structure.Module = (function() {
 				view.setController(controller);
 				controller.update(1);
 				resource = 'protein';
-				break;		
+				break;	
+			default :
+				console.log('error no resource give or not known');
+				break;
 		}
 		stack.model = model;
 		stack.view = view;
 		stack.controller = controller;
-	},
-	show = function(resource, id) {
-		//if (resource != this.resource) 
 		
 		
 		
