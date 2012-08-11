@@ -19,15 +19,20 @@ ProtView.Structure.Controller.ProteinController = Class.extend( {
 		this.view = view;
 		this.stack = stack;
 	},
-	reset : function(id) {
+	fetch : function(id) {
 		var ret = null,
 		model = this.model;
 		if (model != null) {
-			model.set({id : id});
-			this.model = model;
-			ret = this.helper.fetch(function(r){
-				ret = r;
-			});
+			if (id > 0) {
+				model.set({id : id});
+				this.model = model;
+				ret = this.helper.fetch(function(r){
+					ret = r;
+				});
+			}
+			else {
+				console.log('ProteinController:fetch: no id for model');
+			}
 		}
 		return ret;
 	},

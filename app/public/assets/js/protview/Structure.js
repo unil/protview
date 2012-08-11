@@ -16,7 +16,7 @@ ProtView.Structure.Module = (function() {
 		controller.load(resource);
 		c = controller.getController();
 		if (c != null) {
-			c.reset(id);
+			c.fetch(id);
 		}
 		else 
 			console.log("ProtView.Structure.Module:show controller is null");
