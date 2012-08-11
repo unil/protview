@@ -21,7 +21,15 @@ ProtView.Structure.View.ProteinView = Backbone.View.extend({
 	setModel : function(model) {
 		model.on('change', this.render, this);	
 		model.on('reset', this.render, this);
+		model.on('validated:valid', this.valid, this);
+		model.on('validated:invalid', this.invalid, this); 
 		this.model = model;
+	},
+	valid : function() {
+		console.log('valid');
+	},
+	invalid : function() {
+		console.log('invalid');
 	},
 	submitForm : function(e) {
         e.preventDefault();
@@ -33,18 +41,20 @@ ProtView.Structure.View.ProteinView = Backbone.View.extend({
 		el = this.el,
 		bindings = this.bindings,
 		template = this.template;
-
+		console.log('model');
+		console.log(model);
 		var renderedContent = template(model.toJSON());
-		var theme = 'summer';
+		//var theme = 'summer';
         $(el).html(renderedContent);
 
-        $(el).jqxValidator({
+        /*$(el).jqxValidator({
             rules: [
                    { input: '#protein-name', message: 'Name required!', action: 'keyup, blur', rule: 'required' }], theme: theme
            });
         $(el).bind('validationSuccess', function (event) { 
         	console.log('success');
-        }); 
+        }); */
+        Backbone.Validation.bind(this);
         modelBinder.bind(model, el, bindings);
 
 		return this;
