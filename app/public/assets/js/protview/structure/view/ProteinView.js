@@ -29,7 +29,7 @@ ProtView.Structure.View.ProteinView = Backbone.View.extend({
     },
 	render : function() {
 		console.log($('#protein-name').val());
-		var renderedContent = this.template(this.model.get(1).toJSON());
+		var renderedContent = this.template(this.model.toJSON());
         $(this.el).html(renderedContent);
 		return this;
 	},

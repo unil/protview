@@ -30,7 +30,7 @@ ProtView.Structure.Controller.MainController = Class.extend( {
 					console.log('structure');
 					break;
 				case 'protein' :
-					model = new ProtView.Structure.Model.ProteinCollection();
+					model = new ProtView.Structure.Model.Protein();
 					view = new ProtView.Structure.View.ProteinView();
 					controller = new ProtView.Structure.Controller.ProteinController();
 					controller.setModel(model);

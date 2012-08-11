@@ -6,5 +6,9 @@ ProtView.Structure.Model.Protein = Backbone.RelationalModel.extend({
 		note: null,
 	},
 	initialize : function Protein() {
+	},
+	url : function() {
+		var root = Application.ROOTPATH;
+		return root + 'api/proteins/' + this.id;
 	}
 });
