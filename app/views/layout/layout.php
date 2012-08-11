@@ -18,6 +18,7 @@ class LayoutLayoutView extends xView {
             	xUtil::url('a/js/lib/underscore-1.3.3.min.js'),
             	xUtil::url('a/js/lib/backbone-0.9.2.min.js'),
             	xUtil::url('a/js/lib/backbone-relational-0.6.0.js'),
+            	xUtil::url('a/js/lib/backbone-modelbinding-0.1.5.min.js'),
             	xUtil::url('a/js/lib/jquery.ba-tinypubsub.min.js'),
             	xUtil::url('a/js/lib/Class.js'),
             	/*

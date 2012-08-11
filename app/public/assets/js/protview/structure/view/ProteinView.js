@@ -1,7 +1,13 @@
 ProtView.Structure.View.ProteinView = Backbone.View.extend({
 	el : '#protein-form',
 	initialize : function(args) {
+		this.modelBinder = new Backbone.ModelBinder();
 		this.template = _.template($('#protein-form-template').html());
+		this.bindings = {
+				name: '#protein-name',
+				species: '#protein-species',
+				note: '#protein-note'
+			};
 	},
 	events: { 
 		'click #protein-form-submit' : 'submitForm'
@@ -11,27 +17,20 @@ ProtView.Structure.View.ProteinView = Backbone.View.extend({
 	},
 	setModel : function(model) {
 		model.on('change', this.render, this);	
-		model.on('reset', this.render, this);	
+		model.on('reset', this.render, this);
+
 		this.model = model;
 	},
 	submitForm : function(e) {
         e.preventDefault();
-        console.log(this.$('#protein-name').val());
         this.controller.save();
-        /*this.collection.add({
-            id : this.$('.id').val(),
-            title : this.$('.title').val(),
-            text : this.$('.text').val(),
-            keywords : this.$('.keywords').val()
-        }, { error : _.bind(this.error, this) });
-
-        this.$('input[type="text"]').val(''); //on vide le form*/
     },
 	render : function() {
 		console.log('model');
 		console.log(model);
 		var renderedContent = this.template(this.model.toJSON());
         $(this.el).html(renderedContent);
+        this.modelBinder.bind(this.model, this.el, this.bindings);
 		return this;
 	},
 });
