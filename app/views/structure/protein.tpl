@@ -35,6 +35,8 @@
 <?php endforeach ?>
 <script type="text/javascript">
 	$(document).ready(function() {
+		
 		ProtView.Structure.Module.show('protein',1);
+		
 	});
 </script>

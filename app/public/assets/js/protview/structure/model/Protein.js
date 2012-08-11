@@ -10,5 +10,11 @@ ProtView.Structure.Model.Protein = Backbone.RelationalModel.extend({
 	url : function() {
 		var root = Application.ROOTPATH;
 		return root + 'api/proteins/' + this.id;
+	},
+	validation: {
+	    name: {
+	      required: true,
+	      msg: 'Please enter a valid email'
+	    }
 	}
 });
