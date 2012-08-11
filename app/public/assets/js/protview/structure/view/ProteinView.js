@@ -33,6 +33,8 @@ ProtView.Structure.View.ProteinView = Backbone.View.extend({
 	},
 	submitForm : function(e) {
         e.preventDefault();
+        console.log('model: ' + this.model.isValid());
+
         this.controller.save();
     },
 	render : function() {
