@@ -22,7 +22,6 @@
 </ul>
 <script type="text/javascript">
 	$(document).ready(function() {
-
 		var theme = Application.THEME;
 
 		$("#menubar").jqxMenu({ width: '100%', height: '30px', autoOpen: false, autoCloseInterval: 0, theme: theme });
@@ -33,6 +32,7 @@
 		//$('#settingsTabs').jqxTabs({ theme: theme, width: '100%', height: '100%', selectedItem: 0 });
 		
 		$('#content-loading').remove();
-
+		new ProtView.Core.Router();
+		Backbone.history.start();
 	});
 </script>

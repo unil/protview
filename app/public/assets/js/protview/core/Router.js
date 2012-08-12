@@ -1,8 +1,10 @@
 ProtView.Core.Router = Backbone.Router.extend({
 	  routes: {
-	    "drawboard":   "drawboard",    
+	    'test':  'test'    
 	  },
-
+	  test : function() {
+		  console.log('test clicked');
+	  },
 	  drawboard: function() {
 		  var url = Application.ROOTPATH + 'raw/drawingboard/do/';
 		  var method = 'get';
