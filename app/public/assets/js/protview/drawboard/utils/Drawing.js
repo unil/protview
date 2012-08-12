@@ -85,7 +85,22 @@ ProtView.DrawBoard.Utils.Drawing = Class.extend( {
 			  		// update coordinates manually, since top/left style props don't
 					// work on SVG
 			  		event.target.setAttribute('transform', 'translate(' + ui.position.left + ',' + ui.position.top + ')');
-			  	});
+			  	})
+			  	//this event should not be handled here
+				.bind('mousedown', function (event) {
+	                var rightclick = false;
+                    if (!event) event = window.event;
+                    if (event.which) rightclick = (event.which == 3);
+                    else if (event.button) rightclick = (event.button == 2);
+	                
+	                if (rightclick) {
+	                    var scrollTop = $(window).scrollTop();
+	                    var scrollLeft = $(window).scrollLeft();
+	                    var contextMenu = $("#drawBoardContextMenu").jqxMenu({ width: '120px', height: '140px', autoOpenPopup: false, mode: 'popup', theme: Application.THEME });
+	                    contextMenu.jqxMenu('open', parseInt(event.clientX) + 5 + scrollLeft, parseInt(event.clientY) + 5 + scrollTop);
+	                    return false;
+	                }
+	            });
 		}
 	},
 });
