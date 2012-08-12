@@ -1,28 +1,24 @@
 ProtView.Core.Router = Backbone.Router.extend({
 	  routes: {
 	    'show-drawboard':  'drawboard',
-	    'show-sidebar': 'sidebar'
+	    'show-sidebar': 'sidebar',
+	    'file-new-protein' : 'newProtein'
 	  },
 	  drawboard: function() {
 		  var url = Application.ROOTPATH + 'raw/drawingboard/do/';
-			var method = 'get';
-			$.ajax({
-				type : method,
-				url : url,
-				dataType: 'html',
-				data : {
-					
-				},
-				success : function(msg) {
-					$('#drawingBoard').html(msg);
-					ProtView.DrawBoard.Module.start();
-				}
-			});
+		  this.load(url, '#drawingBoard');
 	  },
 	  sidebar : function () {
 		  var url = Application.ROOTPATH + 'raw/sidebar/do/';
-			var method = 'get';
-			$.ajax({
+		  this.load(url, '#sidebar');
+	  },
+	  newProtein : function() {
+		  var url = Application.ROOTPATH + 'raw/menubar/do/newprotein';
+		  this.load(url, '#content');
+	  },
+	  load : function(url, el) {
+		  var method = 'get';
+		  $.ajax({
 				type : method,
 				url : url,
 				dataType: 'html',
@@ -30,8 +26,8 @@ ProtView.Core.Router = Backbone.Router.extend({
 					
 				},
 				success : function(msg) {
-					$('#sidebar').html(msg);
+					$(el).append(msg);
 				}
-			});
+		  });
 	  }
 });

@@ -1,6 +1,7 @@
 <ul>
 	<li>File
 		<ul style='width: 250px;'>
+			<li><a target="_parent" href="#file-new-protein">New Protein</a></li>
 			<li><a target="_parent" href="#file-open">Open</a></li>
 			<li><a target="_parent" href="#file-save">Save</a></li>
 		</ul>

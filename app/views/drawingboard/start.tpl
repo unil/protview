@@ -9,3 +9,8 @@
 <script
 	type="text/javascript" src="<?php echo $js ?>"></script>
 <?php endforeach ?>
+<script type="text/javascript">
+	$(document).ready(function() {
+		ProtView.DrawBoard.Module.start();
+	});
+</script>
