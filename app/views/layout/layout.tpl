@@ -22,6 +22,7 @@
 	<script type="text/javascript">
 		var Application = {};
 		Application.ROOTPATH = '<?php echo xUtil::url()?>';
+		Application.THEME = 'ui-smoothness';
 	</script>
 	<?php foreach ($m['js'] as $js): ?>
 	<script type="text/javascript" src="<?php echo $js ?>"></script>
@@ -34,7 +35,7 @@
 		<!-- BEBIN HEADER -->
 		<div id="header" style="height: 30px">
 			<div id='menubar' style='visibility: hidden;'>
-				<?php echo xView::load('layout/menubar')->render() ?>
+				<?php echo xView::load('menubar/menubar')->render() ?>
 			</div>
 		</div>
 		<!-- END HEADER -->
@@ -61,21 +62,5 @@
 		<!-- END FOOTER -->
 	</div>
 	<!-- END PAGE -->
-	<script type="text/javascript">
-	$(document).ready(function() {
-
-		var theme = 'summer';
-
-		$("#menubar").jqxMenu({ width: '100%', height: '30px', autoOpen: false, autoCloseInterval: 0, theme: theme });
-        $("#menubar").css('visibility', 'visible');
-
-		//$('#sidebar').jqxDocking({ theme: theme, orientation: 'horizontal', width: 400, mode: 'docked' });
-		//$('#sidebar').jqxDocking('showAllCollapseButtons');
-		//$('#settingsTabs').jqxTabs({ theme: theme, width: '100%', height: '100%', selectedItem: 0 });
-		
-		$('#content-loading').remove();
-
-	});
-	</script>
 </body>
 </html>

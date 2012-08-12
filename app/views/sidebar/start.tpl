@@ -5,7 +5,7 @@ echo xView::load('structure/start')->render() ;
 ?>
 <script type="text/javascript">
 	$(document).ready(function() {
-		var theme = 'summer';
+		var theme = Application.THEME;
 
 		$('#sidebar').jqxDocking({ theme: theme, orientation: 'horizontal', width: 400, mode: 'docked' });
 		$('#sidebar').jqxDocking('showAllCollapseButtons');

@@ -36,7 +36,6 @@ class LayoutLayoutView extends xView {
             	xUtil::url('a/js/lib/jqwidgets/jqxtabs.js'),
             	xUtil::url('a/js/lib/jqwidgets/jqxmenu.js'),
             	xUtil::url('a/js/lib/jqwidgets/jqxdocking.js'),
-            	xUtil::url('a/js/lib/jqwidgets/jqxvalidator.js'),
             		
             	xUtil::url('a/js/protview/ProtView.js'),
             	xUtil::url('a/js/protview/lib/BackboneExtension.js'),
@@ -49,7 +48,7 @@ class LayoutLayoutView extends xView {
                 xUtil::url('a/css/main.css'),
             	xUtil::url('a/css/bootstrap.css'),
             	xUtil::url('a/js/lib/jqwidgets/styles/jqx.base.css'),
-            	xUtil::url('a/js/lib/jqwidgets/styles/jqx.summer.css')
+            	xUtil::url('a/js/lib/jqwidgets/styles/jqx.ui-smoothness.css')
             )
         ));
     }

@@ -2,8 +2,8 @@
 .jqx-widget-darkblue{border-color:#004a73}
 .jqx-widget-content-darkblue{color:#004a73; border-color:#004a73}
 .jqx-fill-state-normal-darkblue, .jqx-widget-header-darkblue, .jqx-menu-vertical-darkblue{color: #fff; border-color: #004a73; background-color:#449bca; background-image:-webkit-gradient(linear,0 0,0 100%,from(#3c91c2),to(#449bca));  background-image:-moz-linear-gradient(top,#3c91c2,#449bca);  background-image:-o-linear-gradient(top,#3c91c2,#449bca)}
-.jqx-fill-state-hover-darkblue{background-color: #2f7097; border-color:#004a73; color:#fff}
-.jqx-fill-state-pressed-darkblue, .jqx-menu-item-top-hover-darkblue{background-color: #004a73; border-color:#004a73; color:#fff}
+.jqx-fill-state-hover-darkblue{background-color: #2f7097; background-image: none; border-color:#004a73; color:#fff}
+.jqx-fill-state-pressed-darkblue, .jqx-menu-item-top-hover-darkblue{background-color: #004a73; background-image: none; border-color:#004a73; color:#fff}
 /*checkbox images, grid cells*/
 .jqx-checkbox-check-checked-darkblue{background:transparent url(images/check_white.png) left top no-repeat}
 .jqx-checkbox-check-indeterminate-darkblue{background:transparent url(images/check_indeterminate_white.png) left top no-repeat}
