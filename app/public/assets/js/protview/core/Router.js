@@ -14,7 +14,7 @@ ProtView.Core.Router = Backbone.Router.extend({
 	  },
 	  newProtein : function() {
 		  var url = Application.ROOTPATH + 'raw/menubar/do/newprotein';
-		  this.load(url, '#content');
+		  this.load(url, '#menubar-items');
 	  },
 	  load : function(url, el) {
 		  var method = 'get';

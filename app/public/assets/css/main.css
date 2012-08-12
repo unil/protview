@@ -43,7 +43,7 @@ html,body,h1 {
 	text-align: right;
 	clear: both;
 	height: 40px;
-	border-bottom: none;
+	border: none;
 }
 
 #content {

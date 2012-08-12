@@ -57,10 +57,15 @@
 		</div>
 		<!-- END MAIN -->
 		<!-- BEGIN FOOTER -->
-		<div id="footer">&copy; 2012 - Université de Lausanne - All right
-			reserved</div>
+		<div id="footer">
+		<div style="visibility: visible; display: block; width: 100%; height: 30px; outline: medium none; text-align: left; vertical-align:middle;" 
+		class="jqx-widget jqx-widget-ui-smoothness jqx-menu jqx-menu-ui-smoothness jqx-widget-header jqx-widget-header-ui-smoothness jqx-menu-horizontal jqx-menu-horizontal-ui-smoothness jqx-rc-all jqx-rc-all-ui-smoothness">
+			&copy; 2012 - Université de Lausanne - All right reserved
+			</div>
+		</div>
 		<!-- END FOOTER -->
 	</div>
+	<div id="menubar-items"></div>
 	<!-- END PAGE -->
 </body>
 </html>
