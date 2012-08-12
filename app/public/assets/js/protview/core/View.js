@@ -12,6 +12,7 @@ ProtView.Core.View = Backbone.View.extend({
 	},
 	unload : function() {
 		this.modelBinder.unbind();
+		Backbone.Validation.unbind(this);
 	},
 	setController : function(controller) {
 		this.controller = controller;
@@ -35,14 +36,14 @@ ProtView.Core.View = Backbone.View.extend({
 	submitForm : function(e) {
         e.preventDefault();
         this.controller.save();
+        return this;
     },
 	render : function() {
 		var renderedContent = this.template(this.model.toJSON());
-		console.log(this.model);
         $(this.el).html(renderedContent);
-
-        Backbone.Validation.bind(this);
         this.modelBinder.bind(this.model, this.el, this.bindings);
+        Backbone.Validation.bind(this);
+
 
 		return this;
 	},
