@@ -41,7 +41,6 @@
 		<!-- END HEADER -->
 		<!-- BEGIN MAIN -->
 		<div id="main" style="height: 540px">
-			<a href="#test">Test</a>
 			<!-- BEGIN CONTENT -->
 			<div id="content" style="height: 540px">
 				<img id="content-loading"
