@@ -26,9 +26,11 @@ ProtView.Core.View = Backbone.View.extend({
 	},
 	valid : function() {
 		console.log('ProtView.Core.View: valid function not defined in child element.');
+		return this;
 	},
 	invalid : function() {
 		console.log('ProtView.Core.View: invalid function not defined in child element');
+		return this;
 	},
 	submitForm : function(e) {
         e.preventDefault();
