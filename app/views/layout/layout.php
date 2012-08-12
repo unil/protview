@@ -40,6 +40,7 @@ class LayoutLayoutView extends xView {
             	xUtil::url('a/js/protview/ProtView.js'),
             	xUtil::url('a/js/protview/lib/BackboneExtension.js'),
             	xUtil::url('a/js/protview/core/BackboneHelper.js'),
+            	xUtil::url('a/js/protview/core/View.js'),
             	xUtil::url('a/js/protview/DrawBoard.js'),
             	xUtil::url('a/js/protview/Structure.js'),
             	xUtil::url('a/js/protview/core/Router.js'),

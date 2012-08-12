@@ -1,13 +1,20 @@
 ProtView.Structure.Controller.ProteinController = Class.extend( {
 	model : null,
+	view: null,
 	stack : {},
 	init: function() {
 		stack = {};
 		
 		model = new ProtView.Structure.Model.Protein();
-		view = new ProtView.Structure.View.ProteinView();
-		view.setModel(model);
-		view.setController(this);
+		view = new ProtView.Structure.View.ProteinView({
+			el : '#protein-form',
+			templateEl : '#protein-form-template',
+			bindings : {
+					name: '#protein-name',
+					species: '#protein-species',
+					note: '#protein-note'
+				}
+		});
 		helper = new ProtView.Core.BackboneHelper(model);
 		
 		stack.model = model;
@@ -16,8 +23,22 @@ ProtView.Structure.Controller.ProteinController = Class.extend( {
 		
 		this.helper = helper;
 		this.model = model;
+		
+		view.setController(this);
+		view.setModel(model);
+		
 		this.view = view;
 		this.stack = stack;
+		
+
+		
+
+	},
+	getView: function() {
+		return this.view;
+	},
+	getModel : function() {
+		return this.model;
 	},
 	fetch : function(id) {
 		var ret = null,
@@ -26,6 +47,7 @@ ProtView.Structure.Controller.ProteinController = Class.extend( {
 			if (id > 0) {
 				model.set({id : id});
 				this.model = model;
+				
 				ret = this.helper.fetch(function(r){
 					ret = r;
 				});
