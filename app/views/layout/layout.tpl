@@ -40,11 +40,9 @@
 		</div>
 		<!-- END HEADER -->
 		<!-- BEGIN MAIN -->
-		<div id="main" style="height: 540px">
+		<div id="main" style="height: 550px">
 			<!-- BEGIN CONTENT -->
 			<div id="content" style="height: 540px">
-				<img id="content-loading"
-					src="<?php echo xUtil::url('a/js/lib/jqwidgets/resources/loader.gif')?>" />
 				<?php if (is_array($d['messages'])) foreach ($d['messages'] as $type => $message): ?>
 				<div class="alert <?php echo $type ?>">
 					<button class="close" data-dismiss="alert">×</button>
@@ -58,7 +56,7 @@
 		<!-- END MAIN -->
 		<!-- BEGIN FOOTER -->
 		<div id="footer">
-		<div style="visibility: visible; display: block; width: 100%; height: 30px; outline: medium none; text-align: left; vertical-align:middle;" 
+		<div style="display: block; width: 100%; height: 30px; outline: medium none; text-align: left; vertical-align:middle;" 
 		class="jqx-widget jqx-widget-ui-smoothness jqx-menu jqx-menu-ui-smoothness jqx-widget-header jqx-widget-header-ui-smoothness jqx-menu-horizontal jqx-menu-horizontal-ui-smoothness jqx-rc-all jqx-rc-all-ui-smoothness">
 			&copy; 2012 - Université de Lausanne - All right reserved
 			</div>

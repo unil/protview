@@ -3,7 +3,7 @@
 	href="<?php echo $css ?>" rel="stylesheet">
 <?php endforeach ?>
 <div id="drawBoard" style="display: inline;"></div>
-<div id='drawBoardContextMenu'>
+<div id='drawBoardContextMenu' style="visibility: hidden; position: absolute;">
 	<ul>
 		<li><a href="#drawingboard-color-aa">Color amino acid</a></li>
 	</ul>
