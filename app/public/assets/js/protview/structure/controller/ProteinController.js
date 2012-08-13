@@ -60,6 +60,16 @@ ProtView.Structure.Controller.ProteinController = Class.extend( {
 	},
 	
 	save : function() {
-		this.model.save();
+		this.model.save(null,{
+			error: function(err){
+				console.log(err);
+			}, 
+			success: function(succ) {
+				console.log('model');
+				console.log(this.model);
+				console.log('succ');
+				console.log(succ);
+			}
+			});
 	}
 });
