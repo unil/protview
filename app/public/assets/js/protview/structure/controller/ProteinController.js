@@ -29,10 +29,6 @@ ProtView.Structure.Controller.ProteinController = Class.extend( {
 		
 		this.view = view;
 		this.stack = stack;
-		
-
-		
-
 	},
 	getView: function() {
 		return this.view;
