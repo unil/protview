@@ -12,8 +12,7 @@ ProtView.Structure.Controller.StructureController = Class.extend( {
 					terminusN : '#structure-terminus-n',
 					terminusC: '#structure-terminus-c',
 					membraneRegion: [
-					    {selector: '#structure-region-1-start'}, 
-					    {selector: '#structure-region-1-end'}]
+					    {selector: ',structure-regions', converter: this.regionConverter}]
 				}
 		});
 		helper = new ProtView.Core.BackboneHelper(model);
@@ -31,6 +30,21 @@ ProtView.Structure.Controller.StructureController = Class.extend( {
 		this.view = view;
 		this.stack = stack;
 	},
+    regionConverter : function(direction, value, attribName){
+    	var model_regions = this.model.get('regions'),
+    	view_regions = 
+    	label = 'start',
+    	pos = 0;
+	    if (direction == 'ModelToView') {
+	    	console.log('ModelToView');
+	    	
+	    }
+	    else if (direction == 'ViewToModel') {
+	    	console.log('ViewToModel');
+	    	.hasClass('foo')
+	    }
+    	return value;
+    },
 	setModel : function(model) {
 		this.model = model;
 		this.helper = new ProtView.Core.BackboneHelper(this.model);
