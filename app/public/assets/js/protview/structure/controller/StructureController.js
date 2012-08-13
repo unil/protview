@@ -41,7 +41,7 @@ ProtView.Structure.Controller.StructureController = Class.extend( {
 	    }
 	    else if (direction == 'ViewToModel') {
 	    	console.log('ViewToModel');
-	    	.hasClass('foo')
+	    	//.hasClass('foo')
 	    }
     	return value;
     },
