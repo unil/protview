@@ -24,7 +24,7 @@ ProtView.Structure.Controller.MainController = Class.extend( {
 					currentResource = 'protein';
 					break;	
 				default :
-					console.log('error no resource give or not known');
+					console.log('error no resource given or not known');
 					break;
 			}
 			
