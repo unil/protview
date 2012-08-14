@@ -31,10 +31,7 @@
 			</select>
 		</div>
 	</div>
-</script>
-	
-	
-
+	</script>
 	</div>
 	<div class="form-actions">
 		<button class="btn btn-primary" type="submit" id="structure-form-submit">Save

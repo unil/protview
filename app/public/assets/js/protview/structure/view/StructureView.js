@@ -11,12 +11,27 @@ ProtView.Structure.View.StructureView = ProtView.Core.View.extend({
         	child.each(function(k,v) {
         		var el = $(v).get(0);
         		if (el.tagName.toLowerCase() == 'input') {
-        			//structure-region-from-1
+        			//structure-region_from-1
         			var input = $(el);
-        			//.attr('name'))
+        			
+        			var inputId = input.attr('id');
+        				
+        			//pos = before _
+        			var posUnderscore = inputId.indexOf('_');
+        			var posLastDash = inputId.lastIndexOf('-');
+        			//from, to
+        			var pos = inputId.substring(posUnderscore + 1, posLastDash);
+        			var id = inputId.substring(posLastDash + 1);
+        			
+        			
+        			if (pos == 'from') {
+        				console.log(pos + ' ' + id);
+        			}
+        			else if (pos == 'to') {
+        				console.log(pos + ' ' + id);
+        			}
         		}
         	});
-            // add $(this).val() to your list
         });
         
         //this.controller.save();
@@ -35,12 +50,12 @@ ProtView.Structure.View.StructureView = ProtView.Core.View.extend({
     	_.each(regions, function(val, key){ 
     		ret += '<li style="margin-left: 20px; margin-bottom: 9px;">';
     		ret += 'From : <input type="text" class="input-xmini inline"';
-			ret += 'name="structure-region-from-' + val.region_id + '" ';
-			ret += 'id="structure-region-from-' + val.region_id + '" ';
+			ret += 'name="structure-region_from-' + val.region_id + '" ';
+			ret += 'id="structure-region_from-' + val.region_id + '" ';
 			ret += 'value="' + val.start + '"> ';
 			ret += 'To : <input type="text" class="input-xmini inline" ';
-			ret += 'name="structure-region-to-' + val.region_id + '" ';
-			ret += 'id="structure-region-to-' + val.region_id + '" ';
+			ret += 'name="structure-region_to-' + val.region_id + '" ';
+			ret += 'id="structure-region_to-' + val.region_id + '" ';
 			ret += 'value="' + val.end + '">';
 			ret += '<i class="icon-minus"></i>';
 			ret += '</li>';
@@ -48,12 +63,12 @@ ProtView.Structure.View.StructureView = ProtView.Core.View.extend({
     	);
     	ret += '<li style="margin-left: 20px; margin-bottom: 9px;">';
 		ret += 'From : <input type="text" class="input-xmini inline"';
-		ret += 'name="structure-region-from-0" ';
-		ret += 'id="structure-region-from-0" ';
+		ret += 'name="structure-region_from-0" ';
+		ret += 'id="structure-region_from-0" ';
 		ret += 'value=""> ';
 		ret += 'To : <input type="text" class="input-xmini inline" ';
-		ret += 'name="structure-region-to-0" ';
-		ret += 'id="structure-region-to-0" ';
+		ret += 'name="structure-region_to-0" ';
+		ret += 'id="structure-region_to-0" ';
 		ret += 'value="">';
 		ret += '<i class="icon-plus"></i>';
 		ret += '</li>';
