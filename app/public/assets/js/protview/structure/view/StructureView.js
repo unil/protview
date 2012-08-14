@@ -3,11 +3,14 @@ ProtView.Structure.View.StructureView = ProtView.Core.View.extend({
 		'click #structure-form-submit' : 'submitForm'
 	},
 	submitForm : function(e) {
-        e.preventDefault();
+		e.preventDefault();
+		var model = this.model;
+        
         console.log('model: ' + this.model.isValid());
         var regions = this.evaluateRegions();
+        model.set({membraneRegions : regions});
         
-        console.log(regions);
+        console.log(model);
         
         //this.controller.save();
     },
