@@ -5,11 +5,20 @@ ProtView.Structure.View.StructureView = ProtView.Core.View.extend({
 	submitForm : function(e) {
         e.preventDefault();
         console.log('model: ' + this.model.isValid());
-
+        var regions = this.evaluateRegions();
+        
+        console.log(regions);
+        
+        //this.controller.save();
+    },
+    evaluateRegions: function() {
+    	var regions = [];
+        var region = {};
         $('#structure-regions-values li').each(function() {
         	var child = $(this).children();
         	child.each(function(k,v) {
         		var el = $(v).get(0);
+        		
         		if (el.tagName.toLowerCase() == 'input') {
         			//structure-region_from-1
         			var input = $(el);
@@ -22,24 +31,21 @@ ProtView.Structure.View.StructureView = ProtView.Core.View.extend({
         			//from, to
         			var pos = inputId.substring(posUnderscore + 1, posLastDash);
         			var id = inputId.substring(posLastDash + 1);
+        			region.id = id;
         			
-        			
+        			//{id: 0, start: 0, end: 0}
         			if (pos == 'from') {
-        				console.log(pos + ' ' + id);
+        				region.start = input.val();;
         			}
         			else if (pos == 'to') {
-        				console.log(pos + ' ' + id);
+        				region.end = input.val();
+        				regions.push(region);
+        				region = {};
         			}
         		}
         	});
         });
-        
-        //this.controller.save();
-    },
-    evaluationRegion: function(regions) {
-    	var ret = [];
-    	
-    	return ret;
+        return regions;
     },
     renderRegion : function(regions) {
     	var ret ='<div class="control-group"> ';
