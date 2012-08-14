@@ -8,9 +8,7 @@ ProtView.Structure.Controller.StructureController = Class.extend( {
 			el : '#structure-form',
 			templateEl : '#structure-form-template',
 			bindings : {
-					sequence: '#structure-sequence',
-					terminusN : '#structure-terminus-n',
-					terminusC: '#structure-terminus-c'
+					sequence: '#structure-sequence'
 				}
 		});
 		helper = new ProtView.Core.BackboneHelper(model);
