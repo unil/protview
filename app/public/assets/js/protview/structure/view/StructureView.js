@@ -6,16 +6,33 @@ ProtView.Structure.View.StructureView = ProtView.Core.View.extend({
         e.preventDefault();
         console.log('model: ' + this.model.isValid());
 
-        this.controller.save();
+        $('#structure-regions-values li').each(function() {
+        	var child = $(this).children();
+        	child.each(function(k,v) {
+        		var el = $(v).get(0);
+        		if (el.tagName.toLowerCase() == 'input') {
+        			//structure-region-from-1
+        			var input = $(el);
+        			//.attr('name'))
+        		}
+        	});
+            // add $(this).val() to your list
+        });
+        
+        //this.controller.save();
+    },
+    evaluationRegion: function(regions) {
+    	var ret = [];
+    	
+    	return ret;
     },
     renderRegion : function(regions) {
-    	var ret ='<div class="control-group"> '
+    	var ret ='<div class="control-group"> ';
     		ret += '<label for="structure-region-1" id="structure-region-label" ';
     		ret += 'class="control-label">Membrane regions</label> ';
     		ret += '<div class="controls"> ';
-    		ret += '<ol>';
+    		ret += '<ol id="structure-regions-values">';
     	_.each(regions, function(val, key){ 
-    		console.log(val);
     		ret += '<li style="margin-left: 20px; margin-bottom: 9px;">';
     		ret += 'From : <input type="text" class="input-xmini inline"';
 			ret += 'name="structure-region-from-' + val.region_id + '" ';

@@ -37,7 +37,7 @@
 
 	</div>
 	<div class="form-actions">
-		<button class="btn btn-primary" type="submit" id="protein-form-submit">Save
+		<button class="btn btn-primary" type="submit" id="structure-form-submit">Save
 			changes</button>
 		<button class="btn">Cancel</button>
 	</div>
