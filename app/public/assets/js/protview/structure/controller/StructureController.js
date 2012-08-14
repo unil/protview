@@ -10,9 +10,7 @@ ProtView.Structure.Controller.StructureController = Class.extend( {
 			bindings : {
 					sequence: '#structure-sequence',
 					terminusN : '#structure-terminus-n',
-					terminusC: '#structure-terminus-c',
-					membraneRegion: [
-					    {selector: ',structure-regions', converter: this.regionConverter}]
+					terminusC: '#structure-terminus-c'
 				}
 		});
 		helper = new ProtView.Core.BackboneHelper(model);
@@ -30,32 +28,42 @@ ProtView.Structure.Controller.StructureController = Class.extend( {
 		this.view = view;
 		this.stack = stack;
 	},
-    regionConverter : function(direction, value, attribName){
-    	var model_regions = this.model.get('regions'),
-    	view_regions = 
-    	label = 'start',
-    	pos = 0;
-	    if (direction == 'ModelToView') {
-	    	console.log('ModelToView');
-	    	
-	    }
-	    else if (direction == 'ViewToModel') {
-	    	console.log('ViewToModel');
-	    	//.hasClass('foo')
-	    }
-    	return value;
-    },
-	setModel : function(model) {
-		this.model = model;
-		this.helper = new ProtView.Core.BackboneHelper(this.model);
+	getView: function() {
+		return this.view;
 	},
-	update : function(id) {
-		var ret = null;
-		if (this.model != null) {
-			ret = this.helper.fetch(function(r){
-				ret = r;
-			},{id: id});
+	getModel : function() {
+		return this.model;
+	},
+	fetch : function(id) {
+		var ret = null,
+		model = this.model;
+		if (model != null) {
+			if (id > 0) {
+				model.set({id : id});
+				this.model = model;
+				
+				ret = this.helper.fetch(function(r){
+					ret = r;
+				});
+			}
+			else {
+				console.log('ProteinController:fetch: no id for model');
+			}
 		}
 		return ret;
+	},
+	
+	save : function() {
+		this.model.save(null,{
+			error: function(err){
+				console.log(err);
+			}, 
+			success: function(succ) {
+				console.log('model');
+				console.log(this.model);
+				console.log('succ');
+				console.log(succ);
+			}
+			});
 	}
 });

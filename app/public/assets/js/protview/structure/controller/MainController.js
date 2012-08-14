@@ -17,7 +17,8 @@ ProtView.Structure.Controller.MainController = Class.extend( {
 			this.unload(currentResource);
 			switch(resource) {
 				case 'structure' :
-					console.log('structure');
+					controller = new ProtView.Structure.Controller.StructureController();
+					currentResource = 'structure';
 					break;
 				case 'protein' :
 					controller = new ProtView.Structure.Controller.ProteinController();

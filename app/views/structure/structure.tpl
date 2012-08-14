@@ -1,29 +1,40 @@
 <form id="structure-form" class="form-horizontal">
-<?php //<script type="text/template" id="structure-form-template"> ?>
+<script type="text/template" id="structure-form-template">
 	<div class="control-group">
 		<label class="control-label" for="structure-sequence" id="structure-sequence-label">Sequence</label>
 		<div class="controls">
 			<textarea name="structure-sequence" id="structure-sequence" class="input-large required"
-				rows="5"></textarea>
+				rows="5"><%= sequence %></textarea>
 		</div>
 	</div>
 	<div class="control-group">
 		<label for="structure-terminus-n" id="structure-terminus-n-label" class="control-label">Terminus</label>
 		<div class="controls">
 			N : <select name="structure-terminus-n" id="structure-terminus-n" class="input-small">
-				<option value="inside" selected>Inside</option>
-				<option value="outside">Outside</option>
+				<option value="inside" <% if(terminusN=='int') { %>
+								selected="selected"
+								<% } %>>
+				Inside</option>
+				<option value="outside"<% if(terminusN=='ext') { %>
+								selected="selected"
+								<% } %>>Outside</option>
 			</select> C : <select name="structure-terminus-c" id="structure-terminus-c"
 				class="input-small">
-				<option value="inside" selected>Inside</option>
-				<option value="outside">Outside</option>
+				<option value="inside">Inside</option>
+				<option value="outside" selected="selected">Outside</option>
 			</select>
 		</div>
 	</div>
+	</script>
 	<div class="control-group">
 		<label for="structure-region-1" id="structure-region-label" class="control-label">Membrane
 			regions</label>
 		<div class="controls">
+		C : <select name="structure-terminus-c" id="structure-terminus-c"
+				class="input-small">
+				<option value="inside">Inside</option>
+				<option value="outside" selected="selected">Outside</option>
+			</select>
 			<ol>
 				<li style="margin-left: 20px; margin-bottom: 9px;">From : <input
 					type="text" class="input-xmini inline" name="structure-region-from-1" id="from-1">
@@ -62,7 +73,6 @@
 		<button class="btn btn-primary" type="submit" id="protein-form-submit">Save changes</button>
 		<button class="btn">Cancel</button>
 	</div>
-<?php //</script> ?>
 </form>
 <!-- JavaScript - for better performance, on the bottom -->
 <?php foreach ($m['js'] as $js): ?>

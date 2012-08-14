@@ -4,8 +4,12 @@ ProtView.Structure.Model.Structure = Backbone.RelationalModel.extend({
 		sequence: null,
 		terminusN: null,
 		terminusC: null,
-		membraneRegion : {}
+		membraneRegions : {}
 	},
 	initialize : function Structure() {
-	}
+	},
+	url : function() {
+		var root = Application.ROOTPATH;
+		return root + 'api/structure/' + this.id;
+	},
 });
