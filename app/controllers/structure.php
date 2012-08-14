@@ -17,7 +17,7 @@ class StructureController extends RESTController {
 }
 	 */
 	function get() {
-		$items = array(
+		/*$items = array(
 				'peptide_id' => 1,
 				'sequence' => 'aaaaaabbbbddcc',
 				'terminusN' => 'ext',
@@ -35,8 +35,73 @@ class StructureController extends RESTController {
 							)
 						)
 				);
+		*/
+		$items = array();
 		
-
+		$regions = xModel::load(
+				'region',
+				array(
+						'xjoin' => '',
+						'peptide_id' => 1, //where
+						'xorder' => 'pos'
+				)
+		)->get();
+		
+		$sequence = "";
+		$terminusN = null;
+		$terminusC = null;
+		
+		$count = count($regions);
+		$r = 0;
+		$start = 0;
+		$end = 0;
+		$membraneRegions = array();
+		
+		foreach($regions as $region) {
+			
+			//first region determines terminusN
+			if ($terminusN == null) {
+				$terminusN = $region['type'];
+			}
+			//last region determines terminusC
+			if ($r + 1 >= $count) {
+				$terminusC = $region['type'];
+			}
+			
+			
+			$amino_acids = xModel::load(
+					'amino-acid',
+					array(
+							'xjoin' => '',
+							'region_id' => $region['id'], //where
+							'xorder' => 'pos'
+					)
+			)->get();
+			
+			$nbAA = count($amino_acids);
+			$end += $start + $nbAA;
+			
+			foreach($amino_acids as $aa) {
+				$sequence .= $aa['type'];
+			}
+			$r++;
+			
+			
+			if ($region['type'] == 'membrane') {
+				$membraneRegion = array();
+				
+				$membraneRegion['region_id'] = $region['id'];
+				$membraneRegion['start'] = $start;
+				$membraneRegion['end'] = $end;
+				
+				$membraneRegions[] = $membraneRegion;
+			}
+			$start = $end;
+		}
+		$items['sequence'] = $sequence;
+		$items['terminusN'] = $terminusN;
+		$items['terminusC'] = $terminusC;
+		$items['membraneRegions'] = $membraneRegions;
 		
 		return $data['items'] = $items;
 	}
