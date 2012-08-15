@@ -17,25 +17,6 @@ class StructureController extends RESTController {
 }
 	 */
 	function get() {
-		/*$items = array(
-				'peptide_id' => 1,
-				'sequence' => 'aaaaaabbbbddcc',
-				'terminusN' => 'ext',
-				'terminusC' => 'ext',
-				'membraneRegions' => array(
-							array(
-								'region_id' => 1,
-								'start' => 1,
-								'end' => 234
-							),
-							array(
-								'region_id' => 5,
-								'start' => 500,
-								'end' => 600
-							)
-						)
-				);
-		*/
 		$items = array();
 		
 		$regions = xModel::load(
@@ -104,5 +85,44 @@ class StructureController extends RESTController {
 		$items['membraneRegions'] = $membraneRegions;
 		
 		return $data['items'] = $items;
+	}
+	
+	/*
+	 * {
+    "items": {
+        "id": 1,
+        "sequence": "abcdefghijklmnopqr",
+        "terminusN": "int",
+        "terminusC": "int",
+        "membraneRegions": [
+            {
+                "id": "2",
+                "start": "18",
+                "end": "36"
+            },
+            {
+                "id": "0",
+                "start": "23",
+                "end": "45"
+            }
+        ]
+    }
+}
+	 */
+	function post() {
+		// Checks if method is allowed
+		if (!in_array('post', $this->allow)) throw new xException("Method not allowed", 403);
+		// Checks provided parameters
+		if (!isset($this->params['items'])) throw new xException('No items provided', 400);
+		// Checks for params.id and params.items.id consistency
+		// (this test is only for precaution: params.id is not used in anyway)
+		if (@$this->params['id'] != @$this->params['items']['id'])
+			throw new xException("Parameters id and items.id do not match", 400);
+		
+		$r = $this->params['items'];
+		// Database action
+		//$r = xModel::load($this->model, $this->params['items'])->post();
+		// Result
+		return $r;
 	}
 }

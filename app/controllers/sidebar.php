@@ -5,8 +5,4 @@ class SidebarController extends RESTController {
 		$data = array();
 		return xView::load('sidebar/start', $data, $this->meta)->render();
 	}
-	function get() {
-		$ret = array();
-		return $ret;
-	}
 }
