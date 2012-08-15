@@ -32,14 +32,16 @@ class StructureControllerTest extends protviewPHPUnit_Framework_TestCase {
     }
 	 */
 	function test_proteinController_put_allFieldsAreReturned() {
+		$sequence = "MNTSAPPAVSPNITVLAPGKGPWQVAFIGHITGSLSLATVTGALLVLISFKVNTELKTVNNYFLLSKKSLSKEIGTTSMNNYTTYLLMGHWALGTLACD";
+		$sequence .= "MNTSAPPAVSPNITVLAPGKGPWQVAFIGHITGSLSLATVTGALLVLISFKVNTELKTVNNYFLLSKKSLSKEIGTTSMNNYTTYLLMGHWALGTLACD";
+		$sequence .= "MNTSAPPAVSPNITVLAPGKGPWQVAFIGHITGSLSLATVTGALLVLISFKVNTELKTVNNYFLLSKKSLSKEIGTTSMNNYTTYLLMGHWALGTLACD";
+		$sequence .= "MNTSAPPAVSPNITVLAPGKGPWQVAFIGHITGSLSLATVTGALLVLISFKVNTELKTVNNYFLLSKKSLSKEIGTTSMNNYTTYLLMGHWALGTLACD";
+
 		$ret = xController::load(
 				'structure', array(
 					'items' => array (
 							'peptide_id' => 1,
-							'sequence' => 'abcdefghijklmnopqradséflkjasédlkfj
-asdféklasdjflékasdjfléasdf
-adsféjadsfkjasdléfjasd
-fasdéflkjadsélfkja sdéfkjasdfékajsdfékadjsfkalésdjfélkasdjf',
+							'sequence' => $sequence,
 							'terminusN' => 'intra',
 							'terminusC' => 'intra',
 							'membraneRegions' => array(

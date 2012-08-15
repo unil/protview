@@ -46,9 +46,6 @@ class StructureAlgorithmTest extends protviewPHPUnit_Framework_TestCase {
 		$pos = 1;
 		$type = $terminusN;
 
-		//in order to return items
-		$items = array();
-
 		$regions = array();
 		for ($i = 0; $i < count($membraneRegions); $i++) {
 			$currentRegion = $membraneRegions[$i];
