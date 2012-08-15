@@ -21,6 +21,7 @@ var getValue = function(object, prop) {
     if (!(object && object[prop])) return null;
     return _.isFunction(object[prop]) ? object[prop]() : object[prop];
   };
+
 Backbone.sync = function(method, model, options) {
 	var type = methodMap[method];
 	options || (options = {});
@@ -36,9 +37,17 @@ Backbone.sync = function(method, model, options) {
 
 	if (!options.data && model && (method == 'create' || method == 'update')) {
 		params.contentType = 'application/json';
+		
+		var modelData = null;
+
+		/*send only changes, needs to be fixed with ModelBinder, chagedAttributes() is always
+		 *empty 
+		if (method == 'update')
+			modelData = JSON.stringify(model.changedAttributes() || {});
+		else*/
+			modelData = model.toJSON();
 		//overwrite for xfm
-		var data =  {items: model.toJSON()};
-		params.data = JSON.stringify(data);
+		params.data = JSON.stringify({items: modelData});
 	}
 
 	if (Backbone.emulateJSON) {

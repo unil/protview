@@ -30,6 +30,7 @@ ProtView.Structure.View.StructureView = ProtView.Core.View.extend({
 
 		if (valid) {
 			this.model = model;
+			console.log(model);
 			this.controller.save();
 		}
 	},
@@ -63,16 +64,16 @@ ProtView.Structure.View.StructureView = ProtView.Core.View.extend({
 							var pos = inputId.substring(posUnderscore + 1,
 									posLastDash);
 							var id = inputId.substring(posLastDash + 1);
-							region.id = id;
+							region.id = Number(id);
 
 							var inputVal = input.val();
 
 							if (inputVal != '') {
 								// {id: 0, start: 0, end: 0}
 								if (pos == 'from') {
-									region.start = inputVal;
+									region.start = Number(inputVal);
 								} else if (pos == 'to') {
-									region.end = inputVal;
+									region.end = Number(inputVal);
 									regions.push(region);
 									region = {};
 								}
