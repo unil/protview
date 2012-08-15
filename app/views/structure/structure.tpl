@@ -13,19 +13,19 @@
 		<label for="structure-terminus-n" id="structure-terminus-n-label" class="control-label">Terminus</label>
 		<div class="controls">
 			N : <select name="structure-terminus-n" id="structure-terminus-n" class="input-small">
-				<option value="inside" <% if(terminusN=='int') { %>
+				<option value="int" <% if(terminusN=='int') { %>
 								selected="selected"
 								<% } %>>
 				Inside</option>
-				<option value="outside"<% if(terminusN=='ext') { %>
+				<option value="ext"<% if(terminusN=='ext') { %>
 								selected="selected"
 								<% } %>>Outside</option>
 			</select> C : <select name="structure-terminus-c" id="structure-terminus-c"
 				class="input-small">
-				<option value="inside" <% if(terminusC=='int') { %>
+				<option value="int" <% if(terminusC=='int') { %>
 								selected="selected"
 								<% } %>>Inside</option>
-				<option value="outside" <% if(terminusC=='ext') { %>
+				<option value="ext" <% if(terminusC=='ext') { %>
 								selected="selected"
 								<% } %>>Outside</option>
 			</select>

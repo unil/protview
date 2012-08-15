@@ -5,12 +5,17 @@ ProtView.Structure.View.StructureView = ProtView.Core.View.extend({
 	submitForm : function(e) {
 		e.preventDefault();
 		var model = this.model;
-        
-        console.log('model: ' + this.model.isValid());
+		var terminusN = $('#structure-terminus-n').val();
+        model.set({terminusN : terminusN}, {silent: true});
+
+        var terminusC = $('#structure-terminus-c').val();
+        model.set({terminusC : terminusC}, {silent: true});
+        //console.log('model: ' + this.model.isValid());
         var regions = this.evaluateRegions();
-        model.set({membraneRegions : regions});
+        model.set({membraneRegions : regions}, {silent: true});
         
-        console.log(model);
+        
+        
         
         //this.controller.save();
     },
@@ -85,6 +90,7 @@ ProtView.Structure.View.StructureView = ProtView.Core.View.extend({
     	return ret;
     },
 	render : function() {
+		console.log('render');
 		var renderedContent = this.template(this.model.toJSON());
 
 		var renderedRegions = this.renderRegion(this.model.get('membraneRegions'));
