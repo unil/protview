@@ -26,11 +26,12 @@ ProtView.Structure.View.StructureView = ProtView.Core.View.extend({
 			silent : true
 		});
 
-		model.validate();
+		var valid = model.isValid(true);
 
-		console.log('model isValid: ' + this.model.isValid(true));
-
-		// this.controller.save();
+		if (valid) {
+			this.model = model;
+			this.controller.save();
+		}
 	},
 	valid: function(view, attr) {
         // do something
@@ -66,13 +67,15 @@ ProtView.Structure.View.StructureView = ProtView.Core.View.extend({
 
 							var inputVal = input.val();
 
-							// {id: 0, start: 0, end: 0}
-							if (pos == 'from') {
-								region.start = inputVal;
-							} else if (pos == 'to') {
-								region.end = inputVal;
-								regions.push(region);
-								region = {};
+							if (inputVal != '') {
+								// {id: 0, start: 0, end: 0}
+								if (pos == 'from') {
+									region.start = inputVal;
+								} else if (pos == 'to') {
+									region.end = inputVal;
+									regions.push(region);
+									region = {};
+								}
 							}
 						}
 
@@ -89,12 +92,12 @@ ProtView.Structure.View.StructureView = ProtView.Core.View.extend({
 		_.each(regions, function(val, key) {
 			ret += '<li style="margin-left: 20px; margin-bottom: 9px;">';
 			ret += 'From : <input type="text" class="input-xmini inline"';
-			ret += 'name="structure-region_from-' + val.region_id + '" ';
-			ret += 'id="structure-region_from-' + val.region_id + '" ';
+			ret += 'name="structure-region_from-' + val.id + '" ';
+			ret += 'id="structure-region_from-' + val.id + '" ';
 			ret += 'value="' + val.start + '"> ';
 			ret += 'To : <input type="text" class="input-xmini inline" ';
-			ret += 'name="structure-region_to-' + val.region_id + '" ';
-			ret += 'id="structure-region_to-' + val.region_id + '" ';
+			ret += 'name="structure-region_to-' + val.id + '" ';
+			ret += 'id="structure-region_to-' + val.id + '" ';
 			ret += 'value="' + val.end + '">';
 			ret += '<i class="icon-minus"></i>';
 			ret += '</li>';

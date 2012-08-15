@@ -15,29 +15,22 @@ ProtView.Structure.Model.Structure = Backbone.RelationalModel.extend({
 	validation : {
 		membraneRegions: function(regions) {
 			var valid = true;
-			console.log('regions');
-			console.log(regions);
 			//var isNumber = this.isNumber();
 			_.each(regions, function(val, key) {
 				var id = val.id;
 				var start = val.start;
 				var end = val.end;
-				
-				console.log('id: ' + id + ' start: ' + start + 'end: ' + end);
-				
-				var valid = true;
-				
-				valid = this.isNumber(start);
+
+				if (valid)
+					valid = this.isNumber(start);
 				
 				if (valid)
 					valid = this.isNumber(end) && end > start;
 				
 				if (valid)
 					valid = this.isNumber(id) && id >= 0;
-					
-				console.log('valid ' + valid);
+							
 			}, this);
-				
 			if (!valid)
 				return 'invalid';
 		},
