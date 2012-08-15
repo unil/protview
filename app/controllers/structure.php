@@ -31,7 +31,8 @@ class StructureController extends RESTController {
 				array(
 						'xjoin' => '',
 						'peptide_id' => $peptide_id, //where
-						'xorder' => 'pos'
+						'xorder' => 'pos',
+						//'xwhere' => 'membrane'
 				)
 		)->get();
 
@@ -210,7 +211,7 @@ class StructureController extends RESTController {
 
 
 		if ($type != $terminusC)
-			throw new xException('No N/C-Terminus are not correct for regions specified', 400);
+			throw new xException('No N/C-Terminus are incorrect for regions specified (inside/outside missmatch)', 400);
 
 		//$r['regions'] = $regions;
 		//$r['amino-acids'] = array();
