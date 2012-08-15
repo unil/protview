@@ -15,7 +15,8 @@ class AminoAcidModel extends xModelMysql {
 
     public $validation = array(
         'id' => 'mandatory',
-        'name' => 'mandatory'
+        'type' => 'mandatory',
+    	'pos' => 'mandatory'
     );
     
     public $joins = array(

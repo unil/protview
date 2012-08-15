@@ -6,8 +6,48 @@
  */
 class StructureControllerTest extends protviewPHPUnit_Framework_TestCase {
 
-	function test_proteinController_get_allFieldsAreReturned() {
-		$ret = xFront::load('api', array('xcontroller' => 'structure', 'xformat' => 'json'))->get();		
+	/*function test_proteinController_get_allFieldsAreReturned() {
+		$ret = xFront::load('api', array('xcontroller' => 'structure', 'id' => 1, 'xformat' => 'json'))->get();		
+		print_r($ret);
+	}*/
+	
+	/*
+	 * "items": {
+        "id": 1,
+        "sequence": "abcdefghijklmnopqr",
+        "terminusN": "int",
+        "terminusC": "int",
+        "membraneRegions": [
+            {
+                "id": "2",
+                "start": "18",
+                "end": "36"
+            },
+            {
+                "id": "0",
+                "start": "23",
+                "end": "45"
+            }
+        ]
+    }
+	 */
+	function test_proteinController_put_allFieldsAreReturned() {
+		$ret = xController::load(
+				'structure', array(
+					'items' => array (
+							'peptide_id' => 1,
+							'sequence' => 'abcdefghijklmnopqradséflkjasédlkfj
+asdféklasdjflékasdjfléasdf
+adsféjadsfkjasdléfjasd
+fasdéflkjadsélfkja sdéfkjasdfékajsdfékadjsfkalésdjfélkasdjf',
+							'terminusN' => 'intra',
+							'terminusC' => 'intra',
+							'membraneRegions' => array(
+									array('id' => 2, 'start' => 18, 'end' => 36),
+									array('id' => 0, 'start' => 58, 'end' => 157)
+									)
+							)
+				))->put();
 		print_r($ret);
 	}
 }
