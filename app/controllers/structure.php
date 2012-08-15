@@ -90,7 +90,7 @@ class StructureController extends RESTController {
 			if ($region['type'] == 'membrane') {
 				$membraneRegion = array();
 				
-				$membraneRegion['region_id'] = $region['id'];
+				$membraneRegion['id'] = $region['id'];
 				$membraneRegion['start'] = $start;
 				$membraneRegion['end'] = $end;
 				
