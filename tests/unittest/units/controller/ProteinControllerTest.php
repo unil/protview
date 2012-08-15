@@ -7,11 +7,13 @@
 class ProteinControllerTest extends protviewPHPUnit_Framework_TestCase {
 
 	function test_proteinController_get_allFieldsAreReturned() {
+		echo 'test_proteinController_get_allFieldsAreReturned';
 		$ret = xController::load('proteins', array())->get();		
 		print_r($ret);
 	}
 	
 	function test_proteinController_put_noErrorExpected() {
+		echo 'test_proteinController_put_noErrorExpected';
 		$ret = xController::load(
 				'proteins', array(
 					'items' => array (
@@ -25,6 +27,7 @@ class ProteinControllerTest extends protviewPHPUnit_Framework_TestCase {
 	}
 	
 	function test_proteinController_delete_oneFieldDeletedWithNoError() {
+		echo 'test_proteinController_delete_oneFieldDeletedWithNoError';
 		$ret = xController::load(
 				'proteins', array(
 					'id' => 2		
@@ -33,6 +36,7 @@ class ProteinControllerTest extends protviewPHPUnit_Framework_TestCase {
 	}
 	
 	function test_proteinController_post_noErrorExpected() {
+		echo 'test_proteinController_post_noErrorExpected';
 		$ret = xController::load(
 				'proteins', array(
 						'id' => 1,

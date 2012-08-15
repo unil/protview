@@ -135,7 +135,7 @@ class StructureController extends RESTController {
 		if (!isset($items['terminusC'])) throw new xException('No C-Terminus provided', 400);
 		
 
-		
+		$peptide_id = $this->params['peptide_id'];
 		$terminusN = $items['terminusN'];
 		$terminusC = $items['terminusC'];
 		
@@ -156,6 +156,9 @@ class StructureController extends RESTController {
 		$pos = 1;
 		$type = $terminusN;
 		
+		//in order to return items
+		$items = array();
+		
 		$regions = array();
 		for ($i = 0; $i < count($membraneRegions); $i++) {
 			$currentRegion = $membraneRegions[$i];
@@ -171,7 +174,6 @@ class StructureController extends RESTController {
 				$region['end'] = $end;
 				$region['type'] = $type;
 				$region['pos'] = $pos;
-				$region['aas'] = $this->getAA($aaArray, $region);
 				$regions[] = $region;
 				$region = array();
 				$pos++;
@@ -183,7 +185,6 @@ class StructureController extends RESTController {
 			$region['end'] = $currentRegion['end'];
 			$region['type'] = 'membrane';
 			$region['pos'] = $pos;
-			$region['aas'] = $this->getAA($aaArray, $region);
 			$regions[] = $region;
 			$pos++;
 			
@@ -195,7 +196,7 @@ class StructureController extends RESTController {
 			$start = $currentRegion['end'] + 1;			
 		}
 		
-		//if there are more aa to distribute, add an other domain
+		//if there are more aa to distribute, add an other region
 		if ($aaCount - $start > 0) {
 			$region['start'] = $start;
 			$region['end'] = $aaCount;
@@ -207,6 +208,41 @@ class StructureController extends RESTController {
 		
 		if ($type != $terminusC)
 			throw new xException('No N/C-Terminus are not correct for regions specified', 400);
+		
+		$items['regions'] = array();
+		$items['amino-acids'] = array();
+		//insert into database
+		foreach($regions as $region) {
+			$retR = xController::load(
+					'regions', array(
+							'items' => array (
+									'id' => 0, //new region id=0
+									'peptide_id' => $peptide_id,
+									'label' => null,
+									'type' => $region['type'],
+									'pos' => $region['pos']
+							)
+					))->put();
+			$items['regions'][] = $retR;
+			$start = $region['start'];
+			$end = $region['end'];
+				
+			//Read sequence and take amino acid each value
+			//increases it's pos
+			//adds amino acids to the correction region
+			for ($s = $start; $s <= $end; $s++) {					
+				$retA = xController::load(
+						'amino-acids', array(
+								'items' => array (
+										'id' => 0, //new aa id=0
+										'region_id' => $ret['xinsertedid'],
+										'type' => $aaArray[$s],
+										'pos' => s
+								)
+						))->put();
+			}
+			$items['amino-acids'][] = $retA;
+		}
 		
 		$r['items'] = $regions;
 
@@ -229,26 +265,5 @@ class StructureController extends RESTController {
 		//$r = xModel::load($this->model, $this->params['items'])->post();
 		// Result
 		return $r;
-	}
-	
-	//Read sequence and take amino acid each value
-	//increases it's pos
-	//adds amino acids to the correction region
-	private function getAA($aaArray, $region) {
-		$aas = array();
-		$start = $region['start'];
-		$end = $region['end'];
-		$region_id = $region['id'];
-			
-		for ($s = $start; $s <= $end; $s++) {
-			$aa = array();
-			$aa['id'] = 0;
-			$aa['pos'] = $s;
-			$aa['type'] = $aaArray[$s];
-			$aa['region_id'] = $region_id;
-			
-			$aas[] = $aa;
-		}	
-		return $aas;	
 	}
 }
