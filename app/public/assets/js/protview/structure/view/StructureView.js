@@ -21,7 +21,7 @@ ProtView.Structure.View.StructureView = ProtView.Core.View.extend({
 
 		var regions = this.evaluateRegions();
 		model.set({
-			membraneRegions : regions
+			regions : regions
 		}, {
 			silent : true
 		});
@@ -100,7 +100,7 @@ ProtView.Structure.View.StructureView = ProtView.Core.View.extend({
 			ret += 'name="structure-region_to-' + val.id + '" ';
 			ret += 'id="structure-region_to-' + val.id + '" ';
 			ret += 'value="' + val.end + '">';
-			ret += '<i class="icon-minus"></i>';
+			ret += ' <i class="icon-minus"></i>';
 			ret += '</li>';
 		});
 		ret += '<li style="margin-left: 20px; margin-bottom: 9px;">';
@@ -111,18 +111,17 @@ ProtView.Structure.View.StructureView = ProtView.Core.View.extend({
 		ret += 'To : <input type="text" class="input-xmini inline" ';
 		ret += 'name="structure-region_to-0" ';
 		ret += 'id="structure-region_to-0" ';
-		ret += 'value="">';
+		ret += 'value=""> ';
 		ret += '<i class="icon-plus"></i>';
 		ret += '</li>';
 		ret += '</ol></div></div>';
 		return ret;
 	},
 	render : function() {
-		console.log('render');
 		var renderedContent = this.template(this.model.toJSON());
 
 		var renderedRegions = this.renderRegion(this.model
-				.get('membraneRegions'));
+				.get('regions'));
 
 		$('#structure-form-insert').html(renderedContent + renderedRegions);
 		this.modelBinder.bind(this.model, this.el, this.bindings);

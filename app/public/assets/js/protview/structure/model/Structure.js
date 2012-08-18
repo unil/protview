@@ -4,7 +4,7 @@ ProtView.Structure.Model.Structure = Backbone.RelationalModel.extend({
 		sequence: null,
 		terminusN: null,
 		terminusC: null,
-		membraneRegions : {}
+		regions : {}
 	},
 	initialize : function Structure() {
 	},
@@ -13,7 +13,7 @@ ProtView.Structure.Model.Structure = Backbone.RelationalModel.extend({
 		return root + 'api/structure/' + this.id;
 	},
 	validation : {
-		membraneRegions: function(regions) {
+		regions: function(regions) {
 			var valid = true;
 			//var isNumber = this.isNumber();
 			_.each(regions, function(val, key) {

@@ -23,6 +23,12 @@ class StructureController extends RESTController {
 		if (!isset($this->params['id'])) throw new xException('No peptide id provided', 400);
 
 		$peptide_id = $this->params['id'];
+		//if true, all regions will be returned
+		//otherwise, only membrane regions
+		$allRegions = false;
+		
+		if (isset($this->params['allRegions']))
+			$allRegions = true;
 
 		$items = array();
 
@@ -31,8 +37,7 @@ class StructureController extends RESTController {
 				array(
 						'xjoin' => '',
 						'peptide_id' => $peptide_id, //where
-						'xorder' => 'pos',
-						//'xwhere' => 'membrane'
+						'xorder' => 'pos'
 				)
 		)->get();
 
@@ -73,23 +78,28 @@ class StructureController extends RESTController {
 			}
 			$r++;
 				
-				
-			if ($region['type'] == 'membrane') {
-				$membraneRegion = array();
-
-				$membraneRegion['id'] = (int)$region['id'];
-				$membraneRegion['start'] = (int)$start;
-				$membraneRegion['end'] = (int)$end;
-
+			$membraneRegion = array();
+			$membraneRegion['id'] = (int)$region['id'];
+			$membraneRegion['start'] = (int)$start;
+			$membraneRegion['end'] = (int)$end;
+			$membraneRegion['type'] = $region['type'];
+			
+			if ($allRegions) {
 				$membraneRegions[] = $membraneRegion;
 			}
+			else {
+				if ($region['type'] == 'membrane') {
+					$membraneRegions[] = $membraneRegion;
+				}
+			} 
+				
 			$start = $end;
 		}
-		$items['id'] = $peptide_id;
+		$items['peptide_id'] = (int)$peptide_id;
 		$items['sequence'] = $sequence;
 		$items['terminusN'] = $terminusN;
 		$items['terminusC'] = $terminusC;
-		$items['membraneRegions'] = $membraneRegions;
+		$items['regions'] = $membraneRegions;
 
 		return $data['items'] = $items;
 	}
