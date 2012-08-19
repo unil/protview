@@ -1,4 +1,4 @@
-ProtView.Structure.Model.Structure = Backbone.RelationalModel.extend({
+ProtView.Structure.Model.Peptide = Backbone.RelationalModel.extend({
 	defaults : {
 		id: null,
 		sequence: null,
@@ -6,11 +6,11 @@ ProtView.Structure.Model.Structure = Backbone.RelationalModel.extend({
 		terminusC: null,
 		regions : {}
 	},
-	initialize : function Structure() {
+	initialize : function Peptide() {
 	},
 	url : function() {
 		var root = Application.ROOTPATH;
-		return root + 'api/structure/' + this.id;
+		return root + 'api/peptides/' + this.id;
 	},
 	validation : {
 		regions: function(regions) {

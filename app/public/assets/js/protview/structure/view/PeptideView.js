@@ -1,18 +1,18 @@
-ProtView.Structure.View.StructureView = ProtView.Core.View.extend({
+ProtView.Structure.View.PeptideView = ProtView.Core.View.extend({
 	events : {
-		'click #structure-form-submit' : 'submitForm'
+		'click #peptide-form-submit' : 'submitForm'
 	},
 	submitForm : function(e) {
 		e.preventDefault();
 		var model = this.model;
-		var terminusN = $('#structure-terminus-n').val();
+		var terminusN = $('#peptide-terminus-n').val();
 		model.set({
 			terminusN : terminusN
 		}, {
 			silent : true
 		});
 
-		var terminusC = $('#structure-terminus-c').val();
+		var terminusC = $('#peptide-terminus-c').val();
 		model.set({
 			terminusC : terminusC
 		}, {
@@ -45,14 +45,14 @@ ProtView.Structure.View.StructureView = ProtView.Core.View.extend({
 	evaluateRegions : function() {
 		var regions = [];
 		var region = {};
-		$('#structure-regions-values li').each(
+		$('#peptide-regions-values li').each(
 				function() {
 					var child = $(this).children();
 					child.each(function(k, v) {
 						var el = $(v).get(0);
 
 						if (el.tagName.toLowerCase() == 'input') {
-							// structure-region_from-1
+							// peptide-region_from-1
 							var input = $(el);
 
 							var inputId = input.attr('id');
@@ -86,31 +86,31 @@ ProtView.Structure.View.StructureView = ProtView.Core.View.extend({
 	},
 	renderRegion : function(regions) {
 		var ret = '<div class="control-group"> ';
-		ret += '<label for="structure-region-1" id="structure-region-label" ';
+		ret += '<label for="peptide-region-1" id="peptide-region-label" ';
 		ret += 'class="control-label">Membrane regions</label> ';
 		ret += '<div class="controls"> ';
-		ret += '<ol id="structure-regions-values">';
+		ret += '<ol id="peptide-regions-values">';
 		_.each(regions, function(val, key) {
 			ret += '<li style="margin-left: 20px; margin-bottom: 9px;">';
 			ret += 'From : <input type="text" class="input-xmini inline"';
-			ret += 'name="structure-region_from-' + val.id + '" ';
-			ret += 'id="structure-region_from-' + val.id + '" ';
+			ret += 'name="peptide-region_from-' + val.id + '" ';
+			ret += 'id="peptide-region_from-' + val.id + '" ';
 			ret += 'value="' + val.start + '"> ';
 			ret += 'To : <input type="text" class="input-xmini inline" ';
-			ret += 'name="structure-region_to-' + val.id + '" ';
-			ret += 'id="structure-region_to-' + val.id + '" ';
+			ret += 'name="peptide-region_to-' + val.id + '" ';
+			ret += 'id="peptide-region_to-' + val.id + '" ';
 			ret += 'value="' + val.end + '">';
 			ret += ' <i class="icon-minus"></i>';
 			ret += '</li>';
 		});
 		ret += '<li style="margin-left: 20px; margin-bottom: 9px;">';
 		ret += 'From : <input type="text" class="input-xmini inline"';
-		ret += 'name="structure-region_from-0" ';
-		ret += 'id="structure-region_from-0" ';
+		ret += 'name="peptide-region_from-0" ';
+		ret += 'id="peptide-region_from-0" ';
 		ret += 'value=""> ';
 		ret += 'To : <input type="text" class="input-xmini inline" ';
-		ret += 'name="structure-region_to-0" ';
-		ret += 'id="structure-region_to-0" ';
+		ret += 'name="peptide-region_to-0" ';
+		ret += 'id="peptide-region_to-0" ';
 		ret += 'value=""> ';
 		ret += '<i class="icon-plus"></i>';
 		ret += '</li>';
@@ -123,7 +123,7 @@ ProtView.Structure.View.StructureView = ProtView.Core.View.extend({
 		var renderedRegions = this.renderRegion(this.model
 				.get('regions'));
 
-		$('#structure-form-insert').html(renderedContent + renderedRegions);
+		$('#peptide-form-insert').html(renderedContent + renderedRegions);
 		this.modelBinder.bind(this.model, this.el, this.bindings);
 		Backbone.Validation.bind(this);
 

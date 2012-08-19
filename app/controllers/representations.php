@@ -1,10 +1,6 @@
 <?php
 
-class RepresentationController extends RESTController {
-	function defaultAction() {
-		$data = array();
-		return xView::load('drawingboard/start', $data, $this->meta)->render();
-	}
+class RepresentationsController extends RESTController {
 	function get() {
 		$ret = array();
 		$items = array();

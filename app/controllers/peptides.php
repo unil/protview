@@ -3,7 +3,7 @@
 class PeptidesController extends RESTController {
 	function defaultAction() {
 		$data = array();
-		return xView::load('structure/structure', $data, $this->meta)->render();
+		return xView::load('structure/peptide', $data, $this->meta)->render();
 	}
 	/*
 	 * {

@@ -1,14 +1,14 @@
-ProtView.Structure.Controller.StructureController = Class.extend( {
+ProtView.Structure.Controller.PeptideController = Class.extend( {
 	model : null,
 	init: function() {
 		stack = {};
 		
-		model = new ProtView.Structure.Model.Structure();
-		view = new ProtView.Structure.View.StructureView({
-			el : '#structure-form',
-			templateEl : '#structure-form-template',
+		model = new ProtView.Structure.Model.Peptide();
+		view = new ProtView.Structure.View.PeptideView({
+			el : '#peptide-form',
+			templateEl : '#peptide-form-template',
 			bindings : {
-					sequence: '#structure-sequence'
+					sequence: '#peptide-sequence'
 				}
 		});
 		helper = new ProtView.Core.BackboneHelper(model);

@@ -16,8 +16,8 @@ echo xView::load('structure/start')->render() ;
 			var tabId = '#proteinSettings';
 			switch(tabIndex) {
 				case 2: 
-					url = Application.ROOTPATH + 'raw/structure/do';
-					tabId = '#structuralSettings';
+					url = Application.ROOTPATH + 'raw/peptides/do';
+					tabId = '#peptideSettings';
 					break;
 				case 3:
 					url = Application.ROOTPATH + 'raw/postmodification/do';

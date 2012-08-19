@@ -5,6 +5,6 @@ ProtView.DrawBoard.Model.StructuralGeometryCollection = Backbone.Collection.exte
 	},
 	url : function() {
 		var root = Application.ROOTPATH;
-		return this.id ? root + 'api/drawingboard/' + this.id : root + 'api/drawingboard';
+		return this.id ? root + 'api/representations/' + this.id : root + 'api/representations';
 	},
 });

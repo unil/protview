@@ -16,8 +16,8 @@ ProtView.Structure.Controller.MainController = Class.extend( {
 			//unload current resource to free memory space
 			this.unload(currentResource);
 			switch(resource) {
-				case 'structure' :
-					controller = new ProtView.Structure.Controller.StructureController();
+				case 'peptide' :
+					controller = new ProtView.Structure.Controller.PeptideController();
 					currentResource = 'structure';
 					break;
 				case 'protein' :
