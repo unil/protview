@@ -48,7 +48,7 @@ class PeptidesController extends RESTController {
 
 		$count = $regions['xcount'];
 		$r = 0;
-		$start = 0;
+		$start = 1;
 		$end = 0;
 		$membraneRegions = array();
 
@@ -69,10 +69,10 @@ class PeptidesController extends RESTController {
 							'region_id' => $region['id'], //where
 							'xorder' => 'pos'
 					)
-			)->get();
+			)->get(); 
 				
 			$nbAA = $amino_acids['xcount'];
-			$end += $start + $nbAA;
+			$end = $start + $nbAA -1;
 				
 			foreach($amino_acids['items'] as $aa) {
 				$sequence .= $aa['type'];
@@ -94,7 +94,7 @@ class PeptidesController extends RESTController {
 				}
 			} 
 				
-			$start = $end;
+			$start = $end + 1;
 		}
 		$items['id'] = (int)$peptide_id;
 		$items['sequence'] = $sequence;
