@@ -8,7 +8,7 @@ class RepresentationsController extends RESTController {
 				'structural-geometry',
 				array(
 						'xjoin' => 'region',
-						'representation_id' => 8, //where
+						'representation_id' => 9, //where
 						'xreturn' => array(
 								'id',
 								'region_id',
@@ -110,7 +110,7 @@ class RepresentationsController extends RESTController {
 		
 		//Initialize amino acid counter (id)
 		$count = 1;
-		//Reade sequence and create amino acid class for each value
+		//Read sequence and create amino acid class for each value
 		//increases id by one for each amino acid
 		//adds amino acids to its region
 		
@@ -138,14 +138,7 @@ class RepresentationsController extends RESTController {
 				$region->addAminoAcid(new AminoAcid($aa['id'], $aa['type']));
 			}
 
-			
-			/*
-			for ($s = $start; $s <= $end; $s++) {
-				$region->addAminoAcid(new AminoAcid($s, $elements[$s-1]));
-				$count++;
-			}*/
 			$peptide->addRegion($region);
-		
 		}
 		
 		
@@ -178,21 +171,26 @@ class RepresentationsController extends RESTController {
 					))->put();
 			
 			foreach($region->getAminoAcids() as $amino_acid) {
-				$coordinate = $coords[$coordPos];
-				xController::load(
-						'structural-coordinates', array(
-								'items' => array (
-										'id' => 0, //new aa id=0
-										'structural_geometry_id' => $structural_geometry['xinsertid'],
-										'amino_acid_id' => $amino_acid->getId(),
-										'coordinate' => $coordinate['x'] . '/' . $coordinate['y'],
-										'pos' => $amino_acid->getPos()
-								)
-						))->put();
+				
+
+				
+				if (isset($coords[$coordPos])) {
+					$coordinate = $coords[$coordPos];
+					$x = $coordinate['x'];
+					$y = $coordinate['y'];
+					xController::load(
+							'structural-coordinates', array(
+									'items' => array (
+											'id' => 0, //new aa id=0
+											'structural_geometry_id' => $structural_geometry['xinsertid'],
+											'amino_acid_id' => $amino_acid->getId(),
+											'coordinate' => $x . '/' . $y,
+											'pos' => $amino_acid->getPos()
+									)
+							))->put();
+				}
 				$coordPos++;
 			}
 		}
-		
-		//return $coords;
 	}
 }
