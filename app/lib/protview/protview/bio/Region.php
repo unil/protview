@@ -41,7 +41,7 @@ class Region {
 	public function addAminoAcid($aminoAcid) {
 		if (!in_array($aminoAcid, $this->aminoAcids)) {
 			$this->aminoAcids[] = $aminoAcid;
-			$aminoAcid->setDomain($this);
+			$aminoAcid->setRegion($this);
 		}
 	}
 	
@@ -68,7 +68,7 @@ class Region {
 	{
 		if ($this->peptide != $peptide) {
 	    	$this->peptide = $peptide;
-	    	$this->peptide->addDomain($this);
+	    	$this->peptide->addRegion($this);
 		}
 	}
 }

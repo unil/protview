@@ -5,7 +5,7 @@ class AminoAcid {
 	private $variant;
 	private $modification;
 	private $link;
-	private $domain;
+	private $region;
 	
 	public function __construct($id, $type) {
 		$this->id = $id;
@@ -52,16 +52,16 @@ class AminoAcid {
 	    $this->link = $link;
 	}
 
-	public function getDomain()
+	public function getRegion()
 	{
-	    return $this->domain;
+	    return $this->region;
 	}
 
-	public function setDomain($domain)
+	public function setRegion($region)
 	{
-		if ($this->domain != $domain) {
-	    	$this->domain = $domain;
-	    	$this->domain->addAminoAcid($this);
+		if ($this->region != $region) {
+	    	$this->region = $region;
+	    	$this->region->addAminoAcid($this);
 		}
 	}
 }

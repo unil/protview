@@ -5,7 +5,7 @@ class Peptide {
 	private $id;
 	private $start;
 	private $end;
-	private $domains = array();
+	private $regions = array();
 	private $subunit;
 	private $countAminoAcid = 0;
 	

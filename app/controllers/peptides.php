@@ -1,6 +1,7 @@
 <?php
 
 class PeptidesController extends RESTController {
+	public $model = 'peptide';
 	function defaultAction() {
 		$data = array();
 		return xView::load('structure/peptide', $data, $this->meta)->render();
@@ -127,9 +128,6 @@ class PeptidesController extends RESTController {
 	}
 	*/
 	function put() {
-		//$this->delete();
-		//$this->put();
-
 		// Checks if method is allowed
 		if (!in_array('put', $this->allow)) throw new xException("Method not allowed", 403);
 		// Checks provided parameters
@@ -222,8 +220,14 @@ class PeptidesController extends RESTController {
 
 		if ($type != $terminusC)
 			throw new xException('No N/C-Terminus are incorrect for regions specified (inside/outside missmatch)', 400);
-
-		//$r['regions'] = $regions;
+		
+		$deleteOldStructure = xController::load(
+				'regions', array(
+						'peptide_id' => $peptide_id
+				))->delete();
+		$r['delete'] = $deleteOldStructure;
+		
+		$r['regions'] = $regions;
 		//$r['amino-acids'] = array();
 
 		//insert into database

@@ -82,10 +82,6 @@ class RepresentationsController extends RESTController {
 		require_once(xContext::$basepath.'/lib/protview/protview/geom/shape/complex/PeptideShape.php');
 		
 		
-		
-		
-		//number of aa
-		$length = 24;
 		$size = 20;
 		
 		$startCoord = array("x" => 0, "y" => 0);
@@ -134,13 +130,12 @@ class RepresentationsController extends RESTController {
 		}
 		
 		
-		/*$proteinCalc = new TransmembraneProtein($peptide, $startCoord, $size);
+		$proteinCalc = new TransmembraneProtein($peptide, $startCoord, $size);
 		
 		$coords = $proteinCalc->getAACoordinates();
 		$membraneCoords = $proteinCalc->getMembraneCoordinates();
 		
-		*/
 		
-		return $peptide;
+		return $pept;
 	}
 }

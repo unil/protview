@@ -11,5 +11,13 @@ class RegionModelTest extends protviewPHPUnit_Framework_TestCase {
 		print_r($ret);
 		$this->assertTrue(array_key_exists('id', $ret));
 	}
+	
+	function test_regionModel_delete_fromSpecifiedPeptide() {
+		$ret = xController::load(
+				'regions', array(
+						'peptide_id' => $peptide_id
+				))->delete();
+		print_r($ret);
+	}
 }
 ?>

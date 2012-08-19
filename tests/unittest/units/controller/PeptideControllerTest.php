@@ -52,5 +52,15 @@ class PeptideControllerTest extends protviewPHPUnit_Framework_TestCase {
 				))->put();
 		print_r($ret);
 	}
+	
+	/*function test_peptideController_delete_allFieldsAreReturned() {
+		$ret = xController::load(
+			'peptides', array(
+					'id' => 1,
+			))->delete();
+		print_r($ret);
+	}*/
+	
+	
 }
 ?>
