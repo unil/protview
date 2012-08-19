@@ -95,7 +95,7 @@ class PeptidesController extends RESTController {
 				
 			$start = $end;
 		}
-		$items['peptide_id'] = (int)$peptide_id;
+		$items['id'] = (int)$peptide_id;
 		$items['sequence'] = $sequence;
 		$items['terminusN'] = $terminusN;
 		$items['terminusC'] = $terminusC;

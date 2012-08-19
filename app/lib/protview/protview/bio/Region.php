@@ -1,6 +1,6 @@
 <?php
 require_once('AminoAcid.php');
-class Domain {
+class Region {
 	private $id;
 	private $name;
 	private $type;

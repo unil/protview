@@ -1,5 +1,5 @@
 <?php
-require_once('Domain.php');
+require_once('Region.php');
 
 class Peptide {
 	private $id;
@@ -30,16 +30,16 @@ class Peptide {
 	    return $this->end;
 	}
 	
-	public function addDomain($domain) {
-		if (!in_array($domain, $this->domains)) {
-			$this->domains[] = $domain;
-			$domain->setPeptide($this);
+	public function addRegion($region) {
+		if (!in_array($region, $this->regions)) {
+			$this->regions[] = $region;
+			$region->setPeptide($this);
 		}
 	}
 
-	public function getDomains()
+	public function getRegions()
 	{
-	    return $this->domains;
+	    return $this->regions;
 	}
 
 	public function getSubunit()
@@ -54,7 +54,7 @@ class Peptide {
 	public function countAminoAcids($filter = null) {
 		$count = array('no_filter' => 0);
 	
-		foreach ($this->domains as $d) {
+		foreach ($this->regions as $d) {
 			if ($filter != null) {
 				if ($d->getType() == $filter) {
 					@$count[$filter] += $d->countAminoAcids();
@@ -77,7 +77,7 @@ class Peptide {
 	public function countBiggestMembrane() {
 		$count = 0;
 		
-		foreach ($this->domains as $d) {
+		foreach ($this->regions as $d) {
 			if ($d->getType() == 'trans') {
 				if ($count < $d->countAminoAcids())
 					$count = $d->countAminoAcids();

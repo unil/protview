@@ -40,6 +40,7 @@ class RepresentationsController extends RESTController {
 							)
 					)
 			)->get();
+			
 			$labels = array();
 			$coordinates = array();
 			foreach ($coords as $coord) {
@@ -71,16 +72,17 @@ class RepresentationsController extends RESTController {
 		if (@$this->params['id'] != @$this->params['items']['id'])
 			throw new xException("Parameters id and items.id do not match", 400);
 		
-		$items = $this->params['items'];
-		if (!isset($items['id'])) throw new xException('No id provided', 400);
+		$items = $this->params['items'];		
+		echo "peptide_id: {$items['peptide_id']}";
+		if (!isset($items['peptide_id'])) throw new xException('No peptide_id provided', 400);
 		
-		require_once(xContext::$basepath.'/lib/protview/protview/bio/Protein.php');
-		require_once(xContext::$basepath.'/lib/protview/protview/geom/shape/complex/TransmembraneProtein.php');
+		$peptide_id = $items['peptide_id'];
+		
+		require_once(xContext::$basepath.'/lib/protview/protview/bio/Peptide.php');
+		require_once(xContext::$basepath.'/lib/protview/protview/geom/shape/complex/PeptideShape.php');
 		
 		
 		
-		$offsetX = 80;
-		$offsetY = 380;
 		
 		//number of aa
 		$length = 24;
@@ -89,40 +91,22 @@ class RepresentationsController extends RESTController {
 		$startCoord = array("x" => 0, "y" => 0);
 		
 
+		$pept = xController::load(
+				'peptides',
+				array(
+						'id' => $peptide_id, //where
+						'xorder' => 'pos',
+						'allRegions'
+				)
+		)->get();
 		
+		$sequence = $pept['sequence'];
+		$regions = $pept['regions'];
+				
 		
-		/*Create protein test*/
-		$sequence = "MNTSAPPAVSPNITVLAPGKGPWQVAFIGHITGSLSLATVTGALLVLISFKVNTELKTVNNYFLLSKKSLSKEIGTTSMNNYTTYLLMGHWALGTLACD";
-		$sequence .= "MNTSAPPAVSPNITVLAPGKGPWQVAFIGHITGSLSLATVTGALLVLISFKVNTELKTVNNYFLLSKKSLSKEIGTTSMNNYTTYLLMGHWALGTLACD";
-		$sequence .= "MNTSAPPAVSPNITVLAPGKGPWQVAFIGHITGSLSLATVTGALLVLISFKVNTELKTVNNYFLLSKKSLSKEIGTTSMNNYTTYLLMGHWALGTLACD";
-		$sequence .= "MNTSAPPAVSPNITVLAPGKGPWQVAFIGHITGSLSLATVTGALLVLISFKVNTELKTVNNYFLLSKKSLSKEIGTTSMNNYTTYLLMGHWALGTLACD";
-		$sequence .= "MNTSAPPAVSPNITVLAPGKGPWQVAFIGHITGSLSLATVTGALLVLISFKVNTELKTVNNYFLLSKKSLSKEIGTTSMNNYTTYLLMGHWALGTLACD";
-		$sequence .= "MNTSAPPAVSPNITVLAPGKGPWQVAFIGHITGSLSLATVTGALLVLISFKVNTELKTVNNYFLLSKKSLSKEIGTTSMNNYTTYLLMGHWALGTLACD";
-		$sequence .= "MNTSAPPAVSPNITVLAPGKGPWQVAFIGHITGSLSLATVTGALLVLISFKVNTELKTVNNYFLLSKKSLSKEIGTTSMNNYTTYLLMGHWALGTLACD";
-		$sequence .= "MNTSAPPAVSPNITVLAPGKGPWQVAFIGHITGSLSLATVTGALLVLISFKVNTELKTVNNYFLLSKKSLSKEIGTTSMNNYTTYLLMGHWALGTLACD";
-		
-		$domains = array(
-				array('start' => 1, 'end' => 24, 'type' => 'extra'),
-				array('start' => 25, 'end' => 46, 'type' => 'trans'),
-				array('start' => 47, 'end' => 60, 'type' => 'intra'),
-				array('start' => 61, 'end' => 80, 'type' => 'trans'),
-				array('start' => 81, 'end' => 120, 'type' => 'extra'),
-				array('start' => 121, 'end' => 150, 'type' => 'trans'),
-				array('start' => 151, 'end' => 300, 'type' => 'intra'),
-				array('start' => 301, 'end' => 318, 'type' => 'trans'),
-				array('start' => 319, 'end' => 340, 'type' => 'extra')
-		);
-		
-		//Create protein
-		$protein = new Protein("Random protein", "Homo sapiens");
-		$protein->setNote("The following is a valid extended BIOML file");
-		
-		//Create subunit
-		$subunit = new Subunit(1);
-		$subunit->setName("alpha-1 isoform a");
 		
 		//Create peptide
-		$peptide = new Peptide(1, 1, 110);
+		$peptide = new Peptide($pept['id'], 0, 0);
 		
 		//Initialize amino acid counter (id)
 		$count = 1;
@@ -132,34 +116,31 @@ class RepresentationsController extends RESTController {
 		
 		$elements = str_split($sequence);
 		
-		for ($d = 0; $d < count($domains); $d++) {
-			$dom = $domains[$d];
+		for ($d = 0; $d < count($regions); $d++) {
+			$dom = $regions[$d];
 		
 			$start = $dom['start'];
 			$end = $dom['end'];
 			$type = $dom['type'];
 		
-			$domain = new Domain($d+1, $start, $end, $type);
+			$region = new Region($d+1, $start, $end, $type);
 		
 			for ($s = $start; $s <= $end; $s++) {
-				$domain->addAminoAcid(new AminoAcid($s, $elements[$s]));
+				$region->addAminoAcid(new AminoAcid($s, $elements[$s]));
 				$count++;
 			}
-			$peptide->addDomain($domain);
+			$peptide->addRegion($region);
 		
 		}
 		
-		$subunit->addPeptide($peptide);
-		$protein->addSubunit($subunit);
 		
-		$proteinCalc = new TransmembraneProtein($protein, $startCoord, $size);
+		/*$proteinCalc = new TransmembraneProtein($peptide, $startCoord, $size);
 		
 		$coords = $proteinCalc->getAACoordinates();
 		$membraneCoords = $proteinCalc->getMembraneCoordinates();
 		
+		*/
 		
-		
-
-		
+		return $peptide;
 	}
 }
