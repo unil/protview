@@ -92,7 +92,7 @@ class RepresentationsController extends RESTController {
 				array(
 						'id' => $peptide_id, //where
 						'xorder' => 'pos',
-						'allRegions'
+						'allRegions' => 'allRegions'
 				)
 		)->get();
 		

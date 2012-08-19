@@ -6,10 +6,15 @@
  */
 class PeptideControllerTest extends protviewPHPUnit_Framework_TestCase {
 
-	/*function test_proteinController_get_allFieldsAreReturned() {
-		$ret = xFront::load('api', array('xcontroller' => 'structure', 'id' => 1, 'xformat' => 'json'))->get();		
+	/*function test_peptideController_get_allFieldsViaFrontAsJSON() {
+		$ret = xFront::load('api', array('xcontroller' => 'peptides', 'id' => 1, 'xformat' => 'json'))->get();		
 		print_r($ret);
 	}*/
+	
+	function test_peptideController_get_allFields() {
+		$ret = xController::load('peptides', array('id' => 1, 'allRegions' => 'allRegions'))->get();
+		print_r($ret);
+	}
 	
 	/*
 	 * "items": {
@@ -31,7 +36,7 @@ class PeptideControllerTest extends protviewPHPUnit_Framework_TestCase {
         ]
     }
 	 */
-	function test_peptideController_put_allFieldsAreReturned() {
+	/*function test_peptideController_put_allFieldsAreReturned() {
 		$sequence = "MNTSAPPAVSPNITVLAPGKGPWQVAFIGHITGSLSLATVTGALLVLISFKVNTELKTVNNYFLLSKKSLSKEIGTTSMNNYTTYLLMGHWALGTLACD";
 		$sequence .= "MNTSAPPAVSPNITVLAPGKGPWQVAFIGHITGSLSLATVTGALLVLISFKVNTELKTVNNYFLLSKKSLSKEIGTTSMNNYTTYLLMGHWALGTLACD";
 		$sequence .= "MNTSAPPAVSPNITVLAPGKGPWQVAFIGHITGSLSLATVTGALLVLISFKVNTELKTVNNYFLLSKKSLSKEIGTTSMNNYTTYLLMGHWALGTLACD";
@@ -51,8 +56,9 @@ class PeptideControllerTest extends protviewPHPUnit_Framework_TestCase {
 							)
 				))->put();
 		print_r($ret);
-	}
+	}*/
 	
+	//xfm problem, cannot delete by foreign_key
 	/*function test_peptideController_delete_allFieldsAreReturned() {
 		$ret = xController::load(
 			'peptides', array(

@@ -257,7 +257,7 @@ class PeptidesController extends RESTController {
 										'id' => 0, //new aa id=0
 										'region_id' => $retR['xinsertid'],
 										'type' => $aaArray[$s],
-										'pos' => $s
+										'pos' => $s+1
 								)
 						))->put();
 			}
