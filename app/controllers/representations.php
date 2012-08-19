@@ -8,7 +8,7 @@ class RepresentationsController extends RESTController {
 				'structural-geometry',
 				array(
 						'xjoin' => 'region',
-						'representation_id' => 1, //where
+						'representation_id' => 8, //where
 						'xreturn' => array(
 								'id',
 								'region_id',
@@ -78,6 +78,10 @@ class RepresentationsController extends RESTController {
 		
 		$peptide_id = $items['peptide_id'];
 		
+		$title = 'title';
+		$description = 'description';
+		$params = null;
+		
 		require_once(xContext::$basepath.'/lib/protview/protview/bio/Peptide.php');
 		require_once(xContext::$basepath.'/lib/protview/protview/geom/shape/complex/PeptideShape.php');
 		
@@ -117,7 +121,7 @@ class RepresentationsController extends RESTController {
 			$end = $r['end'];
 			$type = $r['type'];
 		
-			$region = new Region($d+1, $start, $end, $type);
+			$region = new Region($r['id'], $start, $end, $type);
 			
 			$amino_acids = xController::load(
 					'amino-acids',
@@ -150,15 +154,17 @@ class RepresentationsController extends RESTController {
 		$coords = $proteinCalc->getAACoordinates();
 		$membraneCoords = $proteinCalc->getMembraneCoordinates();
 		
-		
+		$coordPos = 0;
 		//db insert
 		$representation = xModel::load(
 					'representation', array(
+							'id' => 0,
 							'title' => $title,
 							'description' => $description,
-							'params' => $params
+							'params' => $params,
+							'peptide_id' => $peptide_id
 					))->put();
-		foreach($regions as $region) {
+		foreach($peptide->getRegions() as $region) {
 			
 			$structural_geometry = xController::load(
 					'structural-geometries', array(
@@ -172,19 +178,21 @@ class RepresentationsController extends RESTController {
 					))->put();
 			
 			foreach($region->getAminoAcids() as $amino_acid) {
+				$coordinate = $coords[$coordPos];
 				xController::load(
-						'structural-coordinate', array(
+						'structural-coordinates', array(
 								'items' => array (
 										'id' => 0, //new aa id=0
 										'structural_geometry_id' => $structural_geometry['xinsertid'],
 										'amino_acid_id' => $amino_acid->getId(),
-										'coordinate' => '',
+										'coordinate' => $coordinate['x'] . '/' . $coordinate['y'],
 										'pos' => $amino_acid->getPos()
 								)
 						))->put();
+				$coordPos++;
 			}
 		}
 		
-		return $coords;
+		//return $coords;
 	}
 }

@@ -14,7 +14,7 @@ class RepresentationModel extends xModelMysql {
 
     public $validation = array(
         'id' => 'mandatory',
-        'name' => 'mandatory'
+    	'peptide_id' => 'mandatory'
     );
     
     public $joins = array(

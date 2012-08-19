@@ -13,7 +13,9 @@ class StructuralCoordinateModel extends xModelMysql {
 
     public $validation = array(
         'id' => 'mandatory',
-        'name' => 'mandatory'
+        'amino_acid_id' => 'mandatory',
+    	'structural_geometry_id' => 'mandatory',
+    	'coordinate' => 'mandatory'
     );
     
     public $joins = array(

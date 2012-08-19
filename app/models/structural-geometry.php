@@ -9,12 +9,16 @@ class StructuralGeometryModel extends xModelMysql {
     	'representation_id' => 'representation_id',
     	'region_id' => 'region_id',
 		'params' => 'params',
+    	'type' => 'type',
     	'pos' => 'pos'
     );
 
     public $validation = array(
         'id' => 'mandatory',
-        'name' => 'mandatory'
+        'representation_id' => 'mandatory',
+    	'region_id' => 'mandatory',
+    	'type' => 'mandatory',
+    	'pos' => 'mandatory',
     );
     
     public $joins = array(

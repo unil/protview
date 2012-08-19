@@ -36,7 +36,7 @@ class PeptideControllerTest extends protviewPHPUnit_Framework_TestCase {
         ]
     }
 	 */
-	/*function test_peptideController_put_allFieldsAreReturned() {
+	function test_peptideController_put_allFieldsAreReturned() {
 		$sequence = "MNTSAPPAVSPNITVLAPGKGPWQVAFIGHITGSLSLATVTGALLVLISFKVNTELKTVNNYFLLSKKSLSKEIGTTSMNNYTTYLLMGHWALGTLACD";
 		$sequence .= "MNTSAPPAVSPNITVLAPGKGPWQVAFIGHITGSLSLATVTGALLVLISFKVNTELKTVNNYFLLSKKSLSKEIGTTSMNNYTTYLLMGHWALGTLACD";
 		$sequence .= "MNTSAPPAVSPNITVLAPGKGPWQVAFIGHITGSLSLATVTGALLVLISFKVNTELKTVNNYFLLSKKSLSKEIGTTSMNNYTTYLLMGHWALGTLACD";
@@ -56,7 +56,7 @@ class PeptideControllerTest extends protviewPHPUnit_Framework_TestCase {
 							)
 				))->put();
 		print_r($ret);
-	}*/
+	}
 	
 	//xfm problem, cannot delete by foreign_key
 	/*function test_peptideController_delete_allFieldsAreReturned() {
