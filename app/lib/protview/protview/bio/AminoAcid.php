@@ -6,6 +6,7 @@ class AminoAcid {
 	private $modification;
 	private $link;
 	private $region;
+	private $pos;
 	
 	public function __construct($id, $type) {
 		$this->id = $id;
@@ -46,6 +47,11 @@ class AminoAcid {
 	{
 	    return $this->link;
 	}
+	
+	public function getPos()
+	{
+		return $this->pos;
+	}
 
 	public function setLink($link)
 	{
@@ -63,6 +69,10 @@ class AminoAcid {
 	    	$this->region = $region;
 	    	$this->region->addAminoAcid($this);
 		}
+	}
+	public function setPos($pos)
+	{
+		$this->pos = $pos;
 	}
 }
 

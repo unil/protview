@@ -33,6 +33,8 @@ class Peptide {
 	public function addRegion($region) {
 		if (!in_array($region, $this->regions)) {
 			$this->regions[] = $region;
+			$pos = count($this->regions);
+			$region->setPos($pos);
 			$region->setPeptide($this);
 		}
 	}

@@ -7,6 +7,7 @@ class Region {
 	private $start;
 	private $end;
 	private $peptide;
+	private $pos;
 	
 	private $aminoAcids = array();
 	
@@ -37,10 +38,16 @@ class Region {
 	{
 	    return $this->end;
 	}
+	public function getPos()
+	{
+		return $this->pos;
+	}
 
 	public function addAminoAcid($aminoAcid) {
 		if (!in_array($aminoAcid, $this->aminoAcids)) {
 			$this->aminoAcids[] = $aminoAcid;
+			$pos = count($this->aminoAcids);
+			$aminoAcid->setPos($pos);
 			$aminoAcid->setRegion($this);
 		}
 	}
@@ -70,6 +77,11 @@ class Region {
 	    	$this->peptide = $peptide;
 	    	$this->peptide->addRegion($this);
 		}
+	}
+	
+	public function setPos($pos)
+	{
+		$this->pos = $pos;
 	}
 }
 

@@ -108,23 +108,38 @@ class RepresentationsController extends RESTController {
 		$count = 1;
 		//Reade sequence and create amino acid class for each value
 		//increases id by one for each amino acid
-		//adds amino acids to a domain
-		
-		$elements = str_split($sequence);
+		//adds amino acids to its region
 		
 		for ($d = 0; $d < count($regions); $d++) {
-			$dom = $regions[$d];
+			$r = $regions[$d];
 		
-			$start = $dom['start'];
-			$end = $dom['end'];
-			$type = $dom['type'];
+			$start = $r['start'];
+			$end = $r['end'];
+			$type = $r['type'];
 		
 			$region = new Region($d+1, $start, $end, $type);
-		
-			for ($s = $start; $s <= $end; $s++) {
-				$region->addAminoAcid(new AminoAcid($s, $elements[$s]));
-				$count++;
+			
+			$amino_acids = xController::load(
+					'amino-acids',
+					array(
+							'xjoin' => '',
+							'region_id' => $r['id'], //where
+							'xorder' => 'pos'
+					)
+			)->get();
+			
+			$nbAA = $amino_acids['xcount'];
+			
+			foreach($amino_acids['items'] as $aa) {
+				$region->addAminoAcid(new AminoAcid($aa['id'], $aa['type']));
 			}
+
+			
+			/*
+			for ($s = $start; $s <= $end; $s++) {
+				$region->addAminoAcid(new AminoAcid($s, $elements[$s-1]));
+				$count++;
+			}*/
 			$peptide->addRegion($region);
 		
 		}
@@ -136,6 +151,40 @@ class RepresentationsController extends RESTController {
 		$membraneCoords = $proteinCalc->getMembraneCoordinates();
 		
 		
-		return $pept;
+		//db insert
+		$representation = xModel::load(
+					'representation', array(
+							'title' => $title,
+							'description' => $description,
+							'params' => $params
+					))->put();
+		foreach($regions as $region) {
+			
+			$structural_geometry = xController::load(
+					'structural-geometries', array(
+							'items' => array (
+									'id' => 0, //new aa id=0
+									'representation_id' => $representation['xinsertid'],
+									'region_id' => $region->getId(),
+									'type' => 'undefined',
+									'pos' => $region->getPos()
+							)
+					))->put();
+			
+			foreach($region->getAminoAcids() as $amino_acid) {
+				xController::load(
+						'structural-coordinate', array(
+								'items' => array (
+										'id' => 0, //new aa id=0
+										'structural_geometry_id' => $structural_geometry['xinsertid'],
+										'amino_acid_id' => $amino_acid->getId(),
+										'coordinate' => '',
+										'pos' => $amino_acid->getPos()
+								)
+						))->put();
+			}
+		}
+		
+		return $coords;
 	}
 }
