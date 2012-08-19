@@ -221,13 +221,14 @@ class PeptidesController extends RESTController {
 		if ($type != $terminusC)
 			throw new xException('No N/C-Terminus are incorrect for regions specified (inside/outside missmatch)', 400);
 		
-		$deleteOldStructure = xController::load(
-				'regions', array(
+		//delete old structure
+		$deleteOldStructure = xModel::load(
+				'region', array(
 						'peptide_id' => $peptide_id
 				))->delete();
-		$r['delete'] = $deleteOldStructure;
+		//$r['delete'] = $deleteOldStructure;
 		
-		$r['regions'] = $regions;
+		//$r['regions'] = $regions;
 		//$r['amino-acids'] = array();
 
 		//insert into database

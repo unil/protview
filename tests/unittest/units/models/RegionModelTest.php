@@ -13,9 +13,9 @@ class RegionModelTest extends protviewPHPUnit_Framework_TestCase {
 	}
 	
 	function test_regionModel_delete_fromSpecifiedPeptide() {
-		$ret = xController::load(
-				'regions', array(
-						'peptide_id' => $peptide_id
+		$ret = xModel::load(
+				'region', array(
+						'peptide_id' => 1
 				))->delete();
 		print_r($ret);
 	}
