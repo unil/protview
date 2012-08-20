@@ -51,7 +51,7 @@ class PeptideControllerTest extends protviewPHPUnit_Framework_TestCase {
 							'terminusC' => 'intra',
 							'membraneRegions' => array(
 									array('id' => 2, 'start' => 18, 'end' => 36),
-									array('id' => 0, 'start' => 58, 'end' => 157)
+									array('id' => 0, 'start' => 58, 'end' => 78)
 									)
 							)
 				))->put();

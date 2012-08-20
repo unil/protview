@@ -8,7 +8,7 @@ class RepresentationsController extends RESTController {
 				'structural-geometry',
 				array(
 						'xjoin' => 'region',
-						'representation_id' => 9, //where
+						'representation_id' => 10, //where
 						'xreturn' => array(
 								'id',
 								'region_id',
@@ -142,7 +142,7 @@ class RepresentationsController extends RESTController {
 		}
 		
 		
-		$proteinCalc = new TransmembraneProtein($peptide, $startCoord, $size);
+		$proteinCalc = new PeptideShape($peptide, $startCoord, $size);
 		
 		$coords = $proteinCalc->getAACoordinates();
 		$membraneCoords = $proteinCalc->getMembraneCoordinates();

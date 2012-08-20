@@ -3,7 +3,7 @@ require_once(xContext::$basepath.'/lib/protview/protview/geom/shape/complex/Memb
 require_once(xContext::$basepath.'/lib/protview/protview/geom/shape/complex/StandardLoop.php');
 require_once(xContext::$basepath.'/lib/protview/protview/geom/shape/complex/ExtendedLoop.php');
 
-class TransmembraneProtein {
+class PeptideShape {
 
 	private $params = array(
 			"maxHeigh" => 1000, //max graphic height in px

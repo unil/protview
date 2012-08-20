@@ -1,7 +1,7 @@
 ProtView.DrawBoard.Utils.Drawing = Class.extend( {
 	svg : null,
-	//fixme, this attribute should not at this place
-	aaSize : 12,
+	//fixme, this attribute should not be at this place
+	aaSize : 10,
 	init: function(svg) {
 		this.svg = svg;
 	},
