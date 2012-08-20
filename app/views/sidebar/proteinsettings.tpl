@@ -16,7 +16,7 @@
 				<!-- PROTEIN SETTINGS END-->
 				<!-- STRUCTURE SETTINGS BEGIN -->
 				<div id="peptideSettings">
-					<img src="<?php echo xUtil::url('a/js/lib/jqwidgets/resources/loader.gif')?>" />
+					<img src=" />
 				</div>
 				<!-- STRUCTURE SETTINGS END -->
 				<!-- MODIFICATION SETTINGS BEGIN -->
