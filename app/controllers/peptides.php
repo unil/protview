@@ -20,97 +20,103 @@ class PeptidesController extends RESTController {
 	function get() {
 		// Checks if method is allowed
 		if (!in_array('get', $this->allow)) throw new xException("Method not allowed", 403);
-		// Checks if id is provided as this is madatory
-		if (!isset($this->params['id'])) throw new xException('No peptide id provided', 400);
 
 		$data = array();
 		
 		$peptide_id = $this->params['id'];
 		//if true, all regions will be returned
 		//otherwise, only membrane regions
-		$allRegions = false;
+		$regionFilter = array();
 		
-		if (isset($this->params['allRegions']))
-			$allRegions = true;
+		if (isset($this->params['regions']))
+			$regionFilter = explode(",", $this->params['regions']);
 
 		$items = array();
 		
-		$peptideModel = xModel::load('peptide', array('id' => $peptide_id))->get(0);
+		$peptides = xModel::load('peptide', $this->params)->get();
 		
-
-		$regions = xController::load(
-				'regions',
-				array(
-						'xjoin' => '',
-						'peptide_id' => $peptide_id, //where
-						'xorder' => 'pos'
-				)
-		)->get();
-
-		$sequence = "";
-		$terminusN = null;
-		$terminusC = null;
-
-		$count = $regions['xcount'];
-		$r = 0;
-		$start = 1;
-		$end = 0;
-		$membraneRegions = array();
-
-		foreach($regions['items'] as $region) {
-				
-			//first region determines terminusN
-			if ($terminusN == null) {
-				$terminusN = $region['type'];
-			}
-			//last region determines terminusC
-			if ($r + 1 >= $count) {
-				$terminusC = $region['type'];
-			}
-			$amino_acids = xController::load(
-					'amino-acids',
-					array(
-							'xjoin' => '',
-							'region_id' => $region['id'], //where
-							'xorder' => 'pos'
-					)
-			)->get(); 
-				
-			$nbAA = $amino_acids['xcount'];
-			$end = $start + $nbAA -1;
-				
-			foreach($amino_acids['items'] as $aa) {
-				$sequence .= $aa['type'];
-			}
-			$r++;
-				
-			$membraneRegion = array();
-			$membraneRegion['id'] = (int)$region['id'];
-			$membraneRegion['start'] = (int)$start;
-			$membraneRegion['end'] = (int)$end;
-			$membraneRegion['type'] = $region['type'];
+		
+		foreach($peptides as $peptide) {
+			$peptide_id = $peptide['id'];
+			$item = array();
+			$item['id'] = (int)$peptide_id;
+			$item['subunit_id'] = (int)$peptide['subunit_id'];
+			$item['label'] = $peptide['label'];
+			$item['pos'] = $peptide['pos'];
 			
-			if ($allRegions) {
-				$membraneRegions[] = $membraneRegion;
-			}
-			else {
-				if ($region['type'] == 'membrane') {
-					$membraneRegions[] = $membraneRegion;
+			
+			if (count($regionFilter) > 0) {
+				$regions = xController::load(
+						'regions',
+						array(
+								'xjoin' => '',
+								'peptide_id' => $peptide_id, //where
+								'xorder' => 'pos'
+						)
+				)->get();
+		
+				$sequence = "";
+				$terminusN = null;
+				$terminusC = null;
+		
+				$count = $regions['xcount'];
+				$r = 0;
+				$start = 1;
+				$end = 0;
+				$membraneRegions = array();
+		
+				foreach($regions['items'] as $region) {
+						
+					//first region determines terminusN
+					if ($terminusN == null) {
+						$terminusN = $region['type'];
+					}
+					//last region determines terminusC
+					if ($r + 1 >= $count) {
+						$terminusC = $region['type'];
+					}
+					$amino_acids = xController::load(
+							'amino-acids',
+							array(
+									'xjoin' => '',
+									'region_id' => $region['id'], //where
+									'xorder' => 'pos'
+							)
+					)->get(); 
+						
+					$nbAA = $amino_acids['xcount'];
+					$end = $start + $nbAA -1;
+						
+					foreach($amino_acids['items'] as $aa) {
+						$sequence .= $aa['type'];
+					}
+					$r++;
+						
+					$membraneRegion = array();
+					$membraneRegion['id'] = (int)$region['id'];
+					$membraneRegion['start'] = (int)$start;
+					$membraneRegion['end'] = (int)$end;
+					$membraneRegion['type'] = $region['type'];
+					
+	
+					if (in_array('all', $regionFilter) || in_array($region['type'], $regionFilter)) {
+						$membraneRegions[] = $membraneRegion;
+					}
+						
+					$start = $end + 1;
 				}
-			} 
 				
-			$start = $end + 1;
+				/*$item['sequence'] = $sequence;
+				$item['terminusN'] = $terminusN;
+				$item['terminusC'] = $terminusC;*/
+				$item['regions'] = $membraneRegions;
+			}
+			$items[] = $item;
 		}
-		$items['id'] = (int)$peptide_id;
-		$items['subunit_id'] = (int)$peptideModel['subunit_id'];
-		$items['label'] = $peptideModel['label'];
-		$items['pos'] = $peptideModel['pos'];
-		$items['sequence'] = $sequence;
-		$items['terminusN'] = $terminusN;
-		$items['terminusC'] = $terminusC;
-		$items['regions'] = $membraneRegions;
+		$data['xcount'] = count($peptides);
+		$data['items'] = $items;
 
-		return $data['items'][] = $items;
+		return $data;
 	}
 
 	/*
