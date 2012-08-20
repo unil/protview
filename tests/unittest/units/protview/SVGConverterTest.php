@@ -12,7 +12,7 @@ class SVGConverterTest extends protviewPHPUnit_Framework_TestCase {
 		
 		$png = SVGConverter::SVGStreamToPNG($svgStream);
 		
-		$this->assertEquals($png, !null);
+		$this->assertTrue($png != null);
 	}
 }
 ?>
