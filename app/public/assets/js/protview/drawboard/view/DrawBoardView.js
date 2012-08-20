@@ -9,9 +9,11 @@ ProtView.DrawBoard.View.DrawBoardView = Backbone.View.extend({
 				self.drawing = new ProtView.DrawBoard.Utils.Drawing(svg);
 			},
 			settings: {
+				xmlns : "http://www.w3.org/2000/svg",
 				width : "100%",
 				height : "800px", 
-				xmlns : "http://www.w3.org/2000/svg",
+				preserveAspectRatio : "xMinYMin meet",
+				viewBox : "0 0 1000 800",
 				style : "display:inline; float: left; z-index: 1;"
 			}
 		});

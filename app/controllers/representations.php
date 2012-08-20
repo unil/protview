@@ -8,7 +8,7 @@ class RepresentationsController extends RESTController {
 				'structural-geometry',
 				array(
 						'xjoin' => 'region',
-						'representation_id' => 10, //where
+						'representation_id' => 2, //where
 						'xreturn' => array(
 								'id',
 								'region_id',

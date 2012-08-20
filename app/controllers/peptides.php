@@ -23,6 +23,8 @@ class PeptidesController extends RESTController {
 		// Checks if id is provided as this is madatory
 		if (!isset($this->params['id'])) throw new xException('No peptide id provided', 400);
 
+		$data = array();
+		
 		$peptide_id = $this->params['id'];
 		//if true, all regions will be returned
 		//otherwise, only membrane regions
@@ -32,6 +34,9 @@ class PeptidesController extends RESTController {
 			$allRegions = true;
 
 		$items = array();
+		
+		$peptideModel = xModel::load('peptide', array('id' => $peptide_id))->get(0);
+		
 
 		$regions = xController::load(
 				'regions',
@@ -97,12 +102,15 @@ class PeptidesController extends RESTController {
 			$start = $end + 1;
 		}
 		$items['id'] = (int)$peptide_id;
+		$items['subunit_id'] = (int)$peptideModel['subunit_id'];
+		$items['label'] = $peptideModel['label'];
+		$items['pos'] = $peptideModel['pos'];
 		$items['sequence'] = $sequence;
 		$items['terminusN'] = $terminusN;
 		$items['terminusC'] = $terminusC;
 		$items['regions'] = $membraneRegions;
 
-		return $data['items'] = $items;
+		return $data['items'][] = $items;
 	}
 
 	/*
