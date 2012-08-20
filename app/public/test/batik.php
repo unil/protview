@@ -13,4 +13,5 @@ exec("java -jar $batikPath $svgPath");
 header('Content-type: image/png');
 
 echo file_get_contents($pngPath);
+exec("rm $pngPath");
 ?>
