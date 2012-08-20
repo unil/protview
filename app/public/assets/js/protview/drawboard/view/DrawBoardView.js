@@ -14,7 +14,8 @@ ProtView.DrawBoard.View.DrawBoardView = Backbone.View.extend({
 				height : "800px", 
 				preserveAspectRatio : "xMinYMin meet",
 				viewBox : "0 0 1000 800",
-				style : "display:inline; float: left; z-index: 1;"
+				style : "display:inline; float: left; z-index: 1;",
+				id : 'svg-representation'
 			}
 		});
 	},

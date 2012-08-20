@@ -1,13 +1,13 @@
 <div id="toolbar" style="padding: 8px 0; background-color:#CCCCCC;" class="well">
 	<ul class="nav nav-list">
-		<li class="active"><a href="#"><i class="icon-picture icon-white"></i> </a>
+		<li><a href="#"><i class="icon-picture"></i> </a>
 		</li>
-		<li><a href="#"><i class="icon-book"></i> </a>
+		<li><a href="#"><i class="icon-zoom-in"></i> </a>
 		</li>
-		<li><a href="#"><i class="icon-pencil"></i>
+		<li><a href="#"><i class="icon-zoom-out"></i>
 		</a>
 		</li>
-		<li><a href="#"><i class="i"></i> </a>
+		<li><a href="#export"><i class="icon-download-alt"></i> </a>
 		</li>
 	</ul>
 </div>
