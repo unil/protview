@@ -65,6 +65,9 @@
 	</div>
 	<div id="menubar-items"></div>
 	<!-- END PAGE -->
-
+<?php 
+ //in order to load js files necessary for structure widget
+echo xView::load('structure/start')->render() ;
+?>
 </body>
 </html>

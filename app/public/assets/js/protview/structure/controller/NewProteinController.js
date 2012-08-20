@@ -8,9 +8,9 @@ ProtView.Structure.Controller.NewProteinController = Class.extend( {
 		model = new ProtView.Structure.Model.Protein();
 		view = new ProtView.Structure.View.NewProteinView({
 			el : '#new-protein-form',
-			templateEl : '#new-rotein-form-template',
+			templateEl : '#new-protein-form-template',
 			bindings : {
-					name: '#protein-name',
+					name: '#new-protein-name',
 				}
 		});
 		helper = new ProtView.Core.BackboneHelper(model);
@@ -24,6 +24,7 @@ ProtView.Structure.Controller.NewProteinController = Class.extend( {
 		
 		view.setController(this);
 		view.setModel(model);
+		view.render();
 		
 		this.view = view;
 		this.stack = stack;

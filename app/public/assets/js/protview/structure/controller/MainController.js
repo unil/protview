@@ -24,6 +24,10 @@ ProtView.Structure.Controller.MainController = Class.extend( {
 					controller = new ProtView.Structure.Controller.ProteinController();
 					currentResource = 'protein';
 					break;	
+				case 'protein-new' :
+					controller = new ProtView.Structure.Controller.NewProteinController();
+					currentResource = 'protein-new';
+				break;
 				default :
 					console.log('error no resource given or not known');
 					break;

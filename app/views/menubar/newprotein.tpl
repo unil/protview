@@ -8,9 +8,9 @@
 	<form id="new-protein-form" class="form-horizontal">
 	 <script type="text/template" id="new-protein-form-template">
 	<div class="control-group">
-		<label class="control-label" for="protein-name" id="protein-name-label">Name</label>
+		<label class="control-label" for="new-protein-name" id="new-protein-name-label">Name</label>
 		<div class="controls">
-			<input type="text" name="protein-name" id="protein-name" class="input-large required"
+			<input type="text" name="new-protein-name" id="new-protein-name" class="input-large required"
 				value="" />
 		</div>
 	</div>
@@ -26,7 +26,7 @@
 		  $('#new-protein-dialog').jqxWindow({ 
 			  theme: Application.THEME, 
 			  width: 400,
-              height: 200, 
+              height: 220, 
               resizable: false,
               isModal: true
           });
@@ -36,5 +36,6 @@
 			  $('.jqx-window-modal ').remove();
 			  }
 		  );
+		  ProtView.Structure.Module.show('protein-new');
 	});
 </script>

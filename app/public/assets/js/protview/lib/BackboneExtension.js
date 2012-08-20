@@ -39,6 +39,9 @@ Backbone.sync = function(method, model, options) {
 		params.contentType = 'application/json';
 		
 		var modelData = null;
+		
+		if (model.get('id') == null)
+			model.set({id : 0}, {silent: true});
 
 		/*send only changes, needs to be fixed with ModelBinder, chagedAttributes() is always
 		 *empty 

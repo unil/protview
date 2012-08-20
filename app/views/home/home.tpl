@@ -1,6 +1,6 @@
 <div id="toolbar" style="padding: 8px 0; background-color:#CCCCCC;" class="well">
 	<ul class="nav nav-list">
-		<li class="active"><a href="#"><i class="icon-home icon-white"></i> </a>
+		<li class="active"><a href="#"><i class="icon-picture icon-white"></i> </a>
 		</li>
 		<li><a href="#"><i class="icon-book"></i> </a>
 		</li>

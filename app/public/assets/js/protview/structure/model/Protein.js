@@ -9,7 +9,7 @@ ProtView.Structure.Model.Protein = Backbone.Model.extend({
 	},
 	url : function() {
 		var root = Application.ROOTPATH;
-		return root + 'api/proteins/' + this.id;
+		return this.id == null ? root + 'api/proteins/0': root + 'api/proteins/' + this.id;
 	},
 	validation: {
 	    name: {
