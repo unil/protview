@@ -106,9 +106,9 @@ class PeptidesController extends RESTController {
 					$start = $end + 1;
 				}
 				
-				/*$item['sequence'] = $sequence;
+				$item['sequence'] = $sequence;
 				$item['terminusN'] = $terminusN;
-				$item['terminusC'] = $terminusC;*/
+				$item['terminusC'] = $terminusC;
 				$item['regions'] = $membraneRegions;
 			}
 			$items[] = $item;

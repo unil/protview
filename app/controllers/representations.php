@@ -73,7 +73,7 @@ class RepresentationsController extends RESTController {
 			throw new xException("Parameters id and items.id do not match", 400);
 		
 		$items = $this->params['items'];		
-		echo "peptide_id: {$items['peptide_id']}";
+
 		if (!isset($items['peptide_id'])) throw new xException('No peptide_id provided', 400);
 		
 		$peptide_id = $items['peptide_id'];
@@ -96,17 +96,17 @@ class RepresentationsController extends RESTController {
 				array(
 						'id' => $peptide_id, //where
 						'xorder' => 'pos',
-						'allRegions' => 'allRegions'
+						'regions' => 'all'
 				)
-		)->get();
-		
-		$sequence = $pept['sequence'];
-		$regions = $pept['regions'];
+		)->get(0);
+
+		$sequence = $pept['items'][0]['sequence'];
+		$regions = $pept['items'][0]['regions'];
 				
 		
 		
 		//Create peptide
-		$peptide = new Peptide($pept['id'], 0, 0);
+		$peptide = new Peptide($pept['items'][0]['id'], 0, 0);
 		
 		//Initialize amino acid counter (id)
 		$count = 1;
