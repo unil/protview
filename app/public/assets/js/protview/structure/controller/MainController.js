@@ -1,12 +1,4 @@
-ProtView.Structure.Controller.MainController = Class.extend( {
-	controller : null,
-	stack : {},
-	currentResource : null,
-	init: function() {
-	},
-	getController : function() {
-		return this.controller;
-	},
+ProtView.Structure.Controller.MainController = ProtView.Core.MainController.extend( {
 	load : function(resource) {
 		var controller = null,
 		stack = this.stack,
@@ -37,17 +29,6 @@ ProtView.Structure.Controller.MainController = Class.extend( {
 			this.controller = controller;
 			this.stack = stack;
 			this.currentResource = resource;
-		}
-	},
-	unload: function (resource) {
-	},
-	unloadAll : function() {
-		var stack = this.stack;
-		for (var el in stack) {
-			   /*var obj = stack[el];
-			   obj.unload();*/
-			   stack[el] = null;
-			   delete stack[el];
 		}
 	}
 });
