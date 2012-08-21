@@ -10,4 +10,9 @@ class ApplicationController extends xWebController {
 		$data = array();
 		return xView::load('drawingboard/start', $data, $this->meta)->render();
 	}
+	
+	function startSidebarAction() {
+		$data = array();
+		return xView::load('sidebar/start', $data, $this->meta)->render();
+	}
 }

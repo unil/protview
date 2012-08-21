@@ -11,12 +11,10 @@ ProtView.Application.MenubarView = Backbone.View.extend({
 		this.load(url, '#menubar-items');
 	},
 	showDrawboard : function() {
-		var url = Application.ROOTPATH + 'raw/drawingboard/do/';
-		this.load(url, '#drawingBoard');
+		ProtView.Application.Sandbox.start('drawboard', '#drawingBoard');
 	},
 	showSidebar : function() {
-		var url = Application.ROOTPATH + 'raw/sidebar/do/';
-		this.load(url, '#sidebar');
+		ProtView.Application.Sandbox.start('sidebar', '#sidebar');
 	},
 	newProtein : function() {
 		var url = Application.ROOTPATH + 'raw/menubar/do/newprotein';

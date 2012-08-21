@@ -21,6 +21,9 @@ ProtView.Application.Sandbox = (function() {
 			case 'drawboard' :
 				action = 'startDrawboard';
 				break;
+			case 'sidebar' :
+				action = 'startSidebar';
+				break;
 		}
 		if (action != null)
 			server(action, el);
