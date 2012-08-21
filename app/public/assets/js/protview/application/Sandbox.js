@@ -42,6 +42,15 @@ ProtView.Application.Sandbox = (function() {
 		},
 		stop : function (module) {
 			unload(module);
+		},
+		publish : function(channel, arguments) {
+			ProtView.Application.Mediator.publish(channel, arguments);
+		},
+		subscribe : function (channel, callback) {
+			ProtView.Application.Mediator.subscribe(channel, callback);
+		},
+		unsubscribe : function(channel) {
+			ProtView.Application.Mediator.unsubscribe(channel);
 		}
 	};
 }());

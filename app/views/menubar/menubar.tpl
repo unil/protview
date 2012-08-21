@@ -11,7 +11,7 @@
 						data-toggle="dropdown">File<b class="caret"></b>
 					</a>
 						<ul class="dropdown-menu">
-							<li><a id="file-new-protein">New Protein</a>
+							<li><a id="file-new-protein">New</a>
 							</li>
 							<li><a id="file-open">Open</a>
 							</li>

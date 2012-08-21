@@ -49,7 +49,7 @@ ProtView.DrawBoard.Module = (function() {
 		stop : function () {
 			unload();
 		},
-		show : function(resource, id) {
+		show : function(e, resource, id) {
 			show(resource, id);
 		},
 		publish : function(publisher, argument) {

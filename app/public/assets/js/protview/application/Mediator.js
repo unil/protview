@@ -1,4 +1,4 @@
-DrawBoard.Core.Mediator = (function() {
+ProtView.Application.Mediator = (function() {
 	var subscribe = function(channel, callback){
 		$.subscribe(channel, callback);
 	},
@@ -8,7 +8,6 @@ DrawBoard.Core.Mediator = (function() {
 	publish = function(channel, arguments){
 		$.publish(channel, arguments);
 	};
-	
 	return {
 	    publish: function(channel, arguments) {
 	    	publish(channel, arguments);

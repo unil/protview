@@ -69,6 +69,7 @@
 	$(document).ready(function() {
 		new ProtView.Application.Router();
 		Backbone.history.start();
+		//in order to load structure widget on startup
 		ProtView.Application.Sandbox.start('structure', '#application-items');
 	});
 </script>
