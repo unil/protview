@@ -1,4 +1,6 @@
 <div id="open-representation-dialog">
+<div>Open representation</div>
+	<div>
 <?php
 $representations = $d['representations'];
 
@@ -8,6 +10,7 @@ foreach ($representations as $representation) {
 	echo '</ul>';
 }
 ?>
+</div>
 </div>
 <script type="text/javascript">
 	$(document).ready(function() {
@@ -22,7 +25,6 @@ foreach ($representations as $representation) {
 			  //cleaning dom
 			  $('#open-representation-dialog').remove();
 			  $('.jqx-window-modal ').remove();
-			  }
-		  );
+		  });
 	});
 </script>
