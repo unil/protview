@@ -8,6 +8,7 @@ ProtView.DrawBoard.Module = (function() {
 	//var mediator = null,
 	var stack = {},
 	controller = null,
+	sandbox = null,
 	load = function() {
 		//init mediator, main controller
 		controller = new ProtView.DrawBoard.Controller.MainController();
@@ -52,14 +53,11 @@ ProtView.DrawBoard.Module = (function() {
 		show : function(e, resource, id) {
 			show(resource, id);
 		},
-		publish : function(publisher, argument) {
-			publish(publisher, argument);
-		},
-		subscribe: function(subsriber, callback) {
-			subscribe(subscriber, callback);
-		},
-		unsubscribe : function (subscriber) {
-			unsubscribe(subscriber);
+		registerSandbox : function(obj) {
+			sandbox = obj;
+			sandbox.subscribe("/drawboard/start", ProtView.DrawBoard.Module.start);
+			sandbox.subscribe("/drawboard/stop", ProtView.DrawBoard.Module.stop);
+			sandbox.subscribe("/drawboard/show", ProtView.DrawBoard.Module.show);
 		}
 	};
 }());

@@ -15,15 +15,10 @@
 <?php endforeach ?>
 <script type="text/javascript">
 	$(document).ready(function() {
-		//ProtView.DrawBoard.Module.start();
-
-		ProtView.Application.Sandbox.subscribe("/drawboard/start", ProtView.DrawBoard.Module.start);
-		ProtView.Application.Sandbox.subscribe("/drawboard/stop", ProtView.DrawBoard.Module.stop);
-		ProtView.Application.Sandbox.subscribe("/drawboard/show", ProtView.DrawBoard.Module.show);
+		ProtView.DrawBoard.Module.registerSandbox(ProtView.Application.Sandbox);
 
 		ProtView.Application.Sandbox.publish("/drawboard/start");
 		ProtView.Application.Sandbox.publish("/drawboard/show", ['drawboard', 0]);
-		//ProtView.DrawBoard.Module.show('drawboard', 0);
 
 		// disable the default browser's context menu.
 	    $('#drawBoard').bind('contextmenu', function (e) {
