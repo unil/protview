@@ -1,4 +1,4 @@
-ProtView.Structure.View.NewProteinView = ProtView.Core.View.extend({
+ProtView.DrawBoard.View.LoadRepresentationView = ProtView.Core.View.extend({
 	events: { 
 		'click #new-protein-form-submit' : 'submitForm'
 	},
