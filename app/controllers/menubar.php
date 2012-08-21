@@ -1,8 +1,6 @@
 <?php
 
 class MenubarController extends RESTController {
-
-
 	function defaultAction() {
 		
 	}

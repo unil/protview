@@ -24,12 +24,14 @@
 		Application.ROOTPATH = '<?php echo xUtil::url()?>';
 		Application.THEME = 'ui-smoothness';
 	</script>
-	<?php foreach ($m['js'] as $js): ?>
+		<?php foreach ($m['js'] as $js): ?>
 	<script type="text/javascript" src="<?php echo $js ?>"></script>
 	<?php endforeach ?>
 	<!-- Le fav and touch icons -->
 </head>
 <body>
+
+
 	<!-- BEGIN PAGE -->
 	<div id="page">
 		<!-- BEBIN HEADER -->
@@ -63,7 +65,7 @@
 		</div>
 		<!-- END FOOTER -->
 	</div>
-	<div id="application-items"></div>
+		<div id="application-items"></div>
 	<!-- END PAGE -->
 <script type="text/javascript">
 	$(document).ready(function() {

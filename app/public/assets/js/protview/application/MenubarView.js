@@ -2,13 +2,14 @@ ProtView.Application.MenubarView = Backbone.View.extend({
 	el : '#menubar',
 	events : {
 		'click #file-new-protein' : 'newProtein',
+		'click #file-open-representation' : 'openRepresentation',
 		'click #show-drawboard' : 'showDrawboard',
 		'click #show-sidebar' : 'showSidebar'
 	},
 	newProtein : function() {
 		console.log('newProtein');
 		var url = Application.ROOTPATH + 'raw/menubar/do/newprotein';
-		this.load(url, '#menubar-items');
+		this.load(url, '#application-items');
 	},
 	showDrawboard : function() {
 		ProtView.Application.Sandbox.start('drawboard', '#drawingBoard');
@@ -16,9 +17,9 @@ ProtView.Application.MenubarView = Backbone.View.extend({
 	showSidebar : function() {
 		ProtView.Application.Sandbox.start('sidebar', '#sidebar');
 	},
-	newProtein : function() {
-		var url = Application.ROOTPATH + 'raw/menubar/do/newprotein';
-		this.load(url, '#menubar-items');
+	openRepresentation : function() {
+		var url = Application.ROOTPATH + 'raw/menubar/do/openrepresentation';
+		this.load(url, '#application-items');
 	},
 	exportpng : function() {
 		var svg_data = $('#svg-representation').contents();

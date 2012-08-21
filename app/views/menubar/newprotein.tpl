@@ -34,8 +34,7 @@
 			  //cleaning dom
 			  $('#new-protein-dialog').remove();
 			  $('.jqx-window-modal ').remove();
-			  }
-		  );
+		  });
 		  ProtView.Structure.Module.show('protein-new');
 	});
 </script>

@@ -11,22 +11,19 @@
 						data-toggle="dropdown">File<b class="caret"></b>
 					</a>
 						<ul class="dropdown-menu">
-							<li><a id="file-new-protein">New</a>
-							</li>
-							<li><a id="file-open">Open</a>
-							</li>
-							<li><a id="file-save">Save</a>
-							</li>
-						</ul></li>
+							<li><a id="file-new-protein">New</a></li>
+							<li><a id="file-open-representation">Open</a></li>
+							<li><a id="file-save">Save</a></li>
+						</ul>
+					</li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown">View <b class="caret"></b>
 					</a>
 						<ul class="dropdown-menu">
-							<li><a id="show-drawboard">Drawboard</a>
-							</li>
-							<li><a id="show-sidebar">Sidebar</a>
-							</li>
-						</ul></li>
+							<li><a id="show-drawboard">Drawboard</a></li>
+							<li><a id="show-sidebar">Sidebar</a></li>
+						</ul>
+					</li>
 				</ul>
 				<ul class="nav pull-right">
 					<li class="divider-vertical"></li>
@@ -34,8 +31,7 @@
 						data-toggle="dropdown">About <b class="caret"></b>
 					</a>
 						<ul class="dropdown-menu">
-							<li><a href="#">Author</a>
-							</li>
+							<li><a href="#">Author</a></li>
 						</ul></li>
 				</ul>
 			</div>
