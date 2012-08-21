@@ -6,7 +6,8 @@
 
 <script type="text/javascript">
 	$(document).ready(function() {
-		//mediator call should be here instead of module start directly
-		ProtView.Structure.Module.start();
+		ProtView.Structure.Module.registerSandbox(ProtView.Application.Sandbox);
+
+		ProtView.Application.Sandbox.publish("/structure/start");
 	});
 </script>

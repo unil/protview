@@ -23,6 +23,8 @@
 		var Application = {};
 		Application.ROOTPATH = '<?php echo xUtil::url()?>';
 		Application.THEME = 'ui-smoothness';
+		Application.PROTEIN = null;
+		Application.REPRESENTATION = null;
 	</script>
 		<?php foreach ($m['js'] as $js): ?>
 	<script type="text/javascript" src="<?php echo $js ?>"></script>
@@ -69,10 +71,10 @@
 	<!-- END PAGE -->
 <script type="text/javascript">
 	$(document).ready(function() {
-		new ProtView.Application.Router();
-		Backbone.history.start();
 		//in order to load structure widget on startup
 		ProtView.Application.Sandbox.start('structure', '#application-items');
+		new ProtView.Application.Router();
+		Backbone.history.start();
 	});
 </script>
 

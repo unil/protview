@@ -3,12 +3,10 @@ ProtView.Structure.Model = {};
 ProtView.Structure.View = {};
 
 ProtView.Structure.Module = (function() {
-	//local
-	//var mediator = null,
 	var stack = {},
 	controller = null,
+	sandbox = null,
 	load = function() {
-		//init mediator, main controller
 		controller = new ProtView.Structure.Controller.MainController();
 		stack.controller = controller;
 	},
@@ -30,15 +28,6 @@ ProtView.Structure.Module = (function() {
 			   delete stack[el];
 		}
 	};
-	/*publish = function(channel, argument) {
-		mediator.publish(publisher, argument);
-	};
-	subscribe = function(subscriber, callback) {
-		mediator.subscribe(subscriber, callback);
-	};
-	unsubscribe = function(subsriber) {
-		mediator.unsubsribe(subsriber);
-	};*/
 	
 	//public
 	return {
@@ -48,17 +37,14 @@ ProtView.Structure.Module = (function() {
 		stop : function () {
 			unload();
 		},
-		show : function(resource, id) {
+		show : function(e, resource, id) {
 			show(resource, id);
 		},
-		publish : function(publisher, argument) {
-			publish(publisher, argument);
-		},
-		subscribe: function(subsriber, callback) {
-			subscribe(subscriber, callback);
-		},
-		unsubscribe : function (subscriber) {
-			unsubscribe(subscriber);
+		registerSandbox : function(obj) {
+			sandbox = obj;
+			sandbox.subscribe("/structure/start", ProtView.Structure.Module.start);
+			sandbox.subscribe("/structure/stop", ProtView.Structure.Module.stop);
+			sandbox.subscribe("/structure/show", ProtView.Structure.Module.show);
 		}
 	};
 }());

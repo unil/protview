@@ -5,7 +5,6 @@ ProtView.DrawBoard.Utils = {};
 
 ProtView.DrawBoard.Module = (function() {
 	//local
-	//var mediator = null,
 	var stack = {},
 	controller = null,
 	sandbox = null,
@@ -31,17 +30,7 @@ ProtView.DrawBoard.Module = (function() {
 			   stack[el] = null;
 			   delete stack[el];
 		}
-	};/*
-	publish = function(channel, argument) {
-		mediator.publish(publisher, argument);
-	};
-	subscribe = function(subscriber, callback) {
-		mediator.subscribe(subscriber, callback);
-	};
-	unsubscribe = function(subsriber) {
-		mediator.unsubsribe(subsriber);
-	};*/
-	
+	};	
 	//public
 	return {
 		start : function() {
