@@ -1,4 +1,4 @@
-ProtView.Core.Router = Backbone.Router.extend({
+ProtView.Application.Router = Backbone.Router.extend({
 	  routes: {
 		  "view/:proteinId": "view",
 		  "view/:proteinId/:representationId": "view"

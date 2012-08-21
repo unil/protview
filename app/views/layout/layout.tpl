@@ -71,7 +71,7 @@ echo xView::load('structure/start')->render() ;
 ?>
 <script type="text/javascript">
 	$(document).ready(function() {
-		new ProtView.Core.Router();
+		new ProtView.Application.Router();
 		Backbone.history.start();
 	});
 </script>
