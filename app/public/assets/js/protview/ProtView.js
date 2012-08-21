@@ -6,6 +6,7 @@
 	window.ProtView = {
 	};
 	
+	ProtView.Application = {};
 	ProtView.DrawBoard = {};
 	ProtView.Core = {};
 	ProtView.Structure = {};

@@ -22,6 +22,7 @@ class LayoutLayoutView extends xView {
             	xUtil::url('a/js/lib/backbone-validation-0.6.2.min.js'),
             	xUtil::url('a/js/lib/jquery.ba-tinypubsub.min.js'),
             	xUtil::url('a/js/lib/Class.js'),
+            	xUtil::url('a/js/lib/bootstrap.min.js'),
             	/*
             	 * Templating
             	* JQuery Widgets
@@ -43,6 +44,7 @@ class LayoutLayoutView extends xView {
             	xUtil::url('a/js/protview/core/MainController.js'),
             	xUtil::url('a/js/protview/core/Controller.js'),
             	xUtil::url('a/js/protview/core/View.js'),
+            	xUtil::url('a/js/protview/application/MenubarView.js'),
             	xUtil::url('a/js/protview/DrawBoard.js'),
             	xUtil::url('a/js/protview/Structure.js'),
             	xUtil::url('a/js/protview/core/Router.js'),

@@ -2,7 +2,7 @@ ProtView.Core.Router = Backbone.Router.extend({
 	  routes: {
 	    'show-drawboard':  'drawboard',
 	    'show-sidebar': 'sidebar',
-	    'file-new-protein' : 'newProtein',
+	    //'file-new-protein' : 'newProtein',
 	    'export' : 'exportpng'
 	  },
 	  drawboard: function() {

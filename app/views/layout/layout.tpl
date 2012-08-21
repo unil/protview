@@ -34,7 +34,7 @@
 	<div id="page">
 		<!-- BEBIN HEADER -->
 		<div id="header" style="height: 30px">
-			<div id='menubar' style='visibility: hidden;'>
+			<div id='menubar'>
 				<?php echo xView::load('menubar/menubar')->render() ?>
 			</div>
 		</div>
