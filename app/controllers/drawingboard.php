@@ -2,8 +2,7 @@
 
 class DrawingBoardController extends RESTController {
 	function defaultAction() {
-		$data = array();
-		return xView::load('drawingboard/start', $data, $this->meta)->render();
+		throw new xException("Method not allowed", 403);
 	}
 
 	function exportAction() {

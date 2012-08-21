@@ -15,4 +15,9 @@ class ApplicationController extends xWebController {
 		$data = array();
 		return xView::load('sidebar/start', $data, $this->meta)->render();
 	}
+	
+	function startStructureAction() {
+		$data = array();
+		return xView::load('structure/start', $data, $this->meta)->render();
+	}
 }

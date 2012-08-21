@@ -63,16 +63,13 @@
 		</div>
 		<!-- END FOOTER -->
 	</div>
-	<div id="menubar-items"></div>
+	<div id="application-items"></div>
 	<!-- END PAGE -->
-<?php 
- //in order to load js files necessary for structure widget
-echo xView::load('structure/start')->render() ;
-?>
 <script type="text/javascript">
 	$(document).ready(function() {
 		new ProtView.Application.Router();
 		Backbone.history.start();
+		ProtView.Application.Sandbox.start('structure', '#application-items');
 	});
 </script>
 
