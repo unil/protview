@@ -16,6 +16,7 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 		ProtView.DrawBoard.Module.start();
+		ProtView.DrawBoard.Module.show('drawboard', 0);
 
 		// disable the default browser's context menu.
 	    $('#drawBoard').bind('contextmenu', function (e) {

@@ -12,6 +12,7 @@ class DrawingboardStartView extends xView {
             	/*
             	 * ProtView
             	 */	
+            	xUtil::url('a/js/protview/drawboard/controller/MainController.js'),
             	xUtil::url('a/js/protview/drawboard/utils/Drawing.js'),
             	xUtil::url('a/js/protview/drawboard/model/StructuralGeometry.js'),
             	xUtil::url('a/js/protview/drawboard/model/StructuralGeometryCollection.js'),

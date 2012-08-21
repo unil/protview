@@ -9,7 +9,7 @@ ProtView.DrawBoard.Controller.MainController = ProtView.Core.MainController.exte
 			this.unload(currentResource);
 			switch(resource) {
 				case 'drawboard' :
-					controller = new ProtView.Structure.Controller.DrawBoardController();
+					controller = new ProtView.DrawBoard.Controller.DrawBoardController();
 					currentResource = 'drawboard';
 					break;
 				default :

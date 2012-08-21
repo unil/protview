@@ -19,5 +19,14 @@ ProtView.DrawBoard.Controller.DrawBoardController = ProtView.Core.Controller.ext
 		
 		this.view = view;
 		this.stack = stack;
+	},
+	fetch: function(options) {
+		var ret = null;
+		if (this.model != null) {
+			ret = this.helper.fetch(function(r){
+				ret = r;
+			}, options);
+		}
+		return ret;
 	}
 });

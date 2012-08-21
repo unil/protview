@@ -7,22 +7,30 @@ ProtView.DrawBoard.Module = (function() {
 	//local
 	//var mediator = null,
 	var stack = {},
+	controller = null,
 	load = function() {
-		var model = new ProtView.DrawBoard.Model.StructuralGeometryCollection();
-		var view = new ProtView.DrawBoard.View.DrawBoardView({ el: $('#drawBoard').get(0) });
-		var controller = new ProtView.DrawBoard.Controller.DrawBoardController();
-		controller.setModel(model);
-		view.setModel(model);
-		view.setController(controller);
-		controller.update();
-		stack.model = model;
-		stack.view = view;
+		//init mediator, main controller
+		controller = new ProtView.DrawBoard.Controller.MainController();
 		stack.controller = controller;
-	};
-	/*unload = function() {
-		mediator.unload();
-		mediator = null;
-	};
+	},
+	show = function(resource, id) {
+		controller.load(resource);
+		c = controller.getController();
+		if (c != null) {
+			if (id != null)
+				c.fetch(id);
+		}
+		else 
+			console.log("ProtView.Drawboard.Module:show controller is null");
+	},
+	unload = function() {
+		for (var el in stack) {
+			   /*var obj = stack[el];
+			   obj.unload();*/
+			   stack[el] = null;
+			   delete stack[el];
+		}
+	};/*
 	publish = function(channel, argument) {
 		mediator.publish(publisher, argument);
 	};
@@ -40,6 +48,9 @@ ProtView.DrawBoard.Module = (function() {
 		},
 		stop : function () {
 			unload();
+		},
+		show : function(resource, id) {
+			show(resource, id);
 		},
 		publish : function(publisher, argument) {
 			publish(publisher, argument);
