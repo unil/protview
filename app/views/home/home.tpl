@@ -7,7 +7,7 @@
 		<li><a href="#"><i class="icon-zoom-out"></i>
 		</a>
 		</li>
-		<li><a href="#export"><i class="icon-download-alt"></i> </a>
+		<li><a id="export-png"><i class="icon-download-alt"></i> </a>
 		</li>
 	</ul>
 </div>
@@ -20,3 +20,8 @@
 <div id="sidebar"></div>
 <!-- DOCKING END -->
 <!-- END SIDEBAR -->
+<script type="text/javascript">
+	$(document).ready(function() {
+		var tb = new ProtView.Application.ToolbarView();
+	});
+</script>

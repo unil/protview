@@ -69,5 +69,12 @@
  //in order to load js files necessary for structure widget
 echo xView::load('structure/start')->render() ;
 ?>
+<script type="text/javascript">
+	$(document).ready(function() {
+		new ProtView.Core.Router();
+		Backbone.history.start();
+	});
+</script>
+
 </body>
 </html>

@@ -49,7 +49,5 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 		var mb = new ProtView.Application.MenubarView();
-		new ProtView.Core.Router();
-		Backbone.history.start();
 	});
 </script>
