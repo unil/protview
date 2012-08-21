@@ -1,16 +1,16 @@
 <div id="open-representation-dialog">
-<div>Open representation</div>
+	<div>Open representation</div>
 	<div>
-<?php
-$representations = $d['representations'];
+		<?php
+		$representations = $d['representations'];
 
-foreach ($representations as $representation) {
-	echo '<ul>';
-	echo "<li><a href='#view/0/{$representation['id']}'>{$representation['title']} (creator: {$representation['creator']})</a></li>";
-	echo '</ul>';
-}
-?>
-</div>
+		foreach ($representations as $representation) {
+			echo '<ul>';
+			echo "<li><a href='#view/{$representation['protein_id']}/{$representation['id']}'>{$representation['title']} (creator: {$representation['creator']})</a></li>";
+			echo '</ul>';
+		}
+		?>
+	</div>
 </div>
 <script type="text/javascript">
 	$(document).ready(function() {
