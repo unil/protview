@@ -1,4 +1,4 @@
-ProtView.DrawBoard.View.DrawBoardView = Backbone.View.extend({
+ProtView.DrawBoard.View.DrawBoardView = ProtView.Core.View.extend({
 	//el : '#drawBoard',
 	initialize : function(args) {
 		var self = this;
@@ -20,9 +20,6 @@ ProtView.DrawBoard.View.DrawBoardView = Backbone.View.extend({
 		});
 	},
 	events: { 
-	},
-	setController : function(controller) {
-		this.controller = controller;
 	},
 	setModel : function(model) {
 		model.on('change', this.render, this);	
