@@ -14,8 +14,7 @@ ProtView.Structure.Module = (function() {
 		controller.load(resource);
 		c = controller.getController();
 		if (c != null) {
-			if (id != null)
-				c.fetch(id);
+			c.fetch(id);
 		}
 		else 
 			console.log("ProtView.Structure.Module:show controller is null");
@@ -41,8 +40,9 @@ ProtView.Structure.Module = (function() {
 			show(resource, id);
 		},
 		update : function(e, arguments) {
+			
 			if (arguments.protein) {
-				//ProtView.Application.Sandbox.publish("/structure/show", ['protein', arguments.protein]);
+				ProtView.Application.Sandbox.publish("/structure/show", ['protein', arguments.protein]);
 			}
 		},
 		registerSandbox : function(obj) {

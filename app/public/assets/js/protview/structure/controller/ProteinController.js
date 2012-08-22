@@ -26,5 +26,6 @@ ProtView.Structure.Controller.ProteinController = ProtView.Core.Controller.exten
 		
 		this.view = view;
 		this.stack = stack;
+		this.view.render();
 	}
 });

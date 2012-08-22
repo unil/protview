@@ -15,9 +15,15 @@ ProtView.Core.Controller = Class.extend( {
 		var ret = null,
 		model = this.model;
 		if (model != null) {
-			if (id > 0 && this.previous.id != id) {
-				model.set({id : id});
+			console.log('fetch');
+			
+			console.log('id: ' + id);
+			console.log('previous: ' + this.previous.id);
+			if (id != null && id > 0 && this.previous.id != id) {
+				console.log('salut');
+				model.set({id : id}, {silent: true});
 				this.model = model;
+				console.log(model);
 				
 				ret = this.helper.fetch(function(r){
 					ret = r;

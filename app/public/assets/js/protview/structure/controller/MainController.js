@@ -5,8 +5,6 @@ ProtView.Structure.Controller.MainController = ProtView.Core.MainController.exte
 		currentResource = this.currentResource;
 
 		if (resource != currentResource) {
-			//unload current resource to free memory space
-			this.unload(currentResource);
 			switch(resource) {
 				case 'peptide' :
 					controller = new ProtView.Structure.Controller.PeptideController();
