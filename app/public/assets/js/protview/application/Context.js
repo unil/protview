@@ -39,10 +39,10 @@ ProtView.Application.Context = Class.extend( {
 		this.sandbox.publish('/application/context', [{representation : representation}]);
 	},
 	getProtein : function() {
-		return this.protein;
+		return this.store.protein;
 	},
 	getRepresentation: function() {
-		return this.representation;
+		return this.store.representation;
 	},
 	navigate : function(url) {
 		this.store.router.navigate(url, {trigger: true, replace: true});

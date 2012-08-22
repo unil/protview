@@ -27,10 +27,16 @@ ProtView.DrawBoard.View.DrawBoardView = ProtView.Core.View.extend({
 		this.model = model;
 	},
 	render : function() {
+		var model = this.model;
+		console.log('drawboard view');
+		console.log(model);
 		this.drawing.paint(this.model);
 		/*var json = this.model.toJSON();
 		var jsonString = JSON.stringify(json);
 		this.$el.html(jsonString);*/
 		return this;
+	},
+	clear : function() {
+		this.drawing.clearAll();
 	}
 });

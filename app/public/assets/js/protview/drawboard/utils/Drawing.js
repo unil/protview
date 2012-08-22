@@ -28,6 +28,9 @@ ProtView.DrawBoard.Utils.Drawing = Class.extend( {
 		}
 	    self.addDragSupport($('.aa'));
 	},
+	clearAll : function() {
+		this.svg.clear();
+	},
 	/**
 	 * Draws an amino acid element <group> <circle> <text>Label</text>
 	 * <text>Position</text> <group>

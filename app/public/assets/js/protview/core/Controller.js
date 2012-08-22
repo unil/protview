@@ -2,6 +2,7 @@ ProtView.Core.Controller = Class.extend( {
 	model : null,
 	view: null,
 	stack : {},
+	previous : {},
 	init: function(args) {
 	},
 	getView: function() {
@@ -14,7 +15,7 @@ ProtView.Core.Controller = Class.extend( {
 		var ret = null,
 		model = this.model;
 		if (model != null) {
-			if (id > 0) {
+			if (id > 0 && this.previous.id != id) {
 				model.set({id : id});
 				this.model = model;
 				
@@ -23,9 +24,10 @@ ProtView.Core.Controller = Class.extend( {
 				});
 			}
 			else {
-				console.log('ProteinController:fetch: no id for model');
+				console.log('Controller:fetch: no id for model');
 			}
 		}
+		this.previous.id = id;
 		return ret;
 	},
 	

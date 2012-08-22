@@ -30,6 +30,6 @@ ProtView.DrawBoard.View.ToolbarView = Backbone.View.extend({
 		});
 	},
 	showRepresentation: function() {
-		ProtView.Application.Sandbox.publish("/drawboard/show", ['drawboard', Application.CONTEXT.getRepresentation]);
+		ProtView.Application.Sandbox.publish("/drawboard/show", ['drawboard', Application.CONTEXT.getRepresentation()]);
 	}
 });

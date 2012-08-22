@@ -18,8 +18,10 @@ ProtView.DrawBoard.Module = (function() {
 		controller.load(resource);
 		c = controller.getController();
 		if (c != null) {
-			if (id != null)
+			if (id > 0)
 				c.fetch(id);
+			else
+				c.clear();
 		}
 		else 
 			console.log("ProtView.Drawboard.Module:show controller is null");
