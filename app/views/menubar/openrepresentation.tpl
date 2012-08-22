@@ -6,7 +6,7 @@
 
 		foreach ($representations as $representation) {
 			echo '<ul>';
-			echo "<li><a href='#view/{$representation['protein_id']}/{$representation['id']}'>{$representation['title']} (creator: {$representation['creator']})</a></li>";
+			echo "<li><a href='#view/{$representation['protein_id']}/{$representation['id']}'>{$representation['title']} (contributors: {$representation['contributors']})</a></li>";
 			echo '</ul>';
 		}
 		?>
