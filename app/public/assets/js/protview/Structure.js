@@ -40,11 +40,17 @@ ProtView.Structure.Module = (function() {
 		show : function(e, resource, id) {
 			show(resource, id);
 		},
+		update : function(e, arguments) {
+			if (arguments.protein) {
+				//ProtView.Application.Sandbox.publish("/structure/show", ['protein', arguments.protein]);
+			}
+		},
 		registerSandbox : function(obj) {
 			sandbox = obj;
 			sandbox.subscribe("/structure/start", ProtView.Structure.Module.start);
 			sandbox.subscribe("/structure/stop", ProtView.Structure.Module.stop);
 			sandbox.subscribe("/structure/show", ProtView.Structure.Module.show);
+			sandbox.subscribe("/application/context", ProtView.Structure.Module.update);
 		}
 	};
 }());

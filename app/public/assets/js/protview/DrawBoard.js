@@ -44,11 +44,17 @@ ProtView.DrawBoard.Module = (function() {
 		show : function(e, resource, id) {
 			show(resource, id);
 		},
+		update : function(e, arguments) {
+			if (arguments.representation) {
+				ProtView.Application.Sandbox.publish("/drawboard/show", ['drawboard', arguments.representation]);
+			}
+		},
 		registerSandbox : function(obj) {
 			sandbox = obj;
 			sandbox.subscribe("/drawboard/start", ProtView.DrawBoard.Module.start);
 			sandbox.subscribe("/drawboard/stop", ProtView.DrawBoard.Module.stop);
 			sandbox.subscribe("/drawboard/show", ProtView.DrawBoard.Module.show);
+			sandbox.subscribe("/application/context", ProtView.DrawBoard.Module.update);
 		}
 	};
 }());

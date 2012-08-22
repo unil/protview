@@ -31,6 +31,6 @@
 
 <script type="text/javascript">
 	$(document).ready(function() {
-		ProtView.Application.Sandbox.publish("/structure/show", ['protein', Application.PROTEIN]);		
+		ProtView.Application.Sandbox.publish("/structure/show", ['protein', Application.CONTEXT.getProtein()]);		
 	});
 </script>
