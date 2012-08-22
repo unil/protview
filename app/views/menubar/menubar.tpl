@@ -31,7 +31,7 @@
 						data-toggle="dropdown">About <b class="caret"></b>
 					</a>
 						<ul class="dropdown-menu">
-							<li><a href="#">Author</a></li>
+							<li><a id="about-author">Author</a></li>
 						</ul></li>
 				</ul>
 			</div>

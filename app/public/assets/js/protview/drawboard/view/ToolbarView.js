@@ -24,8 +24,8 @@ ProtView.DrawBoard.View.ToolbarView = Backbone.View.extend({
 				svg : svgContent,
 				css : 'protein.css'
 			},
-			success : function(msg) {
-				// document.write(msg);
+			success : function(data) {
+				
 			}
 		});
 	},
