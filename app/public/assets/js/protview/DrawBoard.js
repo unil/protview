@@ -11,6 +11,7 @@ ProtView.DrawBoard.Module = (function() {
 	load = function() {
 		//init mediator, main controller
 		controller = new ProtView.DrawBoard.Controller.MainController();
+		
 		stack.controller = controller;
 	},
 	show = function(resource, id) {
@@ -34,6 +35,7 @@ ProtView.DrawBoard.Module = (function() {
 	//public
 	return {
 		start : function() {
+			new ProtView.DrawBoard.View.ToolbarView();
 			load();
 		},
 		stop : function () {

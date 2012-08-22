@@ -18,6 +18,7 @@ class DrawingboardStartView extends xView {
             	xUtil::url('a/js/protview/drawboard/model/StructuralGeometryCollection.js'),
             	xUtil::url('a/js/protview/drawboard/controller/DrawBoardController.js'),
             	xUtil::url('a/js/protview/drawboard/view/DrawBoardView.js'),
+            	xUtil::url('a/js/protview/drawboard/view/ToolbarView.js'),
             ),
             'css' => array(
                 // SVG template

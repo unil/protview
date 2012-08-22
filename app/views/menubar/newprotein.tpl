@@ -35,6 +35,6 @@
 			  $('#new-protein-dialog').remove();
 			  $('.jqx-window-modal ').remove();
 		  });
-		  ProtView.Structure.Module.show('protein-new');
+		  ProtView.Application.Sandbox.publish("/structure/show", ['protein-new']);
 	});
 </script>

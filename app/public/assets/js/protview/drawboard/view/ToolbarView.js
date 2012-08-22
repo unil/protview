@@ -1,7 +1,8 @@
-ProtView.Application.ToolbarView = Backbone.View.extend({
+ProtView.DrawBoard.View.ToolbarView = Backbone.View.extend({
 	el : '#toolbar',
 	events : {
-		'click #export-png' : 'exportPNG'
+		'click #drawboad-show-representation' : 'showRepresentation',
+		'click #drawboard-export-png' : 'exportPNG'
 	},
 	exportPNG : function() {
 		var svg_data = $('#svg-representation').contents();
@@ -27,5 +28,8 @@ ProtView.Application.ToolbarView = Backbone.View.extend({
 				// document.write(msg);
 			}
 		});
+	},
+	showRepresentation: function() {
+		ProtView.Application.Sandbox.publish("/drawboard/show", ['drawboard', Application.REPRESENTATION]);
 	}
 });

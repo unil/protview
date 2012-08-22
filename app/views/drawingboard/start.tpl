@@ -1,3 +1,16 @@
+<div id="toolbar" style="padding: 8px 0; background-color:#CCCCCC;" class="well">
+	<ul class="nav nav-list">
+		<li><a id="drawboad-show-representation"><i class="icon-picture"></i> </a>
+		</li>
+		<li><a href="#"><i class="icon-zoom-in"></i> </a>
+		</li>
+		<li><a href="#"><i class="icon-zoom-out"></i>
+		</a>
+		</li>
+		<li><a id="drawboard-export-png"><i class="icon-download-alt"></i> </a>
+		</li>
+	</ul>
+</div>
 <?php foreach ($m['css'] as $css): ?>
 <link
 	href="<?php echo $css ?>" rel="stylesheet">
@@ -18,7 +31,7 @@
 		ProtView.DrawBoard.Module.registerSandbox(ProtView.Application.Sandbox);
 
 		ProtView.Application.Sandbox.publish("/drawboard/start");
-		ProtView.Application.Sandbox.publish("/drawboard/show", ['drawboard', 0]);
+		
 
 		// disable the default browser's context menu.
 	    $('#drawBoard').bind('contextmenu', function (e) {
