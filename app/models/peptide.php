@@ -13,7 +13,7 @@ class PeptideModel extends xModelMysql {
 
     public $validation = array(
         'id' => 'mandatory',
-        'name' => 'mandatory'
+        'label' => 'mandatory'
     );
     
     public $joins = array(

@@ -23,7 +23,6 @@ class PeptidesController extends RESTController {
 
 		$data = array();
 		
-		$peptide_id = $this->params['id'];
 		//if true, all regions will be returned
 		//otherwise, only membrane regions
 		$regionFilter = array();
