@@ -1,26 +1,32 @@
 ProtView.DrawBoard.Controller.MainController = ProtView.Core.MainController.extend( {
 	load : function(resource) {
 		var controller = null,
-		stack = this.stack,
-		currentResource = this.currentResource;
+		view = null,
+		stack = this.stack;
 
-		if (resource != currentResource) {
-			//unload current resource to free memory space
-			this.unload(currentResource);
+		if (!stack[resource]) {
 			switch(resource) {
 				case 'drawboard' :
 					controller = new ProtView.DrawBoard.Controller.DrawBoardController();
-					currentResource = 'drawboard';
+					view = new ProtView.DrawBoard.View.DrawBoardView({ 
+						el: $('#drawBoard').get(0) 
+					});
+					controller.addView(view);
 					break;
 				default :
 					console.log('error no resource given or not known');
 					break;
 			}
-			
-			stack.controller = controller;
-			this.controller = controller;
+			stack[resource] = controller;
 			this.stack = stack;
-			this.currentResource = resource;
+		}
+	},
+	update : function(arguments) {
+		if (arguments.representation) {
+			var stack = this.stack;
+			for (var el in stack) {
+				stack[el].update(arguments.protein);
+			}
 		}
 	}
 });

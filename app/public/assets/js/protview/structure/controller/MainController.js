@@ -53,11 +53,13 @@ ProtView.Structure.Controller.MainController = ProtView.Core.MainController.exte
 	update : function(arguments) {
 		if (arguments.protein) {
 			var stack = this.stack;
+			console.log('stack');
 			for (var el in stack) {
+				console.log(el);
 				//dirty fix, because database insert causes update
 				//even on dialog close, messages should be more precise
 				if (el != 'protein-new')
-				stack[el].update(arguments.protein);
+					stack[el].update(arguments.protein);
 			}
 		}
 	}

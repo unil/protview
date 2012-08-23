@@ -9,14 +9,14 @@ ProtView.DrawBoard.Module = (function() {
 	controller = null,
 	sandbox = null,
 	load = function() {
-		//init mediator, main controller
 		controller = new ProtView.DrawBoard.Controller.MainController();
-		
 		stack.controller = controller;
 	},
 	show = function(resource, id) {
 		controller.load(resource);
-		c = controller.getController();
+		c = controller.getController(resource);
+		console.log('show');
+		console.log(c);
 		if (c != null) {
 			if (id > 0)
 				c.fetch(id);
@@ -33,7 +33,11 @@ ProtView.DrawBoard.Module = (function() {
 			   stack[el] = null;
 			   delete stack[el];
 		}
-	};	
+	},
+	update = function (arguments) {
+		if (controller != null)
+			controller.update(arguments);
+	};
 	//public
 	return {
 		start : function() {
@@ -47,9 +51,7 @@ ProtView.DrawBoard.Module = (function() {
 			show(resource, id);
 		},
 		update : function(e, arguments) {
-			if (arguments.representation) {
-				ProtView.Application.Sandbox.publish("/drawboard/show", ['drawboard', arguments.representation]);
-			}
+			update(arguments);
 		},
 		registerSandbox : function(obj) {
 			sandbox = obj;

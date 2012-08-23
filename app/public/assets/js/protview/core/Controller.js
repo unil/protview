@@ -33,7 +33,10 @@ ProtView.Core.Controller = Class.extend( {
 		var ret = null,
 		model = this.model;
 		if (model != null) {
-			if (id != null && id > 0 && this.previous.id != id) {
+			console.log('id ' + id);
+			console.log('previous id ' + this.previous.id);
+			console.log(model);
+			if (id != null && id > 0 && model.get('id') != id) {
 				model.set({id : id}, {silent: true});
 				this.model = model;
 				console.log(model);
@@ -41,12 +44,13 @@ ProtView.Core.Controller = Class.extend( {
 				ret = this.helper.fetch(function(r){
 					ret = r;
 				});
+				this.previous.id = id;
 			}
 			else {
 				console.log('Controller:fetch: no id for model');
 			}
 		}
-		this.previous.id = id;
+		
 		return ret;
 	},
 	save : function() {
@@ -66,6 +70,5 @@ ProtView.Core.Controller = Class.extend( {
 		if (this.model != null) {
 			this.fetch(id);
 		}
-		console.log('update encore moi');
 	}
 });

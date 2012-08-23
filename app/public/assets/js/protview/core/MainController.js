@@ -4,8 +4,8 @@ ProtView.Core.MainController = Class.extend( {
 	currentResource : null,
 	init: function() {
 	},
-	getController : function() {
-		return this.controller;
+	getController : function(resource) {
+		return this.stack[resource];
 	},
 	load : function(resource) {
 	},

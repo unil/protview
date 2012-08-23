@@ -10,7 +10,7 @@ ProtView.Structure.Model.Peptide = Backbone.RelationalModel.extend({
 	},
 	url : function() {
 		var root = Application.ROOTPATH;
-		return root + 'api/peptides/' + this.id + '?regions=membrane';
+		return root + 'api/peptides?protein_id=' + this.id + '&regions=membrane';
 	},
 	validation : {
 		regions: function(regions) {

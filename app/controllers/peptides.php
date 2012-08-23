@@ -30,6 +30,10 @@ class PeptidesController extends RESTController {
 		
 		if (isset($this->params['regions']))
 			$regionFilter = explode(",", $this->params['regions']);
+		
+		//hack as for now one protein has exactly one subunit
+		if (isset($this->params['protein_id']))
+			$this->params['subunit_id'] = $this->params['protein_id'];
 
 		$items = array();
 		
