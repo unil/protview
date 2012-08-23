@@ -45,9 +45,6 @@ ProtView.Structure.Module = (function() {
 		},
 		update : function(e, arguments) {
 			update(arguments);
-			/*if (arguments.protein) {
-				ProtView.Application.Sandbox.publish("/structure/show", ['protein', arguments.protein]);
-			}*/
 		},
 		registerSandbox : function(obj) {
 			sandbox = obj;

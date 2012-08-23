@@ -5,11 +5,7 @@ ProtView.Structure.View.NewProteinView = ProtView.Core.View.extend({
 	submitForm : function(e) {
         e.preventDefault();
         this.controller.save();
-        
-        
         this.model.on('change', this.update, this);
-        console.log(model);
-        console.log(this.model);
     },
 	update : function() {
 		proteinId = this.model.get('xinsertid');

@@ -4,7 +4,17 @@ ProtView.Core.Controller = Class.extend( {
 	views: {},
 	stack : {},
 	previous : {},
-	init: function(args) {
+	init: function(model) {
+		var stack = {};
+		var helper = new ProtView.Core.BackboneHelper(model);
+		
+		stack.model = model;
+		stack.helper = helper;
+		
+		this.helper = helper;
+		this.model = model;
+		
+		this.stack = stack;
 	},
 	addView: function(view) {
 		var viewEL = view.el;
@@ -23,10 +33,6 @@ ProtView.Core.Controller = Class.extend( {
 		var ret = null,
 		model = this.model;
 		if (model != null) {
-			console.log('fetch');
-			
-			console.log('id: ' + id);
-			console.log('previous: ' + this.previous.id);
 			if (id != null && id > 0 && this.previous.id != id) {
 				model.set({id : id}, {silent: true});
 				this.model = model;
@@ -60,5 +66,6 @@ ProtView.Core.Controller = Class.extend( {
 		if (this.model != null) {
 			this.fetch(id);
 		}
+		console.log('update encore moi');
 	}
 });
