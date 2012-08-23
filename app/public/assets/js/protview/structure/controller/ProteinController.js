@@ -3,6 +3,7 @@ ProtView.Structure.Controller.ProteinController = ProtView.Core.Controller.exten
 		stack = {};
 		
 		model = new ProtView.Structure.Model.Protein();
+		
 		view = new ProtView.Structure.View.ProteinView({
 			el : '#protein-form',
 			templateEl : '#protein-form-template',
@@ -12,6 +13,7 @@ ProtView.Structure.Controller.ProteinController = ProtView.Core.Controller.exten
 					note: '#protein-note'
 				}
 		});
+		
 		helper = new ProtView.Core.BackboneHelper(model);
 		
 		stack.model = model;
@@ -21,11 +23,8 @@ ProtView.Structure.Controller.ProteinController = ProtView.Core.Controller.exten
 		this.helper = helper;
 		this.model = model;
 		
-		view.setController(this);
-		view.setModel(model);
+		this.addView(view);
 		
-		this.view = view;
 		this.stack = stack;
-		this.view.render();
 	}
 });

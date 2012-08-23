@@ -3,7 +3,8 @@ ProtView.DrawBoard.Model.Representation = Backbone.RelationalModel.extend({
 		id: null,
 		title: null,
 		description: null,
-		params : null
+		params : {},
+		contributors : {}
 	},
 	initialize : function Representation() {
 		

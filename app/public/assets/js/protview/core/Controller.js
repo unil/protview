@@ -1,12 +1,20 @@
 ProtView.Core.Controller = Class.extend( {
 	model : null,
-	view: null,
+	view : null,
+	views: {},
 	stack : {},
 	previous : {},
 	init: function(args) {
 	},
-	getView: function() {
-		return this.view;
+	addView: function(view) {
+		var viewEL = view.el;
+		view.setController(this);
+		view.setModel(this.model);
+		view.render();
+		this.views[viewEL] = view;
+	},
+	getViews: function() {
+		return this.views;
 	},
 	getModel : function() {
 		return this.model;
@@ -20,7 +28,6 @@ ProtView.Core.Controller = Class.extend( {
 			console.log('id: ' + id);
 			console.log('previous: ' + this.previous.id);
 			if (id != null && id > 0 && this.previous.id != id) {
-				console.log('salut');
 				model.set({id : id}, {silent: true});
 				this.model = model;
 				console.log(model);
@@ -36,7 +43,6 @@ ProtView.Core.Controller = Class.extend( {
 		this.previous.id = id;
 		return ret;
 	},
-	
 	save : function() {
 		this.model.save(null,{
 			error: function(err){
@@ -49,5 +55,10 @@ ProtView.Core.Controller = Class.extend( {
 				console.log(succ);
 			}
 			});
+	},
+	update : function(id) {
+		if (this.model != null) {
+			this.fetch(id);
+		}
 	}
 });

@@ -26,6 +26,10 @@ ProtView.Structure.Module = (function() {
 			   stack[el] = null;
 			   delete stack[el];
 		}
+	},
+	update = function (arguments) {
+		if (controller != null)
+			controller.update(arguments);
 	};
 	
 	//public
@@ -40,10 +44,10 @@ ProtView.Structure.Module = (function() {
 			show(resource, id);
 		},
 		update : function(e, arguments) {
-			
-			if (arguments.protein) {
+			update(arguments);
+			/*if (arguments.protein) {
 				ProtView.Application.Sandbox.publish("/structure/show", ['protein', arguments.protein]);
-			}
+			}*/
 		},
 		registerSandbox : function(obj) {
 			sandbox = obj;

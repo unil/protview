@@ -1,10 +1,9 @@
 ProtView.Structure.Controller.MainController = ProtView.Core.MainController.extend( {
 	load : function(resource) {
 		var controller = null,
-		stack = this.stack,
-		currentResource = this.currentResource;
+		stack = this.stack;
 
-		if (resource != currentResource) {
+		if (!stack[resource]) {
 			switch(resource) {
 				case 'peptide' :
 					controller = new ProtView.Structure.Controller.PeptideController();
@@ -23,10 +22,16 @@ ProtView.Structure.Controller.MainController = ProtView.Core.MainController.exte
 					break;
 			}
 			
-			stack.controller = controller;
-			this.controller = controller;
+			stack[resource] = controller;
 			this.stack = stack;
-			this.currentResource = resource;
+		}
+	},
+	update : function(arguments) {
+		if (arguments.protein) {
+			var stack = this.stack;
+			for (var el in stack) {
+				stack[el].update(arguments.protein);
+			}
 		}
 	}
 });

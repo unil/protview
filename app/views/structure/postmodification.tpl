@@ -1,4 +1,4 @@
-<form id="protein-form" class="form-horizontal">
+<form id="postmodification-form" class="form-horizontal">
 
 	<div class="control-group">
 		<label class="control-label" for="protein.name" id="protein-name-label">Name</label>
