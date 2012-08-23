@@ -28,8 +28,10 @@ ProtView.Application.Sandbox = (function() {
 				action = 'startStructure';
 				break;
 		}
-		if (action != null)
+		if (action != null) {
 			server(action, el);
+			//ProtView.Application.Sandbox.subscribe("/" + module + "/status");
+		}
 		else
 			console.log('ProtView.Application.Sandbox.Load: module "' + module + '" does not exist.');
 	},
@@ -42,7 +44,10 @@ ProtView.Application.Sandbox = (function() {
 		},
 		stop : function (module) {
 			unload(module);
-		},
+		},/*
+		status : function(module) {
+			
+		},*/
 		publish : function(channel, arguments) {
 			ProtView.Application.Mediator.publish(channel, arguments);
 		},
