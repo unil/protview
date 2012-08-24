@@ -100,9 +100,17 @@ ProtView.Structure.View.PeptideView = ProtView.Core.View.extend({
 			ret += 'name="peptide-region_to-' + val.id + '" ';
 			ret += 'id="peptide-region_to-' + val.id + '" ';
 			ret += 'value="' + val.end + '">';
-			ret += ' <i class="icon-minus"></i>';
+			ret += ' <i class="icon-minus remove_row"></i>';
 			ret += '</li>';
 		});
+		ret += '<li style="margin-left: 20px; margin-bottom: 9px;">';
+		ret += '<i class="icon-plus add_row"></i>';
+		ret += '</li>';
+		ret += '</ol></div></div>';
+		return ret;
+	},
+	newRow : function() {
+		ret = '';
 		ret += '<li style="margin-left: 20px; margin-bottom: 9px;">';
 		ret += 'From : <input type="text" class="input-xmini inline"';
 		ret += 'name="peptide-region_from-0" ';
@@ -112,21 +120,37 @@ ProtView.Structure.View.PeptideView = ProtView.Core.View.extend({
 		ret += 'name="peptide-region_to-0" ';
 		ret += 'id="peptide-region_to-0" ';
 		ret += 'value=""> ';
-		ret += '<i class="icon-plus"></i>';
+		ret += '<i class="icon-minus remove_row"></i>';
 		ret += '</li>';
 		ret += '</ol></div></div>';
 		return ret;
 	},
+	bindRemoveRowEvent: function() {
+		$('.remove_row').click(function() {
+			var currentRow = $(this).parent();
+			currentRow.remove();
+		});
+	},
 	render : function() {
-		var renderedContent = this.template(this.model.toJSON());
-
-		var renderedRegions = this.renderRegion(this.model
+		var self = this;
+		var renderedContent = self.template(self.model.toJSON()),
+		renderedRegions = this.renderRegion(self.model
 				.get('regions'));
 
 		$('#peptide-form-insert').html(renderedContent + renderedRegions);
-		this.modelBinder.bind(this.model, this.el, this.bindings);
-		Backbone.Validation.bind(this);
+		self.modelBinder.bind(self.model, self.el, self.bindings);
+		Backbone.Validation.bind(self);
+		
+		self.bindRemoveRowEvent();
+		
+		$('.add_row').click(function() {
+			var currentRow =  $(this).parent();
+			var newRow = self.newRow();
+			currentRow.before(newRow);
+			
+			self.bindRemoveRowEvent();
+		});
 
-		return this;
+		return self;
 	},
 });
