@@ -41,6 +41,6 @@
 </form>
 <script type="text/javascript">
 	$(document).ready(function() {
-		ProtView.Application.Sandbox.publish("/structure/show", ['peptide', 1]);		
+		ProtView.Application.Sandbox.publish("/structure/show", ['peptide', Application.CONTEXT.getProtein()]);		
 	});
 </script>
