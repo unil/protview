@@ -134,6 +134,14 @@ class PeptidesController extends RESTController {
 
 		return $data;
 	}
+	
+	function post() {		
+		$r = xController::load(
+					'peptides', 
+							$this->params
+					)->put();
+		return $r;
+	}
 
 	/*
 	 * {
@@ -164,18 +172,18 @@ class PeptidesController extends RESTController {
 		if (!isset($this->params['items'])) throw new xException('No items provided', 400);
 		// Checks for params.id and params.items.id consistency
 		// (this test is only for precaution: params.id is not used in anyway)
-		if (@$this->params['id'] != @$this->params['items']['id'])
-			throw new xException("Parameters id and items.id do not match", 400);
+		/*if (@$this->params['id'] != @$this->params['items']['id'])
+			throw new xException("Parameters id and items.id do not match", 400);*/
 
 		$items = $this->params['items'];
 		if (!isset($items['sequence'])) throw new xException('No sequence provided', 400);
-		if (!isset($items['membraneRegions'])) throw new xException('No membrane regions provided', 400);
+		if (!isset($items['regions'])) throw new xException('No membrane regions provided', 400);
 		if (!isset($items['terminusN'])) throw new xException('No N-Terminus provided', 400);
 		if (!isset($items['terminusC'])) throw new xException('No C-Terminus provided', 400);
-		if (!isset($items['peptide_id'])) throw new xException('peptide_id cannot be null', 400);
+		if (!isset($items['id'])) throw new xException('peptide id cannot be null', 400);
 
 
-		$peptide_id = $items['peptide_id'];
+		$peptide_id = $items['id'];
 		$terminusN = $items['terminusN'];
 		$terminusC = $items['terminusC'];
 
@@ -187,7 +195,7 @@ class PeptidesController extends RESTController {
 
 		$sequence = strtoupper(trim($items['sequence']));
 		$aaArray = str_split($sequence);
-		$membraneRegions = $items['membraneRegions'];
+		$membraneRegions = $items['regions'];
 
 		$aaCount = count($aaArray);
 		$start = 1;

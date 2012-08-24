@@ -39,7 +39,7 @@ ProtView.Structure.Model.Peptide = Backbone.RelationalModel.extend({
 			if (!valid)
 				return 'invalid';
 		},
-		sequence : {
+		/*sequence : {
 			required: true,
 			minLength: 1
 		},
@@ -50,7 +50,7 @@ ProtView.Structure.Model.Peptide = Backbone.RelationalModel.extend({
 		terminusC : function(value) {
 			if(value == null)
 				return 'invalid';
-		}
+		}*/
 	},
 	//basic check if the value is a number
 	isNumber : function (n) {

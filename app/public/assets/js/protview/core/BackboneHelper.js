@@ -11,7 +11,7 @@ ProtView.Core.BackboneHelper = Class.extend( {
 				},
 				error: function () {
 					console.log('ProtView.Core.BackBoneHelper: error');
-				}
+				},
 			}
 		);
 	}
