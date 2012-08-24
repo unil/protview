@@ -32,7 +32,7 @@ class PeptidesController extends RESTController {
 		
 		//hack as for now one protein has exactly one subunit
 		if (isset($this->params['protein_id']))
-			$this->params['subunit_id'] = $this->params['protein_id'];
+			$this->params['subunit_id'] = (int)$this->params['protein_id'];
 
 		$items = array();
 		
@@ -117,6 +117,19 @@ class PeptidesController extends RESTController {
 			$items[] = $item;
 		}
 		$data['xcount'] = count($peptides);
+		
+		//dirty bug fix for backbonejs not being updated on empty return
+		//and avoid validation issue for sequence, this should be fixed!!
+		if (count($items) <= 0) {
+			$item = array();
+			
+			$item['sequence'] = "not defined";
+			$item['terminusN'] = "";
+			$item['terminusC'] = "";
+			$item['regions'] = array();
+			$items[] = $item;
+		}
+		
 		$data['items'] = $items;
 
 		return $data;
