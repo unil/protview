@@ -7,7 +7,7 @@
 				<ul style="margin-left: 3px">
 					<li>General</li>
 					<li>Structure</li>
-					<li>Post modification</li>
+					<!--  <li>Post modification</li>-->
 				</ul>
 				<!-- PROTEIN SETTINGS BEGIN-->
 				<div id="proteinSettings">
@@ -20,9 +20,9 @@
 				</div>
 				<!-- STRUCTURE SETTINGS END -->
 				<!-- MODIFICATION SETTINGS BEGIN -->
-				<div id="postmodificationSettings">
+				<!-- <div id="postmodificationSettings">
 					<img src="<?php echo xUtil::url('a/js/lib/jqwidgets/resources/loader.gif')?>" />
-				</div>
+				</div> -->
 				<!-- MODIFICATION SETTINGS END -->
 			</div>
 		</div>
