@@ -12,14 +12,24 @@ class ProteinsController extends RESTController {
 	function put() {
 		$r = parent::put();
 		//inserts a subunit with same id as protein, as for now there is only
-		//one subunit per protein
+		//one subunit per protein and one peptide per subunit
 		if ($r['insertid']) {
-		xModel::load('subunit', 
+		$s = xModel::load('subunit', 
 				array(
 				'id' => $r['insertid'],
 				'label' => $this->params['items']['name'],
-				'protein_id' => $r['insertid'])
+				'protein_id' => $r['insertid'],
+				'pos' => 1)
 				)->put();
+		}
+		if ($s['insertid']) {
+			$p = xModel::load('peptide',
+					array(
+							'id' => $s['insertid'],
+							'label' => $this->params['items']['name'],
+							'subunit_id' => $s['insertid'],
+							'pos' => 1)
+			)->put();
 		}
 		// Result
 		return $r;
