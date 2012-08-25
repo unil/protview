@@ -14,6 +14,7 @@ ProtView.Structure.View.NewProteinView = ProtView.Core.View.extend({
 			Application.CONTEXT.navigate("view/" + proteinId + "/0");
 			this.unload();
 			$('#new-protein-dialog').jqxWindow('close');
+			$('#new-protein-dialog').remove();
 		}
 	}
 });

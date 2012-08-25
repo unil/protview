@@ -32,5 +32,9 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 		ProtView.Application.Sandbox.publish("/structure/show", ['protein', Application.CONTEXT.getProtein()]);		
+		var args = {
+			protein : Application.CONTEXT.getProtein()
+		};
+		ProtView.Structure.Module.update(null, args);		
 	});
 </script>

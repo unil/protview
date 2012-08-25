@@ -20,8 +20,8 @@
 						data-toggle="dropdown">View <b class="caret"></b>
 					</a>
 						<ul class="dropdown-menu">
-							<li><a id="show-drawboard">Drawboard</a></li>
-							<li><a id="show-sidebar">Sidebar</a></li>
+							<li><a id="show-drawboard">Show Drawboard</a></li>
+							<li><a id="show-sidebar">Show Sidebar</a></li>
 						</ul>
 					</li>
 				</ul>
