@@ -62,7 +62,7 @@ ProtView.DrawBoard.Utils.Drawing = Class.extend( {
 		svg.text(g, -4, 0, label, {
 			id : 'aa-' + pos + '-text'
 		});
-		svg.text(g, 0, 6, pos, {
+		svg.text(g, -4, 6, pos, {
 			id : 'aa-' + pos + '-seq_num',
 			class_: 'seq_num'
 		});
