@@ -13,7 +13,7 @@ class ExtendLoopTest extends protviewPHPUnit_Framework_TestCase {
 				"extendHeight" => 5
 		);
 
-		$length = 96;
+		$length = 118;
 
 		$middleLooopLength = 0;
 		$basicHeight = 0;

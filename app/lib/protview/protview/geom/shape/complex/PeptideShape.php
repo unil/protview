@@ -69,7 +69,7 @@ class PeptideShape {
 				"minDomainSpace" => 150, //min space beetwen ext/int domain in px
 				"basicHeight" => array('min' => 0, 'max' => 9),
 				"middleLength" => array('even' => 4, 'odd' => 5),
-				"extendHeight" => 4
+				"extendHeight" => 5
 		);
 
 
@@ -138,9 +138,9 @@ class PeptideShape {
 			$extendedLoop = new ExtendedLoop($this->aaSize, $this->startCoord);
 			$extendedLoop->setRotation(array('sens' => $pos));
 			$extendedLoop->setBasicLoopSideLength($basicLength/$nbBasic);
-			$extendedLoop->setExtendLoopSideLength($extendLength/$params['extendHeight']);
+			$extendedLoop->setExtendLoopSideLength($params['extendHeight']);
 			$extendedLoop->setExtendLoopSideMiddleLength($middleLoopLength);
-			$extendedLoop->setNbExtendLoop($params['extendHeight']);
+			$extendedLoop->setNbExtendLoop($nbMiddlePart);
 			$coords = $extendedLoop->getCoord();
 			$this->startCoord = $extendedLoop->getLastCoord();
 		}
