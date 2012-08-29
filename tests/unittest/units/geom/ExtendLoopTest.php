@@ -10,7 +10,7 @@ class ExtendLoopTest extends protviewPHPUnit_Framework_TestCase {
 		$params = array(
 				"basicHeight" => array('min' => 0, 'max' => 9),
 				"middleLength" => array('even' => 4, 'odd' => 5),
-				"extendHeight" => 5
+				"extendHeight" => 7
 		);
 
 		$length = 118;

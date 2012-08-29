@@ -69,7 +69,7 @@ class PeptideShape {
 				"minDomainSpace" => 150, //min space beetwen ext/int domain in px
 				"basicHeight" => array('min' => 0, 'max' => 9),
 				"middleLength" => array('even' => 4, 'odd' => 5),
-				"extendHeight" => 5
+				"extendHeight" => 7
 		);
 
 

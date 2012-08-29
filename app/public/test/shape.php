@@ -26,10 +26,10 @@ $standardLoop->setMiddleLength(8);
 require_once(xContext::$basepath.'/lib/protview/protview/geom/shape/complex/ExtendedLoop.php');
 $extendedLoop = new ExtendedLoop($scatterSize);
 $extendedLoop->setRotation(array('sens' => 1));
-$extendedLoop->setBasicLoopSideLength(7);
+$extendedLoop->setBasicLoopSideLength(8);
 $extendedLoop->setExtendLoopSideLength(5);
 $extendedLoop->setExtendLoopSideMiddleLength(4);
-$extendedLoop->setNbExtendLoop(11);
+$extendedLoop->setNbExtendLoop(3);
 
 require_once(xContext::$basepath.'/lib/protview/protview/geom/shape/complex/MembranePattern.php');
 $membranePattern = new MembranePattern($scatterSize);
@@ -47,12 +47,14 @@ echo '<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
 "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg"
 xmlns:xlink="http://www.w3.org/1999/xlink"
-width="100%" height="100%" xml:lang="fr">';
+width="100%" height="100%" xml:lang="fr"
+preserveAspectRatio="xMinYMin meet"
+viewBox="0 0 1000 800">';
 $coords = $extendedLoop->getCoord();
 
 foreach ($coords as $k => $v) {
-	$x = $v["x"] + 380;
-	$y = $v["y"] + 380;
+	$x = $v["x"] + 480;
+	$y = $v["y"] + 480;
 	echo $svgGraphics->drawAminoAcid($x, $y, $scatterSize, "L", $k+1);
 }
 
