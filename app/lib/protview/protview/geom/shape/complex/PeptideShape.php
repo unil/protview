@@ -99,7 +99,7 @@ class PeptideShape {
 
 		if ($length <= (2*$params['basicHeight']['max'] + $middleLoopLength)) {
 			$height = ($length - $middleLoopLength)/2;
-				
+
 			$standardLoop = new StandardLoop($this->aaSize, $this->startCoord);
 			$standardLoop->setSideLength($height);
 			$standardLoop->setMiddleLength($middleLoopLength);
@@ -109,24 +109,32 @@ class PeptideShape {
 		}
 		else {
 			$nbBasic = 2;
-			$nbExtendHeight = 1;
-			$nbMiddlePart = 0;
+			$nbExtendHeight = 0;
+			$nbMiddlePart = 1;
 
 			$res = 0;
 
 			while ($length > $res) {
-				$nbExtendHeight++;
-				$nbMiddlePart++;
+				$nbMiddlePart += 2;
+				$nbExtendHeight = $nbMiddlePart + 1;
 
 				$res = $nbBasic * $params['basicHeight']['max']
-				+ $nbExtendHeight + $params['extendHeight']
-				+ $nbMiddlePart + $middleLoopLength;
+				+ $nbExtendHeight * $params['extendHeight']
+				+ $nbMiddlePart * $middleLoopLength;
 			}
 
 			$middleLength = $nbMiddlePart * $middleLoopLength;
 			$extendLength = $nbExtendHeight * $params['extendHeight'];
 			$basicLength = $length - $middleLength - $extendLength;
 				
+			echo "lenth : $length\n";
+			echo "nbMiddlePart : $nbMiddlePart middleLoopLength: $middleLoopLength\n";
+			echo "middleLength: $middleLength\n";
+			echo "nbExtendHeigth : $nbExtendHeight extendHeight: {$params['extendHeight']}\n";
+			echo "extendLength $extendLength\n";
+			echo "basicLength : $basicLength";
+
+
 			$extendedLoop = new ExtendedLoop($this->aaSize, $this->startCoord);
 			$extendedLoop->setRotation(array('sens' => $pos));
 			$extendedLoop->setBasicLoopSideLength($basicLength/$nbBasic);

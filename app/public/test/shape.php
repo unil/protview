@@ -26,10 +26,10 @@ $standardLoop->setMiddleLength(8);
 require_once(xContext::$basepath.'/lib/protview/protview/geom/shape/complex/ExtendedLoop.php');
 $extendedLoop = new ExtendedLoop($scatterSize);
 $extendedLoop->setRotation(array('sens' => 1));
-$extendedLoop->setBasicLoopSideLength(8);
-$extendedLoop->setExtendLoopSideLength(7);
+$extendedLoop->setBasicLoopSideLength(4);
+$extendedLoop->setExtendLoopSideLength(8);
 $extendedLoop->setExtendLoopSideMiddleLength(4);
-$extendedLoop->setNbExtendLoop(3);
+$extendedLoop->setNbExtendLoop(7);
 
 require_once(xContext::$basepath.'/lib/protview/protview/geom/shape/complex/MembranePattern.php');
 $membranePattern = new MembranePattern($scatterSize);

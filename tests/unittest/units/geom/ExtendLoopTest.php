@@ -4,16 +4,16 @@
  * Test are made at xModel level.
  * @package unittests
  */
-class PeptideControllerTest extends protviewPHPUnit_Framework_TestCase {
+class ExtendLoopTest extends protviewPHPUnit_Framework_TestCase {
 
 	function test_extionLoopAlgo() {
 		$params = array(
 				"basicHeight" => array('min' => 0, 'max' => 9),
 				"middleLength" => array('even' => 4, 'odd' => 5),
-				"extendHeight" => 4
+				"extendHeight" => 5
 		);
 
-		$length = 14;
+		$length = 96;
 
 		$middleLooopLength = 0;
 		$basicHeight = 0;
@@ -37,18 +37,18 @@ class PeptideControllerTest extends protviewPHPUnit_Framework_TestCase {
 		*/
 		
 		$nbBasic = 2;
-		$nbExtendHeight = 1;
-		$nbMiddlePart = 0;
+		$nbExtendHeight = 0;
+		$nbMiddlePart = 1;
 		
 		$res = 0;
 		
 		while ($length > $res) {
-			$nbExtendHeight++;
-			$nbMiddlePart++;
+			$nbMiddlePart += 2;
+			$nbExtendHeight = $nbMiddlePart + 1;
 				
 			$res = $nbBasic * $params['basicHeight']['max']
-			+ $nbExtendHeight + $params['extendHeight']
-			+ $nbMiddlePart + $middleLoopLength;
+			+ $nbExtendHeight * $params['extendHeight']
+			+ $nbMiddlePart * $middleLoopLength;
 		}
 		
 		$middleLength = $nbMiddlePart * $middleLoopLength;
