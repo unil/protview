@@ -67,7 +67,7 @@ class PeptideShape {
 				"maxHeigh" => 1000, //max graphic height in px
 				"maxWidth" => 1000, //max graphic width in px
 				"minDomainSpace" => 150, //min space beetwen ext/int domain in px
-				"basicHeight" => array('min' => 2, 'max' => 9),
+				"basicHeight" => array('min' => 2, 'max' => 12),
 				"middleLength" => array('even' => 4, 'odd' => 5),
 				"extendHeight" => 5
 		);
@@ -109,35 +109,51 @@ class PeptideShape {
 			$this->startCoord = $standardLoop->getLastCoord();
 		}
 		else {
-			$nbBasic = 2;
+			$nbBasicHeight = 2;
 			$nbExtendHeight = 0;
-			$nbMiddlePart = 1;
+			$nbMiddlePart = -1;
+			$middleLoopLength = 0;
+			$middleLength = 0;
+			$extendLength = 0;
+
+			$basicLength = 0;
+
+			$found = false;
 
 			$res = 0;
 
-			while ($length > $res) {
+			while (!$found) {
 				$nbMiddlePart += 2;
 				$nbExtendHeight = $nbMiddlePart + 1;
 
-				$res = $nbBasic * $params['basicHeight']['max']
-				+ $nbExtendHeight * $params['extendHeight']
-				+ $nbMiddlePart * $middleLoopLength;
+				$extendLength = $nbExtendHeight * $params['extendHeight'];
+
+				if (($length - $extendLength) % 2 == 0)
+					$middleLoopLength = $params['middleLength']['even'];
+				else
+					$middleLoopLength = $params['middleLength']['odd'];
+					
+				$middleLength = $nbMiddlePart * $middleLoopLength;
+
+				$basicLength = $length - $middleLength - $extendLength;
+					
+				if ($basicLength /$nbBasicHeight >= $params['basicHeight']['min'] &&
+						$basicLength / $nbBasicHeight <= $params['basicHeight']['max']) {
+					$found = true;
+				}
+					
+			}
+			
+			if ($nbMiddlePart <= 1) {
+				$middleLoopLength += + 6;
+				$basicLength = ($length - $middleLoopLength - $extendLength);
+				
 			}
 
-			$middleLength = $nbMiddlePart * $middleLoopLength;
-			$extendLength = $nbExtendHeight * $params['extendHeight'];
-			$basicLength = $length - $middleLength - $extendLength;
-			
-			echo "lenth : $length\n";
-			echo "nbMiddlePart : $nbMiddlePart middleLoopLength: $middleLoopLength\n";
-			echo "middleLength: $middleLength\n";
-			echo "nbExtendHeigth : $nbExtendHeight extendHeight: {$params['extendHeight']}\n";
-			echo "extendLength $extendLength\n";
-			echo "basicLength : $basicLength";
 
 			$extendedLoop = new ExtendedLoop($this->aaSize, $this->startCoord);
 			$extendedLoop->setRotation(array('sens' => $pos));
-			$extendedLoop->setBasicLoopSideLength($basicLength/$nbBasic);
+			$extendedLoop->setBasicLoopSideLength($basicLength/$nbBasicHeight);
 			$extendedLoop->setExtendLoopSideLength($params['extendHeight']);
 			$extendedLoop->setExtendLoopSideMiddleLength($middleLoopLength);
 			$extendedLoop->setNbExtendLoop($nbMiddlePart);
