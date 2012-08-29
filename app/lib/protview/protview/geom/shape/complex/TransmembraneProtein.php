@@ -71,35 +71,40 @@ class TransmembraneProtein {
 		$params = array(
 				"maxHeigh" => 1000, //max graphic height in px
 				"maxWidth" => 1000, //max graphic width in px
-				"minDomainSpace" => 150 //min space beetwen ext/int domain in px
+				"minDomainSpace" => 150, //min space beetwen ext/int domain in px
+				"basicHeight" => array('min' => 0, 'max' => 9),
+				"middleLength" => array('even' => 4, 'odd' => 5),
+				"extendHeight" => array('min' => 5, 'max' => 5)
 		);
 		
 
-		$middle = 0;
+		$middleLooopLength = 0;
+		$basicHeight = 0;
+		$extendHeight = 0;
 		
+		//event length number
 		if ($length % 2 == 0)
-			$even = true;
-		
-		if ($length <= 20) {
-			if ($even)
-				$middle = 8;
-			else 
-				$middle = 7;
-		}
-		else {
-			if ($even)
-				$middle = 4;
-			else
-				$middle = 3;
+			$middleLoopLength = $params['middleLength']['event'];
+		else
+			$middleLoopLength = $params['middleLength']['odd'];
 			
-		}
 		
 		//min space between domain, needs to be implemented and should not be hardcoded
-		$middle = ceil($params['minDomainSpace']/$this->aaSize);
+		//$middle = ceil($params['minDomainSpace']/$this->aaSize);
 		
-		$height = ($length - $middle)/2;		
+		/* nb cercle - nb extendHeigh
+		 * 1-2
+		 * 3-4
+		 * 5-6
+		 * 7-8
+		 */
 		
-		if ($height <= 10) {
+
+		
+		
+		if ($length <= (2*$params['basicHeight']['max'] + $middleLoopLength)) {
+			$height = ($length - $middle)/2;
+			
 			$standardLoop = new StandardLoop($this->aaSize, $this->startCoord);
 			$standardLoop->setSideLength($height);
 			$standardLoop->setMiddleLength($middle);
@@ -108,12 +113,31 @@ class TransmembraneProtein {
 			$this->startCoord = $standardLoop->getLastCoord();
 		}
 		else {
+			$nbBasic = 2;
+			$nbExtendHeight = 1;
+			$nbMiddlePart = 0;
+			
+			$res = 0;
+			
+			while ($length > $res) {
+				$nbExtendHeigh++;
+				$nbMiddlePart++;
+					
+				$res = $nbBasic * $params['basicHeight']['max']
+				+ $nbExtendHeight + $params['extendHeight']['max']
+				+ $nbMiddlePart + $middleLength;
+			}
+			
+			$middleLength = $nbMiddlePart * $middleLoopLength;
+			$extendLength = $nbExtendHeight * $extendHeight;
+			$basicLength = $middleLength - $extendLength;
+			
 			$extendedLoop = new ExtendedLoop($this->aaSize, $this->startCoord);
 			$extendedLoop->setRotation(array('sens' => $pos));
-			$extendedLoop->setBasicLoopSideLength(8);
-			$extendedLoop->setExtendLoopSideLength(7);
-			$extendedLoop->setExtendLoopSideMiddleLength(6);
-			$extendedLoop->setNbExtendLoop(7);
+			$extendedLoop->setBasicLoopSideLength($basicLength/$nbBasic);
+			$extendedLoop->setExtendLoopSideLength($extendLength/$extendHeight);
+			$extendedLoop->setExtendLoopSideMiddleLength($middleLoopLength);
+			$extendedLoop->setNbExtendLoop($nbExtendHeight);
 			$coords = $extendedLoop->getCoord();
 			$this->startCoord = $extendedLoop->getLastCoord();
 		}

@@ -48,7 +48,7 @@ echo '<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
 <svg xmlns="http://www.w3.org/2000/svg"
 xmlns:xlink="http://www.w3.org/1999/xlink"
 width="100%" height="100%" xml:lang="fr">';
-$coords = $line->getCoord();
+$coords = $extendedLoop->getCoord();
 
 foreach ($coords as $k => $v) {
 	$x = $v["x"] + 380;
