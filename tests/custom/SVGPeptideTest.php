@@ -44,17 +44,17 @@ $regions = array(
 		array('start' => 18, 'end' => 36, 'type' => 'membrane'),
 		array('start' => 37, 'end' => 57, 'type' => 'extra'),
 		array('start' => 58, 'end' => 78, 'type' => 'membrane'),
-		array('start' => 79, 'end' => 196, 'type' => 'intra'),
-		/*array('start' => 121, 'end' => 150, 'type' => 'membrane'),
-		array('start' => 151, 'end' => 300, 'type' => 'intra'),
+		array('start' => 79, 'end' => 120, 'type' => 'intra'),
+		array('start' => 121, 'end' => 150, 'type' => 'membrane'),
+		array('start' => 151, 'end' => 300, 'type' => 'extra'),
 		array('start' => 301, 'end' => 318, 'type' => 'membrane'),
-		array('start' => 319, 'end' => 340, 'type' => 'extra'),
+		array('start' => 319, 'end' => 340, 'type' => 'intra'),
 		array('start' => 341, 'end' => 360, 'type' => 'membrane'),
-		array('start' => 361, 'end' => 380, 'type' => 'intra'),
+		array('start' => 361, 'end' => 380, 'type' => 'extra'),
 		array('start' => 381, 'end' => 410, 'type' => 'membrane'),
-		array('start' => 411, 'end' => 431, 'type' => 'extra'),
+		array('start' => 411, 'end' => 431, 'type' => 'intra'),
 		array('start' => 432, 'end' => 450, 'type' => 'membrane'),
-		array('start' => 451, 'end' => 480, 'type' => 'intra')*/
+		array('start' => 451, 'end' => 480, 'type' => 'extra')
 );
 
 //Create peptide
