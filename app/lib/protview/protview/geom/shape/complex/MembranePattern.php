@@ -9,7 +9,7 @@ class MembranePattern extends ComplexShape {
 	//number * amino acid size
 	private $maxLineLength;
 	private $length;
-	private $membraneCoords = array("startX" => 0, "startY" => 0, "height" => 0, "width" => 0);
+	private $membraneCoords = array("minY" => 0, "maxY" => 0);
 	
 
 	public function __construct($offset, $startCoord = null) {
@@ -67,6 +67,7 @@ class MembranePattern extends ComplexShape {
 		$rotation = parent::getRotation();
 		//initial x,y coordiante
 		$startCoord['y'] += parent::getOffset() * $rotation['sens'];
+		
 		$startX = $startCoord['x'];
 		$startY = $startCoord['y'];
 		
@@ -99,19 +100,19 @@ class MembranePattern extends ComplexShape {
 				
 		}
 
-		//calculates the membranes position and height
+		//calculates minY and maxY
+		if ($startY < $this->membraneCoords['minY'])
+			$this->membraneCoords['minY'] = $startY;
 		
-		if ($startX < $this->membraneCoords['startX'])
-			$this->membraneCoords['startX'] = $startX;
+		if ($lastCoord['y'] < $this->membraneCoords['minY'])
+			$this->membraneCoords['minY'] = $lastCoord['y'];
 		
-		if ($startY < $this->membraneCoords['startY'])
-			$this->membraneCoords['startY'] = $startY;
+		if ($startY > $this->membraneCoords['maxY'])
+			$this->membraneCoords['maxY'] = $startY;
 		
-		if ($lastCoord['x'] - $startX > $this->membraneCoords['width'])
-			$this->membraneCoords['width'] = $lastCoord['x'] - $startX;
-		
-		if ($lastCoord['y'] - $startY > $this->membraneCoords['height'])
-			$this->membraneCoords['height'] = $lastCoord['y'] - $startY;
+		if ($lastCoord['y'] > $this->membraneCoords['maxY'])
+			$this->membraneCoords['maxY'] = $lastCoord['y'];
+
 		
 		parent::setLastCoord($lastCoord);
 		return $coords;

@@ -31,9 +31,9 @@ class ExtendLoopTest extends protviewPHPUnit_Framework_TestCase {
 		$middleLoopLength = 0;
 		$middleLength = 0;
 		$extendLength = 0;
-		
+
 		$basicLength = 0;
-		
+
 		$found = false;
 
 		$res = 0;
@@ -41,42 +41,24 @@ class ExtendLoopTest extends protviewPHPUnit_Framework_TestCase {
 		while (!$found) {
 			$nbMiddlePart += 2;
 			$nbExtendHeight = $nbMiddlePart + 1;
-				
+
 			$extendLength = $nbExtendHeight * $params['extendHeight'];
-				
+
 			if (($length - $extendLength) % 2 == 0)
 				$middleLoopLength = $params['middleLength']['even'];
 			else
 				$middleLoopLength = $params['middleLength']['odd'];
-			
+				
 			$middleLength = $nbMiddlePart * $middleLoopLength;
 
 			$basicLength = $length - $middleLength - $extendLength;
-			
+				
 			if ($basicLength /$nbBasicHeight >= $params['basicHeight']['min'] &&
 					$basicLength / $nbBasicHeight <= $params['basicHeight']['max']) {
-					$found = true;
+				$found = true;
 			}
-			
-		}
-		/*$basicLength = $length - $middleLength - $extendLength;
-		
-		if (!($basicLength /$nbBasicHeight >= $params['basicHeight']['min'] &&
-				$basicLength / $nbBasicHeight <= $params['basicHeight']['max'])) {
-			$nbMiddlePart -= 2;
-			$nbExtendHeight = $nbMiddlePart + 1;
-			
-			$extendLength = $nbExtendHeight * $params['extendHeight'];
-			
-			if (($length - $extendLength) % 2 == 0)
-				$middleLoopLength = $params['middleLength']['even'];
-			else
-				$middleLoopLength = $params['middleLength']['odd'];
 				
-			$middleLength = $nbMiddlePart * $middleLoopLength;
-			
-			$basicLength = $length - $middleLength - $extendLength;
-		}*/
+		}
 
 		echo "length : $length\n";
 		echo "nbMiddlePart : $nbMiddlePart middleLoopLength: $middleLoopLength\n";

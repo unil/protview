@@ -90,9 +90,11 @@ $proteinCalc = new PeptideShape($peptide, $startCoord, $size);
 $coords = $proteinCalc->getAACoordinates();
 $membraneCoords = $proteinCalc->getMembraneCoordinates();
 
-$membraneCoords['width'] = 1200;
+print_r($membraneCoords);
 
-echo $svgGraphics->drawMembrane($membraneCoords['startX'] + $offsetX, $membraneCoords['startY'] + $offsetY, $membraneCoords['width'], $membraneCoords['height']);
+//$membraneCoords['width'] = 1200;
+
+echo $svgGraphics->drawMembrane($offsetX, $membraneCoords['minY'] + $offsetY, 2000, $membraneCoords['maxY']-$membraneCoords['minY']);
 
 //xContext::$log->log(array('coords', $coords), 'protein');
 

@@ -16,7 +16,7 @@ class PeptideShape {
 
 
 	private $aaCoords = array();
-	private $membraneCoords = array("startX" => 0, "startY" => 0, "height" => 0, "width" => 0);
+	private $membraneCoords = array();
 
 	public function __construct($peptide, $startCoord, $aaSize) {
 		$this->peptide = $peptide;
@@ -199,10 +199,7 @@ class PeptideShape {
 	}
 
 	public function getMembraneCoordinates() {
-		$this->membraneCoords['startX'] -= $this->aaSize/2;
-		$this->membraneCoords['startY'] += $this->aaSize/2;
-
-
+		$this->membraneCoords['minY'] -= $this->aaSize;
 		return $this->membraneCoords;
 	}
 }
