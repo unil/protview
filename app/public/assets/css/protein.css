@@ -22,3 +22,11 @@
 	stroke-width: 1px;
 	fill-opacity: 0.8;
 }
+#membrane-bottom, #membrane-top {
+	fill: none;
+    stroke: #D83200;
+}
+#membrane-center {
+	fill: none;
+    stroke: #FAB998;
+}

@@ -28,9 +28,10 @@ ProtView.DrawBoard.View.DrawBoardView = ProtView.Core.View.extend({
 	},
 	render : function() {
 		var model = this.model;
-		console.log('drawboard view');
+		
+		console.log('model');
 		console.log(model);
-		this.drawing.paint(this.model.get('structuralGeometries'));
+		this.drawing.paint(model.get('structuralGeometries'), model.get('params'));
 		/*var json = this.model.toJSON();
 		var jsonString = JSON.stringify(json);
 		this.$el.html(jsonString);*/

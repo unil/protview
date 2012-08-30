@@ -5,8 +5,27 @@ ProtView.DrawBoard.Utils.Drawing = Class.extend( {
 	init: function(svg) {
 		this.svg = svg;
 	},
-	paint : function(collection) {
+	paint : function(collection, params) {
+
 		var self = this;
+		
+	    if (params.dimension != null) {
+	    	var dimension = params.dimension;
+	    	var minX = dimension.minX,
+	    	maxX = dimension.maxX,
+	    	minY = dimension.minY,
+	    	maxY = dimension.maxY;
+	    	var width = maxX - minX,
+	    	height = maxY - minY;
+	    	
+	    	if (params.membrane != null) {
+	    		var membrane = params.membrane;
+	    		self.drawMembrane(minX, maxX, membrane.minY, membrane.maxY);
+	    	}
+
+	    	self.svg.configure({viewBox: minX + ' ' + minY + ' ' + width + ' ' + height});
+	    }
+		
 	    for (var i = 0, len = collection.length; i < len; i++) {
 	        var geometry = collection.at(i);
 
