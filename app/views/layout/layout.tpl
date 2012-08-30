@@ -18,18 +18,16 @@
 <!--[if lt IE 9]>
             <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
-	<!-- JavaScript -->
-	<script type="text/javascript">
+<!-- JavaScript -->
+<script type="text/javascript">
 		var Application = {};
 		Application.ROOTPATH = '<?php echo xUtil::url()?>';
 		Application.THEME = 'ui-smoothness';
-		/*Application.PROTEIN = null;
-		Application.REPRESENTATION = null;*/
 	</script>
-		<?php foreach ($m['js'] as $js): ?>
-	<script type="text/javascript" src="<?php echo $js ?>"></script>
-	<?php endforeach ?>
-	<!-- Le fav and touch icons -->
+<?php foreach ($m['js'] as $js): ?>
+<script type="text/javascript" src="<?php echo $js ?>"></script>
+<?php endforeach ?>
+<!-- Le fav and touch icons -->
 </head>
 <body>
 
@@ -60,22 +58,20 @@
 		<!-- END MAIN -->
 		<!-- BEGIN FOOTER -->
 		<div id="footer">
-			<div class="navbar-inner">
-			&copy; 2012 - Université de Lausanne - All right reserved
-			</div>
+			<div class="navbar-inner">&copy; 2012 - Université de Lausanne - All
+				right reserved</div>
 		</div>
 		<!-- END FOOTER -->
 	</div>
-		<div id="application-items"></div>
+	<div id="application-items"></div>
 	<!-- END PAGE -->
-<script type="text/javascript">
+	<script type="text/javascript">
 	$(document).ready(function() {
 		//in order to load structure widget on startup
 		ProtView.Application.Sandbox.start('structure', '#application-items');
 		Application.CONTEXT = new ProtView.Application.Context(ProtView.Application.Sandbox, new ProtView.Application.Router());
 		Backbone.history.start();
 	});
-</script>
-
+	</script>
 </body>
 </html>

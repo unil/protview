@@ -58,7 +58,7 @@ html,body,h1 {
 
 #sidebar {
 	position: absolute;
-	right: 0px;
+	right: 5px;
 	z-index: 1000;
 }
 
@@ -70,5 +70,5 @@ html,body,h1 {
 	text-align: left;
 	vertical-align: middle;
 	width: 40px;
-	top: 55px;
+	top: 70px;
 }
