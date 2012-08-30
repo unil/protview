@@ -26,15 +26,20 @@ ProtView.DrawBoard.View.DrawBoardView = ProtView.Core.View.extend({
 		model.on('reset', this.render, this);	
 		this.model = model;
 	},
+	resize: function() {
+		var h = $(window).height();
+	    var w = $(window).width();
+	    $("#svg-representation").attr('height', (h-100) + 'px').attr('width', (w-200) + 'px');
+	},
 	render : function() {
 		var model = this.model;
 		
 		console.log('model');
 		console.log(model);
 		this.drawing.paint(model.get('structuralGeometries'), model.get('params'));
-		/*var json = this.model.toJSON();
-		var jsonString = JSON.stringify(json);
-		this.$el.html(jsonString);*/
+
+
+		$(window).resize(this.resize).resize();
 		return this;
 	},
 	clear : function() {

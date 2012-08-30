@@ -45,7 +45,7 @@ ProtView.DrawBoard.Utils.Drawing = Class.extend( {
 				self.drawAminoAcid(x, y, self.aaSize, type, pos);
 			}
 		}
-	    self.addDragSupport($('.aa'));
+	    self.addDragSupport($('.dragsupport'));
 	},
 	clearAll : function() {
 		this.svg.clear();
@@ -65,7 +65,7 @@ ProtView.DrawBoard.Utils.Drawing = Class.extend( {
 		var svg = this.svg;
 		var g = svg.group({
 			id : 'aa-' + pos,
-			class_: 'aa',
+			class_: 'aa dragsupport',
 			/*
 			 * bug fix for translation start position bug as draggable is based on
 			 * html dom
@@ -97,12 +97,14 @@ ProtView.DrawBoard.Utils.Drawing = Class.extend( {
 	drawMembrane : function(minX, maxX, minY, maxY) {
 		var svg = this.svg;
 		var g = svg.group({
-			id : 'membrane'
+			id : 'membrane',
+			/*class_ : 'dragsupport',
+			style : 'position: relative; left: ' + minX + 'px; top:' + minY + 'px;',*/
 		});
 
 		svg.line(g, minX, minY, maxX, minY, {strokeWidth: 2, id : 'membrane-bottom'});
 		svg.line(g, minX, ((maxY+minY)/2), maxX, ((maxY+minY)/2), {strokeWidth: (maxY-minY), id : 'membrane-center'});
-		svg.line(g, minX, maxY, maxX, maxY, {strokeWidth: 2, id : 'membrane-top'});
+		svg.line(g, minX, maxY, maxX, maxY, {strokeWidth: 1, id : 'membrane-top'});
 	},
 
 	/**
