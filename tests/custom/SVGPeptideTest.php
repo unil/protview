@@ -94,9 +94,9 @@ echo '<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
 "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg"
 xmlns:xlink="http://www.w3.org/1999/xlink"
-width="'. $width. '" height="'. $height .'" xml:lang="fr"
+width="1000" height="800" xml:lang="fr"
 preserveAspectRatio="xMinYMin meet"
-viewBox="' . $minX . ' ' . $minY . ' 1000 800">';
+viewBox="' . $minX . ' ' . $minY . ' ' . $width . ' ' . $height . '">';
 
 
 echo $svgGraphics->drawMembrane($minX, $membraneCoords['minY'], $width, $membraneCoords['maxY']-$membraneCoords['minY']);
