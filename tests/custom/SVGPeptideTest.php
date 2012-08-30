@@ -4,18 +4,6 @@ require_once(xContext::$basepath.'/lib/protview/protview/graph/SVGGraphics.php')
 require_once(xContext::$basepath.'/lib/protview/protview/bio/Peptide.php');
 require_once(xContext::$basepath.'/lib/protview/protview/geom/shape/complex/PeptideShape.php');
 
-header("Content-type: image/svg+xml");
-echo '<?xml version="1.0"?>';
-echo '<?xml-stylesheet href="../a/css/protein.css" type="text/css" title="Default CSS" media="screen" charset="utf-8"?>';
-echo '<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
-"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg"
-xmlns:xlink="http://www.w3.org/1999/xlink"
-width="100%" height="100%" xml:lang="fr"
-preserveAspectRatio="xMinYMin meet"
-viewBox="0 0 1000 800">';
-
-
 
 $offsetX = 80;
 $offsetY = 380;
@@ -90,18 +78,35 @@ $proteinCalc = new PeptideShape($peptide, $startCoord, $size);
 $coords = $proteinCalc->getAACoordinates();
 $membraneCoords = $proteinCalc->getMembraneCoordinates();
 
-print_r($membraneCoords);
+$params = $proteinCalc->getParams();
 
-//$membraneCoords['width'] = 1200;
+$height = $params['maxY'] - $params['minY'];
+$width = $params['maxX'] - $params['minX'];
 
-echo $svgGraphics->drawMembrane($offsetX, $membraneCoords['minY'] + $offsetY, 2000, $membraneCoords['maxY']-$membraneCoords['minY']);
+$minX = $params['minX'];
+$minY = $params['minY'];
+$maxY = $params['maxY'];
+
+header("Content-type: image/svg+xml");
+echo '<?xml version="1.0"?>';
+echo '<?xml-stylesheet href="../a/css/protein.css" type="text/css" title="Default CSS" media="screen" charset="utf-8"?>';
+echo '<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+width="'. $width. '" height="'. $height .'" xml:lang="fr"
+preserveAspectRatio="xMinYMin meet"
+viewBox="' . $minX . ' ' . $minY . ' 1000 800">';
+
+
+echo $svgGraphics->drawMembrane($minX, $membraneCoords['minY'], $width, $membraneCoords['maxY']-$membraneCoords['minY']);
 
 //xContext::$log->log(array('coords', $coords), 'protein');
 
 //drawing
 foreach ($coords as $k => $v) {
-	$x = $v["x"] + $offsetX;
-	$y = $v["y"] + $offsetY;
+	$x = $v["x"];
+	$y = $v["y"];
 	echo $svgGraphics->drawAminoAcid($x, $y, $size, $elements[$k], $k+1);
 }
 

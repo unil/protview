@@ -6,9 +6,10 @@ require_once(xContext::$basepath.'/lib/protview/protview/geom/shape/complex/Exte
 class PeptideShape {
 
 	private $params = array(
-			"maxHeigh" => 1000, //max graphic height in px
-			"maxWidth" => 1000, //max graphic width in px
-			"minDmainSpace" => 20 //min space beetwen ext/int domain in px
+			"minX" => 0,
+			"maxX" => 0,
+			"minY" => 0,
+			"maxY" => 0
 	);
 	private $peptide;
 	private $startCoord;
@@ -47,7 +48,6 @@ class PeptideShape {
 			}
 		}
 
-
 		$this->AAcoords = $coords;
 	}
 
@@ -64,9 +64,6 @@ class PeptideShape {
 		$length = count($aminoAcids);
 
 		$params = array(
-				"maxHeigh" => 1000, //max graphic height in px
-				"maxWidth" => 1000, //max graphic width in px
-				"minDomainSpace" => 150, //min space beetwen ext/int domain in px
 				"basicHeight" => array('min' => 2, 'max' => 12),
 				"middleLength" => array('even' => 4, 'odd' => 5),
 				"extendHeight" => 5
@@ -201,6 +198,34 @@ class PeptideShape {
 	public function getMembraneCoordinates() {
 		$this->membraneCoords['minY'] -= $this->aaSize;
 		return $this->membraneCoords;
+	}
+	
+	public function getParams() {
+		$coords = $this->AAcoords;
+		//for perfomance reasons, this should be calculated for each shape
+		foreach ($coords as $coord) {
+			$x = $coord['x'];
+			$y = $coord['y'];
+			//calculates minY and maxY
+			if ($y < $this->params['minY'])
+				$this->params['minY'] = $y;
+				
+			if ($y > $this->params['maxY'])
+				$this->params['maxY'] = $y;
+				
+			if ($x < $this->params['minX'])
+				$this->params['minX'] = $x;
+		
+			if ($x > $this->params['maxX'])
+				$this->params['maxX'] = $x;		
+		}
+		
+		$this->params['minY'] -= $this->aaSize/2;
+		$this->params['maxY'] += $this->aaSize/2;
+		$this->params['minX'] -= $this->aaSize/2;
+		$this->params['maxX'] += $this->aaSize/2;
+		
+		return $this->params;
 	}
 }
 
