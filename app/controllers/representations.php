@@ -25,6 +25,7 @@ class RepresentationsController extends RESTController {
 			$item = array();
 			$item['id'] = $representation['id'];
 			$item['title'] = $representation['title'];
+			$item['params'] = json_decode($representation['params']);
 
 			$structuralGeometries = array();
 			if (count($detailFilter) > 0) {
@@ -128,7 +129,7 @@ class RepresentationsController extends RESTController {
 		$proteinCalc = new PeptideShape($peptide, $startCoord, $size);
 
 		$coords = $proteinCalc->getAACoordinates();
-		$membraneCoords = $proteinCalc->getMembraneCoordinates();
+		$params = $proteinCalc->getParams();
 
 		$coordPos = 0;
 		//db insert
@@ -137,7 +138,7 @@ class RepresentationsController extends RESTController {
 						'id' => 0,
 						'title' => $title,
 						'description' => $description,
-						'params' => $params,
+						'params' => json_encode($params),
 						'peptide_id' => $peptide_id
 				))->put();
 		foreach($peptide->getRegions() as $region) {

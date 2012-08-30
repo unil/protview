@@ -5,16 +5,9 @@ require_once(xContext::$basepath.'/lib/protview/protview/geom/shape/complex/Exte
 
 class PeptideShape {
 
-	private $params = array(
-			"minX" => 0,
-			"maxX" => 0,
-			"minY" => 0,
-			"maxY" => 0
-	);
 	private $peptide;
 	private $startCoord;
 	private $aaSize;
-
 
 	private $aaCoords = array();
 	private $membraneCoords = array();
@@ -194,38 +187,49 @@ class PeptideShape {
 	public function getAACoordinates() {
 		return $this->AAcoords;
 	}
-
-	public function getMembraneCoordinates() {
-		$this->membraneCoords['minY'] -= $this->aaSize;
-		return $this->membraneCoords;
-	}
 	
 	public function getParams() {
 		$coords = $this->AAcoords;
-		//for perfomance reasons, this should be calculated for each shape
+		
+
+		
+		$dimension = array(
+				"minX" => 0,
+				"maxX" => 0,
+				"minY" => 0,
+				"maxY" => 0
+		);
+
 		foreach ($coords as $coord) {
 			$x = $coord['x'];
 			$y = $coord['y'];
 			//calculates minY and maxY
-			if ($y < $this->params['minY'])
-				$this->params['minY'] = $y;
+			if ($y < $dimension['minY'])
+				$dimension['minY'] = $y;
 				
-			if ($y > $this->params['maxY'])
-				$this->params['maxY'] = $y;
+			if ($y > $dimension['maxY'])
+				$dimension['maxY'] = $y;
 				
-			if ($x < $this->params['minX'])
-				$this->params['minX'] = $x;
+			if ($x < $dimension['minX'])
+				$dimension['minX'] = $x;
 		
-			if ($x > $this->params['maxX'])
-				$this->params['maxX'] = $x;		
+			if ($x > $dimension['maxX'])
+				$dimension['maxX'] = $x;		
 		}
 		
-		$this->params['minY'] -= $this->aaSize/2;
-		$this->params['maxY'] += $this->aaSize/2;
-		$this->params['minX'] -= $this->aaSize/2;
-		$this->params['maxX'] += $this->aaSize/2;
+		$dimension['minY'] -= $this->aaSize/2;
+		$dimension['maxY'] += $this->aaSize/2;
+		$dimension['minX'] -= $this->aaSize/2;
+		$dimension['maxX'] += $this->aaSize/2;
 		
-		return $this->params;
+		$this->membraneCoords['minY'] -= $this->aaSize;
+		
+		$params = array(
+				"dimension" => $dimension,
+				"membrane" => $this->membraneCoords
+		);
+		
+		return $params;
 	}
 }
 

@@ -76,17 +76,22 @@ for ($d = 0; $d < count($regions); $d++) {
 $proteinCalc = new PeptideShape($peptide, $startCoord, $size);
 
 $coords = $proteinCalc->getAACoordinates();
-$membraneCoords = $proteinCalc->getMembraneCoordinates();
+
 
 $params = $proteinCalc->getParams();
 
-$height = $params['maxY'] - $params['minY'];
-$width = $params['maxX'] - $params['minX'];
+$dimension = $params['dimension'];
+$membrane = $params['membrane'];
 
-$minX = $params['minX'];
-$maxX = $params['maxX'];
-$minY = $params['minY'];
-$maxY = $params['maxY'];
+$minX = $dimension['minX'];
+$maxX = $dimension['maxX'];
+$minY = $dimension['minY'];
+$maxY = $dimension['maxY'];
+
+$height = $maxY - $minY;
+$width = $maxX - $minX;
+
+
 
 header("Content-type: image/svg+xml");
 echo '<?xml version="1.0"?>';
@@ -100,7 +105,7 @@ preserveAspectRatio="xMinYMin meet"
 viewBox="' . $minX . ' ' . $minY . ' ' . $width . ' ' . $height . '">';
 
 
-echo $svgGraphics->drawMembrane($minX, $maxX, $membraneCoords['minY'], $membraneCoords['maxY']);
+echo $svgGraphics->drawMembrane($minX, $maxX, $membrane['minY'], $membrane['maxY']);
 
 //drawing
 foreach ($coords as $k => $v) {

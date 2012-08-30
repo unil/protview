@@ -44,7 +44,7 @@ ProtView.DrawBoard.Utils.Drawing = Class.extend( {
 	 */
 	drawAminoAcid : function (x, y, size, label, pos) {
 		var svg = this.svg;
-		g = svg.group({
+		var g = svg.group({
 			id : 'aa-' + pos,
 			class_: 'aa',
 			/*
@@ -66,6 +66,24 @@ ProtView.DrawBoard.Utils.Drawing = Class.extend( {
 			id : 'aa-' + pos + '-seq_num',
 			class_: 'seq_num'
 		});
+	},
+	/**
+	 * Draws the membrane of the current protein
+	 * 
+	 * @param minX
+	 * @param maxX
+	 * @param minY
+	 * @param maxY
+	 */
+	drawMembrane : function(minX, maxX, minY, maxY) {
+		var svg = this.svg;
+		var g = svg.group({
+			id : 'membrane'
+		});
+
+		svg.line(g, minX, minY, maxX, minY, {strokeWidth: 2, id : 'membrane-bottom'});
+		svg.line(g, minX, ((maxY+minY)/2), maxX, ((maxY+minY)/2), {strokeWidth: (maxY-minY), id : 'membrane-center'});
+		svg.line(g, minX, maxY, maxX, maxY, {strokeWidth: 2, id : 'membrane-top'});
 	},
 
 	/**
