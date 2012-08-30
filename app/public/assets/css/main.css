@@ -27,24 +27,24 @@ html,body,h1 {
 #header {
 	height: 44px;
 	margin: 10px;
+	width: 99%;
 }
 
 #footer {
+	border: medium none;
+	bottom: 0;
 	color: #FFFFFF;
-	margin: 10px;
-	height: 20px;;
 	font-weight: normal;
-	text-align: right;
-	clear: both;
 	height: 40px;
-	border: none;
+	margin: 10px;
+	position: absolute;
+	text-align: right;
+	width: 99%;
 }
 
 #content {
 	min-width: 100%;
 	width: 100%;
-	/*display: inline;*/
-	/*padding: 6px;*/
 }
 
 #main {
@@ -64,11 +64,11 @@ html,body,h1 {
 
 #toolbar {
 	display: block;
-    height: 50%;
-    outline: medium none;
-    position: absolute;
-    text-align: left;
-    vertical-align: middle;
-    width: 40px;
-    top: 55px;
+	height: 50%;
+	outline: medium none;
+	position: absolute;
+	text-align: left;
+	vertical-align: middle;
+	width: 40px;
+	top: 55px;
 }

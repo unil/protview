@@ -10,10 +10,7 @@ ProtView.DrawBoard.View.DrawBoardView = ProtView.Core.View.extend({
 			},
 			settings: {
 				xmlns : "http://www.w3.org/2000/svg",
-				width : "100%",
-				height : "800px", 
 				preserveAspectRatio : "xMinYMin meet",
-				viewBox : "0 0 1000 800",
 				style : "display:inline; float: left; z-index: 1;",
 				id : 'svg-representation'
 			}
@@ -29,7 +26,7 @@ ProtView.DrawBoard.View.DrawBoardView = ProtView.Core.View.extend({
 	resize: function() {
 		var h = $(window).height();
 	    var w = $(window).width();
-	    $("#svg-representation").attr('height', (h-100) + 'px').attr('width', (w-200) + 'px');
+	    $("#svg-representation").attr('height', (h-120) + 'px').attr('width', (w-200) + 'px');
 	},
 	render : function() {
 		var model = this.model;

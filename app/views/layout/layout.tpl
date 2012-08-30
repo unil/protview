@@ -37,16 +37,16 @@
 	<!-- BEGIN PAGE -->
 	<div id="page">
 		<!-- BEBIN HEADER -->
-		<div id="header" style="height: 30px">
+		<div id="header">
 			<div id='menubar'>
 				<?php echo xView::load('menubar/menubar')->render() ?>
 			</div>
 		</div>
 		<!-- END HEADER -->
 		<!-- BEGIN MAIN -->
-		<div id="main" style="height: 550px">
+		<div id="main">
 			<!-- BEGIN CONTENT -->
-			<div id="content" style="height: 540px">
+			<div id="content">
 				<?php if (is_array($d['messages'])) foreach ($d['messages'] as $type => $message): ?>
 				<div class="alert <?php echo $type ?>">
 					<button class="close" data-dismiss="alert">×</button>
