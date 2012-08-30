@@ -84,6 +84,7 @@ $height = $params['maxY'] - $params['minY'];
 $width = $params['maxX'] - $params['minX'];
 
 $minX = $params['minX'];
+$maxX = $params['maxX'];
 $minY = $params['minY'];
 $maxY = $params['maxY'];
 
@@ -99,9 +100,7 @@ preserveAspectRatio="xMinYMin meet"
 viewBox="' . $minX . ' ' . $minY . ' ' . $width . ' ' . $height . '">';
 
 
-echo $svgGraphics->drawMembrane($minX, $membraneCoords['minY'], $width, $membraneCoords['maxY']-$membraneCoords['minY']);
-
-//xContext::$log->log(array('coords', $coords), 'protein');
+echo $svgGraphics->drawMembrane($minX, $maxX, $membraneCoords['minY'], $membraneCoords['maxY']);
 
 //drawing
 foreach ($coords as $k => $v) {

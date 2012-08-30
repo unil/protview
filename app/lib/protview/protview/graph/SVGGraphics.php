@@ -10,11 +10,11 @@ class SVGGraphics {
 		</g>";
 	}
 	
-	public function drawMembrane($x, $y, $width, $height) {
+	public function drawMembrane($minX, $maxX, $minY, $maxY) {
 		$membrane = "";
-		$membrane .= "<line x1=\"{$x}\" x2=\"". ($x+$width) . "\" y1=\"". ($y+$height) . "\" y2=\"". ($y+$height) . "\" style=\"fill:none;stroke:#d83200;stroke-width:2px;\"/>";
-		$membrane .= "<line x1=\"{$x}\" x2=\"". ($x+$width) . "\" y1=\"". ($y+$height/2) . "\" y2=\"". ($y+$height/2) ."\" style=\"fill:none;stroke:#fab998;stroke-width:". ($height) . "px;\"/>";
-		$membrane .= "<line x1=\"{$x}\" x2=\"". ($x+$width) . "\" y1=\"". ($y) . "\" y2=\"". ($y) . "\" style=\"fill:none;stroke:#d83200;stroke-width:1px;\"/>";
+		$membrane .= "<line x1=\"$minX\" x2=\"$maxX\" y1=\"$minY\" y2=\"$minY\" style=\"fill:none;stroke:#d83200;stroke-width:2px;\"/>";
+		$membrane .= "<line x1=\"$minX\" x2=\"$maxX\" y1=\"". (($maxY+$minY)/2) . "\" y2=\"". (($maxY+$minY)/2) ."\" style=\"fill:none;stroke:#fab998;stroke-width:". ($maxY-$minY) . "px;\"/>";
+		$membrane .= "<line x1=\"$minX\" x2=\"$maxX\" y1=\"$maxY\" y2=\"$maxY\" style=\"fill:none;stroke:#d83200;stroke-width:1px;\"/>";
 		return $membrane;
 	}
 }
