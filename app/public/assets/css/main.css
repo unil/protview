@@ -40,6 +40,7 @@ html,body,h1 {
 	position: absolute;
 	text-align: right;
 	width: 99%;
+	z-index: 2000;
 }
 
 #content {
