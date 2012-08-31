@@ -44,7 +44,7 @@
 	$(document).ready(function() {
 		var mb = new ProtView.Application.MenubarView();
 
-		//bug fixe for menu not closing
+		//bug fix for menu not closing
 		$(".menu").bind("click", function (e) {
 			var currentMenu = $(this).parent('ul').parent('li');
 		    currentMenu.removeClass("open");
