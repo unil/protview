@@ -217,10 +217,10 @@ class PeptideShape {
 				$dimension['maxX'] = $x;		
 		}
 		
-		$dimension['minY'] -= $this->aaSize/2;
-		$dimension['maxY'] += $this->aaSize/2;
-		$dimension['minX'] -= $this->aaSize/2;
-		$dimension['maxX'] += $this->aaSize/2;
+		$dimension['minY'] -= $this->aaSize/2 + 1;
+		$dimension['maxY'] += $this->aaSize/2 + 1;
+		$dimension['minX'] -= $this->aaSize/2 + 1;
+		$dimension['maxX'] += $this->aaSize/2 + 1;
 		
 		$this->membraneCoords['minY'] -= $this->aaSize;
 		
