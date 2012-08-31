@@ -26,7 +26,7 @@
 					</li>
 				</ul>
 				<ul class="nav pull-right">
-					<li class="divider-vertical"></li>
+					<li></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown">About <b class="caret"></b>
 					</a>

@@ -58,8 +58,11 @@
 		<!-- END MAIN -->
 		<!-- BEGIN FOOTER -->
 		<div id="footer">
-			<div class="navbar-inner">&copy; 2012 - Université de Lausanne - All
-				right reserved</div>
+			<div class="navbar-inner">
+						<div class="container">
+			<span class="brand" style="float:left;"><img src="<?php echo xUtil::url('a/img/unil_blanc.png')?>" /></span>
+			<div class="nav-collapse" style="padding-top:5px; font-size: 10px;">&copy; 2012 - Université de Lausanne - All
+				right reserved</div></div>
 		</div>
 		<!-- END FOOTER -->
 	</div>

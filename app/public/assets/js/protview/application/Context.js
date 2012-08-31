@@ -1,3 +1,6 @@
+/**
+ * 
+ */
 ProtView.Application.Context = Class.extend( {
 	sandbox: null,
 	store : {

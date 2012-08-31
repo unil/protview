@@ -1,4 +1,4 @@
-<div id="toolbar" style="padding: 8px 0; background-color:#CCCCCC;" class="well">
+<div id="toolbar" style="padding: 8px 0; background-color:#CAD353;" class="well">
 	<ul class="nav nav-list">
 		<li><a id="drawboad-show-representation"><i class="icon-picture"></i> </a>
 		</li>
