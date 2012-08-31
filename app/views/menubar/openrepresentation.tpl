@@ -6,7 +6,7 @@
 
 		foreach ($representations as $representation) {
 			echo '<ul>';
-			echo "<li><a href='#view/{$representation['protein_id']}/{$representation['id']}'>{$representation['title']} (contributors: {$representation['contributors']})</a></li>";
+			echo "<li class='close_dialog'><a href='#view/{$representation['protein_id']}/{$representation['id']}'>{$representation['title']} (contributors: {$representation['contributors']})</a></li>";
 			echo '</ul>';
 		}
 		?>
@@ -25,6 +25,9 @@
 			  //cleaning dom
 			  $('#open-representation-dialog').remove();
 			  $('.jqx-window-modal ').remove();
+		  });
+		  $('.close_dialog').click(function() {
+			  $('#open-representation-dialog').jqxWindow('close');
 		  });
 	});
 </script>
