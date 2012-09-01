@@ -17,15 +17,17 @@
 							1024x768
 						</label> <label class="radio"> <input type="radio"
 							name="export-size" id="export-size-other" value="other"> Other :
-							<input type="text" name="export-size-other-size" id="export-size-other-size" value="">
+							
 						</label>
+						<input class="input-xmini inline" type="text" name="export-size-other-width" id="export-size-other-width" value=""> x
+						<input class="input-xmini inline" type="text" name="export-size-other-height" id="export-size-other-height" value="">
 					</div>
 				</div>
 			</div>
 			<div class="form-actions">
 				<button class="btn btn-primary" type="submit"
 					id="export-form-submit">Export</button>
-				<button class="btn">Cancel</button>
+				<button id="export-dialog-close" class="btn">Cancel</button>
 			</div>
 		</form>
 	</div>
@@ -40,8 +42,12 @@
 		});
 		$('#svgContent').val(svgContent);
 
+		var svg = $('#drawBoard').svg('get');
+		var c = svg.getElementById('svg-representation');
+		
+
 		console.log('log');
-		console.log($('#svg-representation').attr('viewBox'));
+		console.log($(c).attr('viewBox'));
 
 		
 		  $('#export-dialog').jqxWindow({ 
@@ -53,8 +59,13 @@
           });
 		  $('#export-dialog').bind('closed', function (event) {
 			  //cleaning dom
-			  $('#open-representation-dialog').remove();
+			  $('#export-dialog').remove();
 			  $('.jqx-window-modal ').remove();
+		  });
+
+		  $('#export-dialog-close').click(function(e) {
+			  e.preventDefault();
+			  $('#export-dialog').jqxWindow('close');
 		  });
 	});
 </script>
