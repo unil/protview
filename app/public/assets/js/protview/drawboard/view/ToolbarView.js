@@ -2,10 +2,10 @@ ProtView.DrawBoard.View.ToolbarView = Backbone.View.extend({
 	el : '#toolbar',
 	events : {
 		'click #drawboad-show-representation' : 'showRepresentation',
-		'click #drawboard-export-png' : 'exportPNG'
+		'click #drawboard-export-png' : 'exportFile'
 	},
-	exportPNG : function() {
-		var svg_data = $('#svg-representation').contents();
+	exportFile : function() {
+		/*var svg_data = $('#svg-representation').contents();
 		var svgContent = '';
 		svg_data.each(function(key, val) {
 			svgContent += $("<div/>").html($(val).clone()[0]).html();
@@ -14,18 +14,19 @@ ProtView.DrawBoard.View.ToolbarView = Backbone.View.extend({
 		/*
 		 * var svg = $('#drawBoard').svg('get'); var svgContent = svg.toSVG();
 		 */
-
-		var url = Application.ROOTPATH + 'raw/drawingboard/do/export';
+		
+		
+		var url = Application.ROOTPATH + 'raw/drawingboard/do/exportDialog';
 		$.ajax({
 			type : 'post',
 			url : url,
 			dataType : 'html',
-			data : {
+			/*data : {
 				svg : svgContent,
 				css : 'protein.css'
-			},
+			},*/
 			success : function(data) {
-				
+				$('#application-items').append(data);
 			}
 		});
 	},
