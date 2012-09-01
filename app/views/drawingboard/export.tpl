@@ -1,4 +1,4 @@
 <?php 
-header('Content-type: image/png');
+header('Content-type: application/octet-stream');
 echo $d['png'] 
 ?>

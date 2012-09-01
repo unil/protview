@@ -1,9 +1,9 @@
 <div id="new-protein-dialog">
 	<div>New protein</div>
 	<div>
-	<div style="display: block;" class="alert alert-error">
+	<!--  <div style="display: block;" class="alert alert-error">
             <strong>Ooops!</strong> You did not pass the validation.
-          </div>
+          </div>-->
 	In order to create a new protein, please enter name bellow.
 	<form id="new-protein-form" class="form-horizontal">
 	 <script type="text/template" id="new-protein-form-template">
@@ -26,7 +26,7 @@
 		  $('#new-protein-dialog').jqxWindow({ 
 			  theme: Application.THEME, 
 			  width: 400,
-              height: 220, 
+              height: 180, 
               resizable: false,
               isModal: true
           });

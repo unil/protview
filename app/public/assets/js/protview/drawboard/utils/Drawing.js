@@ -70,7 +70,7 @@ ProtView.DrawBoard.Utils.Drawing = Class.extend( {
 			 * bug fix for translation start position bug as draggable is based on
 			 * html dom
 			 */
-			style : 'position: relative; left: ' + x + 'px; top:' + y + 'px;',
+			style : 'position: relative !important; left: ' + x + 'px; top:' + y + 'px;',
 			transform: 'translate(' + x + ',' + y + ')'
 		});
 
@@ -119,6 +119,7 @@ ProtView.DrawBoard.Utils.Drawing = Class.extend( {
 			  	.draggable({
 				  // sets cursor position relative to elements size
 				  cursorAt: { 
+					  position: 'absolute !important',
 					  top: self.aaSize, 
 					  left: self.aaSize 
 					  }
