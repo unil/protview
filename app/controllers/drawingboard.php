@@ -5,15 +5,23 @@ class DrawingBoardController extends RESTController {
 		throw new xException("Method not allowed", 403);
 	}
 	
-	function exportDialogAction() {		
-		$data = array();
+	function exportDialogAction() {
+		$css = '';
+		
+		if (isset($this->params['css']))
+			$css = $this->params['css'];
+		
+		$data = array('css' => $css);
 		return xView::load('drawingboard/export', $data, $this->meta)->render();
 	}
 
 	function exportAction() {
 		$png = null;
 
-		$svgContent = $this->params['svg'];
+		if (!isset($this->params['svgContent'])) throw new xException('No SVG content provided', 400);
+		
+		$svgContent = $this->params['svgContent'];
+		
 
 		if ($svgContent != null) {
 			require_once(xContext::$basepath.'/lib/protview/protview/graph/SVGConverter.php');
@@ -34,14 +42,11 @@ class DrawingBoardController extends RESTController {
 			$svg .= $svgContent;
 			$svg .= '</svg>';
 			
-			
-
-
 			$png = SVGConverter::SVGStreamToPNG($svg);
 		}
-		require_once(xContext::$basepath.'/lib/protview/protview/graph/SVGConverter.php');
+		/*require_once(xContext::$basepath.'/lib/protview/protview/graph/SVGConverter.php');
 		$svg = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg"><style type="text/css"><![CDATA[circle{stroke: #006600;fill:#00cc00;}]]></style><circle cx="40" cy="40" r="24"/></svg>';
-		$png = SVGConverter::SVGStreamToPNG($svg);
+		$png = SVGConverter::SVGStreamToPNG($svg);*/
 
 		header("Cache-Control: public");
 		header("Content-Description: File Transfer");

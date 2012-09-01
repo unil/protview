@@ -2,8 +2,9 @@
 	<div>Export</div>
 	<div>
 		<form id="export-form" class="form-horizontal" method="post" action="<?php echo xUtil::url('raw/drawingboard/do/export')?>" target="download">
-			<input type="hidden" id="svg_content" value="">
-			<input type="hidden" id="svg_viewbox" value="">
+			<input type="hidden" name="svgContent" id="svgContent" value="">
+			<input type="hidden" name="svgViewbox" id="svgViewbox" value="">
+			<input type="hidden" name="css" id="css" value="<?php echo $d['css'];?>">
 			<div id="peptide-form-insert">
 				<div class="control-group">
 					<label for="export-size" id="export-size-label"
@@ -37,7 +38,7 @@
 		svg_data.each(function(key, val) {
 			svgContent += $("<div/>").html($(val).clone()[0]).html();
 		});
-		$('#svg_content').val(svgContent);
+		$('#svgContent').val(svgContent);
 
 		console.log('log');
 		console.log($('#svg-representation').attr('viewBox'));

@@ -9,7 +9,7 @@ ProtView.DrawBoard.View.ToolbarView = Backbone.View.extend({
 		var svgContent = '';
 		svg_data.each(function(key, val) {
 			svgContent += $("<div/>").html($(val).clone()[0]).html();
-		});
+		});*/
 
 		/*
 		 * var svg = $('#drawBoard').svg('get'); var svgContent = svg.toSVG();
@@ -21,10 +21,9 @@ ProtView.DrawBoard.View.ToolbarView = Backbone.View.extend({
 			type : 'post',
 			url : url,
 			dataType : 'html',
-			/*data : {
-				svg : svgContent,
+			data : {
 				css : 'protein.css'
-			},*/
+			},
 			success : function(data) {
 				$('#application-items').append(data);
 			}
