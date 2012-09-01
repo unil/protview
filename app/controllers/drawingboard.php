@@ -5,7 +5,7 @@ class DrawingBoardController extends RESTController {
 		throw new xException("Method not allowed", 403);
 	}
 	
-	function exportDialogAction() {
+	function exportDialogAction() {		
 		$data = array();
 		return xView::load('drawingboard/export', $data, $this->meta)->render();
 	}

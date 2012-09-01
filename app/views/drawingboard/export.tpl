@@ -1,7 +1,9 @@
 <div id="export-dialog">
 	<div>Export</div>
 	<div>
-		<form id="export-form" class="form-horizontal">
+		<form id="export-form" class="form-horizontal" method="post" action="<?php echo xUtil::url('raw/drawingboard/do/export')?>" target="download">
+			<input type="hidden" id="svg_content" value="">
+			<input type="hidden" id="svg_viewbox" value="">
 			<div id="peptide-form-insert">
 				<div class="control-group">
 					<label for="export-size" id="export-size-label"
@@ -27,8 +29,20 @@
 		</form>
 	</div>
 </div>
+<iframe id="download" name="download" width="0" height="0"></iframe>
 <script type="text/javascript">
 	$(document).ready(function() {
+		var svg_data = $('#svg-representation').contents();
+		var svgContent = '';
+		svg_data.each(function(key, val) {
+			svgContent += $("<div/>").html($(val).clone()[0]).html();
+		});
+		$('#svg_content').val(svgContent);
+
+		console.log('log');
+		console.log($('#svg-representation').attr('viewBox'));
+
+		
 		  $('#export-dialog').jqxWindow({ 
 			  theme: Application.THEME, 
 			  width: 400,
