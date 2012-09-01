@@ -31,8 +31,9 @@
 			</div>
 		</form>
 	</div>
+	<iframe id="download" name="download" width="0" height="0"></iframe>
 </div>
-<iframe id="download" name="download" width="0" height="0"></iframe>
+
 <script type="text/javascript">
 	$(document).ready(function() {
 		var svg_data = $('#svg-representation').contents();
