@@ -26,7 +26,7 @@ class SVGConverter {
 			if (file_exists($pngFile)) {	
 				$output = file_get_contents($pngFile);
 				//tmp file cleaning
-				//exec("rm $pngFile");
+				exec("rm $pngFile");
 			}
 		}
 		
