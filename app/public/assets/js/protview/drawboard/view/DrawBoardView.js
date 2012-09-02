@@ -1,5 +1,6 @@
 ProtView.DrawBoard.View.DrawBoardView = ProtView.Core.View.extend({
 	//el : '#drawBoard',
+	updatedElements : {},
 	initialize : function(args) {
 		var self = this;
 		self.$el.svg({
@@ -18,12 +19,23 @@ ProtView.DrawBoard.View.DrawBoardView = ProtView.Core.View.extend({
 	},
 	events: { 
 	},
-	updateCoord : function(element) {
-		console.log('drag');
-  		console.log(element);
+	updateCoord : function(element, x, y, context) {
+		var el = $(element);
+		var elId = el.attr('id');
+		//store in local updatedElements
+		context.updatedElements[elId] = {x : x, y : y};
+		/*console.log('drag');
+		console.log('element id: ' + $(element).attr('id'));
+  		console.log('x ' + x + ' y: ' + y);
+  		console.log('this');
+  		console.log(context);
+  		console.log('structuralGeometries');
+  		console.log(context.model.get('structuralGeometries').get(67).get('coordinates'));*/
+		console.log('update');
+		console.log(context.updatedElements);
 	},
 	setModel : function(model) {
-		model.on('change', this.render, this);	
+		model.on('change', this.render, this);
 		model.on('reset', this.render, this);	
 		this.model = model;
 	},
@@ -33,11 +45,12 @@ ProtView.DrawBoard.View.DrawBoardView = ProtView.Core.View.extend({
 	    $("#svg-representation").attr('height', (h-120) + 'px').attr('width', (w-200) + 'px');
 	},
 	render : function() {
-		var model = this.model;
+		var model = this.model,
+		self = this;
 		
 		console.log('model');
 		console.log(model);
-		this.drawing.paint(model.get('structuralGeometries'), model.get('params'), this.updateCoord);
+		this.drawing.paint(model.get('structuralGeometries'), model.get('params'), this.updateCoord, self);
 
 
 		$(window).resize(this.resize).resize();

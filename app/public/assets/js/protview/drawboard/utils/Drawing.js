@@ -5,7 +5,7 @@ ProtView.DrawBoard.Utils.Drawing = Class.extend( {
 	init: function(svg) {
 		this.svg = svg;
 	},
-	paint : function(collection, params, callback) {
+	paint : function(collection, params, callback, context) {
 
 		var self = this;
 		
@@ -32,20 +32,22 @@ ProtView.DrawBoard.Utils.Drawing = Class.extend( {
 	        var coordinates = geometry.get('coordinates');
 			var labels = geometry.get('labels');
 			
+			var geometry_id = geometry.id;
 
 			for (var j = 0, lenC = coordinates.length; j < lenC; j++) {
 				var coordinate = coordinates[j];
 				var label = labels[j].split("-");
 				var x = coordinate.x;
 				var y = coordinate.y;
+				var id = coordinate.id;
 				
 				var type = label[0];
 				var pos = label[1];
 					
-				self.drawAminoAcid(x, y, self.aaSize, type, pos);
+				self.drawAminoAcid(x, y, self.aaSize, type, pos, geometry_id + '-' + id);
 			}
 		}
-	    self.addDragSupport($('.dragsupport'), callback);
+	    self.addDragSupport($('.dragsupport'), callback, context);
 	},
 	clearAll : function() {
 		this.svg.clear();
@@ -61,10 +63,10 @@ ProtView.DrawBoard.Utils.Drawing = Class.extend( {
 	 * @param label
 	 * @param pos
 	 */
-	drawAminoAcid : function (x, y, size, label, pos) {
+	drawAminoAcid : function (x, y, size, label, pos, id) {
 		var svg = this.svg;
 		var g = svg.group({
-			id : 'aa-' + pos,
+			id : 'aa-' + id,
 			class_: 'aa dragsupport',
 			/*
 			 * bug fix for translation start position bug as draggable is based on
@@ -75,14 +77,14 @@ ProtView.DrawBoard.Utils.Drawing = Class.extend( {
 		});
 
 		svg.circle(g, 0, 0, size, {
-			id: 'aa-' + pos + '-cercle'
+			id: 'aa-' + id + '-cercle'
 		});
 
 		svg.text(g, -4, 0, label, {
-			id : 'aa-' + pos + '-text'
+			id : 'aa-' + id + '-text'
 		});
 		svg.text(g, -4, 6, pos, {
-			id : 'aa-' + pos + '-seq_num',
+			id : 'aa-' + id + '-seq_num',
 			class_: 'seq_num'
 		});
 	},
@@ -112,7 +114,7 @@ ProtView.DrawBoard.Utils.Drawing = Class.extend( {
 	 * 
 	 * @param svgElement
 	 */
-	addDragSupport : function (svgElement, callback) {
+	addDragSupport : function (svgElement, callback, context) {
 		var self = this;
 		if (svgElement != null) {
 			svgElement
@@ -128,7 +130,7 @@ ProtView.DrawBoard.Utils.Drawing = Class.extend( {
 			  		// update coordinates manually, since top/left style props don't
 					// work on SVG
 			  		if (callback != null)
-			  			callback(event.target);
+			  			callback(event.target, ui.position.left, ui.position.top, context);
 			  		event.target.setAttribute('transform', 'translate(' + ui.position.left + ',' + ui.position.top + ')');
 			  	})
 			  	//this event should not be handled here
