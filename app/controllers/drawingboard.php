@@ -19,7 +19,9 @@ class DrawingBoardController extends RESTController {
 		$png = null;
 
 		if (!isset($this->params['svgContent'])) throw new xException('No SVG content provided', 400);
+		if (!isset($this->params['token'])) throw new xException('No token for download provided', 400);
 		
+		$token = $this->params['token'];
 		$svgContent = $this->params['svgContent'];
 		
 
@@ -47,7 +49,7 @@ class DrawingBoardController extends RESTController {
 		/*require_once(xContext::$basepath.'/lib/protview/protview/graph/SVGConverter.php');
 		$svg = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg"><style type="text/css"><![CDATA[circle{stroke: #006600;fill:#00cc00;}]]></style><circle cx="40" cy="40" r="24"/></svg>';
 		$png = SVGConverter::SVGStreamToPNG($svg);*/
-
+		setcookie("download", $token, time()+3600, xUtil::url(''));
 		header("Cache-Control: public");
 		header("Content-Description: File Transfer");
 		header("Content-Disposition: attachment; filename=export.png");
