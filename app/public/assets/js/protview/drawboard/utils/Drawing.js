@@ -5,7 +5,7 @@ ProtView.DrawBoard.Utils.Drawing = Class.extend( {
 	init: function(svg) {
 		this.svg = svg;
 	},
-	paint : function(collection, params) {
+	paint : function(collection, params, callback) {
 
 		var self = this;
 		
@@ -45,7 +45,7 @@ ProtView.DrawBoard.Utils.Drawing = Class.extend( {
 				self.drawAminoAcid(x, y, self.aaSize, type, pos);
 			}
 		}
-	    self.addDragSupport($('.dragsupport'));
+	    self.addDragSupport($('.dragsupport'), callback);
 	},
 	clearAll : function() {
 		this.svg.clear();
@@ -112,7 +112,7 @@ ProtView.DrawBoard.Utils.Drawing = Class.extend( {
 	 * 
 	 * @param svgElement
 	 */
-	addDragSupport : function (svgElement) {
+	addDragSupport : function (svgElement, callback) {
 		var self = this;
 		if (svgElement != null) {
 			svgElement
@@ -127,6 +127,8 @@ ProtView.DrawBoard.Utils.Drawing = Class.extend( {
 			  	.bind('drag', function(event, ui){
 			  		// update coordinates manually, since top/left style props don't
 					// work on SVG
+			  		if (callback != null)
+			  			callback(event.target);
 			  		event.target.setAttribute('transform', 'translate(' + ui.position.left + ',' + ui.position.top + ')');
 			  	})
 			  	//this event should not be handled here

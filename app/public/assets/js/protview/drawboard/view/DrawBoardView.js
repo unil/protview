@@ -18,6 +18,10 @@ ProtView.DrawBoard.View.DrawBoardView = ProtView.Core.View.extend({
 	},
 	events: { 
 	},
+	updateCoord : function(element) {
+		console.log('drag');
+  		console.log(element);
+	},
 	setModel : function(model) {
 		model.on('change', this.render, this);	
 		model.on('reset', this.render, this);	
@@ -33,7 +37,7 @@ ProtView.DrawBoard.View.DrawBoardView = ProtView.Core.View.extend({
 		
 		console.log('model');
 		console.log(model);
-		this.drawing.paint(model.get('structuralGeometries'), model.get('params'));
+		this.drawing.paint(model.get('structuralGeometries'), model.get('params'), this.updateCoord);
 
 
 		$(window).resize(this.resize).resize();

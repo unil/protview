@@ -45,6 +45,38 @@ class RepresentationsController extends RESTController {
 		$data['items'] = $items;
 		return $data;
 	}
+	
+	function post() {
+		// Checks if method is allowed
+		if (!in_array('post', $this->allow)) throw new xException("Method not allowed", 403);
+		// Checks provided parameters
+		if (!isset($this->params['items'])) throw new xException('No items provided', 400);
+		
+		$items = $this->params['items'];
+		if (!isset($items['id'])) throw new xException('No id provided', 400);
+		
+		$ret = array();
+		
+		$structuralGeometries = $items['structuralGeometries'];
+		
+		foreach ($structuralGeometries as $structuralGeometry) {
+			
+			$coordinates = $structuralGeometry['coordinates'];
+			
+			foreach ($coordinates as $coordinate) {
+				$ret = xController::load(
+						'structural-coordinates', array(
+								'id' => $coordinate['id'],
+								'items' => array (
+										'id' => $coordinate['id'], 
+										'coordinate' => $coordinate['x'] . '/' . $coordinate['y'],
+								)
+						))->post();
+			}
+		}
+		
+		return $ret;
+	}
 
 	function put() {
 		// Checks if method is allowed
