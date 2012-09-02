@@ -21,7 +21,7 @@
 						<label class="radio"> <input type="radio" name="export-size"
 							id="export-size-original" value="original" checked> Original
 						</label> <label class="radio"> <input type="radio"
-							name="export-size" id="export-size-1024_768" value="1024_768">
+							name="export-size" id="export-size-1024_768" value="1024x768">
 							1024x768
 						</label> <label class="radio"> <input type="radio"
 							name="export-size" id="export-size-other" value="other"> Other :
@@ -41,9 +41,9 @@
 			</div>
 		</form>
 	</div>
-	<iframe id="download" name="download" width="0" height="0"></iframe>
+	
 </div>
-
+<iframe id="download" name="download" width="0" height="0"></iframe>
 <script type="text/javascript">
 	var token = new Date().getTime();
 	$(document).ready(function() {
@@ -55,8 +55,12 @@
 		});
 		$('#svgContent').val(svgContent);
 
-		var svg = $('#drawBoard').svg('get');
-		var c = svg.getElementById('svg-representation');
+
+		var svg = $('#svg-representation')[0];
+		var viewbox = svg.getAttribute('viewBox');
+
+		$('#svgViewbox').val(viewbox);
+
 		
 		$('#token').val(token);
 		/*console.log('log');
