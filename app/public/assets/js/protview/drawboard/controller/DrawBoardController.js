@@ -19,9 +19,19 @@ ProtView.DrawBoard.Controller.DrawBoardController = ProtView.Core.Controller.ext
 	save : function() {
 		console.log('save in controller');
 		var updatedElements = this.updatedElements;
+		var model = this.model;
+		var structuralGeometries = model.get('structuralGeometries');
 		
 		_.each(updatedElements, function(v, k){ 
-			console.log('k: ' + k + 'v: ' + v);
+			//aa-69-2674v
+			var t = k.split("-")
+			var geoId = t[1];
+			var coordId = t[2];
+			
+			var structuralGeometry = structuralGeometries.get(geoId);
+			
+			console.log('structuralGeometry');
+			console.log(structuralGeometry);
 		});
 		//console.log(context.model.get('structuralGeometries').get(67).get('coordinates'));*/
 	}
