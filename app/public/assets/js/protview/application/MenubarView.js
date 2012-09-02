@@ -4,7 +4,8 @@ ProtView.Application.MenubarView = Backbone.View.extend({
 		'click #file-new-protein' : 'newProtein',
 		'click #file-open-representation' : 'openRepresentation',
 		'click #show-drawboard' : 'showDrawboard',
-		'click #show-sidebar' : 'showSidebar'
+		'click #show-sidebar' : 'showSidebar',
+		'click #file-save-representation' : 'saveRepresentation'
 	},
 	newProtein : function() {
 		console.log('newProtein');
@@ -16,6 +17,9 @@ ProtView.Application.MenubarView = Backbone.View.extend({
 	},
 	showSidebar : function() {
 		ProtView.Application.Sandbox.start('sidebar', '#sidebar');
+	},
+	saveRepresentation : function() {
+		ProtView.Application.Sandbox.publish('/drawboard/save');
 	},
 	openRepresentation : function() {
 		var url = Application.ROOTPATH + 'raw/menubar/do/openrepresentation';

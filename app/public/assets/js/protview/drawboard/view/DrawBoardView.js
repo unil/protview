@@ -1,6 +1,5 @@
 ProtView.DrawBoard.View.DrawBoardView = ProtView.Core.View.extend({
 	//el : '#drawBoard',
-	updatedElements : {},
 	initialize : function(args) {
 		var self = this;
 		self.$el.svg({
@@ -22,17 +21,8 @@ ProtView.DrawBoard.View.DrawBoardView = ProtView.Core.View.extend({
 	updateCoord : function(element, x, y, context) {
 		var el = $(element);
 		var elId = el.attr('id');
-		//store in local updatedElements
-		context.updatedElements[elId] = {x : x, y : y};
-		/*console.log('drag');
-		console.log('element id: ' + $(element).attr('id'));
-  		console.log('x ' + x + ' y: ' + y);
-  		console.log('this');
-  		console.log(context);
-  		console.log('structuralGeometries');
-  		console.log(context.model.get('structuralGeometries').get(67).get('coordinates'));*/
-		console.log('update');
-		console.log(context.updatedElements);
+
+		context.controller.updateElement(elId, {x : x, y : y});	
 	},
 	setModel : function(model) {
 		model.on('change', this.render, this);
