@@ -49,7 +49,10 @@ ProtView.Core.Controller = Class.extend( {
 		return ret;
 	},
 	unload : function() {
-		var stack = view;
+		
+		var stack = this.views;
+		console.log('unload in main controller');
+		console.log(stack);
 		for (var el in stack) {
 			   var obj = stack[el];
 			   obj.unload();

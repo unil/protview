@@ -64,7 +64,10 @@ ProtView.Structure.Controller.MainController = ProtView.Core.MainController.exte
 		}
 	},
 	unload : function(resource) {
-		if (stack['resource'])
-			stack['resource'].unload();
+		var stack = this.stack;
+		
+		if (stack[resource]) {
+			stack[resource].unload();
+		}
 	}
 });

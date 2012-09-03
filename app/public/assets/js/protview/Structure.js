@@ -28,7 +28,7 @@ ProtView.Structure.Module = (function() {
 			console.log("ProtView.Structure.Module:show controller is null");
 	},
 	hide = function(resource) {
-		
+		controller.unload(resource);
 	},
 	unload = function() {
 		for (var el in stack) {
