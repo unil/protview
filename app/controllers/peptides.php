@@ -23,17 +23,7 @@ class PeptidesController extends RESTController {
 		$data = array();
 		return xView::load('structure/peptide', $data, $this->meta)->render();
 	}
-	/*
-	 * {
-	sequence: 'asdf',
-	terminusN: 'ext',
-	terminusC: 'int',
-	membraneRegions: [
-	{id: 1, start: 1, end: 234},
-	{id: 4, start: 500, end: 600}
-	]
-	}
-	*/
+
 	/**
 	 * Gets peptide items
 	 * 
@@ -42,18 +32,19 @@ class PeptidesController extends RESTController {
 	 * *  (string) regions : filter value separated by coma (membrane,all,ext,intra) (optional)
 	 * *  (string) protein_id : id of the protein (optional)
 	 * 
-	 * @example
-	 * Returns an array formatted as the following: <br />
-	 * array(<br />
-	 *		'sequence' => 'string value',<br />
-	 *		'terminusN' => 'intra|extra',<br />
-	 *		'terminusC' => 'intra|extra',<br />
-	 *	 	'membraneRegions' => array(<br />
-	 *			array('id'=> 1, 'start' => 1, 'end' => 234, 'type' => 'intra|extra|membrane'),<br />
-	 *			array('id'=> 2, 'start' => 235, 'end' => 400, 'type' => 'intra|extra|membrane')<br />
-	 *		]<br />
-	 *	}<br />
 	 * 
+	 * Returns an array formatted as the following:
+	 * <code>
+	 * array(
+	 *		'sequence' => 'string value',
+	 *		'terminusN' => 'intra|extra',
+	 *		'terminusC' => 'intra|extra',
+	 *	 	'membraneRegions' => array(
+	 *			array('id'=> 1, 'start' => 1, 'end' => 234, 'type' => 'intra|extra|membrane'),
+	 *			array('id'=> 2, 'start' => 235, 'end' => 400, 'type' => 'intra|extra|membrane')
+	 *		)
+	 *	}
+	 *  </code>
 	 * @returns array data (xcount, items[])
 	 */
 	function get() {
@@ -201,30 +192,32 @@ class PeptidesController extends RESTController {
 		return $r;
 	}
 
-	/*
-	 * {
-	"items": {
-	"id": 1,
-	"sequence": "abcdefghijklmnopqr",
-	"terminusN": "int",
-	"terminusC": "int",
-	"membraneRegions": [
-	{
-	"id": "2",
-	"start": "18",
-	"end": "36"
-	},
-	{
-	"id": "0",
-	"start": "23",
-	"end": "45"
-	}
-	]
-	}
-	}
-	*/
 	/**
 	 * Creates a new peptide
+	 * 
+	 * Intra/extra domains will be calculated from terminus/membrane region params
+	 * 
+	 * HTTP params are the following:
+	 *
+	 * *  (string) sequence : aa sequence (mandatory)
+	 * *  (array) membraneRegions (mandatory)
+	 * *  (string) n-terminus : intra|extra|membrane (mandatory)
+	 * *  (string) c-terminus : intra|extra|membrane (mandatory)
+	 * *  (int) id : peptide id (mandatory)
+	 * 
+	 * Data needs to be formatted as the following:
+	 * <code>
+	 * array (
+	 * 	'items' => array(
+	 * 		'id' => peptideId,
+	 * 		'sequence' => string,
+	 * 		'terminusN' => 'intra|extra|membrane',
+	 * 		'terminusC' => 'intra|extra|membrane',
+	 * 		'membraneRegions' => array(
+	 * 			array('id' => int, 'start' => int, 'end' => int)
+	 * 		)
+	 *   )
+	 * </code>
 	 * @return array data
 	 */
 	function put() {

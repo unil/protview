@@ -1,9 +1,25 @@
 <?php
-
+/**
+ * Manages the acid protein model
+ *
+ * @package controllers
+ * @author Stefan Meier
+ * @version 20120903
+ *
+ */
 class ProteinsController extends RESTController {
-
+	
+	/**
+	 *
+	 * @var \models\ProteindModel
+	 */
 	public $model = 'protein';
 	
+	/**
+	 * Gets the default postmodification form
+	 *
+	 * @return \views\structure\ProteinView
+	 */
 	function defaultAction() {
 		$data = array();
 		return xView::load('structure/protein', $data, $this->meta)->render();

@@ -1,7 +1,76 @@
 <?php
-
+/**
+ * Controls the representation model
+ *
+ * @package controllers
+ * @author Stefan Meier
+ * @version 20120903
+ *
+ */
 class RepresentationsController extends RESTController {
+	/**
+	 * Gets representation
+	 *
+	 * HTTP params are the following:
+	 *
+	 * *  (details) regions : filter value separated by coma (all|structuralGeometries) (optional)
+	 * *  (int) id : representation id (optional)
+	 * *  (int) peptide_id : peptide id (optional)
+	 *
+	 *
+	 * Returns an array formatted as the following:
+	 * <code>
+	 * array(
+	 * 		'xcount' => int
+	 *		'items' => array(
+	 *			'id' => int,
+	 *			'title' => string,
+	 *			'description' => string,
+	 *			'params' => array(
+	 *				'dimension' => array(
+	 *					'minX' => float,
+	 *					'maxX' => float,
+	 *					'minY' => float,
+	 *					'maxY' => float
+	 *				),
+	 *				'membrane' => array(
+	 *					'minY' => float,
+	 *					'maxY' => float
+	 *				)
+	 *			),
+	 *			'contributors' : array(
+	 *				array('lastName' => string, 'firstName' => string)
+	 *			),
+	 *			'structuralGeometries' => array (
+	 *				array(
+	 *					'id' => int,
+	 *					'representation_id' => int,
+	 *					'type' => 'cercle|line|loop|extendedLoop',
+	 *					'pos' => int,
+	 *					'params' => array(
+	 *						'rotation' => int,
+	 *						'sens'=> int
+	 *					),
+	 *					'labels' => array(
+	 *						'string-int'
+	 *					),
+	 *					'coordinates' => array(
+	 *						array(
+	 *							'id' => int, 
+	 *							'x' => float, 
+	 *							'y' => float, 
+	 *							'amino_acid_id' => int
+	 *						)
+	 *					)
+	 *			)
+	 *		)
+	 *		
+	 *	}
+	 *  </code>
+	 * @returns array data (xcount, items[])
+	 */
 	function get() {
+		//checks if action is allowed
 		if (!in_array('get', $this->allow)) throw new xException("Method not allowed", 403);
 
 		$data = array();
@@ -14,7 +83,7 @@ class RepresentationsController extends RESTController {
 			$detailFilter = explode(",", $this->params['details']);
 
 
-
+		//receives representations from model
 		$representations = xModel::load('representation', $this->params)->get();
 
 		$data['xcount'] = count($representations);
@@ -24,9 +93,11 @@ class RepresentationsController extends RESTController {
 			$item = array();
 			$item['id'] = $representation['id'];
 			$item['title'] = $representation['title'];
+			//decode params as information is stored as json
 			$item['params'] = json_decode($representation['params']);
 
 			$structuralGeometries = array();
+			//if there is at least one value in filter
 			if (count($detailFilter) > 0) {
 				if (in_array('all', $detailFilter) || in_array('structuralGeometries', $detailFilter)) {
 					$r = xController::load(

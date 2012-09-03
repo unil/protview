@@ -271,7 +271,7 @@ and sends this information as param to the view</p>]]></long-description>
       <error line="0" code="50007">No page-level DocBlock was found in file controllers/menubar.php</error>
     </parse_markers>
   </file>
-  <file path="controllers/peptides.php" hash="eaa13c64a02f8bdbce72366e6d363608" package="Default">
+  <file path="controllers/peptides.php" hash="5a804bd34270f045fa4181d8f267e05f" package="Default">
     <class final="false" abstract="false" namespace="global" line="10" package="controllers">
       <extends>\RESTController</extends>
       <name>PeptidesController</name>
@@ -305,125 +305,281 @@ and sends this information as param to the view</p>]]></long-description>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="59" package="controllers">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="50" package="controllers">
         <name>get</name>
         <full_name>get</full_name>
-        <docblock line="37">
+        <docblock line="27">
           <description><![CDATA[Gets peptide items]]></description>
           <long-description><![CDATA[<p>HTTP params are the following:</p>
 
 <ul>
 <li>(string) regions : filter value separated by coma (membrane,all,ext,intra) (optional)</li>
 <li>(string) protein_id : id of the protein (optional)</li>
-</ul>]]></long-description>
-          <tag line="37" name="example" description="Returns an array formatted as the following: &lt;br /&gt;&#10;array(&lt;br /&gt;&#10;'sequence' =&gt; 'string value',&lt;br /&gt;&#10;'terminusN' =&gt; 'intra|extra',&lt;br /&gt;&#10;'terminusC' =&gt; 'intra|extra',&lt;br /&gt;&#10;'membraneRegions' =&gt; array(&lt;br /&gt;&#10;array('id'=&gt; 1, 'start' =&gt; 1, 'end' =&gt; 234),&lt;br /&gt;&#10;array('id'=&gt; 2, 'start' =&gt; 235, 'end' =&gt; 400)&lt;br /&gt;&#10;]&lt;br /&gt;&#10;}&lt;br /&gt;"/>
-          <tag line="37" name="returns" description="array data (xcount, items[])"/>
+</ul>
+
+<p>Returns an array formatted as the following:</p>
+
+<pre><code>array(
+    'sequence' => 'string value',
+    'terminusN' => 'intra|extra',
+    'terminusC' => 'intra|extra',
+    'membraneRegions' => array(
+        array('id'=> 1, 'start' => 1, 'end' => 234, 'type' => 'intra|extra|membrane'),
+        array('id'=> 2, 'start' => 235, 'end' => 400, 'type' => 'intra|extra|membrane')
+    )
+}
+ </code></pre>]]></long-description>
+          <tag line="27" name="returns" description="array data (xcount, items[])"/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="178" package="controllers">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="187" package="controllers">
         <name>post</name>
         <full_name>post</full_name>
+        <docblock line="181">
+          <description><![CDATA[Updates a pepptide]]></description>
+          <long-description><![CDATA[<p>Forwards to put method</p>]]></long-description>
+          <tag line="181" name="see" description="\global\PeptidesController::put();" refers="\global\PeptidesController::put();"/>
+        </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="208" package="controllers">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="223" package="controllers">
         <name>put</name>
         <full_name>put</full_name>
+        <docblock line="195">
+          <description><![CDATA[Creates a new peptide]]></description>
+          <long-description><![CDATA[<p>Intra/extra domains will be calculated from terminus/membrane region params</p>
+
+<p>HTTP params are the following:</p>
+
+<ul>
+<li>(string) sequence : aa sequence (mandatory)</li>
+<li>(array) membraneRegions (mandatory)</li>
+<li>(string) n-terminus : intra|extra|membrane (mandatory)</li>
+<li>(string) c-terminus : intra|extra|membrane (mandatory)</li>
+<li>(int) id : peptide id (mandatory)</li>
+</ul>
+
+<p>Data needs to be formatted as the following:</p>
+
+<pre><code>array (
+    'items' => array(
+        'id' => peptideId,
+        'sequence' => string,
+        'terminusN' => 'intra|extra|membrane',
+        'terminusC' => 'intra|extra|membrane',
+        'membraneRegions' => array(
+            array('id' => int, 'start' => int, 'end' => int)
+        )
+  )
+</code></pre>]]></long-description>
+          <tag line="195" name="return" description="data" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
       </method>
     </class>
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file controllers/peptides.php</error>
       <critical line="11" code="50019">No short description for property $model</critical>
-      <error line="178" code="50010">No DocBlock was found for method post()</error>
-      <error line="208" code="50010">No DocBlock was found for method put()</error>
     </parse_markers>
   </file>
-  <file path="controllers/postmodification.php" hash="9b535374953991a19095f522255d67b4" package="Default">
-    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+  <file path="controllers/postmodification.php" hash="9de4415b278cea310ec3b25f4a190084" package="Default">
+    <class final="false" abstract="false" namespace="global" line="10" package="controllers">
       <extends>\RESTController</extends>
       <name>PostmodificationController</name>
       <full_name>\PostmodificationController</full_name>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="4" package="Default">
+      <docblock line="2">
+        <description><![CDATA[Shows the postmodification form]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="2" name="package" description="controllers"/>
+        <tag line="2" name="author" description="Stefan Meier"/>
+        <tag line="2" name="version" description="20120903"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="16" package="controllers">
         <name>defaultAction</name>
         <full_name>defaultAction</full_name>
+        <docblock line="11">
+          <description><![CDATA[Gets the default postmodification form]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="11" name="return" description="" type="\views\structure\PostModificationView">
+            <type by_reference="false">\views\structure\PostModificationView</type>
+          </tag>
+        </docblock>
       </method>
     </class>
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file controllers/postmodification.php</error>
-      <error line="3" code="50000">No DocBlock was found for \PostmodificationController</error>
-      <error line="4" code="50010">No DocBlock was found for method defaultAction()</error>
     </parse_markers>
   </file>
-  <file path="controllers/proteins.php" hash="4fa182c16f3e52504312696fa7f96459" package="Default">
-    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+  <file path="controllers/proteins.php" hash="ae4c2fb41fe507d0b49b4a22d5f59809" package="Default">
+    <class final="false" abstract="false" namespace="global" line="10" package="controllers">
       <extends>\RESTController</extends>
       <name>ProteinsController</name>
       <full_name>\ProteinsController</full_name>
-      <property final="false" static="false" visibility="public" line="5" namespace="global" package="Default">
+      <docblock line="2">
+        <description><![CDATA[Manages the acid protein model]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="2" name="package" description="controllers"/>
+        <tag line="2" name="author" description="Stefan Meier"/>
+        <tag line="2" name="version" description="20120903"/>
+      </docblock>
+      <property final="false" static="false" visibility="public" line="16" namespace="global" package="Default">
         <name>$model</name>
         <default><![CDATA['protein']]></default>
+        <docblock line="12">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="12" name="var" description="" type="\models\ProteindModel">
+            <type by_reference="false">\models\ProteindModel</type>
+          </tag>
+        </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="7" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="23" package="controllers">
         <name>defaultAction</name>
         <full_name>defaultAction</full_name>
+        <docblock line="18">
+          <description><![CDATA[Gets the default postmodification form]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="18" name="return" description="" type="\views\structure\ProteinView">
+            <type by_reference="false">\views\structure\ProteinView</type>
+          </tag>
+        </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="12" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="28" package="controllers">
         <name>put</name>
         <full_name>put</full_name>
       </method>
     </class>
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file controllers/proteins.php</error>
-      <error line="3" code="50000">No DocBlock was found for \ProteinsController</error>
-      <error line="5" code="50018">No DocBlock was found for property $model</error>
-      <error line="7" code="50010">No DocBlock was found for method defaultAction()</error>
-      <error line="12" code="50010">No DocBlock was found for method put()</error>
+      <critical line="12" code="50019">No short description for property $model</critical>
+      <error line="28" code="50010">No DocBlock was found for method put()</error>
     </parse_markers>
   </file>
-  <file path="controllers/regions.php" hash="9c5c789950412957903fa5bd7fb71884" package="Default">
-    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+  <file path="controllers/regions.php" hash="c317f33d45d7039d0dd74fa95472f216" package="Default">
+    <class final="false" abstract="false" namespace="global" line="10" package="controllers">
       <extends>\RESTController</extends>
       <name>RegionsController</name>
       <full_name>\RegionsController</full_name>
-      <property final="false" static="false" visibility="public" line="5" namespace="global" package="Default">
+      <docblock line="2">
+        <description><![CDATA[Manages Region Model]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="2" name="package" description="controllers"/>
+        <tag line="2" name="author" description="Stefan Meier"/>
+        <tag line="2" name="version" description="20120903"/>
+      </docblock>
+      <property final="false" static="false" visibility="public" line="15" namespace="global" package="Default">
         <name>$model</name>
         <default><![CDATA['region']]></default>
+        <docblock line="11">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="11" name="var" description="" type="\models\RegionModel">
+            <type by_reference="false">\models\RegionModel</type>
+          </tag>
+        </docblock>
       </property>
     </class>
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file controllers/regions.php</error>
-      <error line="3" code="50000">No DocBlock was found for \RegionsController</error>
-      <error line="5" code="50018">No DocBlock was found for property $model</error>
+      <critical line="11" code="50019">No short description for property $model</critical>
     </parse_markers>
   </file>
-  <file path="controllers/representations.php" hash="2b79909599a422af92954f3bef1af7de" package="Default">
-    <include line="101" type="Require Once" package="Default">
+  <file path="controllers/representations.php" hash="8ebd685f51c61a004cad09b146de7003" package="Default">
+    <include line="168" type="Require Once" package="Default">
       <name/>
     </include>
-    <include line="102" type="Require Once" package="Default">
+    <include line="169" type="Require Once" package="Default">
       <name/>
     </include>
-    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+    <class final="false" abstract="false" namespace="global" line="10" package="controllers">
       <extends>\RESTController</extends>
       <name>RepresentationsController</name>
       <full_name>\RepresentationsController</full_name>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="4" package="Default">
+      <docblock line="2">
+        <description><![CDATA[Controls the representation model]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="2" name="package" description="controllers"/>
+        <tag line="2" name="author" description="Stefan Meier"/>
+        <tag line="2" name="version" description="20120903"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="72" package="controllers">
         <name>get</name>
         <full_name>get</full_name>
+        <docblock line="11">
+          <description><![CDATA[Gets representation]]></description>
+          <long-description><![CDATA[<p>HTTP params are the following:</p>
+
+<ul>
+<li>(details) regions : filter value separated by coma (all|structuralGeometries) (optional)</li>
+<li>(int) id : representation id (optional)</li>
+<li>(int) peptide_id : peptide id (optional)</li>
+</ul>
+
+<p>Returns an array formatted as the following:</p>
+
+<pre><code>array(
+        'xcount' => int
+    'items' => array(
+        'id' => int,
+        'title' => string,
+        'description' => string,
+        'params' => array(
+            'dimension' => array(
+                'minX' => float,
+                'maxX' => float,
+                'minY' => float,
+                'maxY' => float
+            ),
+            'membrane' => array(
+                'minY' => float,
+                'maxY' => float
+            )
+        ),
+        'contributors' : array(
+            array('lastName' => string, 'firstName' => string)
+        ),
+        'structuralGeometries' => array (
+            array(
+                'id' => int,
+                'representation_id' => int,
+                'type' => 'cercle|line|loop|extendedLoop',
+                'pos' => int,
+                'params' => array(
+                    'rotation' => int,
+                    'sens'=> int
+                ),
+                'labels' => array(
+                    'string-int'
+                ),
+                'coordinates' => array(
+                    array(
+                        'id' => int,
+                        'x' => float,
+                        'y' => float,
+                        'amino_acid_id' => int
+                    )
+                )
+        )
+    )
+
+}
+ </code></pre>]]></long-description>
+          <tag line="11" name="returns" description="array data (xcount, items[])"/>
+        </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="49" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="116" package="controllers">
         <name>post</name>
         <full_name>post</full_name>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="81" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="148" package="controllers">
         <name>put</name>
         <full_name>put</full_name>
       </method>
     </class>
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file controllers/representations.php</error>
-      <error line="3" code="50000">No DocBlock was found for \RepresentationsController</error>
-      <error line="4" code="50010">No DocBlock was found for method get()</error>
-      <error line="49" code="50010">No DocBlock was found for method post()</error>
-      <error line="81" code="50010">No DocBlock was found for method put()</error>
+      <error line="116" code="50010">No DocBlock was found for method post()</error>
+      <error line="148" code="50010">No DocBlock was found for method put()</error>
     </parse_markers>
   </file>
   <file path="controllers/structural-coordinates.php" hash="0421f91a01c696411bd50116d0b65c63" package="Default">
