@@ -11,7 +11,7 @@ class AminoAcidsController extends RESTController {
 
 	/**
 	 * 
-	 * @var \models\AminoAcid
+	 * @var \models\AminoAcidModel
 	 */
 	public $model = 'amino-acid';
 }

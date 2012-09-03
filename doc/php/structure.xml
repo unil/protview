@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project version="2.0.0a9" title="ProtView Server-side API">
-  <file path="controllers/amino-acids.php" hash="96dd48afd59d22b63d84ae925dbd67bf" package="Default">
+  <file path="controllers/amino-acids.php" hash="b7b90f0126786c309f93396f763cd1d1" package="Default">
     <class final="false" abstract="false" namespace="global" line="10" package="controllers">
       <extends>\RESTController</extends>
       <name>AminoAcidsController</name>
@@ -18,8 +18,8 @@
         <docblock line="12">
           <description><![CDATA[]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="12" name="var" description="" type="\models\AminoAcid">
-            <type by_reference="false">\models\AminoAcid</type>
+          <tag line="12" name="var" description="" type="\models\AminoAcidModel">
+            <type by_reference="false">\models\AminoAcidModel</type>
           </tag>
         </docblock>
       </property>
@@ -88,7 +88,7 @@
       <error line="0" code="50007">No page-level DocBlock was found in file controllers/application.php</error>
     </parse_markers>
   </file>
-  <file path="controllers/drawboard.php" hash="3ae8e37d05592c954ad8f461a3465f8c" package="Default">
+  <file path="controllers/drawboard.php" hash="28b4967c850af8007a083df3e1012ed7" package="Default">
     <include line="61" type="Require Once" package="Default">
       <name/>
     </include>
@@ -194,82 +194,146 @@
       <error line="40" code="50010">No DocBlock was found for method reportAction()</error>
     </parse_markers>
   </file>
-  <file path="controllers/home.php" hash="5892908e6fafe556a96d8e5ea2bbd95a" package="Default">
-    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+  <file path="controllers/home.php" hash="12625e3daf79bc3162a38e390f51680e" package="Default">
+    <class final="false" abstract="false" namespace="global" line="10" package="controllers">
       <extends>\xWebController</extends>
       <name>HomeController</name>
       <full_name>\HomeController</full_name>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="5" package="Default">
+      <docblock line="2">
+        <description><![CDATA[Home controller (callend on application startup)]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="2" name="package" description="controllers"/>
+        <tag line="2" name="author" description="Stefan Meier"/>
+        <tag line="2" name="version" description="20120903"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="17" package="controllers">
         <name>defaultAction</name>
         <full_name>defaultAction</full_name>
+        <docblock line="12">
+          <description><![CDATA[Gets the home page]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="12" name="return" description="" type="\views\home\HomeHomeView">
+            <type by_reference="false">\views\home\HomeHomeView</type>
+          </tag>
+        </docblock>
       </method>
     </class>
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file controllers/home.php</error>
-      <error line="3" code="50000">No DocBlock was found for \HomeController</error>
-      <error line="5" code="50010">No DocBlock was found for method defaultAction()</error>
     </parse_markers>
   </file>
-  <file path="controllers/menubar.php" hash="6f4586ede4115b739ce1152bade9b2d4" package="Default">
-    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+  <file path="controllers/menubar.php" hash="45026c4bc5b2ef1a802742d0d7b9ab65" package="Default">
+    <class final="false" abstract="false" namespace="global" line="10" package="controllers">
       <extends>\RESTController</extends>
       <name>MenubarController</name>
       <full_name>\MenubarController</full_name>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="4" package="Default">
+      <docblock line="2">
+        <description><![CDATA[Menubar controller]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="2" name="package" description="controllers"/>
+        <tag line="2" name="author" description="Stefan Meier"/>
+        <tag line="2" name="version" description="20120903"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="16" package="controllers">
         <name>defaultAction</name>
         <full_name>defaultAction</full_name>
+        <docblock line="11">
+          <description><![CDATA[Returns a 403 exception as defaultAction is not available]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="11" name="returns" description="xException"/>
+        </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="8" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="25" package="controllers">
         <name>newproteinAction</name>
         <full_name>newproteinAction</full_name>
+        <docblock line="20">
+          <description><![CDATA[Gets the 'New protein' dialog]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="20" name="return" description="" type="\views\menubar\NewproteinView">
+            <type by_reference="false">\views\menubar\NewproteinView</type>
+          </tag>
+        </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="13" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="38" package="controllers">
         <name>openrepresentationAction</name>
         <full_name>openrepresentationAction</full_name>
+        <docblock line="30">
+          <description><![CDATA[Gets the 'open Representation' dialog]]></description>
+          <long-description><![CDATA[<p>Retrieves the list of all representations from database
+and sends this information as param to the view</p>]]></long-description>
+          <tag line="30" name="return" description="" type="\views\menubar\OpenrepresentationView">
+            <type by_reference="false">\views\menubar\OpenrepresentationView</type>
+          </tag>
+        </docblock>
       </method>
     </class>
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file controllers/menubar.php</error>
-      <error line="3" code="50000">No DocBlock was found for \MenubarController</error>
-      <error line="4" code="50010">No DocBlock was found for method defaultAction()</error>
-      <error line="8" code="50010">No DocBlock was found for method newproteinAction()</error>
-      <error line="13" code="50010">No DocBlock was found for method openrepresentationAction()</error>
     </parse_markers>
   </file>
-  <file path="controllers/peptides.php" hash="3192f8a93eb76ec9e5b1c0ce71177030" package="Default">
-    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+  <file path="controllers/peptides.php" hash="eaa13c64a02f8bdbce72366e6d363608" package="Default">
+    <class final="false" abstract="false" namespace="global" line="10" package="controllers">
       <extends>\RESTController</extends>
       <name>PeptidesController</name>
       <full_name>\PeptidesController</full_name>
-      <property final="false" static="false" visibility="public" line="4" namespace="global" package="Default">
+      <docblock line="2">
+        <description><![CDATA[Controls the peptide model and view]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="2" name="package" description="controllers"/>
+        <tag line="2" name="author" description="Stefan Meier"/>
+        <tag line="2" name="version" description="20120903"/>
+      </docblock>
+      <property final="false" static="false" visibility="public" line="15" namespace="global" package="Default">
         <name>$model</name>
         <default><![CDATA['peptide']]></default>
+        <docblock line="11">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="11" name="var" description="" type="\models\PeptideModel">
+            <type by_reference="false">\models\PeptideModel</type>
+          </tag>
+        </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="5" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="22" package="controllers">
         <name>defaultAction</name>
         <full_name>defaultAction</full_name>
+        <docblock line="17">
+          <description><![CDATA[Gets the default peptide form]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="17" name="return" description="" type="\views\structure\PeptideView">
+            <type by_reference="false">\views\structure\PeptideView</type>
+          </tag>
+        </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="20" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="59" package="controllers">
         <name>get</name>
         <full_name>get</full_name>
+        <docblock line="37">
+          <description><![CDATA[Gets peptide items]]></description>
+          <long-description><![CDATA[<p>HTTP params are the following:</p>
+
+<ul>
+<li>(string) regions : filter value separated by coma (membrane,all,ext,intra) (optional)</li>
+<li>(string) protein_id : id of the protein (optional)</li>
+</ul>]]></long-description>
+          <tag line="37" name="example" description="Returns an array formatted as the following: &lt;br /&gt;&#10;array(&lt;br /&gt;&#10;'sequence' =&gt; 'string value',&lt;br /&gt;&#10;'terminusN' =&gt; 'intra|extra',&lt;br /&gt;&#10;'terminusC' =&gt; 'intra|extra',&lt;br /&gt;&#10;'membraneRegions' =&gt; array(&lt;br /&gt;&#10;array('id'=&gt; 1, 'start' =&gt; 1, 'end' =&gt; 234),&lt;br /&gt;&#10;array('id'=&gt; 2, 'start' =&gt; 235, 'end' =&gt; 400)&lt;br /&gt;&#10;]&lt;br /&gt;&#10;}&lt;br /&gt;"/>
+          <tag line="37" name="returns" description="array data (xcount, items[])"/>
+        </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="138" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="178" package="controllers">
         <name>post</name>
         <full_name>post</full_name>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="168" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="208" package="controllers">
         <name>put</name>
         <full_name>put</full_name>
       </method>
     </class>
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file controllers/peptides.php</error>
-      <error line="3" code="50000">No DocBlock was found for \PeptidesController</error>
-      <error line="4" code="50018">No DocBlock was found for property $model</error>
-      <error line="5" code="50010">No DocBlock was found for method defaultAction()</error>
-      <error line="20" code="50010">No DocBlock was found for method get()</error>
-      <error line="138" code="50010">No DocBlock was found for method post()</error>
-      <error line="168" code="50010">No DocBlock was found for method put()</error>
+      <critical line="11" code="50019">No short description for property $model</critical>
+      <error line="178" code="50010">No DocBlock was found for method post()</error>
+      <error line="208" code="50010">No DocBlock was found for method put()</error>
     </parse_markers>
   </file>
   <file path="controllers/postmodification.php" hash="9b535374953991a19095f522255d67b4" package="Default">

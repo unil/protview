@@ -33,7 +33,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">343</span></a></li>
+                <span class="label label-info">334</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
@@ -57,14 +57,11 @@
 <ul class="side-nav nav nav-list">
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
-<li class="method public "><a href="#defaultAction" title="defaultAction :: "><span class="description">defaultAction()
-        </span><pre>defaultAction()</pre></a></li>
+<li class="method public "><a href="#defaultAction" title="defaultAction :: Returns a 403 exception as defaultAction is not available"><span class="description">Returns a 403 exception as defaultAction is not available</span><pre>defaultAction()</pre></a></li>
 <li class="method public inherited"><a href="#delete" title="delete :: API Method."><span class="description">API Method.</span><pre>delete()</pre></a></li>
 <li class="method public inherited"><a href="#get" title="get :: API Method."><span class="description">API Method.</span><pre>get()</pre></a></li>
-<li class="method public "><a href="#newproteinAction" title="newproteinAction :: "><span class="description">newproteinAction()
-        </span><pre>newproteinAction()</pre></a></li>
-<li class="method public "><a href="#openrepresentationAction" title="openrepresentationAction :: "><span class="description">openrepresentationAction()
-        </span><pre>openrepresentationAction()</pre></a></li>
+<li class="method public "><a href="#newproteinAction" title="newproteinAction :: Gets the 'New protein' dialog"><span class="description">Gets the 'New protein' dialog</span><pre>newproteinAction()</pre></a></li>
+<li class="method public "><a href="#openrepresentationAction" title="openrepresentationAction :: Gets the 'open Representation' dialog"><span class="description">Gets the 'open Representation' dialog</span><pre>openrepresentationAction()</pre></a></li>
 <li class="method public inherited"><a href="#post" title="post :: API Method."><span class="description">API Method.</span><pre>post()</pre></a></li>
 <li class="method public inherited"><a href="#put" title="put :: API Method."><span class="description">API Method.</span><pre>put()</pre></a></li>
 <li class="nav-header">
@@ -84,15 +81,37 @@
 <span class="divider">\</span><a href="../classes/MenubarController.html">MenubarController</a>
 </li>
 </ul>
-<div href="../classes/MenubarController.html" class="element class"><div class="details">
+<div href="../classes/MenubarController.html" class="element class">
+<p class="short_description">Menubar controller</p>
+<div class="details">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>package</th>
+<td><a href="../packages/controllers.html">controllers</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="">Stefan Meier</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>20120903</td>
+</tr>
+</table>
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
 <a name="defaultAction" id="defaultAction"></a><div class="element clickable method public defaultAction" data-toggle="collapse" data-target=".defaultAction .collapse">
-<h2>defaultAction()
-        </h2>
+<h2>Returns a 403 exception as defaultAction is not available</h2>
 <pre>defaultAction() </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>returns</th>
+<td>xException</td>
+</tr></table>
+</div></div>
 </div>
 <a name="delete" id="delete"></a><div class="element clickable method public delete" data-toggle="collapse" data-target=".delete .collapse">
 <h2>API Method.</h2>
@@ -132,18 +151,25 @@ one should refine the method in specific controller classes.</td>
 </div></div>
 </div>
 <a name="newproteinAction" id="newproteinAction"></a><div class="element clickable method public newproteinAction" data-toggle="collapse" data-target=".newproteinAction .collapse">
-<h2>newproteinAction()
-        </h2>
-<pre>newproteinAction() </pre>
+<h2>Gets the 'New protein' dialog</h2>
+<pre>newproteinAction() : \views\menubar\NewproteinView</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code>\views\menubar\NewproteinView</code></div>
+</div></div>
 </div>
 <a name="openrepresentationAction" id="openrepresentationAction"></a><div class="element clickable method public openrepresentationAction" data-toggle="collapse" data-target=".openrepresentationAction .collapse">
-<h2>openrepresentationAction()
-        </h2>
-<pre>openrepresentationAction() </pre>
+<h2>Gets the 'open Representation' dialog</h2>
+<pre>openrepresentationAction() : \views\menubar\OpenrepresentationView</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>Retrieves the list of all representations from database
+and sends this information as param to the view</p></p>
+<h3>Returns</h3>
+<div class="subelement response"><code>\views\menubar\OpenrepresentationView</code></div>
+</div></div>
 </div>
 <a name="post" id="post"></a><div class="element clickable method public post" data-toggle="collapse" data-target=".post .collapse">
 <h2>API Method.</h2>
@@ -219,13 +245,14 @@ one should refine the method in specific controller classes.</td>
 </tr></table>
 </div></div>
 </div>
-</div></div>
+</div>
+</div>
 </div>
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a9</a> and<br>
-            generated on 2012-09-03T16:55:23+02:00.<br></footer></div>
+            generated on 2012-09-03T17:44:30+02:00.<br></footer></div>
 </div>
 </body>
 </html>

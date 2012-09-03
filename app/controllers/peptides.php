@@ -1,6 +1,6 @@
 <?php
 /**
- * Controls the peptide model
+ * Controls the peptide model and view
  *
  * @package controllers
  * @author Stefan Meier
@@ -8,7 +8,17 @@
  *
  */
 class PeptidesController extends RESTController {
+	/**
+	 *
+	 * @var \models\PeptideModel
+	 */
 	public $model = 'peptide';
+	
+	/**
+	 * Gets the default peptide form
+	 * 
+	 * @return \views\structure\PeptideView
+	 */
 	function defaultAction() {
 		$data = array();
 		return xView::load('structure/peptide', $data, $this->meta)->render();
@@ -24,25 +34,48 @@ class PeptidesController extends RESTController {
 	]
 	}
 	*/
+	/**
+	 * Gets peptide items
+	 * 
+	 * HTTP params are the following:
+	 *
+	 * *  (string) regions : filter value separated by coma (membrane,all,ext,intra) (optional)
+	 * *  (string) protein_id : id of the protein (optional)
+	 * 
+	 * @example
+	 * Returns an array formatted as the following: <br />
+	 * array(<br />
+	 *		'sequence' => 'string value',<br />
+	 *		'terminusN' => 'intra|extra',<br />
+	 *		'terminusC' => 'intra|extra',<br />
+	 *	 	'membraneRegions' => array(<br />
+	 *			array('id'=> 1, 'start' => 1, 'end' => 234),<br />
+	 *			array('id'=> 2, 'start' => 235, 'end' => 400)<br />
+	 *		]<br />
+	 *	}<br />
+	 * 
+	 * @returns array data (xcount, items[])
+	 */
 	function get() {
 		// Checks if method is allowed
 		if (!in_array('get', $this->allow)) throw new xException("Method not allowed", 403);
 
 		$data = array();
 		
-		//if true, all regions will be returned
-		//otherwise, only membrane regions
+		//filters regions to be displayed
 		$regionFilter = array();
 		
+		//explodes the filter param to store values in array
 		if (isset($this->params['regions']))
 			$regionFilter = explode(",", $this->params['regions']);
 		
-		//hack as for now one protein has exactly one subunit
+		//hack, as for now one protein has exactly one subunit with the same id as protein_id
 		if (isset($this->params['protein_id']))
 			$this->params['subunit_id'] = (int)$this->params['protein_id'];
 
 		$items = array();
 		
+		//retrieves all peptides from db
 		$peptides = xModel::load('peptide', $this->params)->get();
 		
 		
@@ -54,8 +87,9 @@ class PeptidesController extends RESTController {
 			$item['label'] = $peptide['label'];
 			$item['pos'] = $peptide['pos'];
 			
-			
+			//if at leas one filter is specified
 			if (count($regionFilter) > 0) {
+				//receives all regions for current peptide
 				$regions = xController::load(
 						'regions',
 						array(
@@ -73,8 +107,9 @@ class PeptidesController extends RESTController {
 				$r = 0;
 				$start = 1;
 				$end = 0;
-				$membraneRegions = array();
+				$resultSet= array();
 		
+				//adds each region to resultset
 				foreach($regions['items'] as $region) {
 						
 					//first region determines terminusN
@@ -85,6 +120,7 @@ class PeptidesController extends RESTController {
 					if ($r + 1 >= $count) {
 						$terminusC = $region['type'];
 					}
+					//gets amino acids for current region
 					$amino_acids = xController::load(
 							'amino-acids',
 							array(
@@ -102,15 +138,16 @@ class PeptidesController extends RESTController {
 					}
 					$r++;
 						
-					$membraneRegion = array();
-					$membraneRegion['id'] = (int)$region['id'];
-					$membraneRegion['start'] = (int)$start;
-					$membraneRegion['end'] = (int)$end;
-					$membraneRegion['type'] = $region['type'];
+					$current = array();
+					$current['id'] = (int)$region['id'];
+					$current['start'] = (int)$start;
+					$current['end'] = (int)$end;
+					$current['type'] = $region['type'];
 					
 	
+					//if current region type matches filter, add it to result set
 					if (in_array('all', $regionFilter) || in_array($region['type'], $regionFilter)) {
-						$membraneRegions[] = $membraneRegion;
+						$resultSet[] = $current;
 					}
 						
 					$start = $end + 1;
@@ -119,7 +156,7 @@ class PeptidesController extends RESTController {
 				$item['sequence'] = $sequence;
 				$item['terminusN'] = $terminusN;
 				$item['terminusC'] = $terminusC;
-				$item['regions'] = $membraneRegions;
+				$item['regions'] = $resultSet;
 			}
 			$items[] = $item;
 		}
@@ -202,7 +239,7 @@ class PeptidesController extends RESTController {
 
 		$sequence = strtoupper(trim($items['sequence']));
 		$aaArray = str_split($sequence);
-		$membraneRegions = $items['regions'];
+		$membraneRegions= $items['regions'];
 
 		$aaCount = count($aaArray);
 		$start = 1;
