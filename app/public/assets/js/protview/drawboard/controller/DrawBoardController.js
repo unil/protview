@@ -17,7 +17,6 @@ ProtView.DrawBoard.Controller.DrawBoardController = ProtView.Core.Controller.ext
 		this.updatedElements[id] = settings;
 	},
 	save : function() {
-		console.log('child save');
 		var updatedElements = this.updatedElements;
 		var model = this.model;
 		var structuralGeometries = model.get('structuralGeometries');
@@ -39,14 +38,9 @@ ProtView.DrawBoard.Controller.DrawBoardController = ProtView.Core.Controller.ext
 					});
 				}
 			});
-			
-			
 		});
 		
 		this.model = model;
 		this._super();
-		
-		
-		//console.log(context.model.get('structuralGeometries').get(67).get('coordinates'));*/
 	}
 });
