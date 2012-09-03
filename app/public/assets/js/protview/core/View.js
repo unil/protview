@@ -13,6 +13,8 @@ ProtView.Core.View = Backbone.View.extend({
 	unload : function() {
 		this.modelBinder.unbind();
 		Backbone.Validation.unbind(this);
+		this.undelegateEvents();
+		this.remove();
 	},
 	setController : function(controller) {
 		this.controller = controller;

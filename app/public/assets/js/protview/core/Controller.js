@@ -48,6 +48,9 @@ ProtView.Core.Controller = Class.extend( {
 		
 		return ret;
 	},
+	unload : function() {
+		
+	},
 	save : function() {
 		this.model.save(null,{
 			error: function(err){

@@ -11,7 +11,9 @@ ProtView.Structure.View.NewProteinView = ProtView.Core.View.extend({
 		proteinId = this.model.get('xinsertid');
 		
 		if (proteinId != null && proteinId != 0) {
-			Application.CONTEXT.navigate("view/" + proteinId + "/0");
+			Application.CONTEXT.navigate("view/" + proteinId);
+
+			this.model.off('change', this);
 			this.unload();
 			$('#new-protein-dialog').jqxWindow('close');
 			$('#new-protein-dialog').remove();

@@ -14,9 +14,13 @@ ProtView.Application.MenubarView = Backbone.View.extend({
 	},
 	showDrawboard : function() {
 		ProtView.Application.Sandbox.start('drawboard', '#drawingBoard');
+		//hack to not open sidebar twice, should be done via message
+		$('#show-drawboard').attr('id', 'show-drawboard-open');
 	},
 	showSidebar : function() {
 		ProtView.Application.Sandbox.start('sidebar', '#sidebar');
+		//hack to not open sidebar twice, should be done via message
+		$('#show-sidebar').attr('id', 'show-sidebar-open');
 	},
 	saveRepresentation : function() {
 		ProtView.Application.Sandbox.publish('/drawboard/save');

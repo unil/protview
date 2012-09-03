@@ -27,6 +27,9 @@ ProtView.Structure.Module = (function() {
 		else 
 			console.log("ProtView.Structure.Module:show controller is null");
 	},
+	hide = function(resource) {
+		
+	},
 	unload = function() {
 		for (var el in stack) {
 			   /*var obj = stack[el];
@@ -51,6 +54,9 @@ ProtView.Structure.Module = (function() {
 		show : function(e, resource, id) {
 			show(resource, id);
 		},
+		hide : function(e, resource) {
+			hide(resource);
+		},
 		update : function(e, arguments) {
 			update(arguments);
 		},
@@ -59,6 +65,7 @@ ProtView.Structure.Module = (function() {
 			sandbox.subscribe("/structure/start", ProtView.Structure.Module.start);
 			sandbox.subscribe("/structure/stop", ProtView.Structure.Module.stop);
 			sandbox.subscribe("/structure/show", ProtView.Structure.Module.show);
+			sandbox.subscribe("/structure/hide", ProtView.Structure.Module.hide);
 			sandbox.subscribe("/application/context", ProtView.Structure.Module.update);
 		}
 	};

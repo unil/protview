@@ -62,5 +62,9 @@ ProtView.Structure.Controller.MainController = ProtView.Core.MainController.exte
 					stack[el].update(arguments.protein);
 			}
 		}
+	},
+	unload : function(resource) {
+		if (stack['resource'])
+			stack['resource'].unload();
 	}
 });

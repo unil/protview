@@ -31,9 +31,7 @@
               isModal: true
           });
 		  $('#new-protein-dialog').bind('closed', function (event) {
-			  //cleaning dom
-			  $('#new-protein-dialog').remove();
-			  $('.jqx-window-modal ').remove();
+			  rotView.Application.Sandbox.publish("/structure/show", ['protein-new', 'close']);
 		  });
 		  ProtView.Application.Sandbox.publish("/structure/show", ['protein-new']);
 	});
