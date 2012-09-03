@@ -5,7 +5,7 @@ ProtView.DrawBoard.Model.Representation = Backbone.RelationalModel.extend({
         relatedModel: 'ProtView.DrawBoard.Model.StructuralGeometry',
         collectionType: 'ProtView.DrawBoard.Model.StructuralGeometryCollection',
         reverseRelation: {
-            key: 'representation_id',
+            key: 'representation',
             // includeInJSON: 'id'
             // 'relatedModel' is automatically set to 'Zoo'; the 'relationType' to 'HasOne'.
         }

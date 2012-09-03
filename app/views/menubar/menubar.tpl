@@ -13,7 +13,7 @@
 						<ul class="dropdown-menu">
 							<li class="menu"><a id="file-new-protein">New</a></li>
 							<li class="menu"><a id="file-open-representation">Open</a></li>
-							<li class="menu"><a id="file-save">Save</a></li>
+							<li class="menu"><a id="file-save-representation">Save</a></li>
 						</ul>
 					</li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"

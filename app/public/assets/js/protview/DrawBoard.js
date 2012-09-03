@@ -14,7 +14,7 @@ ProtView.DrawBoard.Module = (function() {
 	},
 	show = function(resource, id) {
 		controller.load(resource);
-		c = controller.getController(resource);
+		var c = controller.getController(resource);
 		console.log('show');
 		console.log(c);
 		if (c != null) {
@@ -37,6 +37,10 @@ ProtView.DrawBoard.Module = (function() {
 	update = function (arguments) {
 		if (controller != null)
 			controller.update(arguments);
+	},
+	save = function() {
+		var c = controller.getController('drawboard');
+		c.save();
 	};
 	//public
 	return {
@@ -53,11 +57,15 @@ ProtView.DrawBoard.Module = (function() {
 		update : function(e, arguments) {
 			update(arguments);
 		},
+		save : function() {
+			save();
+		},
 		registerSandbox : function(obj) {
 			sandbox = obj;
 			sandbox.subscribe("/drawboard/start", ProtView.DrawBoard.Module.start);
 			sandbox.subscribe("/drawboard/stop", ProtView.DrawBoard.Module.stop);
 			sandbox.subscribe("/drawboard/show", ProtView.DrawBoard.Module.show);
+			sandbox.subscribe("/drawboard/save", ProtView.DrawBoard.Module.save);
 			sandbox.subscribe("/application/context", ProtView.DrawBoard.Module.update);
 		}
 	};

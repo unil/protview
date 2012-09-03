@@ -18,8 +18,14 @@ ProtView.DrawBoard.View.DrawBoardView = ProtView.Core.View.extend({
 	},
 	events: { 
 	},
+	updateCoord : function(element, x, y, context) {
+		var el = $(element);
+		var elId = el.attr('id');
+
+		context.controller.updateElement(elId, {x : x, y : y});	
+	},
 	setModel : function(model) {
-		model.on('change', this.render, this);	
+		model.on('change', this.render, this);
 		model.on('reset', this.render, this);	
 		this.model = model;
 	},
@@ -29,11 +35,12 @@ ProtView.DrawBoard.View.DrawBoardView = ProtView.Core.View.extend({
 	    $("#svg-representation").attr('height', (h-120) + 'px').attr('width', (w-200) + 'px');
 	},
 	render : function() {
-		var model = this.model;
+		var model = this.model,
+		self = this;
 		
 		console.log('model');
 		console.log(model);
-		this.drawing.paint(model.get('structuralGeometries'), model.get('params'));
+		this.drawing.paint(model.get('structuralGeometries'), model.get('params'), this.updateCoord, self);
 
 
 		$(window).resize(this.resize).resize();
