@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>phpDocumentor » \ApplicationController</title>
+<title>ProtView Server-side API » \ApplicationController</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -15,12 +15,13 @@
 <body>
 <div class="navbar navbar-fixed-top">
 <div class="navbar-inner"><div class="container">
-<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">phpDocumentor</a><div class="nav-collapse"><ul class="nav">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">ProtView Server-side API</a><div class="nav-collapse"><ul class="nav">
 <li class="dropdown">
 <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
                                     API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a>Packages</a></li>
 <li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+<li><a href="../packages/controllers.html"><i class="icon-folder-open"></i> controllers</a></li>
 <li><a href="../packages/protview.html"><i class="icon-folder-open"></i> protview</a></li>
 </ul>
 </li>
@@ -32,7 +33,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">353</span></a></li>
+                <span class="label label-info">347</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
@@ -56,14 +57,10 @@
 <ul class="side-nav nav nav-list">
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
-<li class="method public "><a href="#defaultAction" title="defaultAction :: "><span class="description">defaultAction()
-        </span><pre>defaultAction()</pre></a></li>
-<li class="method public "><a href="#startDrawboardAction" title="startDrawboardAction :: "><span class="description">startDrawboardAction()
-        </span><pre>startDrawboardAction()</pre></a></li>
-<li class="method public "><a href="#startSidebarAction" title="startSidebarAction :: "><span class="description">startSidebarAction()
-        </span><pre>startSidebarAction()</pre></a></li>
-<li class="method public "><a href="#startStructureAction" title="startStructureAction :: "><span class="description">startStructureAction()
-        </span><pre>startStructureAction()</pre></a></li>
+<li class="method public "><a href="#defaultAction" title="defaultAction :: Returns a 403 exception as defaultAction is not available"><span class="description">Returns a 403 exception as defaultAction is not available</span><pre>defaultAction()</pre></a></li>
+<li class="method public "><a href="#startDrawboardAction" title="startDrawboardAction :: Loads Drawboard View"><span class="description">Loads Drawboard View</span><pre>startDrawboardAction()</pre></a></li>
+<li class="method public "><a href="#startSidebarAction" title="startSidebarAction :: Loads Sidebar"><span class="description">Loads Sidebar</span><pre>startSidebarAction()</pre></a></li>
+<li class="method public "><a href="#startStructureAction" title="startStructureAction :: Loads structure component"><span class="description">Loads structure component</span><pre>startStructureAction()</pre></a></li>
 </ul>
 </div>
 <div class="span8">
@@ -76,44 +73,76 @@
 <span class="divider">\</span><a href="../classes/ApplicationController.html">ApplicationController</a>
 </li>
 </ul>
-<div href="../classes/ApplicationController.html" class="element class"><div class="details">
+<div href="../classes/ApplicationController.html" class="element class">
+<p class="short_description">Controls the application view</p>
+<div class="details">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>package</th>
+<td><a href="../packages/controllers.html">controllers</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="">Stefan Meier</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>20120903</td>
+</tr>
+</table>
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
 <a name="defaultAction" id="defaultAction"></a><div class="element clickable method public defaultAction" data-toggle="collapse" data-target=".defaultAction .collapse">
-<h2>defaultAction()
-        </h2>
+<h2>Returns a 403 exception as defaultAction is not available</h2>
 <pre>defaultAction() </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>returns</th>
+<td>xException</td>
+</tr></table>
+</div></div>
 </div>
 <a name="startDrawboardAction" id="startDrawboardAction"></a><div class="element clickable method public startDrawboardAction" data-toggle="collapse" data-target=".startDrawboardAction .collapse">
-<h2>startDrawboardAction()
-        </h2>
-<pre>startDrawboardAction() </pre>
+<h2>Loads Drawboard View</h2>
+<pre>startDrawboardAction() : \views\drawingboard\DrawingboardStartView</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code>\views\drawingboard\DrawingboardStartView</code></div>
+</div></div>
 </div>
 <a name="startSidebarAction" id="startSidebarAction"></a><div class="element clickable method public startSidebarAction" data-toggle="collapse" data-target=".startSidebarAction .collapse">
-<h2>startSidebarAction()
-        </h2>
-<pre>startSidebarAction() </pre>
+<h2>Loads Sidebar</h2>
+<pre>startSidebarAction() : \views\sidebar\SidebarStartView</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code>\views\sidebar\SidebarStartView</code></div>
+</div></div>
 </div>
 <a name="startStructureAction" id="startStructureAction"></a><div class="element clickable method public startStructureAction" data-toggle="collapse" data-target=".startStructureAction .collapse">
-<h2>startStructureAction()
-        </h2>
-<pre>startStructureAction() </pre>
+<h2>Loads structure component</h2>
+<pre>startStructureAction() : \views\structure\StructureStartView</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
-</div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code>\views\structure\StructureStartView</code></div>
 </div></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a9</a> and<br>
-            generated on 2012-09-03T13:07:50+02:00.<br></footer></div>
+            generated on 2012-09-03T14:03:38+02:00.<br></footer></div>
 </div>
 </body>
 </html>

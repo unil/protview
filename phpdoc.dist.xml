@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <phpdocumentor>
+ <title>ProtView Server-side API</title>
   <parser>
     <default-package-name>protview</default-package-name>
     <target>output</target>

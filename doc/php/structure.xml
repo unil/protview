@@ -1,50 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<project version="2.0.0a9" title="">
-  <file path="controllers/amino-acids.php" hash="30bae17710f6820c3a6f1ad82b501219" package="Default">
-    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+<project version="2.0.0a9" title="ProtView Server-side API">
+  <file path="controllers/amino-acids.php" hash="96dd48afd59d22b63d84ae925dbd67bf" package="Default">
+    <class final="false" abstract="false" namespace="global" line="10" package="controllers">
       <extends>\RESTController</extends>
       <name>AminoAcidsController</name>
       <full_name>\AminoAcidsController</full_name>
-      <property final="false" static="false" visibility="public" line="5" namespace="global" package="Default">
+      <docblock line="2">
+        <description><![CDATA[Manages the acid amino model]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="2" name="package" description="controllers"/>
+        <tag line="2" name="author" description="Stefan Meier"/>
+        <tag line="2" name="version" description="20120903"/>
+      </docblock>
+      <property final="false" static="false" visibility="public" line="16" namespace="global" package="Default">
         <name>$model</name>
         <default><![CDATA['amino-acid']]></default>
+        <docblock line="12">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="12" name="var" description="" type="\models\AminoAcid">
+            <type by_reference="false">\models\AminoAcid</type>
+          </tag>
+        </docblock>
       </property>
     </class>
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file controllers/amino-acids.php</error>
-      <error line="3" code="50000">No DocBlock was found for \AminoAcidsController</error>
-      <error line="5" code="50018">No DocBlock was found for property $model</error>
+      <critical line="12" code="50019">No short description for property $model</critical>
     </parse_markers>
   </file>
-  <file path="controllers/application.php" hash="4f17831fc9a25e2ebb6a2f06f88a0de1" package="Default">
-    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+  <file path="controllers/application.php" hash="6bb79caaec24af06da688e67e58e7f5d" package="Default">
+    <class final="false" abstract="false" namespace="global" line="10" package="controllers">
       <extends>\xWebController</extends>
       <name>ApplicationController</name>
       <full_name>\ApplicationController</full_name>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="5" package="Default">
+      <docblock line="2">
+        <description><![CDATA[Controls the application view]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="2" name="package" description="controllers"/>
+        <tag line="2" name="author" description="Stefan Meier"/>
+        <tag line="2" name="version" description="20120903"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="17" package="controllers">
         <name>defaultAction</name>
         <full_name>defaultAction</full_name>
+        <docblock line="12">
+          <description><![CDATA[Returns a 403 exception as defaultAction is not available]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="12" name="returns" description="xException"/>
+        </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="9" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="26" package="controllers">
         <name>startDrawboardAction</name>
         <full_name>startDrawboardAction</full_name>
+        <docblock line="21">
+          <description><![CDATA[Loads Drawboard View]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="21" name="return" description="" type="\views\drawingboard\DrawingboardStartView">
+            <type by_reference="false">\views\drawingboard\DrawingboardStartView</type>
+          </tag>
+        </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="14" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="36" package="controllers">
         <name>startSidebarAction</name>
         <full_name>startSidebarAction</full_name>
+        <docblock line="31">
+          <description><![CDATA[Loads Sidebar]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="31" name="return" description="" type="\views\sidebar\SidebarStartView">
+            <type by_reference="false">\views\sidebar\SidebarStartView</type>
+          </tag>
+        </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="19" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="46" package="controllers">
         <name>startStructureAction</name>
         <full_name>startStructureAction</full_name>
+        <docblock line="41">
+          <description><![CDATA[Loads structure component]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="41" name="return" description="" type="\views\structure\StructureStartView">
+            <type by_reference="false">\views\structure\StructureStartView</type>
+          </tag>
+        </docblock>
       </method>
     </class>
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file controllers/application.php</error>
-      <error line="3" code="50000">No DocBlock was found for \ApplicationController</error>
-      <error line="5" code="50010">No DocBlock was found for method defaultAction()</error>
-      <error line="9" code="50010">No DocBlock was found for method startDrawboardAction()</error>
-      <error line="14" code="50010">No DocBlock was found for method startSidebarAction()</error>
-      <error line="19" code="50010">No DocBlock was found for method startStructureAction()</error>
     </parse_markers>
   </file>
   <file path="controllers/drawingboard.php" hash="b833813e31ed2e02e68b25800a55fbf6" package="Default">
@@ -2565,6 +2606,7 @@ is equal to the scatter's diameter</p>]]></long-description>
     </parse_markers>
   </file>
   <package name="Default" full_name="Default"/>
+  <package name="controllers" full_name="controllers"/>
   <package name="protview" full_name="protview"/>
   <namespace name="global" full_name="global"/>
   <marker count="0">todo</marker>
