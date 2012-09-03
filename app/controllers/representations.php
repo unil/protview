@@ -5,8 +5,7 @@ class RepresentationsController extends RESTController {
 		if (!in_array('get', $this->allow)) throw new xException("Method not allowed", 403);
 
 		$data = array();
-
-
+		
 		//if true, all regions will be returned
 		//otherwise, only membrane regions
 		$detailFilter = array();

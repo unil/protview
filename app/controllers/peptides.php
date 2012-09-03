@@ -274,9 +274,8 @@ class PeptidesController extends RESTController {
 			 *determine the start/end value of the region betweeen
 			*/
 			$end = $currentRegion['start'] - 1;
-
+			$region['id'] = 0;
 			if ($end - $start > 0) {
-				$region['id'] = 0;
 				$region['start'] = $start;
 				$region['end'] = $end;
 				$region['type'] = $type;
@@ -287,7 +286,8 @@ class PeptidesController extends RESTController {
 			}
 
 			//membrane region
-			$region['id'] = $currentRegion['id'];
+			if (isset($currentRegion['id']) )
+				$region['id'] = $currentRegion['id'];
 			$region['start'] = $currentRegion['start'];
 			$region['end'] = $currentRegion['end'];
 			$region['type'] = 'membrane';
@@ -366,8 +366,8 @@ class PeptidesController extends RESTController {
 					'peptide_id' => 1
 					
 			))->get(0);
-		
-		if (count($ret) <= 0) {
+
+		if ($ret['xcount'] <= 0) {
 			xContext::$log->log('no representation', 'peptideController');
 			$ret = xController::load(
 					'representations', array(

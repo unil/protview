@@ -1,5 +1,5 @@
 ALTER TABLE `subunits`
-  ADD CONSTRAINT `subunits_protein_fk` FOREIGN KEY (`protein_id`) REFERENCES `proteins` (`id`);
+  ADD CONSTRAINT `subunits_protein_fk` FOREIGN KEY (`protein_id`) REFERENCES `proteins` (`id`) ON DELETE CASCADE;
   
 ALTER TABLE `peptides`
   ADD CONSTRAINT `peptides_subunit_fk` FOREIGN KEY (`subunit_id`) REFERENCES `subunits` (`id`) ON DELETE CASCADE;

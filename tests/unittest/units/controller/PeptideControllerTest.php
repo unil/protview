@@ -55,7 +55,7 @@ class PeptideControllerTest extends protviewPHPUnit_Framework_TestCase {
 		$ret = xController::load(
 				'peptides', array(
 						'items' => array (
-								'id' => 1,
+								'id' => 3,
 								'sequence' => $sequence,
 								'terminusN' => 'intra',
 								'terminusC' => 'extra',
