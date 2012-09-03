@@ -1,6 +1,6 @@
 <?php
 /**
- * Controls the application view
+ * Controls the main application part
  *
  * @package controllers
  * @author Stefan Meier

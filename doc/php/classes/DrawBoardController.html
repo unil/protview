@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>ProtView Server-side API » \MenubarController</title>
+<title>ProtView Server-side API » \DrawBoardController</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -57,14 +57,11 @@
 <ul class="side-nav nav nav-list">
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
-<li class="method public "><a href="#defaultAction" title="defaultAction :: "><span class="description">defaultAction()
-        </span><pre>defaultAction()</pre></a></li>
+<li class="method public "><a href="#defaultAction" title="defaultAction :: Returns a 403 exception as defaultAction is not available"><span class="description">Returns a 403 exception as defaultAction is not available</span><pre>defaultAction()</pre></a></li>
 <li class="method public inherited"><a href="#delete" title="delete :: API Method."><span class="description">API Method.</span><pre>delete()</pre></a></li>
+<li class="method public "><a href="#exportAction" title="exportAction :: Converts a SVG Dom-Element to PNG file"><span class="description">Converts a SVG Dom-Element to PNG file</span><pre>exportAction()</pre></a></li>
+<li class="method public "><a href="#exportDialogAction" title="exportDialogAction :: Gets the representation export dialog"><span class="description">Gets the representation export dialog</span><pre>exportDialogAction()</pre></a></li>
 <li class="method public inherited"><a href="#get" title="get :: API Method."><span class="description">API Method.</span><pre>get()</pre></a></li>
-<li class="method public "><a href="#newproteinAction" title="newproteinAction :: "><span class="description">newproteinAction()
-        </span><pre>newproteinAction()</pre></a></li>
-<li class="method public "><a href="#openrepresentationAction" title="openrepresentationAction :: "><span class="description">openrepresentationAction()
-        </span><pre>openrepresentationAction()</pre></a></li>
 <li class="method public inherited"><a href="#post" title="post :: API Method."><span class="description">API Method.</span><pre>post()</pre></a></li>
 <li class="method public inherited"><a href="#put" title="put :: API Method."><span class="description">API Method.</span><pre>put()</pre></a></li>
 <li class="nav-header">
@@ -75,24 +72,46 @@
 </ul>
 </div>
 <div class="span8">
-<a name="%5CMenubarController" id="\MenubarController"></a><ul class="breadcrumb">
+<a name="%5CDrawBoardController" id="\DrawBoardController"></a><ul class="breadcrumb">
 <li>
 <a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
 </li>
 <li><a href="../namespaces/global.html">global</a></li>
 <li class="active">
-<span class="divider">\</span><a href="../classes/MenubarController.html">MenubarController</a>
+<span class="divider">\</span><a href="../classes/DrawBoardController.html">DrawBoardController</a>
 </li>
 </ul>
-<div href="../classes/MenubarController.html" class="element class"><div class="details">
+<div href="../classes/DrawBoardController.html" class="element class">
+<p class="short_description">Controls the DrawBoard application part</p>
+<div class="details">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>package</th>
+<td><a href="../packages/controllers.html">controllers</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="">Stefan Meier</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>20120903</td>
+</tr>
+</table>
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
 <a name="defaultAction" id="defaultAction"></a><div class="element clickable method public defaultAction" data-toggle="collapse" data-target=".defaultAction .collapse">
-<h2>defaultAction()
-        </h2>
+<h2>Returns a 403 exception as defaultAction is not available</h2>
 <pre>defaultAction() </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>returns</th>
+<td>xException</td>
+</tr></table>
+</div></div>
 </div>
 <a name="delete" id="delete"></a><div class="element clickable method public delete" data-toggle="collapse" data-target=".delete .collapse">
 <h2>API Method.</h2>
@@ -116,6 +135,41 @@ one should refine the method in specific controller classes.</td>
 <code>array</code>An JSON compatible resultset structure.</div>
 </div></div>
 </div>
+<a name="exportAction" id="exportAction"></a><div class="element clickable method public exportAction" data-toggle="collapse" data-target=".exportAction .collapse">
+<h2>Converts a SVG Dom-Element to PNG file</h2>
+<pre>exportAction() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>HTTP params are the following:</p>
+
+<ul>
+<li>(string) svgContent : SVG Dom-elemet (mandatory)</li>
+<li>(string) token : download token (mandatory)</li>
+</ul></p>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code>\xException</code></th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>(application/octet-stream)</div>
+</div></div>
+</div>
+<a name="exportDialogAction" id="exportDialogAction"></a><div class="element clickable method public exportDialogAction" data-toggle="collapse" data-target=".exportDialogAction .collapse">
+<h2>Gets the representation export dialog</h2>
+<pre>exportDialogAction() : \views\drawboard\DrawBoardExportView</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>HTTP params are the following:</p>
+
+<ul>
+<li>(string) css : name of css file (optional)</li>
+</ul></p>
+<h3>Returns</h3>
+<div class="subelement response"><code>\views\drawboard\DrawBoardExportView</code></div>
+</div></div>
+</div>
 <a name="get" id="get"></a><div class="element clickable method public get" data-toggle="collapse" data-target=".get .collapse">
 <h2>API Method.</h2>
 <pre>get() : array</pre>
@@ -130,20 +184,6 @@ one should refine the method in specific controller classes.</td>
 <div class="subelement response">
 <code>array</code>An JSON compatible resultset structure.</div>
 </div></div>
-</div>
-<a name="newproteinAction" id="newproteinAction"></a><div class="element clickable method public newproteinAction" data-toggle="collapse" data-target=".newproteinAction .collapse">
-<h2>newproteinAction()
-        </h2>
-<pre>newproteinAction() </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
-</div>
-<a name="openrepresentationAction" id="openrepresentationAction"></a><div class="element clickable method public openrepresentationAction" data-toggle="collapse" data-target=".openrepresentationAction .collapse">
-<h2>openrepresentationAction()
-        </h2>
-<pre>openrepresentationAction() </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="post" id="post"></a><div class="element clickable method public post" data-toggle="collapse" data-target=".post .collapse">
 <h2>API Method.</h2>
@@ -219,7 +259,8 @@ one should refine the method in specific controller classes.</td>
 </tr></table>
 </div></div>
 </div>
-</div></div>
+</div>
+</div>
 </div>
 </div>
 <div class="row"><footer class="span12">

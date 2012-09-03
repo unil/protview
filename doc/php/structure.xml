@@ -29,13 +29,13 @@
       <critical line="12" code="50019">No short description for property $model</critical>
     </parse_markers>
   </file>
-  <file path="controllers/application.php" hash="6bb79caaec24af06da688e67e58e7f5d" package="Default">
+  <file path="controllers/application.php" hash="277865afa4e5ba7ad40c35c9608ab3bf" package="Default">
     <class final="false" abstract="false" namespace="global" line="10" package="controllers">
       <extends>\xWebController</extends>
       <name>ApplicationController</name>
       <full_name>\ApplicationController</full_name>
       <docblock line="2">
-        <description><![CDATA[Controls the application view]]></description>
+        <description><![CDATA[Controls the main application part]]></description>
         <long-description><![CDATA[]]></long-description>
         <tag line="2" name="package" description="controllers"/>
         <tag line="2" name="author" description="Stefan Meier"/>
@@ -56,8 +56,8 @@
         <docblock line="21">
           <description><![CDATA[Loads Drawboard View]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="21" name="return" description="" type="\views\drawingboard\DrawingboardStartView">
-            <type by_reference="false">\views\drawingboard\DrawingboardStartView</type>
+          <tag line="21" name="return" description="" type="\views\drawboard\DrawboardStartView">
+            <type by_reference="false">\views\drawboard\DrawboardStartView</type>
           </tag>
         </docblock>
       </method>
@@ -88,33 +88,67 @@
       <error line="0" code="50007">No page-level DocBlock was found in file controllers/application.php</error>
     </parse_markers>
   </file>
-  <file path="controllers/drawingboard.php" hash="b833813e31ed2e02e68b25800a55fbf6" package="Default">
-    <include line="29" type="Require Once" package="Default">
+  <file path="controllers/drawboard.php" hash="3ae8e37d05592c954ad8f461a3465f8c" package="Default">
+    <include line="61" type="Require Once" package="Default">
       <name/>
     </include>
-    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+    <class final="false" abstract="false" namespace="global" line="10" package="controllers">
       <extends>\RESTController</extends>
-      <name>DrawingBoardController</name>
-      <full_name>\DrawingBoardController</full_name>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="4" package="Default">
+      <name>DrawBoardController</name>
+      <full_name>\DrawBoardController</full_name>
+      <docblock line="2">
+        <description><![CDATA[Controls the DrawBoard application part]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="2" name="package" description="controllers"/>
+        <tag line="2" name="author" description="Stefan Meier"/>
+        <tag line="2" name="version" description="20120903"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="16" package="controllers">
         <name>defaultAction</name>
         <full_name>defaultAction</full_name>
+        <docblock line="11">
+          <description><![CDATA[Returns a 403 exception as defaultAction is not available]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="11" name="returns" description="xException"/>
+        </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="8" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="29" package="controllers">
         <name>exportDialogAction</name>
         <full_name>exportDialogAction</full_name>
+        <docblock line="20">
+          <description><![CDATA[Gets the representation export dialog]]></description>
+          <long-description><![CDATA[<p>HTTP params are the following:</p>
+
+<ul>
+<li>(string) css : name of css file (optional)</li>
+</ul>]]></long-description>
+          <tag line="20" name="return" description="" type="\views\drawboard\DrawBoardExportView">
+            <type by_reference="false">\views\drawboard\DrawBoardExportView</type>
+          </tag>
+        </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="18" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="50" package="controllers">
         <name>exportAction</name>
         <full_name>exportAction</full_name>
+        <docblock line="39">
+          <description><![CDATA[Converts a SVG Dom-Element to PNG file]]></description>
+          <long-description><![CDATA[<p>HTTP params are the following:</p>
+
+<ul>
+<li>(string) svgContent : SVG Dom-elemet (mandatory)</li>
+<li>(string) token : download token (mandatory)</li>
+</ul>]]></long-description>
+          <tag line="39" name="throws" description="" type="\xException">
+            <type by_reference="false">\xException</type>
+          </tag>
+          <tag line="39" name="return" description="(application/octet-stream)" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
       </method>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file controllers/drawingboard.php</error>
-      <error line="3" code="50000">No DocBlock was found for \DrawingBoardController</error>
-      <error line="4" code="50010">No DocBlock was found for method defaultAction()</error>
-      <error line="8" code="50010">No DocBlock was found for method exportDialogAction()</error>
-      <error line="18" code="50010">No DocBlock was found for method exportAction()</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file controllers/drawboard.php</error>
     </parse_markers>
   </file>
   <file path="controllers/error.php" hash="fa608712224ad0937913a0abf33d92ad" package="Default">
@@ -2536,19 +2570,19 @@ is equal to the scatter's diameter</p>]]></long-description>
       <error line="0" code="50007">No page-level DocBlock was found in file public/test/shape.php</error>
     </parse_markers>
   </file>
-  <file path="views/drawingboard/start.php" hash="156c7609d9299d317feecb034713c247" package="Default">
+  <file path="views/drawboard/start.php" hash="5d3664799318f7adb91f9c8d14b85e67" package="Default">
     <class final="false" abstract="false" namespace="global" line="3" package="Default">
       <extends>\xView</extends>
-      <name>DrawingboardStartView</name>
-      <full_name>\DrawingboardStartView</full_name>
+      <name>DrawboardStartView</name>
+      <full_name>\DrawboardStartView</full_name>
       <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="4" package="Default">
         <name>init</name>
         <full_name>init</full_name>
       </method>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file views/drawingboard/start.php</error>
-      <error line="3" code="50000">No DocBlock was found for \DrawingboardStartView</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file views/drawboard/start.php</error>
+      <error line="3" code="50000">No DocBlock was found for \DrawboardStartView</error>
       <error line="4" code="50010">No DocBlock was found for method init()</error>
     </parse_markers>
   </file>

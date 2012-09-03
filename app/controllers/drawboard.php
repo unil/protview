@@ -1,6 +1,6 @@
 <?php
 /**
- * Controls the DrawBoard applicatino part
+ * Controls the DrawBoard application part
  *
  * @package controllers
  * @author Stefan Meier
@@ -8,13 +8,22 @@
  *
  */
 class DrawBoardController extends RESTController {
+	/**
+	 * Returns a 403 exception as defaultAction is not available
+	 * 
+	 * @returns xException
+	 */
 	function defaultAction() {
 		throw new xException("Method not allowed", 403);
 	}
 
 	/**
 	 * Gets the representation export dialog
-	 * 
+	 *
+	 * HTTP params are the following:
+	 *
+	 * *  (string) css : name of css file (optional)
+	 *
 	 * @return \views\drawboard\DrawBoardExportView
 	 */
 	function exportDialogAction() {
@@ -27,6 +36,17 @@ class DrawBoardController extends RESTController {
 		return xView::load('drawboard/export', $data, $this->meta)->render();
 	}
 
+	/**
+	 * Converts a SVG Dom-Element to PNG file
+	 * 
+	 * HTTP params are the following:
+	 * 
+	 * *  (string) svgContent : SVG Dom-elemet (mandatory)
+	 * *  (string) token : download token (mandatory)
+	 *
+	 * @throws xException
+	 * @return string (application/octet-stream)
+	 */
 	function exportAction() {
 		$png = null;
 
@@ -39,17 +59,17 @@ class DrawBoardController extends RESTController {
 
 		if ($svgContent != null) {
 			require_once(xContext::$basepath.'/lib/protview/protview/graph/SVGConverter.php');
-			$cssFile = xContext::$basepath. '/public/a/css/' . $this->params['css'];;
+				
 
 			$viewbox = null;
 
 			$svg = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet" ';
-				
+
 			if (isset($this->params['svgViewbox'])) {
 				$viewbox = $this->params['svgViewbox'];
 				$svg .= 'viewBox="' . $viewbox . '" ';
 			}
-				
+
 			if (isset($this->params['export-size'])) {
 				$size = $this->params['export-size'];
 
@@ -64,6 +84,15 @@ class DrawBoardController extends RESTController {
 						$height = $this->params['export-size-other-height'];
 					}
 				}
+				/*for original size, width and height is equal to viewbox width and height
+				 * 
+				 *minx : the beginning x coordinate
+				 *miny :the beginning y coordinate
+				 *width :width of the view box
+				 *height :height of the view box
+				 *
+				 *viewbox format : [minx miny width height]
+				*/
 				else if ($size == 'original') {
 					if ($viewbox != null) {
 						$s = explode(' ', $viewbox);
@@ -73,9 +102,10 @@ class DrawBoardController extends RESTController {
 							$height = (int)$s[3];
 					}
 
-					
+						
 				}
 				else{
+					//export size format : width x height (without spaces)
 					$s = explode('x', $size);
 					$width = $s[0];
 					$height = $s[1];
@@ -88,24 +118,27 @@ class DrawBoardController extends RESTController {
 				if ($height > 0) {
 					$svg .= 'height="' . $height . '" ';
 				}
-				//xContext::$log->log("width: $width height: $height", 'export');
 			}
-				
+
 			$svg .= '>';
 
-			$style = '<style type="text/css"><![CDATA[';
+			if (isset($this->params['css'])) {
+				$style = '<style type="text/css"><![CDATA[';
 
-			if (file_exists($cssFile))
-				$style .= file_get_contents($cssFile);
+				$cssFile = xContext::$basepath. '/public/a/css/' . $this->params['css'];
+				if (file_exists($cssFile))
+					$style .= file_get_contents($cssFile);
 
-			$style .= ']]></style>';
+				$style .= ']]></style>';
+			}
 
 			$svg .= $style;
 			$svg .= $svgContent;
 			$svg .= '</svg>';
-				
+
 			$png = SVGConverter::SVGStreamToPNG($svg);
 		}
+		//set download cokie with specified token value
 		setcookie("download", $token, time()+3600, xUtil::url(''));
 		header("Cache-Control: public");
 		header("Content-Description: File Transfer");
