@@ -1,0 +1,2573 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project version="2.0.0a9" title="">
+  <file path="controllers/amino-acids.php" hash="30bae17710f6820c3a6f1ad82b501219" package="Default">
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends>\RESTController</extends>
+      <name>AminoAcidsController</name>
+      <full_name>\AminoAcidsController</full_name>
+      <property final="false" static="false" visibility="public" line="5" namespace="global" package="Default">
+        <name>$model</name>
+        <default><![CDATA['amino-acid']]></default>
+      </property>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file controllers/amino-acids.php</error>
+      <error line="3" code="50000">No DocBlock was found for \AminoAcidsController</error>
+      <error line="5" code="50018">No DocBlock was found for property $model</error>
+    </parse_markers>
+  </file>
+  <file path="controllers/application.php" hash="4f17831fc9a25e2ebb6a2f06f88a0de1" package="Default">
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends>\xWebController</extends>
+      <name>ApplicationController</name>
+      <full_name>\ApplicationController</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="5" package="Default">
+        <name>defaultAction</name>
+        <full_name>defaultAction</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="9" package="Default">
+        <name>startDrawboardAction</name>
+        <full_name>startDrawboardAction</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="14" package="Default">
+        <name>startSidebarAction</name>
+        <full_name>startSidebarAction</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="19" package="Default">
+        <name>startStructureAction</name>
+        <full_name>startStructureAction</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file controllers/application.php</error>
+      <error line="3" code="50000">No DocBlock was found for \ApplicationController</error>
+      <error line="5" code="50010">No DocBlock was found for method defaultAction()</error>
+      <error line="9" code="50010">No DocBlock was found for method startDrawboardAction()</error>
+      <error line="14" code="50010">No DocBlock was found for method startSidebarAction()</error>
+      <error line="19" code="50010">No DocBlock was found for method startStructureAction()</error>
+    </parse_markers>
+  </file>
+  <file path="controllers/drawingboard.php" hash="b833813e31ed2e02e68b25800a55fbf6" package="Default">
+    <include line="29" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends>\RESTController</extends>
+      <name>DrawingBoardController</name>
+      <full_name>\DrawingBoardController</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="4" package="Default">
+        <name>defaultAction</name>
+        <full_name>defaultAction</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="8" package="Default">
+        <name>exportDialogAction</name>
+        <full_name>exportDialogAction</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="18" package="Default">
+        <name>exportAction</name>
+        <full_name>exportAction</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file controllers/drawingboard.php</error>
+      <error line="3" code="50000">No DocBlock was found for \DrawingBoardController</error>
+      <error line="4" code="50010">No DocBlock was found for method defaultAction()</error>
+      <error line="8" code="50010">No DocBlock was found for method exportDialogAction()</error>
+      <error line="18" code="50010">No DocBlock was found for method exportAction()</error>
+    </parse_markers>
+  </file>
+  <file path="controllers/error.php" hash="fa608712224ad0937913a0abf33d92ad" package="Default">
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends>\xWebController</extends>
+      <name>ErrorController</name>
+      <full_name>\ErrorController</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="9" package="Default">
+        <name>error_contents</name>
+        <full_name>error_contents</full_name>
+        <docblock line="5">
+          <description><![CDATA[Return the HTML to display when an exception occurs]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="5" name="return" description="HTML to inject into layout" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="12" package="Default">
+        <name>defaultAction</name>
+        <full_name>defaultAction</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="25" package="Default">
+        <name>error_report</name>
+        <full_name>error_report</full_name>
+        <docblock line="21">
+          <description><![CDATA[Reports an exception.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="21" name="return" description="True if exception successfully reported, false otherwise" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="40" package="Default">
+        <name>reportAction</name>
+        <full_name>reportAction</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file controllers/error.php</error>
+      <error line="3" code="50000">No DocBlock was found for \ErrorController</error>
+      <error line="12" code="50010">No DocBlock was found for method defaultAction()</error>
+      <error line="40" code="50010">No DocBlock was found for method reportAction()</error>
+    </parse_markers>
+  </file>
+  <file path="controllers/home.php" hash="5892908e6fafe556a96d8e5ea2bbd95a" package="Default">
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends>\xWebController</extends>
+      <name>HomeController</name>
+      <full_name>\HomeController</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="5" package="Default">
+        <name>defaultAction</name>
+        <full_name>defaultAction</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file controllers/home.php</error>
+      <error line="3" code="50000">No DocBlock was found for \HomeController</error>
+      <error line="5" code="50010">No DocBlock was found for method defaultAction()</error>
+    </parse_markers>
+  </file>
+  <file path="controllers/menubar.php" hash="6f4586ede4115b739ce1152bade9b2d4" package="Default">
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends>\RESTController</extends>
+      <name>MenubarController</name>
+      <full_name>\MenubarController</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="4" package="Default">
+        <name>defaultAction</name>
+        <full_name>defaultAction</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="8" package="Default">
+        <name>newproteinAction</name>
+        <full_name>newproteinAction</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="13" package="Default">
+        <name>openrepresentationAction</name>
+        <full_name>openrepresentationAction</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file controllers/menubar.php</error>
+      <error line="3" code="50000">No DocBlock was found for \MenubarController</error>
+      <error line="4" code="50010">No DocBlock was found for method defaultAction()</error>
+      <error line="8" code="50010">No DocBlock was found for method newproteinAction()</error>
+      <error line="13" code="50010">No DocBlock was found for method openrepresentationAction()</error>
+    </parse_markers>
+  </file>
+  <file path="controllers/peptides.php" hash="3192f8a93eb76ec9e5b1c0ce71177030" package="Default">
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends>\RESTController</extends>
+      <name>PeptidesController</name>
+      <full_name>\PeptidesController</full_name>
+      <property final="false" static="false" visibility="public" line="4" namespace="global" package="Default">
+        <name>$model</name>
+        <default><![CDATA['peptide']]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="5" package="Default">
+        <name>defaultAction</name>
+        <full_name>defaultAction</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="20" package="Default">
+        <name>get</name>
+        <full_name>get</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="138" package="Default">
+        <name>post</name>
+        <full_name>post</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="168" package="Default">
+        <name>put</name>
+        <full_name>put</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file controllers/peptides.php</error>
+      <error line="3" code="50000">No DocBlock was found for \PeptidesController</error>
+      <error line="4" code="50018">No DocBlock was found for property $model</error>
+      <error line="5" code="50010">No DocBlock was found for method defaultAction()</error>
+      <error line="20" code="50010">No DocBlock was found for method get()</error>
+      <error line="138" code="50010">No DocBlock was found for method post()</error>
+      <error line="168" code="50010">No DocBlock was found for method put()</error>
+    </parse_markers>
+  </file>
+  <file path="controllers/postmodification.php" hash="9b535374953991a19095f522255d67b4" package="Default">
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends>\RESTController</extends>
+      <name>PostmodificationController</name>
+      <full_name>\PostmodificationController</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="4" package="Default">
+        <name>defaultAction</name>
+        <full_name>defaultAction</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file controllers/postmodification.php</error>
+      <error line="3" code="50000">No DocBlock was found for \PostmodificationController</error>
+      <error line="4" code="50010">No DocBlock was found for method defaultAction()</error>
+    </parse_markers>
+  </file>
+  <file path="controllers/proteins.php" hash="4fa182c16f3e52504312696fa7f96459" package="Default">
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends>\RESTController</extends>
+      <name>ProteinsController</name>
+      <full_name>\ProteinsController</full_name>
+      <property final="false" static="false" visibility="public" line="5" namespace="global" package="Default">
+        <name>$model</name>
+        <default><![CDATA['protein']]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="7" package="Default">
+        <name>defaultAction</name>
+        <full_name>defaultAction</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="12" package="Default">
+        <name>put</name>
+        <full_name>put</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file controllers/proteins.php</error>
+      <error line="3" code="50000">No DocBlock was found for \ProteinsController</error>
+      <error line="5" code="50018">No DocBlock was found for property $model</error>
+      <error line="7" code="50010">No DocBlock was found for method defaultAction()</error>
+      <error line="12" code="50010">No DocBlock was found for method put()</error>
+    </parse_markers>
+  </file>
+  <file path="controllers/regions.php" hash="9c5c789950412957903fa5bd7fb71884" package="Default">
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends>\RESTController</extends>
+      <name>RegionsController</name>
+      <full_name>\RegionsController</full_name>
+      <property final="false" static="false" visibility="public" line="5" namespace="global" package="Default">
+        <name>$model</name>
+        <default><![CDATA['region']]></default>
+      </property>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file controllers/regions.php</error>
+      <error line="3" code="50000">No DocBlock was found for \RegionsController</error>
+      <error line="5" code="50018">No DocBlock was found for property $model</error>
+    </parse_markers>
+  </file>
+  <file path="controllers/representations.php" hash="2b79909599a422af92954f3bef1af7de" package="Default">
+    <include line="101" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <include line="102" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends>\RESTController</extends>
+      <name>RepresentationsController</name>
+      <full_name>\RepresentationsController</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="4" package="Default">
+        <name>get</name>
+        <full_name>get</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="49" package="Default">
+        <name>post</name>
+        <full_name>post</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="81" package="Default">
+        <name>put</name>
+        <full_name>put</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file controllers/representations.php</error>
+      <error line="3" code="50000">No DocBlock was found for \RepresentationsController</error>
+      <error line="4" code="50010">No DocBlock was found for method get()</error>
+      <error line="49" code="50010">No DocBlock was found for method post()</error>
+      <error line="81" code="50010">No DocBlock was found for method put()</error>
+    </parse_markers>
+  </file>
+  <file path="controllers/structural-coordinates.php" hash="0421f91a01c696411bd50116d0b65c63" package="Default">
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends>\RESTController</extends>
+      <name>StructuralCoordinatesController</name>
+      <full_name>\StructuralCoordinatesController</full_name>
+      <property final="false" static="false" visibility="public" line="5" namespace="global" package="Default">
+        <name>$model</name>
+        <default><![CDATA['structural-coordinate']]></default>
+      </property>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file controllers/structural-coordinates.php</error>
+      <error line="3" code="50000">No DocBlock was found for \StructuralCoordinatesController</error>
+      <error line="5" code="50018">No DocBlock was found for property $model</error>
+    </parse_markers>
+  </file>
+  <file path="controllers/structural-geometries.php" hash="af7cb3186aca287a46b077a892427ce0" package="Default">
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends>\RESTController</extends>
+      <name>StructuralGeometriesController</name>
+      <full_name>\StructuralGeometriesController</full_name>
+      <property final="false" static="false" visibility="public" line="5" namespace="global" package="Default">
+        <name>$model</name>
+        <default><![CDATA['structural-geometry']]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="7" package="Default">
+        <name>get</name>
+        <full_name>get</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file controllers/structural-geometries.php</error>
+      <error line="3" code="50000">No DocBlock was found for \StructuralGeometriesController</error>
+      <error line="5" code="50018">No DocBlock was found for property $model</error>
+      <error line="7" code="50010">No DocBlock was found for method get()</error>
+    </parse_markers>
+  </file>
+  <file path="controllers/subunits.php" hash="07bbc4680ae932519bc867a8b8b34228" package="Default">
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends>\RESTController</extends>
+      <name>SubunitsController</name>
+      <full_name>\SubunitsController</full_name>
+      <property final="false" static="false" visibility="public" line="5" namespace="global" package="Default">
+        <name>$model</name>
+        <default><![CDATA['subunit']]></default>
+      </property>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file controllers/subunits.php</error>
+      <error line="3" code="50000">No DocBlock was found for \SubunitsController</error>
+      <error line="5" code="50018">No DocBlock was found for property $model</error>
+    </parse_markers>
+  </file>
+  <file path="fronts/api.php" hash="940afba9a6ccc7647fd9221b975c2fae" package="Default">
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends>\xApiFront</extends>
+      <name>ApiFront</name>
+      <full_name>\ApiFront</full_name>
+      <property final="false" static="false" visibility="public" line="8" namespace="global" package="Default">
+        <name>$method_mapping</name>
+        <default><![CDATA[array('GET' => 'get', 'POST' => 'get', 'PUT' => 'post', 'DELETE' => 'delete')]]></default>
+        <docblock line="5">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="5" name="see" description="\global\xFront::$method_mapping" refers="\global\xFront::$method_mapping"/>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="15" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <argument line="15">
+          <name>$params</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="21" package="Default">
+        <name>get</name>
+        <full_name>get</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="26" package="Default">
+        <name>post</name>
+        <full_name>post</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="31" package="Default">
+        <name>put</name>
+        <full_name>put</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="36" package="Default">
+        <name>delete</name>
+        <full_name>delete</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file fronts/api.php</error>
+      <error line="3" code="50000">No DocBlock was found for \ApiFront</error>
+      <critical line="5" code="50019">No short description for property $method_mapping</critical>
+      <error line="15" code="50010">No DocBlock was found for method __construct()</error>
+      <error line="21" code="50010">No DocBlock was found for method get()</error>
+      <error line="26" code="50010">No DocBlock was found for method post()</error>
+      <error line="31" code="50010">No DocBlock was found for method put()</error>
+      <error line="36" code="50010">No DocBlock was found for method delete()</error>
+    </parse_markers>
+  </file>
+  <file path="fronts/raw.php" hash="e147872e8fa1ed15641bf13062637a06" package="Default">
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends>\xWebFront</extends>
+      <name>RawFront</name>
+      <full_name>\RawFront</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="4" package="Default">
+        <name>get</name>
+        <full_name>get</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file fronts/raw.php</error>
+      <error line="3" code="50000">No DocBlock was found for \RawFront</error>
+      <error line="4" code="50010">No DocBlock was found for method get()</error>
+    </parse_markers>
+  </file>
+  <file path="lib/protview/protview/bio/AminoAcid.php" hash="be55903acdd8d6778318d10a63305fb7" package="Default">
+    <class final="false" abstract="false" namespace="global" line="2" package="Default">
+      <extends/>
+      <name>AminoAcid</name>
+      <full_name>\AminoAcid</full_name>
+      <property final="false" static="false" visibility="private" line="3" namespace="global" package="Default">
+        <name>$id</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="4" namespace="global" package="Default">
+        <name>$type</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="5" namespace="global" package="Default">
+        <name>$variant</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="6" namespace="global" package="Default">
+        <name>$modification</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="7" namespace="global" package="Default">
+        <name>$link</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="8" namespace="global" package="Default">
+        <name>$region</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="9" namespace="global" package="Default">
+        <name>$pos</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="11" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <argument line="11">
+          <name>$id</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="11">
+          <name>$type</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="16" package="Default">
+        <name>getId</name>
+        <full_name>getId</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="21" package="Default">
+        <name>getType</name>
+        <full_name>getType</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="26" package="Default">
+        <name>getVariant</name>
+        <full_name>getVariant</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="31" package="Default">
+        <name>setVariant</name>
+        <full_name>setVariant</full_name>
+        <argument line="31">
+          <name>$variant</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="36" package="Default">
+        <name>getModification</name>
+        <full_name>getModification</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="41" package="Default">
+        <name>setModification</name>
+        <full_name>setModification</full_name>
+        <argument line="41">
+          <name>$modification</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="46" package="Default">
+        <name>getLink</name>
+        <full_name>getLink</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="51" package="Default">
+        <name>getPos</name>
+        <full_name>getPos</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="56" package="Default">
+        <name>setLink</name>
+        <full_name>setLink</full_name>
+        <argument line="56">
+          <name>$link</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="61" package="Default">
+        <name>getRegion</name>
+        <full_name>getRegion</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="66" package="Default">
+        <name>setRegion</name>
+        <full_name>setRegion</full_name>
+        <argument line="66">
+          <name>$region</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="73" package="Default">
+        <name>setPos</name>
+        <full_name>setPos</full_name>
+        <argument line="73">
+          <name>$pos</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file lib/protview/protview/bio/AminoAcid.php</error>
+      <error line="2" code="50000">No DocBlock was found for \AminoAcid</error>
+      <error line="3" code="50018">No DocBlock was found for property $id</error>
+      <error line="4" code="50018">No DocBlock was found for property $type</error>
+      <error line="5" code="50018">No DocBlock was found for property $variant</error>
+      <error line="6" code="50018">No DocBlock was found for property $modification</error>
+      <error line="7" code="50018">No DocBlock was found for property $link</error>
+      <error line="8" code="50018">No DocBlock was found for property $region</error>
+      <error line="9" code="50018">No DocBlock was found for property $pos</error>
+      <error line="11" code="50010">No DocBlock was found for method __construct()</error>
+      <error line="16" code="50010">No DocBlock was found for method getId()</error>
+      <error line="21" code="50010">No DocBlock was found for method getType()</error>
+      <error line="26" code="50010">No DocBlock was found for method getVariant()</error>
+      <error line="31" code="50010">No DocBlock was found for method setVariant()</error>
+      <error line="36" code="50010">No DocBlock was found for method getModification()</error>
+      <error line="41" code="50010">No DocBlock was found for method setModification()</error>
+      <error line="46" code="50010">No DocBlock was found for method getLink()</error>
+      <error line="51" code="50010">No DocBlock was found for method getPos()</error>
+      <error line="56" code="50010">No DocBlock was found for method setLink()</error>
+      <error line="61" code="50010">No DocBlock was found for method getRegion()</error>
+      <error line="66" code="50010">No DocBlock was found for method setRegion()</error>
+      <error line="73" code="50010">No DocBlock was found for method setPos()</error>
+    </parse_markers>
+  </file>
+  <file path="lib/protview/protview/bio/Peptide.php" hash="0bcc3f799a23801d6e04b06c48d0ec7f" package="Default">
+    <include line="2" type="Require Once" package="Default">
+      <name>Region.php</name>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="4" package="Default">
+      <extends/>
+      <name>Peptide</name>
+      <full_name>\Peptide</full_name>
+      <property final="false" static="false" visibility="private" line="5" namespace="global" package="Default">
+        <name>$id</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="6" namespace="global" package="Default">
+        <name>$start</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="7" namespace="global" package="Default">
+        <name>$end</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="8" namespace="global" package="Default">
+        <name>$regions</name>
+        <default><![CDATA[array()]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="9" namespace="global" package="Default">
+        <name>$subunit</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="10" namespace="global" package="Default">
+        <name>$countAminoAcid</name>
+        <default><![CDATA[0]]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="12" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <argument line="12">
+          <name>$id</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="12">
+          <name>$start</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="12">
+          <name>$end</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="18" package="Default">
+        <name>getId</name>
+        <full_name>getId</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="23" package="Default">
+        <name>getStart</name>
+        <full_name>getStart</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="28" package="Default">
+        <name>getEnd</name>
+        <full_name>getEnd</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="33" package="Default">
+        <name>addRegion</name>
+        <full_name>addRegion</full_name>
+        <argument line="33">
+          <name>$region</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="42" package="Default">
+        <name>getRegions</name>
+        <full_name>getRegions</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="47" package="Default">
+        <name>getSubunit</name>
+        <full_name>getSubunit</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="56" package="Default">
+        <name>countAminoAcids</name>
+        <full_name>countAminoAcids</full_name>
+        <argument line="56">
+          <name>$filter</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="79" package="Default">
+        <name>countBiggestMembrane</name>
+        <full_name>countBiggestMembrane</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="92" package="Default">
+        <name>setSubunit</name>
+        <full_name>setSubunit</full_name>
+        <argument line="92">
+          <name>$subunit</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file lib/protview/protview/bio/Peptide.php</error>
+      <error line="4" code="50000">No DocBlock was found for \Peptide</error>
+      <error line="5" code="50018">No DocBlock was found for property $id</error>
+      <error line="6" code="50018">No DocBlock was found for property $start</error>
+      <error line="7" code="50018">No DocBlock was found for property $end</error>
+      <error line="8" code="50018">No DocBlock was found for property $regions</error>
+      <error line="9" code="50018">No DocBlock was found for property $subunit</error>
+      <error line="10" code="50018">No DocBlock was found for property $countAminoAcid</error>
+      <error line="12" code="50010">No DocBlock was found for method __construct()</error>
+      <error line="18" code="50010">No DocBlock was found for method getId()</error>
+      <error line="23" code="50010">No DocBlock was found for method getStart()</error>
+      <error line="28" code="50010">No DocBlock was found for method getEnd()</error>
+      <error line="33" code="50010">No DocBlock was found for method addRegion()</error>
+      <error line="42" code="50010">No DocBlock was found for method getRegions()</error>
+      <error line="47" code="50010">No DocBlock was found for method getSubunit()</error>
+      <error line="56" code="50010">No DocBlock was found for method countAminoAcids()</error>
+      <error line="79" code="50010">No DocBlock was found for method countBiggestMembrane()</error>
+      <error line="92" code="50010">No DocBlock was found for method setSubunit()</error>
+    </parse_markers>
+  </file>
+  <file path="lib/protview/protview/bio/Protein.php" hash="51f02f6f8beed715485e72b58c561529" package="Default">
+    <include line="2" type="Require Once" package="Default">
+      <name>Subunit.php</name>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends/>
+      <name>Protein</name>
+      <full_name>\Protein</full_name>
+      <property final="false" static="false" visibility="private" line="4" namespace="global" package="Default">
+        <name>$id</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="5" namespace="global" package="Default">
+        <name>$name</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="6" namespace="global" package="Default">
+        <name>$species</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="7" namespace="global" package="Default">
+        <name>$note</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="8" namespace="global" package="Default">
+        <name>$subunits</name>
+        <default><![CDATA[array()]]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="10" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <argument line="10">
+          <name>$name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="10">
+          <name>$species</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="10">
+          <name>$note</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="15" package="Default">
+        <name>getName</name>
+        <full_name>getName</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="20" package="Default">
+        <name>getSpecies</name>
+        <full_name>getSpecies</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="25" package="Default">
+        <name>getNote</name>
+        <full_name>getNote</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="30" package="Default">
+        <name>setNote</name>
+        <full_name>setNote</full_name>
+        <argument line="30">
+          <name>$note</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="35" package="Default">
+        <name>addSubunit</name>
+        <full_name>addSubunit</full_name>
+        <argument line="35">
+          <name>$subunit</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="42" package="Default">
+        <name>getSubunits</name>
+        <full_name>getSubunits</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file lib/protview/protview/bio/Protein.php</error>
+      <error line="3" code="50000">No DocBlock was found for \Protein</error>
+      <error line="4" code="50018">No DocBlock was found for property $id</error>
+      <error line="5" code="50018">No DocBlock was found for property $name</error>
+      <error line="6" code="50018">No DocBlock was found for property $species</error>
+      <error line="7" code="50018">No DocBlock was found for property $note</error>
+      <error line="8" code="50018">No DocBlock was found for property $subunits</error>
+      <error line="10" code="50010">No DocBlock was found for method __construct()</error>
+      <error line="15" code="50010">No DocBlock was found for method getName()</error>
+      <error line="20" code="50010">No DocBlock was found for method getSpecies()</error>
+      <error line="25" code="50010">No DocBlock was found for method getNote()</error>
+      <error line="30" code="50010">No DocBlock was found for method setNote()</error>
+      <error line="35" code="50010">No DocBlock was found for method addSubunit()</error>
+      <error line="42" code="50010">No DocBlock was found for method getSubunits()</error>
+    </parse_markers>
+  </file>
+  <file path="lib/protview/protview/bio/Region.php" hash="72260b2c75db5ac3142832e25fcf2a40" package="Default">
+    <include line="2" type="Require Once" package="Default">
+      <name>AminoAcid.php</name>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends/>
+      <name>Region</name>
+      <full_name>\Region</full_name>
+      <property final="false" static="false" visibility="private" line="4" namespace="global" package="Default">
+        <name>$id</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="5" namespace="global" package="Default">
+        <name>$name</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="6" namespace="global" package="Default">
+        <name>$type</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="7" namespace="global" package="Default">
+        <name>$start</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="8" namespace="global" package="Default">
+        <name>$end</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="9" namespace="global" package="Default">
+        <name>$peptide</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="10" namespace="global" package="Default">
+        <name>$pos</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="12" namespace="global" package="Default">
+        <name>$aminoAcids</name>
+        <default><![CDATA[array()]]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="14" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <argument line="14">
+          <name>$id</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="14">
+          <name>$start</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="14">
+          <name>$end</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="14">
+          <name>$type</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+        <argument line="14">
+          <name>$name</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="22" package="Default">
+        <name>getId</name>
+        <full_name>getId</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="27" package="Default">
+        <name>getType</name>
+        <full_name>getType</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="32" package="Default">
+        <name>getStart</name>
+        <full_name>getStart</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="37" package="Default">
+        <name>getEnd</name>
+        <full_name>getEnd</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="41" package="Default">
+        <name>getPos</name>
+        <full_name>getPos</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="46" package="Default">
+        <name>addAminoAcid</name>
+        <full_name>addAminoAcid</full_name>
+        <argument line="46">
+          <name>$aminoAcid</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="55" package="Default">
+        <name>getAminoAcids</name>
+        <full_name>getAminoAcids</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="60" package="Default">
+        <name>getName</name>
+        <full_name>getName</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="65" package="Default">
+        <name>countAminoAcids</name>
+        <full_name>countAminoAcids</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="69" package="Default">
+        <name>getPeptide</name>
+        <full_name>getPeptide</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="74" package="Default">
+        <name>setPeptide</name>
+        <full_name>setPeptide</full_name>
+        <argument line="74">
+          <name>$peptide</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="82" package="Default">
+        <name>setPos</name>
+        <full_name>setPos</full_name>
+        <argument line="82">
+          <name>$pos</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file lib/protview/protview/bio/Region.php</error>
+      <error line="3" code="50000">No DocBlock was found for \Region</error>
+      <error line="4" code="50018">No DocBlock was found for property $id</error>
+      <error line="5" code="50018">No DocBlock was found for property $name</error>
+      <error line="6" code="50018">No DocBlock was found for property $type</error>
+      <error line="7" code="50018">No DocBlock was found for property $start</error>
+      <error line="8" code="50018">No DocBlock was found for property $end</error>
+      <error line="9" code="50018">No DocBlock was found for property $peptide</error>
+      <error line="10" code="50018">No DocBlock was found for property $pos</error>
+      <error line="12" code="50018">No DocBlock was found for property $aminoAcids</error>
+      <error line="14" code="50010">No DocBlock was found for method __construct()</error>
+      <error line="22" code="50010">No DocBlock was found for method getId()</error>
+      <error line="27" code="50010">No DocBlock was found for method getType()</error>
+      <error line="32" code="50010">No DocBlock was found for method getStart()</error>
+      <error line="37" code="50010">No DocBlock was found for method getEnd()</error>
+      <error line="41" code="50010">No DocBlock was found for method getPos()</error>
+      <error line="46" code="50010">No DocBlock was found for method addAminoAcid()</error>
+      <error line="55" code="50010">No DocBlock was found for method getAminoAcids()</error>
+      <error line="60" code="50010">No DocBlock was found for method getName()</error>
+      <error line="65" code="50010">No DocBlock was found for method countAminoAcids()</error>
+      <error line="69" code="50010">No DocBlock was found for method getPeptide()</error>
+      <error line="74" code="50010">No DocBlock was found for method setPeptide()</error>
+      <error line="82" code="50010">No DocBlock was found for method setPos()</error>
+    </parse_markers>
+  </file>
+  <file path="lib/protview/protview/bio/Subunit.php" hash="0da6c872033bb7cecf94f24bd7beec7a" package="Default">
+    <include line="2" type="Require Once" package="Default">
+      <name>Peptide.php</name>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="4" package="Default">
+      <extends/>
+      <name>Subunit</name>
+      <full_name>\Subunit</full_name>
+      <property final="false" static="false" visibility="private" line="5" namespace="global" package="Default">
+        <name>$id</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="6" namespace="global" package="Default">
+        <name>$name</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="7" namespace="global" package="Default">
+        <name>$peptides</name>
+        <default><![CDATA[array()]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="8" namespace="global" package="Default">
+        <name>$protein</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="10" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <argument line="10">
+          <name>$id</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="14" package="Default">
+        <name>getId</name>
+        <full_name>getId</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="19" package="Default">
+        <name>setId</name>
+        <full_name>setId</full_name>
+        <argument line="19">
+          <name>$id</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="24" package="Default">
+        <name>addPeptide</name>
+        <full_name>addPeptide</full_name>
+        <argument line="24">
+          <name>$peptide</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="31" package="Default">
+        <name>getPeptides</name>
+        <full_name>getPeptides</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="36" package="Default">
+        <name>getName</name>
+        <full_name>getName</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="41" package="Default">
+        <name>setName</name>
+        <full_name>setName</full_name>
+        <argument line="41">
+          <name>$name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="46" package="Default">
+        <name>getProtein</name>
+        <full_name>getProtein</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="51" package="Default">
+        <name>setProtein</name>
+        <full_name>setProtein</full_name>
+        <argument line="51">
+          <name>$protein</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file lib/protview/protview/bio/Subunit.php</error>
+      <error line="4" code="50000">No DocBlock was found for \Subunit</error>
+      <error line="5" code="50018">No DocBlock was found for property $id</error>
+      <error line="6" code="50018">No DocBlock was found for property $name</error>
+      <error line="7" code="50018">No DocBlock was found for property $peptides</error>
+      <error line="8" code="50018">No DocBlock was found for property $protein</error>
+      <error line="10" code="50010">No DocBlock was found for method __construct()</error>
+      <error line="14" code="50010">No DocBlock was found for method getId()</error>
+      <error line="19" code="50010">No DocBlock was found for method setId()</error>
+      <error line="24" code="50010">No DocBlock was found for method addPeptide()</error>
+      <error line="31" code="50010">No DocBlock was found for method getPeptides()</error>
+      <error line="36" code="50010">No DocBlock was found for method getName()</error>
+      <error line="41" code="50010">No DocBlock was found for method setName()</error>
+      <error line="46" code="50010">No DocBlock was found for method getProtein()</error>
+      <error line="51" code="50010">No DocBlock was found for method setProtein()</error>
+    </parse_markers>
+  </file>
+  <file path="lib/protview/protview/geom/Formula.php" hash="54a65ce65ceae0f98a272347db47309f" package="Default">
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends/>
+      <name>Formula</name>
+      <full_name>\Formula</full_name>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="15" package="Default">
+        <name>getY</name>
+        <full_name>getY</full_name>
+        <docblock line="10">
+          <description><![CDATA[Calculates y coordinate]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="10" name="param" description="" type="int" variable="$radius">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="10" name="param" description="(rotation angle 0-360 degree)" type="int" variable="$angle">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+        <argument line="15">
+          <name>$radius</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="15">
+          <name>$angle</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="25" package="Default">
+        <name>getX</name>
+        <full_name>getX</full_name>
+        <docblock line="20">
+          <description><![CDATA[Calculates x coordinate]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="20" name="param" description="" type="int" variable="$radius">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="20" name="param" description="(rotation angle 0-360 degree)" type="int" variable="$angle">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+        <argument line="25">
+          <name>$radius</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="25">
+          <name>$angle</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file lib/protview/protview/geom/Formula.php</error>
+      <error line="3" code="50000">No DocBlock was found for \Formula</error>
+    </parse_markers>
+  </file>
+  <file path="lib/protview/protview/geom/shape/basic/BasicShape.php" hash="3abf09c2abf487aef60a9882446f27ae" package="Default">
+    <include line="2" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="4" package="Default">
+      <extends>\Shape</extends>
+      <name>BasicShape</name>
+      <full_name>\BasicShape</full_name>
+      <property final="false" static="false" visibility="private" line="5" namespace="global" package="Default">
+        <name>$nbPoints</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="7" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <argument line="7">
+          <name>$offset</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="7">
+          <name>$startCoord</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="11" package="Default">
+        <name>getNbPoints</name>
+        <full_name>getNbPoints</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="17" package="Default">
+        <name>setNbPoints</name>
+        <full_name>setNbPoints</full_name>
+        <argument line="17">
+          <name>$nbPoints</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file lib/protview/protview/geom/shape/basic/BasicShape.php</error>
+      <error line="4" code="50000">No DocBlock was found for \BasicShape</error>
+      <error line="5" code="50018">No DocBlock was found for property $nbPoints</error>
+      <error line="7" code="50010">No DocBlock was found for method __construct()</error>
+      <error line="11" code="50010">No DocBlock was found for method getNbPoints()</error>
+      <error line="17" code="50010">No DocBlock was found for method setNbPoints()</error>
+    </parse_markers>
+  </file>
+  <file path="lib/protview/protview/geom/shape/basic/Circle.php" hash="5720546a84eb2ec316b5cb3925810283" package="Default">
+    <include line="2" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="4" package="Default">
+      <extends>\BasicShape</extends>
+      <name>Circle</name>
+      <full_name>\Circle</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="5" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <argument line="5">
+          <name>$offset</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="5">
+          <name>$startCoord</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="21" package="Default">
+        <name>getCoord</name>
+        <full_name>getCoord</full_name>
+        <docblock line="10">
+          <description><![CDATA[Calculates the coordinates of each point on a line]]></description>
+          <long-description><![CDATA[<p>A rotation angle can be specified for the line
+Points can be scatter points and the distance between each point
+is equal to the scatter's diameter</p>]]></long-description>
+          <tag line="10" name="param" description="(1 = bottom-&gt;up; -1 = top-&gt;down)" type="int" variable="$rotationSense">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="10" name="param" description="(rotation angle, default 90° = vertical)" type="int" variable="$angle">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="10" name="return" description="$coord (coordinates of each point)" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file lib/protview/protview/geom/shape/basic/Circle.php</error>
+      <error line="4" code="50000">No DocBlock was found for \Circle</error>
+      <error line="5" code="50010">No DocBlock was found for method __construct()</error>
+      <notice line="10" code="50013">Parameter $rotationSense could not be found in getCoord()</notice>
+      <notice line="10" code="50013">Parameter $angle could not be found in getCoord()</notice>
+    </parse_markers>
+  </file>
+  <file path="lib/protview/protview/geom/shape/basic/Line.php" hash="6fa497d6964522c48aef219e733c5583" package="Default">
+    <include line="2" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="4" package="Default">
+      <extends>\BasicShape</extends>
+      <name>Line</name>
+      <full_name>\Line</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="5" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <argument line="5">
+          <name>$offset</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="5">
+          <name>$startCoord</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="21" package="Default">
+        <name>getCoord</name>
+        <full_name>getCoord</full_name>
+        <docblock line="10">
+          <description><![CDATA[Calculates the coordinates of each point on a line]]></description>
+          <long-description><![CDATA[<p>A rotation angle can be specified for the line
+Points can be scatter points and the distance between each point
+is equal to the scatter's diameter</p>]]></long-description>
+          <tag line="10" name="param" description="(1 = bottom-&gt;up; -1 = top-&gt;down)" type="int" variable="$rotationSense">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="10" name="param" description="(rotation angle, default 90° = vertical)" type="int" variable="$angle">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="10" name="return" description="$coord (coordinates of each point)" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file lib/protview/protview/geom/shape/basic/Line.php</error>
+      <error line="4" code="50000">No DocBlock was found for \Line</error>
+      <error line="5" code="50010">No DocBlock was found for method __construct()</error>
+      <notice line="10" code="50013">Parameter $rotationSense could not be found in getCoord()</notice>
+      <notice line="10" code="50013">Parameter $angle could not be found in getCoord()</notice>
+    </parse_markers>
+  </file>
+  <file path="lib/protview/protview/geom/shape/complex/ComplexShape.php" hash="cb5107fb45f4610670af362ba167f478" package="Default">
+    <include line="2" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="4" package="Default">
+      <extends>\Shape</extends>
+      <name>ComplexShape</name>
+      <full_name>\ComplexShape</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="5" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <argument line="5">
+          <name>$offset</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="5">
+          <name>$startCoord</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file lib/protview/protview/geom/shape/complex/ComplexShape.php</error>
+      <error line="4" code="50000">No DocBlock was found for \ComplexShape</error>
+      <error line="5" code="50010">No DocBlock was found for method __construct()</error>
+    </parse_markers>
+  </file>
+  <file path="lib/protview/protview/geom/shape/complex/ExtendedLoop.php" hash="e0ef607f0c0dbfd42aa71305c6f7d80b" package="Default">
+    <include line="3" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <include line="4" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="6" package="Default">
+      <extends>\ComplexShape</extends>
+      <name>ExtendedLoop</name>
+      <full_name>\ExtendedLoop</full_name>
+      <property final="false" static="false" visibility="private" line="8" namespace="global" package="Default">
+        <name>$extendLoopSideLength</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="9" namespace="global" package="Default">
+        <name>$extendLoopSideMiddleLength</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="10" namespace="global" package="Default">
+        <name>$nbExtendLoop</name>
+        <default><![CDATA[1]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="11" namespace="global" package="Default">
+        <name>$basicLoopSideLength</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="13" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <argument line="13">
+          <name>$offset</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="13">
+          <name>$startCoord</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="17" package="Default">
+        <name>setExtendLoopSideLength</name>
+        <full_name>setExtendLoopSideLength</full_name>
+        <argument line="17">
+          <name>$extendLoopSideLength</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="22" package="Default">
+        <name>setExtendLoopSideMiddleLength</name>
+        <full_name>setExtendLoopSideMiddleLength</full_name>
+        <argument line="22">
+          <name>$extendLoopSideMiddleLength</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="27" package="Default">
+        <name>setNbExtendLoop</name>
+        <full_name>setNbExtendLoop</full_name>
+        <argument line="27">
+          <name>$nbExtendLoop</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="32" package="Default">
+        <name>setBasicLoopSideLength</name>
+        <full_name>setBasicLoopSideLength</full_name>
+        <argument line="32">
+          <name>$basicLoopSideLength</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="37" package="Default">
+        <name>getCoord</name>
+        <full_name>getCoord</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file lib/protview/protview/geom/shape/complex/ExtendedLoop.php</error>
+      <error line="6" code="50000">No DocBlock was found for \ExtendedLoop</error>
+      <error line="8" code="50018">No DocBlock was found for property $extendLoopSideLength</error>
+      <error line="9" code="50018">No DocBlock was found for property $extendLoopSideMiddleLength</error>
+      <error line="10" code="50018">No DocBlock was found for property $nbExtendLoop</error>
+      <error line="11" code="50018">No DocBlock was found for property $basicLoopSideLength</error>
+      <error line="13" code="50010">No DocBlock was found for method __construct()</error>
+      <error line="17" code="50010">No DocBlock was found for method setExtendLoopSideLength()</error>
+      <error line="22" code="50010">No DocBlock was found for method setExtendLoopSideMiddleLength()</error>
+      <error line="27" code="50010">No DocBlock was found for method setNbExtendLoop()</error>
+      <error line="32" code="50010">No DocBlock was found for method setBasicLoopSideLength()</error>
+      <error line="37" code="50010">No DocBlock was found for method getCoord()</error>
+    </parse_markers>
+  </file>
+  <file path="lib/protview/protview/geom/shape/complex/MembranePattern.php" hash="c954bf1cb0c3dd25230069a946a56afe" package="Default">
+    <include line="3" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <include line="4" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="6" package="Default">
+      <extends>\ComplexShape</extends>
+      <name>MembranePattern</name>
+      <full_name>\MembranePattern</full_name>
+      <property final="false" static="false" visibility="private" line="10" namespace="global" package="Default">
+        <name>$maxLineLength</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="11" namespace="global" package="Default">
+        <name>$length</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="12" namespace="global" package="Default">
+        <name>$membraneCoords</name>
+        <default><![CDATA[array("minY" => 0, "maxY" => 0)]]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="15" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <argument line="15">
+          <name>$offset</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="15">
+          <name>$startCoord</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="19" package="Default">
+        <name>getMaxLineLength</name>
+        <full_name>getMaxLineLength</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="24" package="Default">
+        <name>setMaxLineLength</name>
+        <full_name>setMaxLineLength</full_name>
+        <argument line="24">
+          <name>$maxLineLength</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="29" package="Default">
+        <name>getLength</name>
+        <full_name>getLength</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="34" package="Default">
+        <name>setLength</name>
+        <full_name>setLength</full_name>
+        <argument line="34">
+          <name>$length</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="39" package="Default">
+        <name>getMembraneCoords</name>
+        <full_name>getMembraneCoords</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="44" package="Default">
+        <name>getCoord</name>
+        <full_name>getCoord</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file lib/protview/protview/geom/shape/complex/MembranePattern.php</error>
+      <error line="6" code="50000">No DocBlock was found for \MembranePattern</error>
+      <error line="10" code="50018">No DocBlock was found for property $maxLineLength</error>
+      <error line="11" code="50018">No DocBlock was found for property $length</error>
+      <error line="12" code="50018">No DocBlock was found for property $membraneCoords</error>
+      <error line="15" code="50010">No DocBlock was found for method __construct()</error>
+      <error line="19" code="50010">No DocBlock was found for method getMaxLineLength()</error>
+      <error line="24" code="50010">No DocBlock was found for method setMaxLineLength()</error>
+      <error line="29" code="50010">No DocBlock was found for method getLength()</error>
+      <error line="34" code="50010">No DocBlock was found for method setLength()</error>
+      <error line="39" code="50010">No DocBlock was found for method getMembraneCoords()</error>
+      <error line="44" code="50010">No DocBlock was found for method getCoord()</error>
+    </parse_markers>
+  </file>
+  <file path="lib/protview/protview/geom/shape/complex/PeptideShape.php" hash="d552750dfcf5cd3e8a3b149bb8a791a3" package="Default">
+    <include line="2" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <include line="3" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <include line="4" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="6" package="Default">
+      <extends/>
+      <name>PeptideShape</name>
+      <full_name>\PeptideShape</full_name>
+      <property final="false" static="false" visibility="private" line="8" namespace="global" package="Default">
+        <name>$peptide</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="9" namespace="global" package="Default">
+        <name>$startCoord</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="10" namespace="global" package="Default">
+        <name>$aaSize</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="12" namespace="global" package="Default">
+        <name>$aaCoords</name>
+        <default><![CDATA[array()]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="13" namespace="global" package="Default">
+        <name>$membraneCoords</name>
+        <default><![CDATA[array()]]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="15" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <argument line="15">
+          <name>$peptide</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="15">
+          <name>$startCoord</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="15">
+          <name>$aaSize</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="22" package="Default">
+        <name>calculateCoordinates</name>
+        <full_name>calculateCoordinates</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="52" package="Default">
+        <name>getExternalPart</name>
+        <full_name>getExternalPart</full_name>
+        <docblock line="47">
+          <description><![CDATA[Calculates coordinates of external part of the membraine]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="47" name="param" description="" type="\unknown_type" variable="$region">
+            <type by_reference="false">\unknown_type</type>
+          </tag>
+          <tag line="47" name="param" description="" type="\unknown_type" variable="$pos">
+            <type by_reference="false">\unknown_type</type>
+          </tag>
+        </docblock>
+        <argument line="52">
+          <name>$region</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="52">
+          <name>$pos</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="158" package="Default">
+        <name>getMembranePart</name>
+        <full_name>getMembranePart</full_name>
+        <argument line="158">
+          <name>$region</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="158">
+          <name>$countAminoAcids</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="158">
+          <name>$pos</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="187" package="Default">
+        <name>getAACoordinates</name>
+        <full_name>getAACoordinates</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="191" package="Default">
+        <name>getParams</name>
+        <full_name>getParams</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file lib/protview/protview/geom/shape/complex/PeptideShape.php</error>
+      <error line="6" code="50000">No DocBlock was found for \PeptideShape</error>
+      <error line="8" code="50018">No DocBlock was found for property $peptide</error>
+      <error line="9" code="50018">No DocBlock was found for property $startCoord</error>
+      <error line="10" code="50018">No DocBlock was found for property $aaSize</error>
+      <error line="12" code="50018">No DocBlock was found for property $aaCoords</error>
+      <error line="13" code="50018">No DocBlock was found for property $membraneCoords</error>
+      <error line="15" code="50010">No DocBlock was found for method __construct()</error>
+      <error line="22" code="50010">No DocBlock was found for method calculateCoordinates()</error>
+      <error line="158" code="50010">No DocBlock was found for method getMembranePart()</error>
+      <error line="187" code="50010">No DocBlock was found for method getAACoordinates()</error>
+      <error line="191" code="50010">No DocBlock was found for method getParams()</error>
+    </parse_markers>
+  </file>
+  <file path="lib/protview/protview/geom/shape/complex/StandardLoop.php" hash="12ca13bd507be5e9178f273e60b41dda" package="Default">
+    <include line="3" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <include line="4" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <include line="5" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="7" package="Default">
+      <extends>\ComplexShape</extends>
+      <name>StandardLoop</name>
+      <full_name>\StandardLoop</full_name>
+      <property final="false" static="false" visibility="private" line="9" namespace="global" package="Default">
+        <name>$sideLength</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="10" namespace="global" package="Default">
+        <name>$middleLength</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="12" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <argument line="12">
+          <name>$offset</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="12">
+          <name>$startCoord</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="16" package="Default">
+        <name>setSideLength</name>
+        <full_name>setSideLength</full_name>
+        <argument line="16">
+          <name>$sideLength</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="21" package="Default">
+        <name>setMiddleLength</name>
+        <full_name>setMiddleLength</full_name>
+        <argument line="21">
+          <name>$middleLength</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="27" package="Default">
+        <name>getCoord</name>
+        <full_name>getCoord</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file lib/protview/protview/geom/shape/complex/StandardLoop.php</error>
+      <error line="7" code="50000">No DocBlock was found for \StandardLoop</error>
+      <error line="9" code="50018">No DocBlock was found for property $sideLength</error>
+      <error line="10" code="50018">No DocBlock was found for property $middleLength</error>
+      <error line="12" code="50010">No DocBlock was found for method __construct()</error>
+      <error line="16" code="50010">No DocBlock was found for method setSideLength()</error>
+      <error line="21" code="50010">No DocBlock was found for method setMiddleLength()</error>
+      <error line="27" code="50010">No DocBlock was found for method getCoord()</error>
+    </parse_markers>
+  </file>
+  <file path="lib/protview/protview/geom/shape/complex/TransmembraneProtein.php" hash="3dda942eef5a9939b8129bf6973391f0" package="Default">
+    <include line="2" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <include line="3" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <include line="4" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="6" package="Default">
+      <extends/>
+      <name>TransmembraneProtein</name>
+      <full_name>\TransmembraneProtein</full_name>
+      <property final="false" static="false" visibility="private" line="8" namespace="global" package="Default">
+        <name>$params</name>
+        <default><![CDATA[array("maxHeigh" => 1000, "maxWidth" => 1000, "minDmainSpace" => 20)]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="13" namespace="global" package="Default">
+        <name>$protein</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="14" namespace="global" package="Default">
+        <name>$startCoord</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="15" namespace="global" package="Default">
+        <name>$aaSize</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="18" namespace="global" package="Default">
+        <name>$aaCoords</name>
+        <default><![CDATA[array()]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="19" namespace="global" package="Default">
+        <name>$membraneCoords</name>
+        <default><![CDATA[array("startX" => 0, "startY" => 0, "height" => 0, "width" => 0)]]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="21" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <argument line="21">
+          <name>$protein</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="21">
+          <name>$startCoord</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="21">
+          <name>$aaSize</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="28" package="Default">
+        <name>calculateCoordinates</name>
+        <full_name>calculateCoordinates</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="62" package="Default">
+        <name>getExternalPart</name>
+        <full_name>getExternalPart</full_name>
+        <docblock line="57">
+          <description><![CDATA[Calculates coordinates of external part of the membraine]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="57" name="param" description="" type="\unknown_type" variable="$domain">
+            <type by_reference="false">\unknown_type</type>
+          </tag>
+          <tag line="57" name="param" description="" type="\unknown_type" variable="$pos">
+            <type by_reference="false">\unknown_type</type>
+          </tag>
+        </docblock>
+        <argument line="62">
+          <name>$domain</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="62">
+          <name>$pos</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="148" package="Default">
+        <name>getMembranePart</name>
+        <full_name>getMembranePart</full_name>
+        <argument line="148">
+          <name>$domain</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="148">
+          <name>$countAminoAcids</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="148">
+          <name>$pos</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="177" package="Default">
+        <name>getAACoordinates</name>
+        <full_name>getAACoordinates</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="181" package="Default">
+        <name>getMembraneCoordinates</name>
+        <full_name>getMembraneCoordinates</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file lib/protview/protview/geom/shape/complex/TransmembraneProtein.php</error>
+      <error line="6" code="50000">No DocBlock was found for \TransmembraneProtein</error>
+      <error line="8" code="50018">No DocBlock was found for property $params</error>
+      <error line="13" code="50018">No DocBlock was found for property $protein</error>
+      <error line="14" code="50018">No DocBlock was found for property $startCoord</error>
+      <error line="15" code="50018">No DocBlock was found for property $aaSize</error>
+      <error line="18" code="50018">No DocBlock was found for property $aaCoords</error>
+      <error line="19" code="50018">No DocBlock was found for property $membraneCoords</error>
+      <error line="21" code="50010">No DocBlock was found for method __construct()</error>
+      <error line="28" code="50010">No DocBlock was found for method calculateCoordinates()</error>
+      <error line="148" code="50010">No DocBlock was found for method getMembranePart()</error>
+      <error line="177" code="50010">No DocBlock was found for method getAACoordinates()</error>
+      <error line="181" code="50010">No DocBlock was found for method getMembraneCoordinates()</error>
+    </parse_markers>
+  </file>
+  <file path="lib/protview/protview/geom/shape/Shape.php" hash="dbb3b7af407abf63ffc6fb54a3d9cbb1" package="Default">
+    <include line="2" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends/>
+      <name>Shape</name>
+      <full_name>\Shape</full_name>
+      <property final="false" static="false" visibility="private" line="5" namespace="global" package="Default">
+        <name>$offset</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="6" namespace="global" package="Default">
+        <name>$startCoord</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="7" namespace="global" package="Default">
+        <name>$lastCoord</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="11" namespace="global" package="Default">
+        <name>$rotation</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="14" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <argument line="14">
+          <name>$offset</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="14">
+          <name>$startCoord</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="30" package="Default">
+        <name>setOffset</name>
+        <full_name>setOffset</full_name>
+        <argument line="30">
+          <name>$offset</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="34" package="Default">
+        <name>getOffset</name>
+        <full_name>getOffset</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="38" package="Default">
+        <name>setStartCoord</name>
+        <full_name>setStartCoord</full_name>
+        <argument line="38">
+          <name>$startCoord</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="53" package="Default">
+        <name>getStartCoord</name>
+        <full_name>getStartCoord</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="58" package="Default">
+        <name>setLastCoord</name>
+        <full_name>setLastCoord</full_name>
+        <argument line="58">
+          <name>$lastCoord</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="62" package="Default">
+        <name>getLastCoord</name>
+        <full_name>getLastCoord</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="66" package="Default">
+        <name>getRotation</name>
+        <full_name>getRotation</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="71" package="Default">
+        <name>setRotation</name>
+        <full_name>setRotation</full_name>
+        <argument line="71">
+          <name>$rotation</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="true" static="false" visibility="public" namespace="global" line="88" package="Default">
+        <name>getCoord</name>
+        <full_name>getCoord</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file lib/protview/protview/geom/shape/Shape.php</error>
+      <error line="3" code="50000">No DocBlock was found for \Shape</error>
+      <error line="5" code="50018">No DocBlock was found for property $offset</error>
+      <error line="6" code="50018">No DocBlock was found for property $startCoord</error>
+      <error line="7" code="50018">No DocBlock was found for property $lastCoord</error>
+      <error line="11" code="50018">No DocBlock was found for property $rotation</error>
+      <error line="14" code="50010">No DocBlock was found for method __construct()</error>
+      <error line="30" code="50010">No DocBlock was found for method setOffset()</error>
+      <error line="34" code="50010">No DocBlock was found for method getOffset()</error>
+      <error line="38" code="50010">No DocBlock was found for method setStartCoord()</error>
+      <error line="53" code="50010">No DocBlock was found for method getStartCoord()</error>
+      <error line="58" code="50010">No DocBlock was found for method setLastCoord()</error>
+      <error line="62" code="50010">No DocBlock was found for method getLastCoord()</error>
+      <error line="66" code="50010">No DocBlock was found for method getRotation()</error>
+      <error line="71" code="50010">No DocBlock was found for method setRotation()</error>
+      <error line="88" code="50010">No DocBlock was found for method getCoord()</error>
+    </parse_markers>
+  </file>
+  <file path="lib/protview/protview/graph/SVGConverter.php" hash="571b86d9b58c47355619b14960fe19b6" package="Default">
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends/>
+      <name>SVGConverter</name>
+      <full_name>\SVGConverter</full_name>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="6" package="Default">
+        <name>SVGStreamToPNG</name>
+        <full_name>SVGStreamToPNG</full_name>
+        <argument line="6">
+          <name>$svgStream</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="16" package="Default">
+        <name>toPNG</name>
+        <full_name>toPNG</full_name>
+        <argument line="16">
+          <name>$svgFile</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file lib/protview/protview/graph/SVGConverter.php</error>
+      <error line="3" code="50000">No DocBlock was found for \SVGConverter</error>
+      <error line="6" code="50010">No DocBlock was found for method SVGStreamToPNG()</error>
+      <error line="16" code="50010">No DocBlock was found for method toPNG()</error>
+    </parse_markers>
+  </file>
+  <file path="lib/protview/protview/graph/SVGGraphics.php" hash="4a885c749b1dbc704ef97bbdb96c2ee4" package="Default">
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends/>
+      <name>SVGGraphics</name>
+      <full_name>\SVGGraphics</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="5" package="Default">
+        <name>drawAminoAcid</name>
+        <full_name>drawAminoAcid</full_name>
+        <argument line="5">
+          <name>$x</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="5">
+          <name>$y</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="5">
+          <name>$size</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="5">
+          <name>$label</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="5">
+          <name>$pos</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="13" package="Default">
+        <name>drawMembrane</name>
+        <full_name>drawMembrane</full_name>
+        <argument line="13">
+          <name>$minX</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="13">
+          <name>$maxX</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="13">
+          <name>$minY</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="13">
+          <name>$maxY</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file lib/protview/protview/graph/SVGGraphics.php</error>
+      <error line="3" code="50000">No DocBlock was found for \SVGGraphics</error>
+      <error line="5" code="50010">No DocBlock was found for method drawAminoAcid()</error>
+      <error line="13" code="50010">No DocBlock was found for method drawMembrane()</error>
+    </parse_markers>
+  </file>
+  <file path="lib/protview/xfm/Bootstrap.php" hash="f3d646a36e86d675c64c64ff36dee5a0" package="Default">
+    <include line="2" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <include line="13" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="9" package="protview">
+      <extends>\xBootstrap</extends>
+      <name>Bootstrap</name>
+      <full_name>\Bootstrap</full_name>
+      <docblock line="4">
+        <description><![CDATA[Project specific bootstrap extension.]]></description>
+        <long-description><![CDATA[<p>Includes custom protview-specific xfm classes extensions.</p>]]></long-description>
+        <tag line="4" name="package" description="protview"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="11" package="protview">
+        <name>setup_includes_externals</name>
+        <full_name>setup_includes_externals</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file lib/protview/xfm/Bootstrap.php</error>
+      <error line="11" code="50010">No DocBlock was found for method setup_includes_externals()</error>
+    </parse_markers>
+  </file>
+  <file path="lib/protview/xfm/RESTController.php" hash="4cf86f6371ee82ad9b658b1ea182db97" package="Default">
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends>\xWebController</extends>
+      <name>RESTController</name>
+      <full_name>\RESTController</full_name>
+      <property final="false" static="false" visibility="protected" line="4" namespace="global" package="Default">
+        <name>$model</name>
+        <default><![CDATA[null]]></default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="15" namespace="global" package="Default">
+        <name>$allow</name>
+        <default><![CDATA[array('get', 'post', 'put', 'delete')]]></default>
+        <docblock line="6">
+          <description><![CDATA[Allowed CRUD operations.]]></description>
+          <long-description><![CDATA[<p>Possible values: 'get', 'post', 'put', 'delete'</p>]]></long-description>
+          <tag line="6" name="see" description="\global\get()" refers="\global\get()"/>
+          <tag line="6" name="see" description="\global\post()" refers="\global\post()"/>
+          <tag line="6" name="see" description="\global\put()" refers="\global\put()"/>
+          <tag line="6" name="see" description="\global\delete()" refers="\global\delete()"/>
+          <tag line="6" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="24" package="Default">
+        <name>get</name>
+        <full_name>get</full_name>
+        <docblock line="18">
+          <description><![CDATA[API Method.]]></description>
+          <long-description><![CDATA[<p>Generic get method for API calls.</p>]]></long-description>
+          <tag line="18" name="param" description="Any model fields for filtering, or a query parameter for search" type="mixed" variable="">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="18" name="return" description="An JSON compatible resultset structure." type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="55" package="Default">
+        <name>post</name>
+        <full_name>post</full_name>
+        <docblock line="49">
+          <description><![CDATA[API Method.]]></description>
+          <long-description><![CDATA[<p>Generic post method for API calls.</p>]]></long-description>
+          <tag line="49" name="param" description="items: contains an array of model fields and values." type="array" variable="">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="49" name="return" description="An JSON compatible resultset structure." type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="75" package="Default">
+        <name>put</name>
+        <full_name>put</full_name>
+        <docblock line="69">
+          <description><![CDATA[API Method.]]></description>
+          <long-description><![CDATA[<p>Generic put method for API calls.</p>]]></long-description>
+          <tag line="69" name="param" description="items: contains an array of model fields and values." type="array" variable="">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="69" name="return" description="An JSON compatible resultset structure." type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="99" package="Default">
+        <name>delete</name>
+        <full_name>delete</full_name>
+        <docblock line="91">
+          <description><![CDATA[API Method.]]></description>
+          <long-description><![CDATA[<p>Generic delete method for API calls.</p>]]></long-description>
+          <tag line="91" name="note" description="This method is to be used as default. For nn relationship tables,&#10;one should refine the method in specific controller classes."/>
+          <tag line="91" name="param" description="id: the id parameter of the record to delete" type="integer" variable="">
+            <type by_reference="false">integer</type>
+          </tag>
+          <tag line="91" name="return" description="An JSON compatible resultset structure." type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file lib/protview/xfm/RESTController.php</error>
+      <error line="3" code="50000">No DocBlock was found for \RESTController</error>
+      <error line="4" code="50018">No DocBlock was found for property $model</error>
+      <notice line="18" code="50013">Parameter  could not be found in get()</notice>
+      <notice line="49" code="50013">Parameter  could not be found in post()</notice>
+      <notice line="69" code="50013">Parameter  could not be found in put()</notice>
+      <notice line="91" code="50013">Parameter  could not be found in delete()</notice>
+    </parse_markers>
+  </file>
+  <file path="models/amino-acid.php" hash="26126b46e00c91bd6a57b8bee4d23292" package="Default">
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends>\xModelMysql</extends>
+      <name>AminoAcidModel</name>
+      <full_name>\AminoAcidModel</full_name>
+      <property final="false" static="false" visibility="public" line="5" namespace="global" package="Default">
+        <name>$table</name>
+        <default><![CDATA['amino_acids']]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="7" namespace="global" package="Default">
+        <name>$mapping</name>
+        <default><![CDATA[array('id' => 'id', 'region_id' => 'region_id', 'type' => 'type', 'link' => 'link', 'modification' => 'modification', 'pos' => 'pos')]]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="16" namespace="global" package="Default">
+        <name>$validation</name>
+        <default><![CDATA[array('id' => 'mandatory', 'type' => 'mandatory', 'pos' => 'mandatory')]]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="22" namespace="global" package="Default">
+        <name>$joins</name>
+        <default><![CDATA[array('region' => 'LEFT JOIN regions ON (regions.id = amino_acids.region_id)')]]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="26" namespace="global" package="Default">
+        <name>$join</name>
+        <default><![CDATA[array('region')]]></default>
+      </property>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file models/amino-acid.php</error>
+      <error line="3" code="50000">No DocBlock was found for \AminoAcidModel</error>
+      <error line="5" code="50018">No DocBlock was found for property $table</error>
+      <error line="7" code="50018">No DocBlock was found for property $mapping</error>
+      <error line="16" code="50018">No DocBlock was found for property $validation</error>
+      <error line="22" code="50018">No DocBlock was found for property $joins</error>
+      <error line="26" code="50018">No DocBlock was found for property $join</error>
+    </parse_markers>
+  </file>
+  <file path="models/other-geometry.php" hash="f541e20c1a92bba164b2f6aad3eda270" package="Default">
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends>\xModelMysql</extends>
+      <name>OtherGeometryModel</name>
+      <full_name>\OtherGeometryModel</full_name>
+      <property final="false" static="false" visibility="public" line="5" namespace="global" package="Default">
+        <name>$table</name>
+        <default><![CDATA['other_geometries']]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="7" namespace="global" package="Default">
+        <name>$mapping</name>
+        <default><![CDATA[array('id' => 'id', 'representation_id' => 'representation_id', 'params' => 'params', 'coordinate' => 'coordinate')]]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="14" namespace="global" package="Default">
+        <name>$validation</name>
+        <default><![CDATA[array('id' => 'mandatory', 'name' => 'mandatory')]]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="19" namespace="global" package="Default">
+        <name>$joins</name>
+        <default><![CDATA[array('representation' => 'LEFT JOIN representations ON (representations.id = other_geometries.representation_id)')]]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="23" namespace="global" package="Default">
+        <name>$join</name>
+        <default><![CDATA[array('representation')]]></default>
+      </property>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file models/other-geometry.php</error>
+      <error line="3" code="50000">No DocBlock was found for \OtherGeometryModel</error>
+      <error line="5" code="50018">No DocBlock was found for property $table</error>
+      <error line="7" code="50018">No DocBlock was found for property $mapping</error>
+      <error line="14" code="50018">No DocBlock was found for property $validation</error>
+      <error line="19" code="50018">No DocBlock was found for property $joins</error>
+      <error line="23" code="50018">No DocBlock was found for property $join</error>
+    </parse_markers>
+  </file>
+  <file path="models/peptide.php" hash="ac7621f6ea31bf15653df756f727fcd8" package="Default">
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends>\xModelMysql</extends>
+      <name>PeptideModel</name>
+      <full_name>\PeptideModel</full_name>
+      <property final="false" static="false" visibility="public" line="5" namespace="global" package="Default">
+        <name>$table</name>
+        <default><![CDATA['peptides']]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="7" namespace="global" package="Default">
+        <name>$mapping</name>
+        <default><![CDATA[array('id' => 'id', 'subunit_id' => 'subunit_id', 'label' => 'label', 'pos' => 'pos')]]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="14" namespace="global" package="Default">
+        <name>$validation</name>
+        <default><![CDATA[array('id' => 'mandatory', 'label' => 'mandatory')]]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="19" namespace="global" package="Default">
+        <name>$joins</name>
+        <default><![CDATA[array('subunit' => 'LEFT JOIN subunits ON (subunits.id = peptides.subunit_id)')]]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="23" namespace="global" package="Default">
+        <name>$join</name>
+        <default><![CDATA[array('subunit')]]></default>
+      </property>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file models/peptide.php</error>
+      <error line="3" code="50000">No DocBlock was found for \PeptideModel</error>
+      <error line="5" code="50018">No DocBlock was found for property $table</error>
+      <error line="7" code="50018">No DocBlock was found for property $mapping</error>
+      <error line="14" code="50018">No DocBlock was found for property $validation</error>
+      <error line="19" code="50018">No DocBlock was found for property $joins</error>
+      <error line="23" code="50018">No DocBlock was found for property $join</error>
+    </parse_markers>
+  </file>
+  <file path="models/protein.php" hash="1a40f4b8fb8b151cfc3d0086a550c26b" package="Default">
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends>\xModelMysql</extends>
+      <name>ProteinModel</name>
+      <full_name>\ProteinModel</full_name>
+      <property final="false" static="false" visibility="public" line="5" namespace="global" package="Default">
+        <name>$table</name>
+        <default><![CDATA['proteins']]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="7" namespace="global" package="Default">
+        <name>$mapping</name>
+        <default><![CDATA[array('id' => 'id', 'name' => 'name', 'species' => 'species', 'note' => 'note')]]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="14" namespace="global" package="Default">
+        <name>$validation</name>
+        <default><![CDATA[array('id' => 'mandatory', 'name' => 'mandatory')]]></default>
+      </property>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file models/protein.php</error>
+      <error line="3" code="50000">No DocBlock was found for \ProteinModel</error>
+      <error line="5" code="50018">No DocBlock was found for property $table</error>
+      <error line="7" code="50018">No DocBlock was found for property $mapping</error>
+      <error line="14" code="50018">No DocBlock was found for property $validation</error>
+    </parse_markers>
+  </file>
+  <file path="models/region.php" hash="f30ca03cd1a1fc6a05634c2e67935abb" package="Default">
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends>\xModelMysql</extends>
+      <name>RegionModel</name>
+      <full_name>\RegionModel</full_name>
+      <property final="false" static="false" visibility="public" line="5" namespace="global" package="Default">
+        <name>$table</name>
+        <default><![CDATA['regions']]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="7" namespace="global" package="Default">
+        <name>$mapping</name>
+        <default><![CDATA[array('id' => 'id', 'peptide_id' => 'peptide_id', 'label' => 'label', 'type' => 'type', 'pos' => 'pos')]]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="15" namespace="global" package="Default">
+        <name>$validation</name>
+        <default><![CDATA[array('id' => 'mandatory', 'type' => 'mandatory', 'pos' => 'mandatory')]]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="21" namespace="global" package="Default">
+        <name>$joins</name>
+        <default><![CDATA[array('peptide' => 'LEFT JOIN peptides ON (peptides.id = regions.peptide_id)')]]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="25" namespace="global" package="Default">
+        <name>$join</name>
+        <default><![CDATA[array('peptide')]]></default>
+      </property>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file models/region.php</error>
+      <error line="3" code="50000">No DocBlock was found for \RegionModel</error>
+      <error line="5" code="50018">No DocBlock was found for property $table</error>
+      <error line="7" code="50018">No DocBlock was found for property $mapping</error>
+      <error line="15" code="50018">No DocBlock was found for property $validation</error>
+      <error line="21" code="50018">No DocBlock was found for property $joins</error>
+      <error line="25" code="50018">No DocBlock was found for property $join</error>
+    </parse_markers>
+  </file>
+  <file path="models/representation.php" hash="09de8a4fe322f99cf98ef8cc8a9dc4be" package="Default">
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends>\xModelMysql</extends>
+      <name>RepresentationModel</name>
+      <full_name>\RepresentationModel</full_name>
+      <property final="false" static="false" visibility="public" line="5" namespace="global" package="Default">
+        <name>$table</name>
+        <default><![CDATA['representations']]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="7" namespace="global" package="Default">
+        <name>$mapping</name>
+        <default><![CDATA[array('id' => 'id', 'peptide_id' => 'peptide_id', 'title' => 'title', 'description' => 'description', 'params' => 'params')]]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="15" namespace="global" package="Default">
+        <name>$validation</name>
+        <default><![CDATA[array('id' => 'mandatory', 'peptide_id' => 'mandatory')]]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="20" namespace="global" package="Default">
+        <name>$joins</name>
+        <default><![CDATA[array('peptide' => 'LEFT JOIN peptides ON (peptides.id = representations.peptide_id)')]]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="24" namespace="global" package="Default">
+        <name>$join</name>
+        <default><![CDATA[array('peptide')]]></default>
+      </property>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file models/representation.php</error>
+      <error line="3" code="50000">No DocBlock was found for \RepresentationModel</error>
+      <error line="5" code="50018">No DocBlock was found for property $table</error>
+      <error line="7" code="50018">No DocBlock was found for property $mapping</error>
+      <error line="15" code="50018">No DocBlock was found for property $validation</error>
+      <error line="20" code="50018">No DocBlock was found for property $joins</error>
+      <error line="24" code="50018">No DocBlock was found for property $join</error>
+    </parse_markers>
+  </file>
+  <file path="models/structural-coordinate.php" hash="422537d1788c94ca1e6c896c9c98e781" package="Default">
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends>\xModelMysql</extends>
+      <name>StructuralCoordinateModel</name>
+      <full_name>\StructuralCoordinateModel</full_name>
+      <property final="false" static="false" visibility="public" line="5" namespace="global" package="Default">
+        <name>$table</name>
+        <default><![CDATA['structural_coordinates']]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="7" namespace="global" package="Default">
+        <name>$mapping</name>
+        <default><![CDATA[array('id' => 'id', 'structural_geometry_id' => 'structural_geometry_id', 'amino_acid_id' => 'amino_acid_id', 'coordinate' => 'coordinate')]]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="14" namespace="global" package="Default">
+        <name>$validation</name>
+        <default><![CDATA[array('id' => 'mandatory', 'amino_acid_id' => 'mandatory', 'structural_geometry_id' => 'mandatory', 'coordinate' => 'mandatory')]]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="21" namespace="global" package="Default">
+        <name>$joins</name>
+        <default><![CDATA[array('structural-geometry' => 'LEFT JOIN structural_geometries ON (structural_geometries.id = structural_coordinates.structural_geometry_id)', 'amino-acid' => 'LEFT JOIN amino_acids ON (amino_acids.id = structural_coordinates.amino_acid_id)')]]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="26" namespace="global" package="Default">
+        <name>$join</name>
+        <default><![CDATA[array('structural-geometry', 'amino-acid')]]></default>
+      </property>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file models/structural-coordinate.php</error>
+      <error line="3" code="50000">No DocBlock was found for \StructuralCoordinateModel</error>
+      <error line="5" code="50018">No DocBlock was found for property $table</error>
+      <error line="7" code="50018">No DocBlock was found for property $mapping</error>
+      <error line="14" code="50018">No DocBlock was found for property $validation</error>
+      <error line="21" code="50018">No DocBlock was found for property $joins</error>
+      <error line="26" code="50018">No DocBlock was found for property $join</error>
+    </parse_markers>
+  </file>
+  <file path="models/structural-geometry.php" hash="0482826ff7e06eeb68e64c2d0abcd667" package="Default">
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends>\xModelMysql</extends>
+      <name>StructuralGeometryModel</name>
+      <full_name>\StructuralGeometryModel</full_name>
+      <property final="false" static="false" visibility="public" line="5" namespace="global" package="Default">
+        <name>$table</name>
+        <default><![CDATA['structural_geometries']]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="7" namespace="global" package="Default">
+        <name>$mapping</name>
+        <default><![CDATA[array('id' => 'id', 'representation_id' => 'representation_id', 'region_id' => 'region_id', 'params' => 'params', 'type' => 'type', 'pos' => 'pos')]]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="16" namespace="global" package="Default">
+        <name>$validation</name>
+        <default><![CDATA[array('id' => 'mandatory', 'representation_id' => 'mandatory', 'region_id' => 'mandatory', 'type' => 'mandatory', 'pos' => 'mandatory')]]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="24" namespace="global" package="Default">
+        <name>$joins</name>
+        <default><![CDATA[array('representation' => 'LEFT JOIN representations ON (representations.id = structural_geometries.representation_id)', 'region' => 'LEFT JOIN regions ON (regions.id = structural_geometries.region_id)')]]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="29" namespace="global" package="Default">
+        <name>$join</name>
+        <default><![CDATA[array('representation', 'region')]]></default>
+      </property>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file models/structural-geometry.php</error>
+      <error line="3" code="50000">No DocBlock was found for \StructuralGeometryModel</error>
+      <error line="5" code="50018">No DocBlock was found for property $table</error>
+      <error line="7" code="50018">No DocBlock was found for property $mapping</error>
+      <error line="16" code="50018">No DocBlock was found for property $validation</error>
+      <error line="24" code="50018">No DocBlock was found for property $joins</error>
+      <error line="29" code="50018">No DocBlock was found for property $join</error>
+    </parse_markers>
+  </file>
+  <file path="models/subunit.php" hash="3d6737720cb2eb91458a0b103dfff898" package="Default">
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends>\xModelMysql</extends>
+      <name>SubunitModel</name>
+      <full_name>\SubunitModel</full_name>
+      <property final="false" static="false" visibility="public" line="5" namespace="global" package="Default">
+        <name>$table</name>
+        <default><![CDATA['subunits']]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="7" namespace="global" package="Default">
+        <name>$mapping</name>
+        <default><![CDATA[array('id' => 'id', 'protein_id' => 'protein_id', 'label' => 'label', 'pos' => 'pos')]]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="14" namespace="global" package="Default">
+        <name>$validation</name>
+        <default><![CDATA[array('id' => 'mandatory', 'label' => 'mandatory')]]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="19" namespace="global" package="Default">
+        <name>$joins</name>
+        <default><![CDATA[array('protein' => 'LEFT JOIN proteins ON (proteins.id = subunits.protein_id)')]]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="23" namespace="global" package="Default">
+        <name>$join</name>
+        <default><![CDATA[array('protein')]]></default>
+      </property>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file models/subunit.php</error>
+      <error line="3" code="50000">No DocBlock was found for \SubunitModel</error>
+      <error line="5" code="50018">No DocBlock was found for property $table</error>
+      <error line="7" code="50018">No DocBlock was found for property $mapping</error>
+      <error line="14" code="50018">No DocBlock was found for property $validation</error>
+      <error line="19" code="50018">No DocBlock was found for property $joins</error>
+      <error line="23" code="50018">No DocBlock was found for property $join</error>
+    </parse_markers>
+  </file>
+  <file path="public/index.php" hash="c50b2f234630bf10978292c2f15fd284" package="Default">
+    <include line="2" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file public/index.php</error>
+    </parse_markers>
+  </file>
+  <file path="public/test/batik.php" hash="e4806b22bea4fe11132a754ce8f992d2" package="Default">
+    <include line="2" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file public/test/batik.php</error>
+    </parse_markers>
+  </file>
+  <file path="public/test/dummy.php" hash="11a76146e754f326b5f988d057112ea5" package="Default">
+    <include line="2" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file public/test/dummy.php</error>
+    </parse_markers>
+  </file>
+  <file path="public/test/imagemagick.php" hash="b69cca93da83c3cc2cdeb14096623835" package="Default">
+    <include line="2" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file public/test/imagemagick.php</error>
+    </parse_markers>
+  </file>
+  <file path="public/test/peptide.php" hash="a7402774722985a587c29ca487c68d7b" package="Default">
+    <include line="2" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <include line="6" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file public/test/peptide.php</error>
+    </parse_markers>
+  </file>
+  <file path="public/test/shape.php" hash="10547c6d7f6d2cd1beaea363ed92cb50" package="Default">
+    <include line="2" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <include line="6" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <include line="14" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <include line="21" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <include line="26" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <include line="34" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <include line="40" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file public/test/shape.php</error>
+    </parse_markers>
+  </file>
+  <file path="views/drawingboard/start.php" hash="156c7609d9299d317feecb034713c247" package="Default">
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends>\xView</extends>
+      <name>DrawingboardStartView</name>
+      <full_name>\DrawingboardStartView</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="4" package="Default">
+        <name>init</name>
+        <full_name>init</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file views/drawingboard/start.php</error>
+      <error line="3" code="50000">No DocBlock was found for \DrawingboardStartView</error>
+      <error line="4" code="50010">No DocBlock was found for method init()</error>
+    </parse_markers>
+  </file>
+  <file path="views/error/display.php" hash="83b0505bba231f68475629a891a82ea0" package="Default">
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends>\xView</extends>
+      <name>ErrorDisplayView</name>
+      <full_name>\ErrorDisplayView</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="5" package="Default">
+        <name>init</name>
+        <full_name>init</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file views/error/display.php</error>
+      <error line="3" code="50000">No DocBlock was found for \ErrorDisplayView</error>
+      <error line="5" code="50010">No DocBlock was found for method init()</error>
+    </parse_markers>
+  </file>
+  <file path="views/layout/layout.php" hash="3d64c4466063c5686e1633c0790c8414" package="Default">
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends>\xView</extends>
+      <name>LayoutLayoutView</name>
+      <full_name>\LayoutLayoutView</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="5" package="Default">
+        <name>init</name>
+        <full_name>init</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="68" package="Default">
+        <name>render</name>
+        <full_name>render</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file views/layout/layout.php</error>
+      <error line="3" code="50000">No DocBlock was found for \LayoutLayoutView</error>
+      <error line="5" code="50010">No DocBlock was found for method init()</error>
+      <error line="68" code="50010">No DocBlock was found for method render()</error>
+    </parse_markers>
+  </file>
+  <file path="views/structure/start.php" hash="9ba1bfdef02354454d923c9b395cf495" package="Default">
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends>\xView</extends>
+      <name>StructureStartView</name>
+      <full_name>\StructureStartView</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="4" package="Default">
+        <name>init</name>
+        <full_name>init</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file views/structure/start.php</error>
+      <error line="3" code="50000">No DocBlock was found for \StructureStartView</error>
+      <error line="4" code="50010">No DocBlock was found for method init()</error>
+    </parse_markers>
+  </file>
+  <package name="Default" full_name="Default"/>
+  <package name="protview" full_name="protview"/>
+  <namespace name="global" full_name="global"/>
+  <marker count="0">todo</marker>
+  <marker count="0">fixme</marker>
+  <deprecated count="0"/>
+</project>

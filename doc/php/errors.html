@@ -1,0 +1,2652 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>phpDocumentor</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="css/template.css" rel="stylesheet" media="all">
+<script src="js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="js/bootstrap.js" type="text/javascript"></script><script src="js/template.js" type="text/javascript"></script><script src="js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="img/favicon.ico">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="index.html">phpDocumentor</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+<li><a href="packages/protview.html"><i class="icon-folder-open"></i> protview</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">353</span></a></li>
+<li><a href="markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4"><ul class="side-nav nav nav-list">
+<li class="nav-header">Filter type</li>
+<li><div class="btn-group type-filter" data-toggle="buttons-checkbox">
+<button class="btn critical">Critical</button><button class="btn error">Error</button><button class="btn notice">Notice</button>
+</div></li>
+<li class="nav-header">Navigation</li>
+<li><a href="#controllers/amino-acids.php"><i class="icon-file"></i>controllers/amino-acids.php</a></li>
+<li><a href="#controllers/application.php"><i class="icon-file"></i>controllers/application.php</a></li>
+<li><a href="#controllers/drawingboard.php"><i class="icon-file"></i>controllers/drawingboard.php</a></li>
+<li><a href="#controllers/error.php"><i class="icon-file"></i>controllers/error.php</a></li>
+<li><a href="#controllers/home.php"><i class="icon-file"></i>controllers/home.php</a></li>
+<li><a href="#controllers/menubar.php"><i class="icon-file"></i>controllers/menubar.php</a></li>
+<li><a href="#controllers/peptides.php"><i class="icon-file"></i>controllers/peptides.php</a></li>
+<li><a href="#controllers/postmodification.php"><i class="icon-file"></i>controllers/postmodification.php</a></li>
+<li><a href="#controllers/proteins.php"><i class="icon-file"></i>controllers/proteins.php</a></li>
+<li><a href="#controllers/regions.php"><i class="icon-file"></i>controllers/regions.php</a></li>
+<li><a href="#controllers/representations.php"><i class="icon-file"></i>controllers/representations.php</a></li>
+<li><a href="#controllers/structural-coordinates.php"><i class="icon-file"></i>controllers/structural-coordinates.php</a></li>
+<li><a href="#controllers/structural-geometries.php"><i class="icon-file"></i>controllers/structural-geometries.php</a></li>
+<li><a href="#controllers/subunits.php"><i class="icon-file"></i>controllers/subunits.php</a></li>
+<li><a href="#fronts/api.php"><i class="icon-file"></i>fronts/api.php</a></li>
+<li><a href="#fronts/raw.php"><i class="icon-file"></i>fronts/raw.php</a></li>
+<li><a href="#lib/protview/protview/bio/AminoAcid.php"><i class="icon-file"></i>lib/protview/protview/bio/AminoAcid.php</a></li>
+<li><a href="#lib/protview/protview/bio/Peptide.php"><i class="icon-file"></i>lib/protview/protview/bio/Peptide.php</a></li>
+<li><a href="#lib/protview/protview/bio/Protein.php"><i class="icon-file"></i>lib/protview/protview/bio/Protein.php</a></li>
+<li><a href="#lib/protview/protview/bio/Region.php"><i class="icon-file"></i>lib/protview/protview/bio/Region.php</a></li>
+<li><a href="#lib/protview/protview/bio/Subunit.php"><i class="icon-file"></i>lib/protview/protview/bio/Subunit.php</a></li>
+<li><a href="#lib/protview/protview/geom/Formula.php"><i class="icon-file"></i>lib/protview/protview/geom/Formula.php</a></li>
+<li><a href="#lib/protview/protview/geom/shape/basic/BasicShape.php"><i class="icon-file"></i>lib/protview/protview/geom/shape/basic/BasicShape.php</a></li>
+<li><a href="#lib/protview/protview/geom/shape/basic/Circle.php"><i class="icon-file"></i>lib/protview/protview/geom/shape/basic/Circle.php</a></li>
+<li><a href="#lib/protview/protview/geom/shape/basic/Line.php"><i class="icon-file"></i>lib/protview/protview/geom/shape/basic/Line.php</a></li>
+<li><a href="#lib/protview/protview/geom/shape/complex/ComplexShape.php"><i class="icon-file"></i>lib/protview/protview/geom/shape/complex/ComplexShape.php</a></li>
+<li><a href="#lib/protview/protview/geom/shape/complex/ExtendedLoop.php"><i class="icon-file"></i>lib/protview/protview/geom/shape/complex/ExtendedLoop.php</a></li>
+<li><a href="#lib/protview/protview/geom/shape/complex/MembranePattern.php"><i class="icon-file"></i>lib/protview/protview/geom/shape/complex/MembranePattern.php</a></li>
+<li><a href="#lib/protview/protview/geom/shape/complex/PeptideShape.php"><i class="icon-file"></i>lib/protview/protview/geom/shape/complex/PeptideShape.php</a></li>
+<li><a href="#lib/protview/protview/geom/shape/complex/StandardLoop.php"><i class="icon-file"></i>lib/protview/protview/geom/shape/complex/StandardLoop.php</a></li>
+<li><a href="#lib/protview/protview/geom/shape/complex/TransmembraneProtein.php"><i class="icon-file"></i>lib/protview/protview/geom/shape/complex/TransmembraneProtein.php</a></li>
+<li><a href="#lib/protview/protview/geom/shape/Shape.php"><i class="icon-file"></i>lib/protview/protview/geom/shape/Shape.php</a></li>
+<li><a href="#lib/protview/protview/graph/SVGConverter.php"><i class="icon-file"></i>lib/protview/protview/graph/SVGConverter.php</a></li>
+<li><a href="#lib/protview/protview/graph/SVGGraphics.php"><i class="icon-file"></i>lib/protview/protview/graph/SVGGraphics.php</a></li>
+<li><a href="#lib/protview/xfm/Bootstrap.php"><i class="icon-file"></i>lib/protview/xfm/Bootstrap.php</a></li>
+<li><a href="#lib/protview/xfm/RESTController.php"><i class="icon-file"></i>lib/protview/xfm/RESTController.php</a></li>
+<li><a href="#models/amino-acid.php"><i class="icon-file"></i>models/amino-acid.php</a></li>
+<li><a href="#models/other-geometry.php"><i class="icon-file"></i>models/other-geometry.php</a></li>
+<li><a href="#models/peptide.php"><i class="icon-file"></i>models/peptide.php</a></li>
+<li><a href="#models/protein.php"><i class="icon-file"></i>models/protein.php</a></li>
+<li><a href="#models/region.php"><i class="icon-file"></i>models/region.php</a></li>
+<li><a href="#models/representation.php"><i class="icon-file"></i>models/representation.php</a></li>
+<li><a href="#models/structural-coordinate.php"><i class="icon-file"></i>models/structural-coordinate.php</a></li>
+<li><a href="#models/structural-geometry.php"><i class="icon-file"></i>models/structural-geometry.php</a></li>
+<li><a href="#models/subunit.php"><i class="icon-file"></i>models/subunit.php</a></li>
+<li><a href="#public/index.php"><i class="icon-file"></i>public/index.php</a></li>
+<li><a href="#public/test/batik.php"><i class="icon-file"></i>public/test/batik.php</a></li>
+<li><a href="#public/test/dummy.php"><i class="icon-file"></i>public/test/dummy.php</a></li>
+<li><a href="#public/test/imagemagick.php"><i class="icon-file"></i>public/test/imagemagick.php</a></li>
+<li><a href="#public/test/peptide.php"><i class="icon-file"></i>public/test/peptide.php</a></li>
+<li><a href="#public/test/shape.php"><i class="icon-file"></i>public/test/shape.php</a></li>
+<li><a href="#views/drawingboard/start.php"><i class="icon-file"></i>views/drawingboard/start.php</a></li>
+<li><a href="#views/error/display.php"><i class="icon-file"></i>views/error/display.php</a></li>
+<li><a href="#views/layout/layout.php"><i class="icon-file"></i>views/layout/layout.php</a></li>
+<li><a href="#views/structure/start.php"><i class="icon-file"></i>views/structure/start.php</a></li>
+</ul></div>
+<div class="span8">
+<ul class="breadcrumb">
+<li>
+<a href=""><i class="icon-remove-sign"></i></a><span class="divider">\</span>
+</li>
+<li>Compilation Errors</li>
+</ul>
+<div class="package-contents">
+<a name="controllers/amino-acids.php" id="controllers/amino-acids.php"></a><h3>
+<i class="icon-file"></i>controllers/amino-acids.php<small style="float: right;padding-right: 10px;">3</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file controllers/amino-acids.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for \AminoAcidsController</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>5</td>
+<td>No DocBlock was found for property $model</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="controllers/application.php" id="controllers/application.php"></a><h3>
+<i class="icon-file"></i>controllers/application.php<small style="float: right;padding-right: 10px;">6</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file controllers/application.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for \ApplicationController</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>5</td>
+<td>No DocBlock was found for method defaultAction()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>9</td>
+<td>No DocBlock was found for method startDrawboardAction()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>14</td>
+<td>No DocBlock was found for method startSidebarAction()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>19</td>
+<td>No DocBlock was found for method startStructureAction()</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="controllers/drawingboard.php" id="controllers/drawingboard.php"></a><h3>
+<i class="icon-file"></i>controllers/drawingboard.php<small style="float: right;padding-right: 10px;">5</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file controllers/drawingboard.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for \DrawingBoardController</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>4</td>
+<td>No DocBlock was found for method defaultAction()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>8</td>
+<td>No DocBlock was found for method exportDialogAction()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>18</td>
+<td>No DocBlock was found for method exportAction()</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="controllers/error.php" id="controllers/error.php"></a><h3>
+<i class="icon-file"></i>controllers/error.php<small style="float: right;padding-right: 10px;">4</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file controllers/error.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for \ErrorController</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>12</td>
+<td>No DocBlock was found for method defaultAction()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>40</td>
+<td>No DocBlock was found for method reportAction()</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="controllers/home.php" id="controllers/home.php"></a><h3>
+<i class="icon-file"></i>controllers/home.php<small style="float: right;padding-right: 10px;">3</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file controllers/home.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for \HomeController</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>5</td>
+<td>No DocBlock was found for method defaultAction()</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="controllers/menubar.php" id="controllers/menubar.php"></a><h3>
+<i class="icon-file"></i>controllers/menubar.php<small style="float: right;padding-right: 10px;">5</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file controllers/menubar.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for \MenubarController</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>4</td>
+<td>No DocBlock was found for method defaultAction()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>8</td>
+<td>No DocBlock was found for method newproteinAction()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>13</td>
+<td>No DocBlock was found for method openrepresentationAction()</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="controllers/peptides.php" id="controllers/peptides.php"></a><h3>
+<i class="icon-file"></i>controllers/peptides.php<small style="float: right;padding-right: 10px;">7</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file controllers/peptides.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for \PeptidesController</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>4</td>
+<td>No DocBlock was found for property $model</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>5</td>
+<td>No DocBlock was found for method defaultAction()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>20</td>
+<td>No DocBlock was found for method get()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>138</td>
+<td>No DocBlock was found for method post()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>168</td>
+<td>No DocBlock was found for method put()</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="controllers/postmodification.php" id="controllers/postmodification.php"></a><h3>
+<i class="icon-file"></i>controllers/postmodification.php<small style="float: right;padding-right: 10px;">3</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file controllers/postmodification.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for \PostmodificationController</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>4</td>
+<td>No DocBlock was found for method defaultAction()</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="controllers/proteins.php" id="controllers/proteins.php"></a><h3>
+<i class="icon-file"></i>controllers/proteins.php<small style="float: right;padding-right: 10px;">5</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file controllers/proteins.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for \ProteinsController</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>5</td>
+<td>No DocBlock was found for property $model</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>7</td>
+<td>No DocBlock was found for method defaultAction()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>12</td>
+<td>No DocBlock was found for method put()</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="controllers/regions.php" id="controllers/regions.php"></a><h3>
+<i class="icon-file"></i>controllers/regions.php<small style="float: right;padding-right: 10px;">3</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file controllers/regions.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for \RegionsController</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>5</td>
+<td>No DocBlock was found for property $model</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="controllers/representations.php" id="controllers/representations.php"></a><h3>
+<i class="icon-file"></i>controllers/representations.php<small style="float: right;padding-right: 10px;">5</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file controllers/representations.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for \RepresentationsController</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>4</td>
+<td>No DocBlock was found for method get()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>49</td>
+<td>No DocBlock was found for method post()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>81</td>
+<td>No DocBlock was found for method put()</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="controllers/structural-coordinates.php" id="controllers/structural-coordinates.php"></a><h3>
+<i class="icon-file"></i>controllers/structural-coordinates.php<small style="float: right;padding-right: 10px;">3</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file controllers/structural-coordinates.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for \StructuralCoordinatesController</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>5</td>
+<td>No DocBlock was found for property $model</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="controllers/structural-geometries.php" id="controllers/structural-geometries.php"></a><h3>
+<i class="icon-file"></i>controllers/structural-geometries.php<small style="float: right;padding-right: 10px;">4</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file controllers/structural-geometries.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for \StructuralGeometriesController</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>5</td>
+<td>No DocBlock was found for property $model</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>7</td>
+<td>No DocBlock was found for method get()</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="controllers/subunits.php" id="controllers/subunits.php"></a><h3>
+<i class="icon-file"></i>controllers/subunits.php<small style="float: right;padding-right: 10px;">3</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file controllers/subunits.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for \SubunitsController</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>5</td>
+<td>No DocBlock was found for property $model</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="fronts/api.php" id="fronts/api.php"></a><h3>
+<i class="icon-file"></i>fronts/api.php<small style="float: right;padding-right: 10px;">8</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file fronts/api.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for \ApiFront</td>
+</tr>
+<tr class="critical">
+<td>critical</td>
+<td>5</td>
+<td>No short description for property $method_mapping</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>15</td>
+<td>No DocBlock was found for method __construct()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>21</td>
+<td>No DocBlock was found for method get()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>26</td>
+<td>No DocBlock was found for method post()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>31</td>
+<td>No DocBlock was found for method put()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>36</td>
+<td>No DocBlock was found for method delete()</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="fronts/raw.php" id="fronts/raw.php"></a><h3>
+<i class="icon-file"></i>fronts/raw.php<small style="float: right;padding-right: 10px;">3</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file fronts/raw.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for \RawFront</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>4</td>
+<td>No DocBlock was found for method get()</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="lib/protview/protview/bio/AminoAcid.php" id="lib/protview/protview/bio/AminoAcid.php"></a><h3>
+<i class="icon-file"></i>lib/protview/protview/bio/AminoAcid.php<small style="float: right;padding-right: 10px;">22</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file lib/protview/protview/bio/AminoAcid.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>2</td>
+<td>No DocBlock was found for \AminoAcid</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for property $id</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>4</td>
+<td>No DocBlock was found for property $type</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>5</td>
+<td>No DocBlock was found for property $variant</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No DocBlock was found for property $modification</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>7</td>
+<td>No DocBlock was found for property $link</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>8</td>
+<td>No DocBlock was found for property $region</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>9</td>
+<td>No DocBlock was found for property $pos</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>11</td>
+<td>No DocBlock was found for method __construct()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>16</td>
+<td>No DocBlock was found for method getId()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>21</td>
+<td>No DocBlock was found for method getType()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>26</td>
+<td>No DocBlock was found for method getVariant()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>31</td>
+<td>No DocBlock was found for method setVariant()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>36</td>
+<td>No DocBlock was found for method getModification()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>41</td>
+<td>No DocBlock was found for method setModification()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>46</td>
+<td>No DocBlock was found for method getLink()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>51</td>
+<td>No DocBlock was found for method getPos()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>56</td>
+<td>No DocBlock was found for method setLink()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>61</td>
+<td>No DocBlock was found for method getRegion()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>66</td>
+<td>No DocBlock was found for method setRegion()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>73</td>
+<td>No DocBlock was found for method setPos()</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="lib/protview/protview/bio/Peptide.php" id="lib/protview/protview/bio/Peptide.php"></a><h3>
+<i class="icon-file"></i>lib/protview/protview/bio/Peptide.php<small style="float: right;padding-right: 10px;">18</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file lib/protview/protview/bio/Peptide.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>4</td>
+<td>No DocBlock was found for \Peptide</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>5</td>
+<td>No DocBlock was found for property $id</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No DocBlock was found for property $start</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>7</td>
+<td>No DocBlock was found for property $end</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>8</td>
+<td>No DocBlock was found for property $regions</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>9</td>
+<td>No DocBlock was found for property $subunit</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>10</td>
+<td>No DocBlock was found for property $countAminoAcid</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>12</td>
+<td>No DocBlock was found for method __construct()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>18</td>
+<td>No DocBlock was found for method getId()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>23</td>
+<td>No DocBlock was found for method getStart()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>28</td>
+<td>No DocBlock was found for method getEnd()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>33</td>
+<td>No DocBlock was found for method addRegion()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>42</td>
+<td>No DocBlock was found for method getRegions()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>47</td>
+<td>No DocBlock was found for method getSubunit()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>56</td>
+<td>No DocBlock was found for method countAminoAcids()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>79</td>
+<td>No DocBlock was found for method countBiggestMembrane()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>92</td>
+<td>No DocBlock was found for method setSubunit()</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="lib/protview/protview/bio/Protein.php" id="lib/protview/protview/bio/Protein.php"></a><h3>
+<i class="icon-file"></i>lib/protview/protview/bio/Protein.php<small style="float: right;padding-right: 10px;">14</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file lib/protview/protview/bio/Protein.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for \Protein</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>4</td>
+<td>No DocBlock was found for property $id</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>5</td>
+<td>No DocBlock was found for property $name</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No DocBlock was found for property $species</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>7</td>
+<td>No DocBlock was found for property $note</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>8</td>
+<td>No DocBlock was found for property $subunits</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>10</td>
+<td>No DocBlock was found for method __construct()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>15</td>
+<td>No DocBlock was found for method getName()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>20</td>
+<td>No DocBlock was found for method getSpecies()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>25</td>
+<td>No DocBlock was found for method getNote()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>30</td>
+<td>No DocBlock was found for method setNote()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>35</td>
+<td>No DocBlock was found for method addSubunit()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>42</td>
+<td>No DocBlock was found for method getSubunits()</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="lib/protview/protview/bio/Region.php" id="lib/protview/protview/bio/Region.php"></a><h3>
+<i class="icon-file"></i>lib/protview/protview/bio/Region.php<small style="float: right;padding-right: 10px;">23</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file lib/protview/protview/bio/Region.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for \Region</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>4</td>
+<td>No DocBlock was found for property $id</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>5</td>
+<td>No DocBlock was found for property $name</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No DocBlock was found for property $type</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>7</td>
+<td>No DocBlock was found for property $start</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>8</td>
+<td>No DocBlock was found for property $end</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>9</td>
+<td>No DocBlock was found for property $peptide</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>10</td>
+<td>No DocBlock was found for property $pos</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>12</td>
+<td>No DocBlock was found for property $aminoAcids</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>14</td>
+<td>No DocBlock was found for method __construct()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>22</td>
+<td>No DocBlock was found for method getId()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>27</td>
+<td>No DocBlock was found for method getType()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>32</td>
+<td>No DocBlock was found for method getStart()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>37</td>
+<td>No DocBlock was found for method getEnd()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>41</td>
+<td>No DocBlock was found for method getPos()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>46</td>
+<td>No DocBlock was found for method addAminoAcid()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>55</td>
+<td>No DocBlock was found for method getAminoAcids()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>60</td>
+<td>No DocBlock was found for method getName()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>65</td>
+<td>No DocBlock was found for method countAminoAcids()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>69</td>
+<td>No DocBlock was found for method getPeptide()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>74</td>
+<td>No DocBlock was found for method setPeptide()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>82</td>
+<td>No DocBlock was found for method setPos()</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="lib/protview/protview/bio/Subunit.php" id="lib/protview/protview/bio/Subunit.php"></a><h3>
+<i class="icon-file"></i>lib/protview/protview/bio/Subunit.php<small style="float: right;padding-right: 10px;">15</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file lib/protview/protview/bio/Subunit.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>4</td>
+<td>No DocBlock was found for \Subunit</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>5</td>
+<td>No DocBlock was found for property $id</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No DocBlock was found for property $name</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>7</td>
+<td>No DocBlock was found for property $peptides</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>8</td>
+<td>No DocBlock was found for property $protein</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>10</td>
+<td>No DocBlock was found for method __construct()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>14</td>
+<td>No DocBlock was found for method getId()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>19</td>
+<td>No DocBlock was found for method setId()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>24</td>
+<td>No DocBlock was found for method addPeptide()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>31</td>
+<td>No DocBlock was found for method getPeptides()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>36</td>
+<td>No DocBlock was found for method getName()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>41</td>
+<td>No DocBlock was found for method setName()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>46</td>
+<td>No DocBlock was found for method getProtein()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>51</td>
+<td>No DocBlock was found for method setProtein()</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="lib/protview/protview/geom/Formula.php" id="lib/protview/protview/geom/Formula.php"></a><h3>
+<i class="icon-file"></i>lib/protview/protview/geom/Formula.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file lib/protview/protview/geom/Formula.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for \Formula</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="lib/protview/protview/geom/shape/basic/BasicShape.php" id="lib/protview/protview/geom/shape/basic/BasicShape.php"></a><h3>
+<i class="icon-file"></i>lib/protview/protview/geom/shape/basic/BasicShape.php<small style="float: right;padding-right: 10px;">6</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file lib/protview/protview/geom/shape/basic/BasicShape.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>4</td>
+<td>No DocBlock was found for \BasicShape</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>5</td>
+<td>No DocBlock was found for property $nbPoints</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>7</td>
+<td>No DocBlock was found for method __construct()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>11</td>
+<td>No DocBlock was found for method getNbPoints()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>17</td>
+<td>No DocBlock was found for method setNbPoints()</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="lib/protview/protview/geom/shape/basic/Circle.php" id="lib/protview/protview/geom/shape/basic/Circle.php"></a><h3>
+<i class="icon-file"></i>lib/protview/protview/geom/shape/basic/Circle.php<small style="float: right;padding-right: 10px;">5</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file lib/protview/protview/geom/shape/basic/Circle.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>4</td>
+<td>No DocBlock was found for \Circle</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>5</td>
+<td>No DocBlock was found for method __construct()</td>
+</tr>
+<tr class="notice">
+<td>notice</td>
+<td>10</td>
+<td>Parameter $rotationSense could not be found in getCoord()</td>
+</tr>
+<tr class="notice">
+<td>notice</td>
+<td>10</td>
+<td>Parameter $angle could not be found in getCoord()</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="lib/protview/protview/geom/shape/basic/Line.php" id="lib/protview/protview/geom/shape/basic/Line.php"></a><h3>
+<i class="icon-file"></i>lib/protview/protview/geom/shape/basic/Line.php<small style="float: right;padding-right: 10px;">5</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file lib/protview/protview/geom/shape/basic/Line.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>4</td>
+<td>No DocBlock was found for \Line</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>5</td>
+<td>No DocBlock was found for method __construct()</td>
+</tr>
+<tr class="notice">
+<td>notice</td>
+<td>10</td>
+<td>Parameter $rotationSense could not be found in getCoord()</td>
+</tr>
+<tr class="notice">
+<td>notice</td>
+<td>10</td>
+<td>Parameter $angle could not be found in getCoord()</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="lib/protview/protview/geom/shape/complex/ComplexShape.php" id="lib/protview/protview/geom/shape/complex/ComplexShape.php"></a><h3>
+<i class="icon-file"></i>lib/protview/protview/geom/shape/complex/ComplexShape.php<small style="float: right;padding-right: 10px;">3</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file lib/protview/protview/geom/shape/complex/ComplexShape.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>4</td>
+<td>No DocBlock was found for \ComplexShape</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>5</td>
+<td>No DocBlock was found for method __construct()</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="lib/protview/protview/geom/shape/complex/ExtendedLoop.php" id="lib/protview/protview/geom/shape/complex/ExtendedLoop.php"></a><h3>
+<i class="icon-file"></i>lib/protview/protview/geom/shape/complex/ExtendedLoop.php<small style="float: right;padding-right: 10px;">12</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file lib/protview/protview/geom/shape/complex/ExtendedLoop.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No DocBlock was found for \ExtendedLoop</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>8</td>
+<td>No DocBlock was found for property $extendLoopSideLength</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>9</td>
+<td>No DocBlock was found for property $extendLoopSideMiddleLength</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>10</td>
+<td>No DocBlock was found for property $nbExtendLoop</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>11</td>
+<td>No DocBlock was found for property $basicLoopSideLength</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>13</td>
+<td>No DocBlock was found for method __construct()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>17</td>
+<td>No DocBlock was found for method setExtendLoopSideLength()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>22</td>
+<td>No DocBlock was found for method setExtendLoopSideMiddleLength()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>27</td>
+<td>No DocBlock was found for method setNbExtendLoop()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>32</td>
+<td>No DocBlock was found for method setBasicLoopSideLength()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>37</td>
+<td>No DocBlock was found for method getCoord()</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="lib/protview/protview/geom/shape/complex/MembranePattern.php" id="lib/protview/protview/geom/shape/complex/MembranePattern.php"></a><h3>
+<i class="icon-file"></i>lib/protview/protview/geom/shape/complex/MembranePattern.php<small style="float: right;padding-right: 10px;">12</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file lib/protview/protview/geom/shape/complex/MembranePattern.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No DocBlock was found for \MembranePattern</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>10</td>
+<td>No DocBlock was found for property $maxLineLength</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>11</td>
+<td>No DocBlock was found for property $length</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>12</td>
+<td>No DocBlock was found for property $membraneCoords</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>15</td>
+<td>No DocBlock was found for method __construct()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>19</td>
+<td>No DocBlock was found for method getMaxLineLength()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>24</td>
+<td>No DocBlock was found for method setMaxLineLength()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>29</td>
+<td>No DocBlock was found for method getLength()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>34</td>
+<td>No DocBlock was found for method setLength()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>39</td>
+<td>No DocBlock was found for method getMembraneCoords()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>44</td>
+<td>No DocBlock was found for method getCoord()</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="lib/protview/protview/geom/shape/complex/PeptideShape.php" id="lib/protview/protview/geom/shape/complex/PeptideShape.php"></a><h3>
+<i class="icon-file"></i>lib/protview/protview/geom/shape/complex/PeptideShape.php<small style="float: right;padding-right: 10px;">12</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file lib/protview/protview/geom/shape/complex/PeptideShape.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No DocBlock was found for \PeptideShape</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>8</td>
+<td>No DocBlock was found for property $peptide</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>9</td>
+<td>No DocBlock was found for property $startCoord</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>10</td>
+<td>No DocBlock was found for property $aaSize</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>12</td>
+<td>No DocBlock was found for property $aaCoords</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>13</td>
+<td>No DocBlock was found for property $membraneCoords</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>15</td>
+<td>No DocBlock was found for method __construct()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>22</td>
+<td>No DocBlock was found for method calculateCoordinates()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>158</td>
+<td>No DocBlock was found for method getMembranePart()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>187</td>
+<td>No DocBlock was found for method getAACoordinates()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>191</td>
+<td>No DocBlock was found for method getParams()</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="lib/protview/protview/geom/shape/complex/StandardLoop.php" id="lib/protview/protview/geom/shape/complex/StandardLoop.php"></a><h3>
+<i class="icon-file"></i>lib/protview/protview/geom/shape/complex/StandardLoop.php<small style="float: right;padding-right: 10px;">8</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file lib/protview/protview/geom/shape/complex/StandardLoop.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>7</td>
+<td>No DocBlock was found for \StandardLoop</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>9</td>
+<td>No DocBlock was found for property $sideLength</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>10</td>
+<td>No DocBlock was found for property $middleLength</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>12</td>
+<td>No DocBlock was found for method __construct()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>16</td>
+<td>No DocBlock was found for method setSideLength()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>21</td>
+<td>No DocBlock was found for method setMiddleLength()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>27</td>
+<td>No DocBlock was found for method getCoord()</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="lib/protview/protview/geom/shape/complex/TransmembraneProtein.php" id="lib/protview/protview/geom/shape/complex/TransmembraneProtein.php"></a><h3>
+<i class="icon-file"></i>lib/protview/protview/geom/shape/complex/TransmembraneProtein.php<small style="float: right;padding-right: 10px;">13</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file lib/protview/protview/geom/shape/complex/TransmembraneProtein.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No DocBlock was found for \TransmembraneProtein</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>8</td>
+<td>No DocBlock was found for property $params</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>13</td>
+<td>No DocBlock was found for property $protein</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>14</td>
+<td>No DocBlock was found for property $startCoord</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>15</td>
+<td>No DocBlock was found for property $aaSize</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>18</td>
+<td>No DocBlock was found for property $aaCoords</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>19</td>
+<td>No DocBlock was found for property $membraneCoords</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>21</td>
+<td>No DocBlock was found for method __construct()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>28</td>
+<td>No DocBlock was found for method calculateCoordinates()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>148</td>
+<td>No DocBlock was found for method getMembranePart()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>177</td>
+<td>No DocBlock was found for method getAACoordinates()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>181</td>
+<td>No DocBlock was found for method getMembraneCoordinates()</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="lib/protview/protview/geom/shape/Shape.php" id="lib/protview/protview/geom/shape/Shape.php"></a><h3>
+<i class="icon-file"></i>lib/protview/protview/geom/shape/Shape.php<small style="float: right;padding-right: 10px;">16</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file lib/protview/protview/geom/shape/Shape.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for \Shape</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>5</td>
+<td>No DocBlock was found for property $offset</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No DocBlock was found for property $startCoord</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>7</td>
+<td>No DocBlock was found for property $lastCoord</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>11</td>
+<td>No DocBlock was found for property $rotation</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>14</td>
+<td>No DocBlock was found for method __construct()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>30</td>
+<td>No DocBlock was found for method setOffset()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>34</td>
+<td>No DocBlock was found for method getOffset()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>38</td>
+<td>No DocBlock was found for method setStartCoord()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>53</td>
+<td>No DocBlock was found for method getStartCoord()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>58</td>
+<td>No DocBlock was found for method setLastCoord()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>62</td>
+<td>No DocBlock was found for method getLastCoord()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>66</td>
+<td>No DocBlock was found for method getRotation()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>71</td>
+<td>No DocBlock was found for method setRotation()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>88</td>
+<td>No DocBlock was found for method getCoord()</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="lib/protview/protview/graph/SVGConverter.php" id="lib/protview/protview/graph/SVGConverter.php"></a><h3>
+<i class="icon-file"></i>lib/protview/protview/graph/SVGConverter.php<small style="float: right;padding-right: 10px;">4</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file lib/protview/protview/graph/SVGConverter.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for \SVGConverter</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No DocBlock was found for method SVGStreamToPNG()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>16</td>
+<td>No DocBlock was found for method toPNG()</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="lib/protview/protview/graph/SVGGraphics.php" id="lib/protview/protview/graph/SVGGraphics.php"></a><h3>
+<i class="icon-file"></i>lib/protview/protview/graph/SVGGraphics.php<small style="float: right;padding-right: 10px;">4</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file lib/protview/protview/graph/SVGGraphics.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for \SVGGraphics</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>5</td>
+<td>No DocBlock was found for method drawAminoAcid()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>13</td>
+<td>No DocBlock was found for method drawMembrane()</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="lib/protview/xfm/Bootstrap.php" id="lib/protview/xfm/Bootstrap.php"></a><h3>
+<i class="icon-file"></i>lib/protview/xfm/Bootstrap.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file lib/protview/xfm/Bootstrap.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>11</td>
+<td>No DocBlock was found for method setup_includes_externals()</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="lib/protview/xfm/RESTController.php" id="lib/protview/xfm/RESTController.php"></a><h3>
+<i class="icon-file"></i>lib/protview/xfm/RESTController.php<small style="float: right;padding-right: 10px;">7</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file lib/protview/xfm/RESTController.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for \RESTController</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>4</td>
+<td>No DocBlock was found for property $model</td>
+</tr>
+<tr class="notice">
+<td>notice</td>
+<td>18</td>
+<td>Parameter  could not be found in get()</td>
+</tr>
+<tr class="notice">
+<td>notice</td>
+<td>49</td>
+<td>Parameter  could not be found in post()</td>
+</tr>
+<tr class="notice">
+<td>notice</td>
+<td>69</td>
+<td>Parameter  could not be found in put()</td>
+</tr>
+<tr class="notice">
+<td>notice</td>
+<td>91</td>
+<td>Parameter  could not be found in delete()</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="models/amino-acid.php" id="models/amino-acid.php"></a><h3>
+<i class="icon-file"></i>models/amino-acid.php<small style="float: right;padding-right: 10px;">7</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file models/amino-acid.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for \AminoAcidModel</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>5</td>
+<td>No DocBlock was found for property $table</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>7</td>
+<td>No DocBlock was found for property $mapping</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>16</td>
+<td>No DocBlock was found for property $validation</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>22</td>
+<td>No DocBlock was found for property $joins</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>26</td>
+<td>No DocBlock was found for property $join</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="models/other-geometry.php" id="models/other-geometry.php"></a><h3>
+<i class="icon-file"></i>models/other-geometry.php<small style="float: right;padding-right: 10px;">7</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file models/other-geometry.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for \OtherGeometryModel</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>5</td>
+<td>No DocBlock was found for property $table</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>7</td>
+<td>No DocBlock was found for property $mapping</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>14</td>
+<td>No DocBlock was found for property $validation</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>19</td>
+<td>No DocBlock was found for property $joins</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>23</td>
+<td>No DocBlock was found for property $join</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="models/peptide.php" id="models/peptide.php"></a><h3>
+<i class="icon-file"></i>models/peptide.php<small style="float: right;padding-right: 10px;">7</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file models/peptide.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for \PeptideModel</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>5</td>
+<td>No DocBlock was found for property $table</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>7</td>
+<td>No DocBlock was found for property $mapping</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>14</td>
+<td>No DocBlock was found for property $validation</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>19</td>
+<td>No DocBlock was found for property $joins</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>23</td>
+<td>No DocBlock was found for property $join</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="models/protein.php" id="models/protein.php"></a><h3>
+<i class="icon-file"></i>models/protein.php<small style="float: right;padding-right: 10px;">5</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file models/protein.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for \ProteinModel</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>5</td>
+<td>No DocBlock was found for property $table</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>7</td>
+<td>No DocBlock was found for property $mapping</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>14</td>
+<td>No DocBlock was found for property $validation</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="models/region.php" id="models/region.php"></a><h3>
+<i class="icon-file"></i>models/region.php<small style="float: right;padding-right: 10px;">7</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file models/region.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for \RegionModel</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>5</td>
+<td>No DocBlock was found for property $table</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>7</td>
+<td>No DocBlock was found for property $mapping</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>15</td>
+<td>No DocBlock was found for property $validation</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>21</td>
+<td>No DocBlock was found for property $joins</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>25</td>
+<td>No DocBlock was found for property $join</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="models/representation.php" id="models/representation.php"></a><h3>
+<i class="icon-file"></i>models/representation.php<small style="float: right;padding-right: 10px;">7</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file models/representation.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for \RepresentationModel</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>5</td>
+<td>No DocBlock was found for property $table</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>7</td>
+<td>No DocBlock was found for property $mapping</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>15</td>
+<td>No DocBlock was found for property $validation</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>20</td>
+<td>No DocBlock was found for property $joins</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>24</td>
+<td>No DocBlock was found for property $join</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="models/structural-coordinate.php" id="models/structural-coordinate.php"></a><h3>
+<i class="icon-file"></i>models/structural-coordinate.php<small style="float: right;padding-right: 10px;">7</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file models/structural-coordinate.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for \StructuralCoordinateModel</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>5</td>
+<td>No DocBlock was found for property $table</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>7</td>
+<td>No DocBlock was found for property $mapping</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>14</td>
+<td>No DocBlock was found for property $validation</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>21</td>
+<td>No DocBlock was found for property $joins</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>26</td>
+<td>No DocBlock was found for property $join</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="models/structural-geometry.php" id="models/structural-geometry.php"></a><h3>
+<i class="icon-file"></i>models/structural-geometry.php<small style="float: right;padding-right: 10px;">7</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file models/structural-geometry.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for \StructuralGeometryModel</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>5</td>
+<td>No DocBlock was found for property $table</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>7</td>
+<td>No DocBlock was found for property $mapping</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>16</td>
+<td>No DocBlock was found for property $validation</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>24</td>
+<td>No DocBlock was found for property $joins</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>29</td>
+<td>No DocBlock was found for property $join</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="models/subunit.php" id="models/subunit.php"></a><h3>
+<i class="icon-file"></i>models/subunit.php<small style="float: right;padding-right: 10px;">7</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file models/subunit.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for \SubunitModel</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>5</td>
+<td>No DocBlock was found for property $table</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>7</td>
+<td>No DocBlock was found for property $mapping</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>14</td>
+<td>No DocBlock was found for property $validation</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>19</td>
+<td>No DocBlock was found for property $joins</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>23</td>
+<td>No DocBlock was found for property $join</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="public/index.php" id="public/index.php"></a><h3>
+<i class="icon-file"></i>public/index.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file public/index.php</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="public/test/batik.php" id="public/test/batik.php"></a><h3>
+<i class="icon-file"></i>public/test/batik.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file public/test/batik.php</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="public/test/dummy.php" id="public/test/dummy.php"></a><h3>
+<i class="icon-file"></i>public/test/dummy.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file public/test/dummy.php</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="public/test/imagemagick.php" id="public/test/imagemagick.php"></a><h3>
+<i class="icon-file"></i>public/test/imagemagick.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file public/test/imagemagick.php</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="public/test/peptide.php" id="public/test/peptide.php"></a><h3>
+<i class="icon-file"></i>public/test/peptide.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file public/test/peptide.php</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="public/test/shape.php" id="public/test/shape.php"></a><h3>
+<i class="icon-file"></i>public/test/shape.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file public/test/shape.php</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="views/drawingboard/start.php" id="views/drawingboard/start.php"></a><h3>
+<i class="icon-file"></i>views/drawingboard/start.php<small style="float: right;padding-right: 10px;">3</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file views/drawingboard/start.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for \DrawingboardStartView</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>4</td>
+<td>No DocBlock was found for method init()</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="views/error/display.php" id="views/error/display.php"></a><h3>
+<i class="icon-file"></i>views/error/display.php<small style="float: right;padding-right: 10px;">3</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file views/error/display.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for \ErrorDisplayView</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>5</td>
+<td>No DocBlock was found for method init()</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="views/layout/layout.php" id="views/layout/layout.php"></a><h3>
+<i class="icon-file"></i>views/layout/layout.php<small style="float: right;padding-right: 10px;">4</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file views/layout/layout.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for \LayoutLayoutView</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>5</td>
+<td>No DocBlock was found for method init()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>68</td>
+<td>No DocBlock was found for method render()</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="views/structure/start.php" id="views/structure/start.php"></a><h3>
+<i class="icon-file"></i>views/structure/start.php<small style="float: right;padding-right: 10px;">3</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file views/structure/start.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for \StructureStartView</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>4</td>
+<td>No DocBlock was found for method init()</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a9</a> and<br>
+            generated on 2012-09-03T13:07:50+02:00.<br></footer></div>
+</div>
+</body>
+</html>
