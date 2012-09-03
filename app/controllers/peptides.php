@@ -49,8 +49,8 @@ class PeptidesController extends RESTController {
 	 *		'terminusN' => 'intra|extra',<br />
 	 *		'terminusC' => 'intra|extra',<br />
 	 *	 	'membraneRegions' => array(<br />
-	 *			array('id'=> 1, 'start' => 1, 'end' => 234),<br />
-	 *			array('id'=> 2, 'start' => 235, 'end' => 400)<br />
+	 *			array('id'=> 1, 'start' => 1, 'end' => 234, 'type' => 'intra|extra|membrane'),<br />
+	 *			array('id'=> 2, 'start' => 235, 'end' => 400, 'type' => 'intra|extra|membrane')<br />
 	 *		]<br />
 	 *	}<br />
 	 * 
@@ -87,7 +87,7 @@ class PeptidesController extends RESTController {
 			$item['label'] = $peptide['label'];
 			$item['pos'] = $peptide['pos'];
 			
-			//if at leas one filter is specified
+			//if at least one filter is specified
 			if (count($regionFilter) > 0) {
 				//receives all regions for current peptide
 				$regions = xController::load(
@@ -105,11 +105,18 @@ class PeptidesController extends RESTController {
 		
 				$count = $regions['xcount'];
 				$r = 0;
+				//region start pos
 				$start = 1;
+				//region end pos
 				$end = 0;
 				$resultSet= array();
 		
-				//adds each region to resultset
+				/* adds each region to resultset
+				 * 
+				 * resultset format:
+				 * 
+				 * array("id"=> regionId, "start" => aaStartPos, "end" => aaEndPos, type => regionType)
+				 */
 				foreach($regions['items'] as $region) {
 						
 					//first region determines terminusN
@@ -133,11 +140,13 @@ class PeptidesController extends RESTController {
 					$nbAA = $amino_acids['xcount'];
 					$end = $start + $nbAA -1;
 						
+					//add each aa to sequence
 					foreach($amino_acids['items'] as $aa) {
 						$sequence .= $aa['type'];
 					}
 					$r++;
 						
+					//adds information to current resultset array
 					$current = array();
 					$current['id'] = (int)$region['id'];
 					$current['start'] = (int)$start;
@@ -149,7 +158,6 @@ class PeptidesController extends RESTController {
 					if (in_array('all', $regionFilter) || in_array($region['type'], $regionFilter)) {
 						$resultSet[] = $current;
 					}
-						
 					$start = $end + 1;
 				}
 				
@@ -163,7 +171,7 @@ class PeptidesController extends RESTController {
 		$data['xcount'] = count($peptides);
 		
 		//dirty bug fix for backbonejs not being updated on empty return
-		//and avoid validation issue for sequence, this should be fixed!!
+		//and avoid validation issue for sequence, this should be fixed on client side!!
 		if (count($items) <= 0) {
 			$item = array();
 			
@@ -179,6 +187,12 @@ class PeptidesController extends RESTController {
 		return $data;
 	}
 	
+	/**
+	 * Updates a pepptide
+	 * 
+	 * Forwards to put method
+	 * @see PeptidesController::put();
+	 */
 	function post() {		
 		$r = xController::load(
 					'peptides', 
@@ -209,15 +223,16 @@ class PeptidesController extends RESTController {
 	}
 	}
 	*/
+	/**
+	 * Creates a new peptide
+	 * @return array data
+	 */
 	function put() {
 		// Checks if method is allowed
 		if (!in_array('put', $this->allow)) throw new xException("Method not allowed", 403);
 		// Checks provided parameters
 		if (!isset($this->params['items'])) throw new xException('No items provided', 400);
-		// Checks for params.id and params.items.id consistency
-		// (this test is only for precaution: params.id is not used in anyway)
-		/*if (@$this->params['id'] != @$this->params['items']['id'])
-			throw new xException("Parameters id and items.id do not match", 400);*/
+
 
 		$items = $this->params['items'];
 		if (!isset($items['sequence'])) throw new xException('No sequence provided', 400);
@@ -344,6 +359,22 @@ class PeptidesController extends RESTController {
 						))->put();
 			}
 			//$r['amino-acids'][] = $retA;
+		}
+		
+		$ret = xController::load(
+			'representations', array(
+					'peptide_id' => 1
+					
+			))->get(0);
+		
+		if (count($ret) <= 0) {
+			xContext::$log->log('no representation', 'peptideController');
+			$ret = xController::load(
+					'representations', array(
+							'items' => array (
+									'peptide_id' => $peptide_id
+							)
+					))->put();
 		}
 
 		return $r;

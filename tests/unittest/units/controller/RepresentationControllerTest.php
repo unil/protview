@@ -6,8 +6,15 @@
  */
 class RepresentationsControllerTest extends protviewPHPUnit_Framework_TestCase {
 
-	
-	function test_peptideController_put_allFieldsAreReturned() {
+	function test_peptideController_get() {
+	$ret = xController::load(
+			'representations', array(
+					'peptide_id' => 1
+					
+			))->count();
+	print_r($ret);
+	}
+	/*function test_peptideController_put_allFieldsAreReturned() {
 		$ret = xController::load(
 				'representations', array(
 					'items' => array (
@@ -15,6 +22,6 @@ class RepresentationsControllerTest extends protviewPHPUnit_Framework_TestCase {
 							)
 				))->put();
 		print_r($ret);
-	}
+	}*/
 }
 ?>
