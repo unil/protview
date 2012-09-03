@@ -100,6 +100,7 @@ class RepresentationsController extends RESTController {
 			//if there is at least one value in filter
 			if (count($detailFilter) > 0) {
 				if (in_array('all', $detailFilter) || in_array('structuralGeometries', $detailFilter)) {
+					//receives structural geometries for current representation
 					$r = xController::load(
 						'structural-geometries',
 						array(
@@ -116,6 +117,17 @@ class RepresentationsController extends RESTController {
 		return $data;
 	}
 	
+	/**
+	 * Updates representation
+	 * 
+	 * HTTP params are the following:
+	 *
+	 * *  (int) id : representation id (mandatory)
+	 * 
+	 * For data format, see get method
+	 * 
+	 * 
+	 */
 	function post() {
 		// Checks if method is allowed
 		if (!in_array('post', $this->allow)) throw new xException("Method not allowed", 403);
@@ -148,6 +160,10 @@ class RepresentationsController extends RESTController {
 		return $ret;
 	}
 
+	/**
+	 * Creates new representation
+	 * @see RESTController::put()
+	 */
 	function put() {
 		// Checks if method is allowed
 		if (!in_array('put', $this->allow)) throw new xException("Method not allowed", 403);

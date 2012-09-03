@@ -33,7 +33,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">325</span></a></li>
+                <span class="label label-info">324</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
@@ -59,7 +59,7 @@
 <i class="icon-custom icon-method"></i> Methods</li>
 <li class="method public inherited"><a href="#delete" title="delete :: API Method."><span class="description">API Method.</span><pre>delete()</pre></a></li>
 <li class="method public "><a href="#get" title="get :: Gets representation"><span class="description">Gets representation</span><pre>get()</pre></a></li>
-<li class="method public "><a href="#post" title="post :: API Method."><span class="description">API Method.</span><pre>post()</pre></a></li>
+<li class="method public "><a href="#post" title="post :: Updates representation"><span class="description">Updates representation</span><pre>post()</pre></a></li>
 <li class="method public "><a href="#put" title="put :: API Method."><span class="description">API Method.</span><pre>put()</pre></a></li>
 <li class="nav-header">
 <i class="icon-custom icon-property"></i> Properties</li>
@@ -192,11 +192,17 @@ one should refine the method in specific controller classes.</td>
 </div></div>
 </div>
 <a name="post" id="post"></a><div class="element clickable method public post" data-toggle="collapse" data-target=".post .collapse">
-<h2>API Method.</h2>
+<h2>Updates representation</h2>
 <pre>post() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"><p>Generic post method for API calls.</p></p>
+<p class="long_description"><p>HTTP params are the following:</p>
+
+<ul>
+<li>(int) id : representation id (mandatory)</li>
+</ul>
+
+<p>For data format, see get method</p></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>An JSON compatible resultset structure.</div>
@@ -264,7 +270,7 @@ one should refine the method in specific controller classes.</td>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a9</a> and<br>
-            generated on 2012-09-03T20:32:14+02:00.<br></footer></div>
+            generated on 2012-09-03T20:38:22+02:00.<br></footer></div>
 </div>
 </body>
 </html>

@@ -2,6 +2,14 @@ ProtView.Structure.Controller = {};
 ProtView.Structure.Model = {};
 ProtView.Structure.View = {};
 
+/**
+ * Structure module facade
+ * 
+ * Handles module requests and responses
+ * 
+ * @module Structure
+ * @main Structure
+ */
 ProtView.Structure.Module = (function() {
 	var stack = {},
 	controller = null,

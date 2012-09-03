@@ -484,11 +484,11 @@ and sends this information as param to the view</p>]]></long-description>
       <critical line="11" code="50019">No short description for property $model</critical>
     </parse_markers>
   </file>
-  <file path="controllers/representations.php" hash="8ebd685f51c61a004cad09b146de7003" package="Default">
-    <include line="168" type="Require Once" package="Default">
+  <file path="controllers/representations.php" hash="3e4293d8c840a40ca699d5110b98db2a" package="Default">
+    <include line="183" type="Require Once" package="Default">
       <name/>
     </include>
-    <include line="169" type="Require Once" package="Default">
+    <include line="184" type="Require Once" package="Default">
       <name/>
     </include>
     <class final="false" abstract="false" namespace="global" line="10" package="controllers">
@@ -567,19 +567,28 @@ and sends this information as param to the view</p>]]></long-description>
           <tag line="11" name="returns" description="array data (xcount, items[])"/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="116" package="controllers">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="131" package="controllers">
         <name>post</name>
         <full_name>post</full_name>
+        <docblock line="120">
+          <description><![CDATA[Updates representation]]></description>
+          <long-description><![CDATA[<p>HTTP params are the following:</p>
+
+<ul>
+<li>(int) id : representation id (mandatory)</li>
+</ul>
+
+<p>For data format, see get method</p>]]></long-description>
+        </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="148" package="controllers">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="163" package="controllers">
         <name>put</name>
         <full_name>put</full_name>
       </method>
     </class>
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file controllers/representations.php</error>
-      <error line="116" code="50010">No DocBlock was found for method post()</error>
-      <error line="148" code="50010">No DocBlock was found for method put()</error>
+      <error line="163" code="50010">No DocBlock was found for method put()</error>
     </parse_markers>
   </file>
   <file path="controllers/structural-coordinates.php" hash="0421f91a01c696411bd50116d0b65c63" package="Default">
