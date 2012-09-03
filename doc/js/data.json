@@ -15,6 +15,17 @@
             "fors": {},
             "namespaces": {}
         },
+        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/view/PeptideView.js": {
+            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/view/PeptideView.js",
+            "modules": {},
+            "classes": {
+                "Structure.View.PeptideView": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Structure.View": 1
+            }
+        },
         "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/view/ProteinView.js": {
             "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/view/ProteinView.js",
             "modules": {},
@@ -50,6 +61,7 @@
             "name": "Structure",
             "submodules": {},
             "classes": {
+                "Structure.View.PeptideView": 1,
                 "Structure.View.ProteinView": 1
             },
             "fors": {},
@@ -60,6 +72,9 @@
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/view/ProteinView.js",
             "line": 1,
             "description": "Structure module facade\n\nHandles module requests and responses",
+            "extends": "Core.View",
+            "author": "Stefan Meier",
+            "version": "20120903",
             "itemtype": "main"
         },
         "ProtView": {
@@ -75,6 +90,20 @@
         }
     },
     "classes": {
+        "Structure.View.PeptideView": {
+            "name": "Structure.View.PeptideView",
+            "shortname": "Structure.View.PeptideView",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Structure",
+            "namespace": "Structure.View",
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/view/PeptideView.js",
+            "line": 1,
+            "description": "Handles and shows peptide form"
+        },
         "Structure.View.ProteinView": {
             "name": "Structure.View.ProteinView",
             "shortname": "Structure.View.ProteinView",
@@ -87,17 +116,14 @@
             "namespace": "Structure.View",
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/view/ProteinView.js",
             "line": 1,
-            "description": "Handles and shows protein form",
-            "author": "Stefan Meier",
-            "version": "20120903",
-            "extends": "Core.View"
+            "description": "Handles and shows protein form"
         }
     },
     "classitems": [
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Context.js",
             "line": 1,
-            "class": "Structure.View.ProteinView"
+            "class": "Structure.View.PeptideView"
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/utils/Drawing.js",
@@ -129,7 +155,7 @@
                     "description": ""
                 }
             ],
-            "class": "Structure.View.ProteinView"
+            "class": "Structure.View.PeptideView"
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/utils/Drawing.js",
@@ -153,7 +179,7 @@
                     "description": ""
                 }
             ],
-            "class": "Structure.View.ProteinView"
+            "class": "Structure.View.PeptideView"
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/utils/Drawing.js",
@@ -165,11 +191,59 @@
                     "description": ""
                 }
             ],
-            "class": "Structure.View.ProteinView"
+            "class": "Structure.View.PeptideView"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/view/PeptideView.js",
+            "line": 17,
+            "itemtype": "event",
+            "name": "click #peptide-form-submit",
+            "class": "Structure.View.PeptideView",
+            "module": "Structure",
+            "namespace": "Structure.View"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/view/PeptideView.js",
+            "line": 22,
+            "description": "Handles form submit",
+            "itemtype": "method",
+            "name": "submitForm",
+            "params": [
+                {
+                    "name": "event",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "Structure.View.PeptideView",
+            "module": "Structure",
+            "namespace": "Structure.View"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/view/PeptideView.js",
+            "line": 65,
+            "description": "Valid model callback",
+            "itemtype": "method",
+            "name": "valid",
+            "params": [
+                {
+                    "name": "view",
+                    "description": "",
+                    "type": "Core.View"
+                },
+                {
+                    "name": "attributes",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "Structure.View.PeptideView",
+            "module": "Structure",
+            "namespace": "Structure.View"
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/view/ProteinView.js",
-            "line": 17,
+            "line": 18,
             "itemtype": "event",
             "name": "click #protein-form-submit",
             "class": "Structure.View.ProteinView",
@@ -178,7 +252,8 @@
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/view/ProteinView.js",
-            "line": 22,
+            "line": 23,
+            "description": "Handles form submit",
             "itemtype": "method",
             "name": "submitForm",
             "params": [

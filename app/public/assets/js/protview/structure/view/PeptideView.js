@@ -1,10 +1,34 @@
+/**
+ * 
+ * Handles and shows peptide form
+ * 
+ * 
+ * @module Structure
+ * @namespace Structure.View
+ * @class PeptideView
+ * @extends Core.View
+ * 
+ * @author Stefan Meier
+ * @version 20120903
+ * 
+ */
 ProtView.Structure.View.PeptideView = ProtView.Core.View.extend({
 	events : {
+		/**
+		 * @event click #peptide-form-submit
+		 */
 		'click #peptide-form-submit' : 'submitForm'
 	},
+	/**
+	 * Handles form submit
+	 * 
+	 * @method submitForm
+	 * @param {Object} event
+	 */
 	submitForm : function(e) {
 		e.preventDefault();
 		var model = this.model;
+		//reads current n-terminus value and updates model
 		var terminusN = $('#peptide-terminus-n').val();
 		model.set({
 			terminusN : terminusN
@@ -12,6 +36,7 @@ ProtView.Structure.View.PeptideView = ProtView.Core.View.extend({
 			silent : true
 		});
 
+		//reads current c-terminus value and updates model
 		var terminusC = $('#peptide-terminus-c').val();
 		model.set({
 			terminusC : terminusC
@@ -19,6 +44,7 @@ ProtView.Structure.View.PeptideView = ProtView.Core.View.extend({
 			silent : true
 		});
 
+		//reads current membrane regions and updates model
 		var regions = this.evaluateRegions();
 		model.set({
 			regions : regions
@@ -26,14 +52,23 @@ ProtView.Structure.View.PeptideView = ProtView.Core.View.extend({
 			silent : true
 		});
 
+		//validates model manually
 		var valid = model.isValid(true);
 
+		//if model is valid, content is saved
 		if (valid) {
 			this.model = model;
 			console.log(model);
 			this.controller.save();
 		}
 	},
+	/**
+	 * Valid model callback
+	 * 
+	 * @method valid
+	 * @param {Core.View} view
+	 * @param {Object} attributes
+	 */
 	valid: function(view, attr) {
         // do something
     },

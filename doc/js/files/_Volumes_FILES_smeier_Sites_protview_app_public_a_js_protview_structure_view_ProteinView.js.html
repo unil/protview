@@ -41,6 +41,8 @@
         <div id="api-tabview-panel">
             <ul id="api-classes" class="apis classes">
             
+                <li><a href="..&#x2F;classes/Structure.View.PeptideView.html">Structure.View.PeptideView</a></li>
+            
                 <li><a href="..&#x2F;classes/Structure.View.ProteinView.html">Structure.View.ProteinView</a></li>
             
             </ul>
@@ -94,14 +96,15 @@
  * 
  * Handles and shows protein form
  * 
+ * 
+ * @module Structure
+ * @namespace Structure.View
  * @class ProteinView
+ * @extends Core.View
  * 
  * @author Stefan Meier
  * @version 20120903
  * 
- * @module Structure
- * @namespace Structure.View
- * @extends Core.View
  *&#x2F;
 ProtView.Structure.View.ProteinView = ProtView.Core.View.extend({
 
@@ -112,6 +115,8 @@ ProtView.Structure.View.ProteinView = ProtView.Core.View.extend({
 		&#x27;click #protein-form-submit&#x27; : &#x27;submitForm&#x27;
 	},
 	&#x2F;**
+	 * Handles form submit
+	 * 
 	 * @method submitForm
 	 * @param {Object} event
 	 *&#x2F;

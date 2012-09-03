@@ -2,14 +2,15 @@
  * 
  * Handles and shows protein form
  * 
+ * 
+ * @module Structure
+ * @namespace Structure.View
  * @class ProteinView
+ * @extends Core.View
  * 
  * @author Stefan Meier
  * @version 20120903
  * 
- * @module Structure
- * @namespace Structure.View
- * @extends Core.View
  */
 ProtView.Structure.View.ProteinView = ProtView.Core.View.extend({
 
@@ -20,6 +21,8 @@ ProtView.Structure.View.ProteinView = ProtView.Core.View.extend({
 		'click #protein-form-submit' : 'submitForm'
 	},
 	/**
+	 * Handles form submit
+	 * 
 	 * @method submitForm
 	 * @param {Object} event
 	 */
