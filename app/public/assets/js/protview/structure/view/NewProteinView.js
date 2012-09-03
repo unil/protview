@@ -13,10 +13,7 @@ ProtView.Structure.View.NewProteinView = ProtView.Core.View.extend({
 		if (proteinId != null && proteinId != 0) {
 			Application.CONTEXT.navigate("view/" + proteinId);
 
-			this.model.off('change', this);
-			this.unload();
 			$('#new-protein-dialog').jqxWindow('close');
-			$('#new-protein-dialog').remove();
 		}
 	}
 });

@@ -68,6 +68,8 @@ ProtView.Structure.Controller.MainController = ProtView.Core.MainController.exte
 		
 		if (stack[resource]) {
 			stack[resource].unload();
+			stack[resource] = null;
+			delete stack[resource];
 		}
 	}
 });

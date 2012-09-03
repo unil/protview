@@ -32,6 +32,7 @@
           });
 		  $('#new-protein-dialog').bind('closed', function (event) {
 			  ProtView.Application.Sandbox.publish("/structure/hide", ['protein-new']);
+			  $('#new-protein-dialog').remove();
 		  });
 		  ProtView.Application.Sandbox.publish("/structure/show", ['protein-new']);
 	});
