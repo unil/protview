@@ -17,22 +17,36 @@ ProtView.DrawBoard.Controller.DrawBoardController = ProtView.Core.Controller.ext
 		this.updatedElements[id] = settings;
 	},
 	save : function() {
-		console.log('save in controller');
+		console.log('child save');
 		var updatedElements = this.updatedElements;
 		var model = this.model;
 		var structuralGeometries = model.get('structuralGeometries');
 		
 		_.each(updatedElements, function(v, k){ 
 			//aa-69-2674v
-			var t = k.split("-")
+			var t = k.split("-");
 			var geoId = t[1];
 			var coordId = t[2];
 			
 			var structuralGeometry = structuralGeometries.get(geoId);
 			
-			console.log('structuralGeometry');
-			console.log(structuralGeometry);
+			var coordinates = structuralGeometry.get('coordinates');
+			
+			_.each(coordinates, function(vc, kc) {
+				if (vc.id == coordId) {
+					_.each(v, function(ic, ik) {
+						vc[ik] = ic;
+					});
+				}
+			});
+			
+			
 		});
+		
+		this.model = model;
+		this._super();
+		
+		
 		//console.log(context.model.get('structuralGeometries').get(67).get('coordinates'));*/
 	}
 });

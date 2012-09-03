@@ -49,6 +49,7 @@ ProtView.Core.Controller = Class.extend( {
 		return ret;
 	},
 	save : function() {
+		console.log('parent save');
 		this.model.save(null,{
 			error: function(err){
 				console.log(err);
