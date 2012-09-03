@@ -21,11 +21,11 @@ class ApplicationController extends xWebController {
 	/**
 	 * Loads Drawboard View
 	 * 
-	 * @return \views\drawingboard\DrawingboardStartView
+	 * @return \views\drawboard\DrawboardStartView
 	 */
 	function startDrawboardAction() {
 		$data = array();
-		return xView::load('drawingboard/start', $data, $this->meta)->render();
+		return xView::load('drawboard/start', $data, $this->meta)->render();
 	}
 	
 	/**

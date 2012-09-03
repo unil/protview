@@ -1,10 +1,22 @@
 <?php
-
-class DrawingBoardController extends RESTController {
+/**
+ * Controls the DrawBoard applicatino part
+ *
+ * @package controllers
+ * @author Stefan Meier
+ * @version 20120903
+ *
+ */
+class DrawBoardController extends RESTController {
 	function defaultAction() {
 		throw new xException("Method not allowed", 403);
 	}
 
+	/**
+	 * Gets the representation export dialog
+	 * 
+	 * @return \views\drawboard\DrawBoardExportView
+	 */
 	function exportDialogAction() {
 		$css = '';
 
@@ -12,7 +24,7 @@ class DrawingBoardController extends RESTController {
 			$css = $this->params['css'];
 
 		$data = array('css' => $css);
-		return xView::load('drawingboard/export', $data, $this->meta)->render();
+		return xView::load('drawboard/export', $data, $this->meta)->render();
 	}
 
 	function exportAction() {

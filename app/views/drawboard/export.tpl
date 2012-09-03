@@ -7,7 +7,7 @@
 	<div>Export</div>
 	<div>
 		<form id="export-form" class="form-horizontal" method="post"
-			action="<?php echo xUtil::url('raw/drawingboard/do/export')?>"
+			action="<?php echo xUtil::url('raw/drawboard/do/export')?>"
 			target="download">
 			<input type="hidden" name="svgContent" id="svgContent" value=""> <input
 				type="hidden" name="svgViewbox" id="svgViewbox" value=""> <input

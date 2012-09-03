@@ -1,6 +1,6 @@
 <?php
 
-class DrawingboardStartView extends xView {
+class DrawboardStartView extends xView {
     function init() {
         $this->meta = xUtil::array_merge($this->meta, array(
             'js' => array(

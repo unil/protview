@@ -16,7 +16,7 @@ ProtView.DrawBoard.View.ToolbarView = Backbone.View.extend({
 		 */
 		
 		
-		var url = Application.ROOTPATH + 'raw/drawingboard/do/exportDialog';
+		var url = Application.ROOTPATH + 'raw/drawboard/do/exportDialog';
 		$.ajax({
 			type : 'post',
 			url : url,
