@@ -1,5 +1,12 @@
 <?php
-
+/**
+ * Controls the peptide model
+ *
+ * @package controllers
+ * @author Stefan Meier
+ * @version 20120903
+ *
+ */
 class PeptidesController extends RESTController {
 	public $model = 'peptide';
 	function defaultAction() {

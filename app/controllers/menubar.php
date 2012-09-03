@@ -38,6 +38,7 @@ class MenubarController extends RESTController {
 	function openrepresentationAction() {
 		$representations = array();
 			
+		//retreives all representations from database
 		$r =  xModel::load(
 				'representation',
 				array(
@@ -45,7 +46,9 @@ class MenubarController extends RESTController {
 				)
 		)->get();
 
+		
 		foreach($r as $representation) {
+			//retrieves the peptide id for each representation
 			$peptide =  xModel::load(
 					'peptide',
 					array(
@@ -54,7 +57,7 @@ class MenubarController extends RESTController {
 							'id' => $representation['peptide_id']
 					)
 			)->get(0);
-
+			//retrieves the protein id for each subunit
 			$subunit = xModel::load(
 					'subunit',
 					array(
@@ -63,6 +66,7 @@ class MenubarController extends RESTController {
 							'id' => $peptide['subunit_id']
 					)
 			)->get(0);
+			//stores the protein in the representation array
 			$representation['protein_id'] = $subunit['protein_id'];
 			$representations[] = $representation;
 		}

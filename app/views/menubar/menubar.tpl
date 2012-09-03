@@ -31,7 +31,8 @@
 						data-toggle="dropdown">About <b class="caret"></b>
 					</a>
 						<ul class="dropdown-menu">
-							<li class="menu"><a id="about-author">Author</a></li>
+							<li class="menu"><a style="text-decoration: none;" href="<?php echo xUtil::url('doc/js/index.html')?>" target="_blank">Client-side documentation</a></li>
+							<li class="menu"><a style="text-decoration: none;" href="<?php echo xUtil::url('doc/php/index.html')?>" target="_blank">Server-side documentation</a></li>
 						</ul></li>
 				</ul>
 			</div>
