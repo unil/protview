@@ -49,7 +49,13 @@ ProtView.Core.Controller = Class.extend( {
 		return ret;
 	},
 	unload : function() {
-		
+		var stack = view;
+		for (var el in stack) {
+			   var obj = stack[el];
+			   obj.unload();
+			   stack[el] = null;
+			   delete stack[el];
+		}
 	},
 	save : function() {
 		this.model.save(null,{
