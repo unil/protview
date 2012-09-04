@@ -14,5 +14,10 @@ L’architecture applicative s’appuie sur :
 Installation
 ------------
 
+### Prérequis
 
-
+  * [Apache, MySQL] (p.ex: WAMP, LAMP, MAMP),
+  * [git] (http://git-scm.com/downloads)
+  
+### ProtView
+  * Téléchargemetn de la source (https://github.com/unil/protview/zipball/heigvd)
