@@ -23,19 +23,19 @@ Installation
 ## Installation de ProtView
 
   * Ouvrir `/Applications/Utilities/Terminal.app` et exécuter les commandes suivantes:
-````
+```bash
 # Aller dans le dossier d'installation
 cd {DOSSIER_INSTALLATION}
 # Télécharger l'application ProtView avec les dépendances
 git clone --recursive https://github.com/unil/protview
 # Aller sur la branche heigvd
 git checkout heigvd
-````
+```
 
 ## Configuration MySQL
 
   * Ouvrir `/Applications/Utilities/Terminal.app` et exécuter les commandes suivantes:
-````
+```bash
 # Se connecter à MySQL en root
 mysql -p
 # Créer un utilisateur 'protview' avec les droits pour la table protview
@@ -43,12 +43,12 @@ GRANT USAGE ON *.* TO 'protview'@'localhost';
 CREATE USER 'protview'@'localhost' IDENTIFIED BY 'protview';
 GRANT ALL PRIVILEGES ON *.* TO 'protview'@'localhost';
 exit; 
-````
+```
 
 ## Configuration Apache
 
   * Création d'un hôte virtuel selon la configuration suivante:
-````
+```bash
 Alias /protview "{DOSSIER_INSTALLATION}/app/public"
 
 <Directory "{DOSSIER_INSTALLATION}">
@@ -58,21 +58,20 @@ Alias /protview "{DOSSIER_INSTALLATION}/app/public"
     Order allow,deny
     Allow from all
 </Directory>
-
-````
+```
   
   * Ajouter la ligne suivante au fichier `app/public/.htaccess
-````
+```bash
 RewriteBase /protview
-````
+```
 
 ## Configuration ProtView
 
   * Ouvrir `/Applications/Utilities/Terminal.app` et exécuter les commandes suivantes:
 
-````
+```bash
 # Création de la base de données
 php app/lib/xfm/scripts/deploy/database.php
-````
+```
 
 
