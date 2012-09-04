@@ -15,7 +15,7 @@ ProtView.Structure.Controller.PeptideController = ProtView.Core.Controller.exten
 				});
 			}
 			else {
-				console.log('Controller:fetch: no id for model');
+				console.log('ProtView.Structure.Controller:fetch: no id for model');
 			}
 		}
 		
