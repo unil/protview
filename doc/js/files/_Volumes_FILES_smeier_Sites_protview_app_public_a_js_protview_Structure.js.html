@@ -115,11 +115,25 @@ ProtView.Structure.Module = (function() {
 	var stack = {},
 	controller = null,
 	sandbox = null,
+
+	&#x2F;**
+	 * Loads module core classes
+	 * 
+	 * @private
+	 * @method load
+	 *&#x2F;
 	load = function() {
 		controller = new ProtView.Structure.Controller.MainController();
 		stack.controller = controller;
 	},
+	&#x2F;**
+	 * Shows indicated resource or updates resource with specified id
+	 * 
+	 * @private
+	 * @method show
+	 *&#x2F;
 	show = function(resource, id) {
+		&#x2F;&#x2F;Gets resource controller from MainController
 		controller.load(resource);
 		c = controller.getController();
 		if (c != null) {
@@ -128,9 +142,22 @@ ProtView.Structure.Module = (function() {
 		else 
 			console.log(&quot;ProtView.Structure.Module:show controller is null&quot;);
 	},
+	&#x2F;**
+	 * Hides indicated resource
+	 * 
+	 * @private
+	 * @method hide
+	 *&#x2F;
 	hide = function(resource) {
 		controller.unload(resource);
 	},
+	&#x2F;**
+	 * Unloads module and all its functionalities
+	 * 
+	 * @private
+	 * @todo this method needs to be implemented
+	 * @method hide
+	 *&#x2F;
 	unload = function() {
 		for (var el in stack) {
 			   &#x2F;*var obj = stack[el];
@@ -139,6 +166,15 @@ ProtView.Structure.Module = (function() {
 			   delete stack[el];
 		}
 	},
+	&#x2F;**
+	 * Updateds module
+	 * 
+	 * Only subscribed controllers will be updated with information
+	 * 
+	 * @private
+	 * @param {Object} arguments
+	 * @method update
+	 *&#x2F;
 	update = function (arguments) {
 		if (controller != null)
 			controller.update(arguments);
@@ -146,21 +182,68 @@ ProtView.Structure.Module = (function() {
 	
 	&#x2F;&#x2F;public
 	return {
+		&#x2F;**
+		 * Starts module
+		 * 
+		 * Calls load
+		 * 
+		 * @method start
+		 *&#x2F;
 		start : function() {
 			load();
 		},
+		&#x2F;**
+		 * Stops module
+		 * 
+		 * Calls unload
+		 * 
+		 * @method stop
+		 *&#x2F;
 		stop : function () {
 			unload();
 		},
+		&#x2F;**
+		 * Shows specified resource
+		 * 
+		 * Calls show
+		 * 
+		 * @param {Object} event
+		 * @param {String} resource
+		 * @param {int} id
+		 * @method show
+		 *&#x2F;
 		show : function(e, resource, id) {
 			show(resource, id);
 		},
+		&#x2F;**
+		 * Hides specified resource
+		 * 
+		 * Calls hide
+		 * 
+		 * @param {Object} event
+		 * @param {String} resource
+		 * @method show
+		 *&#x2F;
 		hide : function(e, resource) {
 			hide(resource);
 		},
+		&#x2F;**
+		 * Updates module
+		 * 
+		 * Calls update
+		 * 
+		 * @param {Object} event
+		 * @param {Object} arguments
+		 * @method show
+		 *&#x2F;
 		update : function(e, arguments) {
 			update(arguments);
 		},
+		&#x2F;**
+		 * Registers sandbox and module&#x27;s public methods
+		 * 
+		 * @param {Object} sandbox
+		 *&#x2F;
 		registerSandbox : function(obj) {
 			sandbox = obj;
 			sandbox.subscribe(&quot;&#x2F;structure&#x2F;start&quot;, ProtView.Structure.Module.start);

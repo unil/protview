@@ -328,6 +328,171 @@
             "class": "Structure.Module",
             "module": "Structure",
             "namespace": "Structure.View"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
+            "line": 19,
+            "description": "Loads module core classes",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "method",
+            "name": "load",
+            "class": "Structure.Module",
+            "module": "Structure"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
+            "line": 29,
+            "description": "Shows indicated resource or updates resource with specified id",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "method",
+            "name": "show",
+            "class": "Structure.Module",
+            "module": "Structure"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
+            "line": 45,
+            "description": "Hides indicated resource",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "method",
+            "name": "hide",
+            "class": "Structure.Module",
+            "module": "Structure"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
+            "line": 54,
+            "description": "Unloads module and all its functionalities",
+            "access": "private",
+            "tagname": "",
+            "todo": [
+                "this method needs to be implemented"
+            ],
+            "itemtype": "method",
+            "name": "hide",
+            "class": "Structure.Module",
+            "module": "Structure"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
+            "line": 69,
+            "description": "Updateds module\n\nOnly subscribed controllers will be updated with information",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "arguments",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "itemtype": "method",
+            "name": "update",
+            "class": "Structure.Module",
+            "module": "Structure"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
+            "line": 85,
+            "description": "Starts module\n\nCalls load",
+            "itemtype": "method",
+            "name": "start",
+            "class": "Structure.Module",
+            "module": "Structure"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
+            "line": 95,
+            "description": "Stops module\n\nCalls unload",
+            "itemtype": "method",
+            "name": "stop",
+            "class": "Structure.Module",
+            "module": "Structure"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
+            "line": 105,
+            "description": "Shows specified resource\n\nCalls show",
+            "params": [
+                {
+                    "name": "event",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "resource",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "id",
+                    "description": "",
+                    "type": "Int"
+                }
+            ],
+            "itemtype": "method",
+            "name": "show",
+            "class": "Structure.Module",
+            "module": "Structure"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
+            "line": 118,
+            "description": "Hides specified resource\n\nCalls hide",
+            "params": [
+                {
+                    "name": "event",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "resource",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "itemtype": "method",
+            "name": "show",
+            "class": "Structure.Module",
+            "module": "Structure"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
+            "line": 130,
+            "description": "Updates module\n\nCalls update",
+            "params": [
+                {
+                    "name": "event",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "arguments",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "itemtype": "method",
+            "name": "show",
+            "class": "Structure.Module",
+            "module": "Structure"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
+            "line": 142,
+            "description": "Registers sandbox and module's public methods",
+            "params": [
+                {
+                    "name": "sandbox",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "Structure.Module",
+            "module": "Structure"
         }
     ]
 }
