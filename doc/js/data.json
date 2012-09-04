@@ -383,9 +383,9 @@
             "line": 31,
             "description": "Reference to sandbox",
             "itemtype": "property",
-            "name": "sanbox",
+            "name": "sandbox",
             "type": "Application.Sandbox",
-            "default": "null",
+            "default": "{null}",
             "class": "Structure.Module",
             "module": "Structure"
         },

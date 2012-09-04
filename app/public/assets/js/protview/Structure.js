@@ -31,7 +31,7 @@ ProtView.Structure.Module = (function() {
 	/**
 	Reference to sandbox
 
-	@property sanbox
+	@property sandbox
 	@type Application.Sandbox
 	@default null
 	**/
