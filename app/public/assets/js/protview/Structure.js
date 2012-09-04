@@ -30,6 +30,8 @@ ProtView.Structure.Module = (function() {
 	 * Shows indicated resource or updates resource with specified id
 	 * 
 	 * @private
+     * @param {String} resource
+	 * @param {int} id
 	 * @method show
 	 */
 	show = function(resource, id) {
@@ -46,6 +48,7 @@ ProtView.Structure.Module = (function() {
 	 * Hides indicated resource
 	 * 
 	 * @private
+	 * @param {String} resource
 	 * @method hide
 	 */
 	hide = function(resource) {
@@ -56,7 +59,7 @@ ProtView.Structure.Module = (function() {
 	 * 
 	 * @private
 	 * @todo this method needs to be implemented
-	 * @method hide
+	 * @method unload
 	 */
 	unload = function() {
 		for (var el in stack) {
@@ -122,7 +125,7 @@ ProtView.Structure.Module = (function() {
 		 * 
 		 * @param {Object} event
 		 * @param {String} resource
-		 * @method show
+		 * @method hide
 		 */
 		hide : function(e, resource) {
 			hide(resource);
@@ -134,7 +137,7 @@ ProtView.Structure.Module = (function() {
 		 * 
 		 * @param {Object} event
 		 * @param {Object} arguments
-		 * @method show
+		 * @method update
 		 */
 		update : function(e, arguments) {
 			update(arguments);
