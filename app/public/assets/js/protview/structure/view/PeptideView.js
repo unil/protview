@@ -43,6 +43,14 @@ ProtView.Structure.View.PeptideView = ProtView.Core.View.extend({
 		}, {
 			silent : true
 		});
+		
+		var sequence = $('#peptide-sequence').val();
+		
+		model.set({
+			sequence : sequence
+		}, {
+			silent : true
+		});
 
 		//reads current membrane regions and updates model
 		var regions = this.evaluateRegions();
@@ -167,13 +175,15 @@ ProtView.Structure.View.PeptideView = ProtView.Core.View.extend({
 		});
 	},
 	render : function() {
+		console.log('peptideView rendered');
+		console.log(this.model);
 		var self = this;
 		var renderedContent = self.template(self.model.toJSON()),
 		renderedRegions = this.renderRegion(self.model
 				.get('regions'));
 
 		$('#peptide-form-insert').html(renderedContent + renderedRegions);
-		self.modelBinder.bind(self.model, self.el, self.bindings);
+
 		Backbone.Validation.bind(self);
 		
 		self.bindRemoveRowEvent();

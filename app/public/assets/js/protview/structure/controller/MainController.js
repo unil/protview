@@ -11,9 +11,7 @@ ProtView.Structure.Controller.MainController = ProtView.Core.MainController.exte
 					view = new ProtView.Structure.View.PeptideView({
 						el : '#peptide-form',
 						templateEl : '#peptide-form-template',
-						bindings : {
-								sequence: '#peptide-sequence'
-							}
+
 					});
 					controller.addView(view);
 					break;

@@ -9,6 +9,8 @@ ProtView.Core.View = Backbone.View.extend({
 		this.template = _.template($(args.templateEl).html());
 		this.bindings = args.bindings;
 		this.el = args.el;
+		console.log('args');
+		console.log(args);
 	},
 	unload : function() {
 		this.modelBinder.unbind();
