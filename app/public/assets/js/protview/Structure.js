@@ -7,13 +7,21 @@ ProtView.Structure.View = {};
  * 
  * Handles module requests and responses
  * 
+ * @namespace Structure
+ * @class Module
  * @module Structure
- * @main Structure
  */
 ProtView.Structure.Module = (function() {
 	var stack = {},
 	controller = null,
 	sandbox = null,
+
+	/**
+	 * Loads module core classes
+	 * 
+	 * @private
+	 * @method start
+	 */
 	load = function() {
 		controller = new ProtView.Structure.Controller.MainController();
 		stack.controller = controller;
@@ -45,9 +53,19 @@ ProtView.Structure.Module = (function() {
 	
 	//public
 	return {
+		/**
+		 * Starts module
+		 * 
+		 * @method start
+		 */
 		start : function() {
 			load();
 		},
+		/**
+		 * Starts module
+		 * 
+		 * @method start
+		 */
 		stop : function () {
 			unload();
 		},

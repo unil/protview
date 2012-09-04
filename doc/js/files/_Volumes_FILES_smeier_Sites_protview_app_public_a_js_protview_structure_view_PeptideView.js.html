@@ -41,6 +41,8 @@
         <div id="api-tabview-panel">
             <ul id="api-classes" class="apis classes">
             
+                <li><a href="..&#x2F;classes/Structure.Module.html">Structure.Module</a></li>
+            
                 <li><a href="..&#x2F;classes/Structure.View.PeptideView.html">Structure.View.PeptideView</a></li>
             
                 <li><a href="..&#x2F;classes/Structure.View.ProteinView.html">Structure.View.ProteinView</a></li>
@@ -49,7 +51,11 @@
 
             <ul id="api-modules" class="apis modules">
             
-                <li><a href="..&#x2F;modules/ProtView.html">ProtView</a></li>
+                <li><a href="..&#x2F;modules/Application.html">Application</a></li>
+            
+                <li><a href="..&#x2F;modules/Core.html">Core</a></li>
+            
+                <li><a href="..&#x2F;modules/DrawBoard.html">DrawBoard</a></li>
             
                 <li><a href="..&#x2F;modules/Structure.html">Structure</a></li>
             
@@ -137,6 +143,14 @@ ProtView.Structure.View.PeptideView = ProtView.Core.View.extend({
 		}, {
 			silent : true
 		});
+		
+		var sequence = $(&#x27;#peptide-sequence&#x27;).val();
+		
+		model.set({
+			sequence : sequence
+		}, {
+			silent : true
+		});
 
 		&#x2F;&#x2F;reads current membrane regions and updates model
 		var regions = this.evaluateRegions();
@@ -152,7 +166,6 @@ ProtView.Structure.View.PeptideView = ProtView.Core.View.extend({
 		&#x2F;&#x2F;if model is valid, content is saved
 		if (valid) {
 			this.model = model;
-			console.log(model);
 			this.controller.save();
 		}
 	},
@@ -167,8 +180,6 @@ ProtView.Structure.View.PeptideView = ProtView.Core.View.extend({
         &#x2F;&#x2F; do something
     },
     invalid: function(view, attr, error) {
-       console.log(attr);
-       console.log(error);
 
     },
 	evaluateRegions : function() {
@@ -267,7 +278,7 @@ ProtView.Structure.View.PeptideView = ProtView.Core.View.extend({
 				.get(&#x27;regions&#x27;));
 
 		$(&#x27;#peptide-form-insert&#x27;).html(renderedContent + renderedRegions);
-		self.modelBinder.bind(self.model, self.el, self.bindings);
+
 		Backbone.Validation.bind(self);
 		
 		self.bindRemoveRowEvent();

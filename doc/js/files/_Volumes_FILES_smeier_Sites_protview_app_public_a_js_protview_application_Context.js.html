@@ -41,6 +41,8 @@
         <div id="api-tabview-panel">
             <ul id="api-classes" class="apis classes">
             
+                <li><a href="..&#x2F;classes/Structure.Module.html">Structure.Module</a></li>
+            
                 <li><a href="..&#x2F;classes/Structure.View.PeptideView.html">Structure.View.PeptideView</a></li>
             
                 <li><a href="..&#x2F;classes/Structure.View.ProteinView.html">Structure.View.ProteinView</a></li>
@@ -49,7 +51,11 @@
 
             <ul id="api-modules" class="apis modules">
             
-                <li><a href="..&#x2F;modules/ProtView.html">ProtView</a></li>
+                <li><a href="..&#x2F;modules/Application.html">Application</a></li>
+            
+                <li><a href="..&#x2F;modules/Core.html">Core</a></li>
+            
+                <li><a href="..&#x2F;modules/DrawBoard.html">DrawBoard</a></li>
             
                 <li><a href="..&#x2F;modules/Structure.html">Structure</a></li>
             
@@ -118,8 +124,6 @@ ProtView.Application.Context = Class.extend( {
 	},
 	&#x2F;&#x2F;fixme: send only one message if two updates
 	set : function(event, arguments) {
-		console.log(&#x27;context update&#x27;);
-		console.log(arguments);
 		if (arguments.protein) {
 			this.setProtein(arguments.protein);
 		}

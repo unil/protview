@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;Structure.js</title>
+    <title>Core</title>
     <link rel="stylesheet" href="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;3.5.1&#x2F;build&#x2F;cssgrids&#x2F;cssgrids-min.css">
     <link rel="stylesheet" href="..&#x2F;assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="..&#x2F;assets/css/main.css" id="site_styles">
@@ -94,84 +94,39 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: &#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;Structure.js</h1>
+                        <h1>Core Module</h1>
+<div class="box clearfix meta">
+    
 
-<div class="file">
-    <pre class="code prettyprint linenums">
-ProtView.Structure.Controller = {};
-ProtView.Structure.Model = {};
-ProtView.Structure.View = {};
+    
 
-&#x2F;**
- * Structure module facade
- * 
- * Handles module requests and responses
- * 
- * @namespace Structure
- * @class Module
- * @module Structure
- *&#x2F;
-ProtView.Structure.Module = (function() {
-	var stack = {},
-	controller = null,
-	sandbox = null,
-	load = function() {
-		controller = new ProtView.Structure.Controller.MainController();
-		stack.controller = controller;
-	},
-	show = function(resource, id) {
-		controller.load(resource);
-		c = controller.getController();
-		if (c != null) {
-			c.fetch(id);
-		}
-		else 
-			console.log(&quot;ProtView.Structure.Module:show controller is null&quot;);
-	},
-	hide = function(resource) {
-		controller.unload(resource);
-	},
-	unload = function() {
-		for (var el in stack) {
-			   &#x2F;*var obj = stack[el];
-			   obj.unload();*&#x2F;
-			   stack[el] = null;
-			   delete stack[el];
-		}
-	},
-	update = function (arguments) {
-		if (controller != null)
-			controller.update(arguments);
-	};
-	
-	&#x2F;&#x2F;public
-	return {
-		start : function() {
-			load();
-		},
-		stop : function () {
-			unload();
-		},
-		show : function(e, resource, id) {
-			show(resource, id);
-		},
-		hide : function(e, resource) {
-			hide(resource);
-		},
-		update : function(e, arguments) {
-			update(arguments);
-		},
-		registerSandbox : function(obj) {
-			sandbox = obj;
-			sandbox.subscribe(&quot;&#x2F;structure&#x2F;start&quot;, ProtView.Structure.Module.start);
-			sandbox.subscribe(&quot;&#x2F;structure&#x2F;stop&quot;, ProtView.Structure.Module.stop);
-			sandbox.subscribe(&quot;&#x2F;structure&#x2F;show&quot;, ProtView.Structure.Module.show);
-			sandbox.subscribe(&quot;&#x2F;structure&#x2F;hide&quot;, ProtView.Structure.Module.hide);
-			sandbox.subscribe(&quot;&#x2F;application&#x2F;context&quot;, ProtView.Structure.Module.update);
-		}
-	};
-}());
-    </pre>
+    
+        <div class="foundat">
+            Defined in: <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_ProtView.js.html#l46"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;ProtView.js:46</code></a>
+        </div>
+    
+
+    
+</div>
+
+
+
+<div class="box intro">
+    <p>Contains base classes which are inherited in other modules</p>
+
+<p>Helpers, MVC base classes, utility classes</p>
+</div>
+
+
+
+<div class="yui3-g">
+    <div class="yui3-u-1-2">
+        
+    </div>
+
+    <div class="yui3-u-1-2">
+        
+    </div>
 </div>
 
                     </div>

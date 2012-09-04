@@ -1,23 +1,36 @@
 YUI.add("yuidoc-meta", function(Y) {
    Y.YUIDoc = { meta: {
     "classes": [
+        "Structure.Module",
         "Structure.View.PeptideView",
         "Structure.View.ProteinView"
     ],
     "modules": [
-        "ProtView",
+        "Application",
+        "Core",
+        "DrawBoard",
         "Structure"
     ],
     "allModules": [
         {
-            "displayName": "ProtView",
-            "name": "ProtView",
-            "description": "Provides the base ProtView class\n\nRequires at least (in the following order) : jQuery 1.7.2 underscore 1.3.3\nbackbonejs 0.9.2 jQuery SVG 1.4.5 jQuery SVG Dom (same version as jQuery SVG)"
+            "displayName": "Application",
+            "name": "Application",
+            "description": "Contains application wide used Classes\n\nContains classes such as Context, Mediator and Sandbox\nIs also responisble for routing and global view interactions"
+        },
+        {
+            "displayName": "Core",
+            "name": "Core",
+            "description": "Contains base classes which are inherited in other modules\n\nHelpers, MVC base classes, utility classes"
+        },
+        {
+            "displayName": "DrawBoard",
+            "name": "DrawBoard",
+            "description": "Contains protein drawing classes\n\nDraws protein, and offers drawing related functionalities such\nas export, resizing, etc."
         },
         {
             "displayName": "Structure",
             "name": "Structure",
-            "description": "Structure module facade\n\nHandles module requests and responses"
+            "description": "Contains protein structural related classes\n\nPeptide form, Protein Form, handles all structural interactions"
         }
     ]
 } };
