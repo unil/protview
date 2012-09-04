@@ -40,10 +40,10 @@ git checkout heigvd
 ```bash
 # Se connecter à MySQL en root
 mysql -p
-# Créer un utilisateur 'protview' avec les droits pour la table protview
-GRANT USAGE ON *.* TO 'protview'@'localhost';
-CREATE USER 'protview'@'localhost' IDENTIFIED BY 'protview';
-GRANT ALL PRIVILEGES ON *.* TO 'protview'@'localhost';
+# Créer une base des données pour protview
+CREATE DATABASE protview DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+# Créer un utilisateur 'protview' avec les droits pour la base des données protview
+GRANT ALL PRIVILEGES ON protview.* TO 'protview'@'localhost' IDENTIFIED BY 'protview';
 exit; 
 ```
 
