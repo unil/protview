@@ -37,12 +37,23 @@
                 "Structure.View": 1
             }
         },
+        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/DrawBoard.js": {
+            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/DrawBoard.js",
+            "modules": {},
+            "classes": {
+                "DrawBoard.Module": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "DrawBoard": 1
+            }
+        },
         "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/ProtView.js": {
             "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/ProtView.js",
             "modules": {
                 "Structure": 1,
-                "Application": 1,
                 "DrawBoard": 1,
+                "Application": 1,
                 "Core": 1
             },
             "classes": {},
@@ -73,6 +84,7 @@
             "fors": {},
             "namespaces": {
                 "Structure.View": 1,
+                "DrawBoard": 1,
                 "Structure": 1
             },
             "tag": "main",
@@ -80,6 +92,22 @@
             "line": 5,
             "description": "Contains protein structural related classes\n\nPeptide form, Protein Form, handles all structural interactions",
             "extends": "Core.View",
+            "author": "Stefan Meier",
+            "version": "20120903",
+            "itemtype": "main"
+        },
+        "DrawBoard": {
+            "name": "DrawBoard",
+            "submodules": {},
+            "classes": {
+                "DrawBoard.Module": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "main",
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/DrawBoard.js",
+            "line": 6,
+            "description": "Contains protein drawing classes\n\nDraws protein, and offers drawing related functionalities such\nas export, resizing, etc.",
             "author": "Stefan Meier",
             "version": "20120903",
             "itemtype": "main"
@@ -94,20 +122,6 @@
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/ProtView.js",
             "line": 20,
             "description": "Contains application wide used Classes\n\nContains classes such as Context, Mediator and Sandbox\nIs also responisble for routing and global view interactions",
-            "author": "Stefan Meier",
-            "version": "20120903",
-            "itemtype": "main"
-        },
-        "DrawBoard": {
-            "name": "DrawBoard",
-            "submodules": {},
-            "classes": {},
-            "fors": {},
-            "namespaces": {},
-            "tag": "main",
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/ProtView.js",
-            "line": 33,
-            "description": "Contains protein drawing classes\n\nDraws protein, and offers drawing related functionalities such\nas export, resizing, etc.",
             "author": "Stefan Meier",
             "version": "20120903",
             "itemtype": "main"
@@ -155,6 +169,20 @@
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/view/ProteinView.js",
             "line": 1,
             "description": "Handles and shows protein form"
+        },
+        "DrawBoard.Module": {
+            "name": "DrawBoard.Module",
+            "shortname": "DrawBoard.Module",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "DrawBoard",
+            "namespace": "DrawBoard",
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/DrawBoard.js",
+            "line": 6,
+            "description": "DrawBoard module facade\n\nHandles module requests and responses"
         },
         "Structure.Module": {
             "name": "Structure.Module",
@@ -326,12 +354,44 @@
             "author": "Stefan Meier",
             "version": "20120903",
             "class": "Structure.Module",
-            "module": "Structure",
-            "namespace": "Structure.View"
+            "module": "DrawBoard"
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
-            "line": 19,
+            "line": 15,
+            "description": "Contains all loaded resources",
+            "itemtype": "property",
+            "name": "stack",
+            "type": "Object",
+            "default": "null",
+            "class": "Structure.Module",
+            "module": "Structure"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
+            "line": 23,
+            "description": "Modules main controller",
+            "itemtype": "property",
+            "name": "controller",
+            "type": "Core.MainController",
+            "default": "null",
+            "class": "Structure.Module",
+            "module": "Structure"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
+            "line": 31,
+            "description": "Reference to sandbox",
+            "itemtype": "property",
+            "name": "sanbox",
+            "type": "Application.Sandbox",
+            "default": "null",
+            "class": "Structure.Module",
+            "module": "Structure"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
+            "line": 40,
             "description": "Loads module core classes",
             "access": "private",
             "tagname": "",
@@ -342,7 +402,7 @@
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
-            "line": 29,
+            "line": 50,
             "description": "Shows indicated resource or updates resource with specified id",
             "access": "private",
             "tagname": "",
@@ -365,7 +425,7 @@
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
-            "line": 47,
+            "line": 68,
             "description": "Hides indicated resource",
             "access": "private",
             "tagname": "",
@@ -383,7 +443,7 @@
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
-            "line": 57,
+            "line": 78,
             "description": "Unloads module and all its functionalities",
             "access": "private",
             "tagname": "",
@@ -397,7 +457,7 @@
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
-            "line": 72,
+            "line": 93,
             "description": "Updateds module\n\nOnly subscribed controllers will be updated with information",
             "access": "private",
             "tagname": "",
@@ -415,7 +475,7 @@
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
-            "line": 88,
+            "line": 109,
             "description": "Starts module\n\nCalls load",
             "itemtype": "method",
             "name": "start",
@@ -424,7 +484,7 @@
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
-            "line": 98,
+            "line": 119,
             "description": "Stops module\n\nCalls unload",
             "itemtype": "method",
             "name": "stop",
@@ -433,7 +493,7 @@
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
-            "line": 108,
+            "line": 129,
             "description": "Shows specified resource\n\nCalls show",
             "params": [
                 {
@@ -459,7 +519,7 @@
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
-            "line": 121,
+            "line": 142,
             "description": "Hides specified resource\n\nCalls hide",
             "params": [
                 {
@@ -480,7 +540,7 @@
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
-            "line": 133,
+            "line": 154,
             "description": "Updates module\n\nCalls update",
             "params": [
                 {
@@ -501,7 +561,7 @@
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
-            "line": 145,
+            "line": 166,
             "description": "Registers sandbox and module's public methods",
             "params": [
                 {

@@ -12,8 +12,29 @@ ProtView.Structure.View = {};
  * @module Structure
  */
 ProtView.Structure.Module = (function() {
+	/**
+	Contains all loaded resources
+
+	@property stack
+	@type Object
+	@default null
+	**/
 	var stack = {},
+	/**
+	Modules main controller
+
+	@property controller
+	@type Core.MainController
+	@default null
+	**/
 	controller = null,
+	/**
+	Reference to sandbox
+
+	@property sanbox
+	@type Application.Sandbox
+	@default null
+	**/
 	sandbox = null,
 
 	/**

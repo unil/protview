@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Core</title>
+    <title>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;DrawBoard.js</title>
     <link rel="stylesheet" href="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;3.5.1&#x2F;build&#x2F;cssgrids&#x2F;cssgrids-min.css">
     <link rel="stylesheet" href="..&#x2F;assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="..&#x2F;assets/css/main.css" id="site_styles">
@@ -96,39 +96,90 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1>Core Module</h1>
-<div class="box clearfix meta">
-    
+                        <h1 class="file-heading">File: &#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;DrawBoard.js</h1>
 
-    
+<div class="file">
+    <pre class="code prettyprint linenums">
+ProtView.DrawBoard.Controller = {};
+ProtView.DrawBoard.Model = {};
+ProtView.DrawBoard.View = {};
+ProtView.DrawBoard.Utils = {};
 
-    
-        <div class="foundat">
-            Defined in: <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_ProtView.js.html#l46"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;ProtView.js:46</code></a>
-        </div>
-    
-
-    
-</div>
-
-
-
-<div class="box intro">
-    <p>Contains base classes which are inherited in other modules</p>
-
-<p>Helpers, MVC base classes, utility classes</p>
-</div>
-
-
-
-<div class="yui3-g">
-    <div class="yui3-u-1-2">
-        
-    </div>
-
-    <div class="yui3-u-1-2">
-        
-    </div>
+&#x2F;**
+ * DrawBoard module facade
+ * 
+ * Handles module requests and responses
+ * 
+ * @namespace DrawBoard
+ * @class Module
+ * @module DrawBoard
+ *&#x2F;
+ProtView.DrawBoard.Module = (function() {
+	&#x2F;&#x2F;local
+	var stack = {},
+	controller = null,
+	sandbox = null,
+	load = function() {
+		controller = new ProtView.DrawBoard.Controller.MainController();
+		stack.controller = controller;
+	},
+	show = function(resource, id) {
+		controller.load(resource);
+		var c = controller.getController(resource);
+		if (c != null) {
+			if (id &gt; 0)
+				c.fetch(id);
+			else
+				c.clear();
+		}
+		else 
+			console.log(&quot;ProtView.Drawboard.Module:show controller is null&quot;);
+	},
+	unload = function() {
+		for (var el in stack) {
+			   &#x2F;*var obj = stack[el];
+			   obj.unload();*&#x2F;
+			   stack[el] = null;
+			   delete stack[el];
+		}
+	},
+	update = function (arguments) {
+		if (controller != null)
+			controller.update(arguments);
+	},
+	save = function() {
+		var c = controller.getController(&#x27;drawboard&#x27;);
+		c.save();
+	};
+	&#x2F;&#x2F;public
+	return {
+		start : function() {
+			new ProtView.DrawBoard.View.ToolbarView();
+			load();
+		},
+		stop : function () {
+			unload();
+		},
+		show : function(e, resource, id) {
+			show(resource, id);
+		},
+		update : function(e, arguments) {
+			update(arguments);
+		},
+		save : function() {
+			save();
+		},
+		registerSandbox : function(obj) {
+			sandbox = obj;
+			sandbox.subscribe(&quot;&#x2F;drawboard&#x2F;start&quot;, ProtView.DrawBoard.Module.start);
+			sandbox.subscribe(&quot;&#x2F;drawboard&#x2F;stop&quot;, ProtView.DrawBoard.Module.stop);
+			sandbox.subscribe(&quot;&#x2F;drawboard&#x2F;show&quot;, ProtView.DrawBoard.Module.show);
+			sandbox.subscribe(&quot;&#x2F;drawboard&#x2F;save&quot;, ProtView.DrawBoard.Module.save);
+			sandbox.subscribe(&quot;&#x2F;application&#x2F;context&quot;, ProtView.DrawBoard.Module.update);
+		}
+	};
+}());
+    </pre>
 </div>
 
                     </div>

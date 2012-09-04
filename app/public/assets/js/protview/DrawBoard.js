@@ -3,6 +3,15 @@ ProtView.DrawBoard.Model = {};
 ProtView.DrawBoard.View = {};
 ProtView.DrawBoard.Utils = {};
 
+/**
+ * DrawBoard module facade
+ * 
+ * Handles module requests and responses
+ * 
+ * @namespace DrawBoard
+ * @class Module
+ * @module DrawBoard
+ */
 ProtView.DrawBoard.Module = (function() {
 	//local
 	var stack = {},
