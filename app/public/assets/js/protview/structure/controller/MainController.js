@@ -11,9 +11,6 @@ ProtView.Structure.Controller.MainController = ProtView.Core.MainController.exte
 					view = new ProtView.Structure.View.PeptideView({
 						el : '#peptide-form',
 						templateEl : '#peptide-form-template',
-						bindings : {
-								sequence: '#peptide-sequence'
-							}
 					});
 					controller.addView(view);
 					break;
@@ -53,9 +50,7 @@ ProtView.Structure.Controller.MainController = ProtView.Core.MainController.exte
 	update : function(arguments) {
 		if (arguments.protein) {
 			var stack = this.stack;
-			console.log('stack');
 			for (var el in stack) {
-				console.log(el);
 				//dirty fix, because database insert causes update
 				//even on dialog close, messages should be more precise
 				if (el != 'protein-new')

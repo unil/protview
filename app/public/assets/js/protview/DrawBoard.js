@@ -15,8 +15,6 @@ ProtView.DrawBoard.Module = (function() {
 	show = function(resource, id) {
 		controller.load(resource);
 		var c = controller.getController(resource);
-		console.log('show');
-		console.log(c);
 		if (c != null) {
 			if (id > 0)
 				c.fetch(id);

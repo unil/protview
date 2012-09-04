@@ -43,6 +43,14 @@ ProtView.Structure.View.PeptideView = ProtView.Core.View.extend({
 		}, {
 			silent : true
 		});
+		
+		var sequence = $('#peptide-sequence').val();
+		
+		model.set({
+			sequence : sequence
+		}, {
+			silent : true
+		});
 
 		//reads current membrane regions and updates model
 		var regions = this.evaluateRegions();
@@ -58,7 +66,6 @@ ProtView.Structure.View.PeptideView = ProtView.Core.View.extend({
 		//if model is valid, content is saved
 		if (valid) {
 			this.model = model;
-			console.log(model);
 			this.controller.save();
 		}
 	},
@@ -73,8 +80,6 @@ ProtView.Structure.View.PeptideView = ProtView.Core.View.extend({
         // do something
     },
     invalid: function(view, attr, error) {
-       console.log(attr);
-       console.log(error);
 
     },
 	evaluateRegions : function() {
@@ -173,7 +178,7 @@ ProtView.Structure.View.PeptideView = ProtView.Core.View.extend({
 				.get('regions'));
 
 		$('#peptide-form-insert').html(renderedContent + renderedRegions);
-		self.modelBinder.bind(self.model, self.el, self.bindings);
+
 		Backbone.Validation.bind(self);
 		
 		self.bindRemoveRowEvent();

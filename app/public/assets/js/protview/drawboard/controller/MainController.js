@@ -14,7 +14,7 @@ ProtView.DrawBoard.Controller.MainController = ProtView.Core.MainController.exte
 					controller.addView(view);
 					break;
 				default :
-					console.log('error no resource given or not known');
+					console.log('ProtView.DrawBoard.Controller.load:error no resource given or not known');
 					break;
 			}
 			stack[resource] = controller;

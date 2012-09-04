@@ -42,17 +42,14 @@ ProtView.Core.Controller = Class.extend( {
 				});
 			}
 			else {
-				console.log('Controller:fetch: no id for model');
+				console.log('ProtView.Core.Controller:fetch: no id for model');
 			}
 		}
 		
 		return ret;
 	},
-	unload : function() {
-		
+	unload : function() {	
 		var stack = this.views;
-		console.log('unload in main controller');
-		console.log(stack);
 		for (var el in stack) {
 			   var obj = stack[el];
 			   obj.unload();
@@ -63,13 +60,10 @@ ProtView.Core.Controller = Class.extend( {
 	save : function() {
 		this.model.save(null,{
 			error: function(err){
-				console.log(err);
+				console.log('ProtView.Core.Controller.save: error callback not implemented');
 			}, 
 			success: function(succ) {
-				console.log('model');
-				console.log(this.model);
-				console.log('succ');
-				console.log(succ);
+				console.log('ProtView.Core.Controller.save: success callback not implemented');
 			}
 			});
 	},

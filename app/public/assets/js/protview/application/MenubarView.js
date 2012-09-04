@@ -8,7 +8,6 @@ ProtView.Application.MenubarView = Backbone.View.extend({
 		'click #file-save-representation' : 'saveRepresentation'
 	},
 	newProtein : function() {
-		console.log('newProtein');
 		var url = Application.ROOTPATH + 'raw/menubar/do/newprotein';
 		this.load(url, '#application-items');
 	},
