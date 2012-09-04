@@ -39,12 +39,12 @@ git checkout heigvd
 
 ```bash
 # Se connecter à MySQL en root
-mysql -p
+mysql -uroot -p
 # Créer une base des données pour protview
 CREATE DATABASE protview DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 # Créer un utilisateur 'protview' avec les droits pour la base des données protview
 GRANT ALL PRIVILEGES ON protview.* TO 'protview'@'localhost' IDENTIFIED BY 'protview';
-exit; 
+exit
 ```
 
 #### Configuration Apache
