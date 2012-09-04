@@ -20,9 +20,9 @@ Installation
   * [git] (http://git-scm.com/downloads)
   
 ### Mac OSX
-  * Ouvrir `/Applications/Utilities/Terminal.app`
-  * Exécuter les commandes suivantes :
+## Installation de ProtView
 
+  * Ouvrir `/Applications/Utilities/Terminal.app` et exécuter les commandes suivantes:
 ````
 # Aller dans le dossier d'installation
 cd {DOSSIER_INSTALLATION}
@@ -31,4 +31,48 @@ git clone --recursive https://github.com/unil/protview
 # Aller sur la branche heigvd
 git checkout heigvd
 ````
+
+## Configuration MySQL
+
+  * Ouvrir `/Applications/Utilities/Terminal.app` et exécuter les commandes suivantes:
+````
+# Se connecter à MySQL en root
+mysql -p
+# Créer un utilisateur 'protview' avec les droits pour la table protview
+GRANT USAGE ON *.* TO 'protview'@'localhost';
+CREATE USER 'protview'@'localhost' IDENTIFIED BY 'protview';
+GRANT ALL PRIVILEGES ON *.* TO 'protview'@'localhost';
+exit; 
+````
+
+## Configuration Apache
+
+  * Création d'un hôte virtuel selon la configuration suivante:
+````
+Alias /protview "{DOSSIER_INSTALLATION}/app/public"
+
+<Directory "{DOSSIER_INSTALLATION}">
+    Options Indexes MultiViews
+    Options FollowSymLinks
+    AllowOverride All
+    Order allow,deny
+    Allow from all
+</Directory>
+
+````
   
+  * Ajouter la ligne suivante au fichier `app/public/.htaccess
+````
+RewriteBase /protview
+````
+
+## Configuration ProtView
+
+  * Ouvrir `/Applications/Utilities/Terminal.app` et exécuter les commandes suivantes:
+
+````
+# Création de la base de données
+php app/lib/xfm/scripts/deploy/database.php
+````
+
+
