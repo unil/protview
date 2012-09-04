@@ -4,10 +4,10 @@ Aperçu
 `ProtView` est une « Single Page Application » qui permet de créer une représentation vectorielle (SVG) d‘une protéine transmembranaire en fonction de paramètres définis par l’utilisateur. Le premier jet est calculé selon un algorithme défini. Le résultat peut être modifié en interagissant avec la souris directement sur le graphique généré.
 L’architecture applicative s’appuie sur :
   *	[xfm](https://github.com/damiencorpataux/xfm-php) (PHP 5 / MySQL)
-  * jQuery / jQuery SVG / jQWidgets
-  * HTML 5 / SVG / Bootstrap CSS
-  * Backbone.js / Underscore.js
-  * REST
+  * [jQuery](http://jquery.com) / [jQuery SVG](http://keith-wood.name/svg.html) / [jQWidgets](http://www.jqwidgets.com)
+  * [HTML 5](http://html5.org) / [SVG](http://www.w3.org/Graphics/SVG/) / [Bootstrap CSS](http://twitter.github.com/bootstrap/)
+  * [Backbone.js](http://backbonejs.org) / [Underscore.js](http://underscorejs.org)
+  * [REST](http://fr.wikipedia.org/wiki/Representational_State_Transfer)
   * MVC / PubSub / Façade / Médiateur / Décorateur
 
 
