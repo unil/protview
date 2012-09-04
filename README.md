@@ -16,7 +16,7 @@ Installation
 
 ### Prérequis
 
-  * [Apache, MySQL] (p.ex: WAMP, LAMP, MAMP),
+  * Apache, MySQL (p.ex: WAMP, LAMP, MAMP)
   * [git] (http://git-scm.com/downloads)
   
 ### ProtView
