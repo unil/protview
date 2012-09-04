@@ -20,7 +20,7 @@ Installation
   * [git] (http://git-scm.com/downloads)
   
 ### Mac OSX
-## Installation de ProtView
+#### Installation de ProtView
 
   * Ouvrir `/Applications/Utilities/Terminal.app` et exécuter les commandes suivantes:
 
@@ -33,7 +33,7 @@ git clone --recursive https://github.com/unil/protview
 git checkout heigvd
 ```
 
-## Configuration MySQL
+#### Configuration MySQL
 
   * Ouvrir `/Applications/Utilities/Terminal.app` et exécuter les commandes suivantes:
 
@@ -47,7 +47,7 @@ GRANT ALL PRIVILEGES ON *.* TO 'protview'@'localhost';
 exit; 
 ```
 
-## Configuration Apache
+#### Configuration Apache
 
   * Création d'un hôte virtuel selon la configuration suivante:
 
@@ -69,7 +69,7 @@ Alias /protview "{DOSSIER_INSTALLATION}/app/public"
 RewriteBase /protview
 ```
 
-## Configuration ProtView
+#### Configuration ProtView
 
   * Ouvrir `/Applications/Utilities/Terminal.app` et exécuter les commandes suivantes:
 
