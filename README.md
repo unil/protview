@@ -23,6 +23,7 @@ Installation
 ## Installation de ProtView
 
   * Ouvrir `/Applications/Utilities/Terminal.app` et exécuter les commandes suivantes:
+
 ```bash
 # Aller dans le dossier d'installation
 cd {DOSSIER_INSTALLATION}
@@ -35,6 +36,7 @@ git checkout heigvd
 ## Configuration MySQL
 
   * Ouvrir `/Applications/Utilities/Terminal.app` et exécuter les commandes suivantes:
+
 ```bash
 # Se connecter à MySQL en root
 mysql -p
@@ -48,6 +50,7 @@ exit;
 ## Configuration Apache
 
   * Création d'un hôte virtuel selon la configuration suivante:
+
 ```bash
 Alias /protview "{DOSSIER_INSTALLATION}/app/public"
 
@@ -61,6 +64,7 @@ Alias /protview "{DOSSIER_INSTALLATION}/app/public"
 ```
   
   * Ajouter la ligne suivante au fichier `app/public/.htaccess
+
 ```bash
 RewriteBase /protview
 ```
