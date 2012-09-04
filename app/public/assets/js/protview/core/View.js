@@ -4,16 +4,16 @@ ProtView.Core.View = Backbone.View.extend({
 			console.log('ProtView.Core.View: define el');
 		if (args.templateEl == null)
 			console.log('ProtView.Core.View: define templateEL');
-		
-		this.modelBinder = new Backbone.ModelBinder();
+		if (args.bindings != null) {
+			this.modelBinder = new Backbone.ModelBinder();
+		}
 		this.template = _.template($(args.templateEl).html());
 		this.bindings = args.bindings;
 		this.el = args.el;
-		console.log('args');
-		console.log(args);
 	},
 	unload : function() {
-		this.modelBinder.unbind();
+		if (this.bindings != null)
+			this.modelBinder.unbind();
 		Backbone.Validation.unbind(this);
 		/*this.undelegateEvents();
 		this.remove();*/
@@ -45,10 +45,9 @@ ProtView.Core.View = Backbone.View.extend({
 	render : function() {
 		var renderedContent = this.template(this.model.toJSON());
         $(this.el).html(renderedContent);
-        this.modelBinder.bind(this.model, this.el, this.bindings);
+        if (this.bindings != null)
+        	this.modelBinder.bind(this.model, this.el, this.bindings);
         Backbone.Validation.bind(this);
-
-
 		return this;
 	},
 });

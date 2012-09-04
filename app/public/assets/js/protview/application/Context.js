@@ -24,8 +24,6 @@ ProtView.Application.Context = Class.extend( {
 	},
 	//fixme: send only one message if two updates
 	set : function(event, arguments) {
-		console.log('context update');
-		console.log(arguments);
 		if (arguments.protein) {
 			this.setProtein(arguments.protein);
 		}

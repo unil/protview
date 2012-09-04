@@ -37,9 +37,7 @@ ProtView.DrawBoard.View.DrawBoardView = ProtView.Core.View.extend({
 	render : function() {
 		var model = this.model,
 		self = this;
-		
-		console.log('model');
-		console.log(model);
+	
 		this.drawing.paint(model.get('structuralGeometries'), model.get('params'), this.updateCoord, self);
 
 

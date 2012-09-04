@@ -66,7 +66,6 @@ ProtView.Structure.View.PeptideView = ProtView.Core.View.extend({
 		//if model is valid, content is saved
 		if (valid) {
 			this.model = model;
-			console.log(model);
 			this.controller.save();
 		}
 	},
@@ -81,8 +80,6 @@ ProtView.Structure.View.PeptideView = ProtView.Core.View.extend({
         // do something
     },
     invalid: function(view, attr, error) {
-       console.log(attr);
-       console.log(error);
 
     },
 	evaluateRegions : function() {
@@ -175,8 +172,6 @@ ProtView.Structure.View.PeptideView = ProtView.Core.View.extend({
 		});
 	},
 	render : function() {
-		console.log('peptideView rendered');
-		console.log(this.model);
 		var self = this;
 		var renderedContent = self.template(self.model.toJSON()),
 		renderedRegions = this.renderRegion(self.model
