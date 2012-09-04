@@ -78,4 +78,7 @@ RewriteBase /protview
 php app/lib/xfm/scripts/deploy/database.php
 ```
 
+Installation
+------------
 
+La documentation d'utilisation est disponible ici : 
