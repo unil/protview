@@ -81,4 +81,4 @@ php app/lib/xfm/scripts/deploy/database.php
 Utilisation
 ------------
 
-  * **<http://localhost/protview>**<br/> Aller à la page d'accueil
+  * **<http://localhost/protview>**<br/> Aller à la page d'accueil de l'application
