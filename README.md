@@ -76,6 +76,14 @@ RewriteBase /protview
 ```bash
 # Création de la base de données
 php app/lib/xfm/scripts/deploy/database.php
+
+
+# Aller dans le dossier public de l'application
+cd {DOSSIER_INSTALLATION}/app/public
+# Création d'un dossier tmp pour l'export
+mkdir tmp
+# Donner tous les droits sur ce dossier
+chmod -R 777 tmp
 ```
 
 Utilisation
