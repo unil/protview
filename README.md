@@ -16,7 +16,7 @@ Installation
 
 ### Prérequis
 
-  * Apache, PHP 5.3, MySQL (p.ex: WAMP, LAMP, MAMP)
+  * Apache, PHP 5.3, MySQL (p.ex: [WAMP](http://www.wampserver.com), LAMP, [MAMP](http://www.mamp.info/en/index.html))
   * [git] (http://git-scm.com/downloads)
   
 ### Mac OSX
