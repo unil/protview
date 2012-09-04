@@ -16,8 +16,19 @@ Installation
 
 ### Prérequis
 
-  * Apache, MySQL (p.ex: WAMP, LAMP, MAMP)
+  * Apache, PHP 5.3, MySQL (p.ex: WAMP, LAMP, MAMP)
   * [git] (http://git-scm.com/downloads)
   
-### ProtView
-  * Téléchargemetn de la source (https://github.com/unil/protview/zipball/heigvd)
+### Mac OSX
+  * Ouvrir `/Applications/Utilities/Terminal.app`
+  * Exécuter les commandes suivantes :
+
+````
+# Aller dans le dossier d'installation
+cd {DOSSIER_INSTALLATION}
+# Télécharger l'application ProtView avec les dépendances
+git clone --recursive https://github.com/unil/protview
+# Aller sur la branche heigvd
+git checkout heigvd
+````
+  
