@@ -9,6 +9,12 @@
  */
 class RepresentationsController extends RESTController {
 	/**
+	 * 
+	 * @var \models\RepresentationdModel
+	 */
+	public $model = 'representation';
+	
+	/**
 	 * Gets representation
 	 *
 	 * HTTP params are the following:

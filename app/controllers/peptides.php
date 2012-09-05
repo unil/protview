@@ -13,10 +13,10 @@ class PeptidesController extends RESTController {
 	 * @var \models\PeptideModel
 	 */
 	public $model = 'peptide';
-	
+
 	/**
 	 * Gets the default peptide form
-	 * 
+	 *
 	 * @return \views\structure\PeptideView
 	 */
 	function defaultAction() {
@@ -26,13 +26,13 @@ class PeptidesController extends RESTController {
 
 	/**
 	 * Gets peptide items
-	 * 
+	 *
 	 * HTTP params are the following:
 	 *
 	 * *  (string) regions : filter value separated by coma (membrane,all,ext,intra) (optional)
 	 * *  (string) protein_id : id of the protein (optional)
-	 * 
-	 * 
+	 *
+	 *
 	 * Returns an array formatted as the following:
 	 * <code>
 	 * array(
@@ -52,24 +52,24 @@ class PeptidesController extends RESTController {
 		if (!in_array('get', $this->allow)) throw new xException("Method not allowed", 403);
 
 		$data = array();
-		
+
 		//filters regions to be displayed
 		$regionFilter = array();
-		
+
 		//explodes the filter param to store values in array
 		if (isset($this->params['regions']))
 			$regionFilter = explode(",", $this->params['regions']);
-		
+
 		//hack, as for now one protein has exactly one subunit with the same id as protein_id
 		if (isset($this->params['protein_id']))
 			$this->params['subunit_id'] = (int)$this->params['protein_id'];
 
 		$items = array();
-		
+
 		//retrieves all peptides from db
 		$peptides = xModel::load('peptide', $this->params)->get();
-		
-		
+
+
 		foreach($peptides as $peptide) {
 			$peptide_id = $peptide['id'];
 			$item = array();
@@ -77,7 +77,7 @@ class PeptidesController extends RESTController {
 			$item['subunit_id'] = (int)$peptide['subunit_id'];
 			$item['label'] = $peptide['label'];
 			$item['pos'] = $peptide['pos'];
-			
+				
 			//if at least one filter is specified
 			if (count($regionFilter) > 0) {
 				//receives all regions for current peptide
@@ -89,11 +89,11 @@ class PeptidesController extends RESTController {
 								'xorder' => 'pos'
 						)
 				)->get();
-		
+
 				$sequence = "";
 				$terminusN = null;
 				$terminusC = null;
-		
+
 				$count = $regions['xcount'];
 				$r = 0;
 				//region start pos
@@ -101,15 +101,15 @@ class PeptidesController extends RESTController {
 				//region end pos
 				$end = 0;
 				$resultSet= array();
-		
+
 				/* adds each region to resultset
-				 * 
-				 * resultset format:
-				 * 
-				 * array("id"=> regionId, "start" => aaStartPos, "end" => aaEndPos, type => regionType)
-				 */
+				 *
+				* resultset format:
+				*
+				* array("id"=> regionId, "start" => aaStartPos, "end" => aaEndPos, type => regionType)
+				*/
 				foreach($regions['items'] as $region) {
-						
+
 					//first region determines terminusN
 					if ($terminusN == null) {
 						$terminusN = $region['type'];
@@ -126,32 +126,32 @@ class PeptidesController extends RESTController {
 									'region_id' => $region['id'], //where
 									'xorder' => 'pos'
 							)
-					)->get(); 
-						
+					)->get();
+
 					$nbAA = $amino_acids['xcount'];
 					$end = $start + $nbAA -1;
-						
+
 					//add each aa to sequence
 					foreach($amino_acids['items'] as $aa) {
 						$sequence .= $aa['type'];
 					}
 					$r++;
-						
+
 					//adds information to current resultset array
 					$current = array();
 					$current['id'] = (int)$region['id'];
 					$current['start'] = (int)$start;
 					$current['end'] = (int)$end;
 					$current['type'] = $region['type'];
-					
-	
+						
+
 					//if current region type matches filter, add it to result set
 					if (in_array('all', $regionFilter) || in_array($region['type'], $regionFilter)) {
 						$resultSet[] = $current;
 					}
 					$start = $end + 1;
 				}
-				
+
 				$item['sequence'] = $sequence;
 				$item['terminusN'] = $terminusN;
 				$item['terminusC'] = $terminusC;
@@ -160,43 +160,43 @@ class PeptidesController extends RESTController {
 			$items[] = $item;
 		}
 		$data['xcount'] = count($peptides);
-		
+
 		//dirty bug fix for backbonejs not being updated on empty return
 		//and avoid validation issue for sequence, this should be fixed on client side!!
 		if (count($items) <= 0) {
 			$item = array();
-			
+				
 			$item['sequence'] = "not defined";
 			$item['terminusN'] = "";
 			$item['terminusC'] = "";
 			$item['regions'] = array();
 			$items[] = $item;
 		}
-		
+
 		$data['items'] = $items;
 
 		return $data;
 	}
-	
+
 	/**
 	 * Updates a pepptide
-	 * 
+	 *
 	 * Forwards to put method
 	 * @see PeptidesController::put();
 	 */
-	function post() {		
+	function post() {
 		$r = xController::load(
-					'peptides', 
-							$this->params
-					)->put();
+				'peptides',
+				$this->params
+		)->put();
 		return $r;
 	}
 
 	/**
 	 * Creates a new peptide
-	 * 
+	 *
 	 * Intra/extra domains will be calculated from terminus/membrane region params
-	 * 
+	 *
 	 * HTTP params are the following:
 	 *
 	 * *  (string) sequence : aa sequence (mandatory)
@@ -204,7 +204,7 @@ class PeptidesController extends RESTController {
 	 * *  (string) n-terminus : intra|extra|membrane (mandatory)
 	 * *  (string) c-terminus : intra|extra|membrane (mandatory)
 	 * *  (int) id : peptide id (mandatory)
-	 * 
+	 *
 	 * Data needs to be formatted as the following:
 	 * <code>
 	 * array (
@@ -310,14 +310,14 @@ class PeptidesController extends RESTController {
 
 		if ($type != $terminusC)
 			throw new xException('No N/C-Terminus are incorrect for regions specified (inside/outside missmatch)', 400);
-		
+
 		//delete old structure
 		$deleteOldStructure = xModel::load(
 				'region', array(
 						'peptide_id' => $peptide_id
 				))->delete();
 		//$r['delete'] = $deleteOldStructure;
-		
+
 		//$r['regions'] = $regions;
 		//$r['amino-acids'] = array();
 
@@ -353,15 +353,26 @@ class PeptidesController extends RESTController {
 			}
 			//$r['amino-acids'][] = $retA;
 		}
-		
+
+		//for now replace existing representation on structural changes
+		//delete current representation
+		$ret = xModel::load(
+				'representation', array(
+						'peptide_id' => $peptide_id,
+				))->delete();
+
+
 		$ret = xController::load(
-			'representations', array(
-					'peptide_id' => 1
-					
-			))->get(0);
+				'representations', array(
+						'peptide_id' => 1
+							
+				))->get(0);
 
 		if ($ret['xcount'] <= 0) {
-			xContext::$log->log('no representation', 'peptideController');
+
+
+
+				
 			$ret = xController::load(
 					'representations', array(
 							'items' => array (
