@@ -2,11 +2,13 @@
 	<ul class="nav nav-list">
 		<li><a id="drawboad-show-representation"><i class="icon-picture"></i> </a>
 		</li>
+		<!--  
 		<li><a href="#"><i class="icon-zoom-in"></i> </a>
 		</li>
 		<li><a href="#"><i class="icon-zoom-out"></i>
 		</a>
 		</li>
+		-->
 		<li><a id="drawboard-export-png"><i class="icon-download-alt"></i> </a>
 		</li>
 	</ul>
