@@ -181,7 +181,7 @@ class RepresentationsController extends RESTController {
 		$peptide_id = $items['peptide_id'];
 
 		$title = 'title';
-		$description = 'description';
+		$description = '';
 		$params = null;
 
 		require_once(xContext::$basepath.'/lib/protview/protview/bio/Peptide.php');
@@ -204,6 +204,7 @@ class RepresentationsController extends RESTController {
 
 		$sequence = $pept['items'][0]['sequence'];
 		$regions = $pept['items'][0]['regions'];
+		$title = $pept['items'][0]['label'];
 
 
 
