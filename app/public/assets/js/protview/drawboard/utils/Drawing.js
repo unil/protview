@@ -1,10 +1,47 @@
+/**
+ * 
+ * Draws protein and related forms in SVG
+ * 
+ * 
+ * @module DrawBoard
+ * @namespace DrawBoard.Utils
+ * @class Drawing
+ * 
+ * @author Stefan Meier
+ * @version 20120903
+ * 
+ */
 ProtView.DrawBoard.Utils.Drawing = Class.extend( {
+	/**
+	* SVG Object
+	*
+	* @property svg
+	* @type Object
+	* @default null
+	**/
 	svg : null,
 	//fixme, this attribute should not be at this place
 	aaSize : 10,
+	/**
+	* Constructor
+	*
+	* @method int
+	* @constructor
+	* @param {Object} svg
+	**/
 	init: function(svg) {
 		this.svg = svg;
 	},
+	/**
+	* Paints a protein
+	*
+	* @method paint
+	* @param {Object} aminoAcidCollection
+	* @param {Object} representationParams
+	* @param {function} callback
+	* @param {Object} context
+	* @method paint
+	**/
 	paint : function(collection, params, callback, context) {
 
 		var self = this;
@@ -53,15 +90,15 @@ ProtView.DrawBoard.Utils.Drawing = Class.extend( {
 		this.svg.clear();
 	},
 	/**
-	 * Draws an amino acid element <group> <circle> <text>Label</text>
-	 * <text>Position</text> <group>
+	 * Draws an amino acid element
 	 * 
-	 * @param svg
 	 * @param x
 	 * @param y
 	 * @param size
 	 * @param label
 	 * @param pos
+	 * @param elementId
+	 * @method drawAminoAcid
 	 */
 	drawAminoAcid : function (x, y, size, label, pos, id) {
 		var svg = this.svg;
@@ -95,6 +132,7 @@ ProtView.DrawBoard.Utils.Drawing = Class.extend( {
 	 * @param maxX
 	 * @param minY
 	 * @param maxY
+	 * @method drawMembrane
 	 */
 	drawMembrane : function(minX, maxX, minY, maxY) {
 		var svg = this.svg;
@@ -112,7 +150,12 @@ ProtView.DrawBoard.Utils.Drawing = Class.extend( {
 	/**
 	 * Adds drag and drop support to an SVG Element
 	 * 
+	 * Callback and context are used to inform when an elements position has changed
+	 * 
 	 * @param svgElement
+	 * @param callback
+	 * @param context
+	 * @method addDragSupport
 	 */
 	addDragSupport : function (svgElement, callback, context) {
 		var self = this;

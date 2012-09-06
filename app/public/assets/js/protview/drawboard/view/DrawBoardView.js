@@ -1,5 +1,23 @@
+/**
+ * 
+ * Handles and shows drawboard
+ * 
+ * 
+ * @module DrawBoard
+ * @namespace DrawBoard.View
+ * @class DrawBoardView
+ * @extends Core.View
+ * 
+ * @author Stefan Meier
+ * @version 20120903
+ * 
+ */
 ProtView.DrawBoard.View.DrawBoardView = ProtView.Core.View.extend({
-	//el : '#drawBoard',
+	/**
+	* Initalizes svg element and settings
+	* @method initialize
+	* @constructor
+	**/
 	initialize : function(args) {
 		var self = this;
 		self.$el.svg({
@@ -16,24 +34,48 @@ ProtView.DrawBoard.View.DrawBoardView = ProtView.Core.View.extend({
 			}
 		});
 	},
-	events: { 
-	},
+	/**
+	 * Callback function used to update elements position
+	 * 
+	 * @param {Object} DOMElement
+	 * @param {int} x-coordinate
+	 * @param {int} y-coordinate
+	 * @param {Object) context
+	 * @method updateCoord
+	 */
 	updateCoord : function(element, x, y, context) {
 		var el = $(element);
 		var elId = el.attr('id');
 
 		context.controller.updateElement(elId, {x : x, y : y});	
 	},
+	/**
+	 * Sets the model
+	 * 
+	 * @param {DrawBoard.Model.Representation} model
+	 * @method setModel
+	 */
 	setModel : function(model) {
 		model.on('change', this.render, this);
 		model.on('reset', this.render, this);	
 		this.model = model;
 	},
+	/**
+	 * Resizes drawboard in function of the screen dimension
+	 * 
+	 * @method resize
+	 */
 	resize: function() {
 		var h = $(window).height();
 	    var w = $(window).width();
 	    $("#svg-representation").attr('height', (h-120) + 'px').attr('width', (w-200) + 'px');
 	},
+	/**
+	 * Renders view
+	 *
+	 * @method render
+	 * @chainable
+	 */
 	render : function() {
 		var model = this.model,
 		self = this;
@@ -44,6 +86,11 @@ ProtView.DrawBoard.View.DrawBoardView = ProtView.Core.View.extend({
 		$(window).resize(this.resize).resize();
 		return this;
 	},
+	/**
+	 * Clears the drawboard
+	 * 
+	 * @method clear
+	 */
 	clear : function() {
 		this.drawing.clearAll();
 	}
