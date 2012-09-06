@@ -4,9 +4,46 @@
         "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Context.js": {
             "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Context.js",
             "modules": {},
-            "classes": {},
+            "classes": {
+                "Application.Context": 1
+            },
             "fors": {},
-            "namespaces": {}
+            "namespaces": {
+                "Application": 1
+            }
+        },
+        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Mediator.js": {
+            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Mediator.js",
+            "modules": {},
+            "classes": {
+                "Application.Mediator": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Application": 1
+            }
+        },
+        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/MenubarView.js": {
+            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/MenubarView.js",
+            "modules": {},
+            "classes": {
+                "Application.MenuBarView": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Application": 1
+            }
+        },
+        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Router.js": {
+            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Router.js",
+            "modules": {},
+            "classes": {
+                "Application.Router": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Application": 1
+            }
         },
         "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Sandbox.js": {
             "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Sandbox.js",
@@ -268,6 +305,10 @@
             "name": "Application",
             "submodules": {},
             "classes": {
+                "Application.Context": 1,
+                "Application.Mediator": 1,
+                "Application.MenuBarView": 1,
+                "Application.Router": 1,
                 "Application.Sandbox": 1
             },
             "fors": {},
@@ -280,6 +321,7 @@
             "description": "Contains application wide used Classes\n\nContains classes such as Context, Mediator and Sandbox\nIs also responisble for routing and global view interactions",
             "author": "Stefan Meier",
             "version": "20120903",
+            "extends": "Backbone.View",
             "itemtype": "main"
         },
         "Core": {
@@ -365,6 +407,64 @@
         }
     },
     "classes": {
+        "Application.Context": {
+            "name": "Application.Context",
+            "shortname": "Application.Context",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Application",
+            "namespace": "Application",
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Context.js",
+            "line": 1,
+            "description": "Application Context\nHolds and stores global context\n Application Context should be accessed via Sandbox"
+        },
+        "Application.Mediator": {
+            "name": "Application.Mediator",
+            "shortname": "Application.Mediator",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Application",
+            "namespace": "Application",
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Mediator.js",
+            "line": 1,
+            "description": "Application Mediator\nHandles subscription/publications of channels and message"
+        },
+        "Application.MenuBarView": {
+            "name": "Application.MenuBarView",
+            "shortname": "Application.MenuBarView",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Application",
+            "namespace": "Application",
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/MenubarView.js",
+            "line": 1,
+            "description": "Menubar View\nHandles the main application menubar",
+            "extends": "Backbone.View"
+        },
+        "Application.Router": {
+            "name": "Application.Router",
+            "shortname": "Application.Router",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Application",
+            "namespace": "Application",
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Router.js",
+            "line": 1,
+            "description": "Application Router\nRoutes URL changes",
+            "extends": "Backbone.Router"
+        },
         "Application.Sandbox": {
             "name": "Application.Sandbox",
             "shortname": "Application.Sandbox",
@@ -681,8 +781,425 @@
     "classitems": [
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Context.js",
-            "line": 1,
-            "class": "Application.Sandbox"
+            "line": 18,
+            "itemtype": "property",
+            "name": "sandbox",
+            "type": "{Application.Sandbox}",
+            "default": "null",
+            "class": "Application.Context",
+            "module": "Application",
+            "namespace": "Application"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Context.js",
+            "line": 24,
+            "itemtype": "property",
+            "name": "store",
+            "type": "Object",
+            "class": "Application.Context",
+            "module": "Application",
+            "namespace": "Application"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Context.js",
+            "line": 33,
+            "description": "Constructor",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "sandbox",
+                    "description": ""
+                },
+                {
+                    "name": "router",
+                    "description": ""
+                }
+            ],
+            "itemtype": "method",
+            "name": "init",
+            "class": "Application.Context",
+            "module": "Application",
+            "namespace": "Application"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Context.js",
+            "line": 55,
+            "description": "Sets global variable\n\nNeeds to be fixed to only send one message on mulitple changes",
+            "params": [
+                {
+                    "name": "event",
+                    "description": ""
+                },
+                {
+                    "name": "arguments",
+                    "description": ""
+                }
+            ],
+            "itemtype": "method",
+            "name": "set",
+            "class": "Application.Context",
+            "module": "Application",
+            "namespace": "Application"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Context.js",
+            "line": 72,
+            "description": "Sets current protein",
+            "params": [
+                {
+                    "name": "proteinId",
+                    "description": ""
+                }
+            ],
+            "itemtype": "method",
+            "name": "setProtein",
+            "class": "Application.Context",
+            "module": "Application",
+            "namespace": "Application"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Context.js",
+            "line": 82,
+            "description": "Sets current representation",
+            "params": [
+                {
+                    "name": "representationId",
+                    "description": ""
+                }
+            ],
+            "itemtype": "method",
+            "name": "setRepresentation",
+            "class": "Application.Context",
+            "module": "Application",
+            "namespace": "Application"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Context.js",
+            "line": 92,
+            "description": "Gets current protein",
+            "return": {
+                "description": "proteinId",
+                "type": "Int"
+            },
+            "itemtype": "method",
+            "name": "getProtein",
+            "class": "Application.Context",
+            "module": "Application",
+            "namespace": "Application"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Context.js",
+            "line": 100,
+            "description": "Gets current representation",
+            "return": {
+                "description": "representationId",
+                "type": "Int"
+            },
+            "itemtype": "method",
+            "name": "getRepresentation",
+            "class": "Application.Context",
+            "module": "Application",
+            "namespace": "Application"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Context.js",
+            "line": 108,
+            "description": "Navigates to indicated URL",
+            "params": [
+                {
+                    "name": "url",
+                    "description": ""
+                }
+            ],
+            "itemtype": "method",
+            "name": "navigate",
+            "class": "Application.Context",
+            "module": "Application",
+            "namespace": "Application"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Mediator.js",
+            "line": 17,
+            "description": "Subscribes callback to channel",
+            "params": [
+                {
+                    "name": "channel",
+                    "description": ""
+                },
+                {
+                    "name": "callback",
+                    "description": ""
+                }
+            ],
+            "itemtype": "method",
+            "name": "subscribe",
+            "access": "private",
+            "tagname": "",
+            "class": "Application.Mediator",
+            "module": "Application",
+            "namespace": "Application"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Mediator.js",
+            "line": 28,
+            "description": "Unsubscribes callback from channel",
+            "params": [
+                {
+                    "name": "channel",
+                    "description": ""
+                },
+                {
+                    "name": "callback",
+                    "description": ""
+                }
+            ],
+            "itemtype": "method",
+            "name": "unsubscribe",
+            "access": "private",
+            "tagname": "",
+            "class": "Application.Mediator",
+            "module": "Application",
+            "namespace": "Application"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Mediator.js",
+            "line": 39,
+            "description": "Publish message to channel",
+            "params": [
+                {
+                    "name": "channel",
+                    "description": ""
+                },
+                {
+                    "name": "message",
+                    "description": ""
+                }
+            ],
+            "itemtype": "method",
+            "name": "publish",
+            "access": "private",
+            "tagname": "",
+            "class": "Application.Mediator",
+            "module": "Application",
+            "namespace": "Application"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Mediator.js",
+            "line": 51,
+            "description": "Publish message to channel",
+            "params": [
+                {
+                    "name": "channel",
+                    "description": ""
+                },
+                {
+                    "name": "message",
+                    "description": ""
+                }
+            ],
+            "itemtype": "method",
+            "name": "publish",
+            "class": "Application.Mediator",
+            "module": "Application",
+            "namespace": "Application"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Mediator.js",
+            "line": 61,
+            "description": "Subscribes callback to channel",
+            "params": [
+                {
+                    "name": "channel",
+                    "description": ""
+                },
+                {
+                    "name": "callback",
+                    "description": ""
+                }
+            ],
+            "itemtype": "method",
+            "name": "subscribe",
+            "class": "Application.Mediator",
+            "module": "Application",
+            "namespace": "Application"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Mediator.js",
+            "line": 71,
+            "description": "Unsubscribes callback from channel",
+            "params": [
+                {
+                    "name": "channel",
+                    "description": ""
+                },
+                {
+                    "name": "callback",
+                    "description": ""
+                }
+            ],
+            "itemtype": "method",
+            "name": "unsubscribe",
+            "class": "Application.Mediator",
+            "module": "Application",
+            "namespace": "Application"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/MenubarView.js",
+            "line": 18,
+            "description": "Contains View's main Dom-Element",
+            "itemtype": "property",
+            "name": "el",
+            "type": "String",
+            "default": "#menubar",
+            "class": "Application.MenuBarView",
+            "module": "Application",
+            "namespace": "Application"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/MenubarView.js",
+            "line": 27,
+            "itemtype": "event",
+            "name": "click #file-new-protein:newProtein",
+            "class": "Application.MenuBarView",
+            "module": "Application",
+            "namespace": "Application"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/MenubarView.js",
+            "line": 31,
+            "itemtype": "event",
+            "name": "click #file-open-representation:openRepresentation",
+            "class": "Application.MenuBarView",
+            "module": "Application",
+            "namespace": "Application"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/MenubarView.js",
+            "line": 35,
+            "itemtype": "event",
+            "name": "click #show-drawboard:showDrawboard",
+            "class": "Application.MenuBarView",
+            "module": "Application",
+            "namespace": "Application"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/MenubarView.js",
+            "line": 39,
+            "itemtype": "event",
+            "name": "click #show-sidebar:showSidebar",
+            "class": "Application.MenuBarView",
+            "module": "Application",
+            "namespace": "Application"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/MenubarView.js",
+            "line": 43,
+            "itemtype": "event",
+            "name": "click #file-save-representation:saveRepresentation",
+            "class": "Application.MenuBarView",
+            "module": "Application",
+            "namespace": "Application"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/MenubarView.js",
+            "line": 48,
+            "description": "Shows newProtein Dialog",
+            "itemtype": "method",
+            "name": "newProtein",
+            "class": "Application.MenuBarView",
+            "module": "Application",
+            "namespace": "Application"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/MenubarView.js",
+            "line": 57,
+            "description": "Shows drawboard",
+            "itemtype": "method",
+            "name": "showDrawBoard",
+            "class": "Application.MenuBarView",
+            "module": "Application",
+            "namespace": "Application"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/MenubarView.js",
+            "line": 67,
+            "description": "Shows Sidbear",
+            "itemtype": "method",
+            "name": "showSidebar",
+            "class": "Application.MenuBarView",
+            "module": "Application",
+            "namespace": "Application"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/MenubarView.js",
+            "line": 77,
+            "description": "Shows Saves current work",
+            "itemtype": "method",
+            "name": "saveRepresentation",
+            "class": "Application.MenuBarView",
+            "module": "Application",
+            "namespace": "Application"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/MenubarView.js",
+            "line": 84,
+            "description": "Shows Open Representation dialog",
+            "itemtype": "method",
+            "name": "openRepresentation",
+            "class": "Application.MenuBarView",
+            "module": "Application",
+            "namespace": "Application"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/MenubarView.js",
+            "line": 93,
+            "description": "Loads resource\n\nLoaded resource is appended to domElement",
+            "params": [
+                {
+                    "name": "url",
+                    "description": ""
+                },
+                {
+                    "name": "domElement",
+                    "description": ""
+                }
+            ],
+            "itemtype": "method",
+            "name": "laod",
+            "class": "Application.MenuBarView",
+            "module": "Application",
+            "namespace": "Application"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Router.js",
+            "line": 18,
+            "description": "Application routes\n\nsee Backbone documentation",
+            "itemtype": "property",
+            "name": "routes",
+            "type": "Object",
+            "class": "Application.Router",
+            "module": "Application",
+            "namespace": "Application"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Router.js",
+            "line": 31,
+            "description": "Updates the context in order to load the view",
+            "params": [
+                {
+                    "name": "protein",
+                    "description": ""
+                },
+                {
+                    "name": "representation",
+                    "description": ""
+                }
+            ],
+            "itemtype": "method",
+            "name": "view",
+            "class": "Application.Router",
+            "module": "Application",
+            "namespace": "Application"
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Sandbox.js",
@@ -1815,7 +2332,7 @@
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/view/ToolbarView.js",
             "line": 25,
             "itemtype": "event",
-            "name": "click #drawboad-show-representation",
+            "name": "click #drawboad-show-representation:showRepresentation",
             "class": "DrawBoard.View.ToolbarView",
             "module": "DrawBoard",
             "namespace": "DrawBoard.View"
@@ -1824,7 +2341,7 @@
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/view/ToolbarView.js",
             "line": 29,
             "itemtype": "event",
-            "name": "click #drawboard-export-png",
+            "name": "click #drawboard-export-png:exportFile",
             "class": "DrawBoard.View.ToolbarView",
             "module": "DrawBoard",
             "namespace": "DrawBoard.View"
@@ -2117,7 +2634,7 @@
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/view/NewProteinView.js",
             "line": 17,
             "itemtype": "event",
-            "name": "click #new-protein-form-submit",
+            "name": "click #new-protein-form-submit:submitForm",
             "class": "Structure.View.NewProteinView",
             "module": "Structure",
             "namespace": "Structure.View"
@@ -2153,7 +2670,7 @@
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/view/PeptideView.js",
             "line": 17,
             "itemtype": "event",
-            "name": "click #peptide-form-submit",
+            "name": "click #peptide-form-submit:submitForm",
             "class": "Structure.View.PeptideView",
             "module": "Structure",
             "namespace": "Structure.View"
@@ -2247,7 +2764,7 @@
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/view/ProteinView.js",
             "line": 18,
             "itemtype": "event",
-            "name": "click #protein-form-submit",
+            "name": "click #protein-form-submit:submitForm",
             "class": "Structure.View.ProteinView",
             "module": "Structure",
             "namespace": "Structure.View"

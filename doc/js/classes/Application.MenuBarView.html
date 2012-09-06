@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Core.View</title>
+    <title>Application.MenuBarView</title>
     <link rel="stylesheet" href="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;3.5.1&#x2F;build&#x2F;cssgrids&#x2F;cssgrids-min.css">
     <link rel="stylesheet" href="..&#x2F;assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="..&#x2F;assets/css/main.css" id="site_styles">
@@ -140,21 +140,25 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1>Core.View Class</h1>
+                        <h1>Application.MenuBarView Class</h1>
 <div class="box meta">
     
 
     
+        <div class="extends">
+            Extends Backbone.View
+        </div>
+    
 
     
         <div class="foundat">
-            Defined in: <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_core_View.js.html#l1"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;core&#x2F;View.js:1</code></a>
+            Defined in: <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_application_MenubarView.js.html#l1"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;application&#x2F;MenubarView.js:1</code></a>
         </div>
     
 
     
         
-            Module: <a href="../modules/Core.html">Core</a>
+            Module: <a href="../modules/Application.html">Application</a>
         
     
 
@@ -164,7 +168,8 @@
 
 
 <div class="box intro">
-    <p>AbstractView, implements main functionalities</p>
+    <p>Menubar View
+Handles the main application menubar</p>
 </div>
 
 
@@ -177,7 +182,11 @@
             <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
         
         
+            <li class="api-class-tab properties"><a href="#properties">Properties</a></li>
         
+        
+        
+            <li class="api-class-tab events"><a href="#events">Events</a></li>
         
     </ul>
 
@@ -189,59 +198,62 @@
                 <div class="index-section methods">
                     <h3>Methods</h3>
 
-                    <ul class="index-list methods">
+                    <ul class="index-list methods extends">
                         
                             <li class="index-item method">
-                                <a href="#method_initialize">initialize</a>
+                                <a href="#method_laod">laod</a>
 
                                 
                                 
                             </li>
                         
                             <li class="index-item method">
-                                <a href="#method_invalid">invalid</a>
+                                <a href="#method_newProtein">newProtein</a>
 
                                 
                                 
                             </li>
                         
                             <li class="index-item method">
-                                <a href="#method_render">render</a>
+                                <a href="#method_openRepresentation">openRepresentation</a>
 
                                 
                                 
                             </li>
                         
                             <li class="index-item method">
-                                <a href="#method_setController">setController</a>
+                                <a href="#method_saveRepresentation">saveRepresentation</a>
 
                                 
                                 
                             </li>
                         
                             <li class="index-item method">
-                                <a href="#method_setModel">setModel</a>
+                                <a href="#method_showDrawBoard">showDrawBoard</a>
 
                                 
                                 
                             </li>
                         
                             <li class="index-item method">
-                                <a href="#method_submitForm">submitForm</a>
+                                <a href="#method_showSidebar">showSidebar</a>
 
                                 
                                 
                             </li>
                         
-                            <li class="index-item method">
-                                <a href="#method_unload">unload</a>
+                    </ul>
+                </div>
+            
 
-                                
-                                
-                            </li>
+            
+                <div class="index-section properties">
+                    <h3>Properties</h3>
+
+                    <ul class="index-list properties extends">
                         
-                            <li class="index-item method">
-                                <a href="#method_valid">valid</a>
+                            <li class="index-item property">
+                                <a href="#property_el">el</a>
 
                                 
                                 
@@ -254,7 +266,48 @@
             
 
             
+                <div class="index-section events">
+                    <h3>Events</h3>
 
+                    <ul class="index-list events extends">
+                        
+                            <li class="index-item event">
+                                <a href="#event_click #file-new-protein:newProtein">click #file-new-protein:newProtein</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item event">
+                                <a href="#event_click #file-open-representation:openRepresentation">click #file-open-representation:openRepresentation</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item event">
+                                <a href="#event_click #file-save-representation:saveRepresentation">click #file-save-representation:saveRepresentation</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item event">
+                                <a href="#event_click #show-drawboard:showDrawboard">click #show-drawboard:showDrawboard</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item event">
+                                <a href="#event_click #show-sidebar:showSidebar">click #show-sidebar:showSidebar</a>
+
+                                
+                                
+                            </li>
+                        
+                    </ul>
+                </div>
             
         </div>
 
@@ -263,8 +316,118 @@
                 <h2 class="off-left">Methods</h2>
 
                 
-                    <div id="method_initialize" class="method item">
-    <h3 class="name"><code>initialize</code></h3>
+                    <div id="method_laod" class="method item">
+    <h3 class="name"><code>laod</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>url</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>domElement</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_application_MenubarView.js.html#l93"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;application&#x2F;MenubarView.js:93</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Loads resource</p>
+
+<p>Loaded resource is appended to domElement</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">url</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">domElement</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_newProtein" class="method item">
+    <h3 class="name"><code>newProtein</code></h3>
 
     
         <span class="paren">()</span>
@@ -295,7 +458,7 @@
             
         
         
-        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_core_View.js.html#l15"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;core&#x2F;View.js:15</code></a>
+        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_application_MenubarView.js.html#l48"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;application&#x2F;MenubarView.js:48</code></a>
         
         </p>
 
@@ -306,7 +469,7 @@
     </div>
 
     <div class="description">
-        
+        <p>Shows newProtein Dialog</p>
     </div>
 
     
@@ -317,437 +480,8 @@
 </div>
 
                 
-                    <div id="method_invalid" class="method item">
-    <h3 class="name"><code>invalid</code></h3>
-
-    
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-            
-                <li class="arg">
-                    
-                        <code>view</code>
-                    
-                </li>
-            
-                <li class="arg">
-                    
-                        <code>attributes</code>
-                    
-                </li>
-            
-            </ul><span class="paren">)</span>
-        </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <span class="flag chainable">chainable</span>
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_core_View.js.html#l76"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;core&#x2F;View.js:76</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Validate model callback</p>
-    </div>
-
-    
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-            
-                <li class="param">
-                    
-                        <code class="param-name">view</code>
-                        <span class="type"><a href="../classes/Core.View.html" class="crosslink">Core.View</a></span>
-                    
-
-                    
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                    
-                </li>
-            
-                <li class="param">
-                    
-                        <code class="param-name">attributes</code>
-                        <span class="type">Object</span>
-                    
-
-                    
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                    
-                </li>
-            
-            </ul>
-        </div>
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="method_render" class="method item">
-    <h3 class="name"><code>render</code></h3>
-
-    
-        <span class="paren">()</span>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <span class="flag chainable">chainable</span>
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_core_View.js.html#l101"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;core&#x2F;View.js:101</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Renders view</p>
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="method_setController" class="method item">
-    <h3 class="name"><code>setController</code></h3>
-
-    
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-            
-                <li class="arg">
-                    
-                        <code>controller</code>
-                    
-                </li>
-            
-            </ul><span class="paren">)</span>
-        </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_core_View.js.html#l43"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;core&#x2F;View.js:43</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Set View's Controller</p>
-    </div>
-
-    
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-            
-                <li class="param">
-                    
-                        <code class="param-name">controller</code>
-                        <span class="type">Object</span>
-                    
-
-                    
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                    
-                </li>
-            
-            </ul>
-        </div>
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="method_setModel" class="method item">
-    <h3 class="name"><code>setModel</code></h3>
-
-    
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-            
-                <li class="arg">
-                    
-                        <code>model</code>
-                    
-                </li>
-            
-            </ul><span class="paren">)</span>
-        </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_core_View.js.html#l51"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;core&#x2F;View.js:51</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Set View's Model</p>
-    </div>
-
-    
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-            
-                <li class="param">
-                    
-                        <code class="param-name">model</code>
-                        <span class="type">Object</span>
-                    
-
-                    
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                    
-                </li>
-            
-            </ul>
-        </div>
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="method_submitForm" class="method item">
-    <h3 class="name"><code>submitForm</code></h3>
-
-    
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-            
-                <li class="arg">
-                    
-                        <code>event</code>
-                    
-                </li>
-            
-            </ul><span class="paren">)</span>
-        </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <span class="flag chainable">chainable</span>
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_core_View.js.html#l89"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;core&#x2F;View.js:89</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Handles form submit</p>
-    </div>
-
-    
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-            
-                <li class="param">
-                    
-                        <code class="param-name">event</code>
-                        <span class="type">Object</span>
-                    
-
-                    
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                    
-                </li>
-            
-            </ul>
-        </div>
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="method_unload" class="method item">
-    <h3 class="name"><code>unload</code></h3>
+                    <div id="method_openRepresentation" class="method item">
+    <h3 class="name"><code>openRepresentation</code></h3>
 
     
         <span class="paren">()</span>
@@ -778,7 +512,7 @@
             
         
         
-        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_core_View.js.html#l31"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;core&#x2F;View.js:31</code></a>
+        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_application_MenubarView.js.html#l84"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;application&#x2F;MenubarView.js:84</code></a>
         
         </p>
 
@@ -789,7 +523,7 @@
     </div>
 
     <div class="description">
-        <p>Unloads used bindings and events</p>
+        <p>Shows Open Representation dialog</p>
     </div>
 
     
@@ -800,27 +534,11 @@
 </div>
 
                 
-                    <div id="method_valid" class="method item">
-    <h3 class="name"><code>valid</code></h3>
+                    <div id="method_saveRepresentation" class="method item">
+    <h3 class="name"><code>saveRepresentation</code></h3>
 
     
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-            
-                <li class="arg">
-                    
-                        <code>view</code>
-                    
-                </li>
-            
-                <li class="arg">
-                    
-                        <code>attributes</code>
-                    
-                </li>
-            
-            </ul><span class="paren">)</span>
-        </div>
+        <span class="paren">()</span>
     
 
     
@@ -833,8 +551,6 @@
 
     
 
-    
-        <span class="flag chainable">chainable</span>
     
 
     
@@ -850,7 +566,7 @@
             
         
         
-        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_core_View.js.html#l64"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;core&#x2F;View.js:64</code></a>
+        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_application_MenubarView.js.html#l77"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;application&#x2F;MenubarView.js:77</code></a>
         
         </p>
 
@@ -861,47 +577,171 @@
     </div>
 
     <div class="description">
-        <p>Validate model callback</p>
+        <p>Shows Saves current work</p>
     </div>
 
     
-        <div class="params">
-            <h4>Parameters:</h4>
 
-            <ul class="params-list">
+    
+
+    
+</div>
+
+                
+                    <div id="method_showDrawBoard" class="method item">
+    <h3 class="name"><code>showDrawBoard</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
             
-                <li class="param">
-                    
-                        <code class="param-name">view</code>
-                        <span class="type"><a href="../classes/Core.View.html" class="crosslink">Core.View</a></span>
-                    
-
-                    
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                    
-                </li>
+                
+                <p>
+                
+                Defined in
+                
             
-                <li class="param">
-                    
-                        <code class="param-name">attributes</code>
-                        <span class="type">Object</span>
-                    
+        
+        
+        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_application_MenubarView.js.html#l57"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;application&#x2F;MenubarView.js:57</code></a>
+        
+        </p>
 
-                    
 
-                    <div class="param-description">
-                         
-                    </div>
+        
 
-                    
-                </li>
+        
+    </div>
+
+    <div class="description">
+        <p>Shows drawboard</p>
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_showSidebar" class="method item">
+    <h3 class="name"><code>showSidebar</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
             
-            </ul>
-        </div>
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_application_MenubarView.js.html#l67"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;application&#x2F;MenubarView.js:67</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Shows Sidbear</p>
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+            </div>
+        
+
+        
+            <div id="properties" class="api-class-tabpanel">
+                <h2 class="off-left">Properties</h2>
+
+                
+                    <div id="property_el" class="property item">
+    <h3 class="name"><code>el</code></h3>
+    <span class="type">String</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_application_MenubarView.js.html#l18"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;application&#x2F;MenubarView.js:18</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Contains View's main Dom-Element</p>
+    </div>
+
+    
+        <p><strong>Default:</strong> #menubar</p>
     
 
     
@@ -916,7 +756,226 @@
         
 
         
+            <div id="events" class="api-class-tabpanel">
+                <h2 class="off-left">Events</h2>
 
+                
+                    <div id="event_click #file-new-protein:newProtein" class="events item">
+    <h3 class="name"><code>click #file-new-protein:newProtein</code></h3>
+    <span class="type"></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_application_MenubarView.js.html#l27"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;application&#x2F;MenubarView.js:27</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+
+    
+</div>
+
+                
+                    <div id="event_click #file-open-representation:openRepresentation" class="events item">
+    <h3 class="name"><code>click #file-open-representation:openRepresentation</code></h3>
+    <span class="type"></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_application_MenubarView.js.html#l31"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;application&#x2F;MenubarView.js:31</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+
+    
+</div>
+
+                
+                    <div id="event_click #file-save-representation:saveRepresentation" class="events item">
+    <h3 class="name"><code>click #file-save-representation:saveRepresentation</code></h3>
+    <span class="type"></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_application_MenubarView.js.html#l43"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;application&#x2F;MenubarView.js:43</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+
+    
+</div>
+
+                
+                    <div id="event_click #show-drawboard:showDrawboard" class="events item">
+    <h3 class="name"><code>click #show-drawboard:showDrawboard</code></h3>
+    <span class="type"></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_application_MenubarView.js.html#l35"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;application&#x2F;MenubarView.js:35</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+
+    
+</div>
+
+                
+                    <div id="event_click #show-sidebar:showSidebar" class="events item">
+    <h3 class="name"><code>click #show-sidebar:showSidebar</code></h3>
+    <span class="type"></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_application_MenubarView.js.html#l39"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;application&#x2F;MenubarView.js:39</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+
+    
+</div>
+
+                
+            </div>
         
     </div>
 </div>

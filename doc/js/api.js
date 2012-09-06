@@ -1,6 +1,10 @@
 YUI.add("yuidoc-meta", function(Y) {
    Y.YUIDoc = { meta: {
     "classes": [
+        "Application.Context",
+        "Application.Mediator",
+        "Application.MenuBarView",
+        "Application.Router",
         "Application.Sandbox",
         "Core.BackboneHelper",
         "Core.Controller",

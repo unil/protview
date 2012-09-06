@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;ProtView.js</title>
+    <title>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;application&#x2F;Mediator.js</title>
     <link rel="stylesheet" href="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;3.5.1&#x2F;build&#x2F;cssgrids&#x2F;cssgrids-min.css">
     <link rel="stylesheet" href="..&#x2F;assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="..&#x2F;assets/css/main.css" id="site_styles">
@@ -140,80 +140,92 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: &#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;ProtView.js</h1>
+                        <h1 class="file-heading">File: &#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;application&#x2F;Mediator.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
 &#x2F;**
- * Provides the base ProtView class
- *
- * Requires at least (in the following order) : 
- * jQuery 1.7.2 
- * underscore 1.3.3
- * backbonejs 0.9.2 
- * jQuery SVG 1.4.5 
- * jQuery SVG Dom (same version as jQuery SVG)
+ * 
+ * Application Mediator
+ * 
+ * Handles subscription&#x2F;publications of channels and message
+ * 
+ * 
+ * @module Application
+ * @namespace Application
+ * @class Mediator
  * 
  * @author Stefan Meier
  * @version 20120903
- *
-**&#x2F;
-
-(function($, exports) {
-	window.ProtView = {
+ * 
+ *&#x2F;
+ProtView.Application.Mediator = (function() {
+	&#x2F;**
+	 * Subscribes callback to channel
+	 * 
+	 * @param channel
+	 * @param callback
+	 * @method subscribe
+	 * @private
+	 *&#x2F;
+	var subscribe = function(channel, callback){
+		$.subscribe(channel, callback);
+	},
+	&#x2F;**
+	 * Unsubscribes callback from channel
+	 * 
+	 * @param channel
+	 * @param callback
+	 * @method unsubscribe
+	 * @private
+	 *&#x2F;
+	unsubscribe = function(channel, callback){
+		$.unsubscribe(channel, callback);
+	},
+	&#x2F;**
+	 * Publish message to channel
+	 * 
+	 * @param channel
+	 * @param message
+	 * @method publish
+	 * @private
+	 *&#x2F;
+	publish = function(channel, arguments){
+		$.publish(channel, arguments);
 	};
-	
-	&#x2F;**
-	 * Contains application wide used Classes
-	 * 
-	 * Contains classes such as Context, Mediator and Sandbox
-	 * Is also responisble for routing and global view interactions
-	 * 
-	 * @author Stefan Meier
-	 * @version 20120903
-	 * 
-	 * @module Application
-	 * @main Application
-	 *&#x2F;
-	ProtView.Application = {};
-	&#x2F;**
-	 * Contains protein drawing classes
-	 * 
-	 * Draws protein, and offers drawing related functionalities such
-	 * as export, resizing, etc.
-	 * 
-	 * @author Stefan Meier
-	 * @version 20120903
-	 * 
-	 * @module DrawBoard
-	 * @main DrawBoard
-	 *&#x2F;
-	ProtView.DrawBoard = {};
-	&#x2F;**
-	 * Contains base classes which are inherited in other modules
-	 * 
-	 * Helpers, MVC base classes, utility classes
-	 * 
-	 * @author Stefan Meier
-	 * @version 20120903
-	 * 
-	 * @module Core
-	 * @main Core
-	 *&#x2F;
-	ProtView.Core = {};
-	&#x2F;**
-	 * Contains protein structural related classes
-	 * 
-	 * Peptide form, Protein Form, handles all structural interactions
-	 * 
-	 * @author Stefan Meier
-	 * @version 20120903
-	 * 
-	 * @module Structure
-	 * @main Structure
-	 *&#x2F;
-	ProtView.Structure = {};
-})(this.JQuery, this);
+	return {
+		&#x2F;**
+		 * Publish message to channel
+		 * 
+		 * @param channel
+		 * @param message
+		 * @method publish
+		 *&#x2F;
+	    publish: function(channel, arguments) {
+	    	publish(channel, arguments);
+	    },
+	    &#x2F;**
+	     * Subscribes callback to channel
+	     * 
+	     * @param channel
+	     * @param callback
+	     * @method subscribe
+	     *&#x2F;
+	    subscribe: function(channel, callback) {
+	    	subscribe(channel, callback);
+	    },
+	    &#x2F;**
+	     * Unsubscribes callback from channel
+	     * 
+	     * @param channel
+	     * @param callback
+	     * @method unsubscribe
+	     *&#x2F;
+	    unsubscribe : function(channel, callback) {
+	    	unsubscribe(channel, callback);
+	    }
+	};
+}());
     </pre>
 </div>
 

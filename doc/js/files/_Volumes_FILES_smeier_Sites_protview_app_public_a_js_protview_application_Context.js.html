@@ -41,6 +41,14 @@
         <div id="api-tabview-panel">
             <ul id="api-classes" class="apis classes">
             
+                <li><a href="..&#x2F;classes/Application.Context.html">Application.Context</a></li>
+            
+                <li><a href="..&#x2F;classes/Application.Mediator.html">Application.Mediator</a></li>
+            
+                <li><a href="..&#x2F;classes/Application.MenuBarView.html">Application.MenuBarView</a></li>
+            
+                <li><a href="..&#x2F;classes/Application.Router.html">Application.Router</a></li>
+            
                 <li><a href="..&#x2F;classes/Application.Sandbox.html">Application.Sandbox</a></li>
             
                 <li><a href="..&#x2F;classes/Core.BackboneHelper.html">Core.BackboneHelper</a></li>
@@ -138,14 +146,44 @@
     <pre class="code prettyprint linenums">
 &#x2F;**
  * 
+ * Application Context
+ * 
+ * Holds and stores global context
+ * Application Context should be accessed via Sandbox
+ * 
+ * 
+ * @module Application
+ * @namespace Application
+ * @class Context
+ * 
+ * @author Stefan Meier
+ * @version 20120903
+ * 
  *&#x2F;
 ProtView.Application.Context = Class.extend( {
+	&#x2F;**
+	 * @property sandbox
+	 * @type {Application.Sandbox}
+	 * @default null
+	 *&#x2F;
 	sandbox: null,
+	&#x2F;**
+	 * @property store
+	 * @type Object
+	 *&#x2F;
 	store : {
 		protein : 0,
 		representation : 0,
 		router : null
 	},
+	&#x2F;**
+	 * Constructor
+	 * 
+	 * @constructor
+	 * @param sandbox
+	 * @param router
+	 * @method init
+	 *&#x2F;
 	init: function(sandbox, router) {
 		if (sandbox == null)
 			console.log(&#x27;ProtView.Application.Context.init: sandbox is null&#x27;);
@@ -160,7 +198,15 @@ ProtView.Application.Context = Class.extend( {
 		}
 		&#x2F;&#x2F;ProtView.Application.Sandbox.subscribe(&#x27;&#x2F;application&#x2F;context&#x2F;set&#x27;, this.set);
 	},
-	&#x2F;&#x2F;fixme: send only one message if two updates
+	&#x2F;**
+	 * Sets global variable
+	 * 
+	 * Needs to be fixed to only send one message on mulitple changes
+	 * 
+	 * @param event
+	 * @param arguments
+	 * @method set
+	 *&#x2F;
 	set : function(event, arguments) {
 		if (arguments.protein) {
 			this.setProtein(arguments.protein);
@@ -169,20 +215,47 @@ ProtView.Application.Context = Class.extend( {
 			this.setRepresentation(arguments.representation);
 		}
 	},
+	&#x2F;**
+	 * Sets current protein
+	 * 
+	 * @param proteinId
+	 * @method setProtein
+	 *&#x2F;
 	setProtein : function(protein) {
 		this.store.protein = protein;
 		this.sandbox.publish(&#x27;&#x2F;application&#x2F;context&#x27;, [{protein : protein}]);
 	},
+	&#x2F;**
+	 * Sets current representation
+	 * 
+	 * @param representationId
+	 * @method setRepresentation
+	 *&#x2F;
 	setRepresentation : function(representation) {
 		this.store.representation = representation;
 		this.sandbox.publish(&#x27;&#x2F;application&#x2F;context&#x27;, [{representation : representation}]);
 	},
+	&#x2F;**
+	 * Gets current protein
+	 * @return {int} proteinId
+	 * @method getProtein
+	 *&#x2F;
 	getProtein : function() {
 		return this.store.protein;
 	},
+	&#x2F;**
+	 * Gets current representation
+	 * @return {int} representationId
+	 * @method getRepresentation
+	 *&#x2F;
 	getRepresentation: function() {
 		return this.store.representation;
 	},
+	&#x2F;**
+	 * Navigates to indicated URL
+	 * @param url
+	 * @method navigate
+	 *&#x2F;
 	navigate : function(url) {
 		this.store.router.navigate(url, {trigger: true, replace: true});
 	}
