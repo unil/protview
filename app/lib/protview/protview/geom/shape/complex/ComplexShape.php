@@ -1,9 +1,7 @@
 <?php
 require_once(xContext::$basepath.'/lib/protview/protview/geom/shape/basic/BasicShape.php');
 /**
- * Complex Shape
- * 
- * Abstract class to separate basic shapes from complex shapes
+ * Base class for each complex shapes
  *
  * @abstract
  * @package protview\geom\shape\complex

@@ -2,7 +2,14 @@
 
 require_once(xContext::$basepath.'/lib/protview/protview/geom/shape/basic/Circle.php');
 require_once(xContext::$basepath.'/lib/protview/protview/geom/shape/basic/Line.php');
-
+/**
+ * Calculates an extended loop
+ *
+ * @package protview\geom\shape\complex
+ * @author Stefan Meier
+ * @version 20120906
+ *
+ */
 class ExtendedLoop extends ComplexShape {
 
 	private $extendLoopSideLength;
@@ -14,21 +21,38 @@ class ExtendedLoop extends ComplexShape {
 		parent::__construct($offset, $startCoord);
 	}
 
+	/**
+	 * Sets the extension side length
+	 * 
+	 * @param int $extendLoopSideLength
+	 */
 	public function setExtendLoopSideLength($extendLoopSideLength)
 	{
 		$this->extendLoopSideLength = $extendLoopSideLength;
 	}
 
+	/**
+	 * Sets the extend loop cercle length
+	 * @param int $extendLoopSideMiddleLength
+	 */
 	public function setExtendLoopSideMiddleLength($extendLoopSideMiddleLength)
 	{
 		$this->extendLoopSideMiddleLength = $extendLoopSideMiddleLength;
 	}
 
+	/**
+	 * Sets number of extension loops
+	 * @param int $nbExtendLoop
+	 */
 	public function setNbExtendLoop($nbExtendLoop)
 	{
 		$this->nbExtendLoop = $nbExtendLoop;
 	}
 
+	/**
+	 * Sets basic height
+	 * @param int $basicLoopSideLength
+	 */
 	public function setBasicLoopSideLength($basicLoopSideLength)
 	{
 		$this->basicLoopSideLength = $basicLoopSideLength;

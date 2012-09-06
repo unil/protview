@@ -2,7 +2,14 @@
 
 require_once(xContext::$basepath.'/lib/protview/protview/geom/shape/complex/ComplexShape.php');
 require_once(xContext::$basepath.'/lib/protview/protview/geom/shape/basic/Line.php');
-
+/**
+ * Calculates an extended loop
+ *
+ * @package protview\geom\shape\complex
+ * @author Stefan Meier
+ * @version 20120906
+ *
+ */
 class MembranePattern extends ComplexShape {
 
 	//distributes all elements in steady way to all lines
