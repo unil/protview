@@ -1,4 +1,28 @@
+/**
+ * 
+ * Models Main controller
+ * 
+ * 
+ * @module Structure
+ * @namespace Structure.Controller
+ * @class MainController
+ * @extends Core.MainController
+ * 
+ * @author Stefan Meier
+ * @version 20120903
+ * 
+ */
 ProtView.Structure.Controller.MainController = ProtView.Core.MainController.extend( {
+	/**
+	 * Loads the requested resource
+	 * 
+	 * On loading creates resource controller and view
+	 * 
+	 * Available resources : peptide, protein, protein-new
+	 * 
+	 * @method load
+	 * @param {String} resource
+	 */
 	load : function(resource) {
 		var controller = null,
 		view = null,
@@ -47,6 +71,12 @@ ProtView.Structure.Controller.MainController = ProtView.Core.MainController.exte
 			this.stack = stack;
 		}
 	},
+	/**
+	 * Handles update requests
+	 * 
+	 * @method update
+	 * @param {Object} arguments
+	 */
 	update : function(arguments) {
 		if (arguments.protein) {
 			var stack = this.stack;
@@ -58,6 +88,14 @@ ProtView.Structure.Controller.MainController = ProtView.Core.MainController.exte
 			}
 		}
 	},
+	/**
+	 * Unloads loaded resources
+	 * 
+	 * For available resource see load()
+	 * 
+	 * @method unload
+	 * @param {Object} resource
+	 */
 	unload : function(resource) {
 		var stack = this.stack;
 		

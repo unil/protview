@@ -26,6 +26,39 @@
             "fors": {},
             "namespaces": {}
         },
+        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/controller/MainController.js": {
+            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/controller/MainController.js",
+            "modules": {},
+            "classes": {
+                "Structure.Controller.MainController": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Structure.Controller": 1
+            }
+        },
+        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/controller/PeptideController.js": {
+            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/controller/PeptideController.js",
+            "modules": {},
+            "classes": {
+                "Structure.Controller.PeptideController": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Structure.Controller": 1
+            }
+        },
+        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/controller/ProteinController.js": {
+            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/controller/ProteinController.js",
+            "modules": {},
+            "classes": {
+                "Structure.Controller.ProteinController": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Structure.Controller": 1
+            }
+        },
         "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/model/Peptide.js": {
             "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/model/Peptide.js",
             "modules": {},
@@ -139,6 +172,9 @@
             "name": "Structure",
             "submodules": {},
             "classes": {
+                "Structure.Controller.MainController": 1,
+                "Structure.Controller.PeptideController": 1,
+                "Structure.Controller.ProteinController": 1,
                 "Structure.Model.Peptide": 1,
                 "Structure.Model.Protein": 1,
                 "Structure.View.NewProteinView": 1,
@@ -148,6 +184,7 @@
             },
             "fors": {},
             "namespaces": {
+                "Structure.Controller": 1,
                 "Structure.Model": 1,
                 "Structure.View": 1,
                 "Structure": 1
@@ -156,7 +193,7 @@
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
             "line": 5,
             "description": "Contains protein structural related classes\n\nPeptide form, Protein Form, handles all structural interactions",
-            "extends": "Backbone.Model",
+            "extends": "Core.MainController",
             "author": "Stefan Meier",
             "version": "20120903",
             "itemtype": "main"
@@ -208,6 +245,48 @@
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/View.js",
             "line": 1,
             "description": "AbstractView, implements main functionalities"
+        },
+        "Structure.Controller.MainController": {
+            "name": "Structure.Controller.MainController",
+            "shortname": "Structure.Controller.MainController",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Structure",
+            "namespace": "Structure.Controller",
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/controller/MainController.js",
+            "line": 1,
+            "description": "Models Main controller"
+        },
+        "Structure.Controller.PeptideController": {
+            "name": "Structure.Controller.PeptideController",
+            "shortname": "Structure.Controller.PeptideController",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Structure",
+            "namespace": "Structure.Controller",
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/controller/PeptideController.js",
+            "line": 1,
+            "description": "Peptide controller"
+        },
+        "Structure.Controller.ProteinController": {
+            "name": "Structure.Controller.ProteinController",
+            "shortname": "Structure.Controller.ProteinController",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Structure",
+            "namespace": "Structure.Controller",
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/controller/ProteinController.js",
+            "line": 1,
+            "description": "Protein controller"
         },
         "Structure.Model.Peptide": {
             "name": "Structure.Model.Peptide",
@@ -403,7 +482,7 @@
                     "description": ""
                 }
             ],
-            "class": "Structure.Model.Peptide",
+            "class": "Structure.Controller.MainController",
             "module": "Core",
             "namespace": "Core"
         },
@@ -429,7 +508,7 @@
                     "description": ""
                 }
             ],
-            "class": "Structure.Model.Peptide",
+            "class": "Structure.Controller.MainController",
             "module": "Core",
             "namespace": "Core"
         },
@@ -443,9 +522,103 @@
                     "description": ""
                 }
             ],
-            "class": "Structure.Model.Peptide",
+            "class": "Structure.Controller.MainController",
             "module": "Core",
             "namespace": "Core"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/controller/MainController.js",
+            "line": 16,
+            "description": "Loads the requested resource\n\nOn loading creates resource controller and view\n\nAvailable resources : peptide, protein, protein-new",
+            "itemtype": "method",
+            "name": "load",
+            "params": [
+                {
+                    "name": "resource",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "class": "Structure.Controller.MainController",
+            "module": "Structure",
+            "namespace": "Structure.Controller"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/controller/MainController.js",
+            "line": 74,
+            "description": "Handles update requests",
+            "itemtype": "method",
+            "name": "update",
+            "params": [
+                {
+                    "name": "arguments",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "Structure.Controller.MainController",
+            "module": "Structure",
+            "namespace": "Structure.Controller"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/controller/MainController.js",
+            "line": 91,
+            "description": "Unloads loaded resources\n\nFor available resource see load()",
+            "itemtype": "method",
+            "name": "unload",
+            "params": [
+                {
+                    "name": "resource",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "Structure.Controller.MainController",
+            "module": "Structure",
+            "namespace": "Structure.Controller"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/controller/PeptideController.js",
+            "line": 16,
+            "description": "Initalizes model and calls parent constructor",
+            "itemtype": "method",
+            "name": "initialize",
+            "is_constructor": 1,
+            "class": "Structure.Controller.PeptideController",
+            "module": "Structure",
+            "namespace": "Structure.Controller"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/controller/PeptideController.js",
+            "line": 26,
+            "description": "Overrides fetch method in order to handle protein specifiec model attributes",
+            "itemtype": "method",
+            "name": "fetch",
+            "params": [
+                {
+                    "name": "protein_id",
+                    "description": "",
+                    "type": "Int"
+                }
+            ],
+            "return": {
+                "description": "server response",
+                "type": "Object"
+            },
+            "class": "Structure.Controller.PeptideController",
+            "module": "Structure",
+            "namespace": "Structure.Controller"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/controller/ProteinController.js",
+            "line": 16,
+            "description": "Initalizes model and calls parent constructor",
+            "itemtype": "method",
+            "name": "initialize",
+            "is_constructor": 1,
+            "class": "Structure.Controller.ProteinController",
+            "module": "Structure",
+            "namespace": "Structure.Controller"
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/model/Peptide.js",

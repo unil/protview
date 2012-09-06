@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>DrawBoard</title>
+    <title>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;structure&#x2F;controller&#x2F;MainController.js</title>
     <link rel="stylesheet" href="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;3.5.1&#x2F;build&#x2F;cssgrids&#x2F;cssgrids-min.css">
     <link rel="stylesheet" href="..&#x2F;assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="..&#x2F;assets/css/main.css" id="site_styles">
@@ -110,52 +110,119 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1>DrawBoard Module</h1>
-<div class="box clearfix meta">
-    
+                        <h1 class="file-heading">File: &#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;structure&#x2F;controller&#x2F;MainController.js</h1>
 
-    
+<div class="file">
+    <pre class="code prettyprint linenums">
+&#x2F;**
+ * 
+ * Models Main controller
+ * 
+ * 
+ * @module Structure
+ * @namespace Structure.Controller
+ * @class MainController
+ * @extends Core.MainController
+ * 
+ * @author Stefan Meier
+ * @version 20120903
+ * 
+ *&#x2F;
+ProtView.Structure.Controller.MainController = ProtView.Core.MainController.extend( {
+	&#x2F;**
+	 * Loads the requested resource
+	 * 
+	 * On loading creates resource controller and view
+	 * 
+	 * Available resources : peptide, protein, protein-new
+	 * 
+	 * @method load
+	 * @param {String} resource
+	 *&#x2F;
+	load : function(resource) {
+		var controller = null,
+		view = null,
+		stack = this.stack;
 
-    
-        <div class="foundat">
-            Defined in: <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_DrawBoard.js.html#l38"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;DrawBoard.js:38</code></a>
-        </div>
-    
-
-    
-</div>
-
-
-
-<div class="box intro">
-    <p>Contains protein drawing classes</p>
-
-<p>Draws protein, and offers drawing related functionalities such
-as export, resizing, etc.</p>
-</div>
-
-
-
-<div class="yui3-g">
-    <div class="yui3-u-1-2">
-        
-            <p>This module provides the following classes:</p>
-
-            <ul class="module-classes">
-            
-                <li class="module-class">
-                    <a href="..&#x2F;classes/DrawBoard.Module.html">
-                        DrawBoard.Module
-                    </a>
-                </li>
-            
-            </ul>
-        
-    </div>
-
-    <div class="yui3-u-1-2">
-        
-    </div>
+		if (!stack[resource]) {
+			switch(resource) {
+				case &#x27;peptide&#x27; :
+					controller = new ProtView.Structure.Controller.PeptideController();
+					view = new ProtView.Structure.View.PeptideView({
+						el : &#x27;#peptide-form&#x27;,
+						templateEl : &#x27;#peptide-form-template&#x27;,
+					});
+					controller.addView(view);
+					break;
+				case &#x27;protein&#x27; :
+					controller = new ProtView.Structure.Controller.ProteinController();
+					view = new ProtView.Structure.View.ProteinView({
+						el : &#x27;#protein-form&#x27;,
+						templateEl : &#x27;#protein-form-template&#x27;,
+						bindings : {
+								name: &#x27;#protein-name&#x27;,
+								species: &#x27;#protein-species&#x27;,
+								note: &#x27;#protein-note&#x27;
+							}
+					});
+					controller.addView(view);
+					break;	
+				case &#x27;protein-new&#x27; :
+					controller = new ProtView.Structure.Controller.ProteinController();
+					view = new ProtView.Structure.View.NewProteinView({
+						el : &#x27;#new-protein-form&#x27;,
+						templateEl : &#x27;#new-protein-form-template&#x27;,
+						bindings : {
+								name: &#x27;#new-protein-name&#x27;,
+							}
+					});
+					controller.addView(view);
+				break;
+				default :
+					console.log(&#x27;error no resource given or not known&#x27;);
+					break;
+			}
+			
+			stack[resource] = controller;
+			this.stack = stack;
+		}
+	},
+	&#x2F;**
+	 * Handles update requests
+	 * 
+	 * @method update
+	 * @param {Object} arguments
+	 *&#x2F;
+	update : function(arguments) {
+		if (arguments.protein) {
+			var stack = this.stack;
+			for (var el in stack) {
+				&#x2F;&#x2F;dirty fix, because database insert causes update
+				&#x2F;&#x2F;even on dialog close, messages should be more precise
+				if (el != &#x27;protein-new&#x27;)
+					stack[el].update(arguments.protein);
+			}
+		}
+	},
+	&#x2F;**
+	 * Unloads loaded resources
+	 * 
+	 * For available resource see load()
+	 * 
+	 * @method unload
+	 * @param {Object} resource
+	 *&#x2F;
+	unload : function(resource) {
+		var stack = this.stack;
+		
+		if (stack[resource]) {
+			stack[resource].unload();
+			stack[resource] = null;
+			delete stack[resource];
+		}
+	}
+});
+    </pre>
 </div>
 
                     </div>
