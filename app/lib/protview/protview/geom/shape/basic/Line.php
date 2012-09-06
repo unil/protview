@@ -1,6 +1,14 @@
 <?php
 require_once(xContext::$basepath.'/lib/protview/protview/geom/shape/basic/BasicShape.php');
 
+/**
+ * Calculates a line shape
+ *
+ * @package protview\geom\shape\basic
+ * @author Stefan Meier
+ * @version 20120906
+ *
+ */
 class Line extends BasicShape {
 	public function __construct($offset, $startCoord = null) {
 		parent::__construct($offset, $startCoord);

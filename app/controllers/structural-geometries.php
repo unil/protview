@@ -1,9 +1,21 @@
 <?php
-
+/**
+ * Manages the StructuralGeometries model
+ *
+ * @package controllers
+ * @author Stefan Meier
+ * @version 20120906
+ *
+ */
 class StructuralGeometriesController extends RESTController {
-
+	/**
+	 *
+	 * @var \models\StructuralGeometryModel
+	 */
 	public $model = 'structural-geometry';
-	
+	/**
+	 * @see RESTController::get()
+	 */
 	function get() {
 		if (!in_array('get', $this->allow)) throw new xException("Method not allowed", 403);
 		

@@ -22,6 +22,7 @@
 <li><a>Packages</a></li>
 <li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
 <li><a href="../packages/controllers.html"><i class="icon-folder-open"></i> controllers</a></li>
+<li><a href="../packages/fronts.html"><i class="icon-folder-open"></i> fronts</a></li>
 <li><a href="../packages/protview.html"><i class="icon-folder-open"></i> protview</a></li>
 </ul>
 </li>
@@ -33,7 +34,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">324</span></a></li>
+                <span class="label label-info">300</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
@@ -60,12 +61,12 @@
 <li class="method public inherited"><a href="#delete" title="delete :: API Method."><span class="description">API Method.</span><pre>delete()</pre></a></li>
 <li class="method public "><a href="#get" title="get :: Gets representation"><span class="description">Gets representation</span><pre>get()</pre></a></li>
 <li class="method public "><a href="#post" title="post :: Updates representation"><span class="description">Updates representation</span><pre>post()</pre></a></li>
-<li class="method public "><a href="#put" title="put :: API Method."><span class="description">API Method.</span><pre>put()</pre></a></li>
+<li class="method public "><a href="#put" title="put :: Creates new representation"><span class="description">Creates new representation</span><pre>put()</pre></a></li>
 <li class="nav-header">
 <i class="icon-custom icon-property"></i> Properties</li>
+<li class="property public "><a href="#%24model" title="$model :: "><span class="description">$model</span><pre>$model</pre></a></li>
 <li class="nav-header protected">» Protected</li>
 <li class="property protected inherited"><a href="#%24allow" title="$allow :: Allowed CRUD operations."><span class="description">Allowed CRUD operations.</span><pre>$allow</pre></a></li>
-<li class="property protected inherited"><a href="#%24model" title="$model :: "><span class="description">$model</span><pre>$model</pre></a></li>
 </ul>
 </div>
 <div class="span8">
@@ -209,11 +210,15 @@ one should refine the method in specific controller classes.</td>
 </div></div>
 </div>
 <a name="put" id="put"></a><div class="element clickable method public put" data-toggle="collapse" data-target=".put .collapse">
-<h2>API Method.</h2>
+<h2>Creates new representation</h2>
 <pre>put() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <p class="long_description"><p>Generic put method for API calls.</p></p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td>\global\RESTController::put()</td>
+</tr></table>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>An JSON compatible resultset structure.</div>
@@ -221,6 +226,12 @@ one should refine the method in specific controller classes.</td>
 </div>
 <h3>
 <i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24model" id="$model"> </a><div class="element clickable property public $model" data-toggle="collapse" data-target=".$model .collapse">
+<h2>$model</h2>
+<pre>$model : \models\RepresentationdModel</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
 <a name="%24allow" id="$allow"> </a><div class="element clickable property protected $allow" data-toggle="collapse" data-target=".$allow .collapse">
 <h2>Allowed CRUD operations.</h2>
 <pre>$allow : array</pre>
@@ -251,18 +262,6 @@ one should refine the method in specific controller classes.</td>
 </table>
 </div></div>
 </div>
-<a name="%24model" id="$model"> </a><div class="element clickable property protected $model" data-toggle="collapse" data-target=".$model .collapse">
-<h2>$model</h2>
-<pre>$model </pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>inherited_from</th>
-<td>\RESTController::$$model</td>
-</tr></table>
-</div></div>
-</div>
 </div>
 </div>
 </div>
@@ -270,7 +269,7 @@ one should refine the method in specific controller classes.</td>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a9</a> and<br>
-            generated on 2012-09-03T20:38:22+02:00.<br></footer></div>
+            generated on 2012-09-06T17:39:58+02:00.<br></footer></div>
 </div>
 </body>
 </html>

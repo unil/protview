@@ -1,6 +1,13 @@
 <?php
 require_once('Peptide.php');
-
+/**
+ * Subunit class
+ *
+ * @package protview\bio
+ * @author Stefan Meier
+ * @version 20120906
+ *
+ */
 class Subunit {
 	private $id;
 	private $name;

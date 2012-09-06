@@ -25,6 +25,9 @@ class ProteinsController extends RESTController {
 		return xView::load('structure/protein', $data, $this->meta)->render();
 	}
 	
+	/**
+	 * @see RESTController::put()
+	 */
 	function put() {
 		$r = parent::put();
 		//inserts a subunit with same id as protein, as for now there is only

@@ -1,6 +1,13 @@
 <?php
 require_once('Region.php');
-
+/**
+ * Peptide class
+ *
+ * @package protview\bio
+ * @author Stefan Meier
+ * @version 20120906
+ *
+ */
 class Peptide {
 	private $id;
 	private $start;

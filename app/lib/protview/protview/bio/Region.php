@@ -1,5 +1,13 @@
 <?php
 require_once('AminoAcid.php');
+/**
+ * Region class
+ *
+ * @package protview\bio
+ * @author Stefan Meier
+ * @version 20120906
+ *
+ */
 class Region {
 	private $id;
 	private $name;

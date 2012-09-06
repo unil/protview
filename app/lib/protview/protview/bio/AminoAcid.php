@@ -1,4 +1,12 @@
 <?php
+/**
+ * Amino acid class
+ *
+ * @package protview\bio
+ * @author Stefan Meier
+ * @version 20120906
+ *
+ */
 class AminoAcid {
 	private $id;
 	private $type;

@@ -22,6 +22,7 @@
 <li><a>Packages</a></li>
 <li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
 <li><a href="../packages/controllers.html"><i class="icon-folder-open"></i> controllers</a></li>
+<li><a href="../packages/fronts.html"><i class="icon-folder-open"></i> fronts</a></li>
 <li><a href="../packages/protview.html"><i class="icon-folder-open"></i> protview</a></li>
 </ul>
 </li>
@@ -33,7 +34,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">324</span></a></li>
+                <span class="label label-info">300</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
@@ -60,10 +61,8 @@
 <li class="method public "><a href="#__construct" title="__construct :: "><span class="description">__construct()
         </span><pre>__construct()</pre></a></li>
 <li class="method public "><a href="#getCoord" title="getCoord :: Calculates the coordinates of each point on a line"><span class="description">Calculates the coordinates of each point on a line</span><pre>getCoord()</pre></a></li>
-<li class="method public inherited"><a href="#getLastCoord" title="getLastCoord :: "><span class="description">getLastCoord()
-        </span><pre>getLastCoord()</pre></a></li>
-<li class="method public inherited"><a href="#getNbPoints" title="getNbPoints :: "><span class="description">getNbPoints()
-        </span><pre>getNbPoints()</pre></a></li>
+<li class="method public inherited"><a href="#getLastCoord" title="getLastCoord :: Returns coordinates of last point"><span class="description">Returns coordinates of last point</span><pre>getLastCoord()</pre></a></li>
+<li class="method public inherited"><a href="#getNbPoints" title="getNbPoints :: Gets number of points of current shape"><span class="description">Gets number of points of current shape</span><pre>getNbPoints()</pre></a></li>
 <li class="method public inherited"><a href="#getOffset" title="getOffset :: "><span class="description">getOffset()
         </span><pre>getOffset()</pre></a></li>
 <li class="method public inherited"><a href="#getRotation" title="getRotation :: "><span class="description">getRotation()
@@ -74,12 +73,9 @@
         </span><pre>setLastCoord()</pre></a></li>
 <li class="method public inherited"><a href="#setNbPoints" title="setNbPoints :: "><span class="description">setNbPoints()
         </span><pre>setNbPoints()</pre></a></li>
-<li class="method public inherited"><a href="#setOffset" title="setOffset :: "><span class="description">setOffset()
-        </span><pre>setOffset()</pre></a></li>
-<li class="method public inherited"><a href="#setRotation" title="setRotation :: "><span class="description">setRotation()
-        </span><pre>setRotation()</pre></a></li>
-<li class="method public inherited"><a href="#setStartCoord" title="setStartCoord :: "><span class="description">setStartCoord()
-        </span><pre>setStartCoord()</pre></a></li>
+<li class="method public inherited"><a href="#setOffset" title="setOffset :: Defines distance between each point"><span class="description">Defines distance between each point</span><pre>setOffset()</pre></a></li>
+<li class="method public inherited"><a href="#setRotation" title="setRotation :: Sets shape rotation"><span class="description">Sets shape rotation</span><pre>setRotation()</pre></a></li>
+<li class="method public inherited"><a href="#setStartCoord" title="setStartCoord :: Sets start coordinates"><span class="description">Sets start coordinates</span><pre>setStartCoord()</pre></a></li>
 <li class="nav-header">
 <i class="icon-custom icon-property"></i> Properties</li>
 <li class="nav-header private">» Private</li>
@@ -100,7 +96,24 @@
 <span class="divider">\</span><a href="../classes/Line.html">Line</a>
 </li>
 </ul>
-<div href="../classes/Line.html" class="element class"><div class="details">
+<div href="../classes/Line.html" class="element class">
+<p class="short_description">Calculates a line shape</p>
+<div class="details">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>package</th>
+<td><a href="../packages/protview.geom.shape.basic.html">protview\geom\shape\basic</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="">Stefan Meier</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>20120906</td>
+</tr>
+</table>
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
 <a name="__construct" id="__construct"></a><div class="element clickable method public __construct" data-toggle="collapse" data-target=".__construct .collapse">
@@ -129,9 +142,8 @@ is equal to the scatter's diameter</p></p>
 </div></div>
 </div>
 <a name="getLastCoord" id="getLastCoord"></a><div class="element clickable method public getLastCoord" data-toggle="collapse" data-target=".getLastCoord .collapse">
-<h2>getLastCoord()
-        </h2>
-<pre>getLastCoord() </pre>
+<h2>Returns coordinates of last point</h2>
+<pre>getLastCoord() : array</pre>
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
@@ -145,12 +157,13 @@ is equal to the scatter's diameter</p></p>
 <td>\BasicShape::getLastCoord()</td>
 </tr>
 </table>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
 </div></div>
 </div>
 <a name="getNbPoints" id="getNbPoints"></a><div class="element clickable method public getNbPoints" data-toggle="collapse" data-target=".getNbPoints .collapse">
-<h2>getNbPoints()
-        </h2>
-<pre>getNbPoints() </pre>
+<h2>Gets number of points of current shape</h2>
+<pre>getNbPoints() : int</pre>
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
@@ -158,6 +171,8 @@ is equal to the scatter's diameter</p></p>
 <th>inherited_from</th>
 <td>\BasicShape::getNbPoints()</td>
 </tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>int</code></div>
 </div></div>
 </div>
 <a name="getOffset" id="getOffset"></a><div class="element clickable method public getOffset" data-toggle="collapse" data-target=".getOffset .collapse">
@@ -254,9 +269,8 @@ is equal to the scatter's diameter</p></p>
 </div></div>
 </div>
 <a name="setOffset" id="setOffset"></a><div class="element clickable method public setOffset" data-toggle="collapse" data-target=".setOffset .collapse">
-<h2>setOffset()
-        </h2>
-<pre>setOffset($offset) </pre>
+<h2>Defines distance between each point</h2>
+<pre>setOffset(array $offset) </pre>
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
@@ -271,16 +285,19 @@ is equal to the scatter's diameter</p></p>
 </tr>
 </table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$offset</h4></div>
+<div class="subelement argument">
+<h4>$offset</h4>
+<code>array</code>
+</div>
 </div></div>
 </div>
 <a name="setRotation" id="setRotation"></a><div class="element clickable method public setRotation" data-toggle="collapse" data-target=".setRotation .collapse">
-<h2>setRotation()
-        </h2>
-<pre>setRotation($rotation) </pre>
+<h2>Sets shape rotation</h2>
+<pre>setRotation(array $rotation) </pre>
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
+<p class="long_description"><pre><code>array('angle' => 90, sens => 1)
+</code></pre></p>
 <table class="table table-bordered">
 <tr>
 <th>inherited_from</th>
@@ -292,16 +309,19 @@ is equal to the scatter's diameter</p></p>
 </tr>
 </table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$rotation</h4></div>
+<div class="subelement argument">
+<h4>$rotation</h4>
+<code>array</code>
+</div>
 </div></div>
 </div>
 <a name="setStartCoord" id="setStartCoord"></a><div class="element clickable method public setStartCoord" data-toggle="collapse" data-target=".setStartCoord .collapse">
-<h2>setStartCoord()
-        </h2>
-<pre>setStartCoord($startCoord) </pre>
+<h2>Sets start coordinates</h2>
+<pre>setStartCoord(array $startCoord) </pre>
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
+<p class="long_description"><pre><code>array('x' => float, 'y' => float);
+</code></pre></p>
 <table class="table table-bordered">
 <tr>
 <th>inherited_from</th>
@@ -313,7 +333,10 @@ is equal to the scatter's diameter</p></p>
 </tr>
 </table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$startCoord</h4></div>
+<div class="subelement argument">
+<h4>$startCoord</h4>
+<code>array</code>
+</div>
 </div></div>
 </div>
 <h3>
@@ -402,13 +425,14 @@ is equal to the scatter's diameter</p></p>
 </table>
 </div></div>
 </div>
-</div></div>
+</div>
+</div>
 </div>
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a9</a> and<br>
-            generated on 2012-09-03T20:38:22+02:00.<br></footer></div>
+            generated on 2012-09-06T17:39:58+02:00.<br></footer></div>
 </div>
 </body>
 </html>

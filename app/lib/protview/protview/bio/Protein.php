@@ -1,5 +1,13 @@
 <?php
 require_once('Subunit.php');
+/**
+ * Protein class
+ *
+ * @package protview\bio
+ * @author Stefan Meier
+ * @version 20120906
+ *
+ */
 class Protein {
 	private $id;
 	private $name;

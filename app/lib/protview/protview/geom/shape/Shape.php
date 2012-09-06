@@ -1,13 +1,18 @@
 <?php
 require_once(xContext::$basepath.'/lib/protview/protview/geom/Formula.php');
+/**
+ * Base class for all shape types
+ *
+ * @abstract
+ * @package protview\geom\shape
+ * @author Stefan Meier
+ * @version 20120906
+ *
+ */
 abstract class Shape {
-	//distance between each point
 	private $offset;
 	private $startCoord;
 	private $lastCoord;
-	/*
-	 * array('angle' => 90, sens => 1)
-	 */
 	private $rotation;
 	
 	
@@ -27,6 +32,11 @@ abstract class Shape {
 			throw new Exception("Start Coord is invalid '" . print_r($this->getStartCoord()) . "'.");
 	}
 	
+
+	/**
+	 * Defines distance between each point
+	 * @param array $offset
+	 */
 	public function setOffset($offset) {
 		$this->offset = $offset;
 	}
@@ -35,6 +45,15 @@ abstract class Shape {
 		return $this->offset;
 	}
 	
+	/**
+	 * Sets start coordinates
+	 *
+	 * <code>
+	 * array('x' => float, 'y' => float);
+	 * </code>
+	 *
+	 * @param array $startCoord
+	 */
 	public function setStartCoord($startCoord) {
 		if ($startCoord == null) {
 			$this->startCoord = array("x" => 0, "y" => 0);
@@ -55,10 +74,15 @@ abstract class Shape {
 		return $this->startCoord;
 	}
 	
+
 	public function setLastCoord($lastCoord) {
 		$this->lastCoord = $lastCoord;
 	}
 	
+	/**
+	 * Returns coordinates of last point
+	 * @return array
+	 */
 	public function getLastCoord() {
 		return $this->lastCoord;
 	}
@@ -68,6 +92,14 @@ abstract class Shape {
 		return $this->rotation;
 	}
 	
+	/**
+	 * Sets shape rotation
+	 *
+	 * <code>
+	 * array('angle' => 90, sens => 1)
+	 * </code>
+	 * @param array $rotation
+	 */
 	public function setRotation($rotation)
 	{
 		if ($rotation == null ) {
