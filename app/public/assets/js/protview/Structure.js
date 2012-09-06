@@ -7,6 +7,9 @@ ProtView.Structure.View = {};
  * 
  * Handles module requests and responses
  * 
+ * @author Stefan Meier
+ * @version 20120903
+ * 
  * @namespace Structure
  * @class Module
  * @module Structure

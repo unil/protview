@@ -1,6 +1,7 @@
 YUI.add("yuidoc-meta", function(Y) {
    Y.YUIDoc = { meta: {
     "classes": [
+        "Core.View",
         "DrawBoard.Module",
         "Structure.Module",
         "Structure.View.PeptideView",

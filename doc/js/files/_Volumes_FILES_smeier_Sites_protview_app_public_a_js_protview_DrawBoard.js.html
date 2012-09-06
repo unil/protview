@@ -41,6 +41,8 @@
         <div id="api-tabview-panel">
             <ul id="api-classes" class="apis classes">
             
+                <li><a href="..&#x2F;classes/Core.View.html">Core.View</a></li>
+            
                 <li><a href="..&#x2F;classes/DrawBoard.Module.html">DrawBoard.Module</a></li>
             
                 <li><a href="..&#x2F;classes/Structure.Module.html">Structure.Module</a></li>
@@ -100,9 +102,41 @@
 
 <div class="file">
     <pre class="code prettyprint linenums">
+&#x2F;**
+* Contains module controllers
+* 
+* @author Stefan Meier
+* @version 20120903
+* 
+* @module DrawBoard
+*&#x2F;
 ProtView.DrawBoard.Controller = {};
+&#x2F;**
+* Contains module models
+* 
+* @author Stefan Meier
+* @version 20120903
+* 
+* @module DrawBoard
+*&#x2F;
 ProtView.DrawBoard.Model = {};
+&#x2F;**
+* Contains module views
+* 
+* @author Stefan Meier
+* @version 20120903
+* 
+* @module DrawBoard
+*&#x2F;
 ProtView.DrawBoard.View = {};
+&#x2F;**
+* Contains module utility functions
+* 
+* @author Stefan Meier
+* @version 20120903
+* 
+* @module DrawBoard
+*&#x2F;
 ProtView.DrawBoard.Utils = {};
 
 &#x2F;**
@@ -110,19 +144,56 @@ ProtView.DrawBoard.Utils = {};
  * 
  * Handles module requests and responses
  * 
+ * @author Stefan Meier
+ * @version 20120903
+ * 
  * @namespace DrawBoard
  * @class Module
  * @module DrawBoard
  *&#x2F;
 ProtView.DrawBoard.Module = (function() {
-	&#x2F;&#x2F;local
+	&#x2F;**
+	Contains all loaded resources
+
+	@property stack
+	@type Object
+	@default null
+	**&#x2F;
 	var stack = {},
+	&#x2F;**
+	Modules main controller
+
+	@property controller
+	@type Core.MainController
+	@default null
+	**&#x2F;
 	controller = null,
+	&#x2F;**
+	Reference to sandbox
+
+	@property sandbox
+	@type Application.Sandbox
+	@default null
+	**&#x2F;
 	sandbox = null,
+	&#x2F;**
+	 * Loads module core classes
+	 * 
+	 * @private
+	 * @method load
+	 *&#x2F;
 	load = function() {
 		controller = new ProtView.DrawBoard.Controller.MainController();
 		stack.controller = controller;
 	},
+	&#x2F;**
+	 * Shows indicated resource or updates resource with specified id
+	 * 
+	 * @private
+     * @param {String} resource
+	 * @param {int} id
+	 * @method show
+	 *&#x2F;
 	show = function(resource, id) {
 		controller.load(resource);
 		var c = controller.getController(resource);
@@ -135,6 +206,13 @@ ProtView.DrawBoard.Module = (function() {
 		else 
 			console.log(&quot;ProtView.Drawboard.Module:show controller is null&quot;);
 	},
+	&#x2F;**
+	 * Unloads module and all its functionalities
+	 * 
+	 * @private
+	 * @todo this method needs to be implemented
+	 * @method unload
+	 *&#x2F;
 	unload = function() {
 		for (var el in stack) {
 			   &#x2F;*var obj = stack[el];
@@ -143,32 +221,94 @@ ProtView.DrawBoard.Module = (function() {
 			   delete stack[el];
 		}
 	},
+	&#x2F;**
+	 * Updateds module
+	 * 
+	 * Only subscribed controllers will be updated with information
+	 * 
+	 * @private
+	 * @param {Object} arguments
+	 * @method update
+	 *&#x2F;
 	update = function (arguments) {
 		if (controller != null)
 			controller.update(arguments);
 	},
+	&#x2F;**
+	 * Saves current representation
+	 * 
+	 * 
+	 * @private
+	 * @todo this method needs for other module functionalities
+	 * @method save
+	 *&#x2F;
 	save = function() {
 		var c = controller.getController(&#x27;drawboard&#x27;);
 		c.save();
 	};
 	&#x2F;&#x2F;public
 	return {
+		&#x2F;**
+		 * Starts module
+		 * 
+		 * Calls load and starts toolbar
+		 * 
+		 * @method start
+		 *&#x2F;
 		start : function() {
 			new ProtView.DrawBoard.View.ToolbarView();
 			load();
 		},
+		&#x2F;**
+		 * Stops module
+		 * 
+		 * Calls unload
+		 * 
+		 * @method stop
+		 *&#x2F;
 		stop : function () {
 			unload();
 		},
+		&#x2F;**
+		 * Shows specified resource
+		 * 
+		 * Calls show
+		 * 
+		 * @param {Object} event
+		 * @param {String} resource
+		 * @param {int} id
+		 * @method show
+		 *&#x2F;
 		show : function(e, resource, id) {
 			show(resource, id);
 		},
+		&#x2F;**
+		 * Updates module
+		 * 
+		 * Calls update
+		 * 
+		 * @param {Object} event
+		 * @param {Object} arguments
+		 * @method update
+		 *&#x2F;
 		update : function(e, arguments) {
 			update(arguments);
 		},
+		&#x2F;**
+		 * Saves module
+		 * 
+		 * Calls save
+		 * 
+		 * @method save
+		 *&#x2F;
 		save : function() {
 			save();
 		},
+		&#x2F;**
+		 * Registers sandbox and module&#x27;s public methods
+		 * 
+		 * @param {Object} sandbox
+		 *&#x2F;
 		registerSandbox : function(obj) {
 			sandbox = obj;
 			sandbox.subscribe(&quot;&#x2F;drawboard&#x2F;start&quot;, ProtView.DrawBoard.Module.start);

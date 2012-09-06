@@ -1,6 +1,38 @@
+/**
+* Contains module controllers
+* 
+* @author Stefan Meier
+* @version 20120903
+* 
+* @module DrawBoard
+*/
 ProtView.DrawBoard.Controller = {};
+/**
+* Contains module models
+* 
+* @author Stefan Meier
+* @version 20120903
+* 
+* @module DrawBoard
+*/
 ProtView.DrawBoard.Model = {};
+/**
+* Contains module views
+* 
+* @author Stefan Meier
+* @version 20120903
+* 
+* @module DrawBoard
+*/
 ProtView.DrawBoard.View = {};
+/**
+* Contains module utility functions
+* 
+* @author Stefan Meier
+* @version 20120903
+* 
+* @module DrawBoard
+*/
 ProtView.DrawBoard.Utils = {};
 
 /**
@@ -8,19 +40,56 @@ ProtView.DrawBoard.Utils = {};
  * 
  * Handles module requests and responses
  * 
+ * @author Stefan Meier
+ * @version 20120903
+ * 
  * @namespace DrawBoard
  * @class Module
  * @module DrawBoard
  */
 ProtView.DrawBoard.Module = (function() {
-	//local
+	/**
+	Contains all loaded resources
+
+	@property stack
+	@type Object
+	@default null
+	**/
 	var stack = {},
+	/**
+	Modules main controller
+
+	@property controller
+	@type Core.MainController
+	@default null
+	**/
 	controller = null,
+	/**
+	Reference to sandbox
+
+	@property sandbox
+	@type Application.Sandbox
+	@default null
+	**/
 	sandbox = null,
+	/**
+	 * Loads module core classes
+	 * 
+	 * @private
+	 * @method load
+	 */
 	load = function() {
 		controller = new ProtView.DrawBoard.Controller.MainController();
 		stack.controller = controller;
 	},
+	/**
+	 * Shows indicated resource or updates resource with specified id
+	 * 
+	 * @private
+     * @param {String} resource
+	 * @param {int} id
+	 * @method show
+	 */
 	show = function(resource, id) {
 		controller.load(resource);
 		var c = controller.getController(resource);
@@ -33,6 +102,13 @@ ProtView.DrawBoard.Module = (function() {
 		else 
 			console.log("ProtView.Drawboard.Module:show controller is null");
 	},
+	/**
+	 * Unloads module and all its functionalities
+	 * 
+	 * @private
+	 * @todo this method needs to be implemented
+	 * @method unload
+	 */
 	unload = function() {
 		for (var el in stack) {
 			   /*var obj = stack[el];
@@ -41,32 +117,94 @@ ProtView.DrawBoard.Module = (function() {
 			   delete stack[el];
 		}
 	},
+	/**
+	 * Updateds module
+	 * 
+	 * Only subscribed controllers will be updated with information
+	 * 
+	 * @private
+	 * @param {Object} arguments
+	 * @method update
+	 */
 	update = function (arguments) {
 		if (controller != null)
 			controller.update(arguments);
 	},
+	/**
+	 * Saves current representation
+	 * 
+	 * 
+	 * @private
+	 * @todo this method needs for other module functionalities
+	 * @method save
+	 */
 	save = function() {
 		var c = controller.getController('drawboard');
 		c.save();
 	};
 	//public
 	return {
+		/**
+		 * Starts module
+		 * 
+		 * Calls load and starts toolbar
+		 * 
+		 * @method start
+		 */
 		start : function() {
 			new ProtView.DrawBoard.View.ToolbarView();
 			load();
 		},
+		/**
+		 * Stops module
+		 * 
+		 * Calls unload
+		 * 
+		 * @method stop
+		 */
 		stop : function () {
 			unload();
 		},
+		/**
+		 * Shows specified resource
+		 * 
+		 * Calls show
+		 * 
+		 * @param {Object} event
+		 * @param {String} resource
+		 * @param {int} id
+		 * @method show
+		 */
 		show : function(e, resource, id) {
 			show(resource, id);
 		},
+		/**
+		 * Updates module
+		 * 
+		 * Calls update
+		 * 
+		 * @param {Object} event
+		 * @param {Object} arguments
+		 * @method update
+		 */
 		update : function(e, arguments) {
 			update(arguments);
 		},
+		/**
+		 * Saves module
+		 * 
+		 * Calls save
+		 * 
+		 * @method save
+		 */
 		save : function() {
 			save();
 		},
+		/**
+		 * Registers sandbox and module's public methods
+		 * 
+		 * @param {Object} sandbox
+		 */
 		registerSandbox : function(obj) {
 			sandbox = obj;
 			sandbox.subscribe("/drawboard/start", ProtView.DrawBoard.Module.start);

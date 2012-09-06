@@ -70,18 +70,11 @@ ProtView.Structure.View.PeptideView = ProtView.Core.View.extend({
 		}
 	},
 	/**
-	 * Valid model callback
+	 * Gets membrane regions from form
 	 * 
-	 * @method valid
-	 * @param {Core.View} view
-	 * @param {Object} attributes
+	 * @method evaluateRegions
+	 * @return {Object} regions
 	 */
-	valid: function(view, attr) {
-        // do something
-    },
-    invalid: function(view, attr, error) {
-
-    },
 	evaluateRegions : function() {
 		var regions = [];
 		var region = {};
@@ -124,6 +117,12 @@ ProtView.Structure.View.PeptideView = ProtView.Core.View.extend({
 				});
 		return regions;
 	},
+	/**
+	 * Converts regions to HTML
+	 * 
+	 * @method {Object} regions
+	 * @return {string} htmlRegions
+	 */
 	renderRegion : function(regions) {
 		var ret = '<div class="control-group"> ';
 		ret += '<label for="peptide-region-1" id="peptide-region-label" ';
@@ -149,6 +148,12 @@ ProtView.Structure.View.PeptideView = ProtView.Core.View.extend({
 		ret += '</ol></div></div>';
 		return ret;
 	},
+	/**
+	 * Creates a new membrane region form row
+	 * 
+	 * @method newRow
+	 * @return {string} htmlRegionRow
+	 */
 	newRow : function() {
 		ret = '';
 		ret += '<li style="margin-left: 20px; margin-bottom: 9px;">';
@@ -165,12 +170,24 @@ ProtView.Structure.View.PeptideView = ProtView.Core.View.extend({
 		ret += '</ol></div></div>';
 		return ret;
 	},
+	/**
+	 * Binds the remove row event to the minus button after each region row
+	 *
+	 * @method bindRemoveRowEvent
+	 * @return {string} htmlRegionRow
+	 */
 	bindRemoveRowEvent: function() {
 		$('.remove_row').click(function() {
 			var currentRow = $(this).parent();
 			currentRow.remove();
 		});
 	},
+	/**
+	 * Renders peptide view
+	 *
+	 * @method render
+	 * @chainable
+	 */
 	render : function() {
 		var self = this;
 		var renderedContent = self.template(self.model.toJSON()),

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;structure&#x2F;view&#x2F;ProteinView.js</title>
+    <title>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;core&#x2F;View.js</title>
     <link rel="stylesheet" href="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;3.5.1&#x2F;build&#x2F;cssgrids&#x2F;cssgrids-min.css">
     <link rel="stylesheet" href="..&#x2F;assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="..&#x2F;assets/css/main.css" id="site_styles">
@@ -98,44 +98,94 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: &#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;structure&#x2F;view&#x2F;ProteinView.js</h1>
+                        <h1 class="file-heading">File: &#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;core&#x2F;View.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
 &#x2F;**
  * 
- * Handles and shows protein form
+ * AbstractView, implements main functionalities
  * 
  * 
- * @module Structure
- * @namespace Structure.View
- * @class ProteinView
- * @extends Core.View
+ * @module Core
+ * @namespace Core
+ * @class View
  * 
  * @author Stefan Meier
  * @version 20120903
  * 
  *&#x2F;
-ProtView.Structure.View.ProteinView = ProtView.Core.View.extend({
-
-	events: { 
-		&#x2F;**
-		 * @event click #protein-form-submit
-		 *&#x2F;
-		&#x27;click #protein-form-submit&#x27; : &#x27;submitForm&#x27;
+ProtView.Core.View = Backbone.View.extend({
+	&#x2F;**
+	@method initialize
+	@constructor
+	**&#x2F;
+	initialize : function(args) {		
+		if (args.el == null)
+			console.log(&#x27;ProtView.Core.View: define el&#x27;);
+		if (args.templateEl == null)
+			console.log(&#x27;ProtView.Core.View: define templateEL&#x27;);
+		if (args.bindings != null) {
+			this.modelBinder = new Backbone.ModelBinder();
+		}
+		this.template = _.template($(args.templateEl).html());
+		this.bindings = args.bindings;
+		this.el = args.el;
+	},
+	unload : function() {
+		if (this.bindings != null)
+			this.modelBinder.unbind();
+		Backbone.Validation.unbind(this);
+		&#x2F;*this.undelegateEvents();
+		this.remove();*&#x2F;
+	},
+	setController : function(controller) {
+		this.controller = controller;
+	},
+	setModel : function(model) {
+		model.on(&#x27;change&#x27;, this.render, this);	
+		model.on(&#x27;reset&#x27;, this.render, this);
+		model.on(&#x27;validated:valid&#x27;, this.valid, this);
+		model.on(&#x27;validated:invalid&#x27;, this.invalid, this); 
+		
+        this.model = model;
 	},
 	&#x2F;**
-	 * Handles form submit
+	 * Validate model callback
 	 * 
-	 * @method submitForm
-	 * @param {Object} event
+	 * @method valid
+	 * @param {Core.View} view
+	 * @param {Object} attributes
 	 *&#x2F;
+	valid: function(view, attr) {
+		console.log(&#x27;ProtView.Core.View: valid function not defined in child element.&#x27;);
+		return this;
+	},
+	&#x2F;**
+	 * Validate model callback
+	 * 
+	 * @method invalid
+	 * @chainable
+	 * @param {Core.View} view
+	 * @param {Object} attributes
+	 *&#x2F;
+	invalid: function(view, attr, error) {
+		console.log(&#x27;ProtView.Core.View: invalid function not defined in child element&#x27;);
+		return this;
+	},
 	submitForm : function(e) {
         e.preventDefault();
-        console.log(&#x27;model: &#x27; + this.model.isValid());
-
         this.controller.save();
-    }
+        return this;
+    },
+	render : function() {
+		var renderedContent = this.template(this.model.toJSON());
+        $(this.el).html(renderedContent);
+        if (this.bindings != null)
+        	this.modelBinder.bind(this.model, this.el, this.bindings);
+        Backbone.Validation.bind(this);
+		return this;
+	},
 });
     </pre>
 </div>

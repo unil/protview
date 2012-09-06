@@ -41,6 +41,8 @@
         <div id="api-tabview-panel">
             <ul id="api-classes" class="apis classes">
             
+                <li><a href="..&#x2F;classes/Core.View.html">Core.View</a></li>
+            
                 <li><a href="..&#x2F;classes/DrawBoard.Module.html">DrawBoard.Module</a></li>
             
                 <li><a href="..&#x2F;classes/Structure.Module.html">Structure.Module</a></li>
@@ -172,18 +174,11 @@ ProtView.Structure.View.PeptideView = ProtView.Core.View.extend({
 		}
 	},
 	&#x2F;**
-	 * Valid model callback
+	 * Gets membrane regions from form
 	 * 
-	 * @method valid
-	 * @param {Core.View} view
-	 * @param {Object} attributes
+	 * @method evaluateRegions
+	 * @return {Object} regions
 	 *&#x2F;
-	valid: function(view, attr) {
-        &#x2F;&#x2F; do something
-    },
-    invalid: function(view, attr, error) {
-
-    },
 	evaluateRegions : function() {
 		var regions = [];
 		var region = {};
@@ -226,6 +221,12 @@ ProtView.Structure.View.PeptideView = ProtView.Core.View.extend({
 				});
 		return regions;
 	},
+	&#x2F;**
+	 * Converts regions to HTML
+	 * 
+	 * @method {Object} regions
+	 * @return {string} htmlRegions
+	 *&#x2F;
 	renderRegion : function(regions) {
 		var ret = &#x27;&lt;div class=&quot;control-group&quot;&gt; &#x27;;
 		ret += &#x27;&lt;label for=&quot;peptide-region-1&quot; id=&quot;peptide-region-label&quot; &#x27;;
@@ -251,6 +252,12 @@ ProtView.Structure.View.PeptideView = ProtView.Core.View.extend({
 		ret += &#x27;&lt;&#x2F;ol&gt;&lt;&#x2F;div&gt;&lt;&#x2F;div&gt;&#x27;;
 		return ret;
 	},
+	&#x2F;**
+	 * Creates a new membrane region form row
+	 * 
+	 * @method newRow
+	 * @return {string} htmlRegionRow
+	 *&#x2F;
 	newRow : function() {
 		ret = &#x27;&#x27;;
 		ret += &#x27;&lt;li style=&quot;margin-left: 20px; margin-bottom: 9px;&quot;&gt;&#x27;;
@@ -267,12 +274,24 @@ ProtView.Structure.View.PeptideView = ProtView.Core.View.extend({
 		ret += &#x27;&lt;&#x2F;ol&gt;&lt;&#x2F;div&gt;&lt;&#x2F;div&gt;&#x27;;
 		return ret;
 	},
+	&#x2F;**
+	 * Binds the remove row event to the minus button after each region row
+	 *
+	 * @method bindRemoveRowEvent
+	 * @return {string} htmlRegionRow
+	 *&#x2F;
 	bindRemoveRowEvent: function() {
 		$(&#x27;.remove_row&#x27;).click(function() {
 			var currentRow = $(this).parent();
 			currentRow.remove();
 		});
 	},
+	&#x2F;**
+	 * Renders peptide view
+	 *
+	 * @method render
+	 * @chainable
+	 *&#x2F;
 	render : function() {
 		var self = this;
 		var renderedContent = self.template(self.model.toJSON()),

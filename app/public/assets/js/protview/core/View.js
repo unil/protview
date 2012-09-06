@@ -1,4 +1,21 @@
+/**
+ * 
+ * AbstractView, implements main functionalities
+ * 
+ * 
+ * @module Core
+ * @namespace Core
+ * @class View
+ * 
+ * @author Stefan Meier
+ * @version 20120903
+ * 
+ */
 ProtView.Core.View = Backbone.View.extend({
+	/**
+	@method initialize
+	@constructor
+	**/
 	initialize : function(args) {		
 		if (args.el == null)
 			console.log('ProtView.Core.View: define el');
@@ -29,11 +46,26 @@ ProtView.Core.View = Backbone.View.extend({
 		
         this.model = model;
 	},
-	valid : function() {
+	/**
+	 * Validate model callback
+	 * 
+	 * @method valid
+	 * @param {Core.View} view
+	 * @param {Object} attributes
+	 */
+	valid: function(view, attr) {
 		console.log('ProtView.Core.View: valid function not defined in child element.');
 		return this;
 	},
-	invalid : function() {
+	/**
+	 * Validate model callback
+	 * 
+	 * @method invalid
+	 * @chainable
+	 * @param {Core.View} view
+	 * @param {Object} attributes
+	 */
+	invalid: function(view, attr, error) {
 		console.log('ProtView.Core.View: invalid function not defined in child element');
 		return this;
 	},
