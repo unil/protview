@@ -52,6 +52,17 @@
                 "DrawBoard.Model": 1
             }
         },
+        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/StructuralGeometryCollection.js": {
+            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/StructuralGeometryCollection.js",
+            "modules": {},
+            "classes": {
+                "DrawBoard.Model.StructuralGeometryCollection": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "DrawBoard.Model": 1
+            }
+        },
         "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/utils/Drawing.js": {
             "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/utils/Drawing.js",
             "modules": {},
@@ -208,6 +219,7 @@
                 "DrawBoard.Controller.DrawBoardController": 1,
                 "DrawBoard.Model.Representation": 1,
                 "DrawBoard.Model.StructuralGeometry": 1,
+                "DrawBoard.Model.StructuralGeometryCollection": 1,
                 "DrawBoard.Module": 1
             },
             "fors": {},
@@ -326,6 +338,20 @@
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/StructuralGeometry.js",
             "line": 1,
             "description": "StructuralGeometry model"
+        },
+        "DrawBoard.Model.StructuralGeometryCollection": {
+            "name": "DrawBoard.Model.StructuralGeometryCollection",
+            "shortname": "DrawBoard.Model.StructuralGeometryCollection",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.Model",
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/StructuralGeometryCollection.js",
+            "line": 1,
+            "description": "Colleciton of StructuralGeometry models"
         },
         "Structure.Controller.MainController": {
             "name": "Structure.Controller.MainController",
@@ -816,6 +842,60 @@
             "type": "Array",
             "default": "null",
             "class": "DrawBoard.Model.StructuralGeometry",
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.Model"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/StructuralGeometryCollection.js",
+            "line": 15,
+            "description": "Model type",
+            "itemtype": "property",
+            "name": "model",
+            "type": "ProtView.DrawBoard.Model.StructuralGeometry",
+            "default": "ProtView.DrawBoard.Model.StructuralGeometry",
+            "class": "DrawBoard.Model.StructuralGeometryCollection",
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.Model"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/StructuralGeometryCollection.js",
+            "line": 23,
+            "description": "Comparator of models in order to order them",
+            "itemtype": "method",
+            "name": "comparator",
+            "return": {
+                "description": "pos",
+                "type": "Int"
+            },
+            "class": "DrawBoard.Model.StructuralGeometryCollection",
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.Model"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/StructuralGeometryCollection.js",
+            "line": 32,
+            "description": "Gets the URL of related server resource able to handle requests",
+            "itemtype": "method",
+            "name": "url",
+            "return": {
+                "description": "url",
+                "type": "String"
+            },
+            "class": "DrawBoard.Model.StructuralGeometryCollection",
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.Model"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/StructuralGeometryCollection.js",
+            "line": 42,
+            "description": "Overrides default set method to define collection id",
+            "itemtype": "method",
+            "name": "set",
+            "return": {
+                "description": "id",
+                "type": "Object"
+            },
+            "class": "DrawBoard.Model.StructuralGeometryCollection",
             "module": "DrawBoard",
             "namespace": "DrawBoard.Model"
         },
