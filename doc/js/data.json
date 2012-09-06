@@ -26,6 +26,28 @@
             "fors": {},
             "namespaces": {}
         },
+        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/model/Protein.js": {
+            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/model/Protein.js",
+            "modules": {},
+            "classes": {
+                "Structure.Model.Protein": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Structure.Model": 1
+            }
+        },
+        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/view/NewProteinView.js": {
+            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/view/NewProteinView.js",
+            "modules": {},
+            "classes": {
+                "Structure.View.NewProteinView": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Structure.View": 1
+            }
+        },
         "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/view/PeptideView.js": {
             "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/view/PeptideView.js",
             "modules": {},
@@ -106,12 +128,15 @@
             "name": "Structure",
             "submodules": {},
             "classes": {
+                "Structure.Model.Protein": 1,
+                "Structure.View.NewProteinView": 1,
                 "Structure.View.PeptideView": 1,
                 "Structure.View.ProteinView": 1,
                 "Structure.Module": 1
             },
             "fors": {},
             "namespaces": {
+                "Structure.Model": 1,
                 "Structure.View": 1,
                 "Structure": 1
             },
@@ -119,7 +144,7 @@
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
             "line": 5,
             "description": "Contains protein structural related classes\n\nPeptide form, Protein Form, handles all structural interactions",
-            "extends": "Core.View",
+            "extends": "Backbone.Model",
             "author": "Stefan Meier",
             "version": "20120903",
             "itemtype": "main"
@@ -171,6 +196,34 @@
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/View.js",
             "line": 1,
             "description": "AbstractView, implements main functionalities"
+        },
+        "Structure.Model.Protein": {
+            "name": "Structure.Model.Protein",
+            "shortname": "Structure.Model.Protein",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Structure",
+            "namespace": "Structure.Model",
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/model/Protein.js",
+            "line": 1,
+            "description": "Protein model"
+        },
+        "Structure.View.NewProteinView": {
+            "name": "Structure.View.NewProteinView",
+            "shortname": "Structure.View.NewProteinView",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Structure",
+            "namespace": "Structure.View",
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/view/NewProteinView.js",
+            "line": 1,
+            "description": "Handles and shows new protein dialog"
         },
         "Structure.View.PeptideView": {
             "name": "Structure.View.PeptideView",
@@ -324,7 +377,7 @@
                     "description": ""
                 }
             ],
-            "class": "Structure.View.PeptideView",
+            "class": "Structure.Model.Protein",
             "module": "Core",
             "namespace": "Core"
         },
@@ -350,7 +403,7 @@
                     "description": ""
                 }
             ],
-            "class": "Structure.View.PeptideView",
+            "class": "Structure.Model.Protein",
             "module": "Core",
             "namespace": "Core"
         },
@@ -364,9 +417,116 @@
                     "description": ""
                 }
             ],
-            "class": "Structure.View.PeptideView",
+            "class": "Structure.Model.Protein",
             "module": "Core",
             "namespace": "Core"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/model/Protein.js",
+            "line": 17,
+            "description": "Protein id",
+            "itemtype": "property",
+            "name": "id",
+            "type": "int",
+            "default": "null",
+            "class": "Structure.Model.Protein",
+            "module": "Structure",
+            "namespace": "Structure.Model"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/model/Protein.js",
+            "line": 25,
+            "description": "Protein name",
+            "itemtype": "property",
+            "name": "name",
+            "type": "String",
+            "default": "null",
+            "class": "Structure.Model.Protein",
+            "module": "Structure",
+            "namespace": "Structure.Model"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/model/Protein.js",
+            "line": 33,
+            "description": "Protein species\n\nAccepted values are : Homo sapiens, duck, mice",
+            "itemtype": "property",
+            "name": "species",
+            "type": "String",
+            "default": "null",
+            "class": "Structure.Model.Protein",
+            "module": "Structure",
+            "namespace": "Structure.Model"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/model/Protein.js",
+            "line": 43,
+            "itemtype": "property",
+            "name": "note",
+            "type": "String",
+            "default": "null",
+            "class": "Structure.Model.Protein",
+            "module": "Structure",
+            "namespace": "Structure.Model"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/model/Protein.js",
+            "line": 50,
+            "description": "Gets the URL of related server resource able to handle requests",
+            "itemtype": "method",
+            "name": "url",
+            "return": {
+                "description": "url",
+                "type": "String"
+            },
+            "class": "Structure.Model.Protein",
+            "module": "Structure",
+            "namespace": "Structure.Model"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/model/Protein.js",
+            "line": 60,
+            "description": "Validates model properties",
+            "itemtype": "method",
+            "name": "validaton",
+            "class": "Structure.Model.Protein",
+            "module": "Structure",
+            "namespace": "Structure.Model"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/view/NewProteinView.js",
+            "line": 17,
+            "itemtype": "event",
+            "name": "click #new-protein-form-submit",
+            "class": "Structure.View.NewProteinView",
+            "module": "Structure",
+            "namespace": "Structure.View"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/view/NewProteinView.js",
+            "line": 22,
+            "description": "Handles form submit",
+            "itemtype": "method",
+            "name": "submitForm",
+            "params": [
+                {
+                    "name": "event",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "Structure.View.NewProteinView",
+            "module": "Structure",
+            "namespace": "Structure.View"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/view/NewProteinView.js",
+            "line": 33,
+            "description": "This is method is called on each model update\n\nIf model is validate and its content saved to the server, the dialog closes",
+            "itemtype": "method",
+            "name": "update",
+            "class": "Structure.View.NewProteinView",
+            "module": "Structure",
+            "namespace": "Structure.View"
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/view/PeptideView.js",

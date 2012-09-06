@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Core</title>
+    <title>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;structure&#x2F;view&#x2F;NewProteinView.js</title>
     <link rel="stylesheet" href="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;3.5.1&#x2F;build&#x2F;cssgrids&#x2F;cssgrids-min.css">
     <link rel="stylesheet" href="..&#x2F;assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="..&#x2F;assets/css/main.css" id="site_styles">
@@ -102,51 +102,60 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1>Core Module</h1>
-<div class="box clearfix meta">
-    
+                        <h1 class="file-heading">File: &#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;structure&#x2F;view&#x2F;NewProteinView.js</h1>
 
-    
+<div class="file">
+    <pre class="code prettyprint linenums">
+&#x2F;**
+ * 
+ * Handles and shows new protein dialog
+ * 
+ * 
+ * @module Structure
+ * @namespace Structure.View
+ * @class NewProteinView
+ * @extends Core.View
+ * 
+ * @author Stefan Meier
+ * @version 20120903
+ * 
+ *&#x2F;
+ProtView.Structure.View.NewProteinView = ProtView.Core.View.extend({
+	events: { 
+		&#x2F;**
+		 * @event click #new-protein-form-submit
+		 *&#x2F;
+		&#x27;click #new-protein-form-submit&#x27; : &#x27;submitForm&#x27;
+	},
+	&#x2F;**
+	 * Handles form submit
+	 * 
+	 * @method submitForm
+	 * @param {Object} event
+	 *&#x2F;
+	submitForm : function(e) {
+        e.preventDefault();
+        this.controller.save();
+        this.model.on(&#x27;change&#x27;, this.update, this);
+    },
+    &#x2F;**
+	 * This is method is called on each model update
+	 * 
+	 * If model is validate and its content saved to the server, the dialog closes
+	 * 
+	 * @method update
+	 *&#x2F;
+	update : function() {
+		proteinId = this.model.get(&#x27;xinsertid&#x27;);
+		
+		if (proteinId != null &amp;&amp; proteinId != 0) {
+			Application.CONTEXT.navigate(&quot;view&#x2F;&quot; + proteinId);
 
-    
-        <div class="foundat">
-            Defined in: <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_core_View.js.html#l1"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;core&#x2F;View.js:1</code></a>
-        </div>
-    
-
-    
-</div>
-
-
-
-<div class="box intro">
-    <p>Contains base classes which are inherited in other modules</p>
-
-<p>Helpers, MVC base classes, utility classes</p>
-</div>
-
-
-
-<div class="yui3-g">
-    <div class="yui3-u-1-2">
-        
-            <p>This module provides the following classes:</p>
-
-            <ul class="module-classes">
-            
-                <li class="module-class">
-                    <a href="..&#x2F;classes/Core.View.html">
-                        Core.View
-                    </a>
-                </li>
-            
-            </ul>
-        
-    </div>
-
-    <div class="yui3-u-1-2">
-        
-    </div>
+			$(&#x27;#new-protein-dialog&#x27;).jqxWindow(&#x27;close&#x27;);
+		}
+	}
+});
+    </pre>
 </div>
 
                     </div>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Core</title>
+    <title>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;structure&#x2F;model&#x2F;Protein.js</title>
     <link rel="stylesheet" href="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;3.5.1&#x2F;build&#x2F;cssgrids&#x2F;cssgrids-min.css">
     <link rel="stylesheet" href="..&#x2F;assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="..&#x2F;assets/css/main.css" id="site_styles">
@@ -102,51 +102,82 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1>Core Module</h1>
-<div class="box clearfix meta">
-    
+                        <h1 class="file-heading">File: &#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;structure&#x2F;model&#x2F;Protein.js</h1>
 
-    
-
-    
-        <div class="foundat">
-            Defined in: <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_core_View.js.html#l1"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;core&#x2F;View.js:1</code></a>
-        </div>
-    
-
-    
-</div>
-
-
-
-<div class="box intro">
-    <p>Contains base classes which are inherited in other modules</p>
-
-<p>Helpers, MVC base classes, utility classes</p>
-</div>
-
-
-
-<div class="yui3-g">
-    <div class="yui3-u-1-2">
-        
-            <p>This module provides the following classes:</p>
-
-            <ul class="module-classes">
-            
-                <li class="module-class">
-                    <a href="..&#x2F;classes/Core.View.html">
-                        Core.View
-                    </a>
-                </li>
-            
-            </ul>
-        
-    </div>
-
-    <div class="yui3-u-1-2">
-        
-    </div>
+<div class="file">
+    <pre class="code prettyprint linenums">
+&#x2F;**
+ * 
+ * Protein model
+ * 
+ * 
+ * @module Structure
+ * @namespace Structure.Model
+ * @class Protein
+ * @extends Backbone.Model
+ * 
+ * @author Stefan Meier
+ * @version 20120903
+ * 
+ *&#x2F;
+ProtView.Structure.Model.Protein = Backbone.Model.extend({
+	defaults : {
+		&#x2F;**
+		* Protein id
+		*
+		* @property id
+		* @type int
+		* @default null
+		**&#x2F;
+		id: null,
+		&#x2F;**
+		* Protein name
+		*
+		* @property name
+		* @type String
+		* @default null
+		**&#x2F;
+		name: null,
+		&#x2F;**
+		* Protein species
+		* 
+		* Accepted values are : Homo sapiens, duck, mice
+		*
+		* @property species
+		* @type String
+		* @default null
+		**&#x2F;
+		species: null,
+		&#x2F;**
+		* @property note
+		* @type String
+		* @default null
+		**&#x2F;
+		note: null,
+	},
+	&#x2F;**
+	 * Gets the URL of related server resource able to handle requests
+	 * 
+	 * @method url
+	 * @return {String} url
+	 *&#x2F;
+	url : function() {
+		var root = Application.ROOTPATH;
+		return this.id == null ? root + &#x27;api&#x2F;proteins&#x2F;0&#x27;: root + &#x27;api&#x2F;proteins&#x2F;&#x27; + this.id;
+	},
+	&#x2F;**
+	 * Validates model properties
+	 * 
+	 * @method validaton
+	 *&#x2F;
+	validation: {
+	    name: {
+	      required: true,
+	      msg: &#x27;Please enter a valid email&#x27;
+	    }
+	}
+});
+    </pre>
 </div>
 
                     </div>
