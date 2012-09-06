@@ -17,6 +17,7 @@ ProtView.Core.BackboneHelper = Class.extend( {
 	 * 
 	 * @constructor
 	 * @param resource
+	 * @method init
 	 */
 	init: function(collection) {
 		this.collection = collection;
