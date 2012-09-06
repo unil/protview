@@ -3,6 +3,14 @@ require_once(xContext::$basepath.'/lib/protview/protview/geom/shape/complex/Memb
 require_once(xContext::$basepath.'/lib/protview/protview/geom/shape/complex/StandardLoop.php');
 require_once(xContext::$basepath.'/lib/protview/protview/geom/shape/complex/ExtendedLoop.php');
 
+/**
+ * Calculates the points for specified peptide
+ *
+ * @package protview\geom\shape\complex
+ * @author Stefan Meier
+ * @version 20120906
+ *
+ */
 class PeptideShape {
 
 	private $peptide;
@@ -12,6 +20,13 @@ class PeptideShape {
 	private $aaCoords = array();
 	private $membraneCoords = array();
 
+	/**
+	 * Initializes constructor
+	 * 
+	 * @param \protview\bio\Peptide $peptide
+	 * @param array $startCoord
+	 * @param int $aaSize
+	 */
 	public function __construct($peptide, $startCoord, $aaSize) {
 		$this->peptide = $peptide;
 		$this->startCoord = $startCoord;
@@ -19,6 +34,9 @@ class PeptideShape {
 		$this->calculateCoordinates();
 	}
 
+	/**
+	 * Loops throug peptide in order to calculate shapes for each region
+	 */
 	private function calculateCoordinates() {
 		$coords = array();
 		$pos = 1;
@@ -45,9 +63,11 @@ class PeptideShape {
 	}
 
 	/**
-	 * Calculates coordinates of external part of the membraine
-	 * @param unknown_type $region
-	 * @param unknown_type $pos
+	 * Calculates coordinates of external regions
+	 * 
+	 * @param \protview\bio\Region $region
+	 * @param inte $pos
+	 * @return array
 	 */
 	private function getExternalPart($region, $pos) {
 		$coords = array();
@@ -84,9 +104,7 @@ class PeptideShape {
 		* 7-8
 		*/
 
-
-
-
+		//if the amout of aa is to short for an extendedLoop, calculate a standardLoop shape
 		if ($length <= (2*$params['basicHeight']['max'] + $middleLoopLength)) {
 			$middle = $middleLoopLength + 6;
 			$height = ($length - $middle)/2;
