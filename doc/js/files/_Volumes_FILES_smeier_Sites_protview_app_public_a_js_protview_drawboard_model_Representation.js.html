@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;structure&#x2F;view&#x2F;ProteinView.js</title>
+    <title>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;drawboard&#x2F;model&#x2F;Representation.js</title>
     <link rel="stylesheet" href="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;3.5.1&#x2F;build&#x2F;cssgrids&#x2F;cssgrids-min.css">
     <link rel="stylesheet" href="..&#x2F;assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="..&#x2F;assets/css/main.css" id="site_styles">
@@ -114,44 +114,110 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: &#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;structure&#x2F;view&#x2F;ProteinView.js</h1>
+                        <h1 class="file-heading">File: &#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;drawboard&#x2F;model&#x2F;Representation.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
 &#x2F;**
  * 
- * Handles and shows protein form
+ * Representation model
  * 
  * 
- * @module Structure
- * @namespace Structure.View
- * @class ProteinView
- * @extends Core.View
+ * @module DrawBoard
+ * @namespace DrawBoard.Model
+ * @class Representation
+ * @extends Backbone.RelationalModel
  * 
  * @author Stefan Meier
  * @version 20120903
  * 
  *&#x2F;
-ProtView.Structure.View.ProteinView = ProtView.Core.View.extend({
-
-	events: { 
+ProtView.DrawBoard.Model.Representation = Backbone.RelationalModel.extend({
+	&#x2F;**
+	* Contains all model relations
+	* 
+	* @example
+	* see https:&#x2F;&#x2F;github.com&#x2F;PaulUithol&#x2F;Backbone-relational
+	* 
+	* @property relations
+	* @type Array
+	* @default null
+	**&#x2F;
+	relations: [{
+        type: Backbone.HasMany,
+        key: &#x27;structuralGeometries&#x27;,
+        relatedModel: &#x27;ProtView.DrawBoard.Model.StructuralGeometry&#x27;,
+        collectionType: &#x27;ProtView.DrawBoard.Model.StructuralGeometryCollection&#x27;,
+        reverseRelation: {
+            key: &#x27;representation&#x27;,
+            &#x2F;&#x2F; includeInJSON: &#x27;id&#x27;
+        }
+    }],
+	defaults : {
 		&#x2F;**
-		 * @event click #protein-form-submit
-		 *&#x2F;
-		&#x27;click #protein-form-submit&#x27; : &#x27;submitForm&#x27;
+		* Representation id
+		*
+		* @property id
+		* @type int
+		* @default null
+		**&#x2F;
+		id: null,
+		&#x2F;**
+		* Representation title
+		*
+		* @property title
+		* @type String
+		* @default null
+		**&#x2F;
+		title: null,
+		&#x2F;**
+		* Representation description
+		*
+		* @property description
+		* @type String
+		* @default null
+		**&#x2F;
+		description: null,
+		&#x2F;**
+		* Params
+		* 
+		* @example
+		* {
+		*  dimension:	{minX: float, maxX: float, minY: float, maxY: float},
+		*  membrane:	{minY: float, maxY : float}
+		* }
+		*
+		* @property params
+		* @type Object
+		* @default {}
+		**&#x2F;
+		params : {},
+		&#x2F;**
+		* Contributors
+		* 
+		* @example
+		* [
+		* 	{lastName: String, firstName: String, pos: int}
+		* ]
+		* 
+		* pos indicates the importance of contribution
+		*
+		* @property contributors
+		* @type Array
+		* @default {}
+		**&#x2F;
+		contributors : {}
 	},
 	&#x2F;**
-	 * Handles form submit
+	 * Gets the URL of related server resource able to handle requests
 	 * 
-	 * @method submitForm
-	 * @param {Object} event
+	 * @method url
+	 * @return {String} url
 	 *&#x2F;
-	submitForm : function(e) {
-        e.preventDefault();
-        console.log(&#x27;model: &#x27; + this.model.isValid());
-
-        this.controller.save();
-    }
+	url : function() {
+		var root = Application.ROOTPATH;
+		return this.id ? root + &#x27;api&#x2F;representations&#x2F;&#x27; + this.id + &#x27;?details=all&#x27; : root + &#x27;api&#x2F;representations&#x2F;&#x27;;
+	},
 });
     </pre>
 </div>

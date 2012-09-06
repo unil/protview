@@ -30,6 +30,17 @@
                 "DrawBoard.Controller": 1
             }
         },
+        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/Representation.js": {
+            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/Representation.js",
+            "modules": {},
+            "classes": {
+                "DrawBoard.Model.Representation": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "DrawBoard.Model": 1
+            }
+        },
         "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/utils/Drawing.js": {
             "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/utils/Drawing.js",
             "modules": {},
@@ -184,11 +195,13 @@
             "submodules": {},
             "classes": {
                 "DrawBoard.Controller.DrawBoardController": 1,
+                "DrawBoard.Model.Representation": 1,
                 "DrawBoard.Module": 1
             },
             "fors": {},
             "namespaces": {
                 "DrawBoard.Controller": 1,
+                "DrawBoard.Model": 1,
                 "DrawBoard": 1
             },
             "tag": "main",
@@ -273,6 +286,20 @@
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/controller/DrawBoardController.js",
             "line": 1,
             "description": "DrawBoard controllers handels all drawboard related views and models"
+        },
+        "DrawBoard.Model.Representation": {
+            "name": "DrawBoard.Model.Representation",
+            "shortname": "DrawBoard.Model.Representation",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.Model",
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/Representation.js",
+            "line": 1,
+            "description": "Representation model"
         },
         "Structure.Controller.MainController": {
             "name": "Structure.Controller.MainController",
@@ -534,8 +561,8 @@
             "name": "show",
             "params": [
                 {
-                    "name": "representation",
-                    "description": "id",
+                    "name": "representationId",
+                    "description": "",
                     "type": "Int"
                 }
             ],
@@ -551,13 +578,13 @@
             "name": "show",
             "params": [
                 {
-                    "name": "DOM",
-                    "description": "id",
+                    "name": "DOMId",
+                    "description": "",
                     "type": "Int"
                 },
                 {
-                    "name": "new",
-                    "description": "settings",
+                    "name": "newSettings",
+                    "description": "",
                     "type": "Object"
                 }
             ],
@@ -574,6 +601,101 @@
             "class": "DrawBoard.Controller.DrawBoardController",
             "module": "DrawBoard",
             "namespace": "DrawBoard.Controller"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/Representation.js",
+            "line": 16,
+            "description": "Contains all model relations",
+            "example": [
+                "\nsee https://github.com/PaulUithol/Backbone-relational"
+            ],
+            "itemtype": "property",
+            "name": "relations",
+            "type": "Array",
+            "default": "null",
+            "class": "DrawBoard.Model.Representation",
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.Model"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/Representation.js",
+            "line": 37,
+            "description": "Representation id",
+            "itemtype": "property",
+            "name": "id",
+            "type": "int",
+            "default": "null",
+            "class": "DrawBoard.Model.Representation",
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.Model"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/Representation.js",
+            "line": 45,
+            "description": "Representation title",
+            "itemtype": "property",
+            "name": "title",
+            "type": "String",
+            "default": "null",
+            "class": "DrawBoard.Model.Representation",
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.Model"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/Representation.js",
+            "line": 53,
+            "description": "Representation description",
+            "itemtype": "property",
+            "name": "description",
+            "type": "String",
+            "default": "null",
+            "class": "DrawBoard.Model.Representation",
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.Model"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/Representation.js",
+            "line": 61,
+            "description": "Params",
+            "example": [
+                "\n{\n dimension:\t{minX: float, maxX: float, minY: float, maxY: float},\n membrane:\t{minY: float, maxY : float}\n}"
+            ],
+            "itemtype": "property",
+            "name": "params",
+            "type": "Object",
+            "default": "{}",
+            "class": "DrawBoard.Model.Representation",
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.Model"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/Representation.js",
+            "line": 75,
+            "description": "Contributors",
+            "example": [
+                "\n[\n\t{lastName: String, firstName: String, pos: int}\n]\n\npos indicates the importance of contribution"
+            ],
+            "itemtype": "property",
+            "name": "contributors",
+            "type": "Array",
+            "default": "{}",
+            "class": "DrawBoard.Model.Representation",
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.Model"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/Representation.js",
+            "line": 91,
+            "description": "Gets the URL of related server resource able to handle requests",
+            "itemtype": "method",
+            "name": "url",
+            "return": {
+                "description": "url",
+                "type": "String"
+            },
+            "class": "DrawBoard.Model.Representation",
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.Model"
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/utils/Drawing.js",
@@ -607,7 +729,7 @@
             ],
             "class": "Structure.Controller.MainController",
             "module": "DrawBoard",
-            "namespace": "DrawBoard.Controller"
+            "namespace": "DrawBoard.Model"
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/utils/Drawing.js",
@@ -633,7 +755,7 @@
             ],
             "class": "Structure.Controller.MainController",
             "module": "DrawBoard",
-            "namespace": "DrawBoard.Controller"
+            "namespace": "DrawBoard.Model"
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/utils/Drawing.js",
@@ -647,7 +769,7 @@
             ],
             "class": "Structure.Controller.MainController",
             "module": "DrawBoard",
-            "namespace": "DrawBoard.Controller"
+            "namespace": "DrawBoard.Model"
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/controller/MainController.js",

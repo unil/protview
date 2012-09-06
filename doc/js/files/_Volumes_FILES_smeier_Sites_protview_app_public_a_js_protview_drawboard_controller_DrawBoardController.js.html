@@ -45,6 +45,8 @@
             
                 <li><a href="..&#x2F;classes/DrawBoard.Controller.DrawBoardController.html">DrawBoard.Controller.DrawBoardController</a></li>
             
+                <li><a href="..&#x2F;classes/DrawBoard.Model.Representation.html">DrawBoard.Model.Representation</a></li>
+            
                 <li><a href="..&#x2F;classes/DrawBoard.Module.html">DrawBoard.Module</a></li>
             
                 <li><a href="..&#x2F;classes/Structure.Controller.MainController.html">Structure.Controller.MainController</a></li>
@@ -172,7 +174,7 @@ ProtView.DrawBoard.Controller.DrawBoardController = ProtView.Core.Controller.ext
 	 * Shows a new representation
 	 * 
 	 * @method show
-	 * @param {int} representation id
+	 * @param {int} representationId
 	**&#x2F;
 	show : function(representation) {
 		this.fetch(representation);
@@ -184,8 +186,8 @@ ProtView.DrawBoard.Controller.DrawBoardController = ProtView.Core.Controller.ext
 	 * back to the server on each position update of a drawboard&#x27;s element
 	 * 
 	 * @method show
-	 * @param {int} DOM id
-	 * @param {Object} new settings
+	 * @param {int} DOMId
+	 * @param {Object} newSettings
 	**&#x2F;
 	updateElement : function(id, settings) {
 		&#x2F;&#x2F;store in local updatedElements
