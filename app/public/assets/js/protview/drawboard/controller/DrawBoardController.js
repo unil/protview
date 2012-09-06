@@ -54,7 +54,7 @@ ProtView.DrawBoard.Controller.DrawBoardController = ProtView.Core.Controller.ext
 	 * Shows a new representation
 	 * 
 	 * @method show
-	 * @param {int} representation id
+	 * @param {int} representationId
 	**/
 	show : function(representation) {
 		this.fetch(representation);
@@ -66,8 +66,8 @@ ProtView.DrawBoard.Controller.DrawBoardController = ProtView.Core.Controller.ext
 	 * back to the server on each position update of a drawboard's element
 	 * 
 	 * @method show
-	 * @param {int} DOM id
-	 * @param {Object} new settings
+	 * @param {int} DOMId
+	 * @param {Object} newSettings
 	**/
 	updateElement : function(id, settings) {
 		//store in local updatedElements

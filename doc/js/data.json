@@ -19,6 +19,17 @@
                 "Core": 1
             }
         },
+        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/controller/DrawBoardController.js": {
+            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/controller/DrawBoardController.js",
+            "modules": {},
+            "classes": {
+                "DrawBoard.Controller.DrawBoardController": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "DrawBoard.Controller": 1
+            }
+        },
         "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/utils/Drawing.js": {
             "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/utils/Drawing.js",
             "modules": {},
@@ -129,8 +140,8 @@
             "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/ProtView.js",
             "modules": {
                 "Core": 1,
-                "Structure": 1,
                 "DrawBoard": 1,
+                "Structure": 1,
                 "Application": 1
             },
             "classes": {},
@@ -168,6 +179,27 @@
             "version": "20120903",
             "itemtype": "main"
         },
+        "DrawBoard": {
+            "name": "DrawBoard",
+            "submodules": {},
+            "classes": {
+                "DrawBoard.Controller.DrawBoardController": 1,
+                "DrawBoard.Module": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "DrawBoard.Controller": 1,
+                "DrawBoard": 1
+            },
+            "tag": "main",
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/DrawBoard.js",
+            "line": 38,
+            "description": "Contains protein drawing classes\n\nDraws protein, and offers drawing related functionalities such\nas export, resizing, etc.",
+            "extends": "Core.Controller",
+            "author": "Stefan Meier",
+            "version": "20120903",
+            "itemtype": "main"
+        },
         "Structure": {
             "name": "Structure",
             "submodules": {},
@@ -191,27 +223,9 @@
             },
             "tag": "main",
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
-            "line": 5,
+            "line": 29,
             "description": "Contains protein structural related classes\n\nPeptide form, Protein Form, handles all structural interactions",
             "extends": "Core.MainController",
-            "author": "Stefan Meier",
-            "version": "20120903",
-            "itemtype": "main"
-        },
-        "DrawBoard": {
-            "name": "DrawBoard",
-            "submodules": {},
-            "classes": {
-                "DrawBoard.Module": 1
-            },
-            "fors": {},
-            "namespaces": {
-                "DrawBoard": 1
-            },
-            "tag": "main",
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/DrawBoard.js",
-            "line": 38,
-            "description": "Contains protein drawing classes\n\nDraws protein, and offers drawing related functionalities such\nas export, resizing, etc.",
             "author": "Stefan Meier",
             "version": "20120903",
             "itemtype": "main"
@@ -245,6 +259,20 @@
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/View.js",
             "line": 1,
             "description": "AbstractView, implements main functionalities"
+        },
+        "DrawBoard.Controller.DrawBoardController": {
+            "name": "DrawBoard.Controller.DrawBoardController",
+            "shortname": "DrawBoard.Controller.DrawBoardController",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.Controller",
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/controller/DrawBoardController.js",
+            "line": 1,
+            "description": "DrawBoard controllers handels all drawboard related views and models"
         },
         "Structure.Controller.MainController": {
             "name": "Structure.Controller.MainController",
@@ -385,7 +413,7 @@
             "module": "Structure",
             "namespace": "Structure",
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
-            "line": 5,
+            "line": 29,
             "description": "Structure module facade\n\nHandles module requests and responses",
             "author": "Stefan Meier",
             "version": "20120903"
@@ -453,6 +481,101 @@
             "namespace": "Core"
         },
         {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/controller/DrawBoardController.js",
+            "line": 16,
+            "description": "Contains all resources needs to be updated",
+            "example": [
+                "\n{\n\telementID {x : int, y: int}\n}\n\nelementID is the original DOM Id (for example : aa-42-1604)"
+            ],
+            "itemtype": "property",
+            "name": "updatedElements",
+            "type": "Object",
+            "default": "{}",
+            "class": "DrawBoard.Controller.DrawBoardController",
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.Controller"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/controller/DrawBoardController.js",
+            "line": 31,
+            "description": "Initalizes model and calls parent constructor",
+            "itemtype": "method",
+            "name": "initialize",
+            "params": [
+                {
+                    "name": "args",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "is_constructor": 1,
+            "class": "DrawBoard.Controller.DrawBoardController",
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.Controller"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/controller/DrawBoardController.js",
+            "line": 42,
+            "description": "Clears current DrawBoard",
+            "todo": [
+                "implement this method"
+            ],
+            "itemtype": "method",
+            "name": "clear",
+            "class": "DrawBoard.Controller.DrawBoardController",
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.Controller"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/controller/DrawBoardController.js",
+            "line": 53,
+            "description": "Shows a new representation",
+            "itemtype": "method",
+            "name": "show",
+            "params": [
+                {
+                    "name": "representation",
+                    "description": "id",
+                    "type": "Int"
+                }
+            ],
+            "class": "DrawBoard.Controller.DrawBoardController",
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.Controller"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/controller/DrawBoardController.js",
+            "line": 62,
+            "description": "Stores updated elements for later saving\n\nSave needs to be called manually as it would be to slow to send a request\nback to the server on each position update of a drawboard's element",
+            "itemtype": "method",
+            "name": "show",
+            "params": [
+                {
+                    "name": "DOM",
+                    "description": "id",
+                    "type": "Int"
+                },
+                {
+                    "name": "new",
+                    "description": "settings",
+                    "type": "Object"
+                }
+            ],
+            "class": "DrawBoard.Controller.DrawBoardController",
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.Controller"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/controller/DrawBoardController.js",
+            "line": 77,
+            "description": "Saves updated store to the server",
+            "itemtype": "method",
+            "name": "save",
+            "class": "DrawBoard.Controller.DrawBoardController",
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.Controller"
+        },
+        {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/utils/Drawing.js",
             "line": 55,
             "description": "Draws an amino acid element <group> <circle> <text>Label</text>\n<text>Position</text> <group>",
@@ -483,8 +606,8 @@
                 }
             ],
             "class": "Structure.Controller.MainController",
-            "module": "Core",
-            "namespace": "Core"
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.Controller"
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/utils/Drawing.js",
@@ -509,8 +632,8 @@
                 }
             ],
             "class": "Structure.Controller.MainController",
-            "module": "Core",
-            "namespace": "Core"
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.Controller"
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/utils/Drawing.js",
@@ -523,8 +646,8 @@
                 }
             ],
             "class": "Structure.Controller.MainController",
-            "module": "Core",
-            "namespace": "Core"
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.Controller"
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/controller/MainController.js",
@@ -1158,7 +1281,7 @@
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
-            "line": 18,
+            "line": 42,
             "description": "Contains all loaded resources",
             "itemtype": "property",
             "name": "stack",
@@ -1169,7 +1292,7 @@
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
-            "line": 26,
+            "line": 50,
             "description": "Modules main controller",
             "itemtype": "property",
             "name": "controller",
@@ -1180,7 +1303,7 @@
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
-            "line": 34,
+            "line": 58,
             "description": "Reference to sandbox",
             "itemtype": "property",
             "name": "sandbox",
@@ -1191,7 +1314,7 @@
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
-            "line": 43,
+            "line": 67,
             "description": "Loads module core classes",
             "access": "private",
             "tagname": "",
@@ -1202,7 +1325,7 @@
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
-            "line": 53,
+            "line": 77,
             "description": "Shows indicated resource or updates resource with specified id",
             "access": "private",
             "tagname": "",
@@ -1225,7 +1348,7 @@
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
-            "line": 71,
+            "line": 95,
             "description": "Hides indicated resource",
             "access": "private",
             "tagname": "",
@@ -1243,7 +1366,7 @@
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
-            "line": 81,
+            "line": 105,
             "description": "Unloads module and all its functionalities",
             "access": "private",
             "tagname": "",
@@ -1257,7 +1380,7 @@
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
-            "line": 96,
+            "line": 120,
             "description": "Updateds module\n\nOnly subscribed controllers will be updated with information",
             "access": "private",
             "tagname": "",
@@ -1275,7 +1398,7 @@
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
-            "line": 112,
+            "line": 136,
             "description": "Starts module\n\nCalls load",
             "itemtype": "method",
             "name": "start",
@@ -1284,7 +1407,7 @@
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
-            "line": 122,
+            "line": 146,
             "description": "Stops module\n\nCalls unload",
             "itemtype": "method",
             "name": "stop",
@@ -1293,7 +1416,7 @@
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
-            "line": 132,
+            "line": 156,
             "description": "Shows specified resource\n\nCalls show",
             "params": [
                 {
@@ -1319,7 +1442,7 @@
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
-            "line": 145,
+            "line": 169,
             "description": "Hides specified resource\n\nCalls hide",
             "params": [
                 {
@@ -1340,7 +1463,7 @@
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
-            "line": 157,
+            "line": 181,
             "description": "Updates module\n\nCalls update",
             "params": [
                 {
@@ -1361,7 +1484,7 @@
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
-            "line": 169,
+            "line": 193,
             "description": "Registers sandbox and module's public methods",
             "params": [
                 {

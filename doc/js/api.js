@@ -2,6 +2,7 @@ YUI.add("yuidoc-meta", function(Y) {
    Y.YUIDoc = { meta: {
     "classes": [
         "Core.View",
+        "DrawBoard.Controller.DrawBoardController",
         "DrawBoard.Module",
         "Structure.Controller.MainController",
         "Structure.Controller.PeptideController",
