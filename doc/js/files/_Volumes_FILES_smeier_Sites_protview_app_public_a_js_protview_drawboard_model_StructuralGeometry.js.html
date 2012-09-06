@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Core</title>
+    <title>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;drawboard&#x2F;model&#x2F;StructuralGeometry.js</title>
     <link rel="stylesheet" href="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;3.5.1&#x2F;build&#x2F;cssgrids&#x2F;cssgrids-min.css">
     <link rel="stylesheet" href="..&#x2F;assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="..&#x2F;assets/css/main.css" id="site_styles">
@@ -116,51 +116,110 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1>Core Module</h1>
-<div class="box clearfix meta">
-    
+                        <h1 class="file-heading">File: &#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;drawboard&#x2F;model&#x2F;StructuralGeometry.js</h1>
 
-    
-
-    
-        <div class="foundat">
-            Defined in: <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_core_View.js.html#l1"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;core&#x2F;View.js:1</code></a>
-        </div>
-    
-
-    
-</div>
-
-
-
-<div class="box intro">
-    <p>Contains base classes which are inherited in other modules</p>
-
-<p>Helpers, MVC base classes, utility classes</p>
-</div>
-
-
-
-<div class="yui3-g">
-    <div class="yui3-u-1-2">
-        
-            <p>This module provides the following classes:</p>
-
-            <ul class="module-classes">
-            
-                <li class="module-class">
-                    <a href="..&#x2F;classes/Core.View.html">
-                        Core.View
-                    </a>
-                </li>
-            
-            </ul>
-        
-    </div>
-
-    <div class="yui3-u-1-2">
-        
-    </div>
+<div class="file">
+    <pre class="code prettyprint linenums">
+&#x2F;**
+ * 
+ * StructuralGeometry model
+ * 
+ * 
+ * @module DrawBoard
+ * @namespace DrawBoard.Model
+ * @class StructuralGeometry
+ * @extends Backbone.RelationalModel
+ * 
+ * @author Stefan Meier
+ * @version 20120903
+ * 
+ *&#x2F;
+ProtView.DrawBoard.Model.StructuralGeometry = Backbone.RelationalModel.extend({
+	defaults : {
+		&#x2F;**
+		* StructuralGeometry id
+		*
+		* @property id
+		* @type int
+		* @default null
+		**&#x2F;
+		id: null,
+		&#x2F;**
+		* Representation id (foreign key)
+		*
+		* @property representation_id
+		* @type int
+		* @default null
+		**&#x2F;
+		representation_id: null,
+		&#x2F;**
+		* StructuralGeometry type
+		* 
+		* @example
+		* extendLoop, basicLoop, Cercle, Line
+		*
+		* @property type
+		* @type String
+		* @default null
+		**&#x2F;
+		type: null,
+		&#x2F;**
+		* StructuralGeometry pos
+		* 
+		* Position relative to other forms
+		*
+		* @property pos
+		* @type int
+		* @default null
+		**&#x2F;
+		pos: null,
+		&#x2F;**
+		* StructuralGeometry params
+		* 
+		* @example
+		* {
+		* 	rotation: int,
+		* 	sens : int
+		* }
+		*
+		* @property params
+		* @type Object
+		* @default null
+		**&#x2F;
+		params : null,
+		&#x2F;**
+		* StructuralGeometry labels
+		* 
+		* @example
+		* [
+		* 	String
+		* 	String
+		* ]
+		* 
+		* for example : A-101
+		*
+		* @property labels
+		* @type Array
+		* @default null
+		**&#x2F;
+		labels : null,
+		&#x2F;**
+		* StructuralGeometry coordinates
+		* 
+		* @example
+		* [
+		* 	{id : int, x: float, y: float , amino_acid_id : int}
+		* ]
+		* 
+		*
+		* @property coordinates
+		* @type Array
+		* @default null
+		**&#x2F;
+		coordinates : null
+	}
+});
+    </pre>
 </div>
 
                     </div>

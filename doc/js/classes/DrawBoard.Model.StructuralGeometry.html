@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Structure.View.PeptideView</title>
+    <title>DrawBoard.Model.StructuralGeometry</title>
     <link rel="stylesheet" href="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;3.5.1&#x2F;build&#x2F;cssgrids&#x2F;cssgrids-min.css">
     <link rel="stylesheet" href="..&#x2F;assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="..&#x2F;assets/css/main.css" id="site_styles">
@@ -116,7 +116,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1>Structure.View.PeptideView Class</h1>
+                        <h1>DrawBoard.Model.StructuralGeometry Class</h1>
 <div class="box meta">
     
 
@@ -124,13 +124,13 @@
 
     
         <div class="foundat">
-            Defined in: <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_structure_view_PeptideView.js.html#l1"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;structure&#x2F;view&#x2F;PeptideView.js:1</code></a>
+            Defined in: <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_drawboard_model_StructuralGeometry.js.html#l1"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;drawboard&#x2F;model&#x2F;StructuralGeometry.js:1</code></a>
         </div>
     
 
     
         
-            Module: <a href="../modules/Structure.html">Structure</a>
+            Module: <a href="../modules/DrawBoard.html">DrawBoard</a>
         
     
 
@@ -140,7 +140,7 @@
 
 
 <div class="box intro">
-    <p>Handles and shows peptide form</p>
+    <p>StructuralGeometry model</p>
 </div>
 
 
@@ -150,12 +150,10 @@
         <li class="api-class-tab index"><a href="#index">Index</a></li>
 
         
-            <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
+        
+            <li class="api-class-tab properties"><a href="#properties">Properties</a></li>
         
         
-        
-        
-            <li class="api-class-tab events"><a href="#events">Events</a></li>
         
     </ul>
 
@@ -164,69 +162,57 @@
             <h2 class="off-left">Item Index</h2>
 
             
-                <div class="index-section methods">
-                    <h3>Methods</h3>
-
-                    <ul class="index-list methods">
-                        
-                            <li class="index-item method">
-                                <a href="#method_bindRemoveRowEvent">bindRemoveRowEvent</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item method">
-                                <a href="#method_evaluateRegions">evaluateRegions</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item method">
-                                <a href="#method_newRow">newRow</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item method">
-                                <a href="#method_regions">regions</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item method">
-                                <a href="#method_render">render</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item method">
-                                <a href="#method_submitForm">submitForm</a>
-
-                                
-                                
-                            </li>
-                        
-                    </ul>
-                </div>
-            
 
             
+                <div class="index-section properties">
+                    <h3>Properties</h3>
 
-            
-
-            
-                <div class="index-section events">
-                    <h3>Events</h3>
-
-                    <ul class="index-list events">
+                    <ul class="index-list properties">
                         
-                            <li class="index-item event">
-                                <a href="#event_click #peptide-form-submit">click #peptide-form-submit</a>
+                            <li class="index-item property">
+                                <a href="#property_coordinates">coordinates</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_id">id</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_labels">labels</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_params">params</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_pos">pos</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_representation_id">representation_id</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_type">type</a>
 
                                 
                                 
@@ -235,29 +221,22 @@
                     </ul>
                 </div>
             
+
+            
+
+            
         </div>
 
         
-            <div id="methods" class="api-class-tabpanel">
-                <h2 class="off-left">Methods</h2>
+
+        
+            <div id="properties" class="api-class-tabpanel">
+                <h2 class="off-left">Properties</h2>
 
                 
-                    <div id="method_bindRemoveRowEvent" class="method item">
-    <h3 class="name"><code>bindRemoveRowEvent</code></h3>
-
-    
-        <span class="paren">()</span>
-    
-
-    
-        <span class="returns-inline">
-            <span class="type">String</span>
-        </span>
-    
-
-    
-
-    
+                    <div id="property_coordinates" class="property item">
+    <h3 class="name"><code>coordinates</code></h3>
+    <span class="type">Array</span>
 
     
 
@@ -278,10 +257,9 @@
             
         
         
-        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_structure_view_PeptideView.js.html#l173"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;structure&#x2F;view&#x2F;PeptideView.js:173</code></a>
+        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_drawboard_model_StructuralGeometry.js.html#l84"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;drawboard&#x2F;model&#x2F;StructuralGeometry.js:84</code></a>
         
         </p>
-
 
         
 
@@ -289,22 +267,21 @@
     </div>
 
     <div class="description">
-        <p>Binds the remove row event to the minus button after each region row</p>
+        <p>StructuralGeometry coordinates</p>
     </div>
 
     
+        <p><strong>Default:</strong> null</p>
+    
 
     
-        <div class="returns">
-            <h4>Returns:</h4>
+        <div class="example">
+            <h4>Example:</h4>
 
-            <div class="returns-description">
-                
-                    
-                        <span class="type">String</span>:
-                    
-                    htmlRegionRow
-                
+            <div class="example-content">
+                <p>[
+    {id : int, x: float, y: float , amino<em>acid</em>id : int}
+]</p>
             </div>
         </div>
     
@@ -313,22 +290,9 @@
 </div>
 
                 
-                    <div id="method_evaluateRegions" class="method item">
-    <h3 class="name"><code>evaluateRegions</code></h3>
-
-    
-        <span class="paren">()</span>
-    
-
-    
-        <span class="returns-inline">
-            <span class="type">Object</span>
-        </span>
-    
-
-    
-
-    
+                    <div id="property_id" class="property item">
+    <h3 class="name"><code>id</code></h3>
+    <span class="type">Int</span>
 
     
 
@@ -349,10 +313,9 @@
             
         
         
-        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_structure_view_PeptideView.js.html#l72"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;structure&#x2F;view&#x2F;PeptideView.js:72</code></a>
+        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_drawboard_model_StructuralGeometry.js.html#l17"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;drawboard&#x2F;model&#x2F;StructuralGeometry.js:17</code></a>
         
         </p>
-
 
         
 
@@ -360,22 +323,70 @@
     </div>
 
     <div class="description">
-        <p>Gets membrane regions from form</p>
+        <p>StructuralGeometry id</p>
     </div>
 
     
+        <p><strong>Default:</strong> null</p>
+    
 
     
-        <div class="returns">
-            <h4>Returns:</h4>
 
-            <div class="returns-description">
+    
+</div>
+
                 
-                    
-                        <span class="type">Object</span>:
-                    
-                    regions
+                    <div id="property_labels" class="property item">
+    <h3 class="name"><code>labels</code></h3>
+    <span class="type">Array</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
                 
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_drawboard_model_StructuralGeometry.js.html#l68"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;drawboard&#x2F;model&#x2F;StructuralGeometry.js:68</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>StructuralGeometry labels</p>
+    </div>
+
+    
+        <p><strong>Default:</strong> null</p>
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <p>[
+    String
+    String
+]</p>
+
+<p>for example : A-101</p>
             </div>
         </div>
     
@@ -384,22 +395,9 @@
 </div>
 
                 
-                    <div id="method_newRow" class="method item">
-    <h3 class="name"><code>newRow</code></h3>
-
-    
-        <span class="paren">()</span>
-    
-
-    
-        <span class="returns-inline">
-            <span class="type">String</span>
-        </span>
-    
-
-    
-
-    
+                    <div id="property_params" class="property item">
+    <h3 class="name"><code>params</code></h3>
+    <span class="type">Object</span>
 
     
 
@@ -420,10 +418,9 @@
             
         
         
-        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_structure_view_PeptideView.js.html#l151"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;structure&#x2F;view&#x2F;PeptideView.js:151</code></a>
+        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_drawboard_model_StructuralGeometry.js.html#l54"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;drawboard&#x2F;model&#x2F;StructuralGeometry.js:54</code></a>
         
         </p>
-
 
         
 
@@ -431,22 +428,22 @@
     </div>
 
     <div class="description">
-        <p>Creates a new membrane region form row</p>
+        <p>StructuralGeometry params</p>
     </div>
 
     
+        <p><strong>Default:</strong> null</p>
+    
 
     
-        <div class="returns">
-            <h4>Returns:</h4>
+        <div class="example">
+            <h4>Example:</h4>
 
-            <div class="returns-description">
-                
-                    
-                        <span class="type">String</span>:
-                    
-                    htmlRegionRow
-                
+            <div class="example-content">
+                <p>{
+    rotation: int,
+    sens : int
+}</p>
             </div>
         </div>
     
@@ -455,22 +452,9 @@
 </div>
 
                 
-                    <div id="method_regions" class="method item">
-    <h3 class="name"><code>regions</code></h3>
-
-    
-        <span class="paren">()</span>
-    
-
-    
-        <span class="returns-inline">
-            <span class="type">String</span>
-        </span>
-    
-
-    
-
-    
+                    <div id="property_pos" class="property item">
+    <h3 class="name"><code>pos</code></h3>
+    <span class="type">Int</span>
 
     
 
@@ -491,10 +475,9 @@
             
         
         
-        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_structure_view_PeptideView.js.html#l120"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;structure&#x2F;view&#x2F;PeptideView.js:120</code></a>
+        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_drawboard_model_StructuralGeometry.js.html#l44"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;drawboard&#x2F;model&#x2F;StructuralGeometry.js:44</code></a>
         
         </p>
-
 
         
 
@@ -502,167 +485,115 @@
     </div>
 
     <div class="description">
-        <p>Converts regions to HTML</p>
+        <p>StructuralGeometry pos</p>
+
+<p>Position relative to other forms</p>
     </div>
 
     
+        <p><strong>Default:</strong> null</p>
+    
 
     
-        <div class="returns">
-            <h4>Returns:</h4>
 
-            <div class="returns-description">
+    
+</div>
+
                 
-                    
-                        <span class="type">String</span>:
-                    
-                    htmlRegions
+                    <div id="property_representation_id" class="property item">
+    <h3 class="name"><code>representation_id</code></h3>
+    <span class="type">Int</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
                 
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_drawboard_model_StructuralGeometry.js.html#l25"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;drawboard&#x2F;model&#x2F;StructuralGeometry.js:25</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Representation id (foreign key)</p>
+    </div>
+
+    
+        <p><strong>Default:</strong> null</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_type" class="property item">
+    <h3 class="name"><code>type</code></h3>
+    <span class="type">String</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_drawboard_model_StructuralGeometry.js.html#l33"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;drawboard&#x2F;model&#x2F;StructuralGeometry.js:33</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>StructuralGeometry type</p>
+    </div>
+
+    
+        <p><strong>Default:</strong> null</p>
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <p>extendLoop, basicLoop, Cercle, Line</p>
             </div>
         </div>
-    
-
-    
-</div>
-
-                
-                    <div id="method_render" class="method item">
-    <h3 class="name"><code>render</code></h3>
-
-    
-        <span class="paren">()</span>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <span class="flag chainable">chainable</span>
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_structure_view_PeptideView.js.html#l185"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;structure&#x2F;view&#x2F;PeptideView.js:185</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Renders peptide view</p>
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="method_submitForm" class="method item">
-    <h3 class="name"><code>submitForm</code></h3>
-
-    
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-            
-                <li class="arg">
-                    
-                        <code>event</code>
-                    
-                </li>
-            
-            </ul><span class="paren">)</span>
-        </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_structure_view_PeptideView.js.html#l22"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;structure&#x2F;view&#x2F;PeptideView.js:22</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Handles form submit</p>
-    </div>
-
-    
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-            
-                <li class="param">
-                    
-                        <code class="param-name">event</code>
-                        <span class="type">Object</span>
-                    
-
-                    
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                    
-                </li>
-            
-            </ul>
-        </div>
-    
-
     
 
     
@@ -674,57 +605,6 @@
 
         
 
-        
-
-        
-            <div id="events" class="api-class-tabpanel">
-                <h2 class="off-left">Events</h2>
-
-                
-                    <div id="event_click #peptide-form-submit" class="events item">
-    <h3 class="name"><code>click #peptide-form-submit</code></h3>
-    <span class="type"></span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_structure_view_PeptideView.js.html#l17"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;structure&#x2F;view&#x2F;PeptideView.js:17</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        
-    </div>
-
-    
-
-
-    
-</div>
-
-                
-            </div>
         
     </div>
 </div>

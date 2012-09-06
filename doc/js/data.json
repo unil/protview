@@ -41,6 +41,17 @@
                 "DrawBoard.Model": 1
             }
         },
+        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/StructuralGeometry.js": {
+            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/StructuralGeometry.js",
+            "modules": {},
+            "classes": {
+                "DrawBoard.Model.StructuralGeometry": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "DrawBoard.Model": 1
+            }
+        },
         "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/utils/Drawing.js": {
             "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/utils/Drawing.js",
             "modules": {},
@@ -196,6 +207,7 @@
             "classes": {
                 "DrawBoard.Controller.DrawBoardController": 1,
                 "DrawBoard.Model.Representation": 1,
+                "DrawBoard.Model.StructuralGeometry": 1,
                 "DrawBoard.Module": 1
             },
             "fors": {},
@@ -300,6 +312,20 @@
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/Representation.js",
             "line": 1,
             "description": "Representation model"
+        },
+        "DrawBoard.Model.StructuralGeometry": {
+            "name": "DrawBoard.Model.StructuralGeometry",
+            "shortname": "DrawBoard.Model.StructuralGeometry",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.Model",
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/StructuralGeometry.js",
+            "line": 1,
+            "description": "StructuralGeometry model"
         },
         "Structure.Controller.MainController": {
             "name": "Structure.Controller.MainController",
@@ -694,6 +720,102 @@
                 "type": "String"
             },
             "class": "DrawBoard.Model.Representation",
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.Model"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/StructuralGeometry.js",
+            "line": 17,
+            "description": "StructuralGeometry id",
+            "itemtype": "property",
+            "name": "id",
+            "type": "int",
+            "default": "null",
+            "class": "DrawBoard.Model.StructuralGeometry",
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.Model"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/StructuralGeometry.js",
+            "line": 25,
+            "description": "Representation id (foreign key)",
+            "itemtype": "property",
+            "name": "representation_id",
+            "type": "int",
+            "default": "null",
+            "class": "DrawBoard.Model.StructuralGeometry",
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.Model"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/StructuralGeometry.js",
+            "line": 33,
+            "description": "StructuralGeometry type",
+            "example": [
+                "\nextendLoop, basicLoop, Cercle, Line"
+            ],
+            "itemtype": "property",
+            "name": "type",
+            "type": "String",
+            "default": "null",
+            "class": "DrawBoard.Model.StructuralGeometry",
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.Model"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/StructuralGeometry.js",
+            "line": 44,
+            "description": "StructuralGeometry pos\n\nPosition relative to other forms",
+            "itemtype": "property",
+            "name": "pos",
+            "type": "int",
+            "default": "null",
+            "class": "DrawBoard.Model.StructuralGeometry",
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.Model"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/StructuralGeometry.js",
+            "line": 54,
+            "description": "StructuralGeometry params",
+            "example": [
+                "\n{\n\trotation: int,\n\tsens : int\n}"
+            ],
+            "itemtype": "property",
+            "name": "params",
+            "type": "Object",
+            "default": "null",
+            "class": "DrawBoard.Model.StructuralGeometry",
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.Model"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/StructuralGeometry.js",
+            "line": 68,
+            "description": "StructuralGeometry labels",
+            "example": [
+                "\n[\n\tString\n\tString\n]\n\nfor example : A-101"
+            ],
+            "itemtype": "property",
+            "name": "labels",
+            "type": "Array",
+            "default": "null",
+            "class": "DrawBoard.Model.StructuralGeometry",
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.Model"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/StructuralGeometry.js",
+            "line": 84,
+            "description": "StructuralGeometry coordinates",
+            "example": [
+                "\n[\n\t{id : int, x: float, y: float , amino_acid_id : int}\n]"
+            ],
+            "itemtype": "property",
+            "name": "coordinates",
+            "type": "Array",
+            "default": "null",
+            "class": "DrawBoard.Model.StructuralGeometry",
             "module": "DrawBoard",
             "namespace": "DrawBoard.Model"
         },
