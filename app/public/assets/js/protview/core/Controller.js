@@ -1,9 +1,46 @@
+/**
+ * 
+ * AbstractController, implements main functionalities
+ * 
+ * 
+ * @module Core
+ * @namespace Core
+ * @class Controller
+ * 
+ * @author Stefan Meier
+ * @version 20120903
+ * 
+ */
 ProtView.Core.Controller = Class.extend( {
+	/**
+	* Model handled by the controller
+	*
+	* @property model
+	* @type Object
+	* @default null
+	**/
 	model : null,
-	view : null,
+	/**
+	* Views handled by the controller
+	*
+	* @property views
+	* @type Object
+	* @default {}
+	**/
 	views: {},
+	/**
+	* Contains all loaded resources
+	*
+	* @property stack
+	* @type Object
+	* @default null
+	**/
 	stack : {},
-	previous : {},
+	/**
+	 * Constructor
+	 * @param model
+	 * @method init
+	 */
 	init: function(model) {
 		var stack = {};
 		var helper = new ProtView.Core.BackboneHelper(model);
@@ -16,6 +53,12 @@ ProtView.Core.Controller = Class.extend( {
 		
 		this.stack = stack;
 	},
+	/**
+	 * Adds a view to the controller
+	 * 
+	 * @param {Core.View} view
+	 * @method addView
+	 */
 	addView: function(view) {
 		var viewEL = view.el;
 		view.setController(this);
@@ -23,12 +66,33 @@ ProtView.Core.Controller = Class.extend( {
 		view.render();
 		this.views[viewEL] = view;
 	},
+	/**
+	 * Get all views
+	 * 
+	 * @method getViews
+	 * @returns {Object} views
+	 */
 	getViews: function() {
 		return this.views;
 	},
+	/**
+	 * Get the model handled by this controller
+	 * 
+	 * @method getModel
+	 * @returns {Backbone.Model} model
+	 */
 	getModel : function() {
 		return this.model;
 	},
+	/**
+	 * Fetches model by specified id
+	 * 
+	 * Overrides this method in child Controller
+	 * 
+	 * @param id
+	 * @returns serverResponse
+	 * @method fetch
+	 */
 	fetch : function(id) {
 		var ret = null,
 		model = this.model;
@@ -48,6 +112,11 @@ ProtView.Core.Controller = Class.extend( {
 		
 		return ret;
 	},
+	/**
+	 * Unloads all loaded resources
+	 * 
+	 * @method unload
+	 */
 	unload : function() {	
 		var stack = this.views;
 		for (var el in stack) {
@@ -57,6 +126,11 @@ ProtView.Core.Controller = Class.extend( {
 			   delete stack[el];
 		}
 	},
+	/**
+	 * Saves the model to the server
+	 * 
+	 * @method save
+	 */
 	save : function() {
 		this.model.save(null,{
 			error: function(err){
@@ -67,6 +141,11 @@ ProtView.Core.Controller = Class.extend( {
 			}
 			});
 	},
+	/**
+	 * Updates the model from server
+	 * @param id
+	 * @method update
+	 */
 	update : function(id) {
 		if (this.model != null) {
 			this.fetch(id);
