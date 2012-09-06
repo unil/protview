@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Structure.View.ProteinView</title>
+    <title>DrawBoard.View.ToolbarView</title>
     <link rel="stylesheet" href="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;3.5.1&#x2F;build&#x2F;cssgrids&#x2F;cssgrids-min.css">
     <link rel="stylesheet" href="..&#x2F;assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="..&#x2F;assets/css/main.css" id="site_styles">
@@ -132,7 +132,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1>Structure.View.ProteinView Class</h1>
+                        <h1>DrawBoard.View.ToolbarView Class</h1>
 <div class="box meta">
     
 
@@ -140,13 +140,13 @@
 
     
         <div class="foundat">
-            Defined in: <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_structure_view_ProteinView.js.html#l1"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;structure&#x2F;view&#x2F;ProteinView.js:1</code></a>
+            Defined in: <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_drawboard_view_ToolbarView.js.html#l1"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;drawboard&#x2F;view&#x2F;ToolbarView.js:1</code></a>
         </div>
     
 
     
         
-            Module: <a href="../modules/Structure.html">Structure</a>
+            Module: <a href="../modules/DrawBoard.html">DrawBoard</a>
         
     
 
@@ -156,7 +156,7 @@
 
 
 <div class="box intro">
-    <p>Handles and shows protein form</p>
+    <p>Handles and shows Toolbar</p>
 </div>
 
 
@@ -168,6 +168,8 @@
         
             <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
         
+        
+            <li class="api-class-tab properties"><a href="#properties">Properties</a></li>
         
         
         
@@ -186,7 +188,31 @@
                     <ul class="index-list methods">
                         
                             <li class="index-item method">
-                                <a href="#method_submitForm">submitForm</a>
+                                <a href="#method_exportFile">exportFile</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_showRepresentation">showRepresentation</a>
+
+                                
+                                
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+
+            
+                <div class="index-section properties">
+                    <h3>Properties</h3>
+
+                    <ul class="index-list properties">
+                        
+                            <li class="index-item property">
+                                <a href="#property_el">el</a>
 
                                 
                                 
@@ -199,15 +225,20 @@
             
 
             
-
-            
                 <div class="index-section events">
                     <h3>Events</h3>
 
                     <ul class="index-list events">
                         
                             <li class="index-item event">
-                                <a href="#event_click #protein-form-submit">click #protein-form-submit</a>
+                                <a href="#event_click #drawboad-show-representation">click #drawboad-show-representation</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item event">
+                                <a href="#event_click #drawboard-export-png">click #drawboard-export-png</a>
 
                                 
                                 
@@ -223,21 +254,11 @@
                 <h2 class="off-left">Methods</h2>
 
                 
-                    <div id="method_submitForm" class="method item">
-    <h3 class="name"><code>submitForm</code></h3>
+                    <div id="method_exportFile" class="method item">
+    <h3 class="name"><code>exportFile</code></h3>
 
     
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-            
-                <li class="arg">
-                    
-                        <code>event</code>
-                    
-                </li>
-            
-            </ul><span class="paren">)</span>
-        </div>
+        <span class="paren">()</span>
     
 
     
@@ -265,7 +286,7 @@
             
         
         
-        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_structure_view_ProteinView.js.html#l23"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;structure&#x2F;view&#x2F;ProteinView.js:23</code></a>
+        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_drawboard_view_ToolbarView.js.html#l34"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;drawboard&#x2F;view&#x2F;ToolbarView.js:34</code></a>
         
         </p>
 
@@ -276,32 +297,117 @@
     </div>
 
     <div class="description">
-        <p>Handles form submit</p>
+        <p>Calls DrawBoardController (server-side)</p>
     </div>
 
     
-        <div class="params">
-            <h4>Parameters:</h4>
 
-            <ul class="params-list">
+    
+
+    
+</div>
+
+                
+                    <div id="method_showRepresentation" class="method item">
+    <h3 class="name"><code>showRepresentation</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
             
-                <li class="param">
-                    
-                        <code class="param-name">event</code>
-                        <span class="type">Object</span>
-                    
-
-                    
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                    
-                </li>
+                
+                <p>
+                
+                Defined in
+                
             
-            </ul>
-        </div>
+        
+        
+        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_drawboard_view_ToolbarView.js.html#l53"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;drawboard&#x2F;view&#x2F;ToolbarView.js:53</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Calls /drawboard/show</p>
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+            </div>
+        
+
+        
+            <div id="properties" class="api-class-tabpanel">
+                <h2 class="off-left">Properties</h2>
+
+                
+                    <div id="property_el" class="property item">
+    <h3 class="name"><code>el</code></h3>
+    <span class="type">String</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_drawboard_view_ToolbarView.js.html#l16"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;drawboard&#x2F;view&#x2F;ToolbarView.js:16</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Contains View's main Dom-Element</p>
+    </div>
+
+    
+        <p><strong>Default:</strong> #toolbar</p>
     
 
     
@@ -316,14 +422,12 @@
         
 
         
-
-        
             <div id="events" class="api-class-tabpanel">
                 <h2 class="off-left">Events</h2>
 
                 
-                    <div id="event_click #protein-form-submit" class="events item">
-    <h3 class="name"><code>click #protein-form-submit</code></h3>
+                    <div id="event_click #drawboad-show-representation" class="events item">
+    <h3 class="name"><code>click #drawboad-show-representation</code></h3>
     <span class="type"></span>
 
     
@@ -345,7 +449,50 @@
             
         
         
-        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_structure_view_ProteinView.js.html#l18"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;structure&#x2F;view&#x2F;ProteinView.js:18</code></a>
+        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_drawboard_view_ToolbarView.js.html#l25"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;drawboard&#x2F;view&#x2F;ToolbarView.js:25</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+
+    
+</div>
+
+                
+                    <div id="event_click #drawboard-export-png" class="events item">
+    <h3 class="name"><code>click #drawboard-export-png</code></h3>
+    <span class="type"></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_drawboard_view_ToolbarView.js.html#l29"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;drawboard&#x2F;view&#x2F;ToolbarView.js:29</code></a>
         
         </p>
 

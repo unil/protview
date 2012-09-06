@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Structure.View.ProteinView</title>
+    <title>Core.MainController</title>
     <link rel="stylesheet" href="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;3.5.1&#x2F;build&#x2F;cssgrids&#x2F;cssgrids-min.css">
     <link rel="stylesheet" href="..&#x2F;assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="..&#x2F;assets/css/main.css" id="site_styles">
@@ -132,7 +132,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1>Structure.View.ProteinView Class</h1>
+                        <h1>Core.MainController Class</h1>
 <div class="box meta">
     
 
@@ -140,13 +140,13 @@
 
     
         <div class="foundat">
-            Defined in: <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_structure_view_ProteinView.js.html#l1"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;structure&#x2F;view&#x2F;ProteinView.js:1</code></a>
+            Defined in: <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_core_MainController.js.html#l1"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;core&#x2F;MainController.js:1</code></a>
         </div>
     
 
     
         
-            Module: <a href="../modules/Structure.html">Structure</a>
+            Module: <a href="../modules/Core.html">Core</a>
         
     
 
@@ -156,7 +156,7 @@
 
 
 <div class="box intro">
-    <p>Handles and shows protein form</p>
+    <p>AbstractMainController, implements main functionalities</p>
 </div>
 
 
@@ -169,9 +169,9 @@
             <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
         
         
+            <li class="api-class-tab properties"><a href="#properties">Properties</a></li>
         
         
-            <li class="api-class-tab events"><a href="#events">Events</a></li>
         
     </ul>
 
@@ -186,7 +186,24 @@
                     <ul class="index-list methods">
                         
                             <li class="index-item method">
-                                <a href="#method_submitForm">submitForm</a>
+                                <a href="#method_unload">unload</a>
+
+                                
+                                
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+
+            
+                <div class="index-section properties">
+                    <h3>Properties</h3>
+
+                    <ul class="index-list properties">
+                        
+                            <li class="index-item property">
+                                <a href="#property_stack">stack</a>
 
                                 
                                 
@@ -198,23 +215,6 @@
 
             
 
-            
-
-            
-                <div class="index-section events">
-                    <h3>Events</h3>
-
-                    <ul class="index-list events">
-                        
-                            <li class="index-item event">
-                                <a href="#event_click #protein-form-submit">click #protein-form-submit</a>
-
-                                
-                                
-                            </li>
-                        
-                    </ul>
-                </div>
             
         </div>
 
@@ -223,8 +223,8 @@
                 <h2 class="off-left">Methods</h2>
 
                 
-                    <div id="method_submitForm" class="method item">
-    <h3 class="name"><code>submitForm</code></h3>
+                    <div id="method_unload" class="method item">
+    <h3 class="name"><code>unload</code></h3>
 
     
         <div class="args">
@@ -232,7 +232,7 @@
             
                 <li class="arg">
                     
-                        <code>event</code>
+                        <code>resource</code>
                     
                 </li>
             
@@ -265,7 +265,7 @@
             
         
         
-        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_structure_view_ProteinView.js.html#l23"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;structure&#x2F;view&#x2F;ProteinView.js:23</code></a>
+        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_core_MainController.js.html#l32"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;core&#x2F;MainController.js:32</code></a>
         
         </p>
 
@@ -276,7 +276,7 @@
     </div>
 
     <div class="description">
-        <p>Handles form submit</p>
+        <p>Unloads all loaded resources</p>
     </div>
 
     
@@ -287,7 +287,7 @@
             
                 <li class="param">
                     
-                        <code class="param-name">event</code>
+                        <code class="param-name">resource</code>
                         <span class="type">Object</span>
                     
 
@@ -314,17 +314,13 @@
         
 
         
-
-        
-
-        
-            <div id="events" class="api-class-tabpanel">
-                <h2 class="off-left">Events</h2>
+            <div id="properties" class="api-class-tabpanel">
+                <h2 class="off-left">Properties</h2>
 
                 
-                    <div id="event_click #protein-form-submit" class="events item">
-    <h3 class="name"><code>click #protein-form-submit</code></h3>
-    <span class="type"></span>
+                    <div id="property_stack" class="property item">
+    <h3 class="name"><code>stack</code></h3>
+    <span class="type">Object</span>
 
     
 
@@ -345,7 +341,7 @@
             
         
         
-        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_structure_view_ProteinView.js.html#l18"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;structure&#x2F;view&#x2F;ProteinView.js:18</code></a>
+        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_core_MainController.js.html#l15"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;core&#x2F;MainController.js:15</code></a>
         
         </p>
 
@@ -355,17 +351,24 @@
     </div>
 
     <div class="description">
-        
+        <p>Contains all loaded resources</p>
     </div>
 
     
+        <p><strong>Default:</strong> null</p>
+    
 
+    
 
     
 </div>
 
                 
             </div>
+        
+
+        
+
         
     </div>
 </div>

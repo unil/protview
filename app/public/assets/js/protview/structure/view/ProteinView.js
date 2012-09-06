@@ -16,7 +16,7 @@ ProtView.Structure.View.ProteinView = ProtView.Core.View.extend({
 
 	events: { 
 		/**
-		 * @event click #protein-form-submit
+		 * @event click #protein-form-submit:submitForm
 		 */
 		'click #protein-form-submit' : 'submitForm'
 	},

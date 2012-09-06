@@ -1,6 +1,10 @@
 YUI.add("yuidoc-meta", function(Y) {
    Y.YUIDoc = { meta: {
     "classes": [
+        "Application.Sandbox",
+        "Core.BackboneHelper",
+        "Core.Controller",
+        "Core.MainController",
         "Core.View",
         "DrawBoard.Controller.DrawBoardController",
         "DrawBoard.Model.Representation",
@@ -9,6 +13,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "DrawBoard.Module",
         "DrawBoard.Utils.Drawing",
         "DrawBoard.View.DrawBoardView",
+        "DrawBoard.View.ToolbarView",
         "Structure.Controller.MainController",
         "Structure.Controller.PeptideController",
         "Structure.Controller.ProteinController",

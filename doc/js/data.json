@@ -8,6 +8,50 @@
             "fors": {},
             "namespaces": {}
         },
+        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Sandbox.js": {
+            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Sandbox.js",
+            "modules": {},
+            "classes": {
+                "Application.Sandbox": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Application": 1
+            }
+        },
+        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/BackboneHelper.js": {
+            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/BackboneHelper.js",
+            "modules": {},
+            "classes": {
+                "Core.BackboneHelper": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Core": 1
+            }
+        },
+        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/Controller.js": {
+            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/Controller.js",
+            "modules": {},
+            "classes": {
+                "Core.Controller": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Core": 1
+            }
+        },
+        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/MainController.js": {
+            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/MainController.js",
+            "modules": {},
+            "classes": {
+                "Core.MainController": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Core": 1
+            }
+        },
         "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/View.js": {
             "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/View.js",
             "modules": {},
@@ -79,6 +123,17 @@
             "modules": {},
             "classes": {
                 "DrawBoard.View.DrawBoardView": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "DrawBoard.View": 1
+            }
+        },
+        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/view/ToolbarView.js": {
+            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/view/ToolbarView.js",
+            "modules": {},
+            "classes": {
+                "DrawBoard.View.ToolbarView": 1
             },
             "fors": {},
             "namespaces": {
@@ -187,10 +242,10 @@
         "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/ProtView.js": {
             "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/ProtView.js",
             "modules": {
+                "Application": 1,
                 "Core": 1,
                 "DrawBoard": 1,
-                "Structure": 1,
-                "Application": 1
+                "Structure": 1
             },
             "classes": {},
             "fors": {},
@@ -209,10 +264,31 @@
         }
     },
     "modules": {
+        "Application": {
+            "name": "Application",
+            "submodules": {},
+            "classes": {
+                "Application.Sandbox": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Application": 1
+            },
+            "tag": "main",
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Sandbox.js",
+            "line": 1,
+            "description": "Contains application wide used Classes\n\nContains classes such as Context, Mediator and Sandbox\nIs also responisble for routing and global view interactions",
+            "author": "Stefan Meier",
+            "version": "20120903",
+            "itemtype": "main"
+        },
         "Core": {
             "name": "Core",
             "submodules": {},
             "classes": {
+                "Core.BackboneHelper": 1,
+                "Core.Controller": 1,
+                "Core.MainController": 1,
                 "Core.View": 1
             },
             "fors": {},
@@ -237,6 +313,7 @@
                 "DrawBoard.Model.StructuralGeometryCollection": 1,
                 "DrawBoard.Utils.Drawing": 1,
                 "DrawBoard.View.DrawBoardView": 1,
+                "DrawBoard.View.ToolbarView": 1,
                 "DrawBoard.Module": 1
             },
             "fors": {},
@@ -285,23 +362,65 @@
             "author": "Stefan Meier",
             "version": "20120903",
             "itemtype": "main"
-        },
-        "Application": {
-            "name": "Application",
-            "submodules": {},
-            "classes": {},
-            "fors": {},
-            "namespaces": {},
-            "tag": "main",
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/ProtView.js",
-            "line": 20,
-            "description": "Contains application wide used Classes\n\nContains classes such as Context, Mediator and Sandbox\nIs also responisble for routing and global view interactions",
-            "author": "Stefan Meier",
-            "version": "20120903",
-            "itemtype": "main"
         }
     },
     "classes": {
+        "Application.Sandbox": {
+            "name": "Application.Sandbox",
+            "shortname": "Application.Sandbox",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Application",
+            "namespace": "Application",
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Sandbox.js",
+            "line": 1,
+            "description": "Application sandbox\nProtects model from being called directly."
+        },
+        "Core.BackboneHelper": {
+            "name": "Core.BackboneHelper",
+            "shortname": "Core.BackboneHelper",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Core",
+            "namespace": "Core",
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/BackboneHelper.js",
+            "line": 1,
+            "description": "Core Helper class for Backbone fetching/saving"
+        },
+        "Core.Controller": {
+            "name": "Core.Controller",
+            "shortname": "Core.Controller",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Core",
+            "namespace": "Core",
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/Controller.js",
+            "line": 1,
+            "description": "AbstractController, implements main functionalities"
+        },
+        "Core.MainController": {
+            "name": "Core.MainController",
+            "shortname": "Core.MainController",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Core",
+            "namespace": "Core",
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/MainController.js",
+            "line": 1,
+            "description": "AbstractMainController, implements main functionalities"
+        },
         "Core.View": {
             "name": "Core.View",
             "shortname": "Core.View",
@@ -399,6 +518,20 @@
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/view/DrawBoardView.js",
             "line": 1,
             "description": "Handles and shows drawboard"
+        },
+        "DrawBoard.View.ToolbarView": {
+            "name": "DrawBoard.View.ToolbarView",
+            "shortname": "DrawBoard.View.ToolbarView",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.View",
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/view/ToolbarView.js",
+            "line": 1,
+            "description": "Handles and shows Toolbar"
         },
         "Structure.Controller.MainController": {
             "name": "Structure.Controller.MainController",
@@ -549,7 +682,415 @@
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Context.js",
             "line": 1,
-            "class": "Core.View"
+            "class": "Application.Sandbox"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Sandbox.js",
+            "line": 17,
+            "description": "Interacts with server side\n\nServer return is shown in given domElement",
+            "params": [
+                {
+                    "name": "xaction",
+                    "description": ""
+                }
+            ],
+            "el": "domElement",
+            "itemtype": "method",
+            "name": "server",
+            "access": "private",
+            "tagname": "",
+            "class": "Application.Sandbox",
+            "module": "Application",
+            "namespace": "Application"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Sandbox.js",
+            "line": 43,
+            "description": "Loads modules\n\nThe specified module is loaded into domElement",
+            "params": [
+                {
+                    "name": "moduleName",
+                    "description": ""
+                },
+                {
+                    "name": "domElement",
+                    "description": ""
+                }
+            ],
+            "itemtype": "method",
+            "name": "load",
+            "access": "private",
+            "tagname": "",
+            "class": "Application.Sandbox",
+            "module": "Application",
+            "namespace": "Application"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Sandbox.js",
+            "line": 73,
+            "description": "Unloads a module\n\nIs not implemented",
+            "todo": [
+                "implement"
+            ],
+            "params": [
+                {
+                    "name": "module",
+                    "description": ""
+                }
+            ],
+            "itemtype": "method",
+            "name": "unload",
+            "access": "private",
+            "tagname": "",
+            "class": "Application.Sandbox",
+            "module": "Application",
+            "namespace": "Application"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Sandbox.js",
+            "line": 87,
+            "description": "Starts specified module\n\nCalls start",
+            "params": [
+                {
+                    "name": "module",
+                    "description": ""
+                },
+                {
+                    "name": "el",
+                    "description": ""
+                }
+            ],
+            "itemtype": "method",
+            "name": "start",
+            "class": "Application.Sandbox",
+            "module": "Application",
+            "namespace": "Application"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Sandbox.js",
+            "line": 99,
+            "description": "Stops specified module\n\nCalls stop",
+            "params": [
+                {
+                    "name": "module",
+                    "description": ""
+                }
+            ],
+            "itemtype": "method",
+            "name": "stop",
+            "class": "Application.Sandbox",
+            "module": "Application",
+            "namespace": "Application"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Sandbox.js",
+            "line": 110,
+            "description": "Retunrs current status of module\n\nNot implemented",
+            "params": [
+                {
+                    "name": "moduleName",
+                    "description": ""
+                }
+            ],
+            "itemtype": "method",
+            "name": "status",
+            "class": "Application.Sandbox",
+            "module": "Application",
+            "namespace": "Application"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Sandbox.js",
+            "line": 121,
+            "description": "Publish message via Mediator",
+            "params": [
+                {
+                    "name": "channel",
+                    "description": ""
+                },
+                {
+                    "name": "arguments",
+                    "description": ""
+                }
+            ],
+            "itemtype": "method",
+            "name": "publish",
+            "class": "Application.Sandbox",
+            "module": "Application",
+            "namespace": "Application"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Sandbox.js",
+            "line": 130,
+            "description": "Subscribe to a channel using Mediator",
+            "params": [
+                {
+                    "name": "channel",
+                    "description": ""
+                },
+                {
+                    "name": "callback",
+                    "description": ""
+                }
+            ],
+            "itemtype": "method",
+            "name": "subscribe",
+            "class": "Application.Sandbox",
+            "module": "Application",
+            "namespace": "Application"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Sandbox.js",
+            "line": 139,
+            "description": "Unsubscribes channel",
+            "params": [
+                {
+                    "name": "channel",
+                    "description": ""
+                }
+            ],
+            "itemtype": "method",
+            "name": "unsubscribe",
+            "class": "Application.Sandbox",
+            "module": "Application",
+            "namespace": "Application"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/BackboneHelper.js",
+            "line": 15,
+            "description": "Constructor",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "resource",
+                    "description": ""
+                }
+            ],
+            "itemtype": "method",
+            "name": "init",
+            "class": "Core.BackboneHelper",
+            "module": "Core",
+            "namespace": "Core"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/BackboneHelper.js",
+            "line": 25,
+            "description": "Fetches data from Server",
+            "params": [
+                {
+                    "name": "callback",
+                    "description": "",
+                    "type": "Function"
+                },
+                {
+                    "name": "fetchOptions",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "itemtype": "method",
+            "name": "fetch",
+            "class": "Core.BackboneHelper",
+            "module": "Core",
+            "namespace": "Core"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/Controller.js",
+            "line": 15,
+            "description": "Model handled by the controller",
+            "itemtype": "property",
+            "name": "model",
+            "type": "Object",
+            "default": "null",
+            "class": "Core.Controller",
+            "module": "Core",
+            "namespace": "Core"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/Controller.js",
+            "line": 23,
+            "description": "Views handled by the controller",
+            "itemtype": "property",
+            "name": "views",
+            "type": "Object",
+            "default": "{}",
+            "class": "Core.Controller",
+            "module": "Core",
+            "namespace": "Core"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/Controller.js",
+            "line": 31,
+            "description": "Contains all loaded resources",
+            "itemtype": "property",
+            "name": "stack",
+            "type": "Object",
+            "default": "null",
+            "class": "Core.Controller",
+            "module": "Core",
+            "namespace": "Core"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/Controller.js",
+            "line": 39,
+            "description": "Constructor",
+            "params": [
+                {
+                    "name": "model",
+                    "description": ""
+                }
+            ],
+            "itemtype": "method",
+            "name": "init",
+            "class": "Core.Controller",
+            "module": "Core",
+            "namespace": "Core"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/Controller.js",
+            "line": 56,
+            "description": "Adds a view to the controller",
+            "params": [
+                {
+                    "name": "view",
+                    "description": "",
+                    "type": "Core.View"
+                }
+            ],
+            "itemtype": "method",
+            "name": "addView",
+            "class": "Core.Controller",
+            "module": "Core",
+            "namespace": "Core"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/Controller.js",
+            "line": 69,
+            "description": "Get all views",
+            "itemtype": "method",
+            "name": "getViews",
+            "return": {
+                "description": "views",
+                "type": "Object"
+            },
+            "class": "Core.Controller",
+            "module": "Core",
+            "namespace": "Core"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/Controller.js",
+            "line": 78,
+            "description": "Get the model handled by this controller",
+            "itemtype": "method",
+            "name": "getModel",
+            "return": {
+                "description": "model",
+                "type": "Backbone.Model"
+            },
+            "class": "Core.Controller",
+            "module": "Core",
+            "namespace": "Core"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/Controller.js",
+            "line": 87,
+            "description": "Fetches model by specified id\n\nOverrides this method in child Controller",
+            "params": [
+                {
+                    "name": "id",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "serverResponse"
+            },
+            "itemtype": "method",
+            "name": "fetch",
+            "class": "Core.Controller",
+            "module": "Core",
+            "namespace": "Core"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/Controller.js",
+            "line": 115,
+            "description": "Unloads all loaded resources",
+            "itemtype": "method",
+            "name": "unload",
+            "class": "Core.Controller",
+            "module": "Core",
+            "namespace": "Core"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/Controller.js",
+            "line": 129,
+            "description": "Saves the model to the server",
+            "itemtype": "method",
+            "name": "save",
+            "class": "Core.Controller",
+            "module": "Core",
+            "namespace": "Core"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/Controller.js",
+            "line": 144,
+            "description": "Updates the model from server",
+            "params": [
+                {
+                    "name": "id",
+                    "description": ""
+                }
+            ],
+            "itemtype": "method",
+            "name": "update",
+            "class": "Core.Controller",
+            "module": "Core",
+            "namespace": "Core"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/MainController.js",
+            "line": 15,
+            "description": "Contains all loaded resources",
+            "itemtype": "property",
+            "name": "stack",
+            "type": "Object",
+            "default": "null",
+            "class": "Core.MainController",
+            "module": "Core",
+            "namespace": "Core"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/MainController.js",
+            "line": 23,
+            "description": "Gets controller from stack",
+            "params": [
+                {
+                    "name": "controllerName",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "controller",
+                "type": "Core.Controller"
+            },
+            "class": "Core.MainController",
+            "module": "Core",
+            "namespace": "Core"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/MainController.js",
+            "line": 32,
+            "description": "Unloads all loaded resources",
+            "itemtype": "method",
+            "name": "unload",
+            "params": [
+                {
+                    "name": "resource",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "Core.MainController",
+            "module": "Core",
+            "namespace": "Core"
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/View.js",
@@ -563,7 +1104,49 @@
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/View.js",
-            "line": 49,
+            "line": 31,
+            "description": "Unloads used bindings and events",
+            "itemtype": "method",
+            "name": "unload",
+            "class": "Core.View",
+            "module": "Core",
+            "namespace": "Core"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/View.js",
+            "line": 43,
+            "description": "Set View's Controller",
+            "params": [
+                {
+                    "name": "controller",
+                    "description": ""
+                }
+            ],
+            "itemtype": "method",
+            "name": "setController",
+            "class": "Core.View",
+            "module": "Core",
+            "namespace": "Core"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/View.js",
+            "line": 51,
+            "description": "Set View's Model",
+            "params": [
+                {
+                    "name": "model",
+                    "description": ""
+                }
+            ],
+            "itemtype": "method",
+            "name": "setModel",
+            "class": "Core.View",
+            "module": "Core",
+            "namespace": "Core"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/View.js",
+            "line": 64,
             "description": "Validate model callback",
             "itemtype": "method",
             "name": "valid",
@@ -579,13 +1162,14 @@
                     "type": "Object"
                 }
             ],
+            "chainable": 1,
             "class": "Core.View",
             "module": "Core",
             "namespace": "Core"
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/View.js",
-            "line": 60,
+            "line": 76,
             "description": "Validate model callback",
             "itemtype": "method",
             "name": "invalid",
@@ -602,6 +1186,35 @@
                     "type": "Object"
                 }
             ],
+            "class": "Core.View",
+            "module": "Core",
+            "namespace": "Core"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/View.js",
+            "line": 89,
+            "description": "Handles form submit",
+            "itemtype": "method",
+            "name": "submitForm",
+            "params": [
+                {
+                    "name": "event",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "chainable": 1,
+            "class": "Core.View",
+            "module": "Core",
+            "namespace": "Core"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/View.js",
+            "line": 101,
+            "description": "Renders view",
+            "itemtype": "method",
+            "name": "render",
+            "chainable": 1,
             "class": "Core.View",
             "module": "Core",
             "namespace": "Core"
@@ -1183,6 +1796,56 @@
             "itemtype": "method",
             "name": "clear",
             "class": "DrawBoard.View.DrawBoardView",
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.View"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/view/ToolbarView.js",
+            "line": 16,
+            "description": "Contains View's main Dom-Element",
+            "itemtype": "property",
+            "name": "el",
+            "type": "String",
+            "default": "#toolbar",
+            "class": "DrawBoard.View.ToolbarView",
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.View"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/view/ToolbarView.js",
+            "line": 25,
+            "itemtype": "event",
+            "name": "click #drawboad-show-representation",
+            "class": "DrawBoard.View.ToolbarView",
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.View"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/view/ToolbarView.js",
+            "line": 29,
+            "itemtype": "event",
+            "name": "click #drawboard-export-png",
+            "class": "DrawBoard.View.ToolbarView",
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.View"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/view/ToolbarView.js",
+            "line": 34,
+            "description": "Calls DrawBoardController (server-side)",
+            "itemtype": "method",
+            "name": "exportFile",
+            "class": "DrawBoard.View.ToolbarView",
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.View"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/view/ToolbarView.js",
+            "line": 53,
+            "description": "Calls /drawboard/show",
+            "itemtype": "method",
+            "name": "showRepresentation",
+            "class": "DrawBoard.View.ToolbarView",
             "module": "DrawBoard",
             "namespace": "DrawBoard.View"
         },

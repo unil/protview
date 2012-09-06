@@ -41,6 +41,14 @@
         <div id="api-tabview-panel">
             <ul id="api-classes" class="apis classes">
             
+                <li><a href="..&#x2F;classes/Application.Sandbox.html">Application.Sandbox</a></li>
+            
+                <li><a href="..&#x2F;classes/Core.BackboneHelper.html">Core.BackboneHelper</a></li>
+            
+                <li><a href="..&#x2F;classes/Core.Controller.html">Core.Controller</a></li>
+            
+                <li><a href="..&#x2F;classes/Core.MainController.html">Core.MainController</a></li>
+            
                 <li><a href="..&#x2F;classes/Core.View.html">Core.View</a></li>
             
                 <li><a href="..&#x2F;classes/DrawBoard.Controller.DrawBoardController.html">DrawBoard.Controller.DrawBoardController</a></li>
@@ -56,6 +64,8 @@
                 <li><a href="..&#x2F;classes/DrawBoard.Utils.Drawing.html">DrawBoard.Utils.Drawing</a></li>
             
                 <li><a href="..&#x2F;classes/DrawBoard.View.DrawBoardView.html">DrawBoard.View.DrawBoardView</a></li>
+            
+                <li><a href="..&#x2F;classes/DrawBoard.View.ToolbarView.html">DrawBoard.View.ToolbarView</a></li>
             
                 <li><a href="..&#x2F;classes/Structure.Controller.MainController.html">Structure.Controller.MainController</a></li>
             
@@ -141,8 +151,8 @@
  *&#x2F;
 ProtView.Core.View = Backbone.View.extend({
 	&#x2F;**
-	@method initialize
-	@constructor
+	* @method initialize
+	* @constructor
 	**&#x2F;
 	initialize : function(args) {		
 		if (args.el == null)
@@ -156,6 +166,11 @@ ProtView.Core.View = Backbone.View.extend({
 		this.bindings = args.bindings;
 		this.el = args.el;
 	},
+	&#x2F;**
+	 * Unloads used bindings and events
+	 * 
+	 * @method unload
+	 *&#x2F;
 	unload : function() {
 		if (this.bindings != null)
 			this.modelBinder.unbind();
@@ -163,9 +178,19 @@ ProtView.Core.View = Backbone.View.extend({
 		&#x2F;*this.undelegateEvents();
 		this.remove();*&#x2F;
 	},
+	&#x2F;**
+	 * Set View&#x27;s Controller
+	 * @param controller
+	 * @method setController
+	 *&#x2F;
 	setController : function(controller) {
 		this.controller = controller;
 	},
+	&#x2F;**
+	 * Set View&#x27;s Model
+	 * @param model
+	 * @method setModel
+	 *&#x2F;
 	setModel : function(model) {
 		model.on(&#x27;change&#x27;, this.render, this);	
 		model.on(&#x27;reset&#x27;, this.render, this);
@@ -180,6 +205,7 @@ ProtView.Core.View = Backbone.View.extend({
 	 * @method valid
 	 * @param {Core.View} view
 	 * @param {Object} attributes
+	 * @chainable
 	 *&#x2F;
 	valid: function(view, attr) {
 		console.log(&#x27;ProtView.Core.View: valid function not defined in child element.&#x27;);
@@ -192,16 +218,30 @@ ProtView.Core.View = Backbone.View.extend({
 	 * @chainable
 	 * @param {Core.View} view
 	 * @param {Object} attributes
+	 * @chainable
 	 *&#x2F;
 	invalid: function(view, attr, error) {
 		console.log(&#x27;ProtView.Core.View: invalid function not defined in child element&#x27;);
 		return this;
 	},
+	&#x2F;**
+	 * Handles form submit
+	 * 
+	 * @method submitForm
+	 * @param {Object} event
+	 * @chainable
+	 *&#x2F;
 	submitForm : function(e) {
         e.preventDefault();
         this.controller.save();
         return this;
     },
+    &#x2F;**
+	 * Renders view
+	 *
+	 * @method render
+	 * @chainable
+	 *&#x2F;
 	render : function() {
 		var renderedContent = this.template(this.model.toJSON());
         $(this.el).html(renderedContent);

@@ -23,11 +23,11 @@ ProtView.DrawBoard.View.ToolbarView = Backbone.View.extend({
 	el : '#toolbar',
 	events : {
 		/**
-		 * @event click #drawboad-show-representation
+		 * @event click #drawboad-show-representation:showRepresentation
 		 */
 		'click #drawboad-show-representation' : 'showRepresentation',
 		/**
-		 * @event click #drawboard-export-png
+		 * @event click #drawboard-export-png:exportFile
 		 */
 		'click #drawboard-export-png' : 'exportFile'
 	},

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Core.View</title>
+    <title>Application.Sandbox</title>
     <link rel="stylesheet" href="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;3.5.1&#x2F;build&#x2F;cssgrids&#x2F;cssgrids-min.css">
     <link rel="stylesheet" href="..&#x2F;assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="..&#x2F;assets/css/main.css" id="site_styles">
@@ -132,7 +132,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1>Core.View Class</h1>
+                        <h1>Application.Sandbox Class</h1>
 <div class="box meta">
     
 
@@ -140,13 +140,13 @@
 
     
         <div class="foundat">
-            Defined in: <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_core_View.js.html#l1"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;core&#x2F;View.js:1</code></a>
+            Defined in: <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_application_Sandbox.js.html#l1"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;application&#x2F;Sandbox.js:1</code></a>
         </div>
     
 
     
         
-            Module: <a href="../modules/Core.html">Core</a>
+            Module: <a href="../modules/Application.html">Application</a>
         
     
 
@@ -156,7 +156,8 @@
 
 
 <div class="box intro">
-    <p>AbstractView, implements main functionalities</p>
+    <p>Application sandbox
+Protects model from being called directly.</p>
 </div>
 
 
@@ -183,49 +184,56 @@
 
                     <ul class="index-list methods">
                         
-                            <li class="index-item method">
-                                <a href="#method_initialize">initialize</a>
+                            <li class="index-item method private">
+                                <a href="#method_load">load</a>
 
                                 
                                 
                             </li>
                         
                             <li class="index-item method">
-                                <a href="#method_invalid">invalid</a>
+                                <a href="#method_publish">publish</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method private">
+                                <a href="#method_server">server</a>
 
                                 
                                 
                             </li>
                         
                             <li class="index-item method">
-                                <a href="#method_render">render</a>
+                                <a href="#method_start">start</a>
 
                                 
                                 
                             </li>
                         
                             <li class="index-item method">
-                                <a href="#method_setController">setController</a>
+                                <a href="#method_status">status</a>
 
                                 
                                 
                             </li>
                         
                             <li class="index-item method">
-                                <a href="#method_setModel">setModel</a>
+                                <a href="#method_stop">stop</a>
 
                                 
                                 
                             </li>
                         
                             <li class="index-item method">
-                                <a href="#method_submitForm">submitForm</a>
+                                <a href="#method_subscribe">subscribe</a>
 
                                 
                                 
                             </li>
                         
-                            <li class="index-item method">
+                            <li class="index-item method private">
                                 <a href="#method_unload">unload</a>
 
                                 
@@ -233,7 +241,7 @@
                             </li>
                         
                             <li class="index-item method">
-                                <a href="#method_valid">valid</a>
+                                <a href="#method_unsubscribe">unsubscribe</a>
 
                                 
                                 
@@ -255,62 +263,8 @@
                 <h2 class="off-left">Methods</h2>
 
                 
-                    <div id="method_initialize" class="method item">
-    <h3 class="name"><code>initialize</code></h3>
-
-    
-        <span class="paren">()</span>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_core_View.js.html#l15"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;core&#x2F;View.js:15</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="method_invalid" class="method item">
-    <h3 class="name"><code>invalid</code></h3>
+                    <div id="method_load" class="method item private">
+    <h3 class="name"><code>load</code></h3>
 
     
         <div class="args">
@@ -318,13 +272,13 @@
             
                 <li class="arg">
                     
-                        <code>view</code>
+                        <code>moduleName</code>
                     
                 </li>
             
                 <li class="arg">
                     
-                        <code>attributes</code>
+                        <code>domElement</code>
                     
                 </li>
             
@@ -337,13 +291,13 @@
     
 
     
-
+        <span class="flag private">private</span>
     
 
     
 
     
-        <span class="flag chainable">chainable</span>
+
     
 
     
@@ -359,7 +313,7 @@
             
         
         
-        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_core_View.js.html#l76"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;core&#x2F;View.js:76</code></a>
+        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_application_Sandbox.js.html#l43"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;application&#x2F;Sandbox.js:43</code></a>
         
         </p>
 
@@ -370,7 +324,9 @@
     </div>
 
     <div class="description">
-        <p>Validate model callback</p>
+        <p>Loads modules</p>
+
+<p>The specified module is loaded into domElement</p>
     </div>
 
     
@@ -381,8 +337,8 @@
             
                 <li class="param">
                     
-                        <code class="param-name">view</code>
-                        <span class="type"><a href="../classes/Core.View.html" class="crosslink">Core.View</a></span>
+                        <code class="param-name">moduleName</code>
+                        <span class="type">Object</span>
                     
 
                     
@@ -396,7 +352,7 @@
             
                 <li class="param">
                     
-                        <code class="param-name">attributes</code>
+                        <code class="param-name">domElement</code>
                         <span class="type">Object</span>
                     
 
@@ -419,64 +375,8 @@
 </div>
 
                 
-                    <div id="method_render" class="method item">
-    <h3 class="name"><code>render</code></h3>
-
-    
-        <span class="paren">()</span>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <span class="flag chainable">chainable</span>
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_core_View.js.html#l101"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;core&#x2F;View.js:101</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Renders view</p>
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="method_setController" class="method item">
-    <h3 class="name"><code>setController</code></h3>
+                    <div id="method_publish" class="method item">
+    <h3 class="name"><code>publish</code></h3>
 
     
         <div class="args">
@@ -484,7 +384,13 @@
             
                 <li class="arg">
                     
-                        <code>controller</code>
+                        <code>channel</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>arguments</code>
                     
                 </li>
             
@@ -517,7 +423,7 @@
             
         
         
-        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_core_View.js.html#l43"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;core&#x2F;View.js:43</code></a>
+        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_application_Sandbox.js.html#l121"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;application&#x2F;Sandbox.js:121</code></a>
         
         </p>
 
@@ -528,7 +434,7 @@
     </div>
 
     <div class="description">
-        <p>Set View's Controller</p>
+        <p>Publish message via Mediator</p>
     </div>
 
     
@@ -539,7 +445,22 @@
             
                 <li class="param">
                     
-                        <code class="param-name">controller</code>
+                        <code class="param-name">channel</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">arguments</code>
                         <span class="type">Object</span>
                     
 
@@ -562,8 +483,8 @@
 </div>
 
                 
-                    <div id="method_setModel" class="method item">
-    <h3 class="name"><code>setModel</code></h3>
+                    <div id="method_server" class="method item private">
+    <h3 class="name"><code>server</code></h3>
 
     
         <div class="args">
@@ -571,7 +492,104 @@
             
                 <li class="arg">
                     
-                        <code>model</code>
+                        <code>xaction</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_application_Sandbox.js.html#l17"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;application&#x2F;Sandbox.js:17</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Interacts with server side</p>
+
+<p>Server return is shown in given domElement</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">xaction</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_start" class="method item">
+    <h3 class="name"><code>start</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>module</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>el</code>
                     
                 </li>
             
@@ -604,7 +622,7 @@
             
         
         
-        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_core_View.js.html#l51"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;core&#x2F;View.js:51</code></a>
+        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_application_Sandbox.js.html#l87"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;application&#x2F;Sandbox.js:87</code></a>
         
         </p>
 
@@ -615,7 +633,9 @@
     </div>
 
     <div class="description">
-        <p>Set View's Model</p>
+        <p>Starts specified module</p>
+
+<p>Calls start</p>
     </div>
 
     
@@ -626,7 +646,22 @@
             
                 <li class="param">
                     
-                        <code class="param-name">model</code>
+                        <code class="param-name">module</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">el</code>
                         <span class="type">Object</span>
                     
 
@@ -649,8 +684,8 @@
 </div>
 
                 
-                    <div id="method_submitForm" class="method item">
-    <h3 class="name"><code>submitForm</code></h3>
+                    <div id="method_status" class="method item">
+    <h3 class="name"><code>status</code></h3>
 
     
         <div class="args">
@@ -658,7 +693,7 @@
             
                 <li class="arg">
                     
-                        <code>event</code>
+                        <code>moduleName</code>
                     
                 </li>
             
@@ -677,8 +712,6 @@
     
 
     
-        <span class="flag chainable">chainable</span>
-    
 
     
 
@@ -693,7 +726,7 @@
             
         
         
-        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_core_View.js.html#l89"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;core&#x2F;View.js:89</code></a>
+        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_application_Sandbox.js.html#l110"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;application&#x2F;Sandbox.js:110</code></a>
         
         </p>
 
@@ -704,7 +737,9 @@
     </div>
 
     <div class="description">
-        <p>Handles form submit</p>
+        <p>Retunrs current status of module</p>
+
+<p>Not implemented</p>
     </div>
 
     
@@ -715,7 +750,7 @@
             
                 <li class="param">
                     
-                        <code class="param-name">event</code>
+                        <code class="param-name">moduleName</code>
                         <span class="type">Object</span>
                     
 
@@ -738,17 +773,226 @@
 </div>
 
                 
-                    <div id="method_unload" class="method item">
+                    <div id="method_stop" class="method item">
+    <h3 class="name"><code>stop</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>module</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_application_Sandbox.js.html#l99"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;application&#x2F;Sandbox.js:99</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Stops specified module</p>
+
+<p>Calls stop</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">module</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_subscribe" class="method item">
+    <h3 class="name"><code>subscribe</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>channel</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>callback</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_application_Sandbox.js.html#l130"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;application&#x2F;Sandbox.js:130</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Subscribe to a channel using Mediator</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">channel</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">callback</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_unload" class="method item private">
     <h3 class="name"><code>unload</code></h3>
 
     
-        <span class="paren">()</span>
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>module</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
     
 
     
 
     
 
+    
+        <span class="flag private">private</span>
     
 
     
@@ -770,7 +1014,7 @@
             
         
         
-        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_core_View.js.html#l31"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;core&#x2F;View.js:31</code></a>
+        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_application_Sandbox.js.html#l73"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;application&#x2F;Sandbox.js:73</code></a>
         
         </p>
 
@@ -781,9 +1025,34 @@
     </div>
 
     <div class="description">
-        <p>Unloads used bindings and events</p>
+        <p>Unloads a module</p>
+
+<p>Is not implemented</p>
     </div>
 
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">module</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
     
 
     
@@ -792,8 +1061,8 @@
 </div>
 
                 
-                    <div id="method_valid" class="method item">
-    <h3 class="name"><code>valid</code></h3>
+                    <div id="method_unsubscribe" class="method item">
+    <h3 class="name"><code>unsubscribe</code></h3>
 
     
         <div class="args">
@@ -801,13 +1070,7 @@
             
                 <li class="arg">
                     
-                        <code>view</code>
-                    
-                </li>
-            
-                <li class="arg">
-                    
-                        <code>attributes</code>
+                        <code>channel</code>
                     
                 </li>
             
@@ -826,8 +1089,6 @@
     
 
     
-        <span class="flag chainable">chainable</span>
-    
 
     
 
@@ -842,7 +1103,7 @@
             
         
         
-        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_core_View.js.html#l64"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;core&#x2F;View.js:64</code></a>
+        <a href="..&#x2F;files&#x2F;_Volumes_FILES_smeier_Sites_protview_app_public_a_js_protview_application_Sandbox.js.html#l139"><code>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;application&#x2F;Sandbox.js:139</code></a>
         
         </p>
 
@@ -853,7 +1114,7 @@
     </div>
 
     <div class="description">
-        <p>Validate model callback</p>
+        <p>Unsubscribes channel</p>
     </div>
 
     
@@ -864,22 +1125,7 @@
             
                 <li class="param">
                     
-                        <code class="param-name">view</code>
-                        <span class="type"><a href="../classes/Core.View.html" class="crosslink">Core.View</a></span>
-                    
-
-                    
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                    
-                </li>
-            
-                <li class="param">
-                    
-                        <code class="param-name">attributes</code>
+                        <code class="param-name">channel</code>
                         <span class="type">Object</span>
                     
 
