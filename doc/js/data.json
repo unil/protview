@@ -74,6 +74,17 @@
                 "DrawBoard.Utils": 1
             }
         },
+        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/view/DrawBoardView.js": {
+            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/view/DrawBoardView.js",
+            "modules": {},
+            "classes": {
+                "DrawBoard.View.DrawBoardView": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "DrawBoard.View": 1
+            }
+        },
         "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/controller/MainController.js": {
             "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/controller/MainController.js",
             "modules": {},
@@ -225,6 +236,7 @@
                 "DrawBoard.Model.StructuralGeometry": 1,
                 "DrawBoard.Model.StructuralGeometryCollection": 1,
                 "DrawBoard.Utils.Drawing": 1,
+                "DrawBoard.View.DrawBoardView": 1,
                 "DrawBoard.Module": 1
             },
             "fors": {},
@@ -232,6 +244,7 @@
                 "DrawBoard.Controller": 1,
                 "DrawBoard.Model": 1,
                 "DrawBoard.Utils": 1,
+                "DrawBoard.View": 1,
                 "DrawBoard": 1
             },
             "tag": "main",
@@ -372,6 +385,20 @@
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/utils/Drawing.js",
             "line": 1,
             "description": "Draws protein and related forms in SVG"
+        },
+        "DrawBoard.View.DrawBoardView": {
+            "name": "DrawBoard.View.DrawBoardView",
+            "shortname": "DrawBoard.View.DrawBoardView",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.View",
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/view/DrawBoardView.js",
+            "line": 1,
+            "description": "Handles and shows drawboard"
         },
         "Structure.Controller.MainController": {
             "name": "Structure.Controller.MainController",
@@ -936,7 +963,8 @@
             "line": 25,
             "description": "Constructor",
             "itemtype": "method",
-            "name": "svg",
+            "name": "int",
+            "is_constructor": 1,
             "params": [
                 {
                     "name": "svg",
@@ -950,7 +978,7 @@
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/utils/Drawing.js",
-            "line": 34,
+            "line": 35,
             "description": "Paints a protein",
             "itemtype": "method",
             "name": "paint",
@@ -982,7 +1010,7 @@
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/utils/Drawing.js",
-            "line": 91,
+            "line": 92,
             "description": "Draws an amino acid element",
             "params": [
                 {
@@ -1018,7 +1046,7 @@
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/utils/Drawing.js",
-            "line": 127,
+            "line": 128,
             "description": "Draws the membrane of the current protein",
             "params": [
                 {
@@ -1046,7 +1074,7 @@
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/utils/Drawing.js",
-            "line": 149,
+            "line": 150,
             "description": "Adds drag and drop support to an SVG Element\n\nCallback and context are used to inform when an elements position has changed",
             "params": [
                 {
@@ -1067,6 +1095,96 @@
             "class": "DrawBoard.Utils.Drawing",
             "module": "DrawBoard",
             "namespace": "DrawBoard.Utils"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/view/DrawBoardView.js",
+            "line": 16,
+            "description": "Initalizes svg element and settings",
+            "itemtype": "method",
+            "name": "initialize",
+            "is_constructor": 1,
+            "class": "DrawBoard.View.DrawBoardView",
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.View"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/view/DrawBoardView.js",
+            "line": 37,
+            "description": "Callback function used to update elements position",
+            "params": [
+                {
+                    "name": "DOMElement",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "x-coordinate",
+                    "description": "",
+                    "type": "Int"
+                },
+                {
+                    "name": "y-coordinate",
+                    "description": "",
+                    "type": "Int"
+                },
+                {
+                    "name": "{Object)",
+                    "description": "context"
+                }
+            ],
+            "itemtype": "method",
+            "name": "updateCoord",
+            "class": "DrawBoard.View.DrawBoardView",
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.View"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/view/DrawBoardView.js",
+            "line": 52,
+            "description": "Sets the model",
+            "params": [
+                {
+                    "name": "model",
+                    "description": "",
+                    "type": "DrawBoard.Model.Representation"
+                }
+            ],
+            "itemtype": "method",
+            "name": "setModel",
+            "class": "DrawBoard.View.DrawBoardView",
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.View"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/view/DrawBoardView.js",
+            "line": 63,
+            "description": "Resizes drawboard in function of the screen dimension",
+            "itemtype": "method",
+            "name": "resize",
+            "class": "DrawBoard.View.DrawBoardView",
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.View"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/view/DrawBoardView.js",
+            "line": 73,
+            "description": "Renders view",
+            "itemtype": "method",
+            "name": "render",
+            "chainable": 1,
+            "class": "DrawBoard.View.DrawBoardView",
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.View"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/view/DrawBoardView.js",
+            "line": 89,
+            "description": "Clears the drawboard",
+            "itemtype": "method",
+            "name": "clear",
+            "class": "DrawBoard.View.DrawBoardView",
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.View"
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/controller/MainController.js",

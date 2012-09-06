@@ -8,6 +8,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "DrawBoard.Model.StructuralGeometryCollection",
         "DrawBoard.Module",
         "DrawBoard.Utils.Drawing",
+        "DrawBoard.View.DrawBoardView",
         "Structure.Controller.MainController",
         "Structure.Controller.PeptideController",
         "Structure.Controller.ProteinController",
