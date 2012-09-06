@@ -12,8 +12,6 @@ require_once(xContext::$basepath.'/lib/protview/protview/geom/shape/basic/Line.p
  */
 class MembranePattern extends ComplexShape {
 
-	//distributes all elements in steady way to all lines
-	//number * amino acid size
 	private $maxLineLength;
 	private $length;
 	private $membraneCoords = array("minY" => 0, "maxY" => 0);
@@ -27,7 +25,14 @@ class MembranePattern extends ComplexShape {
 	{
 		return $this->maxLineLength;
 	}
-	
+	/**
+	 * Sets number of amino acids per line
+	 * 
+	 * distributes all elements in steady way to all lines
+	 * number * amino acid size
+	 * 
+	 * @param int $maxLineLength
+	 */
 	public function setMaxLineLength($maxLineLength)
 	{
 		$this->maxLineLength = $maxLineLength;
@@ -43,6 +48,15 @@ class MembranePattern extends ComplexShape {
 		$this->length = $length;
 	}
 	
+	/**
+	 * Gets membrane position
+	 * 
+	 * <code>
+	 * array("minY" => float, "maxY" => float);
+	 * </code>
+	 * 
+	 * @return array
+	 */
 	public function getMembraneCoords()
 	{
 		return $this->membraneCoords;

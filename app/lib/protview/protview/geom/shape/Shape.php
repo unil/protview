@@ -117,6 +117,17 @@ abstract class Shape {
 		}
 	}
 	
+	/**
+	 * Returns coordinates of each point in the shape
+	 * 
+	 * <code>
+	 * array (
+	 * 	array('x' => int, 'y' => int)
+	 * )
+	 * </code>
+	 * 
+	 * @return array
+	 */
 	abstract function getCoord();
 }
 

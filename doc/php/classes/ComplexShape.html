@@ -34,7 +34,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">300</span></a></li>
+                <span class="label label-info">278</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
@@ -60,8 +60,7 @@
 <i class="icon-custom icon-method"></i> Methods</li>
 <li class="method public "><a href="#__construct" title="__construct :: "><span class="description">__construct()
         </span><pre>__construct()</pre></a></li>
-<li class="method public inherited"><a href="#getCoord" title="getCoord :: "><span class="description">getCoord()
-        </span><pre>getCoord()</pre></a></li>
+<li class="method public inherited"><a href="#getCoord" title="getCoord :: Returns coordinates of each point in the shape"><span class="description">Returns coordinates of each point in the shape</span><pre>getCoord()</pre></a></li>
 <li class="method public inherited"><a href="#getLastCoord" title="getLastCoord :: Returns coordinates of last point"><span class="description">Returns coordinates of last point</span><pre>getLastCoord()</pre></a></li>
 <li class="method public inherited"><a href="#getOffset" title="getOffset :: "><span class="description">getOffset()
         </span><pre>getOffset()</pre></a></li>
@@ -94,9 +93,9 @@
 </li>
 </ul>
 <div href="../classes/ComplexShape.html" class="element class">
-<p class="short_description">Complex Shape</p>
+<p class="short_description">Base class for each complex shapes</p>
 <div class="details">
-<p class="long_description"><p>Abstract class to separate basic shapes from complex shapes</p></p>
+<p class="long_description"></p>
 <table class="table table-bordered">
 <tr>
 <th>abstract</th>
@@ -130,16 +129,20 @@
 </div></div>
 </div>
 <a name="getCoord" id="getCoord"></a><div class="element clickable method public getCoord" data-toggle="collapse" data-target=".getCoord .collapse">
-<h2>getCoord()
-        </h2>
-<pre>getCoord() </pre>
+<h2>Returns coordinates of each point in the shape</h2>
+<pre>getCoord() : array</pre>
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
+<p class="long_description"><pre><code>array (
+    array('x' => int, 'y' => int)
+)
+</code></pre></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
 <td>\Shape::getCoord()</td>
 </tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
 </div></div>
 </div>
 <a name="getLastCoord" id="getLastCoord"></a><div class="element clickable method public getLastCoord" data-toggle="collapse" data-target=".getLastCoord .collapse">
@@ -320,7 +323,7 @@
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a9</a> and<br>
-            generated on 2012-09-06T17:39:58+02:00.<br></footer></div>
+            generated on 2012-09-06T17:50:49+02:00.<br></footer></div>
 </div>
 </body>
 </html>

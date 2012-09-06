@@ -34,7 +34,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">300</span></a></li>
+                <span class="label label-info">278</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
@@ -60,8 +60,7 @@
 <i class="icon-custom icon-method"></i> Methods</li>
 <li class="method public "><a href="#__construct" title="__construct :: "><span class="description">__construct()
         </span><pre>__construct()</pre></a></li>
-<li class="method public "><a href="#getCoord" title="getCoord :: "><span class="description">getCoord()
-        </span><pre>getCoord()</pre></a></li>
+<li class="method public "><a href="#getCoord" title="getCoord :: Returns coordinates of each point in the shape"><span class="description">Returns coordinates of each point in the shape</span><pre>getCoord()</pre></a></li>
 <li class="method public inherited"><a href="#getLastCoord" title="getLastCoord :: Returns coordinates of last point"><span class="description">Returns coordinates of last point</span><pre>getLastCoord()</pre></a></li>
 <li class="method public inherited"><a href="#getOffset" title="getOffset :: "><span class="description">getOffset()
         </span><pre>getOffset()</pre></a></li>
@@ -69,16 +68,12 @@
         </span><pre>getRotation()</pre></a></li>
 <li class="method public inherited"><a href="#getStartCoord" title="getStartCoord :: "><span class="description">getStartCoord()
         </span><pre>getStartCoord()</pre></a></li>
-<li class="method public "><a href="#setBasicLoopSideLength" title="setBasicLoopSideLength :: "><span class="description">setBasicLoopSideLength()
-        </span><pre>setBasicLoopSideLength()</pre></a></li>
-<li class="method public "><a href="#setExtendLoopSideLength" title="setExtendLoopSideLength :: "><span class="description">setExtendLoopSideLength()
-        </span><pre>setExtendLoopSideLength()</pre></a></li>
-<li class="method public "><a href="#setExtendLoopSideMiddleLength" title="setExtendLoopSideMiddleLength :: "><span class="description">setExtendLoopSideMiddleLength()
-        </span><pre>setExtendLoopSideMiddleLength()</pre></a></li>
+<li class="method public "><a href="#setBasicLoopSideLength" title="setBasicLoopSideLength :: Sets basic height"><span class="description">Sets basic height</span><pre>setBasicLoopSideLength()</pre></a></li>
+<li class="method public "><a href="#setExtendLoopSideLength" title="setExtendLoopSideLength :: Sets the extension side length"><span class="description">Sets the extension side length</span><pre>setExtendLoopSideLength()</pre></a></li>
+<li class="method public "><a href="#setExtendLoopSideMiddleLength" title="setExtendLoopSideMiddleLength :: Sets the extend loop cercle length"><span class="description">Sets the extend loop cercle length</span><pre>setExtendLoopSideMiddleLength()</pre></a></li>
 <li class="method public inherited"><a href="#setLastCoord" title="setLastCoord :: "><span class="description">setLastCoord()
         </span><pre>setLastCoord()</pre></a></li>
-<li class="method public "><a href="#setNbExtendLoop" title="setNbExtendLoop :: "><span class="description">setNbExtendLoop()
-        </span><pre>setNbExtendLoop()</pre></a></li>
+<li class="method public "><a href="#setNbExtendLoop" title="setNbExtendLoop :: Sets number of extension loops"><span class="description">Sets number of extension loops</span><pre>setNbExtendLoop()</pre></a></li>
 <li class="method public inherited"><a href="#setOffset" title="setOffset :: Defines distance between each point"><span class="description">Defines distance between each point</span><pre>setOffset()</pre></a></li>
 <li class="method public inherited"><a href="#setRotation" title="setRotation :: Sets shape rotation"><span class="description">Sets shape rotation</span><pre>setRotation()</pre></a></li>
 <li class="method public inherited"><a href="#setStartCoord" title="setStartCoord :: Sets start coordinates"><span class="description">Sets start coordinates</span><pre>setStartCoord()</pre></a></li>
@@ -106,13 +101,13 @@
 </li>
 </ul>
 <div href="../classes/ExtendedLoop.html" class="element class">
-<p class="short_description">Complex Shape</p>
+<p class="short_description">Calculates an extended loop</p>
 <div class="details">
-<p class="long_description"><p>Abstract class to separate basic shapes from complex shapes</p></p>
+<p class="long_description"></p>
 <table class="table table-bordered">
 <tr>
 <th>package</th>
-<td><a href="../packages/Default.html">protview\geom\shape\complex</a></td>
+<td><a href="../packages/protview.geom.shape.complex.html">protview\geom\shape\complex</a></td>
 </tr>
 <tr>
 <th>author</th>
@@ -138,11 +133,17 @@
 </div></div>
 </div>
 <a name="getCoord" id="getCoord"></a><div class="element clickable method public getCoord" data-toggle="collapse" data-target=".getCoord .collapse">
-<h2>getCoord()
-        </h2>
-<pre>getCoord() </pre>
+<h2>Returns coordinates of each point in the shape</h2>
+<pre>getCoord() : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><pre><code>array (
+    array('x' => int, 'y' => int)
+)
+</code></pre></p>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
 </div>
 <a name="getLastCoord" id="getLastCoord"></a><div class="element clickable method public getLastCoord" data-toggle="collapse" data-target=".getLastCoord .collapse">
 <h2>Returns coordinates of last point</h2>
@@ -222,36 +223,42 @@
 </div></div>
 </div>
 <a name="setBasicLoopSideLength" id="setBasicLoopSideLength"></a><div class="element clickable method public setBasicLoopSideLength" data-toggle="collapse" data-target=".setBasicLoopSideLength .collapse">
-<h2>setBasicLoopSideLength()
-        </h2>
-<pre>setBasicLoopSideLength($basicLoopSideLength) </pre>
+<h2>Sets basic height</h2>
+<pre>setBasicLoopSideLength(int $basicLoopSideLength) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$basicLoopSideLength</h4></div>
+<div class="subelement argument">
+<h4>$basicLoopSideLength</h4>
+<code>int</code>
+</div>
 </div></div>
 </div>
 <a name="setExtendLoopSideLength" id="setExtendLoopSideLength"></a><div class="element clickable method public setExtendLoopSideLength" data-toggle="collapse" data-target=".setExtendLoopSideLength .collapse">
-<h2>setExtendLoopSideLength()
-        </h2>
-<pre>setExtendLoopSideLength($extendLoopSideLength) </pre>
+<h2>Sets the extension side length</h2>
+<pre>setExtendLoopSideLength(int $extendLoopSideLength) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$extendLoopSideLength</h4></div>
+<div class="subelement argument">
+<h4>$extendLoopSideLength</h4>
+<code>int</code>
+</div>
 </div></div>
 </div>
 <a name="setExtendLoopSideMiddleLength" id="setExtendLoopSideMiddleLength"></a><div class="element clickable method public setExtendLoopSideMiddleLength" data-toggle="collapse" data-target=".setExtendLoopSideMiddleLength .collapse">
-<h2>setExtendLoopSideMiddleLength()
-        </h2>
-<pre>setExtendLoopSideMiddleLength($extendLoopSideMiddleLength) </pre>
+<h2>Sets the extend loop cercle length</h2>
+<pre>setExtendLoopSideMiddleLength(int $extendLoopSideMiddleLength) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$extendLoopSideMiddleLength</h4></div>
+<div class="subelement argument">
+<h4>$extendLoopSideMiddleLength</h4>
+<code>int</code>
+</div>
 </div></div>
 </div>
 <a name="setLastCoord" id="setLastCoord"></a><div class="element clickable method public setLastCoord" data-toggle="collapse" data-target=".setLastCoord .collapse">
@@ -276,14 +283,16 @@
 </div></div>
 </div>
 <a name="setNbExtendLoop" id="setNbExtendLoop"></a><div class="element clickable method public setNbExtendLoop" data-toggle="collapse" data-target=".setNbExtendLoop .collapse">
-<h2>setNbExtendLoop()
-        </h2>
-<pre>setNbExtendLoop($nbExtendLoop) </pre>
+<h2>Sets number of extension loops</h2>
+<pre>setNbExtendLoop(int $nbExtendLoop) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$nbExtendLoop</h4></div>
+<div class="subelement argument">
+<h4>$nbExtendLoop</h4>
+<code>int</code>
+</div>
 </div></div>
 </div>
 <a name="setOffset" id="setOffset"></a><div class="element clickable method public setOffset" data-toggle="collapse" data-target=".setOffset .collapse">
@@ -462,7 +471,7 @@
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a9</a> and<br>
-            generated on 2012-09-06T17:39:58+02:00.<br></footer></div>
+            generated on 2012-09-06T17:50:49+02:00.<br></footer></div>
 </div>
 </body>
 </html>
