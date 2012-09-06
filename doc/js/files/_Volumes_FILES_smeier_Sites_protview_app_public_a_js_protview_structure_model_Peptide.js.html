@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;core&#x2F;View.js</title>
+    <title>&#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;structure&#x2F;model&#x2F;Peptide.js</title>
     <link rel="stylesheet" href="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;3.5.1&#x2F;build&#x2F;cssgrids&#x2F;cssgrids-min.css">
     <link rel="stylesheet" href="..&#x2F;assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="..&#x2F;assets/css/main.css" id="site_styles">
@@ -104,94 +104,145 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: &#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;core&#x2F;View.js</h1>
+                        <h1 class="file-heading">File: &#x2F;Volumes&#x2F;FILES&#x2F;smeier&#x2F;Sites&#x2F;protview&#x2F;app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;structure&#x2F;model&#x2F;Peptide.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
 &#x2F;**
  * 
- * AbstractView, implements main functionalities
+ * Peptide model
  * 
  * 
- * @module Core
- * @namespace Core
- * @class View
+ * @module Structure
+ * @namespace Structure.Model
+ * @class Peptide
+ * @extends Backbone.Model
  * 
  * @author Stefan Meier
  * @version 20120903
  * 
  *&#x2F;
-ProtView.Core.View = Backbone.View.extend({
+ProtView.Structure.Model.Peptide = Backbone.RelationalModel.extend({
+	defaults : {
+		&#x2F;**
+		* Peptide id
+		*
+		* @property id
+		* @type int
+		* @default null
+		**&#x2F;
+		id: null,
+		&#x2F;**
+		* Peptide sequence
+		*
+		* @property sequence
+		* @type String
+		* @default null
+		**&#x2F;
+		sequence: null,
+		&#x2F;**
+		* N-Terminus
+		* 
+		* Accepted values: intra|extra
+		*
+		* @property terminusN
+		* @type String
+		* @default null
+		**&#x2F;
+		terminusN: null,
+		&#x2F;**
+		* C-Terminus
+		* 
+		* Accepted values: intra|extra
+		*
+		* @property terminusC
+		* @type String
+		* @default null
+		**&#x2F;
+		terminusC: null,
+		&#x2F;**
+		* Peptide regions
+		* 
+		* @example
+		* 
+		* [
+		* 	{id : int, start : int, end : int}
+		* ]
+		*
+		* @property regions
+		* @type Array
+		* @default {}
+		**&#x2F;
+		regions : {},
+		&#x2F;**
+		* Foreign key to protein id
+		*
+		* @property protein_id
+		* @type int
+		* @default null
+		**&#x2F;
+		protein_id : null
+	},
+	initialize : function Peptide() {
+	},
 	&#x2F;**
-	@method initialize
-	@constructor
-	**&#x2F;
-	initialize : function(args) {		
-		if (args.el == null)
-			console.log(&#x27;ProtView.Core.View: define el&#x27;);
-		if (args.templateEl == null)
-			console.log(&#x27;ProtView.Core.View: define templateEL&#x27;);
-		if (args.bindings != null) {
-			this.modelBinder = new Backbone.ModelBinder();
-		}
-		this.template = _.template($(args.templateEl).html());
-		this.bindings = args.bindings;
-		this.el = args.el;
-	},
-	unload : function() {
-		if (this.bindings != null)
-			this.modelBinder.unbind();
-		Backbone.Validation.unbind(this);
-		&#x2F;*this.undelegateEvents();
-		this.remove();*&#x2F;
-	},
-	setController : function(controller) {
-		this.controller = controller;
-	},
-	setModel : function(model) {
-		model.on(&#x27;change&#x27;, this.render, this);	
-		model.on(&#x27;reset&#x27;, this.render, this);
-		model.on(&#x27;validated:valid&#x27;, this.valid, this);
-		model.on(&#x27;validated:invalid&#x27;, this.invalid, this); 
-		
-        this.model = model;
-	},
-	&#x2F;**
-	 * Validate model callback
+	 * Gets the URL of related server resource able to handle requests
 	 * 
-	 * @method valid
-	 * @param {Core.View} view
-	 * @param {Object} attributes
+	 * @method url
+	 * @return {String} url
 	 *&#x2F;
-	valid: function(view, attr) {
-		console.log(&#x27;ProtView.Core.View: valid function not defined in child element.&#x27;);
-		return this;
+	url : function() {
+		var root = Application.ROOTPATH;
+		var url = root + &#x27;api&#x2F;peptides&#x27;;
+		&#x2F;*if (this.id != null)
+			url += &#x27;&#x2F;&#x27; + this.id;*&#x2F;
+
+		return url + &#x27;?protein_id=&#x27; + this.attributes.protein_id + &#x27;&amp;regions=membrane&#x27;;
 	},
 	&#x2F;**
-	 * Validate model callback
+	 * Validates model properties
 	 * 
-	 * @method invalid
-	 * @chainable
-	 * @param {Core.View} view
-	 * @param {Object} attributes
+	 * @method validaton
 	 *&#x2F;
-	invalid: function(view, attr, error) {
-		console.log(&#x27;ProtView.Core.View: invalid function not defined in child element&#x27;);
-		return this;
+	validation : {
+		regions: function(regions) {
+			var valid = true;
+			&#x2F;&#x2F;var isNumber = this.isNumber();
+			_.each(regions, function(val, key) {
+				var id = val.id;
+				var start = val.start;
+				var end = val.end;
+
+				if (valid)
+					valid = this.isNumber(start);
+				
+				if (valid)
+					valid = this.isNumber(end) &amp;&amp; end &gt; start;
+				
+				if (valid)
+					valid = this.isNumber(id) &amp;&amp; id &gt;= 0;
+							
+			}, this);
+			if (!valid)
+				return &#x27;invalid&#x27;;
+		},
+		&#x2F;*sequence : {
+			required: true,
+			minLength: 1
+		},
+		terminusN : function(value) {
+			if(value == null)
+				return &#x27;invalid&#x27;;
+		},
+		terminusC : function(value) {
+			if(value == null)
+				return &#x27;invalid&#x27;;
+		}*&#x2F;
 	},
-	submitForm : function(e) {
-        e.preventDefault();
-        this.controller.save();
-        return this;
-    },
-	render : function() {
-		var renderedContent = this.template(this.model.toJSON());
-        $(this.el).html(renderedContent);
-        if (this.bindings != null)
-        	this.modelBinder.bind(this.model, this.el, this.bindings);
-        Backbone.Validation.bind(this);
-		return this;
-	},
+	&#x2F;&#x2F;basic check if the value is a number
+	isNumber : function (n) {
+		  return !isNaN(parseFloat(n)) &amp;&amp; isFinite(n);
+	}
 });
     </pre>
 </div>

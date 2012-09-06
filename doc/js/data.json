@@ -26,6 +26,17 @@
             "fors": {},
             "namespaces": {}
         },
+        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/model/Peptide.js": {
+            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/model/Peptide.js",
+            "modules": {},
+            "classes": {
+                "Structure.Model.Peptide": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Structure.Model": 1
+            }
+        },
         "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/model/Protein.js": {
             "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/model/Protein.js",
             "modules": {},
@@ -128,6 +139,7 @@
             "name": "Structure",
             "submodules": {},
             "classes": {
+                "Structure.Model.Peptide": 1,
                 "Structure.Model.Protein": 1,
                 "Structure.View.NewProteinView": 1,
                 "Structure.View.PeptideView": 1,
@@ -196,6 +208,20 @@
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/View.js",
             "line": 1,
             "description": "AbstractView, implements main functionalities"
+        },
+        "Structure.Model.Peptide": {
+            "name": "Structure.Model.Peptide",
+            "shortname": "Structure.Model.Peptide",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Structure",
+            "namespace": "Structure.Model",
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/model/Peptide.js",
+            "line": 1,
+            "description": "Peptide model"
         },
         "Structure.Model.Protein": {
             "name": "Structure.Model.Protein",
@@ -377,7 +403,7 @@
                     "description": ""
                 }
             ],
-            "class": "Structure.Model.Protein",
+            "class": "Structure.Model.Peptide",
             "module": "Core",
             "namespace": "Core"
         },
@@ -403,7 +429,7 @@
                     "description": ""
                 }
             ],
-            "class": "Structure.Model.Protein",
+            "class": "Structure.Model.Peptide",
             "module": "Core",
             "namespace": "Core"
         },
@@ -417,9 +443,108 @@
                     "description": ""
                 }
             ],
-            "class": "Structure.Model.Protein",
+            "class": "Structure.Model.Peptide",
             "module": "Core",
             "namespace": "Core"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/model/Peptide.js",
+            "line": 17,
+            "description": "Peptide id",
+            "itemtype": "property",
+            "name": "id",
+            "type": "int",
+            "default": "null",
+            "class": "Structure.Model.Peptide",
+            "module": "Structure",
+            "namespace": "Structure.Model"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/model/Peptide.js",
+            "line": 25,
+            "description": "Peptide sequence",
+            "itemtype": "property",
+            "name": "sequence",
+            "type": "String",
+            "default": "null",
+            "class": "Structure.Model.Peptide",
+            "module": "Structure",
+            "namespace": "Structure.Model"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/model/Peptide.js",
+            "line": 33,
+            "description": "N-Terminus\n\nAccepted values: intra|extra",
+            "itemtype": "property",
+            "name": "terminusN",
+            "type": "String",
+            "default": "null",
+            "class": "Structure.Model.Peptide",
+            "module": "Structure",
+            "namespace": "Structure.Model"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/model/Peptide.js",
+            "line": 43,
+            "description": "C-Terminus\n\nAccepted values: intra|extra",
+            "itemtype": "property",
+            "name": "terminusC",
+            "type": "String",
+            "default": "null",
+            "class": "Structure.Model.Peptide",
+            "module": "Structure",
+            "namespace": "Structure.Model"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/model/Peptide.js",
+            "line": 53,
+            "description": "Peptide regions",
+            "example": [
+                "\n\n[\n\t{id : int, start : int, end : int}\n]"
+            ],
+            "itemtype": "property",
+            "name": "regions",
+            "type": "Array",
+            "default": "{}",
+            "class": "Structure.Model.Peptide",
+            "module": "Structure",
+            "namespace": "Structure.Model"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/model/Peptide.js",
+            "line": 67,
+            "description": "Foreign key to protein id",
+            "itemtype": "property",
+            "name": "protein_id",
+            "type": "int",
+            "default": "null",
+            "class": "Structure.Model.Peptide",
+            "module": "Structure",
+            "namespace": "Structure.Model"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/model/Peptide.js",
+            "line": 78,
+            "description": "Gets the URL of related server resource able to handle requests",
+            "itemtype": "method",
+            "name": "url",
+            "return": {
+                "description": "url",
+                "type": "String"
+            },
+            "class": "Structure.Model.Peptide",
+            "module": "Structure",
+            "namespace": "Structure.Model"
+        },
+        {
+            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/model/Peptide.js",
+            "line": 92,
+            "description": "Validates model properties",
+            "itemtype": "method",
+            "name": "validaton",
+            "class": "Structure.Model.Peptide",
+            "module": "Structure",
+            "namespace": "Structure.Model"
         },
         {
             "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/model/Protein.js",

@@ -3,6 +3,7 @@ YUI.add("yuidoc-meta", function(Y) {
     "classes": [
         "Core.View",
         "DrawBoard.Module",
+        "Structure.Model.Peptide",
         "Structure.Model.Protein",
         "Structure.Module",
         "Structure.View.NewProteinView",
