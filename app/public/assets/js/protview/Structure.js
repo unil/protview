@@ -1,5 +1,29 @@
+/**
+* Contains module controllers
+* 
+* @author Stefan Meier
+* @version 20120903
+* 
+* @module Structure
+*/
 ProtView.Structure.Controller = {};
+/**
+* Contains module models
+* 
+* @author Stefan Meier
+* @version 20120903
+* 
+* @module Structure
+*/
 ProtView.Structure.Model = {};
+/**
+* Contains module views
+* 
+* @author Stefan Meier
+* @version 20120903
+* 
+* @module Structure
+*/
 ProtView.Structure.View = {};
 
 /**
