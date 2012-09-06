@@ -1,21 +1,42 @@
+/**
+ * 
+ * Handles and shows Toolbar
+ * 
+ * 
+ * @module DrawBoard
+ * @namespace DrawBoard.View
+ * @class ToolbarView
+ * @extends Backbone.View
+ * 
+ * @author Stefan Meier
+ * @version 20120903
+ * 
+ */
 ProtView.DrawBoard.View.ToolbarView = Backbone.View.extend({
+	/**
+	* Contains View's main Dom-Element
+	*
+	* @property el
+	* @type String
+	* @default #toolbar
+	**/
 	el : '#toolbar',
 	events : {
+		/**
+		 * @event click #drawboad-show-representation
+		 */
 		'click #drawboad-show-representation' : 'showRepresentation',
+		/**
+		 * @event click #drawboard-export-png
+		 */
 		'click #drawboard-export-png' : 'exportFile'
 	},
-	exportFile : function() {
-		/*var svg_data = $('#svg-representation').contents();
-		var svgContent = '';
-		svg_data.each(function(key, val) {
-			svgContent += $("<div/>").html($(val).clone()[0]).html();
-		});*/
-
-		/*
-		 * var svg = $('#drawBoard').svg('get'); var svgContent = svg.toSVG();
-		 */
-		
-		
+	/**
+	 * Calls DrawBoardController (server-side)
+	 * 
+	 * @method exportFile
+	 */
+	exportFile : function() {		
 		var url = Application.ROOTPATH + 'raw/drawboard/do/exportDialog';
 		$.ajax({
 			type : 'post',
@@ -29,6 +50,11 @@ ProtView.DrawBoard.View.ToolbarView = Backbone.View.extend({
 			}
 		});
 	},
+	/**
+	 * Calls /drawboard/show
+	 * 
+	 * @method showRepresentation
+	 */
 	showRepresentation: function() {
 		ProtView.Application.Sandbox.publish("/drawboard/show", ['drawboard', Application.CONTEXT.getRepresentation()]);
 	}
