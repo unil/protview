@@ -59,8 +59,6 @@ ProtView.DrawBoard.Controller.DrawBoardController = ProtView.Core.Controller.ext
 	 * @param {int} representationId
 	**/
 	show : function(representation) {
-		console.log('show');
-		console.log(this);
 		this.clear();
 		this.fetch(representation);
 	},
