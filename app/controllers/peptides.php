@@ -364,7 +364,7 @@ class PeptidesController extends RESTController {
 
 		$ret = xController::load(
 				'representations', array(
-						'peptide_id' => 1
+						'peptide_id' => $peptide_id
 							
 				))->get(0);
 
