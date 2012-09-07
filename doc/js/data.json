@@ -1438,7 +1438,7 @@
         },
         {
             "file": "app/public/a/js/protview/core/Controller.js",
-            "line": 15,
+            "line": 16,
             "description": "Model handled by the controller",
             "itemtype": "property",
             "name": "model",
@@ -1450,7 +1450,7 @@
         },
         {
             "file": "app/public/a/js/protview/core/Controller.js",
-            "line": 23,
+            "line": 24,
             "description": "Views handled by the controller",
             "itemtype": "property",
             "name": "views",
@@ -1462,7 +1462,7 @@
         },
         {
             "file": "app/public/a/js/protview/core/Controller.js",
-            "line": 31,
+            "line": 32,
             "description": "Contains all loaded resources",
             "itemtype": "property",
             "name": "stack",
@@ -1474,7 +1474,7 @@
         },
         {
             "file": "app/public/a/js/protview/core/Controller.js",
-            "line": 39,
+            "line": 40,
             "description": "Constructor",
             "params": [
                 {
@@ -1590,7 +1590,7 @@
         },
         {
             "file": "app/public/a/js/protview/core/MainController.js",
-            "line": 15,
+            "line": 16,
             "description": "Contains all loaded resources",
             "itemtype": "property",
             "name": "stack",
@@ -1602,7 +1602,7 @@
         },
         {
             "file": "app/public/a/js/protview/core/MainController.js",
-            "line": 23,
+            "line": 25,
             "description": "Gets controller from stack",
             "params": [
                 {
@@ -1620,7 +1620,7 @@
         },
         {
             "file": "app/public/a/js/protview/core/MainController.js",
-            "line": 32,
+            "line": 34,
             "description": "Unloads all loaded resources",
             "itemtype": "method",
             "name": "unload",

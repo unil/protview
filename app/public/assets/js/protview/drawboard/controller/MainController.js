@@ -25,8 +25,8 @@ ProtView.DrawBoard.Controller.MainController = ProtView.Core.MainController.exte
 	 */
 	load : function(resource) {
 		var controller = null,
-		view = null,
-		stack = this.stack;
+			view = null,
+			stack = this.stack;
 
 		if (!stack[resource]) {
 			switch(resource) {

@@ -160,36 +160,36 @@
  * 
  *&#x2F;
 ProtView.Core.Controller = Class.extend( {
-	&#x2F;**
-	* Model handled by the controller
-	*
-	* @property model
-	* @type Object
-	* @default null
-	**&#x2F;
-	model : null,
-	&#x2F;**
-	* Views handled by the controller
-	*
-	* @property views
-	* @type Object
-	* @default {}
-	**&#x2F;
-	views: {},
-	&#x2F;**
-	* Contains all loaded resources
-	*
-	* @property stack
-	* @type Object
-	* @default null
-	**&#x2F;
-	stack : {},
-	&#x2F;**
-	 * Constructor
-	 * @param model
-	 * @method init
-	 *&#x2F;
 	init: function(model) {
+		&#x2F;**
+		* Model handled by the controller
+		*
+		* @property model
+		* @type Object
+		* @default null
+		**&#x2F;
+		this.model = null;
+		&#x2F;**
+		* Views handled by the controller
+		*
+		* @property views
+		* @type Object
+		* @default {}
+		**&#x2F;
+		this.views = {};
+		&#x2F;**
+		* Contains all loaded resources
+		*
+		* @property stack
+		* @type Object
+		* @default null
+		**&#x2F;
+		this.stack = {};
+		&#x2F;**
+		 * Constructor
+		 * @param model
+		 * @method init
+		 *&#x2F;
 		var stack = {};
 		var helper = new ProtView.Core.BackboneHelper(model);
 		

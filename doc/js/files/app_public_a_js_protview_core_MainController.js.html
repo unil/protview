@@ -160,14 +160,16 @@
  * 
  *&#x2F;
 ProtView.Core.MainController = Class.extend( {
-	&#x2F;**
-	* Contains all loaded resources
-	*
-	* @property stack
-	* @type Object
-	* @default null
-	**&#x2F;
-	stack : {},
+	init: function() {
+		&#x2F;**
+		* Contains all loaded resources
+		*
+		* @property stack
+		* @type Object
+		* @default null
+		**&#x2F;
+		this.stack = {};
+	},
 	&#x2F;**
 	 * Gets controller from stack
 	 * 
