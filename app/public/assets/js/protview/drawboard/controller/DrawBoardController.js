@@ -42,13 +42,15 @@ ProtView.DrawBoard.Controller.DrawBoardController = ProtView.Core.Controller.ext
 	/**
 	 * Clears current DrawBoard
 	 * 
-	 * @todo implement this method
-	 * 
 	 * @method clear
 	**/
 	clear : function() {
-		console.log('ProtView.DrawBoard.Controller.DrawBoardController.clear does not work for now');
-		//this.view.clear();
+		var views = this.views;
+
+		for (var name in views) {
+			var view = views[name];
+			view.clear();
+		}
 	},
 	/**
 	 * Shows a new representation
@@ -57,6 +59,9 @@ ProtView.DrawBoard.Controller.DrawBoardController = ProtView.Core.Controller.ext
 	 * @param {int} representationId
 	**/
 	show : function(representation) {
+		console.log('show');
+		console.log(this);
+		this.clear();
 		this.fetch(representation);
 	},
 	/**
@@ -105,5 +110,13 @@ ProtView.DrawBoard.Controller.DrawBoardController = ProtView.Core.Controller.ext
 		
 		this.model = model;
 		this._super();
+	},
+	/**
+	 * Updates the model from server
+	 * @param id
+	 * @method update
+	 */
+	update : function(id) {
+		this.show(id);
 	}
 });

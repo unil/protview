@@ -85,7 +85,7 @@ ProtView.Structure.Module = (function() {
 	show = function(resource, id) {
 		//Gets resource controller from MainController
 		controller.load(resource);
-		c = controller.getController();
+		var c = controller.getController(resource);
 		if (c != null) {
 			c.fetch(id);
 		}

@@ -55,7 +55,7 @@ ProtView.DrawBoard.Controller.MainController = ProtView.Core.MainController.exte
 		if (arguments.representation) {
 			var stack = this.stack;
 			for (var el in stack) {
-				stack[el].update(arguments.protein);
+				stack[el].update(arguments.representation);
 			}
 		}
 	}
