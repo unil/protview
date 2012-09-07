@@ -1,8 +1,19 @@
 <?php
-
+/**
+ * Converts SVG to other graphic formats
+ *
+ * @package protview\graph
+ * @author Stefan Meier
+ * @version 20120906
+ *
+ */
 class SVGConverter {
 	
-	
+	/**
+	 * Converts SVG Dom-Element to PNG
+	 * 
+	 * @param String $svgStream
+	 */
 	public static function SVGStreamToPNG($svgStream) {
 		$basedir = xContext::$basepath. '/public/tmp';
 		$fileName = $basedir . '/'. microtime(true) . rand(0, 10) . '.tmp';
@@ -13,6 +24,11 @@ class SVGConverter {
 		return $png;
 	}
 	
+	/**
+	 * Converts SVG file to PNG
+	 * 
+	 * @param String $fileName
+	 */
 	public static function toPNG($svgFile) {
 		$output = null;
 		

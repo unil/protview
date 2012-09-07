@@ -23,7 +23,10 @@
 <li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
 <li><a href="../packages/controllers.html"><i class="icon-folder-open"></i> controllers</a></li>
 <li><a href="../packages/fronts.html"><i class="icon-folder-open"></i> fronts</a></li>
+<li><a href="../packages/models.html"><i class="icon-folder-open"></i> models</a></li>
 <li><a href="../packages/protview.html"><i class="icon-folder-open"></i> protview</a></li>
+<li><a href="../packages/views.html"><i class="icon-folder-open"></i> views</a></li>
+<li><a href="../packages/xfm.html"><i class="icon-folder-open"></i> xfm</a></li>
 </ul>
 </li>
 <li class="dropdown" id="charts-menu">
@@ -34,7 +37,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">278</span></a></li>
+                <span class="label label-info">207</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
@@ -70,12 +73,10 @@
         </span><pre>getStartCoord()</pre></a></li>
 <li class="method public inherited"><a href="#setLastCoord" title="setLastCoord :: "><span class="description">setLastCoord()
         </span><pre>setLastCoord()</pre></a></li>
-<li class="method public "><a href="#setMiddleLength" title="setMiddleLength :: "><span class="description">setMiddleLength()
-        </span><pre>setMiddleLength()</pre></a></li>
+<li class="method public "><a href="#setMiddleLength" title="setMiddleLength :: Sets middle lenth"><span class="description">Sets middle lenth</span><pre>setMiddleLength()</pre></a></li>
 <li class="method public inherited"><a href="#setOffset" title="setOffset :: Defines distance between each point"><span class="description">Defines distance between each point</span><pre>setOffset()</pre></a></li>
 <li class="method public inherited"><a href="#setRotation" title="setRotation :: Sets shape rotation"><span class="description">Sets shape rotation</span><pre>setRotation()</pre></a></li>
-<li class="method public "><a href="#setSideLength" title="setSideLength :: "><span class="description">setSideLength()
-        </span><pre>setSideLength()</pre></a></li>
+<li class="method public "><a href="#setSideLength" title="setSideLength :: Sets side length"><span class="description">Sets side length</span><pre>setSideLength()</pre></a></li>
 <li class="method public inherited"><a href="#setStartCoord" title="setStartCoord :: Sets start coordinates"><span class="description">Sets start coordinates</span><pre>setStartCoord()</pre></a></li>
 <li class="nav-header">
 <i class="icon-custom icon-property"></i> Properties</li>
@@ -99,13 +100,13 @@
 </li>
 </ul>
 <div href="../classes/StandardLoop.html" class="element class">
-<p class="short_description">Base class for each complex shapes</p>
+<p class="short_description">Calculates position of each point in a standard loop shape</p>
 <div class="details">
 <p class="long_description"></p>
 <table class="table table-bordered">
 <tr>
 <th>package</th>
-<td><a href="../packages/Default.html">protview\geom\shape\complex</a></td>
+<td><a href="../packages/protview.geom.shape.complex.html">protview\geom\shape\complex</a></td>
 </tr>
 <tr>
 <th>author</th>
@@ -139,6 +140,10 @@
     array('x' => int, 'y' => int)
 )
 </code></pre></p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td>\global\Shape::getCoord()</td>
+</tr></table>
 <h3>Returns</h3>
 <div class="subelement response"><code>array</code></div>
 </div></div>
@@ -242,14 +247,16 @@
 </div></div>
 </div>
 <a name="setMiddleLength" id="setMiddleLength"></a><div class="element clickable method public setMiddleLength" data-toggle="collapse" data-target=".setMiddleLength .collapse">
-<h2>setMiddleLength()
-        </h2>
-<pre>setMiddleLength($middleLength) </pre>
+<h2>Sets middle lenth</h2>
+<pre>setMiddleLength(int $middleLength) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$middleLength</h4></div>
+<div class="subelement argument">
+<h4>$middleLength</h4>
+<code>int</code>
+</div>
 </div></div>
 </div>
 <a name="setOffset" id="setOffset"></a><div class="element clickable method public setOffset" data-toggle="collapse" data-target=".setOffset .collapse">
@@ -300,14 +307,16 @@
 </div></div>
 </div>
 <a name="setSideLength" id="setSideLength"></a><div class="element clickable method public setSideLength" data-toggle="collapse" data-target=".setSideLength .collapse">
-<h2>setSideLength()
-        </h2>
-<pre>setSideLength($sideLength) </pre>
+<h2>Sets side length</h2>
+<pre>setSideLength(int $sideLength) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$sideLength</h4></div>
+<div class="subelement argument">
+<h4>$sideLength</h4>
+<code>int</code>
+</div>
 </div></div>
 </div>
 <a name="setStartCoord" id="setStartCoord"></a><div class="element clickable method public setStartCoord" data-toggle="collapse" data-target=".setStartCoord .collapse">
@@ -427,7 +436,7 @@
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a9</a> and<br>
-            generated on 2012-09-06T17:50:49+02:00.<br></footer></div>
+            generated on 2012-09-07T06:42:34+02:00.<br></footer></div>
 </div>
 </body>
 </html>

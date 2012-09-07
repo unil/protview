@@ -23,7 +23,10 @@
 <li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
 <li><a href="../packages/controllers.html"><i class="icon-folder-open"></i> controllers</a></li>
 <li><a href="../packages/fronts.html"><i class="icon-folder-open"></i> fronts</a></li>
+<li><a href="../packages/models.html"><i class="icon-folder-open"></i> models</a></li>
 <li><a href="../packages/protview.html"><i class="icon-folder-open"></i> protview</a></li>
+<li><a href="../packages/views.html"><i class="icon-folder-open"></i> views</a></li>
+<li><a href="../packages/xfm.html"><i class="icon-folder-open"></i> xfm</a></li>
 </ul>
 </li>
 <li class="dropdown" id="charts-menu">
@@ -34,7 +37,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">278</span></a></li>
+                <span class="label label-info">207</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
@@ -58,11 +61,11 @@
 <ul class="side-nav nav nav-list">
 <li class="nav-header">
 <i class="icon-custom icon-property"></i> Properties</li>
-<li class="property public "><a href="#%24join" title="$join :: "><span class="description">$join</span><pre>$join</pre></a></li>
-<li class="property public "><a href="#%24joins" title="$joins :: "><span class="description">$joins</span><pre>$joins</pre></a></li>
-<li class="property public "><a href="#%24mapping" title="$mapping :: "><span class="description">$mapping</span><pre>$mapping</pre></a></li>
-<li class="property public "><a href="#%24table" title="$table :: "><span class="description">$table</span><pre>$table</pre></a></li>
-<li class="property public "><a href="#%24validation" title="$validation :: "><span class="description">$validation</span><pre>$validation</pre></a></li>
+<li class="property public "><a href="#%24join" title="$join :: Indicates which join should by activated by default"><span class="description">Indicates which join should by activated by default</span><pre>$join</pre></a></li>
+<li class="property public "><a href="#%24joins" title="$joins :: Defines possible table joins"><span class="description">Defines possible table joins</span><pre>$joins</pre></a></li>
+<li class="property public "><a href="#%24mapping" title="$mapping :: Table mapping"><span class="description">Table mapping</span><pre>$mapping</pre></a></li>
+<li class="property public "><a href="#%24table" title="$table :: Table name"><span class="description">Table name</span><pre>$table</pre></a></li>
+<li class="property public "><a href="#%24validation" title="$validation :: Data validation"><span class="description">Data validation</span><pre>$validation</pre></a></li>
 </ul>
 </div>
 <div class="span8">
@@ -75,46 +78,77 @@
 <span class="divider">\</span><a href="../classes/RepresentationModel.html">RepresentationModel</a>
 </li>
 </ul>
-<div href="../classes/RepresentationModel.html" class="element class"><div class="details">
+<div href="../classes/RepresentationModel.html" class="element class">
+<p class="short_description">Handles Representation Table actions</p>
+<div class="details">
+<p class="long_description"><p>Validates data and specifies table joint</p></p>
+<table class="table table-bordered">
+<tr>
+<th>package</th>
+<td><a href="../packages/models.html">models</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="">Stefan Meier</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>20120906</td>
+</tr>
+</table>
 <h3>
 <i class="icon-custom icon-property"></i> Properties</h3>
 <a name="%24join" id="$join"> </a><div class="element clickable property public $join" data-toggle="collapse" data-target=".$join .collapse">
-<h2>$join</h2>
-<pre>$join </pre>
+<h2>Indicates which join should by activated by default</h2>
+<pre>$join : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"><pre><code>array(
+    'tableName',
+    'table2Name'
+)
+</code></pre></p></div></div>
 </div>
 <a name="%24joins" id="$joins"> </a><div class="element clickable property public $joins" data-toggle="collapse" data-target=".$joins .collapse">
-<h2>$joins</h2>
-<pre>$joins </pre>
+<h2>Defines possible table joins</h2>
+<pre>$joins : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"><pre><code>array(
+    'tableName' => 'LEFT JOIN tableName ON (tableName.id = thisTable.foreignKey)
+)
+</code></pre></p></div></div>
 </div>
 <a name="%24mapping" id="$mapping"> </a><div class="element clickable property public $mapping" data-toggle="collapse" data-target=".$mapping .collapse">
-<h2>$mapping</h2>
-<pre>$mapping </pre>
+<h2>Table mapping</h2>
+<pre>$mapping : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"><pre><code>array(
+    'columnName' => 'arrayKeyName'
+)
+</code></pre></p></div></div>
 </div>
 <a name="%24table" id="$table"> </a><div class="element clickable property public $table" data-toggle="collapse" data-target=".$table .collapse">
-<h2>$table</h2>
-<pre>$table </pre>
+<h2>Table name</h2>
+<pre>$table : String</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24validation" id="$validation"> </a><div class="element clickable property public $validation" data-toggle="collapse" data-target=".$validation .collapse">
-<h2>$validation</h2>
-<pre>$validation </pre>
+<h2>Data validation</h2>
+<pre>$validation : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"><pre><code>array(
+    'columnName' => 'mandatory'
+)
+</code></pre></p></div></div>
 </div>
-</div></div>
+</div>
+</div>
 </div>
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a9</a> and<br>
-            generated on 2012-09-06T17:50:49+02:00.<br></footer></div>
+            generated on 2012-09-07T06:42:34+02:00.<br></footer></div>
 </div>
 </body>
 </html>

@@ -23,7 +23,10 @@
 <li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
 <li><a href="../packages/controllers.html"><i class="icon-folder-open"></i> controllers</a></li>
 <li><a href="../packages/fronts.html"><i class="icon-folder-open"></i> fronts</a></li>
+<li><a href="../packages/models.html"><i class="icon-folder-open"></i> models</a></li>
 <li><a href="../packages/protview.html"><i class="icon-folder-open"></i> protview</a></li>
+<li><a href="../packages/views.html"><i class="icon-folder-open"></i> views</a></li>
+<li><a href="../packages/xfm.html"><i class="icon-folder-open"></i> xfm</a></li>
 </ul>
 </li>
 <li class="dropdown" id="charts-menu">
@@ -34,7 +37,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">278</span></a></li>
+                <span class="label label-info">207</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
@@ -58,8 +61,8 @@
 <ul class="side-nav nav nav-list">
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
-<li class="method public "><a href="#getX" title="getX :: Calculates x coordinate"><span class="description">Calculates x coordinate</span><pre>getX()</pre></a></li>
-<li class="method public "><a href="#getY" title="getY :: Calculates y coordinate"><span class="description">Calculates y coordinate</span><pre>getY()</pre></a></li>
+<li class="method public "><a href="#getX" title="getX :: Calculates x coordinate for each point on a cercle"><span class="description">Calculates x coordinate for each point on a cercle</span><pre>getX()</pre></a></li>
+<li class="method public "><a href="#getY" title="getY :: Calculates y coordinate for each point on a cercle"><span class="description">Calculates y coordinate for each point on a cercle</span><pre>getY()</pre></a></li>
 </ul>
 </div>
 <div class="span8">
@@ -72,11 +75,28 @@
 <span class="divider">\</span><a href="../classes/Formula.html">Formula</a>
 </li>
 </ul>
-<div href="../classes/Formula.html" class="element class"><div class="details">
+<div href="../classes/Formula.html" class="element class">
+<p class="short_description">Formulas for geometries</p>
+<div class="details">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>package</th>
+<td><a href="../packages/protview.geom.html">protview\geom</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="">Stefan Meier</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>20120906</td>
+</tr>
+</table>
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
 <a name="getX" id="getX"></a><div class="element clickable method public getX" data-toggle="collapse" data-target=".getX .collapse">
-<h2>Calculates x coordinate</h2>
+<h2>Calculates x coordinate for each point on a cercle</h2>
 <pre>getX(int $radius, int $angle) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
@@ -93,7 +113,7 @@
 </div></div>
 </div>
 <a name="getY" id="getY"></a><div class="element clickable method public getY" data-toggle="collapse" data-target=".getY .collapse">
-<h2>Calculates y coordinate</h2>
+<h2>Calculates y coordinate for each point on a cercle</h2>
 <pre>getY(int $radius, int $angle) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
@@ -109,13 +129,14 @@
 </div>
 </div></div>
 </div>
-</div></div>
+</div>
+</div>
 </div>
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a9</a> and<br>
-            generated on 2012-09-06T17:50:49+02:00.<br></footer></div>
+            generated on 2012-09-07T06:42:34+02:00.<br></footer></div>
 </div>
 </body>
 </html>

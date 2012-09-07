@@ -92,10 +92,6 @@ class PeptideShape {
 			$middleLoopLength = $params['middleLength']['even'];
 		else
 			$middleLoopLength = $params['middleLength']['odd'];
-			
-
-		//min space between domain, needs to be implemented and should not be hardcoded
-		//$middle = ceil($params['minDomainSpace']/$this->aaSize);
 
 		/* nb cercle - nb extendHeigh
 		 * 1-2
@@ -130,6 +126,9 @@ class PeptideShape {
 
 			$res = 0;
 
+			/* searches for the best lengths for height, extendedHeight and middleLenght
+			 * this algorithm is based on above params (minLengtht and maxLength)
+			 */
 			while (!$found) {
 				$nbMiddlePart += 2;
 				$nbExtendHeight = $nbMiddlePart + 1;
@@ -152,6 +151,7 @@ class PeptideShape {
 					
 			}
 			
+			//if there is no middle part, a standard loop is calculated
 			if ($nbMiddlePart <= 1) {
 				$middleLoopLength += + 6;
 				$basicLength = ($length - $middleLoopLength - $extendLength);
@@ -173,6 +173,13 @@ class PeptideShape {
 		return $coords;
 	}
 
+	/**
+	 * Calculates position of each amin acide in the membrane
+	 * 
+	 * @param \protview\bio $region
+	 * @param int $countAminoAcids
+	 * @param int $pos
+	 */
 	private function getMembranePart($region, $countAminoAcids, $pos) {
 		$coords = array ();
 
@@ -202,10 +209,34 @@ class PeptideShape {
 		return $coords;
 	}
 
+	/**
+	 * Gets amino acid coordinates
+	 * 
+	 * <code>
+	 * array(
+	 * 	array('x' => float, 'y'=> float)
+	 * )
+	 * </code>
+	 * 
+	 * @return array
+	 */
 	public function getAACoordinates() {
 		return $this->AAcoords;
 	}
 	
+	/**
+	 * Gets dimension of representand membrane position
+	 * 
+	 * <code>
+	 * array(
+	 * 	'membrane' => array('minY' => float, 'maxY' => float),
+	 *  'dimension' => array('minX' => float, 'maxX' => float'
+	 *  					'minY' => float, 'maxY' => float)
+	 * )
+	 * </code>
+	 * 
+	 * @return array
+	 */
 	public function getParams() {
 		$coords = $this->AAcoords;
 		

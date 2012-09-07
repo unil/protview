@@ -1,7 +1,24 @@
 <?php
-
+/**
+ * Defines Layout View params
+ *
+ *
+ * @package views
+ * @author Stefan Meier
+ * @version 20120906
+ *
+ */
 class LayoutLayoutView extends xView {
-
+	/**
+	 * Defines metadata
+	 *
+	 * <code>
+	 * array(
+	 * 	'js' => array('filePath'),
+	 * 	'css' => array('filePath)
+	 * )
+	 * </code>
+	 */
     function init() {
         $this->meta = xUtil::array_merge($this->meta, array(
             'layout' => array(

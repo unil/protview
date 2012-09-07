@@ -1,5 +1,12 @@
 <?php
-
+/**
+ * RESTController to handle REST actions
+ *
+ * Handles GET/PUT/POST/DELETE requests
+ *
+ * @package xfm
+ * @author Damien Corpataux
+ */
 class RESTController extends xWebController {
 	protected $model = null;
 	

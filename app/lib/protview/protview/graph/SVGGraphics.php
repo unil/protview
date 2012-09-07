@@ -1,7 +1,23 @@
 <?php
-
+/**
+ * Creates SVG graphic element for protein
+ *
+ * @package protview\geom
+ * @author Stefan Meier
+ * @version 20120906
+ *
+ */
 class SVGGraphics {
 	
+	/**
+	 * Draws an amino acido with label
+	 * 
+	 * @param float $x
+	 * @param float $y
+	 * @param int $aminoAcidSize
+	 * @param String $label
+	 * @param int $pos
+	 */
 	public function drawAminoAcid($x, $y, $size, $label, $pos) {
 		return "<g id=\"aa-{$pos}\" class=\"aa\" transform=\"translate({$x},{$y})\">
 		<circle r=\"". ($size/2) . "\"/>
@@ -10,6 +26,13 @@ class SVGGraphics {
 		</g>";
 	}
 	
+	/**
+	 * Draws the membrane
+	 * @param float $minX
+	 * @param float $maxX
+	 * @param float $minY
+	 * @param float $maxY
+	 */
 	public function drawMembrane($minX, $maxX, $minY, $maxY) {
 		$membrane = "";
 		$membrane .= "<line x1=\"$minX\" x2=\"$maxX\" y1=\"$minY\" y2=\"$minY\" style=\"fill:none;stroke:#d83200;stroke-width:2px;\"/>";

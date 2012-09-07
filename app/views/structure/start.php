@@ -1,6 +1,25 @@
 <?php
-
+/** 
+* Handles StructureStart View
+*
+* Defines meta data and options for view
+*
+* @package views
+* @author Stefan Meier
+* @version 20120906
+*
+*/
 class StructureStartView extends xView {
+	/**
+	 * Defines metadata
+	 *
+	 * <code>
+	 * array(
+	 * 	'js' => array('filePath'),
+	 * 	'css' => array('filePath)
+	 * )
+	 * </code>
+	 */
     function init() {
         $this->meta = xUtil::array_merge($this->meta, array(
             'js' => array(

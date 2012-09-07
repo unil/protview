@@ -1,5 +1,12 @@
 <?php
-
+/**
+ * Formulas for geometries
+ *
+ * @package protview\geom
+ * @author Stefan Meier
+ * @version 20120906
+ *
+ */
 class Formula {
 
 	
@@ -8,7 +15,7 @@ class Formula {
 	 */
 	
 	/**
-	 * Calculates y coordinate
+	 * Calculates y coordinate for each point on a cercle
 	 * @param int $radius
 	 * @param int $angle (rotation angle 0-360 degree)
 	 */
@@ -18,7 +25,7 @@ class Formula {
 	}
 
 	/**
-	 * Calculates x coordinate
+	 * Calculates x coordinate for each point on a cercle
 	 * @param int $radius
 	 * @param int $angle (rotation angle 0-360 degree)
 	 */

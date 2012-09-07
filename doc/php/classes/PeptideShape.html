@@ -23,7 +23,10 @@
 <li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
 <li><a href="../packages/controllers.html"><i class="icon-folder-open"></i> controllers</a></li>
 <li><a href="../packages/fronts.html"><i class="icon-folder-open"></i> fronts</a></li>
+<li><a href="../packages/models.html"><i class="icon-folder-open"></i> models</a></li>
 <li><a href="../packages/protview.html"><i class="icon-folder-open"></i> protview</a></li>
+<li><a href="../packages/views.html"><i class="icon-folder-open"></i> views</a></li>
+<li><a href="../packages/xfm.html"><i class="icon-folder-open"></i> xfm</a></li>
 </ul>
 </li>
 <li class="dropdown" id="charts-menu">
@@ -34,7 +37,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">278</span></a></li>
+                <span class="label label-info">207</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
@@ -58,18 +61,13 @@
 <ul class="side-nav nav nav-list">
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
-<li class="method public "><a href="#__construct" title="__construct :: "><span class="description">__construct()
-        </span><pre>__construct()</pre></a></li>
-<li class="method public "><a href="#getAACoordinates" title="getAACoordinates :: "><span class="description">getAACoordinates()
-        </span><pre>getAACoordinates()</pre></a></li>
-<li class="method public "><a href="#getParams" title="getParams :: "><span class="description">getParams()
-        </span><pre>getParams()</pre></a></li>
+<li class="method public "><a href="#__construct" title="__construct :: Initializes constructor"><span class="description">Initializes constructor</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#getAACoordinates" title="getAACoordinates :: Gets amino acid coordinates"><span class="description">Gets amino acid coordinates</span><pre>getAACoordinates()</pre></a></li>
+<li class="method public "><a href="#getParams" title="getParams :: Gets dimension of representand membrane position"><span class="description">Gets dimension of representand membrane position</span><pre>getParams()</pre></a></li>
 <li class="nav-header private">» Private</li>
-<li class="method private "><a href="#calculateCoordinates" title="calculateCoordinates :: "><span class="description">calculateCoordinates()
-        </span><pre>calculateCoordinates()</pre></a></li>
-<li class="method private "><a href="#getExternalPart" title="getExternalPart :: Calculates coordinates of external part of the membraine"><span class="description">Calculates coordinates of external part of the membraine</span><pre>getExternalPart()</pre></a></li>
-<li class="method private "><a href="#getMembranePart" title="getMembranePart :: "><span class="description">getMembranePart()
-        </span><pre>getMembranePart()</pre></a></li>
+<li class="method private "><a href="#calculateCoordinates" title="calculateCoordinates :: Loops throug peptide in order to calculate shapes for each region"><span class="description">Loops throug peptide in order to calculate shapes for each region</span><pre>calculateCoordinates()</pre></a></li>
+<li class="method private "><a href="#getExternalPart" title="getExternalPart :: Calculates coordinates of external regions"><span class="description">Calculates coordinates of external regions</span><pre>getExternalPart()</pre></a></li>
+<li class="method private "><a href="#getMembranePart" title="getMembranePart :: Calculates position of each amin acide in the membrane"><span class="description">Calculates position of each amin acide in the membrane</span><pre>getMembranePart()</pre></a></li>
 <li class="nav-header">
 <i class="icon-custom icon-property"></i> Properties</li>
 <li class="nav-header private">» Private</li>
@@ -90,71 +88,119 @@
 <span class="divider">\</span><a href="../classes/PeptideShape.html">PeptideShape</a>
 </li>
 </ul>
-<div href="../classes/PeptideShape.html" class="element class"><div class="details">
+<div href="../classes/PeptideShape.html" class="element class">
+<p class="short_description">Calculates the points for specified peptide</p>
+<div class="details">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>package</th>
+<td><a href="../packages/protview.geom.shape.complex.html">protview\geom\shape\complex</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="">Stefan Meier</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>20120906</td>
+</tr>
+</table>
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
 <a name="__construct" id="__construct"></a><div class="element clickable method public __construct" data-toggle="collapse" data-target=".__construct .collapse">
-<h2>__construct()
-        </h2>
-<pre>__construct($peptide, $startCoord, $aaSize) </pre>
+<h2>Initializes constructor</h2>
+<pre>__construct(\protview\bio\Peptide $peptide, array $startCoord, int $aaSize) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$peptide</h4></div>
-<div class="subelement argument"><h4>$startCoord</h4></div>
-<div class="subelement argument"><h4>$aaSize</h4></div>
+<div class="subelement argument">
+<h4>$peptide</h4>
+<code>\protview\bio\Peptide</code>
+</div>
+<div class="subelement argument">
+<h4>$startCoord</h4>
+<code>array</code>
+</div>
+<div class="subelement argument">
+<h4>$aaSize</h4>
+<code>int</code>
+</div>
 </div></div>
 </div>
 <a name="getAACoordinates" id="getAACoordinates"></a><div class="element clickable method public getAACoordinates" data-toggle="collapse" data-target=".getAACoordinates .collapse">
-<h2>getAACoordinates()
-        </h2>
-<pre>getAACoordinates() </pre>
+<h2>Gets amino acid coordinates</h2>
+<pre>getAACoordinates() : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><pre><code>array(
+    array('x' => float, 'y'=> float)
+)
+</code></pre></p>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
 </div>
 <a name="getParams" id="getParams"></a><div class="element clickable method public getParams" data-toggle="collapse" data-target=".getParams .collapse">
-<h2>getParams()
-        </h2>
-<pre>getParams() </pre>
+<h2>Gets dimension of representand membrane position</h2>
+<pre>getParams() : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><pre><code>array(
+    'membrane' => array('minY' => float, 'maxY' => float),
+ 'dimension' => array('minX' => float, 'maxX' => float'
+                    'minY' => float, 'maxY' => float)
+)
+</code></pre></p>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
 </div>
 <a name="calculateCoordinates" id="calculateCoordinates"></a><div class="element clickable method private calculateCoordinates" data-toggle="collapse" data-target=".calculateCoordinates .collapse">
-<h2>calculateCoordinates()
-        </h2>
+<h2>Loops throug peptide in order to calculate shapes for each region</h2>
 <pre>calculateCoordinates() </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="getExternalPart" id="getExternalPart"></a><div class="element clickable method private getExternalPart" data-toggle="collapse" data-target=".getExternalPart .collapse">
-<h2>Calculates coordinates of external part of the membraine</h2>
-<pre>getExternalPart(\unknown_type $region, \unknown_type $pos) </pre>
+<h2>Calculates coordinates of external regions</h2>
+<pre>getExternalPart(\protview\bio\Region $region, \inte $pos) : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$region</h4>
-<code>\unknown_type</code>
+<code>\protview\bio\Region</code>
 </div>
 <div class="subelement argument">
 <h4>$pos</h4>
-<code>\unknown_type</code>
+<code>\inte</code>
 </div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
 </div></div>
 </div>
 <a name="getMembranePart" id="getMembranePart"></a><div class="element clickable method private getMembranePart" data-toggle="collapse" data-target=".getMembranePart .collapse">
-<h2>getMembranePart()
-        </h2>
-<pre>getMembranePart($region, $countAminoAcids, $pos) </pre>
+<h2>Calculates position of each amin acide in the membrane</h2>
+<pre>getMembranePart(\protview\bio $region, int $countAminoAcids, int $pos) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$region</h4></div>
-<div class="subelement argument"><h4>$countAminoAcids</h4></div>
-<div class="subelement argument"><h4>$pos</h4></div>
+<div class="subelement argument">
+<h4>$region</h4>
+<code>\protview\bio</code>
+</div>
+<div class="subelement argument">
+<h4>$countAminoAcids</h4>
+<code>int</code>
+</div>
+<div class="subelement argument">
+<h4>$pos</h4>
+<code>int</code>
+</div>
 </div></div>
 </div>
 <h3>
@@ -189,13 +235,14 @@
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-</div></div>
+</div>
+</div>
 </div>
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a9</a> and<br>
-            generated on 2012-09-06T17:50:49+02:00.<br></footer></div>
+            generated on 2012-09-07T06:42:34+02:00.<br></footer></div>
 </div>
 </body>
 </html>

@@ -3,7 +3,14 @@
 require_once(xContext::$basepath.'/lib/protview/protview/geom/shape/complex/ComplexShape.php');
 require_once(xContext::$basepath.'/lib/protview/protview/geom/shape/basic/Line.php');
 require_once(xContext::$basepath.'/lib/protview/protview/geom/shape/basic/Circle.php');
-
+/**
+ * Calculates position of each point in a standard loop shape
+ *
+ * @package protview\geom\shape\complex
+ * @author Stefan Meier
+ * @version 20120906
+ *
+ */
 class StandardLoop extends ComplexShape {
 
 	private $sideLength;
@@ -13,17 +20,28 @@ class StandardLoop extends ComplexShape {
 		parent::__construct($offset, $startCoord);
 	}
 
+	/**
+	 * Sets side length
+	 * @param int $sideLength
+	 */
 	public function setSideLength($sideLength)
 	{
 		$this->sideLength = $sideLength;
 	}
 
+	/**
+	 * Sets middle lenth
+	 * @param int $middleLength
+	 */
 	public function setMiddleLength($middleLength)
 	{
 		$this->middleLength = $middleLength;
 	}
 
 
+	/**
+	 * @see Shape::getCoord()
+	 */
 	public function getCoord() {
 		$coords = array();
 		$line = null;
