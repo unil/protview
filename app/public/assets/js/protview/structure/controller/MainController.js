@@ -1,6 +1,6 @@
 /**
  * 
- * Models Main controller
+ * Module's Main controller
  * 
  * 
  * @module Structure

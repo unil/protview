@@ -1,4 +1,28 @@
+/**
+ * 
+ * Module's Main controller
+ * 
+ * 
+ * @module DrawBoard
+ * @namespace DrawBoard.Controller
+ * @class MainController
+ * @extends Core.Controller
+ * 
+ * @author Stefan Meier
+ * @version 20120903
+ * 
+ */
 ProtView.DrawBoard.Controller.MainController = ProtView.Core.MainController.extend( {
+	/**
+	 * Loads the requested resource
+	 * 
+	 * On loading creates resource controller and view
+	 * 
+	 * Available resources : drawboard
+	 * 
+	 * @method load
+	 * @param {String} resource
+	 */
 	load : function(resource) {
 		var controller = null,
 		view = null,
@@ -21,6 +45,12 @@ ProtView.DrawBoard.Controller.MainController = ProtView.Core.MainController.exte
 			this.stack = stack;
 		}
 	},
+	/**
+	 * Updates controller based on arguments
+	 * 
+	 * @method update
+	 * @param arguments
+	 */
 	update : function(arguments) {
 		if (arguments.representation) {
 			var stack = this.stack;

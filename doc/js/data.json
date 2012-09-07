@@ -111,6 +111,17 @@
                 "DrawBoard.Controller": 1
             }
         },
+        "app/public/a/js/protview/drawboard/controller/MainController.js": {
+            "name": "app/public/a/js/protview/drawboard/controller/MainController.js",
+            "modules": {},
+            "classes": {
+                "DrawBoard.Controller.MainController": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "DrawBoard.Controller": 1
+            }
+        },
         "app/public/a/js/protview/drawboard/model/Representation.js": {
             "name": "app/public/a/js/protview/drawboard/model/Representation.js",
             "modules": {},
@@ -350,6 +361,7 @@
             "submodules": {},
             "classes": {
                 "DrawBoard.Controller.DrawBoardController": 1,
+                "DrawBoard.Controller.MainController": 1,
                 "DrawBoard.Model.Representation": 1,
                 "DrawBoard.Model.StructuralGeometry": 1,
                 "DrawBoard.Model.StructuralGeometryCollection": 1,
@@ -549,6 +561,20 @@
             "line": 1,
             "description": "DrawBoard controllers handels all drawboard related views and models"
         },
+        "DrawBoard.Controller.MainController": {
+            "name": "DrawBoard.Controller.MainController",
+            "shortname": "DrawBoard.Controller.MainController",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.Controller",
+            "file": "app/public/a/js/protview/drawboard/controller/MainController.js",
+            "line": 1,
+            "description": "Module's Main controller"
+        },
         "DrawBoard.Model.Representation": {
             "name": "DrawBoard.Model.Representation",
             "shortname": "DrawBoard.Model.Representation",
@@ -645,7 +671,7 @@
             "namespace": "Structure.Controller",
             "file": "app/public/a/js/protview/structure/controller/MainController.js",
             "line": 1,
-            "description": "Models Main controller"
+            "description": "Module's Main controller"
         },
         "Structure.Controller.PeptideController": {
             "name": "Structure.Controller.PeptideController",
@@ -1828,6 +1854,39 @@
             "itemtype": "method",
             "name": "save",
             "class": "DrawBoard.Controller.DrawBoardController",
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.Controller"
+        },
+        {
+            "file": "app/public/a/js/protview/drawboard/controller/MainController.js",
+            "line": 16,
+            "description": "Loads the requested resource\n\nOn loading creates resource controller and view\n\nAvailable resources : drawboard",
+            "itemtype": "method",
+            "name": "load",
+            "params": [
+                {
+                    "name": "resource",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "class": "DrawBoard.Controller.MainController",
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.Controller"
+        },
+        {
+            "file": "app/public/a/js/protview/drawboard/controller/MainController.js",
+            "line": 48,
+            "description": "Updates controller based on arguments",
+            "itemtype": "method",
+            "name": "update",
+            "params": [
+                {
+                    "name": "arguments",
+                    "description": ""
+                }
+            ],
+            "class": "DrawBoard.Controller.MainController",
             "module": "DrawBoard",
             "namespace": "DrawBoard.Controller"
         },

@@ -11,6 +11,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "Core.MainController",
         "Core.View",
         "DrawBoard.Controller.DrawBoardController",
+        "DrawBoard.Controller.MainController",
         "DrawBoard.Model.Representation",
         "DrawBoard.Model.StructuralGeometry",
         "DrawBoard.Model.StructuralGeometryCollection",

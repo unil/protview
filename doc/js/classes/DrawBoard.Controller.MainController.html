@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;drawboard&#x2F;model&#x2F;StructuralGeometryCollection.js</title>
+    <title>DrawBoard.Controller.MainController</title>
     <link rel="stylesheet" href="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;3.5.1&#x2F;build&#x2F;cssgrids&#x2F;cssgrids-min.css">
     <link rel="stylesheet" href="..&#x2F;assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="..&#x2F;assets/css/main.css" id="site_styles">
@@ -142,63 +142,274 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;drawboard&#x2F;model&#x2F;StructuralGeometryCollection.js</h1>
+                        <h1>DrawBoard.Controller.MainController Class</h1>
+<div class="box meta">
+    
 
-<div class="file">
-    <pre class="code prettyprint linenums">
- &#x2F;** 
- * Colleciton of StructuralGeometry models
- * 
- * 
- * @module DrawBoard
- * @namespace DrawBoard.Model
- * @class StructuralGeometryCollection
- * @extends Backbone.Collection
- * 
- * @author Stefan Meier
- * @version 20120903
- * 
- *&#x2F;
-ProtView.DrawBoard.Model.StructuralGeometryCollection = Backbone.Collection.extend({
-	&#x2F;**
-	* Model type
-	*
-	* @property model
-	* @type ProtView.DrawBoard.Model.StructuralGeometry
-	* @default ProtView.DrawBoard.Model.StructuralGeometry
-	**&#x2F;
-	model : ProtView.DrawBoard.Model.StructuralGeometry,
-	&#x2F;**
-	 * Comparator of models in order to order them
-	 * 
-	 * @method comparator
-	 * @return {int} pos
-	 *&#x2F;
-	comparator : function(model) {
-		  return model.get(&#x27;pos&#x27;);
-	},
-	&#x2F;**
-	 * Gets the URL of related server resource able to handle requests
-	 * 
-	 * @method url
-	 * @return {String} url
-	 *&#x2F;
-	url : function() {
-		var root = Application.ROOTPATH;
-		return this.id ? root + &#x27;api&#x2F;structural-geometries?representation_id=&#x27; + this.id : root + &#x27;api&#x2F;structural-geometries&#x2F;&#x27;;
-	},
-	&#x2F;**
-	 * Overrides default set method to define collection id
-	 * 
-	 * @method set
-	 * @return {Object} id
-	 *&#x2F;
-	set : function(obj) {
-		if (obj.id &gt; 0)
-			this.id = obj.id;
-	}
-});
-    </pre>
+    
+
+    
+        <div class="foundat">
+            Defined in: <a href="..&#x2F;files&#x2F;app_public_a_js_protview_drawboard_controller_MainController.js.html#l1"><code>app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;drawboard&#x2F;controller&#x2F;MainController.js:1</code></a>
+        </div>
+    
+
+    
+        
+            Module: <a href="../modules/DrawBoard.html">DrawBoard</a>
+        
+    
+
+    
+</div>
+
+
+
+<div class="box intro">
+    <p>Module's Main controller</p>
+</div>
+
+
+
+<div id="classdocs" class="tabview">
+    <ul class="api-class-tabs">
+        <li class="api-class-tab index"><a href="#index">Index</a></li>
+
+        
+            <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
+        
+        
+        
+        
+    </ul>
+
+    <div>
+        <div id="index" class="api-class-tabpanel index">
+            <h2 class="off-left">Item Index</h2>
+
+            
+                <div class="index-section methods">
+                    <h3>Methods</h3>
+
+                    <ul class="index-list methods">
+                        
+                            <li class="index-item method">
+                                <a href="#method_load">load</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_update">update</a>
+
+                                
+                                
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+
+            
+
+            
+
+            
+        </div>
+
+        
+            <div id="methods" class="api-class-tabpanel">
+                <h2 class="off-left">Methods</h2>
+
+                
+                    <div id="method_load" class="method item">
+    <h3 class="name"><code>load</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>resource</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;app_public_a_js_protview_drawboard_controller_MainController.js.html#l16"><code>app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;drawboard&#x2F;controller&#x2F;MainController.js:16</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Loads the requested resource</p>
+
+<p>On loading creates resource controller and view</p>
+
+<p>Available resources : drawboard</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">resource</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_update" class="method item">
+    <h3 class="name"><code>update</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>arguments</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;app_public_a_js_protview_drawboard_controller_MainController.js.html#l48"><code>app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;drawboard&#x2F;controller&#x2F;MainController.js:48</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Updates controller based on arguments</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">arguments</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+            </div>
+        
+
+        
+
+        
+
+        
+    </div>
 </div>
 
                     </div>

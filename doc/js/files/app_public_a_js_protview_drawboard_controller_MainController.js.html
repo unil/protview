@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;drawboard&#x2F;model&#x2F;StructuralGeometryCollection.js</title>
+    <title>app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;drawboard&#x2F;controller&#x2F;MainController.js</title>
     <link rel="stylesheet" href="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;3.5.1&#x2F;build&#x2F;cssgrids&#x2F;cssgrids-min.css">
     <link rel="stylesheet" href="..&#x2F;assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="..&#x2F;assets/css/main.css" id="site_styles">
@@ -142,60 +142,70 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;drawboard&#x2F;model&#x2F;StructuralGeometryCollection.js</h1>
+                        <h1 class="file-heading">File: app&#x2F;public&#x2F;a&#x2F;js&#x2F;protview&#x2F;drawboard&#x2F;controller&#x2F;MainController.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
- &#x2F;** 
- * Colleciton of StructuralGeometry models
+&#x2F;**
+ * 
+ * Module&#x27;s Main controller
  * 
  * 
  * @module DrawBoard
- * @namespace DrawBoard.Model
- * @class StructuralGeometryCollection
- * @extends Backbone.Collection
+ * @namespace DrawBoard.Controller
+ * @class MainController
+ * @extends Core.Controller
  * 
  * @author Stefan Meier
  * @version 20120903
  * 
  *&#x2F;
-ProtView.DrawBoard.Model.StructuralGeometryCollection = Backbone.Collection.extend({
+ProtView.DrawBoard.Controller.MainController = ProtView.Core.MainController.extend( {
 	&#x2F;**
-	* Model type
-	*
-	* @property model
-	* @type ProtView.DrawBoard.Model.StructuralGeometry
-	* @default ProtView.DrawBoard.Model.StructuralGeometry
-	**&#x2F;
-	model : ProtView.DrawBoard.Model.StructuralGeometry,
-	&#x2F;**
-	 * Comparator of models in order to order them
+	 * Loads the requested resource
 	 * 
-	 * @method comparator
-	 * @return {int} pos
+	 * On loading creates resource controller and view
+	 * 
+	 * Available resources : drawboard
+	 * 
+	 * @method load
+	 * @param {String} resource
 	 *&#x2F;
-	comparator : function(model) {
-		  return model.get(&#x27;pos&#x27;);
+	load : function(resource) {
+		var controller = null,
+		view = null,
+		stack = this.stack;
+
+		if (!stack[resource]) {
+			switch(resource) {
+				case &#x27;drawboard&#x27; :
+					controller = new ProtView.DrawBoard.Controller.DrawBoardController();
+					view = new ProtView.DrawBoard.View.DrawBoardView({ 
+						el: $(&#x27;#drawBoard&#x27;).get(0) 
+					});
+					controller.addView(view);
+					break;
+				default :
+					console.log(&#x27;ProtView.DrawBoard.Controller.load:error no resource given or not known&#x27;);
+					break;
+			}
+			stack[resource] = controller;
+			this.stack = stack;
+		}
 	},
 	&#x2F;**
-	 * Gets the URL of related server resource able to handle requests
+	 * Updates controller based on arguments
 	 * 
-	 * @method url
-	 * @return {String} url
+	 * @method update
+	 * @param arguments
 	 *&#x2F;
-	url : function() {
-		var root = Application.ROOTPATH;
-		return this.id ? root + &#x27;api&#x2F;structural-geometries?representation_id=&#x27; + this.id : root + &#x27;api&#x2F;structural-geometries&#x2F;&#x27;;
-	},
-	&#x2F;**
-	 * Overrides default set method to define collection id
-	 * 
-	 * @method set
-	 * @return {Object} id
-	 *&#x2F;
-	set : function(obj) {
-		if (obj.id &gt; 0)
-			this.id = obj.id;
+	update : function(arguments) {
+		if (arguments.representation) {
+			var stack = this.stack;
+			for (var el in stack) {
+				stack[el].update(arguments.protein);
+			}
+		}
 	}
 });
     </pre>
