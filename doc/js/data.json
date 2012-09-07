@@ -1,8 +1,8 @@
 {
     "project": {},
     "files": {
-        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Context.js": {
-            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Context.js",
+        "app/public/a/js/protview/application/Context.js": {
+            "name": "app/public/a/js/protview/application/Context.js",
             "modules": {},
             "classes": {
                 "Application.Context": 1
@@ -12,8 +12,8 @@
                 "Application": 1
             }
         },
-        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Mediator.js": {
-            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Mediator.js",
+        "app/public/a/js/protview/application/Mediator.js": {
+            "name": "app/public/a/js/protview/application/Mediator.js",
             "modules": {},
             "classes": {
                 "Application.Mediator": 1
@@ -23,8 +23,8 @@
                 "Application": 1
             }
         },
-        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/MenubarView.js": {
-            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/MenubarView.js",
+        "app/public/a/js/protview/application/MenubarView.js": {
+            "name": "app/public/a/js/protview/application/MenubarView.js",
             "modules": {},
             "classes": {
                 "Application.MenuBarView": 1
@@ -34,8 +34,8 @@
                 "Application": 1
             }
         },
-        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Router.js": {
-            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Router.js",
+        "app/public/a/js/protview/application/Router.js": {
+            "name": "app/public/a/js/protview/application/Router.js",
             "modules": {},
             "classes": {
                 "Application.Router": 1
@@ -45,8 +45,8 @@
                 "Application": 1
             }
         },
-        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Sandbox.js": {
-            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Sandbox.js",
+        "app/public/a/js/protview/application/Sandbox.js": {
+            "name": "app/public/a/js/protview/application/Sandbox.js",
             "modules": {},
             "classes": {
                 "Application.Sandbox": 1
@@ -56,8 +56,8 @@
                 "Application": 1
             }
         },
-        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/BackboneHelper.js": {
-            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/BackboneHelper.js",
+        "app/public/a/js/protview/core/BackboneHelper.js": {
+            "name": "app/public/a/js/protview/core/BackboneHelper.js",
             "modules": {},
             "classes": {
                 "Core.BackboneHelper": 1
@@ -67,8 +67,8 @@
                 "Core": 1
             }
         },
-        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/Controller.js": {
-            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/Controller.js",
+        "app/public/a/js/protview/core/Controller.js": {
+            "name": "app/public/a/js/protview/core/Controller.js",
             "modules": {},
             "classes": {
                 "Core.Controller": 1
@@ -78,8 +78,8 @@
                 "Core": 1
             }
         },
-        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/MainController.js": {
-            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/MainController.js",
+        "app/public/a/js/protview/core/MainController.js": {
+            "name": "app/public/a/js/protview/core/MainController.js",
             "modules": {},
             "classes": {
                 "Core.MainController": 1
@@ -89,8 +89,8 @@
                 "Core": 1
             }
         },
-        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/View.js": {
-            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/View.js",
+        "app/public/a/js/protview/core/View.js": {
+            "name": "app/public/a/js/protview/core/View.js",
             "modules": {},
             "classes": {
                 "Core.View": 1
@@ -100,8 +100,8 @@
                 "Core": 1
             }
         },
-        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/controller/DrawBoardController.js": {
-            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/controller/DrawBoardController.js",
+        "app/public/a/js/protview/drawboard/controller/DrawBoardController.js": {
+            "name": "app/public/a/js/protview/drawboard/controller/DrawBoardController.js",
             "modules": {},
             "classes": {
                 "DrawBoard.Controller.DrawBoardController": 1
@@ -111,8 +111,8 @@
                 "DrawBoard.Controller": 1
             }
         },
-        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/Representation.js": {
-            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/Representation.js",
+        "app/public/a/js/protview/drawboard/model/Representation.js": {
+            "name": "app/public/a/js/protview/drawboard/model/Representation.js",
             "modules": {},
             "classes": {
                 "DrawBoard.Model.Representation": 1
@@ -122,8 +122,8 @@
                 "DrawBoard.Model": 1
             }
         },
-        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/StructuralGeometry.js": {
-            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/StructuralGeometry.js",
+        "app/public/a/js/protview/drawboard/model/StructuralGeometry.js": {
+            "name": "app/public/a/js/protview/drawboard/model/StructuralGeometry.js",
             "modules": {},
             "classes": {
                 "DrawBoard.Model.StructuralGeometry": 1
@@ -133,8 +133,8 @@
                 "DrawBoard.Model": 1
             }
         },
-        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/StructuralGeometryCollection.js": {
-            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/StructuralGeometryCollection.js",
+        "app/public/a/js/protview/drawboard/model/StructuralGeometryCollection.js": {
+            "name": "app/public/a/js/protview/drawboard/model/StructuralGeometryCollection.js",
             "modules": {},
             "classes": {
                 "DrawBoard.Model.StructuralGeometryCollection": 1
@@ -144,8 +144,8 @@
                 "DrawBoard.Model": 1
             }
         },
-        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/utils/Drawing.js": {
-            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/utils/Drawing.js",
+        "app/public/a/js/protview/drawboard/utils/Drawing.js": {
+            "name": "app/public/a/js/protview/drawboard/utils/Drawing.js",
             "modules": {},
             "classes": {
                 "DrawBoard.Utils.Drawing": 1
@@ -155,8 +155,8 @@
                 "DrawBoard.Utils": 1
             }
         },
-        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/view/DrawBoardView.js": {
-            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/view/DrawBoardView.js",
+        "app/public/a/js/protview/drawboard/view/DrawBoardView.js": {
+            "name": "app/public/a/js/protview/drawboard/view/DrawBoardView.js",
             "modules": {},
             "classes": {
                 "DrawBoard.View.DrawBoardView": 1
@@ -166,8 +166,8 @@
                 "DrawBoard.View": 1
             }
         },
-        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/view/ToolbarView.js": {
-            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/view/ToolbarView.js",
+        "app/public/a/js/protview/drawboard/view/ToolbarView.js": {
+            "name": "app/public/a/js/protview/drawboard/view/ToolbarView.js",
             "modules": {},
             "classes": {
                 "DrawBoard.View.ToolbarView": 1
@@ -177,8 +177,8 @@
                 "DrawBoard.View": 1
             }
         },
-        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/controller/MainController.js": {
-            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/controller/MainController.js",
+        "app/public/a/js/protview/structure/controller/MainController.js": {
+            "name": "app/public/a/js/protview/structure/controller/MainController.js",
             "modules": {},
             "classes": {
                 "Structure.Controller.MainController": 1
@@ -188,8 +188,8 @@
                 "Structure.Controller": 1
             }
         },
-        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/controller/PeptideController.js": {
-            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/controller/PeptideController.js",
+        "app/public/a/js/protview/structure/controller/PeptideController.js": {
+            "name": "app/public/a/js/protview/structure/controller/PeptideController.js",
             "modules": {},
             "classes": {
                 "Structure.Controller.PeptideController": 1
@@ -199,8 +199,8 @@
                 "Structure.Controller": 1
             }
         },
-        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/controller/ProteinController.js": {
-            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/controller/ProteinController.js",
+        "app/public/a/js/protview/structure/controller/ProteinController.js": {
+            "name": "app/public/a/js/protview/structure/controller/ProteinController.js",
             "modules": {},
             "classes": {
                 "Structure.Controller.ProteinController": 1
@@ -210,8 +210,8 @@
                 "Structure.Controller": 1
             }
         },
-        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/model/Peptide.js": {
-            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/model/Peptide.js",
+        "app/public/a/js/protview/structure/model/Peptide.js": {
+            "name": "app/public/a/js/protview/structure/model/Peptide.js",
             "modules": {},
             "classes": {
                 "Structure.Model.Peptide": 1
@@ -221,8 +221,8 @@
                 "Structure.Model": 1
             }
         },
-        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/model/Protein.js": {
-            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/model/Protein.js",
+        "app/public/a/js/protview/structure/model/Protein.js": {
+            "name": "app/public/a/js/protview/structure/model/Protein.js",
             "modules": {},
             "classes": {
                 "Structure.Model.Protein": 1
@@ -232,8 +232,8 @@
                 "Structure.Model": 1
             }
         },
-        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/view/NewProteinView.js": {
-            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/view/NewProteinView.js",
+        "app/public/a/js/protview/structure/view/NewProteinView.js": {
+            "name": "app/public/a/js/protview/structure/view/NewProteinView.js",
             "modules": {},
             "classes": {
                 "Structure.View.NewProteinView": 1
@@ -243,8 +243,8 @@
                 "Structure.View": 1
             }
         },
-        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/view/PeptideView.js": {
-            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/view/PeptideView.js",
+        "app/public/a/js/protview/structure/view/PeptideView.js": {
+            "name": "app/public/a/js/protview/structure/view/PeptideView.js",
             "modules": {},
             "classes": {
                 "Structure.View.PeptideView": 1
@@ -254,8 +254,8 @@
                 "Structure.View": 1
             }
         },
-        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/view/ProteinView.js": {
-            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/view/ProteinView.js",
+        "app/public/a/js/protview/structure/view/ProteinView.js": {
+            "name": "app/public/a/js/protview/structure/view/ProteinView.js",
             "modules": {},
             "classes": {
                 "Structure.View.ProteinView": 1
@@ -265,8 +265,8 @@
                 "Structure.View": 1
             }
         },
-        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/DrawBoard.js": {
-            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/DrawBoard.js",
+        "app/public/a/js/protview/DrawBoard.js": {
+            "name": "app/public/a/js/protview/DrawBoard.js",
             "modules": {},
             "classes": {
                 "DrawBoard.Module": 1
@@ -276,8 +276,8 @@
                 "DrawBoard": 1
             }
         },
-        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/ProtView.js": {
-            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/ProtView.js",
+        "app/public/a/js/protview/ProtView.js": {
+            "name": "app/public/a/js/protview/ProtView.js",
             "modules": {
                 "Application": 1,
                 "Core": 1,
@@ -288,8 +288,8 @@
             "fors": {},
             "namespaces": {}
         },
-        "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js": {
-            "name": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
+        "app/public/a/js/protview/Structure.js": {
+            "name": "app/public/a/js/protview/Structure.js",
             "modules": {},
             "classes": {
                 "Structure.Module": 1
@@ -316,7 +316,7 @@
                 "Application": 1
             },
             "tag": "main",
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Sandbox.js",
+            "file": "app/public/a/js/protview/application/Sandbox.js",
             "line": 1,
             "description": "Contains application wide used Classes\n\nContains classes such as Context, Mediator and Sandbox\nIs also responisble for routing and global view interactions",
             "author": "Stefan Meier",
@@ -338,7 +338,7 @@
                 "Core": 1
             },
             "tag": "main",
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/View.js",
+            "file": "app/public/a/js/protview/core/View.js",
             "line": 1,
             "description": "Contains base classes which are inherited in other modules\n\nHelpers, MVC base classes, utility classes",
             "author": "Stefan Meier",
@@ -367,7 +367,7 @@
                 "DrawBoard": 1
             },
             "tag": "main",
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/DrawBoard.js",
+            "file": "app/public/a/js/protview/DrawBoard.js",
             "line": 38,
             "description": "Contains protein drawing classes\n\nDraws protein, and offers drawing related functionalities such\nas export, resizing, etc.",
             "extends": "Core.Controller",
@@ -397,7 +397,7 @@
                 "Structure": 1
             },
             "tag": "main",
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
+            "file": "app/public/a/js/protview/Structure.js",
             "line": 29,
             "description": "Contains protein structural related classes\n\nPeptide form, Protein Form, handles all structural interactions",
             "extends": "Core.MainController",
@@ -417,7 +417,7 @@
             "extension_for": [],
             "module": "Application",
             "namespace": "Application",
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Context.js",
+            "file": "app/public/a/js/protview/application/Context.js",
             "line": 1,
             "description": "Application Context\nHolds and stores global context\n Application Context should be accessed via Sandbox"
         },
@@ -431,7 +431,7 @@
             "extension_for": [],
             "module": "Application",
             "namespace": "Application",
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Mediator.js",
+            "file": "app/public/a/js/protview/application/Mediator.js",
             "line": 1,
             "description": "Application Mediator\nHandles subscription/publications of channels and message"
         },
@@ -445,7 +445,7 @@
             "extension_for": [],
             "module": "Application",
             "namespace": "Application",
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/MenubarView.js",
+            "file": "app/public/a/js/protview/application/MenubarView.js",
             "line": 1,
             "description": "Menubar View\nHandles the main application menubar",
             "extends": "Backbone.View"
@@ -460,7 +460,7 @@
             "extension_for": [],
             "module": "Application",
             "namespace": "Application",
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Router.js",
+            "file": "app/public/a/js/protview/application/Router.js",
             "line": 1,
             "description": "Application Router\nRoutes URL changes",
             "extends": "Backbone.Router"
@@ -475,7 +475,7 @@
             "extension_for": [],
             "module": "Application",
             "namespace": "Application",
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Sandbox.js",
+            "file": "app/public/a/js/protview/application/Sandbox.js",
             "line": 1,
             "description": "Application sandbox\nProtects model from being called directly."
         },
@@ -489,7 +489,7 @@
             "extension_for": [],
             "module": "Core",
             "namespace": "Core",
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/BackboneHelper.js",
+            "file": "app/public/a/js/protview/core/BackboneHelper.js",
             "line": 1,
             "description": "Core Helper class for Backbone fetching/saving"
         },
@@ -503,7 +503,7 @@
             "extension_for": [],
             "module": "Core",
             "namespace": "Core",
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/Controller.js",
+            "file": "app/public/a/js/protview/core/Controller.js",
             "line": 1,
             "description": "AbstractController, implements main functionalities"
         },
@@ -517,7 +517,7 @@
             "extension_for": [],
             "module": "Core",
             "namespace": "Core",
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/MainController.js",
+            "file": "app/public/a/js/protview/core/MainController.js",
             "line": 1,
             "description": "AbstractMainController, implements main functionalities"
         },
@@ -531,7 +531,7 @@
             "extension_for": [],
             "module": "Core",
             "namespace": "Core",
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/View.js",
+            "file": "app/public/a/js/protview/core/View.js",
             "line": 1,
             "description": "AbstractView, implements main functionalities"
         },
@@ -545,7 +545,7 @@
             "extension_for": [],
             "module": "DrawBoard",
             "namespace": "DrawBoard.Controller",
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/controller/DrawBoardController.js",
+            "file": "app/public/a/js/protview/drawboard/controller/DrawBoardController.js",
             "line": 1,
             "description": "DrawBoard controllers handels all drawboard related views and models"
         },
@@ -559,7 +559,7 @@
             "extension_for": [],
             "module": "DrawBoard",
             "namespace": "DrawBoard.Model",
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/Representation.js",
+            "file": "app/public/a/js/protview/drawboard/model/Representation.js",
             "line": 1,
             "description": "Representation model"
         },
@@ -573,7 +573,7 @@
             "extension_for": [],
             "module": "DrawBoard",
             "namespace": "DrawBoard.Model",
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/StructuralGeometry.js",
+            "file": "app/public/a/js/protview/drawboard/model/StructuralGeometry.js",
             "line": 1,
             "description": "StructuralGeometry model"
         },
@@ -587,7 +587,7 @@
             "extension_for": [],
             "module": "DrawBoard",
             "namespace": "DrawBoard.Model",
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/StructuralGeometryCollection.js",
+            "file": "app/public/a/js/protview/drawboard/model/StructuralGeometryCollection.js",
             "line": 1,
             "description": "Colleciton of StructuralGeometry models"
         },
@@ -601,7 +601,7 @@
             "extension_for": [],
             "module": "DrawBoard",
             "namespace": "DrawBoard.Utils",
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/utils/Drawing.js",
+            "file": "app/public/a/js/protview/drawboard/utils/Drawing.js",
             "line": 1,
             "description": "Draws protein and related forms in SVG"
         },
@@ -615,7 +615,7 @@
             "extension_for": [],
             "module": "DrawBoard",
             "namespace": "DrawBoard.View",
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/view/DrawBoardView.js",
+            "file": "app/public/a/js/protview/drawboard/view/DrawBoardView.js",
             "line": 1,
             "description": "Handles and shows drawboard"
         },
@@ -629,7 +629,7 @@
             "extension_for": [],
             "module": "DrawBoard",
             "namespace": "DrawBoard.View",
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/view/ToolbarView.js",
+            "file": "app/public/a/js/protview/drawboard/view/ToolbarView.js",
             "line": 1,
             "description": "Handles and shows Toolbar"
         },
@@ -643,7 +643,7 @@
             "extension_for": [],
             "module": "Structure",
             "namespace": "Structure.Controller",
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/controller/MainController.js",
+            "file": "app/public/a/js/protview/structure/controller/MainController.js",
             "line": 1,
             "description": "Models Main controller"
         },
@@ -657,7 +657,7 @@
             "extension_for": [],
             "module": "Structure",
             "namespace": "Structure.Controller",
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/controller/PeptideController.js",
+            "file": "app/public/a/js/protview/structure/controller/PeptideController.js",
             "line": 1,
             "description": "Peptide controller"
         },
@@ -671,7 +671,7 @@
             "extension_for": [],
             "module": "Structure",
             "namespace": "Structure.Controller",
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/controller/ProteinController.js",
+            "file": "app/public/a/js/protview/structure/controller/ProteinController.js",
             "line": 1,
             "description": "Protein controller"
         },
@@ -685,7 +685,7 @@
             "extension_for": [],
             "module": "Structure",
             "namespace": "Structure.Model",
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/model/Peptide.js",
+            "file": "app/public/a/js/protview/structure/model/Peptide.js",
             "line": 1,
             "description": "Peptide model"
         },
@@ -699,7 +699,7 @@
             "extension_for": [],
             "module": "Structure",
             "namespace": "Structure.Model",
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/model/Protein.js",
+            "file": "app/public/a/js/protview/structure/model/Protein.js",
             "line": 1,
             "description": "Protein model"
         },
@@ -713,7 +713,7 @@
             "extension_for": [],
             "module": "Structure",
             "namespace": "Structure.View",
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/view/NewProteinView.js",
+            "file": "app/public/a/js/protview/structure/view/NewProteinView.js",
             "line": 1,
             "description": "Handles and shows new protein dialog"
         },
@@ -727,7 +727,7 @@
             "extension_for": [],
             "module": "Structure",
             "namespace": "Structure.View",
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/view/PeptideView.js",
+            "file": "app/public/a/js/protview/structure/view/PeptideView.js",
             "line": 1,
             "description": "Handles and shows peptide form"
         },
@@ -741,7 +741,7 @@
             "extension_for": [],
             "module": "Structure",
             "namespace": "Structure.View",
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/view/ProteinView.js",
+            "file": "app/public/a/js/protview/structure/view/ProteinView.js",
             "line": 1,
             "description": "Handles and shows protein form"
         },
@@ -755,7 +755,7 @@
             "extension_for": [],
             "module": "DrawBoard",
             "namespace": "DrawBoard",
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/DrawBoard.js",
+            "file": "app/public/a/js/protview/DrawBoard.js",
             "line": 38,
             "description": "DrawBoard module facade\n\nHandles module requests and responses",
             "author": "Stefan Meier",
@@ -771,7 +771,7 @@
             "extension_for": [],
             "module": "Structure",
             "namespace": "Structure",
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
+            "file": "app/public/a/js/protview/Structure.js",
             "line": 29,
             "description": "Structure module facade\n\nHandles module requests and responses",
             "author": "Stefan Meier",
@@ -780,7 +780,7 @@
     },
     "classitems": [
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Context.js",
+            "file": "app/public/a/js/protview/application/Context.js",
             "line": 18,
             "itemtype": "property",
             "name": "sandbox",
@@ -791,7 +791,7 @@
             "namespace": "Application"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Context.js",
+            "file": "app/public/a/js/protview/application/Context.js",
             "line": 24,
             "itemtype": "property",
             "name": "store",
@@ -801,7 +801,7 @@
             "namespace": "Application"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Context.js",
+            "file": "app/public/a/js/protview/application/Context.js",
             "line": 33,
             "description": "Constructor",
             "is_constructor": 1,
@@ -822,7 +822,7 @@
             "namespace": "Application"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Context.js",
+            "file": "app/public/a/js/protview/application/Context.js",
             "line": 55,
             "description": "Sets global variable\n\nNeeds to be fixed to only send one message on mulitple changes",
             "params": [
@@ -842,7 +842,7 @@
             "namespace": "Application"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Context.js",
+            "file": "app/public/a/js/protview/application/Context.js",
             "line": 72,
             "description": "Sets current protein",
             "params": [
@@ -858,7 +858,7 @@
             "namespace": "Application"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Context.js",
+            "file": "app/public/a/js/protview/application/Context.js",
             "line": 82,
             "description": "Sets current representation",
             "params": [
@@ -874,7 +874,7 @@
             "namespace": "Application"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Context.js",
+            "file": "app/public/a/js/protview/application/Context.js",
             "line": 92,
             "description": "Gets current protein",
             "return": {
@@ -888,7 +888,7 @@
             "namespace": "Application"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Context.js",
+            "file": "app/public/a/js/protview/application/Context.js",
             "line": 100,
             "description": "Gets current representation",
             "return": {
@@ -902,7 +902,7 @@
             "namespace": "Application"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Context.js",
+            "file": "app/public/a/js/protview/application/Context.js",
             "line": 108,
             "description": "Navigates to indicated URL",
             "params": [
@@ -918,7 +918,7 @@
             "namespace": "Application"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Mediator.js",
+            "file": "app/public/a/js/protview/application/Mediator.js",
             "line": 17,
             "description": "Subscribes callback to channel",
             "params": [
@@ -940,7 +940,7 @@
             "namespace": "Application"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Mediator.js",
+            "file": "app/public/a/js/protview/application/Mediator.js",
             "line": 28,
             "description": "Unsubscribes callback from channel",
             "params": [
@@ -962,7 +962,7 @@
             "namespace": "Application"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Mediator.js",
+            "file": "app/public/a/js/protview/application/Mediator.js",
             "line": 39,
             "description": "Publish message to channel",
             "params": [
@@ -984,7 +984,7 @@
             "namespace": "Application"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Mediator.js",
+            "file": "app/public/a/js/protview/application/Mediator.js",
             "line": 51,
             "description": "Publish message to channel",
             "params": [
@@ -1004,7 +1004,7 @@
             "namespace": "Application"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Mediator.js",
+            "file": "app/public/a/js/protview/application/Mediator.js",
             "line": 61,
             "description": "Subscribes callback to channel",
             "params": [
@@ -1024,7 +1024,7 @@
             "namespace": "Application"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Mediator.js",
+            "file": "app/public/a/js/protview/application/Mediator.js",
             "line": 71,
             "description": "Unsubscribes callback from channel",
             "params": [
@@ -1044,7 +1044,7 @@
             "namespace": "Application"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/MenubarView.js",
+            "file": "app/public/a/js/protview/application/MenubarView.js",
             "line": 18,
             "description": "Contains View's main Dom-Element",
             "itemtype": "property",
@@ -1056,7 +1056,7 @@
             "namespace": "Application"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/MenubarView.js",
+            "file": "app/public/a/js/protview/application/MenubarView.js",
             "line": 27,
             "itemtype": "event",
             "name": "click #file-new-protein:newProtein",
@@ -1065,7 +1065,7 @@
             "namespace": "Application"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/MenubarView.js",
+            "file": "app/public/a/js/protview/application/MenubarView.js",
             "line": 31,
             "itemtype": "event",
             "name": "click #file-open-representation:openRepresentation",
@@ -1074,7 +1074,7 @@
             "namespace": "Application"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/MenubarView.js",
+            "file": "app/public/a/js/protview/application/MenubarView.js",
             "line": 35,
             "itemtype": "event",
             "name": "click #show-drawboard:showDrawboard",
@@ -1083,7 +1083,7 @@
             "namespace": "Application"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/MenubarView.js",
+            "file": "app/public/a/js/protview/application/MenubarView.js",
             "line": 39,
             "itemtype": "event",
             "name": "click #show-sidebar:showSidebar",
@@ -1092,7 +1092,7 @@
             "namespace": "Application"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/MenubarView.js",
+            "file": "app/public/a/js/protview/application/MenubarView.js",
             "line": 43,
             "itemtype": "event",
             "name": "click #file-save-representation:saveRepresentation",
@@ -1101,7 +1101,7 @@
             "namespace": "Application"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/MenubarView.js",
+            "file": "app/public/a/js/protview/application/MenubarView.js",
             "line": 48,
             "description": "Shows newProtein Dialog",
             "itemtype": "method",
@@ -1111,7 +1111,7 @@
             "namespace": "Application"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/MenubarView.js",
+            "file": "app/public/a/js/protview/application/MenubarView.js",
             "line": 57,
             "description": "Shows drawboard",
             "itemtype": "method",
@@ -1121,7 +1121,7 @@
             "namespace": "Application"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/MenubarView.js",
+            "file": "app/public/a/js/protview/application/MenubarView.js",
             "line": 67,
             "description": "Shows Sidbear",
             "itemtype": "method",
@@ -1131,7 +1131,7 @@
             "namespace": "Application"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/MenubarView.js",
+            "file": "app/public/a/js/protview/application/MenubarView.js",
             "line": 77,
             "description": "Shows Saves current work",
             "itemtype": "method",
@@ -1141,7 +1141,7 @@
             "namespace": "Application"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/MenubarView.js",
+            "file": "app/public/a/js/protview/application/MenubarView.js",
             "line": 84,
             "description": "Shows Open Representation dialog",
             "itemtype": "method",
@@ -1151,7 +1151,7 @@
             "namespace": "Application"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/MenubarView.js",
+            "file": "app/public/a/js/protview/application/MenubarView.js",
             "line": 93,
             "description": "Loads resource\n\nLoaded resource is appended to domElement",
             "params": [
@@ -1171,7 +1171,7 @@
             "namespace": "Application"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Router.js",
+            "file": "app/public/a/js/protview/application/Router.js",
             "line": 18,
             "description": "Application routes\n\nsee Backbone documentation",
             "itemtype": "property",
@@ -1182,7 +1182,7 @@
             "namespace": "Application"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Router.js",
+            "file": "app/public/a/js/protview/application/Router.js",
             "line": 31,
             "description": "Updates the context in order to load the view",
             "params": [
@@ -1202,7 +1202,7 @@
             "namespace": "Application"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Sandbox.js",
+            "file": "app/public/a/js/protview/application/Sandbox.js",
             "line": 17,
             "description": "Interacts with server side\n\nServer return is shown in given domElement",
             "params": [
@@ -1221,7 +1221,7 @@
             "namespace": "Application"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Sandbox.js",
+            "file": "app/public/a/js/protview/application/Sandbox.js",
             "line": 43,
             "description": "Loads modules\n\nThe specified module is loaded into domElement",
             "params": [
@@ -1243,7 +1243,7 @@
             "namespace": "Application"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Sandbox.js",
+            "file": "app/public/a/js/protview/application/Sandbox.js",
             "line": 73,
             "description": "Unloads a module\n\nIs not implemented",
             "todo": [
@@ -1264,7 +1264,7 @@
             "namespace": "Application"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Sandbox.js",
+            "file": "app/public/a/js/protview/application/Sandbox.js",
             "line": 87,
             "description": "Starts specified module\n\nCalls start",
             "params": [
@@ -1284,7 +1284,7 @@
             "namespace": "Application"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Sandbox.js",
+            "file": "app/public/a/js/protview/application/Sandbox.js",
             "line": 99,
             "description": "Stops specified module\n\nCalls stop",
             "params": [
@@ -1300,7 +1300,7 @@
             "namespace": "Application"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Sandbox.js",
+            "file": "app/public/a/js/protview/application/Sandbox.js",
             "line": 110,
             "description": "Retunrs current status of module\n\nNot implemented",
             "params": [
@@ -1316,7 +1316,7 @@
             "namespace": "Application"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Sandbox.js",
+            "file": "app/public/a/js/protview/application/Sandbox.js",
             "line": 121,
             "description": "Publish message via Mediator",
             "params": [
@@ -1336,7 +1336,7 @@
             "namespace": "Application"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Sandbox.js",
+            "file": "app/public/a/js/protview/application/Sandbox.js",
             "line": 130,
             "description": "Subscribe to a channel using Mediator",
             "params": [
@@ -1356,7 +1356,7 @@
             "namespace": "Application"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/application/Sandbox.js",
+            "file": "app/public/a/js/protview/application/Sandbox.js",
             "line": 139,
             "description": "Unsubscribes channel",
             "params": [
@@ -1372,7 +1372,7 @@
             "namespace": "Application"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/BackboneHelper.js",
+            "file": "app/public/a/js/protview/core/BackboneHelper.js",
             "line": 15,
             "description": "Constructor",
             "is_constructor": 1,
@@ -1389,7 +1389,7 @@
             "namespace": "Core"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/BackboneHelper.js",
+            "file": "app/public/a/js/protview/core/BackboneHelper.js",
             "line": 25,
             "description": "Fetches data from Server",
             "params": [
@@ -1411,7 +1411,7 @@
             "namespace": "Core"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/Controller.js",
+            "file": "app/public/a/js/protview/core/Controller.js",
             "line": 15,
             "description": "Model handled by the controller",
             "itemtype": "property",
@@ -1423,7 +1423,7 @@
             "namespace": "Core"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/Controller.js",
+            "file": "app/public/a/js/protview/core/Controller.js",
             "line": 23,
             "description": "Views handled by the controller",
             "itemtype": "property",
@@ -1435,7 +1435,7 @@
             "namespace": "Core"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/Controller.js",
+            "file": "app/public/a/js/protview/core/Controller.js",
             "line": 31,
             "description": "Contains all loaded resources",
             "itemtype": "property",
@@ -1447,7 +1447,7 @@
             "namespace": "Core"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/Controller.js",
+            "file": "app/public/a/js/protview/core/Controller.js",
             "line": 39,
             "description": "Constructor",
             "params": [
@@ -1463,7 +1463,7 @@
             "namespace": "Core"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/Controller.js",
+            "file": "app/public/a/js/protview/core/Controller.js",
             "line": 56,
             "description": "Adds a view to the controller",
             "params": [
@@ -1480,7 +1480,7 @@
             "namespace": "Core"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/Controller.js",
+            "file": "app/public/a/js/protview/core/Controller.js",
             "line": 69,
             "description": "Get all views",
             "itemtype": "method",
@@ -1494,7 +1494,7 @@
             "namespace": "Core"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/Controller.js",
+            "file": "app/public/a/js/protview/core/Controller.js",
             "line": 78,
             "description": "Get the model handled by this controller",
             "itemtype": "method",
@@ -1508,7 +1508,7 @@
             "namespace": "Core"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/Controller.js",
+            "file": "app/public/a/js/protview/core/Controller.js",
             "line": 87,
             "description": "Fetches model by specified id\n\nOverrides this method in child Controller",
             "params": [
@@ -1527,7 +1527,7 @@
             "namespace": "Core"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/Controller.js",
+            "file": "app/public/a/js/protview/core/Controller.js",
             "line": 115,
             "description": "Unloads all loaded resources",
             "itemtype": "method",
@@ -1537,7 +1537,7 @@
             "namespace": "Core"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/Controller.js",
+            "file": "app/public/a/js/protview/core/Controller.js",
             "line": 129,
             "description": "Saves the model to the server",
             "itemtype": "method",
@@ -1547,7 +1547,7 @@
             "namespace": "Core"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/Controller.js",
+            "file": "app/public/a/js/protview/core/Controller.js",
             "line": 144,
             "description": "Updates the model from server",
             "params": [
@@ -1563,7 +1563,7 @@
             "namespace": "Core"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/MainController.js",
+            "file": "app/public/a/js/protview/core/MainController.js",
             "line": 15,
             "description": "Contains all loaded resources",
             "itemtype": "property",
@@ -1575,7 +1575,7 @@
             "namespace": "Core"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/MainController.js",
+            "file": "app/public/a/js/protview/core/MainController.js",
             "line": 23,
             "description": "Gets controller from stack",
             "params": [
@@ -1593,7 +1593,7 @@
             "namespace": "Core"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/MainController.js",
+            "file": "app/public/a/js/protview/core/MainController.js",
             "line": 32,
             "description": "Unloads all loaded resources",
             "itemtype": "method",
@@ -1610,7 +1610,7 @@
             "namespace": "Core"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/View.js",
+            "file": "app/public/a/js/protview/core/View.js",
             "line": 15,
             "itemtype": "method",
             "name": "initialize",
@@ -1620,7 +1620,7 @@
             "namespace": "Core"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/View.js",
+            "file": "app/public/a/js/protview/core/View.js",
             "line": 31,
             "description": "Unloads used bindings and events",
             "itemtype": "method",
@@ -1630,7 +1630,7 @@
             "namespace": "Core"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/View.js",
+            "file": "app/public/a/js/protview/core/View.js",
             "line": 43,
             "description": "Set View's Controller",
             "params": [
@@ -1646,7 +1646,7 @@
             "namespace": "Core"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/View.js",
+            "file": "app/public/a/js/protview/core/View.js",
             "line": 51,
             "description": "Set View's Model",
             "params": [
@@ -1662,7 +1662,7 @@
             "namespace": "Core"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/View.js",
+            "file": "app/public/a/js/protview/core/View.js",
             "line": 64,
             "description": "Validate model callback",
             "itemtype": "method",
@@ -1685,7 +1685,7 @@
             "namespace": "Core"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/View.js",
+            "file": "app/public/a/js/protview/core/View.js",
             "line": 76,
             "description": "Validate model callback",
             "itemtype": "method",
@@ -1708,7 +1708,7 @@
             "namespace": "Core"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/View.js",
+            "file": "app/public/a/js/protview/core/View.js",
             "line": 89,
             "description": "Handles form submit",
             "itemtype": "method",
@@ -1726,7 +1726,7 @@
             "namespace": "Core"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/core/View.js",
+            "file": "app/public/a/js/protview/core/View.js",
             "line": 101,
             "description": "Renders view",
             "itemtype": "method",
@@ -1737,7 +1737,7 @@
             "namespace": "Core"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/controller/DrawBoardController.js",
+            "file": "app/public/a/js/protview/drawboard/controller/DrawBoardController.js",
             "line": 16,
             "description": "Contains all resources needs to be updated",
             "example": [
@@ -1752,7 +1752,7 @@
             "namespace": "DrawBoard.Controller"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/controller/DrawBoardController.js",
+            "file": "app/public/a/js/protview/drawboard/controller/DrawBoardController.js",
             "line": 31,
             "description": "Initalizes model and calls parent constructor",
             "itemtype": "method",
@@ -1770,7 +1770,7 @@
             "namespace": "DrawBoard.Controller"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/controller/DrawBoardController.js",
+            "file": "app/public/a/js/protview/drawboard/controller/DrawBoardController.js",
             "line": 42,
             "description": "Clears current DrawBoard",
             "todo": [
@@ -1783,7 +1783,7 @@
             "namespace": "DrawBoard.Controller"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/controller/DrawBoardController.js",
+            "file": "app/public/a/js/protview/drawboard/controller/DrawBoardController.js",
             "line": 53,
             "description": "Shows a new representation",
             "itemtype": "method",
@@ -1800,7 +1800,7 @@
             "namespace": "DrawBoard.Controller"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/controller/DrawBoardController.js",
+            "file": "app/public/a/js/protview/drawboard/controller/DrawBoardController.js",
             "line": 62,
             "description": "Stores updated elements for later saving\n\nSave needs to be called manually as it would be to slow to send a request\nback to the server on each position update of a drawboard's element",
             "itemtype": "method",
@@ -1822,7 +1822,7 @@
             "namespace": "DrawBoard.Controller"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/controller/DrawBoardController.js",
+            "file": "app/public/a/js/protview/drawboard/controller/DrawBoardController.js",
             "line": 77,
             "description": "Saves updated store to the server",
             "itemtype": "method",
@@ -1832,7 +1832,7 @@
             "namespace": "DrawBoard.Controller"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/Representation.js",
+            "file": "app/public/a/js/protview/drawboard/model/Representation.js",
             "line": 16,
             "description": "Contains all model relations",
             "example": [
@@ -1847,7 +1847,7 @@
             "namespace": "DrawBoard.Model"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/Representation.js",
+            "file": "app/public/a/js/protview/drawboard/model/Representation.js",
             "line": 37,
             "description": "Representation id",
             "itemtype": "property",
@@ -1859,7 +1859,7 @@
             "namespace": "DrawBoard.Model"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/Representation.js",
+            "file": "app/public/a/js/protview/drawboard/model/Representation.js",
             "line": 45,
             "description": "Representation title",
             "itemtype": "property",
@@ -1871,7 +1871,7 @@
             "namespace": "DrawBoard.Model"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/Representation.js",
+            "file": "app/public/a/js/protview/drawboard/model/Representation.js",
             "line": 53,
             "description": "Representation description",
             "itemtype": "property",
@@ -1883,7 +1883,7 @@
             "namespace": "DrawBoard.Model"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/Representation.js",
+            "file": "app/public/a/js/protview/drawboard/model/Representation.js",
             "line": 61,
             "description": "Params",
             "example": [
@@ -1898,7 +1898,7 @@
             "namespace": "DrawBoard.Model"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/Representation.js",
+            "file": "app/public/a/js/protview/drawboard/model/Representation.js",
             "line": 75,
             "description": "Contributors",
             "example": [
@@ -1913,7 +1913,7 @@
             "namespace": "DrawBoard.Model"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/Representation.js",
+            "file": "app/public/a/js/protview/drawboard/model/Representation.js",
             "line": 91,
             "description": "Gets the URL of related server resource able to handle requests",
             "itemtype": "method",
@@ -1927,7 +1927,7 @@
             "namespace": "DrawBoard.Model"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/StructuralGeometry.js",
+            "file": "app/public/a/js/protview/drawboard/model/StructuralGeometry.js",
             "line": 17,
             "description": "StructuralGeometry id",
             "itemtype": "property",
@@ -1939,7 +1939,7 @@
             "namespace": "DrawBoard.Model"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/StructuralGeometry.js",
+            "file": "app/public/a/js/protview/drawboard/model/StructuralGeometry.js",
             "line": 25,
             "description": "Representation id (foreign key)",
             "itemtype": "property",
@@ -1951,7 +1951,7 @@
             "namespace": "DrawBoard.Model"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/StructuralGeometry.js",
+            "file": "app/public/a/js/protview/drawboard/model/StructuralGeometry.js",
             "line": 33,
             "description": "StructuralGeometry type",
             "example": [
@@ -1966,7 +1966,7 @@
             "namespace": "DrawBoard.Model"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/StructuralGeometry.js",
+            "file": "app/public/a/js/protview/drawboard/model/StructuralGeometry.js",
             "line": 44,
             "description": "StructuralGeometry pos\n\nPosition relative to other forms",
             "itemtype": "property",
@@ -1978,7 +1978,7 @@
             "namespace": "DrawBoard.Model"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/StructuralGeometry.js",
+            "file": "app/public/a/js/protview/drawboard/model/StructuralGeometry.js",
             "line": 54,
             "description": "StructuralGeometry params",
             "example": [
@@ -1993,7 +1993,7 @@
             "namespace": "DrawBoard.Model"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/StructuralGeometry.js",
+            "file": "app/public/a/js/protview/drawboard/model/StructuralGeometry.js",
             "line": 68,
             "description": "StructuralGeometry labels",
             "example": [
@@ -2008,7 +2008,7 @@
             "namespace": "DrawBoard.Model"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/StructuralGeometry.js",
+            "file": "app/public/a/js/protview/drawboard/model/StructuralGeometry.js",
             "line": 84,
             "description": "StructuralGeometry coordinates",
             "example": [
@@ -2023,7 +2023,7 @@
             "namespace": "DrawBoard.Model"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/StructuralGeometryCollection.js",
+            "file": "app/public/a/js/protview/drawboard/model/StructuralGeometryCollection.js",
             "line": 15,
             "description": "Model type",
             "itemtype": "property",
@@ -2035,7 +2035,7 @@
             "namespace": "DrawBoard.Model"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/StructuralGeometryCollection.js",
+            "file": "app/public/a/js/protview/drawboard/model/StructuralGeometryCollection.js",
             "line": 23,
             "description": "Comparator of models in order to order them",
             "itemtype": "method",
@@ -2049,7 +2049,7 @@
             "namespace": "DrawBoard.Model"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/StructuralGeometryCollection.js",
+            "file": "app/public/a/js/protview/drawboard/model/StructuralGeometryCollection.js",
             "line": 32,
             "description": "Gets the URL of related server resource able to handle requests",
             "itemtype": "method",
@@ -2063,7 +2063,7 @@
             "namespace": "DrawBoard.Model"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/model/StructuralGeometryCollection.js",
+            "file": "app/public/a/js/protview/drawboard/model/StructuralGeometryCollection.js",
             "line": 42,
             "description": "Overrides default set method to define collection id",
             "itemtype": "method",
@@ -2077,7 +2077,7 @@
             "namespace": "DrawBoard.Model"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/utils/Drawing.js",
+            "file": "app/public/a/js/protview/drawboard/utils/Drawing.js",
             "line": 15,
             "description": "SVG Object",
             "itemtype": "property",
@@ -2089,7 +2089,7 @@
             "namespace": "DrawBoard.Utils"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/utils/Drawing.js",
+            "file": "app/public/a/js/protview/drawboard/utils/Drawing.js",
             "line": 25,
             "description": "Constructor",
             "itemtype": "method",
@@ -2107,7 +2107,7 @@
             "namespace": "DrawBoard.Utils"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/utils/Drawing.js",
+            "file": "app/public/a/js/protview/drawboard/utils/Drawing.js",
             "line": 35,
             "description": "Paints a protein",
             "itemtype": "method",
@@ -2139,7 +2139,7 @@
             "namespace": "DrawBoard.Utils"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/utils/Drawing.js",
+            "file": "app/public/a/js/protview/drawboard/utils/Drawing.js",
             "line": 92,
             "description": "Draws an amino acid element",
             "params": [
@@ -2175,7 +2175,7 @@
             "namespace": "DrawBoard.Utils"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/utils/Drawing.js",
+            "file": "app/public/a/js/protview/drawboard/utils/Drawing.js",
             "line": 128,
             "description": "Draws the membrane of the current protein",
             "params": [
@@ -2203,7 +2203,7 @@
             "namespace": "DrawBoard.Utils"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/utils/Drawing.js",
+            "file": "app/public/a/js/protview/drawboard/utils/Drawing.js",
             "line": 150,
             "description": "Adds drag and drop support to an SVG Element\n\nCallback and context are used to inform when an elements position has changed",
             "params": [
@@ -2227,7 +2227,7 @@
             "namespace": "DrawBoard.Utils"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/view/DrawBoardView.js",
+            "file": "app/public/a/js/protview/drawboard/view/DrawBoardView.js",
             "line": 16,
             "description": "Initalizes svg element and settings",
             "itemtype": "method",
@@ -2238,7 +2238,7 @@
             "namespace": "DrawBoard.View"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/view/DrawBoardView.js",
+            "file": "app/public/a/js/protview/drawboard/view/DrawBoardView.js",
             "line": 37,
             "description": "Callback function used to update elements position",
             "params": [
@@ -2269,7 +2269,7 @@
             "namespace": "DrawBoard.View"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/view/DrawBoardView.js",
+            "file": "app/public/a/js/protview/drawboard/view/DrawBoardView.js",
             "line": 52,
             "description": "Sets the model",
             "params": [
@@ -2286,7 +2286,7 @@
             "namespace": "DrawBoard.View"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/view/DrawBoardView.js",
+            "file": "app/public/a/js/protview/drawboard/view/DrawBoardView.js",
             "line": 63,
             "description": "Resizes drawboard in function of the screen dimension",
             "itemtype": "method",
@@ -2296,7 +2296,7 @@
             "namespace": "DrawBoard.View"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/view/DrawBoardView.js",
+            "file": "app/public/a/js/protview/drawboard/view/DrawBoardView.js",
             "line": 73,
             "description": "Renders view",
             "itemtype": "method",
@@ -2307,7 +2307,7 @@
             "namespace": "DrawBoard.View"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/view/DrawBoardView.js",
+            "file": "app/public/a/js/protview/drawboard/view/DrawBoardView.js",
             "line": 89,
             "description": "Clears the drawboard",
             "itemtype": "method",
@@ -2317,7 +2317,7 @@
             "namespace": "DrawBoard.View"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/view/ToolbarView.js",
+            "file": "app/public/a/js/protview/drawboard/view/ToolbarView.js",
             "line": 16,
             "description": "Contains View's main Dom-Element",
             "itemtype": "property",
@@ -2329,7 +2329,7 @@
             "namespace": "DrawBoard.View"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/view/ToolbarView.js",
+            "file": "app/public/a/js/protview/drawboard/view/ToolbarView.js",
             "line": 25,
             "itemtype": "event",
             "name": "click #drawboad-show-representation:showRepresentation",
@@ -2338,7 +2338,7 @@
             "namespace": "DrawBoard.View"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/view/ToolbarView.js",
+            "file": "app/public/a/js/protview/drawboard/view/ToolbarView.js",
             "line": 29,
             "itemtype": "event",
             "name": "click #drawboard-export-png:exportFile",
@@ -2347,7 +2347,7 @@
             "namespace": "DrawBoard.View"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/view/ToolbarView.js",
+            "file": "app/public/a/js/protview/drawboard/view/ToolbarView.js",
             "line": 34,
             "description": "Calls DrawBoardController (server-side)",
             "itemtype": "method",
@@ -2357,7 +2357,7 @@
             "namespace": "DrawBoard.View"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/drawboard/view/ToolbarView.js",
+            "file": "app/public/a/js/protview/drawboard/view/ToolbarView.js",
             "line": 53,
             "description": "Calls /drawboard/show",
             "itemtype": "method",
@@ -2367,7 +2367,7 @@
             "namespace": "DrawBoard.View"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/controller/MainController.js",
+            "file": "app/public/a/js/protview/structure/controller/MainController.js",
             "line": 16,
             "description": "Loads the requested resource\n\nOn loading creates resource controller and view\n\nAvailable resources : peptide, protein, protein-new",
             "itemtype": "method",
@@ -2384,7 +2384,7 @@
             "namespace": "Structure.Controller"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/controller/MainController.js",
+            "file": "app/public/a/js/protview/structure/controller/MainController.js",
             "line": 74,
             "description": "Handles update requests",
             "itemtype": "method",
@@ -2401,7 +2401,7 @@
             "namespace": "Structure.Controller"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/controller/MainController.js",
+            "file": "app/public/a/js/protview/structure/controller/MainController.js",
             "line": 91,
             "description": "Unloads loaded resources\n\nFor available resource see load()",
             "itemtype": "method",
@@ -2418,7 +2418,7 @@
             "namespace": "Structure.Controller"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/controller/PeptideController.js",
+            "file": "app/public/a/js/protview/structure/controller/PeptideController.js",
             "line": 16,
             "description": "Initalizes model and calls parent constructor",
             "itemtype": "method",
@@ -2429,7 +2429,7 @@
             "namespace": "Structure.Controller"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/controller/PeptideController.js",
+            "file": "app/public/a/js/protview/structure/controller/PeptideController.js",
             "line": 26,
             "description": "Overrides fetch method in order to handle protein specifiec model attributes",
             "itemtype": "method",
@@ -2450,7 +2450,7 @@
             "namespace": "Structure.Controller"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/controller/ProteinController.js",
+            "file": "app/public/a/js/protview/structure/controller/ProteinController.js",
             "line": 16,
             "description": "Initalizes model and calls parent constructor",
             "itemtype": "method",
@@ -2461,7 +2461,7 @@
             "namespace": "Structure.Controller"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/model/Peptide.js",
+            "file": "app/public/a/js/protview/structure/model/Peptide.js",
             "line": 17,
             "description": "Peptide id",
             "itemtype": "property",
@@ -2473,7 +2473,7 @@
             "namespace": "Structure.Model"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/model/Peptide.js",
+            "file": "app/public/a/js/protview/structure/model/Peptide.js",
             "line": 25,
             "description": "Peptide sequence",
             "itemtype": "property",
@@ -2485,7 +2485,7 @@
             "namespace": "Structure.Model"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/model/Peptide.js",
+            "file": "app/public/a/js/protview/structure/model/Peptide.js",
             "line": 33,
             "description": "N-Terminus\n\nAccepted values: intra|extra",
             "itemtype": "property",
@@ -2497,7 +2497,7 @@
             "namespace": "Structure.Model"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/model/Peptide.js",
+            "file": "app/public/a/js/protview/structure/model/Peptide.js",
             "line": 43,
             "description": "C-Terminus\n\nAccepted values: intra|extra",
             "itemtype": "property",
@@ -2509,7 +2509,7 @@
             "namespace": "Structure.Model"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/model/Peptide.js",
+            "file": "app/public/a/js/protview/structure/model/Peptide.js",
             "line": 53,
             "description": "Peptide regions",
             "example": [
@@ -2524,7 +2524,7 @@
             "namespace": "Structure.Model"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/model/Peptide.js",
+            "file": "app/public/a/js/protview/structure/model/Peptide.js",
             "line": 67,
             "description": "Foreign key to protein id",
             "itemtype": "property",
@@ -2536,7 +2536,7 @@
             "namespace": "Structure.Model"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/model/Peptide.js",
+            "file": "app/public/a/js/protview/structure/model/Peptide.js",
             "line": 78,
             "description": "Gets the URL of related server resource able to handle requests",
             "itemtype": "method",
@@ -2550,7 +2550,7 @@
             "namespace": "Structure.Model"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/model/Peptide.js",
+            "file": "app/public/a/js/protview/structure/model/Peptide.js",
             "line": 92,
             "description": "Validates model properties",
             "itemtype": "method",
@@ -2560,7 +2560,7 @@
             "namespace": "Structure.Model"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/model/Protein.js",
+            "file": "app/public/a/js/protview/structure/model/Protein.js",
             "line": 17,
             "description": "Protein id",
             "itemtype": "property",
@@ -2572,7 +2572,7 @@
             "namespace": "Structure.Model"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/model/Protein.js",
+            "file": "app/public/a/js/protview/structure/model/Protein.js",
             "line": 25,
             "description": "Protein name",
             "itemtype": "property",
@@ -2584,7 +2584,7 @@
             "namespace": "Structure.Model"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/model/Protein.js",
+            "file": "app/public/a/js/protview/structure/model/Protein.js",
             "line": 33,
             "description": "Protein species\n\nAccepted values are : Homo sapiens, duck, mice",
             "itemtype": "property",
@@ -2596,7 +2596,7 @@
             "namespace": "Structure.Model"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/model/Protein.js",
+            "file": "app/public/a/js/protview/structure/model/Protein.js",
             "line": 43,
             "itemtype": "property",
             "name": "note",
@@ -2607,7 +2607,7 @@
             "namespace": "Structure.Model"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/model/Protein.js",
+            "file": "app/public/a/js/protview/structure/model/Protein.js",
             "line": 50,
             "description": "Gets the URL of related server resource able to handle requests",
             "itemtype": "method",
@@ -2621,7 +2621,7 @@
             "namespace": "Structure.Model"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/model/Protein.js",
+            "file": "app/public/a/js/protview/structure/model/Protein.js",
             "line": 60,
             "description": "Validates model properties",
             "itemtype": "method",
@@ -2631,7 +2631,7 @@
             "namespace": "Structure.Model"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/view/NewProteinView.js",
+            "file": "app/public/a/js/protview/structure/view/NewProteinView.js",
             "line": 17,
             "itemtype": "event",
             "name": "click #new-protein-form-submit:submitForm",
@@ -2640,7 +2640,7 @@
             "namespace": "Structure.View"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/view/NewProteinView.js",
+            "file": "app/public/a/js/protview/structure/view/NewProteinView.js",
             "line": 22,
             "description": "Handles form submit",
             "itemtype": "method",
@@ -2657,7 +2657,7 @@
             "namespace": "Structure.View"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/view/NewProteinView.js",
+            "file": "app/public/a/js/protview/structure/view/NewProteinView.js",
             "line": 33,
             "description": "This is method is called on each model update\n\nIf model is validate and its content saved to the server, the dialog closes",
             "itemtype": "method",
@@ -2667,7 +2667,7 @@
             "namespace": "Structure.View"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/view/PeptideView.js",
+            "file": "app/public/a/js/protview/structure/view/PeptideView.js",
             "line": 17,
             "itemtype": "event",
             "name": "click #peptide-form-submit:submitForm",
@@ -2676,7 +2676,7 @@
             "namespace": "Structure.View"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/view/PeptideView.js",
+            "file": "app/public/a/js/protview/structure/view/PeptideView.js",
             "line": 22,
             "description": "Handles form submit",
             "itemtype": "method",
@@ -2693,7 +2693,7 @@
             "namespace": "Structure.View"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/view/PeptideView.js",
+            "file": "app/public/a/js/protview/structure/view/PeptideView.js",
             "line": 72,
             "description": "Gets membrane regions from form",
             "itemtype": "method",
@@ -2707,7 +2707,7 @@
             "namespace": "Structure.View"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/view/PeptideView.js",
+            "file": "app/public/a/js/protview/structure/view/PeptideView.js",
             "line": 120,
             "description": "Converts regions to HTML",
             "itemtype": "method",
@@ -2722,7 +2722,7 @@
             "namespace": "Structure.View"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/view/PeptideView.js",
+            "file": "app/public/a/js/protview/structure/view/PeptideView.js",
             "line": 151,
             "description": "Creates a new membrane region form row",
             "itemtype": "method",
@@ -2736,7 +2736,7 @@
             "namespace": "Structure.View"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/view/PeptideView.js",
+            "file": "app/public/a/js/protview/structure/view/PeptideView.js",
             "line": 173,
             "description": "Binds the remove row event to the minus button after each region row",
             "itemtype": "method",
@@ -2750,7 +2750,7 @@
             "namespace": "Structure.View"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/view/PeptideView.js",
+            "file": "app/public/a/js/protview/structure/view/PeptideView.js",
             "line": 185,
             "description": "Renders peptide view",
             "itemtype": "method",
@@ -2761,7 +2761,7 @@
             "namespace": "Structure.View"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/view/ProteinView.js",
+            "file": "app/public/a/js/protview/structure/view/ProteinView.js",
             "line": 18,
             "itemtype": "event",
             "name": "click #protein-form-submit:submitForm",
@@ -2770,7 +2770,7 @@
             "namespace": "Structure.View"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/structure/view/ProteinView.js",
+            "file": "app/public/a/js/protview/structure/view/ProteinView.js",
             "line": 23,
             "description": "Handles form submit",
             "itemtype": "method",
@@ -2787,7 +2787,7 @@
             "namespace": "Structure.View"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/DrawBoard.js",
+            "file": "app/public/a/js/protview/DrawBoard.js",
             "line": 51,
             "description": "Contains all loaded resources",
             "itemtype": "property",
@@ -2798,7 +2798,7 @@
             "module": "DrawBoard"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/DrawBoard.js",
+            "file": "app/public/a/js/protview/DrawBoard.js",
             "line": 59,
             "description": "Modules main controller",
             "itemtype": "property",
@@ -2809,7 +2809,7 @@
             "module": "DrawBoard"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/DrawBoard.js",
+            "file": "app/public/a/js/protview/DrawBoard.js",
             "line": 67,
             "description": "Reference to sandbox",
             "itemtype": "property",
@@ -2820,7 +2820,7 @@
             "module": "DrawBoard"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/DrawBoard.js",
+            "file": "app/public/a/js/protview/DrawBoard.js",
             "line": 75,
             "description": "Loads module core classes",
             "access": "private",
@@ -2831,7 +2831,7 @@
             "module": "DrawBoard"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/DrawBoard.js",
+            "file": "app/public/a/js/protview/DrawBoard.js",
             "line": 85,
             "description": "Shows indicated resource or updates resource with specified id",
             "access": "private",
@@ -2854,7 +2854,7 @@
             "module": "DrawBoard"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/DrawBoard.js",
+            "file": "app/public/a/js/protview/DrawBoard.js",
             "line": 105,
             "description": "Unloads module and all its functionalities",
             "access": "private",
@@ -2868,7 +2868,7 @@
             "module": "DrawBoard"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/DrawBoard.js",
+            "file": "app/public/a/js/protview/DrawBoard.js",
             "line": 120,
             "description": "Updateds module\n\nOnly subscribed controllers will be updated with information",
             "access": "private",
@@ -2886,7 +2886,7 @@
             "module": "DrawBoard"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/DrawBoard.js",
+            "file": "app/public/a/js/protview/DrawBoard.js",
             "line": 133,
             "description": "Saves current representation",
             "access": "private",
@@ -2900,7 +2900,7 @@
             "module": "DrawBoard"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/DrawBoard.js",
+            "file": "app/public/a/js/protview/DrawBoard.js",
             "line": 147,
             "description": "Starts module\n\nCalls load and starts toolbar",
             "itemtype": "method",
@@ -2909,7 +2909,7 @@
             "module": "DrawBoard"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/DrawBoard.js",
+            "file": "app/public/a/js/protview/DrawBoard.js",
             "line": 158,
             "description": "Stops module\n\nCalls unload",
             "itemtype": "method",
@@ -2918,7 +2918,7 @@
             "module": "DrawBoard"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/DrawBoard.js",
+            "file": "app/public/a/js/protview/DrawBoard.js",
             "line": 168,
             "description": "Shows specified resource\n\nCalls show",
             "params": [
@@ -2944,7 +2944,7 @@
             "module": "DrawBoard"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/DrawBoard.js",
+            "file": "app/public/a/js/protview/DrawBoard.js",
             "line": 181,
             "description": "Updates module\n\nCalls update",
             "params": [
@@ -2965,7 +2965,7 @@
             "module": "DrawBoard"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/DrawBoard.js",
+            "file": "app/public/a/js/protview/DrawBoard.js",
             "line": 193,
             "description": "Saves module\n\nCalls save",
             "itemtype": "method",
@@ -2974,7 +2974,7 @@
             "module": "DrawBoard"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/DrawBoard.js",
+            "file": "app/public/a/js/protview/DrawBoard.js",
             "line": 203,
             "description": "Registers sandbox and module's public methods",
             "params": [
@@ -2988,7 +2988,7 @@
             "module": "DrawBoard"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/ProtView.js",
+            "file": "app/public/a/js/protview/ProtView.js",
             "line": 1,
             "description": "Provides the base ProtView class\n\nRequires at least (in the following order) : \njQuery 1.7.2 \nunderscore 1.3.3\nbackbonejs 0.9.2 \njQuery SVG 1.4.5 \njQuery SVG Dom (same version as jQuery SVG)",
             "author": "Stefan Meier",
@@ -2997,7 +2997,7 @@
             "module": "DrawBoard"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
+            "file": "app/public/a/js/protview/Structure.js",
             "line": 42,
             "description": "Contains all loaded resources",
             "itemtype": "property",
@@ -3008,7 +3008,7 @@
             "module": "Structure"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
+            "file": "app/public/a/js/protview/Structure.js",
             "line": 50,
             "description": "Modules main controller",
             "itemtype": "property",
@@ -3019,7 +3019,7 @@
             "module": "Structure"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
+            "file": "app/public/a/js/protview/Structure.js",
             "line": 58,
             "description": "Reference to sandbox",
             "itemtype": "property",
@@ -3030,7 +3030,7 @@
             "module": "Structure"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
+            "file": "app/public/a/js/protview/Structure.js",
             "line": 67,
             "description": "Loads module core classes",
             "access": "private",
@@ -3041,7 +3041,7 @@
             "module": "Structure"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
+            "file": "app/public/a/js/protview/Structure.js",
             "line": 77,
             "description": "Shows indicated resource or updates resource with specified id",
             "access": "private",
@@ -3064,7 +3064,7 @@
             "module": "Structure"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
+            "file": "app/public/a/js/protview/Structure.js",
             "line": 95,
             "description": "Hides indicated resource",
             "access": "private",
@@ -3082,7 +3082,7 @@
             "module": "Structure"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
+            "file": "app/public/a/js/protview/Structure.js",
             "line": 105,
             "description": "Unloads module and all its functionalities",
             "access": "private",
@@ -3096,7 +3096,7 @@
             "module": "Structure"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
+            "file": "app/public/a/js/protview/Structure.js",
             "line": 120,
             "description": "Updateds module\n\nOnly subscribed controllers will be updated with information",
             "access": "private",
@@ -3114,7 +3114,7 @@
             "module": "Structure"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
+            "file": "app/public/a/js/protview/Structure.js",
             "line": 136,
             "description": "Starts module\n\nCalls load",
             "itemtype": "method",
@@ -3123,7 +3123,7 @@
             "module": "Structure"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
+            "file": "app/public/a/js/protview/Structure.js",
             "line": 146,
             "description": "Stops module\n\nCalls unload",
             "itemtype": "method",
@@ -3132,7 +3132,7 @@
             "module": "Structure"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
+            "file": "app/public/a/js/protview/Structure.js",
             "line": 156,
             "description": "Shows specified resource\n\nCalls show",
             "params": [
@@ -3158,7 +3158,7 @@
             "module": "Structure"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
+            "file": "app/public/a/js/protview/Structure.js",
             "line": 169,
             "description": "Hides specified resource\n\nCalls hide",
             "params": [
@@ -3179,7 +3179,7 @@
             "module": "Structure"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
+            "file": "app/public/a/js/protview/Structure.js",
             "line": 181,
             "description": "Updates module\n\nCalls update",
             "params": [
@@ -3200,7 +3200,7 @@
             "module": "Structure"
         },
         {
-            "file": "/Volumes/FILES/smeier/Sites/protview/app/public/a/js/protview/Structure.js",
+            "file": "app/public/a/js/protview/Structure.js",
             "line": 193,
             "description": "Registers sandbox and module's public methods",
             "params": [
