@@ -1799,9 +1799,6 @@
             "file": "app/public/a/js/protview/drawboard/controller/DrawBoardController.js",
             "line": 42,
             "description": "Clears current DrawBoard",
-            "todo": [
-                "implement this method"
-            ],
             "itemtype": "method",
             "name": "clear",
             "class": "DrawBoard.Controller.DrawBoardController",
@@ -1810,7 +1807,7 @@
         },
         {
             "file": "app/public/a/js/protview/drawboard/controller/DrawBoardController.js",
-            "line": 53,
+            "line": 55,
             "description": "Shows a new representation",
             "itemtype": "method",
             "name": "show",
@@ -1827,7 +1824,7 @@
         },
         {
             "file": "app/public/a/js/protview/drawboard/controller/DrawBoardController.js",
-            "line": 62,
+            "line": 67,
             "description": "Stores updated elements for later saving\n\nSave needs to be called manually as it would be to slow to send a request\nback to the server on each position update of a drawboard's element",
             "itemtype": "method",
             "name": "show",
@@ -1849,10 +1846,26 @@
         },
         {
             "file": "app/public/a/js/protview/drawboard/controller/DrawBoardController.js",
-            "line": 77,
+            "line": 82,
             "description": "Saves updated store to the server",
             "itemtype": "method",
             "name": "save",
+            "class": "DrawBoard.Controller.DrawBoardController",
+            "module": "DrawBoard",
+            "namespace": "DrawBoard.Controller"
+        },
+        {
+            "file": "app/public/a/js/protview/drawboard/controller/DrawBoardController.js",
+            "line": 114,
+            "description": "Updates the model from server",
+            "params": [
+                {
+                    "name": "id",
+                    "description": ""
+                }
+            ],
+            "itemtype": "method",
+            "name": "update",
             "class": "DrawBoard.Controller.DrawBoardController",
             "module": "DrawBoard",
             "namespace": "DrawBoard.Controller"
@@ -2914,7 +2927,7 @@
         },
         {
             "file": "app/public/a/js/protview/DrawBoard.js",
-            "line": 105,
+            "line": 106,
             "description": "Unloads module and all its functionalities",
             "access": "private",
             "tagname": "",
@@ -2928,7 +2941,7 @@
         },
         {
             "file": "app/public/a/js/protview/DrawBoard.js",
-            "line": 120,
+            "line": 121,
             "description": "Updateds module\n\nOnly subscribed controllers will be updated with information",
             "access": "private",
             "tagname": "",
@@ -2946,7 +2959,7 @@
         },
         {
             "file": "app/public/a/js/protview/DrawBoard.js",
-            "line": 133,
+            "line": 134,
             "description": "Saves current representation",
             "access": "private",
             "tagname": "",
@@ -2960,7 +2973,7 @@
         },
         {
             "file": "app/public/a/js/protview/DrawBoard.js",
-            "line": 147,
+            "line": 148,
             "description": "Starts module\n\nCalls load and starts toolbar",
             "itemtype": "method",
             "name": "start",
@@ -2969,7 +2982,7 @@
         },
         {
             "file": "app/public/a/js/protview/DrawBoard.js",
-            "line": 158,
+            "line": 159,
             "description": "Stops module\n\nCalls unload",
             "itemtype": "method",
             "name": "stop",
@@ -2978,7 +2991,7 @@
         },
         {
             "file": "app/public/a/js/protview/DrawBoard.js",
-            "line": 168,
+            "line": 169,
             "description": "Shows specified resource\n\nCalls show",
             "params": [
                 {
@@ -3004,7 +3017,7 @@
         },
         {
             "file": "app/public/a/js/protview/DrawBoard.js",
-            "line": 181,
+            "line": 182,
             "description": "Updates module\n\nCalls update",
             "params": [
                 {
@@ -3025,7 +3038,7 @@
         },
         {
             "file": "app/public/a/js/protview/DrawBoard.js",
-            "line": 193,
+            "line": 194,
             "description": "Saves module\n\nCalls save",
             "itemtype": "method",
             "name": "save",
@@ -3034,7 +3047,7 @@
         },
         {
             "file": "app/public/a/js/protview/DrawBoard.js",
-            "line": 203,
+            "line": 204,
             "description": "Registers sandbox and module's public methods",
             "params": [
                 {
