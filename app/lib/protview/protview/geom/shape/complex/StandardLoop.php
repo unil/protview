@@ -50,13 +50,15 @@ class StandardLoop extends ComplexShape {
 		$lastCoord = parent::getStartCoord();;
 
 		//left side
-		$lastCoord['y'] -= parent::getOffset() * $rotation['sens'];
-		$line = new Line(parent::getOffset(), $lastCoord);
-		$line->setRotation(array('sens' => $rotation['sens']));
-		$line->setNbPoints($this->sideLength);
-		$coord = $line->getCoord();
-		$coords = array_merge($coords, $coord);
-		$lastCoord = $line->getLastCoord();
+		if ($this->sideLength > 0) {
+			$lastCoord['y'] -= parent::getOffset() * $rotation['sens'];
+			$line = new Line(parent::getOffset(), $lastCoord);
+			$line->setRotation(array('sens' => $rotation['sens']));
+			$line->setNbPoints($this->sideLength);
+			$coord = $line->getCoord();
+			$coords = array_merge($coords, $coord);
+			$lastCoord = $line->getLastCoord();
+		}
 			
 		//middle
 		$lastCoord['y'] -= parent::getOffset() * $rotation['sens'];
@@ -70,13 +72,15 @@ class StandardLoop extends ComplexShape {
 		//$lastCoord = $startCoord = parent::getStartCoord();
 
 		//right side
-		$lastCoord['y'] += parent::getOffset() * $rotation['sens'];
-		$line = new Line(parent::getOffset(), $lastCoord);
-		$line->setRotation(array('sens' => $rotation['sens'] * -1));
-		$line->setNbPoints($this->sideLength);
-		$coord = $line->getCoord();
-		$coords = array_merge($coords, $coord);
-		$lastCoord = $line->getLastCoord();
+		if ($this->sideLength > 0) {
+			$lastCoord['y'] += parent::getOffset() * $rotation['sens'];
+			$line = new Line(parent::getOffset(), $lastCoord);
+			$line->setRotation(array('sens' => $rotation['sens'] * -1));
+			$line->setNbPoints($this->sideLength);
+			$coord = $line->getCoord();
+			$coords = array_merge($coords, $coord);
+			$lastCoord = $line->getLastCoord();
+		}
 
 
 		parent::setLastCoord($lastCoord);

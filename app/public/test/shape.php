@@ -20,8 +20,8 @@ $circle->setNbPoints(7);
 
 require_once(xContext::$basepath.'/lib/protview/protview/geom/shape/complex/StandardLoop.php');
 $standardLoop = new StandardLoop($scatterSize);
-$standardLoop->setSideLength(8);
-$standardLoop->setMiddleLength(8);
+$standardLoop->setSideLength(0);
+$standardLoop->setMiddleLength(2);
 
 require_once(xContext::$basepath.'/lib/protview/protview/geom/shape/complex/ExtendedLoop.php');
 $extendedLoop = new ExtendedLoop($scatterSize);
@@ -50,7 +50,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink"
 width="100%" height="100%" xml:lang="fr"
 preserveAspectRatio="xMinYMin meet"
 viewBox="0 0 1000 800">';
-$coords = $extendedLoop->getCoord();
+$coords = $standardLoop->getCoord();
 
 foreach ($coords as $k => $v) {
 	$x = $v["x"] + 480;
