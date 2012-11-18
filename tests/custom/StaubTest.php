@@ -49,7 +49,7 @@ $regions = array(
 );
 
 //Create peptide
-$peptide = new Peptide(1, 1, 110);
+$peptide = new Peptide(1, 1, 1001);
 
 //Reade sequence and create amino acid class for each value
 //increases id by one for each amino acid
